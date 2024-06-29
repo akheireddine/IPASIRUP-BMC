@@ -1,0 +1,1 @@
+X((p1 xor FXp1) | !(Xp1 & (p0 xor X(0))))

@@ -1,0 +1,6 @@
+1,GF(!a | !d | !e)
+6,G(Fa | (c W (!c & F!e)))
+2,Ge | G(Fd & FGe & Fc)
+1,F(G(Fb & FGc) | Ge)
+4,G(F!d | (!c & G!b))
+3,F(GF!c | G!b) | XFa

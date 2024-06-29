@@ -1,0 +1,18 @@
+digraph "a | X(b | !((c <-> d) & (e xor f) & (m | (l & (k | (j <-> (i xor (g & h)))))) & ((n & o) | (!n & p)) & (q -> (r <-> s))) | ({[*0..1];t}[]-> u))" {
+  rankdir=LR
+  label=<t<br/>[all]>
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 2
+  0 [label=<0>]
+  0 -> 1 [label=<b | (!c &amp; d) | (c &amp; !d) | (!e &amp; !f) | (e &amp; f) | (!l &amp; !m) | (g &amp; h &amp; !i &amp; !j &amp; !k &amp; !m) | (!g &amp; i &amp; !j &amp; !k &amp; !m) | (!h &amp; i &amp; !j &amp; !k &amp; !m) | (!g &amp; !i &amp; j &amp; !k &amp; !m) | (!h &amp; !i &amp; j &amp; !k &amp; !m) | (g &amp; h &amp; i &amp; j &amp; !k &amp; !m) | (!n &amp; !p) | (n &amp; !o) | (q &amp; !r &amp; s) | (q &amp; r &amp; !s)>]
+  0 -> 3 [label=<(label too long)>]
+  1 [label=<1>]
+  1 -> 1 [label=<1>]
+  2 [label=<2>]
+  2 -> 0 [label=<!a>]
+  2 -> 1 [label=<a>]
+  3 [label=<3>]
+  3 -> 1 [label=<!t | u>]
+}

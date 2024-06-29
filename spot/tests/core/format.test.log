@@ -1,0 +1,252 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test format.test
+== Running test format.test
++ echo format.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=format
++ testSubDir=format.dir
++ chmod -R a+rwx format.dir
++ rm -rf format.dir
++ mkdir format.dir
++ cd format.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ genltl --dac=1..10 --stats=%s,%b,%x,%f,%[G]n,%[FUM]n,%[~GUM]n
++ cat
++ diff output expected
++ genltl --dac --stats=%n
++ cat stderr
+genltl: %n expects arguments, e.g. %[X]n
++ grep -F genltl: %n expects arguments stderr
+genltl: %n expects arguments, e.g. %[X]n
++ ltlfilt -f a --stats=%[]n
++ cat stderr
+ltlfilt: %n expects arguments, e.g. %[X]n
++ grep -F ltlfilt: %n expects arguments stderr
+ltlfilt: %n expects arguments, e.g. %[X]n
++ randltl 2 --stats=%[;]n
++ cat stderr
+randltl: nesting_depth(): unknown operator ';'
++ grep randltl: .*unknown.*; stderr
+randltl: nesting_depth(): unknown operator ';'
++ genltl --dac
++ ltlfilt --output=ap-%x.ltl
++ wc -l
++ test 4 = 4
++ wc -l
++ test 10 = 10
++ wc -l
++ test 16 = 16
++ wc -l
++ test 13 = 13
++ wc -l
++ test 10 = 10
++ wc -l
++ test 2 = 2
++ genltl --dac --output=ap-%x.ltl2
++ cmp ap-1.ltl ap-1.ltl2
++ cmp ap-2.ltl ap-2.ltl2
++ cmp ap-3.ltl ap-3.ltl2
++ cmp ap-4.ltl ap-4.ltl2
++ cmp ap-5.ltl ap-5.ltl2
++ cmp ap-6.ltl ap-6.ltl2
++ ltl2tgba GFa
++ autfilt --stats=%W,%w --complement
++ out=cycle{a},cycle{!a}
++ test cycle{a},cycle{!a} = cycle{a},cycle{!a}
++ ltl2tgba FGa
++ autfilt -D --stats=%D,%d,%P,%p
++ test 0,1,0,1 = 0,1,0,1
++ autfilt -C --stats=%D,%d,%P,%p,%[d]x
++ test 0,0,0,1,"a" = 0,0,0,1,"a"
++ autfilt -C --stats=%D,%P
++ test 0,0 = 0,0
++ autfilt -C --stats=%D,%P
++ test 1,1 = 1,1
++ autfilt -C --stats=%d,%p
++ test 0,1 = 0,1
++ autfilt -C --stats=%d,%p
++ test 1,1 = 1,1
++ autfilt -D --stats=%N,%n
++ test 1,0 = 1,0
++ ltl2tgba (Ga -> Gb)W c --stats=%c
++ test 4 = 4
++ autfilt -C --stats=%C,%c
++ ltl2tgba (Ga -> Gb)W c
++ test 4,5 = 4,5
++ ltl2tgba (Ga->Gb)W c --stats=%[r]c,%[a]c,%[t]c,%[w]c,%[wT]c,%[W]c,%[Wt]c
++ out=1,3,1,3,2,1,0
++ test 1,3,1,3,2,1,0 = 1,3,1,3,2,1,0
++ ltl2tgba a --stats=%[z]c
++ cat stderr
+ltl2tgba: unknown option 'z' in '%[z]c'
++ grep -F ltl2tgba: unknown option 'z' in '%[z]c' stderr
+ltl2tgba: unknown option 'z' in '%[z]c'
++ f=!X(FG((a & b) | (a & c) | (a & d) | (a & e) | (a & f) | (g & h) |
+(g & i) | (g & j) | (g & k) | (g & l) | (m & n) | (m & o) | (m & p) |
+(m & q) | (m & r) | (s & t) | (s & u) | (s & v) | (s & w) | (s & x) |
+(y & z) | (ab & y) | (bb & y) | (cb & y) | (db & y) | (eb & g) | (c &
+eb) | (d & eb) | (e & eb) | (eb & f) | (b & m) | (b & i) | (b & j) |
+(b & k) | (b & l) | (h & s) | (h & o) | (h & p) | (h & q) | (h & r) |
+(n & y) | (n & u) | (n & v) | (n & w) | (n & x) | (fb & t) | (ab & t)
+| (bb & t) | (cb & t) | (db & t) | (g & gb) | (b & gb) | (d & gb) |
+(e & gb) | (f & gb) | (c & m) | (c & h) | (c & j) | (c & k) | (c & l) |
+(i & s) | (i & n) | (i & p) | (i & q) | (i & r) | (o & y) | (o & t) |
+(o & v) | (o & w) | (o & x) | (fb & u) | (u & z) | (bb & u) | (cb &
+u) | (db & u) | (g & hb) | (b & hb) | (c & hb) | (e & hb) | (f & hb) |
+(d & m) | (d & h) | (d & i) | (d & k) | (d & l) | (j & s) | (j & n) |
+(j & o) | (j & q) | (j & r) | (p & y) | (p & t) | (p & u) | (p & w) |
+(p & x) | (fb & v) | (v & z) | (ab & v) | (cb & v) | (db & v) | (g &
+ib) | (b & ib) | (c & ib) | (d & ib) | (f & ib) | (e & m) | (e & h) |
+(e & i) | (e & j) | (e & l) | (k & s) | (k & n) | (k & o) | (k & p) |
+(k & r) | (q & y) | (q & t) | (q & u) | (q & v) | (q & x) | (fb & w) |
+(w & z) | (ab & w) | (bb & w) | (db & w) | (g & jb) | (b & jb) | (c &
+jb) | (d & jb) | (e & jb) | (f & m) | (f & h) | (f & i) | (f & j) |
+(f & k) | (l & s) | (l & n) | (l & o) | (l & p) | (l & q) | (r & y) |
+(r & t) | (r & u) | (r & v) | (r & w) | (fb & x) | (x & z) | (ab & x) |
+(bb & x) | (cb & x)) U ((a & b) | (a & c) | (a & d) | (a & e) | (a & f) |
+(g & h) | (g & i) | (g & j) | (g & k) | (g & l) | (m & n) | (m & o) |
+(m & p) | (m & q) | (m & r) | (s & t) | (s & u) | (s & v) | (s & w) |
+(s & x) | (y & z) | (ab & y) | (bb & y) | (cb & y) | (db & y) | (eb &
+g) | (c & eb) | (d & eb) | (e & eb) | (eb & f) | (b & m) | (b & i) |
+(b & j) | (b & k) | (b & l) | (h & s) | (h & o) | (h & p) | (h & q) |
+(h & r) | (n & y) | (n & u) | (n & v) | (n & w) | (n & x) | (fb & t) |
+(ab & t) | (bb & t) | (cb & t) | (db & t) | (g & gb) | (b & gb) | (d &
+gb) | (e & gb) | (f & gb) | (c & m) | (c & h) | (c & j) | (c & k) |
+(c & l) | (i & s) | (i & n) | (i & p) | (i & q) | (i & r) | (o & y) |
+(o & t) | (o & v) | (o & w) | (o & x) | (fb & u) | (u & z) | (bb & u)
+| (cb & u) | (db & u) | (g & hb) | (b & hb) | (c & hb) | (e & hb) |
+(f & hb) | (d & m) | (d & h) | (d & i) | (d & k) | (d & l) | (j & s) |
+(j & n) | (j & o) | (j & q) | (j & r) | (p & y) | (p & t) | (p & u) |
+(p & w) | (p & x) | (fb & v) | (v & z) | (ab & v) | (cb & v) | (db &
+v) | (g & ib) | (b & ib) | (c & ib) | (d & ib) | (f & ib) | (e & m) |
+(e & h) | (e & i) | (e & j) | (e & l) | (k & s) | (k & n) | (k & o) |
+(k & p) | (k & r) | (q & y) | (q & t) | (q & u) | (q & v) | (q & x) |
+(fb & w) | (w & z) | (ab & w) | (bb & w) | (db & w) | (g & jb) | (b &
+jb) | (c & jb) | (d & jb) | (e & jb) | (f & m) | (f & h) | (f & i) |
+(f & j) | (f & k) | (l & s) | (l & n) | (l & o) | (l & p) | (l & q) |
+(r & y) | (r & t) | (r & u) | (r & v) | (r & w) | (fb & x) | (x & z) |
+(ab & x) | (bb & x) | (cb & x)))
++ ltl2tgba --low --any --stats=%s,%e !X(FG((a & b) | (a & c) | (a & d) | (a & e) | (a & f) | (g & h) |
+(g & i) | (g & j) | (g & k) | (g & l) | (m & n) | (m & o) | (m & p) |
+(m & q) | (m & r) | (s & t) | (s & u) | (s & v) | (s & w) | (s & x) |
+(y & z) | (ab & y) | (bb & y) | (cb & y) | (db & y) | (eb & g) | (c &
+eb) | (d & eb) | (e & eb) | (eb & f) | (b & m) | (b & i) | (b & j) |
+(b & k) | (b & l) | (h & s) | (h & o) | (h & p) | (h & q) | (h & r) |
+(n & y) | (n & u) | (n & v) | (n & w) | (n & x) | (fb & t) | (ab & t)
+| (bb & t) | (cb & t) | (db & t) | (g & gb) | (b & gb) | (d & gb) |
+(e & gb) | (f & gb) | (c & m) | (c & h) | (c & j) | (c & k) | (c & l) |
+(i & s) | (i & n) | (i & p) | (i & q) | (i & r) | (o & y) | (o & t) |
+(o & v) | (o & w) | (o & x) | (fb & u) | (u & z) | (bb & u) | (cb &
+u) | (db & u) | (g & hb) | (b & hb) | (c & hb) | (e & hb) | (f & hb) |
+(d & m) | (d & h) | (d & i) | (d & k) | (d & l) | (j & s) | (j & n) |
+(j & o) | (j & q) | (j & r) | (p & y) | (p & t) | (p & u) | (p & w) |
+(p & x) | (fb & v) | (v & z) | (ab & v) | (cb & v) | (db & v) | (g &
+ib) | (b & ib) | (c & ib) | (d & ib) | (f & ib) | (e & m) | (e & h) |
+(e & i) | (e & j) | (e & l) | (k & s) | (k & n) | (k & o) | (k & p) |
+(k & r) | (q & y) | (q & t) | (q & u) | (q & v) | (q & x) | (fb & w) |
+(w & z) | (ab & w) | (bb & w) | (db & w) | (g & jb) | (b & jb) | (c &
+jb) | (d & jb) | (e & jb) | (f & m) | (f & h) | (f & i) | (f & j) |
+(f & k) | (l & s) | (l & n) | (l & o) | (l & p) | (l & q) | (r & y) |
+(r & t) | (r & u) | (r & v) | (r & w) | (fb & x) | (x & z) | (ab & x) |
+(bb & x) | (cb & x)) U ((a & b) | (a & c) | (a & d) | (a & e) | (a & f) |
+(g & h) | (g & i) | (g & j) | (g & k) | (g & l) | (m & n) | (m & o) |
+(m & p) | (m & q) | (m & r) | (s & t) | (s & u) | (s & v) | (s & w) |
+(s & x) | (y & z) | (ab & y) | (bb & y) | (cb & y) | (db & y) | (eb &
+g) | (c & eb) | (d & eb) | (e & eb) | (eb & f) | (b & m) | (b & i) |
+(b & j) | (b & k) | (b & l) | (h & s) | (h & o) | (h & p) | (h & q) |
+(h & r) | (n & y) | (n & u) | (n & v) | (n & w) | (n & x) | (fb & t) |
+(ab & t) | (bb & t) | (cb & t) | (db & t) | (g & gb) | (b & gb) | (d &
+gb) | (e & gb) | (f & gb) | (c & m) | (c & h) | (c & j) | (c & k) |
+(c & l) | (i & s) | (i & n) | (i & p) | (i & q) | (i & r) | (o & y) |
+(o & t) | (o & v) | (o & w) | (o & x) | (fb & u) | (u & z) | (bb & u)
+| (cb & u) | (db & u) | (g & hb) | (b & hb) | (c & hb) | (e & hb) |
+(f & hb) | (d & m) | (d & h) | (d & i) | (d & k) | (d & l) | (j & s) |
+(j & n) | (j & o) | (j & q) | (j & r) | (p & y) | (p & t) | (p & u) |
+(p & w) | (p & x) | (fb & v) | (v & z) | (ab & v) | (cb & v) | (db &
+v) | (g & ib) | (b & ib) | (c & ib) | (d & ib) | (f & ib) | (e & m) |
+(e & h) | (e & i) | (e & j) | (e & l) | (k & s) | (k & n) | (k & o) |
+(k & p) | (k & r) | (q & y) | (q & t) | (q & u) | (q & v) | (q & x) |
+(fb & w) | (w & z) | (ab & w) | (bb & w) | (db & w) | (g & jb) | (b &
+jb) | (c & jb) | (d & jb) | (e & jb) | (f & m) | (f & h) | (f & i) |
+(f & j) | (f & k) | (l & s) | (l & n) | (l & o) | (l & p) | (l & q) |
+(r & y) | (r & t) | (r & u) | (r & v) | (r & w) | (fb & x) | (x & z) |
+(ab & x) | (bb & x) | (cb & x)))
++ test 3,5 = 3,5
++ ltl2tgba --stats=%s,%e !X(FG((a & b) | (a & c) | (a & d) | (a & e) | (a & f) | (g & h) |
+(g & i) | (g & j) | (g & k) | (g & l) | (m & n) | (m & o) | (m & p) |
+(m & q) | (m & r) | (s & t) | (s & u) | (s & v) | (s & w) | (s & x) |
+(y & z) | (ab & y) | (bb & y) | (cb & y) | (db & y) | (eb & g) | (c &
+eb) | (d & eb) | (e & eb) | (eb & f) | (b & m) | (b & i) | (b & j) |
+(b & k) | (b & l) | (h & s) | (h & o) | (h & p) | (h & q) | (h & r) |
+(n & y) | (n & u) | (n & v) | (n & w) | (n & x) | (fb & t) | (ab & t)
+| (bb & t) | (cb & t) | (db & t) | (g & gb) | (b & gb) | (d & gb) |
+(e & gb) | (f & gb) | (c & m) | (c & h) | (c & j) | (c & k) | (c & l) |
+(i & s) | (i & n) | (i & p) | (i & q) | (i & r) | (o & y) | (o & t) |
+(o & v) | (o & w) | (o & x) | (fb & u) | (u & z) | (bb & u) | (cb &
+u) | (db & u) | (g & hb) | (b & hb) | (c & hb) | (e & hb) | (f & hb) |
+(d & m) | (d & h) | (d & i) | (d & k) | (d & l) | (j & s) | (j & n) |
+(j & o) | (j & q) | (j & r) | (p & y) | (p & t) | (p & u) | (p & w) |
+(p & x) | (fb & v) | (v & z) | (ab & v) | (cb & v) | (db & v) | (g &
+ib) | (b & ib) | (c & ib) | (d & ib) | (f & ib) | (e & m) | (e & h) |
+(e & i) | (e & j) | (e & l) | (k & s) | (k & n) | (k & o) | (k & p) |
+(k & r) | (q & y) | (q & t) | (q & u) | (q & v) | (q & x) | (fb & w) |
+(w & z) | (ab & w) | (bb & w) | (db & w) | (g & jb) | (b & jb) | (c &
+jb) | (d & jb) | (e & jb) | (f & m) | (f & h) | (f & i) | (f & j) |
+(f & k) | (l & s) | (l & n) | (l & o) | (l & p) | (l & q) | (r & y) |
+(r & t) | (r & u) | (r & v) | (r & w) | (fb & x) | (x & z) | (ab & x) |
+(bb & x) | (cb & x)) U ((a & b) | (a & c) | (a & d) | (a & e) | (a & f) |
+(g & h) | (g & i) | (g & j) | (g & k) | (g & l) | (m & n) | (m & o) |
+(m & p) | (m & q) | (m & r) | (s & t) | (s & u) | (s & v) | (s & w) |
+(s & x) | (y & z) | (ab & y) | (bb & y) | (cb & y) | (db & y) | (eb &
+g) | (c & eb) | (d & eb) | (e & eb) | (eb & f) | (b & m) | (b & i) |
+(b & j) | (b & k) | (b & l) | (h & s) | (h & o) | (h & p) | (h & q) |
+(h & r) | (n & y) | (n & u) | (n & v) | (n & w) | (n & x) | (fb & t) |
+(ab & t) | (bb & t) | (cb & t) | (db & t) | (g & gb) | (b & gb) | (d &
+gb) | (e & gb) | (f & gb) | (c & m) | (c & h) | (c & j) | (c & k) |
+(c & l) | (i & s) | (i & n) | (i & p) | (i & q) | (i & r) | (o & y) |
+(o & t) | (o & v) | (o & w) | (o & x) | (fb & u) | (u & z) | (bb & u)
+| (cb & u) | (db & u) | (g & hb) | (b & hb) | (c & hb) | (e & hb) |
+(f & hb) | (d & m) | (d & h) | (d & i) | (d & k) | (d & l) | (j & s) |
+(j & n) | (j & o) | (j & q) | (j & r) | (p & y) | (p & t) | (p & u) |
+(p & w) | (p & x) | (fb & v) | (v & z) | (ab & v) | (cb & v) | (db &
+v) | (g & ib) | (b & ib) | (c & ib) | (d & ib) | (f & ib) | (e & m) |
+(e & h) | (e & i) | (e & j) | (e & l) | (k & s) | (k & n) | (k & o) |
+(k & p) | (k & r) | (q & y) | (q & t) | (q & u) | (q & v) | (q & x) |
+(fb & w) | (w & z) | (ab & w) | (bb & w) | (db & w) | (g & jb) | (b &
+jb) | (c & jb) | (d & jb) | (e & jb) | (f & m) | (f & h) | (f & i) |
+(f & j) | (f & k) | (l & s) | (l & n) | (l & o) | (l & p) | (l & q) |
+(r & y) | (r & t) | (r & u) | (r & v) | (r & w) | (fb & x) | (x & z) |
+(ab & x) | (bb & x) | (cb & x)))
++ test 3,4 = 3,4
++ cat
++ autfilt --stats=%s,%[r]s,%[u]s,%[a]s foo
++ autfilt --remove-dead --stats=%s,%[r]s,%[u]s,%[a]s foo
++ autfilt --remove-dead --stats=%S,%[r]S,%[u]S,%[a]S foo
++ autfilt --stats=%e,%[r]e,%[u]e,%[a]e foo
++ autfilt --remove-dead --stats=%e,%[r]e,%[u]e,%[a]e foo
++ autfilt --remove-dead --stats=%E,%[r]E,%[u]E,%[a]E foo
++ autfilt --stats=%t,%[r]t,%[u]t,%[a]t foo
++ autfilt --remove-dead --stats=%t,%[r]t,%[u]t,%[a]t foo
++ autfilt --remove-dead --stats=%T,%[r]T,%[u]T,%[a]T foo
++ cat
++ diff stats expected
++ autfilt --stats=%[x]T foo
++ grep only \[a\], \[r\], or \[u\] is supported err
+autfilt: while processing %[x]T, only [a], [r], or [u] is supported.
+PASS core/format.test (exit status: 0)

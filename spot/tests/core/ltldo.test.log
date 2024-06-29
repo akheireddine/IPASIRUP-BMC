@@ -1,0 +1,267 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltldo.test
+== Running test ltldo.test
++ echo ltldo.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltldo
++ testSubDir=ltldo.dir
++ chmod -R a+rwx ltldo.dir
++ rm -rf ltldo.dir
++ mkdir ltldo.dir
++ cd ltldo.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ run 0 ltldo -f a -f a&b -f a -> b -t echo %f,%s,%[ei]w
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltldo
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo -f a -f a&b -f a -> b -t echo %f,%s,%[ei]w
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo -f a -f a&b -f a -> b -t echo %f,%s,%[ei]w
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff output expected
++ run 0 ltldo -f a -f a&_b -t echo %f,%s
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltldo
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo -f a -f a&_b -t echo %f,%s
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo -f a -f a&_b -t echo %f,%s
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff output expected
++ genltl --or-g=1..2
++ run 0 ltldo -t sleep 10; echo %f -T1 -t sleep 10; echo %f
++ cat output
++ test -z 
++ grep -c ltldo: stderr
++ test 4 = 4
++ grep -q failed to stderr
++ genltl --or-g=1..2
++ run 0 ltldo -t sleep 10; echo %f -T1 -t sleep 10; echo %f --fail-on-timeout --error=warn
++ cat output
++ test -z 
++ grep -c ltldo: stderr
++ test 8 = 8
++ grep -c ltldo:-: stderr
++ test 4 = 4
++ grep -q failed to stderr
++ genltl --or-g=1..2
++ run 2 ltldo -t sleep 10; echo %f -T1 -t sleep 10; echo %f --fail-on-timeout
++ cat output
++ test -z 
++ grep -c ltldo: stderr
++ test 2 = 2
++ grep -q failed to stderr
++ echo 1,a,3,4
++ ltldo -F-/2 ltl2tgba --stats=%<,%s,%>
++ test 1,2,3,4 = 1,2,3,4
++ genltl --and-gf=1..3
++ run 0 ltldo {tgba}ltl2tgba %f -H >%H {ba}ltl2tgba >%N %f -s --stats=%T,%#,%f,%s,%t,%e
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltldo
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo {tgba}ltl2tgba %f -H >%H {ba}ltl2tgba >%N %f -s --stats=%T,%#,%f,%s,%t,%e
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo {tgba}ltl2tgba %f -H >%H {ba}ltl2tgba >%N %f -s --stats=%T,%#,%f,%s,%t,%e
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat output
+tgba,1,GFp1,1,2,2
+ba,1,GFp1,2,4,4
+tgba,2,GFp1 & GFp2,1,4,4
+ba,2,GFp1 & GFp2,3,12,8
+tgba,3,GFp1 & GFp2 & GFp3,1,8,8
+ba,3,GFp1 & GFp2 & GFp3,4,32,13
++ cat
++ diff output expected
++ run 0 ltldo ltl2tgba -H %s>%H -f GF_foo_ -H
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltldo
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo ltl2tgba -H %s>%H -f GF_foo_ -H
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo ltl2tgba -H %s>%H -f GF_foo_ -H
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat output
+HOA: v1
+name: "GFp0"
+States: 1
+Start: 0
+AP: 1 "_foo_"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc complete
+properties: deterministic stutter-invariant
+--BODY--
+State: 0
+[!0] 0
+[0] 0 {0}
+--END--
++ cat
++ diff output expected
++ run 0 ltldo ltl2tgba -H %s>%H -f GF_foo_ -H --name=%f
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltldo
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo ltl2tgba -H %s>%H -f GF_foo_ -H --name=%f
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo ltl2tgba -H %s>%H -f GF_foo_ -H --name=%f
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat output
+HOA: v1
+name: "GF_foo_"
+States: 1
+Start: 0
+AP: 1 "_foo_"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc complete
+properties: deterministic stutter-invariant
+--BODY--
+State: 0
+[!0] 0
+[0] 0 {0}
+--END--
++ cat
++ diff output expected
++ run 0 ltldo ltl2tgba -H %s>%H -f GF_foo_ -H --trust-hoa=no
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltldo
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo ltl2tgba -H %s>%H -f GF_foo_ -H --trust-hoa=no
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltldo ltl2tgba -H %s>%H -f GF_foo_ -H --trust-hoa=no
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat output
+HOA: v1
+name: "GFp0"
+States: 1
+Start: 0
+AP: 1 "_foo_"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[!0] 0
+[0] 0 {0}
+--END--
++ cat
++ diff output expected
++ ltldo : %s; true>%O -f GFa
++ test 2 = 2
++ grep :.*empty input stderr
+lcr-o0-vGNj5B:1.1: no automaton read (empty input?)
++ grep ltldo: failed to run stderr
+ltldo: failed to run `: %s; true>%O' on `GFa'
++ ltldo : %s; true>%O --errors=ignore -f GFa
++ test 0 = 0
++ cat stderr
++ test -z 
++ ltldo : %s; true>%O --errors=warn -f GFa
++ test 0 = 0
++ grep :.*empty input stderr
+lcr-o0-gDid2J:1.1: no automaton read (empty input?)
++ ltldo {name} foo/bar/ltl2baextended -f GFa
++ grep % stderr
++ grep ltldo:.*foo/bar/ltl2baextended stderr
+ltldo: failed to run 'foo/bar/ltl2baextended': No such file or directory
++ ltldo {name} foo/bar/owl-21.00 ltl2nba -f GFa
++ grep % stderr
++ grep ltldo:.*foo/bar/owl-21.00 stderr
+ltldo: failed to run 'foo/bar/owl-21.00': No such file or directory
++ ltldo {name} foo/bar/owl-21.00 non-existant -f GFa
++ grep % stderr
+ltldo: no input %-sequence in '{name} foo/bar/owl-21.00 non-existant'.
+       Use one of %f,%s,%l,%w,%F,%S,%L,%W to indicate how to pass the formula.
++ autfilt -c
++ ltldo ltl2tgba -n2
++ genltl --and-gf=1..4
++ test 2 = 2
++ autfilt -c
++ genltl --and-gf=1..2
++ ltldo ltl2tgba ltl2tgba -s -n3
++ test 3 = 3
++ ltldo ltl2tgba -n2a
++ grep ltldo: failed to parse '2a'.*-n err
+ltldo: failed to parse '2a' as an integer (in argument of -n/--max-count).
++ genltl --rv-counter=9
++ ltldo ltl2tgba --stats=
+print("%[up]R + %[uc]R + %[sp]R + %[sc]R - %R\n");
+die if abs(%[up]R + %[uc]R + %[sp]R + %[sc]R - %R) > 0.02;
++ perl code.pl
+0 + 0.3 + 0 + 0.03 - 0.33
++ ltldo -f a ltl2dstar --ltl2nba=spin:ltl2tgba@-DS
+ltldo: failed to run 'ltl2dstar': No such file or directory
+PASS core/ltldo.test (exit status: 0)

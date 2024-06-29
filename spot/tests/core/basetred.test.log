@@ -1,0 +1,468 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test basetred.test
+== Running test basetred.test
++ echo basetred.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=basetred
++ testSubDir=basetred.dir
++ chmod -R a+rwx basetred.dir
++ rm -rf basetred.dir
++ mkdir basetred.dir
++ cd basetred.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ genaut --cycle-log-nba=3
++ grep -c {0} in1.hoa
++ test 3 -eq 3
++ autfilt --reduce-acceptance-set in1.hoa
++ autfilt --enlarge-acceptance-set in1.hoa
++ autfilt --reduce-acceptance-set out1l.hoa
++ autfilt --enlarge-acceptance-set out1r.hoa
++ grep -c {0} out1.hoa
++ test 1 -eq 1
++ grep -c {0} out1l.hoa
++ test 9 -eq 9
++ grep -c {0} out1r.hoa
++ test 1 -eq 1
++ diff out1l.hoa out1rl.hoa
++ autfilt --reduce-acceptance-set -S in1.hoa
++ autfilt --enlarge-acceptance-set -S in1.hoa
++ autfilt --enlarge-acceptance-set -S out1b.hoa
++ grep -c {0} out1b.hoa
++ test 1 -eq 1
++ grep -c {0} out1lb.hoa
++ test 3 -eq 3
++ grep -c {0} out1lbb.hoa
++ test 3 -eq 3
++ diff out1.hoa out1b.hoa
++ diff out1lb.hoa out1lbb.hoa
++ cat
++ autfilt --reduce-acceptance-set in2.hoa
++ autfilt --reduce-acceptance-set -S in2.hoa
++ autfilt --enlarge-acceptance-set out2.hoa
++ autfilt --enlarge-acceptance-set -S out2b.hoa
++ cat
++ cat
++ diff out2.hoa ex2.hoa
++ diff out2b.hoa ex2b.hoa
++ diff out2l.hoa in2.hoa
++ diff out2bl.hoa in2.hoa
++ randaut -n 20 -b -a.7 2
++ autcross --language-preserved --verbose autfilt --reduce-acceptance-set autfilt --enlarge-acceptance-set autfilt --enlarge-acceptance-set --reduce-acceptance-set
+-:1.1-48.7
+info: input	(10 st.,29 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i0-q8zUdH'>'lcr-o0-aDwcG1'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i0-oTnB1B'>'lcr-o1-Tff7Yo'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i0-sDmYRj'>'lcr-o2-1SWaHc'
+info: collected automata:
+info:   A0	(10 st.,29 ed.,1 sets)
+info:   A1	(10 st.,29 ed.,1 sets)
+info:   A2	(10 st.,29 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,29 ed.,1 sets) -> (55 st.,209 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,29 ed.,1 sets) -> (43 st.,161 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,29 ed.,1 sets) -> (52 st.,197 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,29 ed.,1 sets) -> (50 st.,189 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:49.1-94.7
+info: input	(10 st.,27 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i1-c1B5Pf'>'lcr-o0-gtTPH8'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i1-QO6Pok'>'lcr-o1-bCYZdd'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i1-271K8Y'>'lcr-o2-r2Z1Gh'
+info: collected automata:
+info:   A0	(10 st.,27 ed.,1 sets)
+info:   A1	(10 st.,27 ed.,1 sets)
+info:   A2	(10 st.,27 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,27 ed.,1 sets) -> (68 st.,257 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,27 ed.,1 sets) -> (53 st.,200 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,27 ed.,1 sets) -> (45 st.,168 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,27 ed.,1 sets) -> (61 st.,232 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:95.1-143.7
+info: input	(10 st.,30 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i2-NiD3Ut'>'lcr-o0-qdf3HV'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i2-dcc0y9'>'lcr-o1-kQ9pz5'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i2-fyUorq'>'lcr-o2-zQo2jd'
+info: collected automata:
+info:   A0	(10 st.,30 ed.,1 sets)
+info:   A1	(10 st.,30 ed.,1 sets)
+info:   A2	(10 st.,30 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,30 ed.,1 sets) -> (37 st.,133 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,30 ed.,1 sets) -> (28 st.,99 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,30 ed.,1 sets) -> (33 st.,118 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,30 ed.,1 sets) -> (30 st.,106 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:144.1-190.7
+info: input	(10 st.,28 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i3-DONExK'>'lcr-o0-XWeo4i'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i3-BkqmgH'>'lcr-o1-kfRzPV'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i3-bjhfn2'>'lcr-o2-3aq93q'
+info: collected automata:
+info:   A0	(10 st.,28 ed.,1 sets)
+info:   A1	(10 st.,28 ed.,1 sets)
+info:   A2	(10 st.,28 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,28 ed.,1 sets) -> (59 st.,226 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,28 ed.,1 sets) -> (42 st.,158 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,28 ed.,1 sets) -> (58 st.,222 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,28 ed.,1 sets) -> (43 st.,162 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:191.1-235.7
+info: input	(10 st.,26 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i4-R6T25A'>'lcr-o0-sNV55V'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i4-GGMCo7'>'lcr-o1-wSTQa8'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i4-gm4iXT'>'lcr-o2-Y6u7JF'
+info: collected automata:
+info:   A0	(10 st.,26 ed.,1 sets)
+info:   A1	(10 st.,26 ed.,1 sets)
+info:   A2	(10 st.,26 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,26 ed.,1 sets) -> (44 st.,153 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,26 ed.,1 sets) -> (33 st.,113 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,26 ed.,1 sets) -> (38 st.,133 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,26 ed.,1 sets) -> (41 st.,144 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:236.1-280.7
+info: input	(10 st.,26 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i5-iM13jX'>'lcr-o0-XGcQ5u'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i5-NIUnAF'>'lcr-o1-cfulnA'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i5-NGjYHP'>'lcr-o2-1ueNOO'
+info: collected automata:
+info:   A0	(10 st.,26 ed.,1 sets)
+info:   A1	(10 st.,26 ed.,1 sets)
+info:   A2	(10 st.,26 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,26 ed.,1 sets) -> (61 st.,232 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,26 ed.,1 sets) -> (41 st.,152 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,26 ed.,1 sets) -> (67 st.,256 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,26 ed.,1 sets) -> (42 st.,156 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:281.1-321.7
+info: input	(10 st.,22 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i6-gbjGEt'>'lcr-o0-WJQXQx'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i6-67ApMO'>'lcr-o1-oRhyUo'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i6-Khtvzg'>'lcr-o2-qmeIAB'
+info: collected automata:
+info:   A0	(10 st.,22 ed.,1 sets)
+info:   A1	(10 st.,22 ed.,1 sets)
+info:   A2	(10 st.,22 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,22 ed.,1 sets) -> (18 st.,56 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,22 ed.,0 sets) -> (18 st.,56 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,22 ed.,1 sets) -> (18 st.,56 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,22 ed.,1 sets) -> (18 st.,56 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:322.1-368.7
+info: input	(10 st.,28 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i7-beyRIw'>'lcr-o0-dvRchp'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i7-gHh7Er'>'lcr-o1-wT7Aci'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i7-8BFTF4'>'lcr-o2-KEgNgM'
+info: collected automata:
+info:   A0	(10 st.,28 ed.,1 sets)
+info:   A1	(10 st.,28 ed.,1 sets)
+info:   A2	(10 st.,28 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,28 ed.,1 sets) -> (34 st.,124 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,28 ed.,0 sets) -> (34 st.,124 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,28 ed.,1 sets) -> (34 st.,124 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,28 ed.,1 sets) -> (34 st.,124 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:369.1-416.7
+info: input	(10 st.,29 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i8-mx7fLo'>'lcr-o0-i6DOlM'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i8-yF5xNX'>'lcr-o1-T6N5AM'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i8-QGzJOE'>'lcr-o2-DxptQv'
+info: collected automata:
+info:   A0	(10 st.,29 ed.,1 sets)
+info:   A1	(10 st.,29 ed.,1 sets)
+info:   A2	(10 st.,29 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,29 ed.,1 sets) -> (50 st.,184 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,29 ed.,1 sets) -> (33 st.,118 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,29 ed.,1 sets) -> (46 st.,168 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,29 ed.,1 sets) -> (39 st.,140 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:417.1-464.7
+info: input	(10 st.,29 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i9-yCf6U0'>'lcr-o0-9PwF7D'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i9-EC4xHv'>'lcr-o1-5gI8yb'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i9-bUnuV2'>'lcr-o2-pjZoOK'
+info: collected automata:
+info:   A0	(10 st.,29 ed.,1 sets)
+info:   A1	(10 st.,29 ed.,1 sets)
+info:   A2	(10 st.,29 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,29 ed.,1 sets) -> (55 st.,212 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,29 ed.,1 sets) -> (35 st.,132 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,29 ed.,1 sets) -> (55 st.,212 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,29 ed.,1 sets) -> (43 st.,164 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:465.1-513.7
+info: input	(10 st.,30 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i10-ceGjJd'>'lcr-o0-Mnqvmu'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i10-MMKEbD'>'lcr-o1-YAkkzE'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i10-ICbxXF'>'lcr-o2-QQKQ32'
+info: collected automata:
+info:   A0	(10 st.,30 ed.,1 sets)
+info:   A1	(10 st.,30 ed.,1 sets)
+info:   A2	(10 st.,30 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,30 ed.,1 sets) -> (47 st.,177 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,30 ed.,0 sets) -> (47 st.,177 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,30 ed.,1 sets) -> (47 st.,177 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,30 ed.,1 sets) -> (47 st.,177 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:514.1-557.7
+info: input	(10 st.,25 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i11-IOzpVb'>'lcr-o0-kdAfR0'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i11-dp8lJr'>'lcr-o1-23ysF2'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i11-ApXGos'>'lcr-o2-TzB4Dk'
+info: collected automata:
+info:   A0	(10 st.,25 ed.,1 sets)
+info:   A1	(10 st.,25 ed.,1 sets)
+info:   A2	(10 st.,25 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,25 ed.,1 sets) -> (19 st.,59 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,25 ed.,0 sets) -> (19 st.,59 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,25 ed.,1 sets) -> (19 st.,59 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,25 ed.,1 sets) -> (19 st.,59 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:558.1-605.7
+info: input	(10 st.,29 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i12-mv62zp'>'lcr-o0-2tQFdx'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i12-R2N50m'>'lcr-o1-wJkMo4'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i12-lPQ6c8'>'lcr-o2-r6FqmQ'
+info: collected automata:
+info:   A0	(10 st.,29 ed.,1 sets)
+info:   A1	(10 st.,29 ed.,1 sets)
+info:   A2	(10 st.,29 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,29 ed.,1 sets) -> (95 st.,369 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,29 ed.,1 sets) -> (51 st.,194 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,29 ed.,1 sets) -> (76 st.,294 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,29 ed.,1 sets) -> (65 st.,250 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:606.1-650.7
+info: input	(10 st.,26 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i13-rDFm0f'>'lcr-o0-LqalE6'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i13-4rey4G'>'lcr-o1-66oLrT'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i13-8i5DUb'>'lcr-o2-UxLMF9'
+info: collected automata:
+info:   A0	(10 st.,26 ed.,1 sets)
+info:   A1	(10 st.,26 ed.,1 sets)
+info:   A2	(10 st.,26 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,26 ed.,1 sets) -> (110 st.,429 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,26 ed.,1 sets) -> (88 st.,341 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,26 ed.,1 sets) -> (110 st.,429 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,26 ed.,1 sets) -> (89 st.,345 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:651.1-693.7
+info: input	(10 st.,24 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i14-nZAeDg'>'lcr-o0-9jR9hb'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i14-bKEtet'>'lcr-o1-tfg53a'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i14-MqqpAY'>'lcr-o2-5wA7Sc'
+info: collected automata:
+info:   A0	(10 st.,24 ed.,1 sets)
+info:   A1	(10 st.,24 ed.,1 sets)
+info:   A2	(10 st.,24 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,24 ed.,1 sets) -> (38 st.,139 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,24 ed.,1 sets) -> (33 st.,119 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,24 ed.,1 sets) -> (40 st.,147 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,24 ed.,1 sets) -> (38 st.,139 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:694.1-743.7
+info: input	(10 st.,31 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i15-xtZwd3'>'lcr-o0-hdupSN'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i15-rkxA9K'>'lcr-o1-5IV3Bl'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i15-aqQytA'>'lcr-o2-njS6vL'
+info: collected automata:
+info:   A0	(10 st.,31 ed.,1 sets)
+info:   A1	(10 st.,31 ed.,1 sets)
+info:   A2	(10 st.,31 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,31 ed.,1 sets) -> (77 st.,293 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,31 ed.,1 sets) -> (58 st.,219 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,31 ed.,1 sets) -> (85 st.,323 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,31 ed.,1 sets) -> (67 st.,255 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:744.1-790.7
+info: input	(10 st.,28 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i16-XVSCjN'>'lcr-o0-pSC7iL'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i16-1qQNfn'>'lcr-o1-vMTMVY'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i16-q2ahuh'>'lcr-o2-4GtbcW'
+info: collected automata:
+info:   A0	(10 st.,28 ed.,1 sets)
+info:   A1	(10 st.,28 ed.,1 sets)
+info:   A2	(10 st.,28 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,28 ed.,1 sets) -> (166 st.,637 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,28 ed.,1 sets) -> (73 st.,275 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,28 ed.,1 sets) -> (131 st.,502 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,28 ed.,1 sets) -> (94 st.,359 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:791.1-838.7
+info: input	(10 st.,29 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i17-wChxfd'>'lcr-o0-lOCgpC'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i17-Qz991r'>'lcr-o1-f5hUAI'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i17-7RXAWE'>'lcr-o2-tfTCTP'
+info: collected automata:
+info:   A0	(10 st.,29 ed.,1 sets)
+info:   A1	(10 st.,29 ed.,1 sets)
+info:   A2	(10 st.,29 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,29 ed.,1 sets) -> (178 st.,693 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,29 ed.,1 sets) -> (75 st.,286 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,29 ed.,1 sets) -> (152 st.,592 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,29 ed.,1 sets) -> (125 st.,485 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:839.1-888.7
+info: input	(10 st.,31 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i18-7aZAPO'>'lcr-o0-1DYIn6'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i18-hqYMoU'>'lcr-o1-3ooShg'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i18-br1XQW'>'lcr-o2-A8HGQK'
+info: collected automata:
+info:   A0	(10 st.,31 ed.,1 sets)
+info:   A1	(10 st.,31 ed.,1 sets)
+info:   A2	(10 st.,31 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,31 ed.,1 sets) -> (100 st.,389 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,31 ed.,1 sets) -> (66 st.,254 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,31 ed.,1 sets) -> (100 st.,389 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,31 ed.,1 sets) -> (73 st.,282 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:889.1-939.7
+info: input	(10 st.,32 ed.,1 sets)
+Running [A0]: autfilt --reduce-acceptance-set 'lcr-i19-JTT9NI'>'lcr-o0-zXW45P'
+Running [A1]: autfilt --enlarge-acceptance-set 'lcr-i19-fCs5tW'>'lcr-o1-rnP2Mi'
+Running [A2]: autfilt --enlarge-acceptance-set --reduce-acceptance-set 'lcr-i19-hVlpih'>'lcr-o2-S3wprB'
+info: collected automata:
+info:   A0	(10 st.,32 ed.,1 sets)
+info:   A1	(10 st.,32 ed.,1 sets)
+info:   A2	(10 st.,32 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,32 ed.,1 sets) -> (134 st.,520 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,32 ed.,1 sets) -> (96 st.,370 ed.,1 sets)	Comp(A1)
+info:         A2	(10 st.,32 ed.,1 sets) -> (117 st.,452 ed.,1 sets)	Comp(A2)
+info:      input	(10 st.,32 ed.,1 sets) -> (130 st.,506 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A2)
+info: check_empty A2*Comp(input)
+info: check_empty input*Comp(A0)
+
+No problem detected.
+PASS core/basetred.test (exit status: 0)

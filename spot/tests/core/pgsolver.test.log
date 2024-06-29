@@ -1,0 +1,53 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test pgsolver.test
+== Running test pgsolver.test
++ echo pgsolver.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=pgsolver
++ testSubDir=pgsolver.dir
++ chmod -R a+rwx pgsolver.dir
++ rm -rf pgsolver.dir
++ mkdir pgsolver.dir
++ cd pgsolver.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ autfilt example1.pg
++ rest=(Fin(6) & (Inf(5) | (Fin(4) & (Inf(3) | (Fin(2) & (Inf(1) | Fin(0)))))))
++ cat
++ diff out example1.hoa
++ sed 1d example1.pg
++ autfilt example1.pg
++ diff out example1.hoa
++ cat
++ autfilt example2.pg
++ randaut -Aparity max odd 15 -Q1 0
++ grep Acceptance
++ parity15=Acceptance: 15 Fin(14) & (Inf(13) | (Fin(12) & (Inf(11) | (Fin(10) & (Inf(9) | (Fin(8) & (Inf(7) | (Fin(6) & (Inf(5) | (Fin(4) & (Inf(3) | (Fin(2) & (Inf(1) | Fin(0))))))))))))))
++ randaut -Aparity max odd 31 -Q1 0
++ grep Acceptance
++ parity31=Acceptance: 31 Fin(30) & (Inf(29) | (Fin(28) & (Inf(27) | (Fin(26) & (Inf(25) | (Fin(24) & (Inf(23) | (Fin(22) & (Inf(21) | (Fin(20) & (Inf(19) | (Fin(18) & (Inf(17) | (Fin(16) & (Inf(15) | (Fin(14) & (Inf(13) | (Fin(12) & (Inf(11) | (Fin(10) & (Inf(9) | (Fin(8) & (Inf(7) | (Fin(6) & (Inf(5) | (Fin(4) & (Inf(3) | (Fin(2) & (Inf(1) | Fin(0))))))))))))))))))))))))))))))
++ cat
++ diff out example2.hoa
++ cat
++ autfilt example3.pg
++ cat
++ diff stderr expected.err
++ sed s/ ".*"//g example1.hoa
++ diff stdout example3.hoa
+PASS core/pgsolver.test (exit status: 0)

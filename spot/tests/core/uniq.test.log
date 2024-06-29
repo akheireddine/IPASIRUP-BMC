@@ -1,0 +1,69 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test uniq.test
+== Running test uniq.test
++ echo uniq.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=uniq
++ testSubDir=uniq.dir
++ chmod -R a+rwx uniq.dir
++ rm -rf uniq.dir
++ mkdir uniq.dir
++ cd uniq.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ randaut a b -Q5 --hoa
++ randaut a b c -Q10 --hoa
++ autfilt --randomize aut1 --hoa
++ autfilt --randomize --seed=1 aut1 --hoa
++ autfilt --randomize --seed=2 aut1 --hoa
++ autfilt --randomize aut2 --hoa
++ autfilt --randomize --seed=1 aut2 --hoa
++ autfilt --randomize --seed=2 aut2 --hoa
++ cat aut1 aut2
++ cat aut1 aut2 rand11 rand12 rand13 rand21 rand22 rand23
++ autfilt all --uniq --hoa
++ diff aut out
++ run 0 randaut -Hl -u -n 4 -Q1 a b
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ LC_ALL=C+  sort
+autfilt -H
++ command -v randaut
++ grep &
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randaut
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randaut
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randaut -Hl -u -n 4 -Q1 a b
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randaut -Hl -u -n 4 -Q1 a b
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff out expected
++ randaut -Hl -u -n 5 -Q1 a b
++ test 2 = 2
++ grep failed to generate a new unique automaton stderr
+randaut: failed to generate a new unique automaton after 10000 trials
++ wc -l
++ test 4 = 4
+PASS core/uniq.test (exit status: 0)

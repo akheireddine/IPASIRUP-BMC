@@ -1,0 +1,2 @@
+8,(Fin(1) | Inf(0)) & (Fin(2) | Inf(1))
+8,(Fin(1) | Inf(0)) & (Fin(2) | Inf(1)) & (Fin(0) | Inf(2))

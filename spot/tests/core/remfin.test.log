@@ -1,0 +1,1822 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test remfin.test
+== Running test remfin.test
++ echo remfin.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=remfin
++ testSubDir=remfin.dir
++ chmod -R a+rwx remfin.dir
++ rm -rf remfin.dir
++ mkdir remfin.dir
++ cd remfin.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ cat
++ cat
++ run 0 autfilt -H --remove-fin test1
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H --remove-fin test1
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H --remove-fin test1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat output
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc
+--BODY--
+State: 0
+[t] 0
+[!0] 1
+[!1] 2
+State: 1 {0}
+[!0] 1
+State: 2 {0}
+[!1] 2
+--END--
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[t] 0 {0}
+[0] 1 {0}
+[!0] 2 {0}
+State: 1
+[1] 0
+[0&1] 1
+[!0&1] 2 {0}
+State: 2
+[!1] 0
+[0&!1] 1
+[!0&!1] 2 {0}
+--END--
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[t] 0
+[0] 1
+[!0] 2 {0}
+State: 1
+[1] 0
+[0&1] 1 {0}
+[!0&1] 2 {0}
+State: 2
+[!1] 0
+[0&!1] 1 {0}
+[!0&!1] 2 {0}
+--END--
+HOA: v1
+States: 1
+Start: 0
+AP: 0
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+properties: stutter-invariant weak
+--BODY--
+State: 0
+--END--
+HOA: v1
+States: 1
+Start: 0
+AP: 0
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic very-weak
+--BODY--
+State: 0
+[t] 0
+--END--
+HOA: v1
+States: 2
+Start: 0
+AP: 1 "p0"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[!0] 0
+[0] 1
+State: 1 {0}
+[!0] 1
+[0] 1
+--END--
+HOA: v1
+States: 10
+Start: 2
+AP: 1 "p1"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc
+--BODY--
+State: 0
+[0] 0
+[!0] 6
+[0] 8
+[0] 9
+State: 1
+[t] 3
+State: 2
+[0] 1
+[!0] 5
+State: 3
+[0] 0
+[!0] 6
+State: 4 {0}
+[0] 4
+[!0] 6
+State: 5
+[0] 3
+[!0] 7
+State: 6
+[0] 0
+[!0] 6
+State: 7
+[0] 4
+[!0] 6
+State: 8
+[0] 8
+State: 9 {0}
+[0] 9
+--END--
+HOA: v1
+States: 15
+Start: 13
+AP: 2 "p1" "p0"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc
+--BODY--
+State: 0 {0}
+[0&1] 0
+[!0&1] 1
+[0&!1] 11
+[!0&!1] 12
+State: 1 {0}
+[0&1] 0
+[!0&1] 1
+[0&!1] 11
+[!0&!1] 12
+State: 2 {0}
+[!0&1] 2
+[0&1] 9
+[!0&!1] 10
+[0&!1] 11
+State: 3 {0}
+[!0&1] 1
+[0&1] 3
+[0&!1] 11
+[!0&!1] 12
+State: 4 {0}
+[!0&1] 4
+[0&1] 7
+[!1] 12
+State: 5 {0}
+[!0&1] 5
+[0&1] 8
+[!0&!1] 10
+[0&!1] 12
+State: 6 {0}
+[!0&1] 4
+[0&1] 6
+[0&!1] 11
+[!0&!1] 12
+State: 7 {0}
+[!0&1] 4
+[0&1] 7
+[!1] 12
+State: 8
+[1] 8
+[!1] 12
+[1] 14
+State: 9
+[!0&1] 1
+[0&1] 3
+[0&!1] 11
+[!0&!1] 12
+State: 10 {0}
+[!0&1] 5
+[0&1] 8
+[!0&!1] 10
+[0&!1] 12
+State: 11 {0}
+[0&1] 6
+[!0&1] 8
+[0&!1] 11
+[!0&!1] 12
+State: 12
+[1] 8
+[!1] 12
+State: 13
+[!0&1] 2
+[0&1] 3
+[!0&!1] 10
+[0&!1] 11
+State: 14 {0}
+[1] 14
+--END--
+HOA: v1
+States: 4
+Start: 0
+AP: 2 "p1" "p0"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[!1] 0
+[0&1] 2
+[!0&1] 3
+State: 1 {0}
+[!1] 1
+[1] 2
+State: 2 {0}
+[!1] 1
+[1] 2
+State: 3 {0}
+[!1] 0
+[0&1] 2
+[!0&1] 3
+--END--
+HOA: v1
+States: 6
+Start: 5
+AP: 2 "p0" "p1"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[t] 0
+State: 1
+[!0] 0
+[0] 2
+State: 2 {0}
+[t] 2
+State: 3 {0}
+[!0&1] 1
+[0] 2
+[!0&!1] 3
+State: 4
+[1] 1
+[!1] 3
+State: 5
+[t] 4
+--END--
+HOA: v1
+States: 5
+Start: 1
+AP: 2 "p0" "p1"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc
+--BODY--
+State: 0
+[0&!1] 0
+[!0] 2
+[0&1] 3
+State: 1
+[0&!1] 1
+[!0 | 1] 2
+State: 2 {0}
+[0&!1] 0
+[!0 | 1] 2
+State: 3
+[0&!1] 0
+[!0] 2
+[0&1] 3
+[0&1] 4
+State: 4 {0}
+[0&1] 4
+--END--
+HOA: v1
+States: 37
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+--BODY--
+State: 0
+[!0] 0
+[0] 1
+[0&1] 2
+[0&1] 3
+[0&1] 4
+State: 1
+[t] 1
+[1] 2
+[1] 3
+[1] 4
+State: 2
+[t] 2
+[!1] 5
+[1] 4
+State: 3
+[t] 3
+[1] 4
+[!1] 6
+State: 4
+[t] 4
+[!1] 7
+[!1] 8
+[!1] 9
+State: 5
+[t] 5
+[1] 10
+[1] 7
+[1] 11
+State: 6
+[t] 6
+[1] 8
+[1] 12
+[1] 13
+State: 7
+[t] 7
+[1] 11
+[!1] 9
+State: 8
+[t] 8
+[!1] 9
+[1] 13
+State: 9
+[t] 9
+[1] 14
+[1] 15
+[1] 16
+State: 10
+[t] 10
+[!1] 17
+[1] 11
+State: 11
+[t] 11
+[!1] 18
+[!1] 14
+[!1] 19
+State: 12
+[t] 12
+[1] 13
+[!1] 20
+State: 13
+[t] 13
+[!1] 15
+[!1] 21
+[!1] 22
+State: 14
+[t] 14
+[!1] 19
+[1] 16
+State: 15
+[t] 15
+[1] 16
+[!1] 22
+State: 16
+[t] 16
+[!1] 23
+[!1] 24
+[!1] 25
+State: 17
+[1] 26
+[!1] 17
+[1] 27
+State: 18
+[1] 27
+[!1] 18
+[!1] 19
+State: 19
+[1] 28
+[!1] 19
+[1] 29
+State: 20
+[1] 30
+[1] 31
+[!1] 20
+State: 21
+[1] 31
+[!1] 21
+[!1] 22
+State: 22
+[1] 32
+[1] 33
+[!1] 22
+State: 23
+[1] 29
+[!1] 23
+[!1] 25
+State: 24
+[1] 33
+[!1] 24
+[!1] 25
+State: 25
+[1] 34
+[!1] 25
+State: 26
+[t] 26
+[1] 27
+State: 27
+[t] 27
+[!1] 28
+State: 28
+[t] 28
+[1] 29
+State: 29
+[t] 29
+[!1] 35
+State: 30
+[t] 30
+[1] 31
+State: 31
+[t] 31
+[!1] 32
+State: 32
+[t] 32
+[1] 33
+State: 33
+[t] 33
+[!1] 36
+State: 34 {0}
+[t] 34
+State: 35
+[1] 34
+[!1] 35
+State: 36
+[1] 34
+[!1] 36
+--END--
+HOA: v1
+States: 2
+Start: 0
+AP: 1 "a"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[0] 1
+[!0] 0
+State: 1 {0}
+[0] 1
+[!0] 0
+--END--
+HOA: v1
+States: 19
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc
+--BODY--
+State: 0
+[!0&1] 5
+[!0&1] 7
+State: 1
+[!0&1] 1
+[0&!1] 2
+[0&!1] 6
+[0&1] 9
+[!0&1] 14
+[!0&1] 18
+State: 2
+[!0&!1] 1
+[!0&1] 8
+[!0&!1] 18
+State: 3
+[0&1] 2
+[!0&1] 5
+State: 4
+[0&!1] 4
+[0&1] 5
+[0&1] 6
+[0&!1] 16
+State: 5
+[0&1] 9
+State: 6
+[!0&1] 4
+[0&1] 5
+[!0&1] 9
+[!0&1] 12
+State: 7 {0}
+[0&!1] 3
+[!0&1] 5
+[!0&!1] 7
+[0&!1] 8
+State: 8
+[!0&!1] 3
+[!0&1] 4
+[!0&1] 8
+[!0&1] 13
+State: 9
+[!0&1] 2
+[0&!1] 6
+[0&!1] 11
+[!0&1] 17
+State: 10 {0}
+[0&!1] 11
+State: 11 {0}
+[!0&1] 10
+[!0&1] 12
+State: 12 {0}
+[0&1] 11
+State: 13 {0}
+[!0&1] 13
+State: 14 {0}
+[!0&1] 14
+State: 15 {0}
+[!0&1] 17
+State: 16 {0}
+[0&!1] 16
+State: 17 {0}
+[!0&!1] 18
+State: 18 {0}
+[0&1] 15
+[!0&1] 18
+--END--
+HOA: v1
+States: 4
+Start: 0
+AP: 2 "b" "c"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[t] 0
+[0&!1] 1
+[0&1] 2
+[!0] 3
+State: 1
+[!0 | !1] 1 {0}
+[0&1] 2
+State: 2
+[!1] 1 {0}
+[1] 2
+State: 3
+[!0] 3 {0}
+--END--
+HOA: v1
+States: 6
+Start: 0
+AP: 3 "a" "b" "c"
+Acceptance: 3 (Inf(1)&Inf(2)) | (Inf(0)&Inf(2))
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[t] 0
+[!1&!2] 1
+[0] 2
+[1 | 2] 4
+State: 1
+[2] 0
+[!2] 1
+[0&!2] 3
+[2] 4
+[!2] 5
+State: 2
+[0] 2 {0 2}
+State: 3
+[0&!2] 3 {0}
+State: 4
+[1 | 2] 4 {1 2}
+[!1&!2] 5 {1}
+State: 5
+[2] 4 {1 2}
+[!2] 5 {1}
+--END--
++ diff -u output expected
++ run 0 autfilt -H --tgba test1
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H --tgba test1
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H --tgba test1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat output
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc
+--BODY--
+State: 0
+[t] 0
+[!0] 1
+[!1] 2
+State: 1 {0}
+[!0] 1
+State: 2 {0}
+[!1] 2
+--END--
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[t] 0 {0}
+[0] 1 {0}
+[!0] 2 {0}
+State: 1
+[1] 0
+[0&1] 1
+[!0&1] 2 {0}
+State: 2
+[!1] 0
+[0&!1] 1
+[!0&!1] 2 {0}
+--END--
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[t] 0
+[0] 1
+[!0] 2 {0}
+State: 1
+[1] 0
+[0&1] 1 {0}
+[!0&1] 2 {0}
+State: 2
+[!1] 0
+[0&!1] 1 {0}
+[!0&!1] 2 {0}
+--END--
+HOA: v1
+States: 1
+Start: 0
+AP: 0
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+properties: stutter-invariant very-weak
+--BODY--
+State: 0
+--END--
+HOA: v1
+States: 1
+Start: 0
+AP: 0
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic very-weak
+--BODY--
+State: 0
+[t] 0
+--END--
+HOA: v1
+States: 2
+Start: 0
+AP: 1 "p0"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[!0] 0
+[0] 1
+State: 1 {0}
+[t] 1
+--END--
+HOA: v1
+States: 9
+Start: 2
+AP: 1 "p1"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[0] 0
+[!0] 6
+[0] 8
+State: 1
+[t] 3
+State: 2
+[0] 1
+[!0] 5
+State: 3
+[0] 0
+[!0] 6
+State: 4
+[0] 4 {0}
+[!0] 6
+State: 5
+[0] 3
+[!0] 7
+State: 6
+[0] 0
+[!0] 6
+State: 7
+[0] 4
+[!0] 6
+State: 8
+[0] 8 {0}
+--END--
+HOA: v1
+States: 15
+Start: 13
+AP: 2 "p1" "p0"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[0&1] 0 {0}
+[!0&1] 1 {0}
+[0&!1] 11
+[!0&!1] 12
+State: 1
+[0&1] 0 {0}
+[!0&1] 1 {0}
+[0&!1] 11
+[!0&!1] 12
+State: 2
+[!0&1] 2 {0}
+[0&1] 9
+[!0&!1] 10
+[0&!1] 11
+State: 3
+[!0&1] 1
+[0&1] 3 {0}
+[0&!1] 11
+[!0&!1] 12
+State: 4
+[!0&1] 4 {0}
+[0&1] 7 {0}
+[!1] 12
+State: 5
+[!0&1] 5 {0}
+[0&1] 8
+[!0&!1] 10 {0}
+[0&!1] 12
+State: 6
+[!0&1] 4
+[0&1] 6 {0}
+[0&!1] 11 {0}
+[!0&!1] 12
+State: 7
+[!0&1] 4 {0}
+[0&1] 7 {0}
+[!1] 12
+State: 8
+[1] 8
+[!1] 12
+[1] 14
+State: 9
+[!0&1] 1
+[0&1] 3
+[0&!1] 11
+[!0&!1] 12
+State: 10
+[!0&1] 5 {0}
+[0&1] 8
+[!0&!1] 10 {0}
+[0&!1] 12
+State: 11
+[0&1] 6 {0}
+[!0&1] 8
+[0&!1] 11 {0}
+[!0&!1] 12
+State: 12
+[1] 8
+[!1] 12
+State: 13
+[!0&1] 2
+[0&1] 3
+[!0&!1] 10
+[0&!1] 11
+State: 14
+[1] 14 {0}
+--END--
+HOA: v1
+States: 4
+Start: 0
+AP: 2 "p1" "p0"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[!1] 0
+[0&1] 2
+[!0&1] 3
+State: 1
+[!1] 1 {0}
+[1] 2 {0}
+State: 2
+[!1] 1 {0}
+[1] 2 {0}
+State: 3
+[!1] 0 {0}
+[0&1] 2
+[!0&1] 3 {0}
+--END--
+HOA: v1
+States: 5
+Start: 4
+AP: 2 "p0" "p1"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc deterministic
+--BODY--
+State: 0
+[0] 1
+State: 1
+[t] 1 {0}
+State: 2
+[!0&1] 0
+[0] 1
+[!0&!1] 2 {0}
+State: 3
+[1] 0
+[!1] 2
+State: 4
+[t] 3
+--END--
+HOA: v1
+States: 5
+Start: 1
+AP: 2 "p0" "p1"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc
+--BODY--
+State: 0
+[0&!1] 0
+[!0] 2
+[0&1] 3
+State: 1
+[0&!1] 1
+[!0 | 1] 2
+State: 2 {0}
+[0&!1] 0
+[!0 | 1] 2
+State: 3
+[0&!1] 0
+[!0] 2
+[0&1] 3
+[0&1] 4
+State: 4 {0}
+[0&1] 4
+--END--
+HOA: v1
+States: 37
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+--BODY--
+State: 0
+[!0] 0
+[0] 1
+[0&1] 2
+[0&1] 3
+[0&1] 4
+State: 1
+[t] 1
+[1] 2
+[1] 3
+[1] 4
+State: 2
+[t] 2
+[1] 4
+[!1] 5
+State: 3
+[t] 3
+[1] 4
+[!1] 6
+State: 4
+[t] 4
+[!1] 7
+[!1] 8
+[!1] 9
+State: 5
+[t] 5
+[1] 7
+[1] 10
+[1] 11
+State: 6
+[t] 6
+[1] 8
+[1] 12
+[1] 13
+State: 7
+[t] 7
+[!1] 9
+[1] 11
+State: 8
+[t] 8
+[!1] 9
+[1] 13
+State: 9
+[t] 9
+[1] 14
+[1] 15
+[1] 16
+State: 10
+[t] 10
+[1] 11
+[!1] 17
+State: 11
+[t] 11
+[!1] 14
+[!1] 18
+[!1] 19
+State: 12
+[t] 12
+[1] 13
+[!1] 20
+State: 13
+[t] 13
+[!1] 15
+[!1] 21
+[!1] 22
+State: 14
+[t] 14
+[1] 16
+[!1] 19
+State: 15
+[t] 15
+[1] 16
+[!1] 22
+State: 16
+[t] 16
+[!1] 23
+[!1] 24
+[!1] 25
+State: 17
+[!1] 17
+[1] 26
+[1] 27
+State: 18
+[!1] 18
+[!1] 19
+[1] 27
+State: 19
+[!1] 19
+[1] 28
+[1] 29
+State: 20
+[!1] 20
+[1] 30
+[1] 31
+State: 21
+[!1] 21
+[!1] 22
+[1] 31
+State: 22
+[!1] 22
+[1] 32
+[1] 33
+State: 23
+[!1] 23
+[!1] 25
+[1] 29
+State: 24
+[!1] 24
+[!1] 25
+[1] 33
+State: 25
+[!1] 25
+[1] 34
+State: 26
+[t] 26
+[1] 27
+State: 27
+[t] 27
+[!1] 28
+State: 28
+[t] 28
+[1] 29
+State: 29
+[t] 29
+[!1] 35
+State: 30
+[t] 30
+[1] 31
+State: 31
+[t] 31
+[!1] 32
+State: 32
+[t] 32
+[1] 33
+State: 33
+[t] 33
+[!1] 36
+State: 34 {0}
+[t] 34
+State: 35
+[1] 34
+[!1] 35
+State: 36
+[1] 34
+[!1] 36
+--END--
+HOA: v1
+States: 2
+Start: 0
+AP: 1 "a"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[!0] 0
+[0] 1
+State: 1 {0}
+[!0] 0
+[0] 1
+--END--
+HOA: v1
+States: 19
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[!0&1] 5
+[!0&1] 7
+State: 1
+[!0&1] 1
+[0&!1] 2
+[0&!1] 6
+[0&1] 9
+[!0&1] 14
+[!0&1] 18
+State: 2
+[!0&!1] 1
+[!0&1] 8
+[!0&!1] 18
+State: 3
+[0&1] 2
+[!0&1] 5
+State: 4
+[0&!1] 4
+[0&1] 5
+[0&1] 6
+[0&!1] 16
+State: 5
+[0&1] 9
+State: 6
+[!0&1] 4
+[0&1] 5
+[!0&1] 9
+[!0&1] 12
+State: 7
+[0&!1] 3
+[!0&1] 5
+[!0&!1] 7 {0}
+[0&!1] 8
+State: 8
+[!0&!1] 3
+[!0&1] 4
+[!0&1] 8
+[!0&1] 13
+State: 9
+[!0&1] 2
+[0&!1] 6
+[0&!1] 11
+[!0&1] 17
+State: 10
+[0&!1] 11 {0}
+State: 11
+[!0&1] 10 {0}
+[!0&1] 12 {0}
+State: 12
+[0&1] 11 {0}
+State: 13
+[!0&1] 13 {0}
+State: 14
+[!0&1] 14 {0}
+State: 15
+[!0&1] 17 {0}
+State: 16
+[0&!1] 16 {0}
+State: 17
+[!0&!1] 18 {0}
+State: 18
+[0&1] 15 {0}
+[!0&1] 18 {0}
+--END--
+HOA: v1
+States: 4
+Start: 0
+AP: 2 "b" "c"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[t] 0
+[t] 1
+[0&!1] 2
+[0&1] 3
+State: 1
+[!0] 1 {0}
+State: 2
+[!0 | !1] 2 {0}
+[0&1] 3
+State: 3
+[!1] 2 {0}
+[1] 3
+--END--
+HOA: v1
+States: 5
+Start: 0
+AP: 3 "a" "b" "c"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[t] 0
+[!1&!2] 1
+[0] 2
+[1 | 2] 3
+State: 1
+[2] 0
+[!2] 1
+[2] 3
+[!2] 4
+State: 2
+[0] 2 {0}
+State: 3
+[1 | 2] 3 {0}
+[!1&!2] 4
+State: 4
+[2] 3 {0}
+[!2] 4
+--END--
++ diff -u output expected-tgba
++ cat
++ autfilt --remove-fin 324
++ autfilt -c --reject-word=a;cycle{!a&!b} 324 out
++ test 2 = 2
++ randaut -Arandom 6 -Q10 -n10 3 -Hl
++ autcross --verbose --language-preserved -Ftest1 autfilt --remove-fin autfilt --tgba
+test1:6.1-17.7
+info: input	(1 st.,4 ed.,2 sets) deterministic complete
+Running [A0]: autfilt --remove-fin 'lcr-i0-YG8aVr'>'lcr-o0-EED98r'
+Running [A1]: autfilt --tgba 'lcr-i0-W5b3rV'>'lcr-o1-jQ0Gau'
+info: collected automata:
+info:   A0	(3 st.,5 ed.,1 sets)
+info:   A1	(3 st.,5 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(3 st.,5 ed.,1 sets) -> (4 st.,16 ed.,2 sets)	Comp(A0)
+info:         A1	(3 st.,5 ed.,1 sets) -> (4 st.,16 ed.,2 sets)	Comp(A1)
+info:      input	(1 st.,4 ed.,2 sets) -> (1 st.,4 ed.,2 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:22.1-40.7
+info: input	(3 st.,9 ed.,5 sets)
+Running [A0]: autfilt --remove-fin 'lcr-i1-JJhAm7'>'lcr-o0-9JBAXn'
+Running [A1]: autfilt --tgba 'lcr-i1-Q3zOf1'>'lcr-o1-BjkWhk'
+info: collected automata:
+info:   A0	(3 st.,9 ed.,1 sets)
+info:   A1	(3 st.,9 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(3 st.,9 ed.,1 sets) -> (1 st.,1 ed.,1 sets)	Comp(A0)
+info:         A1	(3 st.,9 ed.,1 sets) -> (1 st.,1 ed.,1 sets)	Comp(A1)
+info:      input	(3 st.,9 ed.,5 sets) -> (1 st.,1 ed.,0 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:45.1-64.7
+info: input	(3 st.,9 ed.,4 sets)
+Running [A0]: autfilt --remove-fin 'lcr-i2-rsm27S'>'lcr-o0-MCMyjo'
+Running [A1]: autfilt --tgba 'lcr-i2-gl0SnC'>'lcr-o1-NALK9D'
+info: collected automata:
+info:   A0	(3 st.,9 ed.,1 sets)
+info:   A1	(3 st.,9 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(3 st.,9 ed.,1 sets) -> (5 st.,18 ed.,1 sets)	Comp(A0)
+info:         A1	(3 st.,9 ed.,1 sets) -> (5 st.,18 ed.,1 sets)	Comp(A1)
+info:      input	(3 st.,9 ed.,4 sets) -> (5 st.,18 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:68.1-74.7
+info: input	(1 st.,0 ed.,0 sets) deterministic
+Running [A0]: autfilt --remove-fin 'lcr-i3-jTAjiH'>'lcr-o0-hob6dt'
+Running [A1]: autfilt --tgba 'lcr-i3-5ISYqd'>'lcr-o1-pvLMet'
+info: collected automata:
+info:   A0	(1 st.,0 ed.,0 sets) deterministic
+info:   A1	(1 st.,0 ed.,0 sets) deterministic
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(1 st.,0 ed.,0 sets) -> (1 st.,1 ed.,0 sets)	Comp(A0)
+info:         A1	(1 st.,0 ed.,0 sets) -> (1 st.,1 ed.,0 sets)	Comp(A1)
+info:      input	(1 st.,0 ed.,0 sets) -> (1 st.,1 ed.,0 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:75.1-82.7
+info: input	(1 st.,1 ed.,0 sets) deterministic complete
+Running [A0]: autfilt --remove-fin 'lcr-i4-EgHWjO'>'lcr-o0-gCpBDb'
+Running [A1]: autfilt --tgba 'lcr-i4-2tVAR7'>'lcr-o1-U7ugjw'
+info: collected automata:
+info:   A0	(1 st.,1 ed.,0 sets) deterministic complete
+info:   A1	(1 st.,1 ed.,0 sets) deterministic complete
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(1 st.,1 ed.,0 sets) -> (1 st.,1 ed.,0 sets)	Comp(A0)
+info:         A1	(1 st.,1 ed.,0 sets) -> (1 st.,1 ed.,0 sets)	Comp(A1)
+info:      input	(1 st.,1 ed.,0 sets) -> (1 st.,1 ed.,0 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:86.1-99.7
+info: input	(2 st.,4 ed.,2 sets) deterministic complete
+Running [A0]: autfilt --remove-fin 'lcr-i5-0NVaKD'>'lcr-o0-PYhm2g'
+Running [A1]: autfilt --tgba 'lcr-i5-09EIcL'>'lcr-o1-BVYvQi'
+info: collected automata:
+info:   A0	(2 st.,4 ed.,1 sets) deterministic complete
+info:   A1	(2 st.,3 ed.,1 sets) deterministic complete
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(2 st.,4 ed.,1 sets) -> (2 st.,4 ed.,1 sets)	Comp(A0)
+info:         A1	(2 st.,3 ed.,1 sets) -> (2 st.,3 ed.,1 sets)	Comp(A1)
+info:      input	(2 st.,4 ed.,1 sets) -> (2 st.,4 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:100.1-132.7
+info: input	(8 st.,16 ed.,4 sets) deterministic complete
+Running [A0]: autfilt --remove-fin 'lcr-i6-hIRNlA'>'lcr-o0-GG4k5S'
+Running [A1]: autfilt --tgba 'lcr-i6-fSxnjK'>'lcr-o1-p8NnmC'
+info: collected automata:
+info:   A0	(10 st.,19 ed.,1 sets)
+info:   A1	(9 st.,17 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,19 ed.,1 sets) -> (7 st.,13 ed.,1 sets)	Comp(A0)
+info:         A1	(9 st.,17 ed.,1 sets) -> (7 st.,13 ed.,1 sets)	Comp(A1)
+info:      input	(8 st.,16 ed.,3 sets) -> (8 st.,16 ed.,3 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:134.1-144.47
+info: input	(14 st.,56 ed.,10 sets) deterministic complete
+Running [A0]: autfilt --remove-fin 'lcr-i7-ayQcXc'>'lcr-o0-h8aPkY'
+Running [A1]: autfilt --tgba 'lcr-i7-8FhVWm'>'lcr-o1-6up5Sy'
+info: collected automata:
+info:   A0	(15 st.,52 ed.,1 sets)
+info:   A1	(15 st.,52 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(15 st.,52 ed.,1 sets) -> (9 st.,28 ed.,1 sets)	Comp(A0)
+info:         A1	(15 st.,52 ed.,1 sets) -> (9 st.,28 ed.,1 sets)	Comp(A1)
+info:      input	(14 st.,56 ed.,10 sets) -> (14 st.,56 ed.,10 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:152.1-156.69
+info: input	(4 st.,10 ed.,6 sets) deterministic complete
+Running [A0]: autfilt --remove-fin 'lcr-i8-7WNVVE'>'lcr-o0-9vBcV9'
+Running [A1]: autfilt --tgba 'lcr-i8-UeSr0Q'>'lcr-o1-MIT9yS'
+info: collected automata:
+info:   A0	(4 st.,10 ed.,1 sets) deterministic complete
+info:   A1	(4 st.,10 ed.,1 sets) deterministic complete
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(4 st.,10 ed.,1 sets) -> (4 st.,10 ed.,1 sets)	Comp(A0)
+info:         A1	(4 st.,10 ed.,1 sets) -> (4 st.,10 ed.,1 sets)	Comp(A1)
+info:      input	(4 st.,10 ed.,4 sets) -> (4 st.,10 ed.,4 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:166.1-170.55
+info: input	(6 st.,24 ed.,2 sets) deterministic complete
+Running [A0]: autfilt --remove-fin 'lcr-i9-UiWxZq'>'lcr-o0-gU0JKg'
+Running [A1]: autfilt --tgba 'lcr-i9-MYtAGV'>'lcr-o1-zub3yA'
+info: collected automata:
+info:   A0	(6 st.,10 ed.,1 sets) deterministic complete
+info:   A1	(5 st.,8 ed.,1 sets) deterministic
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(6 st.,10 ed.,1 sets) -> (6 st.,10 ed.,1 sets)	Comp(A0)
+info:         A1	(5 st.,8 ed.,1 sets) -> (6 st.,10 ed.,1 sets)	Comp(A1)
+info:      input	(6 st.,24 ed.,2 sets) -> (6 st.,24 ed.,2 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:176.1-180.51
+info: input	(4 st.,16 ed.,4 sets) deterministic complete
+Running [A0]: autfilt --remove-fin 'lcr-i10-gX8eRx'>'lcr-o0-egpk2F'
+Running [A1]: autfilt --tgba 'lcr-i10-ntQ4Y6'>'lcr-o1-ut7kV1'
+info: collected automata:
+info:   A0	(5 st.,12 ed.,1 sets)
+info:   A1	(5 st.,12 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(5 st.,12 ed.,1 sets) -> (5 st.,20 ed.,2 sets)	Comp(A0)
+info:         A1	(5 st.,12 ed.,1 sets) -> (5 st.,20 ed.,2 sets)	Comp(A1)
+info:      input	(4 st.,16 ed.,4 sets) -> (4 st.,16 ed.,4 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:182.1-210.32
+info: input	(37 st.,108 ed.,24 sets) complete
+Running [A0]: autfilt --remove-fin 'lcr-i11-6g6Fvq'>'lcr-o0-q3YtjG'
+Running [A1]: autfilt --tgba 'lcr-i11-lPYlck'>'lcr-o1-TVyPPT'
+info: collected automata:
+info:   A0	(37 st.,108 ed.,1 sets) complete
+info:   A1	(37 st.,108 ed.,1 sets) complete
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(37 st.,108 ed.,1 sets) -> (6 st.,12 ed.,0 sets)	Comp(A0)
+info:         A1	(37 st.,108 ed.,1 sets) -> (6 st.,12 ed.,0 sets)	Comp(A1)
+info:      input	(37 st.,108 ed.,14 sets) -> (6 st.,12 ed.,0 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:211.1-223.7
+info: input	(2 st.,4 ed.,3 sets) deterministic complete
+Running [A0]: autfilt --remove-fin 'lcr-i12-4LvLN4'>'lcr-o0-EkUQca'
+Running [A1]: autfilt --tgba 'lcr-i12-4vrfYJ'>'lcr-o1-pgLtc4'
+info: collected automata:
+info:   A0	(2 st.,4 ed.,1 sets) deterministic complete
+info:   A1	(2 st.,4 ed.,1 sets) deterministic complete
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(2 st.,4 ed.,1 sets) -> (2 st.,4 ed.,1 sets)	Comp(A0)
+info:         A1	(2 st.,4 ed.,1 sets) -> (2 st.,4 ed.,1 sets)	Comp(A1)
+info:      input	(2 st.,4 ed.,2 sets) -> (2 st.,4 ed.,2 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:229.1-237.16
+info: input	(10 st.,26 ed.,4 sets)
+Running [A0]: autfilt --remove-fin 'lcr-i13-LAZfCH'>'lcr-o0-hXFKZT'
+Running [A1]: autfilt --tgba 'lcr-i13-OVHtoc'>'lcr-o1-tQK8YN'
+info: collected automata:
+info:   A0	(19 st.,45 ed.,1 sets)
+info:   A1	(19 st.,45 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(19 st.,45 ed.,1 sets) -> (33 st.,114 ed.,1 sets)	Comp(A0)
+info:         A1	(19 st.,45 ed.,1 sets) -> (33 st.,114 ed.,1 sets)	Comp(A1)
+info:      input	(10 st.,26 ed.,4 sets) -> (33 st.,114 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:239.1-243.7
+info: input	(3 st.,8 ed.,3 sets) complete
+Running [A0]: autfilt --remove-fin 'lcr-i14-QyqEuO'>'lcr-o0-nWc92z'
+Running [A1]: autfilt --tgba 'lcr-i14-YGNF4U'>'lcr-o1-QWqdK7'
+info: collected automata:
+info:   A0	(4 st.,9 ed.,1 sets)
+info:   A1	(4 st.,9 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(4 st.,9 ed.,1 sets) -> (5 st.,20 ed.,2 sets)	Comp(A0)
+info:         A1	(4 st.,9 ed.,1 sets) -> (5 st.,20 ed.,2 sets)	Comp(A1)
+info:      input	(3 st.,8 ed.,3 sets) -> (5 st.,20 ed.,2 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:247.1-266.7
+info: input	(2 st.,10 ed.,4 sets) complete
+Running [A0]: autfilt --remove-fin 'lcr-i15-rKEtg4'>'lcr-o0-mCagFU'
+Running [A1]: autfilt --tgba 'lcr-i15-h0BZfa'>'lcr-o1-1eJFKU'
+info: collected automata:
+info:   A0	(6 st.,15 ed.,3 sets)
+info:   A1	(5 st.,13 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(6 st.,15 ed.,3 sets) -> (16 st.,128 ed.,2 sets)	Comp(A0)
+info:         A1	(5 st.,13 ed.,1 sets) -> (16 st.,128 ed.,2 sets)	Comp(A1)
+info:      input	(2 st.,10 ed.,4 sets) -> (16 st.,128 ed.,2 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:267.1-650
+info: input	(10 st.,25 ed.,6 sets)
+Running [A0]: autfilt --remove-fin 'lcr-i16-hUoHsY'>'lcr-o0-70a1vR'
+Running [A1]: autfilt --tgba 'lcr-i16-EyiPZZ'>'lcr-o1-WCuJm0'
+info: collected automata:
+info:   A0	(44 st.,117 ed.,1 sets)
+info:   A1	(44 st.,117 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(44 st.,117 ed.,1 sets) -> (81 st.,306 ed.,1 sets)	Comp(A0)
+info:         A1	(44 st.,117 ed.,1 sets) -> (81 st.,306 ed.,1 sets)	Comp(A1)
+info:      input	(10 st.,25 ed.,6 sets) -> (81 st.,306 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:268.1-679
+info: input	(10 st.,27 ed.,6 sets)
+Running [A0]: autfilt --remove-fin 'lcr-i17-Thpdsb'>'lcr-o0-JG82q3'
+Running [A1]: autfilt --tgba 'lcr-i17-g4rBz7'>'lcr-o1-42Gled'
+info: collected automata:
+info:   A0	(26 st.,77 ed.,2 sets)
+info:   A1	(22 st.,61 ed.,2 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(26 st.,77 ed.,2 sets) -> (25 st.,98 ed.,2 sets)	Comp(A0)
+info:         A1	(22 st.,61 ed.,2 sets) -> (25 st.,98 ed.,2 sets)	Comp(A1)
+info:      input	(10 st.,27 ed.,6 sets) -> (25 st.,98 ed.,2 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:269.1-702
+info: input	(10 st.,28 ed.,6 sets)
+Running [A0]: autfilt --remove-fin 'lcr-i18-37f2Ai'>'lcr-o0-z1fbis'
+Running [A1]: autfilt --tgba 'lcr-i18-6JqZtX'>'lcr-o1-Dp3FwE'
+info: collected automata:
+info:   A0	(20 st.,65 ed.,3 sets)
+info:   A1	(20 st.,65 ed.,3 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(20 st.,65 ed.,3 sets) -> (75 st.,363 ed.,2 sets)	Comp(A0)
+info:         A1	(20 st.,65 ed.,3 sets) -> (75 st.,363 ed.,2 sets)	Comp(A1)
+info:      input	(10 st.,28 ed.,6 sets) -> (75 st.,363 ed.,2 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:270.1-686
+info: input	(10 st.,27 ed.,6 sets)
+Running [A0]: autfilt --remove-fin 'lcr-i19-Dpr72d'>'lcr-o0-nEZpFv'
+Running [A1]: autfilt --tgba 'lcr-i19-kDuroB'>'lcr-o1-SSv53i'
+info: collected automata:
+info:   A0	(36 st.,87 ed.,1 sets)
+info:   A1	(36 st.,87 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(36 st.,87 ed.,1 sets) -> (67 st.,315 ed.,2 sets)	Comp(A0)
+info:         A1	(36 st.,87 ed.,1 sets) -> (67 st.,315 ed.,2 sets)	Comp(A1)
+info:      input	(10 st.,27 ed.,6 sets) -> (67 st.,315 ed.,2 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:271.1-767
+info: input	(10 st.,31 ed.,6 sets)
+Running [A0]: autfilt --remove-fin 'lcr-i20-La0RDX'>'lcr-o0-MOLiA5'
+Running [A1]: autfilt --tgba 'lcr-i20-f5GX0r'>'lcr-o1-YU2HHw'
+info: collected automata:
+info:   A0	(32 st.,84 ed.,5 sets)
+info:   A1	(28 st.,76 ed.,2 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(32 st.,84 ed.,5 sets) -> (74 st.,299 ed.,3 sets)	Comp(A0)
+info:         A1	(28 st.,76 ed.,2 sets) -> (74 st.,299 ed.,3 sets)	Comp(A1)
+info:      input	(10 st.,31 ed.,6 sets) -> (74 st.,299 ed.,3 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:272.1-723
+info: input	(10 st.,31 ed.,6 sets)
+Running [A0]: autfilt --remove-fin 'lcr-i21-32Zm9i'>'lcr-o0-j7v48Y'
+Running [A1]: autfilt --tgba 'lcr-i21-FozbUs'>'lcr-o1-rXo15u'
+info: collected automata:
+info:   A0	(48 st.,144 ed.,5 sets)
+info:   A1	(47 st.,142 ed.,2 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(48 st.,144 ed.,5 sets) -> (724 st.,3245 ed.,4 sets)	Comp(A0)
+info:         A1	(47 st.,142 ed.,2 sets) -> (724 st.,3245 ed.,4 sets)	Comp(A1)
+info:      input	(10 st.,31 ed.,6 sets) -> (724 st.,3245 ed.,4 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:273.1-747
+info: input	(10 st.,30 ed.,6 sets)
+Running [A0]: autfilt --remove-fin 'lcr-i22-SZZDx9'>'lcr-o0-dDci2E'
+Running [A1]: autfilt --tgba 'lcr-i22-8gO1bB'>'lcr-o1-hwhW7V'
+info: collected automata:
+info:   A0	(19 st.,52 ed.,2 sets)
+info:   A1	(18 st.,50 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(19 st.,52 ed.,2 sets) -> (28 st.,124 ed.,3 sets)	Comp(A0)
+info:         A1	(18 st.,50 ed.,1 sets) -> (28 st.,124 ed.,3 sets)	Comp(A1)
+info:      input	(10 st.,30 ed.,6 sets) -> (28 st.,124 ed.,3 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:274.1-722
+info: input	(10 st.,30 ed.,6 sets)
+Running [A0]: autfilt --remove-fin 'lcr-i23-OPM049'>'lcr-o0-BCyxqa'
+Running [A1]: autfilt --tgba 'lcr-i23-bvRb9m'>'lcr-o1-Ug6kjY'
+info: collected automata:
+info:   A0	(34 st.,91 ed.,1 sets)
+info:   A1	(34 st.,91 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(34 st.,91 ed.,1 sets) -> (56 st.,288 ed.,2 sets)	Comp(A0)
+info:         A1	(34 st.,91 ed.,1 sets) -> (56 st.,288 ed.,2 sets)	Comp(A1)
+info:      input	(10 st.,30 ed.,6 sets) -> (51 st.,255 ed.,2 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:275.1-826
+info: input	(10 st.,36 ed.,6 sets)
+Running [A0]: autfilt --remove-fin 'lcr-i24-1nHp5W'>'lcr-o0-saaa8r'
+Running [A1]: autfilt --tgba 'lcr-i24-hsmx1k'>'lcr-o1-FbTu7A'
+info: collected automata:
+info:   A0	(30 st.,88 ed.,3 sets)
+info:   A1	(29 st.,86 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(30 st.,88 ed.,3 sets) -> (102 st.,553 ed.,2 sets)	Comp(A0)
+info:         A1	(29 st.,86 ed.,1 sets) -> (102 st.,553 ed.,2 sets)	Comp(A1)
+info:      input	(10 st.,36 ed.,6 sets) -> (102 st.,553 ed.,2 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+test1:276.1-817
+info: input	(10 st.,37 ed.,6 sets)
+Running [A0]: autfilt --remove-fin 'lcr-i25-L5gk31'>'lcr-o0-afxxMO'
+Running [A1]: autfilt --tgba 'lcr-i25-dG2HGo'>'lcr-o1-CDax3X'
+info: collected automata:
+info:   A0	(60 st.,229 ed.,1 sets)
+info:   A1	(60 st.,229 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(60 st.,229 ed.,1 sets) -> (5751 st.,35334 ed.,2 sets)	Comp(A0)
+info:         A1	(60 st.,229 ed.,1 sets) -> (5751 st.,35334 ed.,2 sets)	Comp(A1)
+info:      input	(10 st.,37 ed.,6 sets) -> (5751 st.,35334 ed.,2 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+No problem detected.
++ SPOT_STREETT_CONV_MIN=0 autcross --language-preserved -Ftest1 SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin %H>%O SPOT_STREETT_CONV_MIN=1 autfilt --tgba %H>%O
+test1:6.1-17.7
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i0-f0tOKn'>'lcr-o0-vuLsni'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i0-cUCDLt'>'lcr-o1-3hUSV0'
+Performing sanity checks and gathering statistics...
+
+test1:22.1-40.7
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i1-B7GmsC'>'lcr-o0-Yx11k2'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i1-MKOBs4'>'lcr-o1-qgBOud'
+Performing sanity checks and gathering statistics...
+
+test1:45.1-64.7
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i2-wxjth9'>'lcr-o0-GpMqwY'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i2-ip3ezm'>'lcr-o1-ymxzMx'
+Performing sanity checks and gathering statistics...
+
+test1:68.1-74.7
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i3-2dvRIO'>'lcr-o0-HjJxfy'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i3-xgIJ3D'>'lcr-o1-E3VWSF'
+Performing sanity checks and gathering statistics...
+
+test1:75.1-82.7
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i4-uAIoAg'>'lcr-o0-6u7xNf'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i4-po3cZi'>'lcr-o1-yBE5JS'
+Performing sanity checks and gathering statistics...
+
+test1:86.1-99.7
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i5-0Q66eb'>'lcr-o0-7xon47'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i5-DWIbGa'>'lcr-o1-hZ5NIo'
+Performing sanity checks and gathering statistics...
+
+test1:100.1-132.7
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i6-aNsjZT'>'lcr-o0-RXua9E'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i6-50DZRI'>'lcr-o1-dsVwck'
+Performing sanity checks and gathering statistics...
+
+test1:134.1-144.47
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i7-oaKZHA'>'lcr-o0-aWPnf8'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i7-UlWpG8'>'lcr-o1-DZ1QJp'
+Performing sanity checks and gathering statistics...
+
+test1:152.1-156.69
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i8-koSgYM'>'lcr-o0-zQyKMB'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i8-jX0kOu'>'lcr-o1-BwnPAX'
+Performing sanity checks and gathering statistics...
+
+test1:166.1-170.55
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i9-Qyi4W1'>'lcr-o0-oBPL4o'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i9-AAx5br'>'lcr-o1-x5SkuP'
+Performing sanity checks and gathering statistics...
+
+test1:176.1-180.51
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i10-U0cOx7'>'lcr-o0-TJ8x6c'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i10-Jd4tx0'>'lcr-o1-4TCnia'
+Performing sanity checks and gathering statistics...
+
+test1:182.1-210.32
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i11-Vr4DD6'>'lcr-o0-eJhOa7'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i11-r0LkM0'>'lcr-o1-XCse0S'
+Performing sanity checks and gathering statistics...
+
+test1:211.1-223.7
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i12-QBsQR4'>'lcr-o0-QDkykX'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i12-owz1W6'>'lcr-o1-2D1ldW'
+Performing sanity checks and gathering statistics...
+
+test1:229.1-237.16
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i13-r0aWMG'>'lcr-o0-C7BOKp'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i13-ucGzGH'>'lcr-o1-PFrQAc'
+Performing sanity checks and gathering statistics...
+
+test1:239.1-243.7
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i14-QuOVNo'>'lcr-o0-vFnw3f'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i14-dyNToE'>'lcr-o1-V7Epqb'
+Performing sanity checks and gathering statistics...
+
+test1:247.1-266.7
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i15-tqmhWw'>'lcr-o0-hLbZzx'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i15-cjPYt3'>'lcr-o1-ARMv0x'
+Performing sanity checks and gathering statistics...
+
+test1:267.1-650
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i16-EV6ubm'>'lcr-o0-5xsxla'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i16-XPoWje'>'lcr-o1-YYHlOR'
+Performing sanity checks and gathering statistics...
+
+test1:268.1-679
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i17-ERKgHA'>'lcr-o0-fCgZDz'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i17-aXnO4c'>'lcr-o1-r0QJAM'
+Performing sanity checks and gathering statistics...
+
+test1:269.1-702
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i18-7Z0CWx'>'lcr-o0-E2prAt'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i18-JRXcCb'>'lcr-o1-YFPdhH'
+Performing sanity checks and gathering statistics...
+
+test1:270.1-686
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i19-y9zUQt'>'lcr-o0-gLerCG'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i19-tBiwuQ'>'lcr-o1-oVckss'
+Performing sanity checks and gathering statistics...
+
+test1:271.1-767
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i20-lPh63c'>'lcr-o0-15Py54'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i20-pOkKxt'>'lcr-o1-LkR6kS'
+Performing sanity checks and gathering statistics...
+
+test1:272.1-723
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i21-JGFYsP'>'lcr-o0-R0t1OM'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i21-NSRWrH'>'lcr-o1-TDzXdS'
+Performing sanity checks and gathering statistics...
+
+test1:273.1-747
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i22-BaeCWx'>'lcr-o0-emgUoi'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i22-GMHEG9'>'lcr-o1-wBoGAR'
+Performing sanity checks and gathering statistics...
+
+test1:274.1-722
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i23-PqpJiC'>'lcr-o0-65aDHM'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i23-6ssaGm'>'lcr-o1-w91ZVX'
+Performing sanity checks and gathering statistics...
+
+test1:275.1-826
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i24-IQu8ec'>'lcr-o0-lOsed8'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i24-w6OCx5'>'lcr-o1-uM4ZxA'
+Performing sanity checks and gathering statistics...
+
+test1:276.1-817
+Running [A0]: SPOT_STREETT_CONV_MIN=1 autfilt --remove-fin 'lcr-i25-QtKyfZ'>'lcr-o0-UUjiY5'
+Running [A1]: SPOT_STREETT_CONV_MIN=1 autfilt --tgba 'lcr-i25-00Lfly'>'lcr-o1-nVuZbg'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
++ ltl2tgba true
++ autfilt -F h1 --acceptance-is=Fin-less
+HOA: v1
+name: "1"
+States: 1
+Start: 0
+AP: 0
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic stutter-invariant terminal very-weak
+--BODY--
+State: 0
+[t] 0
+--END--
++ autfilt --complement -F h1
++ autfilt -F h2 --acceptance-is=f
+HOA: v1
+States: 1
+Start: 0
+AP: 0
+acc-name: none
+Acceptance: 0 f
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic terminal very-weak
+--BODY--
+State: 0
+[t] 0
+--END--
++ autfilt -F h2 --acceptance-is=Fin-less
++ autfilt --remove-fin -F h2+ 
+autfilt --acceptance-is=Fin-less
+HOA: v1
+States: 1
+Start: 0
+AP: 0
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+properties: stutter-invariant very-weak
+--BODY--
+State: 0
+--END--
+PASS core/remfin.test (exit status: 0)

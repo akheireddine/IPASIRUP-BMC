@@ -1,0 +1,12 @@
+HOA: v1
+States: 1
+Start: 0
+AP: 3  "l0" "l1" "l2"
+acc-name: generalized-Buchi 0
+Acceptance: 0 t
+--BODY--
+State: 0
+[0&1] 0
+[2] 0
+[!2] 0
+--END--

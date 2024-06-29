@@ -1,0 +1,14 @@
+X((a M F((!c & !b) | (c & b))) W (G!c U b))
+X(((a & b) R (!a U !c)) R b)
+XXG(Fa U Xb)
+(!a M !b) W F!c
+(b & Fa & GFc) R a
+(a R (b W a)) W G(!a M (c | b))
+(Fa W b) R (Fc | !a)
+X(G(!a M !b) | G(a | G!a))
+Fa W Gb
+Ga | GFb
+a M G(F!b | X!a)
+G!a R XFb
+F(G((a) | (F(b))))
+FG(!p1 | (p1 M XX!p1))

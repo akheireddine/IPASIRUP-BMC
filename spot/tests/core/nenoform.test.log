@@ -1,0 +1,118 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test nenoform.test
+== Running test nenoform.test
++ echo nenoform.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=nenoform
++ testSubDir=nenoform.dir
++ chmod -R a+rwx nenoform.dir
++ rm -rf nenoform.dir
++ mkdir nenoform.dir
++ cd nenoform.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 ../nenoform nenoform.txt
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../nenoform
++ cmd=../nenoform
++ shift
++ test -n ../nenoform
++ set ../nenoform nenoform.txt
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../nenoform nenoform.txt
+1: # A few things that do not change
+2: a, a
+ap(@3 #4 "a")
+3: 1, 1
+tt(@1 #3)
+4: 0, 0
+ff(@0 #3)
+5: !a, !a
+Not(@5 #4 [ap(@4 #0 "a")])
+6: a U b, a U b
+U(@9 #4 [ap(@7 #0 "a"), ap(@8 #0 "b")])
+7: a & b, a & b
+And(@13 #4 [ap(@11 #0 "a"), ap(@12 #0 "b")])
+8: a & b, b & a
+And(@17 #4 [ap(@16 #0 "a"), ap(@15 #0 "b")])
+9: a & !b & c, c & a & !b
+And(@23 #4 [ap(@20 #0 "a"), Not(@22 #0 [ap(@21 #0 "b")]), ap(@19 #0 "c")])
+10: a & b & c, b & c & a
+And(@29 #4 [ap(@28 #0 "a"), ap(@26 #0 "b"), ap(@27 #0 "c")])
+11: Xa & b & Xa, b & Xa & b
+And(@34 #4 [ap(@31 #0 "b"), X(@33 #0 [ap(@32 #0 "a")])])
+12: a & b, b & a & b
+And(@40 #4 [ap(@39 #0 "a"), ap(@38 #0 "b")])
+13: a & !b, !b & a & a
+And(@45 #4 [ap(@44 #0 "a"), Not(@43 #0 [ap(@42 #0 "b")])])
+14: a & b & (Xc |(f U !g)| e), b & a & a & (Xc | e |(f U !g)| e | Xc) & b
+And(@59 #4 [ap(@49 #0 "a"), ap(@48 #0 "b"), Or(@58 #0 [ap(@52 #0 "e"), X(@51 #0 [ap(@50 #0 "c")]), U(@56 #0 [ap(@53 #0 "f"), Not(@55 #0 [ap(@54 #0 "g")])])])])
+15: GFa => FGb, FG!a || FGb
+Or(@72 #2 [F(@68 #0 [G(@67 #0 [Not(@66 #0 [ap(@65 #1 "a")])])]), F(@71 #1 [G(@70 #0 [ap(@69 #0 "b")])])])
+16: 
+17: # Basic rewritings
+18: !!a, a
+ap(@84 #4 "a")
+19: !!!!!a, !a
+Not(@87 #4 [ap(@86 #0 "a")])
+20: !Xa, X!a
+X(@93 #2 [Not(@92 #0 [ap(@91 #1 "a")])])
+21: !Fa, G!a
+G(@101 #2 [Not(@100 #0 [ap(@99 #1 "a")])])
+22: !Ga, F!a
+F(@109 #2 [Not(@108 #0 [ap(@107 #1 "a")])])
+23: !(a ^ b), !a&!b | a&b
+Or(@121 #2 [And(@119 #0 [Not(@116 #0 [ap(@115 #2 "a")]), Not(@118 #0 [ap(@117 #2 "b")])]), And(@120 #0 [ap(@115 #2 "a"), ap(@117 #2 "b")])])
+24: !(a <=> b), (!a&b) | a&!b
+Or(@136 #2 [And(@134 #0 [Not(@131 #0 [ap(@130 #2 "a")]), ap(@132 #2 "b")]), And(@135 #0 [ap(@130 #2 "a"), Not(@133 #0 [ap(@132 #2 "b")])])])
+25: !(a => b), a&!b
+And(@148 #2 [ap(@145 #1 "a"), Not(@147 #0 [ap(@146 #1 "b")])])
+26: !(!a => !b), !a&b
+And(@157 #2 [Not(@155 #1 [ap(@154 #0 "a")]), ap(@156 #1 "b")])
+27: !(a U b), !a R !b
+R(@169 #2 [Not(@166 #0 [ap(@165 #1 "a")]), Not(@168 #0 [ap(@167 #1 "b")])])
+28: !(a R b), !a U !b
+U(@180 #2 [Not(@177 #0 [ap(@176 #1 "a")]), Not(@179 #0 [ap(@178 #1 "b")])])
+29: !(!a R !b), a U b
+U(@189 #2 [ap(@187 #1 "a"), ap(@188 #1 "b")])
+30: !(a & b & c & d & b), !a | !b | !c | !d
+Or(@204 #2 [Not(@197 #0 [ap(@196 #1 "a")]), Not(@199 #0 [ap(@198 #1 "b")]), Not(@201 #0 [ap(@200 #1 "c")]), Not(@203 #0 [ap(@202 #1 "d")])])
+31: !(a | b | c | d), !a & !b & !c & !d
+And(@221 #2 [Not(@214 #0 [ap(@213 #1 "a")]), Not(@216 #0 [ap(@215 #1 "b")]), Not(@218 #0 [ap(@217 #1 "c")]), Not(@220 #0 [ap(@219 #1 "d")])])
+32: 
+33: # Nested rewritings
+34: !(a U (!b U ((a & b & c) R d))), !a R (b R ((!a | !b | !c) U !d))
+R(@242 #2 [Not(@231 #1 [ap(@230 #2 "a")]), R(@241 #0 [ap(@232 #2 "b"), U(@240 #0 [Or(@239 #0 [Not(@231 #1 [ap(@230 #2 "a")]), Not(@234 #1 [ap(@232 #2 "b")]), Not(@236 #0 [ap(@235 #1 "c")])]), Not(@238 #0 [ap(@237 #1 "d")])])])])
+35: !(GF a => FG b), GFa & GF!b
+And(@269 #2 [G(@264 #1 [F(@263 #0 [ap(@262 #0 "a")])]), G(@268 #0 [F(@267 #0 [Not(@266 #0 [ap(@265 #1 "b")])])])])
+36: 
+37: # Rational operators
+38: !X{a;b}<>->Fx, X{a;b}[]->G!x
+X(@291 #2 [UConcat(@290 #0 [Concat(@289 #1 [ap(@283 #0 "a"), ap(@284 #0 "b")]), G(@287 #0 [Not(@286 #0 [ap(@285 #1 "x")])])])])
+39: !F({a*}<>->{b*}<>->c), G({a*}[]->{b*}[]->!c)
+G(@312 #2 [UConcat(@311 #0 [Star(@305 #1 0.. [ap(@304 #0 "a")]), UConcat(@310 #0 [Star(@307 #1 0.. [ap(@306 #0 "b")]), Not(@309 #0 [ap(@308 #1 "c")])])])])
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
+PASS core/nenoform.test (exit status: 0)

@@ -1,0 +1,1 @@
+(p1 W !Fp1) -> (XGp0 M (p0 xor (p0 xor p1)))

@@ -1,0 +1,56 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test sccdot.test
+== Running test sccdot.test
++ echo sccdot.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=sccdot
++ testSubDir=sccdot.dir
++ chmod -R a+rwx sccdot.dir
++ rm -rf sccdot.dir
++ mkdir sccdot.dir
++ cd sccdot.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 autfilt --dot=asi in.hoa
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --dot=asi in.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --dot=asi in.hoa
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff out.dot expected
++ autfilt --small -x simul=0 in.hoa -H
++ cat
++ diff expected.hoa out.hoa
++ cat
++ autfilt --dot=s input
++ grep grey
+  color=grey
+PASS core/sccdot.test (exit status: 0)

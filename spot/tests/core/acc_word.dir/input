@@ -1,0 +1,2 @@
+{(a ##[2:3] b):(c ##[1:2] d)} |-> e
+{first_match(a ##[2:3] b):first_match(c ##[1:2] d)} |-> e

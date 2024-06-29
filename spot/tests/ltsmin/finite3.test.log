@@ -1,0 +1,33 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test finite3.test
+== Running test finite3.test
++ echo finite3.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=finite3
++ testSubDir=finite3.dir
++ chmod -R a+rwx finite3.dir
++ rm -rf finite3.dir
++ mkdir finite3.dir
++ cd finite3.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ gal2c .././finite.gal
+finite3.test: 24: gal2c: not found
++ echo gal2c not functionnal.
+gal2c not functionnal.
++ exit 77
+SKIP ltsmin/finite3.test (exit status: 77)

@@ -1,0 +1,1 @@
+(p1 W p0) xor (Fp0 <-> (!(p0 W p1) W Gp1))

@@ -1,0 +1,8 @@
+error: P0*N1 is nonempty; both automata accept the infinite word:
+       p0 & !p1; cycle{!p0 & !p1; p0 & !p1; !p0 & !p1; !p0 & !p1}
+error: P1*N0 is nonempty; both automata accept the infinite word:
+       cycle{!p0 & !p1}
+error: P1*N1 is nonempty; both automata accept the infinite word:
+       cycle{!p0 & !p1}
+input formula was (G((F(p0)) & (F(G(!(p1)))))) | ((F(G(!(p0)))) & (G(F(p1))))
+

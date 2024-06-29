@@ -1,0 +1,142 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltlcrossce.test
+== Running test ltlcrossce.test
++ echo ltlcrossce.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltlcrossce
++ testSubDir=ltlcrossce.dir
++ chmod -R a+rwx ltlcrossce.dir
++ rm -rf ltlcrossce.dir
++ mkdir ltlcrossce.dir
++ cd ltlcrossce.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ chmod +x fake
++ run 1 ltlcross -f G(F(p0) & F(G(!p1))) | (F(G(!p0)) & G(F(p1))) ltl2tgba --lbtt %f >%T ./fake %l >%T
++ cat errors
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlcross
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross -f G(F(p0) & F(G(!p1))) | (F(G(!p0)) & G(F(p1))) ltl2tgba --lbtt %f >%T ./fake %l >%T
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross -f G(F(p0) & F(G(!p1))) | (F(G(!p0)) & G(F(p1))) ltl2tgba --lbtt %f >%T ./fake %l >%T
+(G((F(p0)) & (F(G(!(p1)))))) | ((F(G(!(p0)))) & (G(F(p1))))
+Running [P0]: ltl2tgba --lbtt '(G((F(p0)) & (F(G(!(p1)))))) | ((F(G(!(p0)))) & (G(F(p1))))' >'lcr-o0-1KmYsv'
+Running [P1]: ./fake '| G & F p0 F G ! p1 & F G ! p0 G F p1' >'lcr-o1-EWBMV4'
+Running [N0]: ltl2tgba --lbtt '!((G((F(p0)) & (F(G(!(p1)))))) | ((F(G(!(p0)))) & (G(F(p1)))))' >'lcr-o0-j87VlY'
+Running [N1]: ./fake '! | G & F p0 F G ! p1 & F G ! p0 G F p1' >'lcr-o1-N5JdE5'
+Performing sanity checks and gathering statistics...
+error: P0*N1 is nonempty; both automata accept the infinite word:
+       p0 & !p1; cycle{!p0 & !p1; p0 & !p1; !p0 & !p1; !p0 & !p1}
+error: P1*N0 is nonempty; both automata accept the infinite word:
+       cycle{!p0 & !p1}
+error: P1*N1 is nonempty; both automata accept the infinite word:
+       cycle{!p0 & !p1}
+
+error: some error was detected during the above runs,
+       please search for 'error:' messages in the above trace.
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ grep error: P0\*N1 is nonempty errors
+error: P0*N1 is nonempty; both automata accept the infinite word:
++ grep error: P1\*N0 is nonempty errors
+error: P1*N0 is nonempty; both automata accept the infinite word:
++ grep error: P1\*N1 is nonempty errors
+error: P1*N1 is nonempty; both automata accept the infinite word:
++ grep cycle errors
++ wc -l
++ test 3 = 3
++ grep ^error: errors
++ wc -l
++ test 4 = 4
++ run 1 ltlcross --verbose -D -f G(F(p0) & F(G(!p1))) | (F(G(!p0)) & G(F(p1))) ltl2tgba --lbtt %f >%T ./fake %l >%T
++ cat errors
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlcross
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross --verbose -D -f G(F(p0) & F(G(!p1))) | (F(G(!p0)) & G(F(p1))) ltl2tgba --lbtt %f >%T ./fake %l >%T
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross --verbose -D -f G(F(p0) & F(G(!p1))) | (F(G(!p0)) & G(F(p1))) ltl2tgba --lbtt %f >%T ./fake %l >%T
+(G((F(p0)) & (F(G(!(p1)))))) | ((F(G(!(p0)))) & (G(F(p1))))
+Running [P0]: ltl2tgba --lbtt '(G((F(p0)) & (F(G(!(p1)))))) | ((F(G(!(p0)))) & (G(F(p1))))' >'lcr-o0-xkjfcf'
+Running [P1]: ./fake '| G & F p0 F G ! p1 & F G ! p0 G F p1' >'lcr-o1-MQaCqa'
+Running [N0]: ltl2tgba --lbtt '!((G((F(p0)) & (F(G(!(p1)))))) | ((F(G(!(p0)))) & (G(F(p1)))))' >'lcr-o0-dHBOUl'
+Running [N1]: ./fake '! | G & F p0 F G ! p1 & F G ! p0 G F p1' >'lcr-o1-ychhUD'
+info: collected automata:
+info:   P0	(3 st.,7 ed.,1 sets)
+info:   N0	(3 st.,8 ed.,2 sets)
+info:   P1	(7 st.,12 ed.,1 sets)
+info:   N1	(12 st.,26 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:   P0	(3 st.,7 ed.,1 sets) -> (3 st.,12 ed.,2 sets)	Comp(P0)
+info:   N0	(3 st.,8 ed.,2 sets) -> (6 st.,24 ed.,2 sets)	Comp(N0)
+info:   P1	(7 st.,12 ed.,1 sets) -> (1 st.,1 ed.,1 sets)	Comp(P1)
+info:   N1	(12 st.,26 ed.,1 sets) -> (64 st.,256 ed.,2 sets)	Comp(N1)
+info: check_empty P0*N0
+info: check_empty Comp(N0)*Comp(P0)
+info: check_empty P0*N1
+error: P0*N1 is nonempty; both automata accept the infinite word:
+       p0 & !p1; cycle{!p0 & !p1; p0 & !p1; !p0 & !p1; !p0 & !p1}
+info: check_empty P1*N0
+error: P1*N0 is nonempty; both automata accept the infinite word:
+       cycle{!p0 & !p1}
+info: check_empty P1*N1
+error: P1*N1 is nonempty; both automata accept the infinite word:
+       cycle{!p0 & !p1}
+info: check_empty Comp(N1)*Comp(P1)
+
+error: some error was detected during the above runs,
+       please search for 'error:' messages in the above trace.
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ grep error: P0\*N1 is nonempty errors
+error: P0*N1 is nonempty; both automata accept the infinite word:
++ grep error: P1\*N0 is nonempty errors
+error: P1*N0 is nonempty; both automata accept the infinite word:
++ grep error: P1\*N1 is nonempty errors
+error: P1*N1 is nonempty; both automata accept the infinite word:
++ grep cycle errors
++ wc -l
++ test 3 = 3
++ grep ^error: errors
++ wc -l
++ test 4 = 4
++ ltlcross -q -f G(F(p0) & F(G(!p1))) | (F(G(!p0)) & G(F(p1))) ltl2tgba --lbtt %f >%T ./fake %l >%T
++ wc -l
++ test 8 -eq 8
+PASS core/ltlcrossce.test (exit status: 0)

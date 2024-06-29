@@ -1,0 +1,46 @@
+XXa
+GF(a -> XXXb)
+F(p & XF(q & XF(r & XFs)))
+F(q & X(p U r))
+F(p & X(q & XFr))
+p U (q & X(r U s))
+G(a -> Fb) & G(c -> Fd)
+GFa & GFb
+GFa | GFb | GFc
+GFa
+a U b U c U d
+G(a -> Fb) & Gc
+(Ga -> Fb) & (G!a -> F!b)
+G(a -> Fb) & G(b -> Fc)
+G(a -> Fb) & G(!a -> F!b)
+GFp && GFq && GF r && GF u
+G(p -> q U r)
+GF(a <-> XXb)
+G!c & G(a -> Fb) & G(b -> Fc)
+G(a -> XXXb)
+G(a -> Fb)
+G(a U b U !a U !b)
+X(((a & b) R (!a U !c)) R b)
+(!a M !b) W F!c
+(b & Fa & GFc) R a
+(a R (b W a)) W G(!a M (c | b))
+X(G(!a M !b) | G(a | G!a))
+Fa W Gb
+Ga | GFb
+a M G(F!b | X!a)
+G!a R XFb
+XF(!a | GFb)
+G(F!a U !a) U Xa
+(a | G(a M !b)) W Fc
+Fa W Xb
+XG!a R Fb
+GFc | (a & Fb)
+X(a R (Fb R F!b))
+G(Xa M Fa)
+X(Gb | GFa)
+Ga R Fb
+G(a U (b | X((!c & !a) | (a & c))))
+XG((G!a & F!b) | (Fa & (a | Gb)))
+X(G!a | GFa)
+G(G!a | F!c | G!b)
+G(a | Fa)

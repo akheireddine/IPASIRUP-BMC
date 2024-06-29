@@ -1,0 +1,49 @@
+digraph "" {
+  rankdir=LR
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 0 [label="0"]
+  0 -> 1 [label="p1"]
+  0 -> 2 [label="p2\n{1}"]
+  1 [label="1"]
+  1 -> 2 [label="p1 & p2\n{0}"]
+  2 [label="2"]
+  2 -> 0 [label="p1 | p2\n{0,1}"]
+  2 -> 1 [label="!p1 | p2"]
+  2 -> 2 [label="1\n{0,1}"]
+}
+-----------
+init : 0
+0->1 : p1 {}
+0->2 : p2 {1}
+1->2 : p1&p2 {0}
+2->0 : !p1&p2 {0,1}
+2->0 : p1 {0,1}
+2->1 : !p1 {}
+2->1 : p1&p2 {}
+2->2 : 1 {0,1}
+-----------
+2 2  1 {0,1}
+2 1  p1&p2 {}
+2 1  !p1 {}
+2 0  p1 {0,1}
+2 0  !p1&p2 {0,1}
+digraph "" {
+  rankdir=LR
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="p1"]
+  0 -> 2 [label="p2\n{1}"]
+  1 [label="1"]
+  1 -> 2 [label="p1 & p2\n{0}"]
+  2 [label="2"]
+  2 -> 0 [label="!p1 & p2\n{0,1}"]
+  2 -> 0 [label="p1\n{0,1}"]
+  2 -> 1 [label="!p1"]
+  2 -> 1 [label="p1 & p2"]
+  2 -> 2 [label="1\n{0,1}"]
+}

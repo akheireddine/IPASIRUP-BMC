@@ -1,0 +1,1 @@
+(Gp0 xor !(Fp0 xor G!Fp1)) -> Gp1

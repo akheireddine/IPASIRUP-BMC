@@ -1,0 +1,12 @@
+0
+!(F!p1 M 1)
+(Gp0 | Fp1) M 1
+F!(!p1 <-> FGp1)
+Gp1 U (p1 U GFp1)
+(!p1 U p1) U X(!p0 -> Fp1)
+(p1 | (Fp0 R (p1 W p0))) M 1
+!G(F(p1 & Fp0) W p1)
+X(!p0 W Xp1)
+1 U (p0 xor p1)
+GF(p0)
+FG(p0)

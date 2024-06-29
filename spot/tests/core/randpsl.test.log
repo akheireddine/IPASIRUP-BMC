@@ -1,0 +1,400 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test randpsl.test
+== Running test randpsl.test
++ echo randpsl.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=randpsl
++ testSubDir=randpsl.dir
++ chmod -R a+rwx randpsl.dir
++ rm -rf randpsl.dir
++ mkdir randpsl.dir
++ cd randpsl.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ randltl -n -1 --tree-size 30 --seed 13 --psl a b c+ 
+ltlfilt -r --size 12.. --unique
++ ltlfilt -v --ltl -n 50
++ tee formulas
++ ltlcross ../ikwiad -R3 -t %f >%T ../ikwiad -x -R3 -t %f >%T -F - -f {{(p1)}[*]:{(p3) && {{!(p1)} xor {!(p3)}}}}
+-:1: {{{1} | {[*0]} | {{{p0} && {!{p1}}}[*1..2]}}[:*]}<>-> (G(p1))
+Running [P0]: ../ikwiad -R3 -t '{{{1} | {[*0]} | {{{p0} && {!{p1}}}[*1..2]}}[:*]}<>-> (G(p1))' >'lcr-o0-5Zs8yH'
+Running [P1]: ../ikwiad -x -R3 -t '{{{1} | {[*0]} | {{{p0} && {!{p1}}}[*1..2]}}[:*]}<>-> (G(p1))' >'lcr-o1-S9tHyM'
+Running [N0]: ../ikwiad -R3 -t '!({{{1} | {[*0]} | {{{p0} && {!{p1}}}[*1..2]}}[:*]}<>-> (G(p1)))' >'lcr-o0-Tbktel'
+Running [N1]: ../ikwiad -x -R3 -t '!({{{1} | {[*0]} | {{{p0} && {!{p1}}}[*1..2]}}[:*]}<>-> (G(p1)))' >'lcr-o1-6VT9pF'
+Performing sanity checks and gathering statistics...
+
+-:2: {{{p0}[*0..1]} & {{{!{p1}} | {p2}}[*]}}[]-> (G(!(p2)))
+Running [P0]: ../ikwiad -R3 -t '{{{p0}[*0..1]} & {{{!{p1}} | {p2}}[*]}}[]-> (G(!(p2)))' >'lcr-o0-Yqv18a'
+Running [P1]: ../ikwiad -x -R3 -t '{{{p0}[*0..1]} & {{{!{p1}} | {p2}}[*]}}[]-> (G(!(p2)))' >'lcr-o1-4CFOjL'
+Running [N0]: ../ikwiad -R3 -t '!({{{p0}[*0..1]} & {{{!{p1}} | {p2}}[*]}}[]-> (G(!(p2))))' >'lcr-o0-aLsbo4'
+Running [N1]: ../ikwiad -x -R3 -t '!({{{p0}[*0..1]} & {{{!{p1}} | {p2}}[*]}}[]-> (G(!(p2))))' >'lcr-o1-nACxz5'
+Performing sanity checks and gathering statistics...
+
+-:3: {first_match({{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}[*]}:{{p1} && {{{p2} && {{!{p0}} | {!{p1}}}} | {{p0} && {p1} && {!{p2}}}}})}
+Running [P0]: ../ikwiad -R3 -t '{first_match({{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}[*]}:{{p1} && {{{p2} && {{!{p0}} | {!{p1}}}} | {{p0} && {p1} && {!{p2}}}}})}' >'lcr-o0-2ITSuO'
+Running [P1]: ../ikwiad -x -R3 -t '{first_match({{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}[*]}:{{p1} && {{{p2} && {{!{p0}} | {!{p1}}}} | {{p0} && {p1} && {!{p2}}}}})}' >'lcr-o1-IsooqY'
+Running [N0]: ../ikwiad -R3 -t '!{first_match({{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}[*]}:{{p1} && {{{p2} && {{!{p0}} | {!{p1}}}} | {{p0} && {p1} && {!{p2}}}}})}' >'lcr-o0-kLFNZF'
+Running [N1]: ../ikwiad -x -R3 -t '!{first_match({{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}[*]}:{{p1} && {{{p2} && {{!{p0}} | {!{p1}}}} | {{p0} && {p1} && {!{p2}}}}})}' >'lcr-o1-f6zrU1'
+Performing sanity checks and gathering statistics...
+
+-:4: ((p0) & (((p1) & (p2)) | ((!(p1)) & (!(p2))))) | ({{[*]}[:*0..4]}<>-> (!(p2)))
+Running [P0]: ../ikwiad -R3 -t '((p0) & (((p1) & (p2)) | ((!(p1)) & (!(p2))))) | ({{[*]}[:*0..4]}<>-> (!(p2)))' >'lcr-o0-oC5d67'
+Running [P1]: ../ikwiad -x -R3 -t '((p0) & (((p1) & (p2)) | ((!(p1)) & (!(p2))))) | ({{[*]}[:*0..4]}<>-> (!(p2)))' >'lcr-o1-1WMizZ'
+Running [N0]: ../ikwiad -R3 -t '!(((p0) & (((p1) & (p2)) | ((!(p1)) & (!(p2))))) | ({{[*]}[:*0..4]}<>-> (!(p2))))' >'lcr-o0-qPghlB'
+Running [N1]: ../ikwiad -x -R3 -t '!(((p0) & (((p1) & (p2)) | ((!(p1)) & (!(p2))))) | ({{[*]}[:*0..4]}<>-> (!(p2))))' >'lcr-o1-I5HWo5'
+Performing sanity checks and gathering statistics...
+
+-:5: F({{p0} && {{p0} | {{p0}:{{{{p0} && {!{p1}}}:{{[*]}[:*]}}[*0..6]}}}}[]-> (p2))
+Running [P0]: ../ikwiad -R3 -t 'F({{p0} && {{p0} | {{p0}:{{{{p0} && {!{p1}}}:{{[*]}[:*]}}[*0..6]}}}}[]-> (p2))' >'lcr-o0-craDcH'
+Running [P1]: ../ikwiad -x -R3 -t 'F({{p0} && {{p0} | {{p0}:{{{{p0} && {!{p1}}}:{{[*]}[:*]}}[*0..6]}}}}[]-> (p2))' >'lcr-o1-kZWQV3'
+Running [N0]: ../ikwiad -R3 -t '!(F({{p0} && {{p0} | {{p0}:{{{{p0} && {!{p1}}}:{{[*]}[:*]}}[*0..6]}}}}[]-> (p2)))' >'lcr-o0-MlNzun'
+Running [N1]: ../ikwiad -x -R3 -t '!(F({{p0} && {{p0} | {{p0}:{{{{p0} && {!{p1}}}:{{[*]}[:*]}}[*0..6]}}}}[]-> (p2)))' >'lcr-o1-3uzJOY'
+Performing sanity checks and gathering statistics...
+
+-:6: ({{{p0}:{{p1};{{!{p0}} | {{p1} && {p2}} | {{!{p1}} && {!{p2}}}}}}[+]}<>-> ((p1) & ((p0) | (G(!(p2)))))) R (X(p1))
+Running [P0]: ../ikwiad -R3 -t '({{{p0}:{{p1};{{!{p0}} | {{p1} && {p2}} | {{!{p1}} && {!{p2}}}}}}[+]}<>-> ((p1) & ((p0) | (G(!(p2)))))) R (X(p1))' >'lcr-o0-Q2jD3D'
+Running [P1]: ../ikwiad -x -R3 -t '({{{p0}:{{p1};{{!{p0}} | {{p1} && {p2}} | {{!{p1}} && {!{p2}}}}}}[+]}<>-> ((p1) & ((p0) | (G(!(p2)))))) R (X(p1))' >'lcr-o1-v9sdVc'
+Running [N0]: ../ikwiad -R3 -t '!(({{{p0}:{{p1};{{!{p0}} | {{p1} && {p2}} | {{!{p1}} && {!{p2}}}}}}[+]}<>-> ((p1) & ((p0) | (G(!(p2)))))) R (X(p1)))' >'lcr-o0-oFwgyF'
+Running [N1]: ../ikwiad -x -R3 -t '!(({{{p0}:{{p1};{{!{p0}} | {{p1} && {p2}} | {{!{p1}} && {!{p2}}}}}}[+]}<>-> ((p1) & ((p0) | (G(!(p2)))))) R (X(p1)))' >'lcr-o1-8UIRnc'
+Performing sanity checks and gathering statistics...
+
+-:7: X(F(!{{{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}[*]}[:*2]}))
+Running [P0]: ../ikwiad -R3 -t 'X(F(!{{{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}[*]}[:*2]}))' >'lcr-o0-rNqCjj'
+Running [P1]: ../ikwiad -x -R3 -t 'X(F(!{{{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}[*]}[:*2]}))' >'lcr-o1-UN1QWw'
+Running [N0]: ../ikwiad -R3 -t '!(X(F(!{{{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}[*]}[:*2]})))' >'lcr-o0-51Ls9T'
+Running [N1]: ../ikwiad -x -R3 -t '!(X(F(!{{{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}[*]}[:*2]})))' >'lcr-o1-OaSBPt'
+Performing sanity checks and gathering statistics...
+
+-:8: {[*1..2]}<>-> (((p0) & ((p1) U (p2))) | ((!(p0)) & ((!(p1)) R (!(p2)))))
+Running [P0]: ../ikwiad -R3 -t '{[*1..2]}<>-> (((p0) & ((p1) U (p2))) | ((!(p0)) & ((!(p1)) R (!(p2)))))' >'lcr-o0-qTN8HJ'
+Running [P1]: ../ikwiad -x -R3 -t '{[*1..2]}<>-> (((p0) & ((p1) U (p2))) | ((!(p0)) & ((!(p1)) R (!(p2)))))' >'lcr-o1-hoNWup'
+Running [N0]: ../ikwiad -R3 -t '!({[*1..2]}<>-> (((p0) & ((p1) U (p2))) | ((!(p0)) & ((!(p1)) R (!(p2))))))' >'lcr-o0-OpSPS1'
+Running [N1]: ../ikwiad -x -R3 -t '!({[*1..2]}<>-> (((p0) & ((p1) U (p2))) | ((!(p0)) & ((!(p1)) R (!(p2))))))' >'lcr-o1-BVWRLs'
+Performing sanity checks and gathering statistics...
+
+-:9: (G(p0)) | ({{{p0};{1}}[+]}<>-> ((!(p1)) | (!(p2))))
+Running [P0]: ../ikwiad -R3 -t '(G(p0)) | ({{{p0};{1}}[+]}<>-> ((!(p1)) | (!(p2))))' >'lcr-o0-WQ60oi'
+Running [P1]: ../ikwiad -x -R3 -t '(G(p0)) | ({{{p0};{1}}[+]}<>-> ((!(p1)) | (!(p2))))' >'lcr-o1-aCaqSQ'
+Running [N0]: ../ikwiad -R3 -t '!((G(p0)) | ({{{p0};{1}}[+]}<>-> ((!(p1)) | (!(p2)))))' >'lcr-o0-OC7JGL'
+Running [N1]: ../ikwiad -x -R3 -t '!((G(p0)) | ({{{p0};{1}}[+]}<>-> ((!(p1)) | (!(p2)))))' >'lcr-o1-u4Af02'
+Performing sanity checks and gathering statistics...
+
+-:10: !{{1}:{{{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}[*]}}
+Running [P0]: ../ikwiad -R3 -t '!{{1}:{{{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}[*]}}' >'lcr-o0-iKJ9HA'
+Running [P1]: ../ikwiad -x -R3 -t '!{{1}:{{{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}[*]}}' >'lcr-o1-RZKPvO'
+Running [N0]: ../ikwiad -R3 -t '{{1}:{{{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}[*]}}' >'lcr-o0-S50Kdp'
+Running [N1]: ../ikwiad -x -R3 -t '{{1}:{{{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}[*]}}' >'lcr-o1-yqDSEu'
+Performing sanity checks and gathering statistics...
+
+-:11: (p0) U ((((p0) & ({{{p1}[*0..3]}[:*]}<>-> (X({{{{p1}[*0..3]}[:*]}[*1..2]}<>-> (p0))))) | ((!(p0)) & ({{{p1}[*0..3]}[:*]}[]-> (X({{{{p1}[*0..3]}[:*]}[*1..2]}[]-> (!(p0))))))) U (!(p1)))
+Running [P0]: ../ikwiad -R3 -t '(p0) U ((((p0) & ({{{p1}[*0..3]}[:*]}<>-> (X({{{{p1}[*0..3]}[:*]}[*1..2]}<>-> (p0))))) | ((!(p0)) & ({{{p1}[*0..3]}[:*]}[]-> (X({{{{p1}[*0..3]}[:*]}[*1..2]}[]-> (!(p0))))))) U (!(p1)))' >'lcr-o0-lHyHnw'
+Running [P1]: ../ikwiad -x -R3 -t '(p0) U ((((p0) & ({{{p1}[*0..3]}[:*]}<>-> (X({{{{p1}[*0..3]}[:*]}[*1..2]}<>-> (p0))))) | ((!(p0)) & ({{{p1}[*0..3]}[:*]}[]-> (X({{{{p1}[*0..3]}[:*]}[*1..2]}[]-> (!(p0))))))) U (!(p1)))' >'lcr-o1-Woxy3c'
+Running [N0]: ../ikwiad -R3 -t '!((p0) U ((((p0) & ({{{p1}[*0..3]}[:*]}<>-> (X({{{{p1}[*0..3]}[:*]}[*1..2]}<>-> (p0))))) | ((!(p0)) & ({{{p1}[*0..3]}[:*]}[]-> (X({{{{p1}[*0..3]}[:*]}[*1..2]}[]-> (!(p0))))))) U (!(p1))))' >'lcr-o0-dgHpJy'
+Running [N1]: ../ikwiad -x -R3 -t '!((p0) U ((((p0) & ({{{p1}[*0..3]}[:*]}<>-> (X({{{{p1}[*0..3]}[:*]}[*1..2]}<>-> (p0))))) | ((!(p0)) & ({{{p1}[*0..3]}[:*]}[]-> (X({{{{p1}[*0..3]}[:*]}[*1..2]}[]-> (!(p0))))))) U (!(p1))))' >'lcr-o1-eiHeMV'
+Performing sanity checks and gathering statistics...
+
+-:12: ((p0) & ((!(p1)) | (p2))) | ((!(p0)) & (p1) & (!(p2))) | (F(((p0) & ({{{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}[*1..2]}[]-> (0))) | ((!(p0)) & ({{{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}[*1..2]}!))))
+Running [P0]: ../ikwiad -R3 -t '((p0) & ((!(p1)) | (p2))) | ((!(p0)) & (p1) & (!(p2))) | (F(((p0) & ({{{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}[*1..2]}[]-> (0))) | ((!(p0)) & ({{{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}[*1..2]}!))))' >'lcr-o0-8Uk8JE'
+Running [P1]: ../ikwiad -x -R3 -t '((p0) & ((!(p1)) | (p2))) | ((!(p0)) & (p1) & (!(p2))) | (F(((p0) & ({{{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}[*1..2]}[]-> (0))) | ((!(p0)) & ({{{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}[*1..2]}!))))' >'lcr-o1-RnvaCY'
+Running [N0]: ../ikwiad -R3 -t '!(((p0) & ((!(p1)) | (p2))) | ((!(p0)) & (p1) & (!(p2))) | (F(((p0) & ({{{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}[*1..2]}[]-> (0))) | ((!(p0)) & ({{{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}[*1..2]}!)))))' >'lcr-o0-IA4u2O'
+Running [N1]: ../ikwiad -x -R3 -t '!(((p0) & ((!(p1)) | (p2))) | ((!(p0)) & (p1) & (!(p2))) | (F(((p0) & ({{{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}[*1..2]}[]-> (0))) | ((!(p0)) & ({{{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}[*1..2]}!)))))' >'lcr-o1-t4wayK'
+Performing sanity checks and gathering statistics...
+
+-:13: {{{{[*]}[:*]};{p0}}[:*2..3]}[]-> ((G(p1)) | (X(!(p0))))
+Running [P0]: ../ikwiad -R3 -t '{{{{[*]}[:*]};{p0}}[:*2..3]}[]-> ((G(p1)) | (X(!(p0))))' >'lcr-o0-kyAEEo'
+Running [P1]: ../ikwiad -x -R3 -t '{{{{[*]}[:*]};{p0}}[:*2..3]}[]-> ((G(p1)) | (X(!(p0))))' >'lcr-o1-krN0ag'
+Running [N0]: ../ikwiad -R3 -t '!({{{{[*]}[:*]};{p0}}[:*2..3]}[]-> ((G(p1)) | (X(!(p0)))))' >'lcr-o0-2trWEk'
+Running [N1]: ../ikwiad -x -R3 -t '!({{{{[*]}[:*]};{p0}}[:*2..3]}[]-> ((G(p1)) | (X(!(p0)))))' >'lcr-o1-ib7Itr'
+Performing sanity checks and gathering statistics...
+
+-:14: ((X(p0)) & ({{[*]}[:*1]}<>-> (!(p1)))) | ((X(!(p0))) & ({{[*]}[:*1]}[]-> (p1)))
+Running [P0]: ../ikwiad -R3 -t '((X(p0)) & ({{[*]}[:*1]}<>-> (!(p1)))) | ((X(!(p0))) & ({{[*]}[:*1]}[]-> (p1)))' >'lcr-o0-eb0NyQ'
+Running [P1]: ../ikwiad -x -R3 -t '((X(p0)) & ({{[*]}[:*1]}<>-> (!(p1)))) | ((X(!(p0))) & ({{[*]}[:*1]}[]-> (p1)))' >'lcr-o1-6AoOgI'
+Running [N0]: ../ikwiad -R3 -t '!(((X(p0)) & ({{[*]}[:*1]}<>-> (!(p1)))) | ((X(!(p0))) & ({{[*]}[:*1]}[]-> (p1))))' >'lcr-o0-LAJwO8'
+Running [N1]: ../ikwiad -x -R3 -t '!(((X(p0)) & ({{[*]}[:*1]}<>-> (!(p1)))) | ((X(!(p0))) & ({{[*]}[:*1]}[]-> (p1))))' >'lcr-o1-Fug1VQ'
+Performing sanity checks and gathering statistics...
+
+-:15: G(({{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}:{{1} | {[*0]}}}) M ((G(p2)) | (X((p0) & (X((p0) U (G((p1) & (p2)))))))))
+Running [P0]: ../ikwiad -R3 -t 'G(({{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}:{{1} | {[*0]}}}) M ((G(p2)) | (X((p0) & (X((p0) U (G((p1) & (p2)))))))))' >'lcr-o0-zmIiZC'
+Running [P1]: ../ikwiad -x -R3 -t 'G(({{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}:{{1} | {[*0]}}}) M ((G(p2)) | (X((p0) & (X((p0) U (G((p1) & (p2)))))))))' >'lcr-o1-BXcNRw'
+Running [N0]: ../ikwiad -R3 -t '!(G(({{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}:{{1} | {[*0]}}}) M ((G(p2)) | (X((p0) & (X((p0) U (G((p1) & (p2))))))))))' >'lcr-o0-oIzoBz'
+Running [N1]: ../ikwiad -x -R3 -t '!(G(({{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}:{{1} | {[*0]}}}) M ((G(p2)) | (X((p0) & (X((p0) U (G((p1) & (p2))))))))))' >'lcr-o1-MVo1KW'
+Performing sanity checks and gathering statistics...
+
+-:16: ({[*1..3]}<>-> (((p0) & (!(p1))) | ((!(p0)) & (p1)))) M (((!(p0)) & (!(p1))) U ((p0) & (F(!(p0)))))
+Running [P0]: ../ikwiad -R3 -t '({[*1..3]}<>-> (((p0) & (!(p1))) | ((!(p0)) & (p1)))) M (((!(p0)) & (!(p1))) U ((p0) & (F(!(p0)))))' >'lcr-o0-qonKUM'
+Running [P1]: ../ikwiad -x -R3 -t '({[*1..3]}<>-> (((p0) & (!(p1))) | ((!(p0)) & (p1)))) M (((!(p0)) & (!(p1))) U ((p0) & (F(!(p0)))))' >'lcr-o1-QWRsxl'
+Running [N0]: ../ikwiad -R3 -t '!(({[*1..3]}<>-> (((p0) & (!(p1))) | ((!(p0)) & (p1)))) M (((!(p0)) & (!(p1))) U ((p0) & (F(!(p0))))))' >'lcr-o0-Qr6j06'
+Running [N1]: ../ikwiad -x -R3 -t '!(({[*1..3]}<>-> (((p0) & (!(p1))) | ((!(p0)) & (p1)))) M (((!(p0)) & (!(p1))) U ((p0) & (F(!(p0))))))' >'lcr-o1-EODSyA'
+Performing sanity checks and gathering statistics...
+
+-:17: {{{{{1} | {[*0]}};{{{p0}[*2]}[:*]}}[*]};{{!{p1}} | {p2}}}
+Running [P0]: ../ikwiad -R3 -t '{{{{{1} | {[*0]}};{{{p0}[*2]}[:*]}}[*]};{{!{p1}} | {p2}}}' >'lcr-o0-Yn8vII'
+Running [P1]: ../ikwiad -x -R3 -t '{{{{{1} | {[*0]}};{{{p0}[*2]}[:*]}}[*]};{{!{p1}} | {p2}}}' >'lcr-o1-fRDAgv'
+Running [N0]: ../ikwiad -R3 -t '!{{{{{1} | {[*0]}};{{{p0}[*2]}[:*]}}[*]};{{!{p1}} | {p2}}}' >'lcr-o0-O32kq2'
+Running [N1]: ../ikwiad -x -R3 -t '!{{{{{1} | {[*0]}};{{{p0}[*2]}[:*]}}[*]};{{!{p1}} | {p2}}}' >'lcr-o1-aT0fU9'
+Performing sanity checks and gathering statistics...
+
+-:18: X(G(((p0) & (X(F({{{{p0} && {!{p1}} && {{{p2} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}} | {{!{p2}} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}}}} | {{{!{p0}} | {p1}} && {{{p2} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}} | {{!{p2}} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}}}}}[*1..2]}<>-> (G(!(p0))))))) | ((!(p0)) & (X(G({{{{p0} && {!{p1}} && {{{p2} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}} | {{!{p2}} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}}}} | {{{!{p0}} | {p1}} && {{{p2} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}} | {{!{p2}} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}}}}}[*1..2]}[]-> (F(p0))))))))
+Running [P0]: ../ikwiad -R3 -t 'X(G(((p0) & (X(F({{{{p0} && {!{p1}} && {{{p2} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}} | {{!{p2}} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}}}} | {{{!{p0}} | {p1}} && {{{p2} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}} | {{!{p2}} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}}}}}[*1..2]}<>-> (G(!(p0))))))) | ((!(p0)) & (X(G({{{{p0} && {!{p1}} && {{{p2} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}} | {{!{p2}} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}}}} | {{{!{p0}} | {p1}} && {{{p2} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}} | {{!{p2}} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}}}}}[*1..2]}[]-> (F(p0))))))))' >'lcr-o0-fPEKMq'
+Running [P1]: ../ikwiad -x -R3 -t 'X(G(((p0) & (X(F({{{{p0} && {!{p1}} && {{{p2} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}} | {{!{p2}} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}}}} | {{{!{p0}} | {p1}} && {{{p2} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}} | {{!{p2}} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}}}}}[*1..2]}<>-> (G(!(p0))))))) | ((!(p0)) & (X(G({{{{p0} && {!{p1}} && {{{p2} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}} | {{!{p2}} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}}}} | {{{!{p0}} | {p1}} && {{{p2} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}} | {{!{p2}} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}}}}}[*1..2]}[]-> (F(p0))))))))' >'lcr-o1-ktjpZD'
+Running [N0]: ../ikwiad -R3 -t '!(X(G(((p0) & (X(F({{{{p0} && {!{p1}} && {{{p2} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}} | {{!{p2}} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}}}} | {{{!{p0}} | {p1}} && {{{p2} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}} | {{!{p2}} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}}}}}[*1..2]}<>-> (G(!(p0))))))) | ((!(p0)) & (X(G({{{{p0} && {!{p1}} && {{{p2} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}} | {{!{p2}} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}}}} | {{{!{p0}} | {p1}} && {{{p2} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}} | {{!{p2}} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}}}}}[*1..2]}[]-> (F(p0)))))))))' >'lcr-o0-G773Em'
+Running [N1]: ../ikwiad -x -R3 -t '!(X(G(((p0) & (X(F({{{{p0} && {!{p1}} && {{{p2} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}} | {{!{p2}} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}}}} | {{{!{p0}} | {p1}} && {{{p2} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}} | {{!{p2}} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}}}}}[*1..2]}<>-> (G(!(p0))))))) | ((!(p0)) & (X(G({{{{p0} && {!{p1}} && {{{p2} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}} | {{!{p2}} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}}}} | {{{!{p0}} | {p1}} && {{{p2} && {{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}} | {{!{p2}} && {{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}}}}}[*1..2]}[]-> (F(p0)))))))))' >'lcr-o1-1qp4Gx'
+Performing sanity checks and gathering statistics...
+
+-:19: {{[*]}[:*]}<>-> (((!(p0)) | (X(!(p0)))) M (p0))
+Running [P0]: ../ikwiad -R3 -t '{{[*]}[:*]}<>-> (((!(p0)) | (X(!(p0)))) M (p0))' >'lcr-o0-62B6AM'
+Running [P1]: ../ikwiad -x -R3 -t '{{[*]}[:*]}<>-> (((!(p0)) | (X(!(p0)))) M (p0))' >'lcr-o1-znWauA'
+Running [N0]: ../ikwiad -R3 -t '!({{[*]}[:*]}<>-> (((!(p0)) | (X(!(p0)))) M (p0)))' >'lcr-o0-66HUj4'
+Running [N1]: ../ikwiad -x -R3 -t '!({{[*]}[:*]}<>-> (((!(p0)) | (X(!(p0)))) M (p0)))' >'lcr-o1-C4ROB5'
+Performing sanity checks and gathering statistics...
+
+-:20: G((X(!(p0))) | (({{{{1};{p0}}[:*]};{{p0} | {p1}}}) U (X(X((p2) W (p0))))))
+Running [P0]: ../ikwiad -R3 -t 'G((X(!(p0))) | (({{{{1};{p0}}[:*]};{{p0} | {p1}}}) U (X(X((p2) W (p0))))))' >'lcr-o0-BRE5PH'
+Running [P1]: ../ikwiad -x -R3 -t 'G((X(!(p0))) | (({{{{1};{p0}}[:*]};{{p0} | {p1}}}) U (X(X((p2) W (p0))))))' >'lcr-o1-AV0Krd'
+Running [N0]: ../ikwiad -R3 -t '!(G((X(!(p0))) | (({{{{1};{p0}}[:*]};{{p0} | {p1}}}) U (X(X((p2) W (p0)))))))' >'lcr-o0-TepG9R'
+Running [N1]: ../ikwiad -x -R3 -t '!(G((X(!(p0))) | (({{{{1};{p0}}[:*]};{{p0} | {p1}}}) U (X(X((p2) W (p0)))))))' >'lcr-o1-PAhLMG'
+Performing sanity checks and gathering statistics...
+
+-:21: {first_match({{p0}[*]}[:*1])}[]-> ((p1) R (((!(p2)) & (F(!(p1)))) W (F(p2))))
+Running [P0]: ../ikwiad -R3 -t '{first_match({{p0}[*]}[:*1])}[]-> ((p1) R (((!(p2)) & (F(!(p1)))) W (F(p2))))' >'lcr-o0-9RWTLR'
+Running [P1]: ../ikwiad -x -R3 -t '{first_match({{p0}[*]}[:*1])}[]-> ((p1) R (((!(p2)) & (F(!(p1)))) W (F(p2))))' >'lcr-o1-NtliHm'
+Running [N0]: ../ikwiad -R3 -t '!({first_match({{p0}[*]}[:*1])}[]-> ((p1) R (((!(p2)) & (F(!(p1)))) W (F(p2)))))' >'lcr-o0-LKZU7c'
+Running [N1]: ../ikwiad -x -R3 -t '!({first_match({{p0}[*]}[:*1])}[]-> ((p1) R (((!(p2)) & (F(!(p1)))) W (F(p2)))))' >'lcr-o1-PDh68Q'
+Performing sanity checks and gathering statistics...
+
+-:22: X({{{[*2..3]}[*0..2]}[:*]}[]-> ((p0) | ((G((!(p1)) | (!(p2)))) & (X(F(!(p0)))))))
+Running [P0]: ../ikwiad -R3 -t 'X({{{[*2..3]}[*0..2]}[:*]}[]-> ((p0) | ((G((!(p1)) | (!(p2)))) & (X(F(!(p0)))))))' >'lcr-o0-kR8CW4'
+Running [P1]: ../ikwiad -x -R3 -t 'X({{{[*2..3]}[*0..2]}[:*]}[]-> ((p0) | ((G((!(p1)) | (!(p2)))) & (X(F(!(p0)))))))' >'lcr-o1-AQuZG7'
+Running [N0]: ../ikwiad -R3 -t '!(X({{{[*2..3]}[*0..2]}[:*]}[]-> ((p0) | ((G((!(p1)) | (!(p2)))) & (X(F(!(p0))))))))' >'lcr-o0-1Kqgbf'
+Running [N1]: ../ikwiad -x -R3 -t '!(X({{{[*2..3]}[*0..2]}[:*]}[]-> ((p0) | ((G((!(p1)) | (!(p2)))) & (X(F(!(p0))))))))' >'lcr-o1-kvaOCc'
+Performing sanity checks and gathering statistics...
+
+-:23: (!(p0)) | ({{p1} && {{{1} && {{p1} | {[*0]}}}[:*2]}})
+Running [P0]: ../ikwiad -R3 -t '(!(p0)) | ({{p1} && {{{1} && {{p1} | {[*0]}}}[:*2]}})' >'lcr-o0-EVLCEG'
+Running [P1]: ../ikwiad -x -R3 -t '(!(p0)) | ({{p1} && {{{1} && {{p1} | {[*0]}}}[:*2]}})' >'lcr-o1-cr3Ctk'
+Running [N0]: ../ikwiad -R3 -t '!((!(p0)) | ({{p1} && {{{1} && {{p1} | {[*0]}}}[:*2]}}))' >'lcr-o0-qT7OJf'
+Running [N1]: ../ikwiad -x -R3 -t '!((!(p0)) | ({{p1} && {{{1} && {{p1} | {[*0]}}}[:*2]}}))' >'lcr-o1-Wtp42F'
+Performing sanity checks and gathering statistics...
+
+-:24: (((X(p0)) W ({{{p0}[*]}[:*2..3]})) M (!(p1))) U ((p2) W (G((G(p1)) M (p2))))
+Running [P0]: ../ikwiad -R3 -t '(((X(p0)) W ({{{p0}[*]}[:*2..3]})) M (!(p1))) U ((p2) W (G((G(p1)) M (p2))))' >'lcr-o0-recVZh'
+Running [P1]: ../ikwiad -x -R3 -t '(((X(p0)) W ({{{p0}[*]}[:*2..3]})) M (!(p1))) U ((p2) W (G((G(p1)) M (p2))))' >'lcr-o1-KYqm6I'
+Running [N0]: ../ikwiad -R3 -t '!((((X(p0)) W ({{{p0}[*]}[:*2..3]})) M (!(p1))) U ((p2) W (G((G(p1)) M (p2)))))' >'lcr-o0-QUxMvQ'
+Running [N1]: ../ikwiad -x -R3 -t '!((((X(p0)) W ({{{p0}[*]}[:*2..3]})) M (!(p1))) U ((p2) W (G((G(p1)) M (p2)))))' >'lcr-o1-jCUr3L'
+Performing sanity checks and gathering statistics...
+
+-:25: {{{first_match({{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}[*]}[:*1])}[*]} && {{!{p1}};{!{p0}}}}
+Running [P0]: ../ikwiad -R3 -t '{{{first_match({{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}[*]}[:*1])}[*]} && {{!{p1}};{!{p0}}}}' >'lcr-o0-YHkudw'
+Running [P1]: ../ikwiad -x -R3 -t '{{{first_match({{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}[*]}[:*1])}[*]} && {{!{p1}};{!{p0}}}}' >'lcr-o1-DgsGQC'
+Running [N0]: ../ikwiad -R3 -t '!{{{first_match({{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}[*]}[:*1])}[*]} && {{!{p1}};{!{p0}}}}' >'lcr-o0-BgMoVn'
+Running [N1]: ../ikwiad -x -R3 -t '!{{{first_match({{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}}[*]}[:*1])}[*]} && {{!{p1}};{!{p0}}}}' >'lcr-o1-OBNowE'
+Performing sanity checks and gathering statistics...
+
+-:26: X(G(((!(p0)) & (X(p0))) | ((p0) & (X(!(p0)))) | (X({[*1..2]}[]-> (F(p1))))))
+Running [P0]: ../ikwiad -R3 -t 'X(G(((!(p0)) & (X(p0))) | ((p0) & (X(!(p0)))) | (X({[*1..2]}[]-> (F(p1))))))' >'lcr-o0-DoMXHt'
+Running [P1]: ../ikwiad -x -R3 -t 'X(G(((!(p0)) & (X(p0))) | ((p0) & (X(!(p0)))) | (X({[*1..2]}[]-> (F(p1))))))' >'lcr-o1-YIOJAH'
+Running [N0]: ../ikwiad -R3 -t '!(X(G(((!(p0)) & (X(p0))) | ((p0) & (X(!(p0)))) | (X({[*1..2]}[]-> (F(p1)))))))' >'lcr-o0-HLYKNo'
+Running [N1]: ../ikwiad -x -R3 -t '!(X(G(((!(p0)) & (X(p0))) | ((p0) & (X(!(p0)))) | (X({[*1..2]}[]-> (F(p1)))))))' >'lcr-o1-GPdYYn'
+Performing sanity checks and gathering statistics...
+
+-:27: X(G(((G(p0)) & (((p0) & (!(p1))) R ({{{p2}[*1..3]}[:*]}<>-> (F(p1))))) | ((F(!(p0))) & (((!(p0)) | (p1)) U ({{{p2}[*1..3]}[:*]}[]-> (G(!(p1))))))))
+Running [P0]: ../ikwiad -R3 -t 'X(G(((G(p0)) & (((p0) & (!(p1))) R ({{{p2}[*1..3]}[:*]}<>-> (F(p1))))) | ((F(!(p0))) & (((!(p0)) | (p1)) U ({{{p2}[*1..3]}[:*]}[]-> (G(!(p1))))))))' >'lcr-o0-fz6QBZ'
+Running [P1]: ../ikwiad -x -R3 -t 'X(G(((G(p0)) & (((p0) & (!(p1))) R ({{{p2}[*1..3]}[:*]}<>-> (F(p1))))) | ((F(!(p0))) & (((!(p0)) | (p1)) U ({{{p2}[*1..3]}[:*]}[]-> (G(!(p1))))))))' >'lcr-o1-gBgnXb'
+Running [N0]: ../ikwiad -R3 -t '!(X(G(((G(p0)) & (((p0) & (!(p1))) R ({{{p2}[*1..3]}[:*]}<>-> (F(p1))))) | ((F(!(p0))) & (((!(p0)) | (p1)) U ({{{p2}[*1..3]}[:*]}[]-> (G(!(p1)))))))))' >'lcr-o0-zrPSlk'
+Running [N1]: ../ikwiad -x -R3 -t '!(X(G(((G(p0)) & (((p0) & (!(p1))) R ({{{p2}[*1..3]}[:*]}<>-> (F(p1))))) | ((F(!(p0))) & (((!(p0)) | (p1)) U ({{{p2}[*1..3]}[:*]}[]-> (G(!(p1)))))))))' >'lcr-o1-YVrtVC'
+Performing sanity checks and gathering statistics...
+
+-:28: {{{p0}[*]}[:*]}[]-> (((p1) | (X(p1))) W (((p1) | (!(p2))) & (((!(p1)) & (p2)) | ((p1) & (!(p2))))))
+Running [P0]: ../ikwiad -R3 -t '{{{p0}[*]}[:*]}[]-> (((p1) | (X(p1))) W (((p1) | (!(p2))) & (((!(p1)) & (p2)) | ((p1) & (!(p2))))))' >'lcr-o0-6al3Fu'
+Running [P1]: ../ikwiad -x -R3 -t '{{{p0}[*]}[:*]}[]-> (((p1) | (X(p1))) W (((p1) | (!(p2))) & (((!(p1)) & (p2)) | ((p1) & (!(p2))))))' >'lcr-o1-xwMVLd'
+Running [N0]: ../ikwiad -R3 -t '!({{{p0}[*]}[:*]}[]-> (((p1) | (X(p1))) W (((p1) | (!(p2))) & (((!(p1)) & (p2)) | ((p1) & (!(p2)))))))' >'lcr-o0-vyD3Ht'
+Running [N1]: ../ikwiad -x -R3 -t '!({{{p0}[*]}[:*]}[]-> (((p1) | (X(p1))) W (((p1) | (!(p2))) & (((!(p1)) & (p2)) | ((p1) & (!(p2)))))))' >'lcr-o1-5azHvV'
+Performing sanity checks and gathering statistics...
+
+-:29: {{{{!{p0}} && {p1}}[*2..3]}:{{p2};{{{{!{p2}} && {{{p0} && {!{p2}}} | {{!{p0}} && {p2}}}} | {{p2} && {{{p0} && {p2}} | {{!{p0}} && {!{p2}}}}}}[*0..3]}}}
+Running [P0]: ../ikwiad -R3 -t '{{{{!{p0}} && {p1}}[*2..3]}:{{p2};{{{{!{p2}} && {{{p0} && {!{p2}}} | {{!{p0}} && {p2}}}} | {{p2} && {{{p0} && {p2}} | {{!{p0}} && {!{p2}}}}}}[*0..3]}}}' >'lcr-o0-8NCdaC'
+Running [P1]: ../ikwiad -x -R3 -t '{{{{!{p0}} && {p1}}[*2..3]}:{{p2};{{{{!{p2}} && {{{p0} && {!{p2}}} | {{!{p0}} && {p2}}}} | {{p2} && {{{p0} && {p2}} | {{!{p0}} && {!{p2}}}}}}[*0..3]}}}' >'lcr-o1-eqWZmz'
+Running [N0]: ../ikwiad -R3 -t '!{{{{!{p0}} && {p1}}[*2..3]}:{{p2};{{{{!{p2}} && {{{p0} && {!{p2}}} | {{!{p0}} && {p2}}}} | {{p2} && {{{p0} && {p2}} | {{!{p0}} && {!{p2}}}}}}[*0..3]}}}' >'lcr-o0-zw7lHF'
+Running [N1]: ../ikwiad -x -R3 -t '!{{{{!{p0}} && {p1}}[*2..3]}:{{p2};{{{{!{p2}} && {{{p0} && {!{p2}}} | {{!{p0}} && {p2}}}} | {{p2} && {{{p0} && {p2}} | {{!{p0}} && {!{p2}}}}}}[*0..3]}}}' >'lcr-o1-4z1kr3'
+Performing sanity checks and gathering statistics...
+
+-:30: ({[*1..2]}<>-> (X(!(p0)))) U (((p1) & (((p1) & (X(p2))) | ((!(p1)) & (X(!(p2)))))) | ((!(p1)) & (((p1) & (X(!(p2)))) | ((!(p1)) & (X(p2))))))
+Running [P0]: ../ikwiad -R3 -t '({[*1..2]}<>-> (X(!(p0)))) U (((p1) & (((p1) & (X(p2))) | ((!(p1)) & (X(!(p2)))))) | ((!(p1)) & (((p1) & (X(!(p2)))) | ((!(p1)) & (X(p2))))))' >'lcr-o0-CfgLaF'
+Running [P1]: ../ikwiad -x -R3 -t '({[*1..2]}<>-> (X(!(p0)))) U (((p1) & (((p1) & (X(p2))) | ((!(p1)) & (X(!(p2)))))) | ((!(p1)) & (((p1) & (X(!(p2)))) | ((!(p1)) & (X(p2))))))' >'lcr-o1-tcFAaX'
+Running [N0]: ../ikwiad -R3 -t '!(({[*1..2]}<>-> (X(!(p0)))) U (((p1) & (((p1) & (X(p2))) | ((!(p1)) & (X(!(p2)))))) | ((!(p1)) & (((p1) & (X(!(p2)))) | ((!(p1)) & (X(p2)))))))' >'lcr-o0-d7XSjT'
+Running [N1]: ../ikwiad -x -R3 -t '!(({[*1..2]}<>-> (X(!(p0)))) U (((p1) & (((p1) & (X(p2))) | ((!(p1)) & (X(!(p2)))))) | ((!(p1)) & (((p1) & (X(!(p2)))) | ((!(p1)) & (X(p2)))))))' >'lcr-o1-g9L1em'
+Performing sanity checks and gathering statistics...
+
+-:31: {first_match([*2])}<>-> ((p0) & (X((p1) | (X((p2) | (F(G(p0))))))))
+Running [P0]: ../ikwiad -R3 -t '{first_match([*2])}<>-> ((p0) & (X((p1) | (X((p2) | (F(G(p0))))))))' >'lcr-o0-qoJ6h8'
+Running [P1]: ../ikwiad -x -R3 -t '{first_match([*2])}<>-> ((p0) & (X((p1) | (X((p2) | (F(G(p0))))))))' >'lcr-o1-jABdzC'
+Running [N0]: ../ikwiad -R3 -t '!({first_match([*2])}<>-> ((p0) & (X((p1) | (X((p2) | (F(G(p0)))))))))' >'lcr-o0-etKk34'
+Running [N1]: ../ikwiad -x -R3 -t '!({first_match([*2])}<>-> ((p0) & (X((p1) | (X((p2) | (F(G(p0)))))))))' >'lcr-o1-2cE3Kq'
+Performing sanity checks and gathering statistics...
+
+-:32: G((p0) M (((!(p1)) | (X(!(p1)))) R ({{{1} | {[*0]}}[:*2..3]})))
+Running [P0]: ../ikwiad -R3 -t 'G((p0) M (((!(p1)) | (X(!(p1)))) R ({{{1} | {[*0]}}[:*2..3]})))' >'lcr-o0-8mDUFs'
+Running [P1]: ../ikwiad -x -R3 -t 'G((p0) M (((!(p1)) | (X(!(p1)))) R ({{{1} | {[*0]}}[:*2..3]})))' >'lcr-o1-GAsdoq'
+Running [N0]: ../ikwiad -R3 -t '!(G((p0) M (((!(p1)) | (X(!(p1)))) R ({{{1} | {[*0]}}[:*2..3]}))))' >'lcr-o0-jSuo1g'
+Running [N1]: ../ikwiad -x -R3 -t '!(G((p0) M (((!(p1)) | (X(!(p1)))) R ({{{1} | {[*0]}}[:*2..3]}))))' >'lcr-o1-7CyzQs'
+Performing sanity checks and gathering statistics...
+
+-:33: F(((X(!(p0))) & ({{[*]}[:*]}[]-> (X(!(p1))))) | ((X(p0)) & ({{[*]}[:*]}<>-> (X(p1)))))
+Running [P0]: ../ikwiad -R3 -t 'F(((X(!(p0))) & ({{[*]}[:*]}[]-> (X(!(p1))))) | ((X(p0)) & ({{[*]}[:*]}<>-> (X(p1)))))' >'lcr-o0-eYPIxC'
+Running [P1]: ../ikwiad -x -R3 -t 'F(((X(!(p0))) & ({{[*]}[:*]}[]-> (X(!(p1))))) | ((X(p0)) & ({{[*]}[:*]}<>-> (X(p1)))))' >'lcr-o1-GmkKr1'
+Running [N0]: ../ikwiad -R3 -t '!(F(((X(!(p0))) & ({{[*]}[:*]}[]-> (X(!(p1))))) | ((X(p0)) & ({{[*]}[:*]}<>-> (X(p1))))))' >'lcr-o0-A020r6'
+Running [N1]: ../ikwiad -x -R3 -t '!(F(((X(!(p0))) & ({{[*]}[:*]}[]-> (X(!(p1))))) | ((X(p0)) & ({{[*]}[:*]}<>-> (X(p1))))))' >'lcr-o1-PZgNaY'
+Performing sanity checks and gathering statistics...
+
+-:34: {{{{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}} && {{!{p0}} | {!{p1}}}};{1}}[:*]}
+Running [P0]: ../ikwiad -R3 -t '{{{{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}} && {{!{p0}} | {!{p1}}}};{1}}[:*]}' >'lcr-o0-7ok4Kq'
+Running [P1]: ../ikwiad -x -R3 -t '{{{{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}} && {{!{p0}} | {!{p1}}}};{1}}[:*]}' >'lcr-o1-UqT0j9'
+Running [N0]: ../ikwiad -R3 -t '!{{{{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}} && {{!{p0}} | {!{p1}}}};{1}}[:*]}' >'lcr-o0-bRPGGj'
+Running [N1]: ../ikwiad -x -R3 -t '!{{{{{{p0} && {p1}} | {{!{p0}} && {!{p1}}}} && {{!{p0}} | {!{p1}}}};{1}}[:*]}' >'lcr-o1-c46EyF'
+Performing sanity checks and gathering statistics...
+
+-:35: {{{[*2]};{{p0} && {!{p1}}};{{{p0} && {!{p2}}} | {{!{p0}} && {p2}}}}[*1..3]}
+Running [P0]: ../ikwiad -R3 -t '{{{[*2]};{{p0} && {!{p1}}};{{{p0} && {!{p2}}} | {{!{p0}} && {p2}}}}[*1..3]}' >'lcr-o0-Hrjt20'
+Running [P1]: ../ikwiad -x -R3 -t '{{{[*2]};{{p0} && {!{p1}}};{{{p0} && {!{p2}}} | {{!{p0}} && {p2}}}}[*1..3]}' >'lcr-o1-HcqeXL'
+Running [N0]: ../ikwiad -R3 -t '!{{{[*2]};{{p0} && {!{p1}}};{{{p0} && {!{p2}}} | {{!{p0}} && {p2}}}}[*1..3]}' >'lcr-o0-dr1OAR'
+Running [N1]: ../ikwiad -x -R3 -t '!{{{[*2]};{{p0} && {!{p1}}};{{{p0} && {!{p2}}} | {{!{p0}} && {p2}}}}[*1..3]}' >'lcr-o1-BWn53a'
+Performing sanity checks and gathering statistics...
+
+-:36: {{{[*0]} | {{{p0}[*2]}[:*]}};{{{p0} | {p1}} && {{!{p0}} | {p2}}}}
+Running [P0]: ../ikwiad -R3 -t '{{{[*0]} | {{{p0}[*2]}[:*]}};{{{p0} | {p1}} && {{!{p0}} | {p2}}}}' >'lcr-o0-Wt19ho'
+Running [P1]: ../ikwiad -x -R3 -t '{{{[*0]} | {{{p0}[*2]}[:*]}};{{{p0} | {p1}} && {{!{p0}} | {p2}}}}' >'lcr-o1-wPXcWR'
+Running [N0]: ../ikwiad -R3 -t '!{{{[*0]} | {{{p0}[*2]}[:*]}};{{{p0} | {p1}} && {{!{p0}} | {p2}}}}' >'lcr-o0-8uAn35'
+Running [N1]: ../ikwiad -x -R3 -t '!{{{[*0]} | {{{p0}[*2]}[:*]}};{{{p0} | {p1}} && {{!{p0}} | {p2}}}}' >'lcr-o1-xOLrCg'
+Performing sanity checks and gathering statistics...
+
+-:37: (p0) | ({{{p1}[*]}[:*2]}<>-> (((!(p2)) | ((!(p0)) & (p2))) & (F(p2))))
+Running [P0]: ../ikwiad -R3 -t '(p0) | ({{{p1}[*]}[:*2]}<>-> (((!(p2)) | ((!(p0)) & (p2))) & (F(p2))))' >'lcr-o0-bmm1Zw'
+Running [P1]: ../ikwiad -x -R3 -t '(p0) | ({{{p1}[*]}[:*2]}<>-> (((!(p2)) | ((!(p0)) & (p2))) & (F(p2))))' >'lcr-o1-s7rdCv'
+Running [N0]: ../ikwiad -R3 -t '!((p0) | ({{{p1}[*]}[:*2]}<>-> (((!(p2)) | ((!(p0)) & (p2))) & (F(p2)))))' >'lcr-o0-nHBuP2'
+Running [N1]: ../ikwiad -x -R3 -t '!((p0) | ({{{p1}[*]}[:*2]}<>-> (((!(p2)) | ((!(p0)) & (p2))) & (F(p2)))))' >'lcr-o1-T0PypJ'
+Performing sanity checks and gathering statistics...
+
+-:38: F({{{p0};{{{p1};{1}}[*2]}}[+]}[]-> (((p2) & (X(!(p2)))) | ((!(p2)) & (X(p2)))))
+Running [P0]: ../ikwiad -R3 -t 'F({{{p0};{{{p1};{1}}[*2]}}[+]}[]-> (((p2) & (X(!(p2)))) | ((!(p2)) & (X(p2)))))' >'lcr-o0-x369AJ'
+Running [P1]: ../ikwiad -x -R3 -t 'F({{{p0};{{{p1};{1}}[*2]}}[+]}[]-> (((p2) & (X(!(p2)))) | ((!(p2)) & (X(p2)))))' >'lcr-o1-dcxsdj'
+Running [N0]: ../ikwiad -R3 -t '!(F({{{p0};{{{p1};{1}}[*2]}}[+]}[]-> (((p2) & (X(!(p2)))) | ((!(p2)) & (X(p2))))))' >'lcr-o0-98VVIa'
+Running [N1]: ../ikwiad -x -R3 -t '!(F({{{p0};{{{p1};{1}}[*2]}}[+]}[]-> (((p2) & (X(!(p2)))) | ((!(p2)) & (X(p2))))))' >'lcr-o1-BcrqYy'
+Performing sanity checks and gathering statistics...
+
+-:39: F(((p0) & (!{{p1}:{{p2};{p0}}}) & (((G(p1)) & (F(!(p0)))) | ((G(p0)) & (F(!(p1)))))) | (((G((p0) & (p1))) | ((F(!(p0))) & (F(!(p1))))) & ((!(p0)) | ({{p1}:{{p2};{p0}}}))))
+Running [P0]: ../ikwiad -R3 -t 'F(((p0) & (!{{p1}:{{p2};{p0}}}) & (((G(p1)) & (F(!(p0)))) | ((G(p0)) & (F(!(p1)))))) | (((G((p0) & (p1))) | ((F(!(p0))) & (F(!(p1))))) & ((!(p0)) | ({{p1}:{{p2};{p0}}}))))' >'lcr-o0-Z3Ofa7'
+Running [P1]: ../ikwiad -x -R3 -t 'F(((p0) & (!{{p1}:{{p2};{p0}}}) & (((G(p1)) & (F(!(p0)))) | ((G(p0)) & (F(!(p1)))))) | (((G((p0) & (p1))) | ((F(!(p0))) & (F(!(p1))))) & ((!(p0)) | ({{p1}:{{p2};{p0}}}))))' >'lcr-o1-56eygV'
+Running [N0]: ../ikwiad -R3 -t '!(F(((p0) & (!{{p1}:{{p2};{p0}}}) & (((G(p1)) & (F(!(p0)))) | ((G(p0)) & (F(!(p1)))))) | (((G((p0) & (p1))) | ((F(!(p0))) & (F(!(p1))))) & ((!(p0)) | ({{p1}:{{p2};{p0}}})))))' >'lcr-o0-WRIIgL'
+Running [N1]: ../ikwiad -x -R3 -t '!(F(((p0) & (!{{p1}:{{p2};{p0}}}) & (((G(p1)) & (F(!(p0)))) | ((G(p0)) & (F(!(p1)))))) | (((G((p0) & (p1))) | ((F(!(p0))) & (F(!(p1))))) & ((!(p0)) | ({{p1}:{{p2};{p0}}})))))' >'lcr-o1-owg83C'
+Performing sanity checks and gathering statistics...
+
+-:40: F(G({{{p0}[*0..3]}[:*]}<>-> ((p0) | (X((p0) & (!(p1)))))))
+Running [P0]: ../ikwiad -R3 -t 'F(G({{{p0}[*0..3]}[:*]}<>-> ((p0) | (X((p0) & (!(p1)))))))' >'lcr-o0-0TgnuI'
+Running [P1]: ../ikwiad -x -R3 -t 'F(G({{{p0}[*0..3]}[:*]}<>-> ((p0) | (X((p0) & (!(p1)))))))' >'lcr-o1-6fY6at'
+Running [N0]: ../ikwiad -R3 -t '!(F(G({{{p0}[*0..3]}[:*]}<>-> ((p0) | (X((p0) & (!(p1))))))))' >'lcr-o0-8FrNLx'
+Running [N1]: ../ikwiad -x -R3 -t '!(F(G({{{p0}[*0..3]}[:*]}<>-> ((p0) | (X((p0) & (!(p1))))))))' >'lcr-o1-22kdMr'
+Performing sanity checks and gathering statistics...
+
+-:41: X(({{{{!{p0}} | {{p0} && {p1}}}:{{p0}[*1..2]}:{p1}}[*1..2]}[]-> (G(!(p0)))) & (F((!(p0)) & (!(p2)))))
+Running [P0]: ../ikwiad -R3 -t 'X(({{{{!{p0}} | {{p0} && {p1}}}:{{p0}[*1..2]}:{p1}}[*1..2]}[]-> (G(!(p0)))) & (F((!(p0)) & (!(p2)))))' >'lcr-o0-VviZJV'
+Running [P1]: ../ikwiad -x -R3 -t 'X(({{{{!{p0}} | {{p0} && {p1}}}:{{p0}[*1..2]}:{p1}}[*1..2]}[]-> (G(!(p0)))) & (F((!(p0)) & (!(p2)))))' >'lcr-o1-xeK0rK'
+Running [N0]: ../ikwiad -R3 -t '!(X(({{{{!{p0}} | {{p0} && {p1}}}:{{p0}[*1..2]}:{p1}}[*1..2]}[]-> (G(!(p0)))) & (F((!(p0)) & (!(p2))))))' >'lcr-o0-60JYAG'
+Running [N1]: ../ikwiad -x -R3 -t '!(X(({{{{!{p0}} | {{p0} && {p1}}}:{{p0}[*1..2]}:{p1}}[*1..2]}[]-> (G(!(p0)))) & (F((!(p0)) & (!(p2))))))' >'lcr-o1-huL8Ay'
+Performing sanity checks and gathering statistics...
+
+-:42: X({{{{{1};{p0}}[*]}[:*2]}[+]}[]-> ((p1) W (X(p0))))
+Running [P0]: ../ikwiad -R3 -t 'X({{{{{1};{p0}}[*]}[:*2]}[+]}[]-> ((p1) W (X(p0))))' >'lcr-o0-qiXjux'
+Running [P1]: ../ikwiad -x -R3 -t 'X({{{{{1};{p0}}[*]}[:*2]}[+]}[]-> ((p1) W (X(p0))))' >'lcr-o1-JkZx3I'
+Running [N0]: ../ikwiad -R3 -t '!(X({{{{{1};{p0}}[*]}[:*2]}[+]}[]-> ((p1) W (X(p0)))))' >'lcr-o0-ZJOwzf'
+Running [N1]: ../ikwiad -x -R3 -t '!(X({{{{{1};{p0}}[*]}[:*2]}[+]}[]-> ((p1) W (X(p0)))))' >'lcr-o1-FXNBbp'
+Performing sanity checks and gathering statistics...
+
+-:43: {{{{{!{p0}} | {{!{p1}} && {p2}} | {{p1} && {!{p2}}}} | {[*0]}}[:*]}[+]}<>-> (p0)
+Running [P0]: ../ikwiad -R3 -t '{{{{{!{p0}} | {{!{p1}} && {p2}} | {{p1} && {!{p2}}}} | {[*0]}}[:*]}[+]}<>-> (p0)' >'lcr-o0-tIwqWK'
+Running [P1]: ../ikwiad -x -R3 -t '{{{{{!{p0}} | {{!{p1}} && {p2}} | {{p1} && {!{p2}}}} | {[*0]}}[:*]}[+]}<>-> (p0)' >'lcr-o1-P8b8KO'
+Running [N0]: ../ikwiad -R3 -t '!({{{{{!{p0}} | {{!{p1}} && {p2}} | {{p1} && {!{p2}}}} | {[*0]}}[:*]}[+]}<>-> (p0))' >'lcr-o0-SAH5lw'
+Running [N1]: ../ikwiad -x -R3 -t '!({{{{{!{p0}} | {{!{p1}} && {p2}} | {{p1} && {!{p2}}}} | {[*0]}}[:*]}[+]}<>-> (p0))' >'lcr-o1-oBAm2r'
+Performing sanity checks and gathering statistics...
+
+-:44: F((p0) | ((F(!(p1))) & ({first_match({p1} | {{p1}:{{{{{p1} | {[*0]}}[:*2..3]}[:*]}[*]}})})))
+Running [P0]: ../ikwiad -R3 -t 'F((p0) | ((F(!(p1))) & ({first_match({p1} | {{p1}:{{{{{p1} | {[*0]}}[:*2..3]}[:*]}[*]}})})))' >'lcr-o0-Sr2zAd'
+Running [P1]: ../ikwiad -x -R3 -t 'F((p0) | ((F(!(p1))) & ({first_match({p1} | {{p1}:{{{{{p1} | {[*0]}}[:*2..3]}[:*]}[*]}})})))' >'lcr-o1-eY7twy'
+Running [N0]: ../ikwiad -R3 -t '!(F((p0) | ((F(!(p1))) & ({first_match({p1} | {{p1}:{{{{{p1} | {[*0]}}[:*2..3]}[:*]}[*]}})}))))' >'lcr-o0-QzC7H2'
+Running [N1]: ../ikwiad -x -R3 -t '!(F((p0) | ((F(!(p1))) & ({first_match({p1} | {{p1}:{{{{{p1} | {[*0]}}[:*2..3]}[:*]}[*]}})}))))' >'lcr-o1-OzsNWe'
+Performing sanity checks and gathering statistics...
+
+-:45: G((p0) & (X((p0) & (X({{{p0}[*0..1]};{p1}})))))
+Running [P0]: ../ikwiad -R3 -t 'G((p0) & (X((p0) & (X({{{p0}[*0..1]};{p1}})))))' >'lcr-o0-58xCIy'
+Running [P1]: ../ikwiad -x -R3 -t 'G((p0) & (X((p0) & (X({{{p0}[*0..1]};{p1}})))))' >'lcr-o1-LyjMPc'
+Running [N0]: ../ikwiad -R3 -t '!(G((p0) & (X((p0) & (X({{{p0}[*0..1]};{p1}}))))))' >'lcr-o0-AF66xb'
+Running [N1]: ../ikwiad -x -R3 -t '!(G((p0) & (X((p0) & (X({{{p0}[*0..1]};{p1}}))))))' >'lcr-o1-tvnxOz'
+Performing sanity checks and gathering statistics...
+
+-:46: ({{{{!{p0}} && {!{p1}} && {{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}} | {{{!{p0}} && {!{p1}} && {{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}}:{{1} | {{p1}[*]}}}}[:*1..2]}) & ((G(!(p2))) | (X(p0)))
+Running [P0]: ../ikwiad -R3 -t '({{{{!{p0}} && {!{p1}} && {{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}} | {{{!{p0}} && {!{p1}} && {{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}}:{{1} | {{p1}[*]}}}}[:*1..2]}) & ((G(!(p2))) | (X(p0)))' >'lcr-o0-Cj96yx'
+Running [P1]: ../ikwiad -x -R3 -t '({{{{!{p0}} && {!{p1}} && {{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}} | {{{!{p0}} && {!{p1}} && {{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}}:{{1} | {{p1}[*]}}}}[:*1..2]}) & ((G(!(p2))) | (X(p0)))' >'lcr-o1-VJWxp3'
+Running [N0]: ../ikwiad -R3 -t '!(({{{{!{p0}} && {!{p1}} && {{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}} | {{{!{p0}} && {!{p1}} && {{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}}:{{1} | {{p1}[*]}}}}[:*1..2]}) & ((G(!(p2))) | (X(p0))))' >'lcr-o0-x7XMYe'
+Running [N1]: ../ikwiad -x -R3 -t '!(({{{{!{p0}} && {!{p1}} && {{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}} | {{{!{p0}} && {!{p1}} && {{{p1} && {p2}} | {{!{p1}} && {!{p2}}}}}:{{1} | {{p1}[*]}}}}[:*1..2]}) & ((G(!(p2))) | (X(p0))))' >'lcr-o1-EsyuzQ'
+Performing sanity checks and gathering statistics...
+
+-:47: {[*1..3]}[]-> (((!(p0)) | (!(p1))) & (X(((!(p0)) | (!(p1))) U (p2))))
+Running [P0]: ../ikwiad -R3 -t '{[*1..3]}[]-> (((!(p0)) | (!(p1))) & (X(((!(p0)) | (!(p1))) U (p2))))' >'lcr-o0-Rw8Bzz'
+Running [P1]: ../ikwiad -x -R3 -t '{[*1..3]}[]-> (((!(p0)) | (!(p1))) & (X(((!(p0)) | (!(p1))) U (p2))))' >'lcr-o1-L5OGsp'
+Running [N0]: ../ikwiad -R3 -t '!({[*1..3]}[]-> (((!(p0)) | (!(p1))) & (X(((!(p0)) | (!(p1))) U (p2)))))' >'lcr-o0-wnHKm1'
+Running [N1]: ../ikwiad -x -R3 -t '!({[*1..3]}[]-> (((!(p0)) | (!(p1))) & (X(((!(p0)) | (!(p1))) U (p2)))))' >'lcr-o1-ZldzXt'
+Performing sanity checks and gathering statistics...
+
+-:48: (F(p0)) & ((!(p0)) | (X(p0))) & (F({first_match({{{p0} | {{p0}[+]}}[:*1..2]}[*2])}[]-> (p1)))
+Running [P0]: ../ikwiad -R3 -t '(F(p0)) & ((!(p0)) | (X(p0))) & (F({first_match({{{p0} | {{p0}[+]}}[:*1..2]}[*2])}[]-> (p1)))' >'lcr-o0-KU7Xee'
+Running [P1]: ../ikwiad -x -R3 -t '(F(p0)) & ((!(p0)) | (X(p0))) & (F({first_match({{{p0} | {{p0}[+]}}[:*1..2]}[*2])}[]-> (p1)))' >'lcr-o1-iuOwYl'
+Running [N0]: ../ikwiad -R3 -t '!((F(p0)) & ((!(p0)) | (X(p0))) & (F({first_match({{{p0} | {{p0}[+]}}[:*1..2]}[*2])}[]-> (p1))))' >'lcr-o0-EPNK3b'
+Running [N1]: ../ikwiad -x -R3 -t '!((F(p0)) & ((!(p0)) | (X(p0))) & (F({first_match({{{p0} | {{p0}[+]}}[:*1..2]}[*2])}[]-> (p1))))' >'lcr-o1-qmCVim'
+Performing sanity checks and gathering statistics...
+
+-:49: {{{{p0}[*]} && {{{{1};{p1}}[*]}:{{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}}}[*2..3]}
+Running [P0]: ../ikwiad -R3 -t '{{{{p0}[*]} && {{{{1};{p1}}[*]}:{{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}}}[*2..3]}' >'lcr-o0-oi7Q1Q'
+Running [P1]: ../ikwiad -x -R3 -t '{{{{p0}[*]} && {{{{1};{p1}}[*]}:{{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}}}[*2..3]}' >'lcr-o1-M4QKHa'
+Running [N0]: ../ikwiad -R3 -t '!{{{{p0}[*]} && {{{{1};{p1}}[*]}:{{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}}}[*2..3]}' >'lcr-o0-H4015d'
+Running [N1]: ../ikwiad -x -R3 -t '!{{{{p0}[*]} && {{{{1};{p1}}[*]}:{{{p0} && {!{p1}}} | {{!{p0}} && {p1}}}}}[*2..3]}' >'lcr-o1-lHDsvB'
+Performing sanity checks and gathering statistics...
+
+-:50: (!((!(p0)) & (!(p1)))) | (X({{{!{p0}} && {!{p1}}}[*1..5]}[]-> (0)))
+Running [P0]: ../ikwiad -R3 -t '(!((!(p0)) & (!(p1)))) | (X({{{!{p0}} && {!{p1}}}[*1..5]}[]-> (0)))' >'lcr-o0-g5qre7'
+Running [P1]: ../ikwiad -x -R3 -t '(!((!(p0)) & (!(p1)))) | (X({{{!{p0}} && {!{p1}}}[*1..5]}[]-> (0)))' >'lcr-o1-OmcaRj'
+Running [N0]: ../ikwiad -R3 -t '!((!((!(p0)) & (!(p1)))) | (X({{{!{p0}} && {!{p1}}}[*1..5]}[]-> (0))))' >'lcr-o0-U7AYoq'
+Running [N1]: ../ikwiad -x -R3 -t '!((!((!(p0)) & (!(p1)))) | (X({{{!{p0}} && {!{p1}}}[*1..5]}[]-> (0))))' >'lcr-o1-ccdnqC'
+Performing sanity checks and gathering statistics...
+
+{{{p1}[*]}:{{p3} && {{!{p1}} xor {!{p3}}}}}
+Running [P0]: ../ikwiad -R3 -t '{{{p1}[*]}:{{p3} && {{!{p1}} xor {!{p3}}}}}' >'lcr-o0-gmFHgj'
+Running [P1]: ../ikwiad -x -R3 -t '{{{p1}[*]}:{{p3} && {{!{p1}} xor {!{p3}}}}}' >'lcr-o1-4uhRz8'
+Running [N0]: ../ikwiad -R3 -t '!{{{p1}[*]}:{{p3} && {{!{p1}} xor {!{p3}}}}}' >'lcr-o0-O79aw8'
+Running [N1]: ../ikwiad -x -R3 -t '!{{{p1}[*]}:{{p3} && {{!{p1}} xor {!{p3}}}}}' >'lcr-o1-f4RFux'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
++ wc -l
++ test 50 = 50
++ + randltl --pslgrep --sere-priorities=first_match=10 first_match -n
+ 100 2
+F!{first_match(1;p1)[*][:*][*]}
+{first_match(p0;first_match({!{!p0 xor {p0 -> p1}}}[*2..3]))}
+{first_match(p1;[*2..3])} M p1
+{first_match([+])}
+PASS core/randpsl.test (exit status: 0)

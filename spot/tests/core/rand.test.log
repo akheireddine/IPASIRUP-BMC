@@ -1,0 +1,182 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test rand.test
+== Running test rand.test
++ echo rand.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=rand
++ testSubDir=rand.dir
++ chmod -R a+rwx rand.dir
++ rm -rf rand.dir
++ mkdir rand.dir
++ cd rand.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ run 0 randltl -S -n 20 a b c --tree-size=10 --sere-priorities=and=0,andNLM=0 --boolean-priorities=equiv=0,implies=0,xor=0,and=0,not=0 --dump-priorities
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v randltl
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl -S -n 20 a b c --tree-size=10 --sere-priorities=and=0,andNLM=0 --boolean-priorities=equiv=0,implies=0,xor=0,and=0,not=0 --dump-priorities
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl -S -n 20 a b c --tree-size=10 --sere-priorities=and=0,andNLM=0 --boolean-priorities=equiv=0,implies=0,xor=0,and=0,not=0 --dump-priorities
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff stdout expected
++ sere=eword=0,and=0,andNLM=0,fusion=0,star=0,star_b=0
++ sere=eword=0,and=0,andNLM=0,fusion=0,star=0,star_b=0,or=0,concat=0,fstar=0,fstar_b=0,first_match=0
++ run 0 randltl -S -n 10000 a b c --tree-size=10..20 --sere-p=eword=0,and=0,andNLM=0,fusion=0,star=0,star_b=0,or=0,concat=0,fstar=0,fstar_b=0,first_match=0 --boolean-p=equiv=0,implies=0,xor=0,and=0,not=0,false=0,true=0,or=0 --dump-pr
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v randltl
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl -S -n 10000 a b c --tree-size=10..20 --sere-p=eword=0,and=0,andNLM=0,fusion=0,star=0,star_b=0,or=0,concat=0,fstar=0,fstar_b=0,first_match=0 --boolean-p=equiv=0,implies=0,xor=0,and=0,not=0,false=0,true=0,or=0 --dump-pr
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl -S -n 10000 a b c --tree-size=10..20 --sere-p=eword=0,and=0,andNLM=0,fusion=0,star=0,star_b=0,or=0,concat=0,fstar=0,fstar_b=0,first_match=0 --boolean-p=equiv=0,implies=0,xor=0,and=0,not=0,false=0,true=0,or=0 --dump-pr
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff stdout expected
++ randltl -S -n 10000 a b c --tree-size=10..20 --sere-p=eword=0,and=0,andNLM=0,fusion=0,star=0,star_b=0,or=0,concat=0,fstar=0,fstar_b=0,first_match=0 --boolean-p=equiv=0,implies=0,xor=0,and=0,not=0,false=0,true=0,or=0
+randltl: failed to generate a new unique formula after 100000 trials
++ sort out
++ cat
++ diff expected out2
++ randltl -n 1000 3 --tree-size=10..20
++ grep -q p0 out
++ grep -q p1 out
++ grep -q p2 out
++ grep p3 out
++ run 0 randltl -n3 --tree-size=..2 0
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v randltl
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl -n3 --tree-size=..2 0
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl -n3 --tree-size=..2 0
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ sort
++ cat
++ diff out2 expected
++ run 2 randltl -n4 --tree-size=..2 0
++ expected_exitcode=2
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v randltl
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl -n4 --tree-size=..2 0
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl -n4 --tree-size=..2 0
+1
+randltl: failed to generate a new unique formula after 100000 trials
+X(0)
+0
++ exitcode=2
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 2 = 2
++ run 0 randltl -n1000 0 1
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v randltl
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl -n1000 0 1
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl -n1000 0 1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep -q "0" out
++ grep -q "1" out
++ run 0 randltl -n5 2 -o test-all.ltl
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v randltl
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl -n5 2 -o test-all.ltl
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl -n5 2 -o test-all.ltl
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 randltl -n5 2 -o test-%L.ltl
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v randltl
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl -n5 2 -o test-%L.ltl
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl -n5 2 -o test-%L.ltl
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat test-1.ltl test-2.ltl test-3.ltl test-4.ltl test-5.ltl
++ diff test-cmp.ltl test-all.ltl
++ randltl 2 --ltl-prio=X
++ grep failed to parse LTL priorities near X stderr
+randltl: failed to parse LTL priorities near X
++ randltl -L --allow-dups -n2 1
++ cat
++ diff out expected
+PASS core/rand.test (exit status: 0)

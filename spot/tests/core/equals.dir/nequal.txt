@@ -1,0 +1,22 @@
+# other formulae which are not
+a, b
+1, 0
+a => b, b => a
+a => b, a <=> b
+a => b, a U b
+a R b, a U b
+a & b & c, c & a
+b & c, c & a & b
+a & b & (c |(f U g)| e), b & a & a & (c | e |(g U g)| e | c) & b
+{a*}, {a*}<>->1
+!{a*}, {a*}<>->1
+{a*}, {a*}!
+!{a*}, {a*}!
+
+# 1 should not be removed in the following two formulae
+{1&{g*}}!, {g*}!
+{1|{b;c}}<>->a, {b;c}<>->a
+# make sure twin arguments are not reduced in Fusion.
+{(a;!a)*:(a;!a)*:b}!, {(a;!a)*:b}!
+# make sure 1:a* is not reduced to a*.
+{(1:a*);b}!, {a*;b}!

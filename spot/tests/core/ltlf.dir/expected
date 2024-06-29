@@ -1,0 +1,3 @@
+A & a & X(!A | a) & (A U G!A)
+A & a & X(A & a) & (A U G!A)
+A & (a U (A & b)) & (F(A & c) | F(A & d & X!A)) & (A U G!A)

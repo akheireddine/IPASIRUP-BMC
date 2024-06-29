@@ -1,0 +1,17 @@
+digraph "" {
+  rankdir=LR
+  label="(Fin(⓿)|Fin(❸)) | (Fin(❶) & Inf(❷))\n[gen. Rabin 3]"
+  labelloc="t"
+  node [shape="box",style="rounded",width="0.5"]
+  I [label="", style=invis, width=0]
+  0 [label="0"]
+  1 [label="1\n⓿❸", tooltip="test me"]
+  2 [label="2\n⓿❷❸"]
+  3 [label="3\n❸"]
+  4 [label="4\n❷❸", tooltip="hihi"]
+  5 [label="5\n❶❸"]
+  6 [label="6\n⓿"]
+  7 [label="7\n⓿❷"]
+  8 [label="8\n⓿❸"]
+  9 [label="9\n⓿❷❸"]
+}

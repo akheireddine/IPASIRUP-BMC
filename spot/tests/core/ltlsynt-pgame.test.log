@@ -1,0 +1,64 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltlsynt-pgame.test
+== Running test ltlsynt-pgame.test
++ + echo ltlsynt-pgame.testsed
+ -e s,.*[\/],,;s/\.test$//
++ me=ltlsynt-pgame
++ testSubDir=ltlsynt-pgame.dir
++ chmod -R a+rwx ltlsynt-pgame.dir
++ rm -rf ltlsynt-pgame.dir
++ mkdir ltlsynt-pgame.dir
++ cd ltlsynt-pgame.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ ltlsynt --realizability --from-pgame aut7.hoa
++ test UNREALIZABLE = UNREALIZABLE
++ grep -v controllable-AP aut7.hoa
++ run 2 ltlsynt --realizability --from-pgame aut7b.hoa
++ grep aut7b.*controllable-AP stderr
+aut7b.hoa:1.1-22.7: controllable-AP is not specified
++ cat
++ ltlsynt --realizability --from-pgame UnderapproxDemo2.ehoa
++ test UNREALIZABLE = UNREALIZABLE
++ cat
++ ltlsynt --realizability --from-pgame starve.ehoa
++ test REALIZABLE = REALIZABLE
++ cat
++ ltlsynt --from-pgame starve.ehoa
++ diff expect results
++ ltlsynt --realizability --from-pgame starve.ehoa --from-pgame UnderapproxDemo2.ehoa --from-pgame aut7.hoa --csv=out.csv
++ :
++ cat
++ diff result expect
++ cat out.csv
+"formula","algo","tot_time","trans_time","split_time","todpa_time","solve_time","realizable","dpa_num_states","dpa_num_states_env","strat_num_states","strat_num_edges"
+"starve.ehoa:1.1-18.7",,0.000142006,0,8.1071e-05,0,2.1186e-05,1,4,2,0,0
+"UnderapproxDemo2.ehoa:1.1-25.7",,5.2894e-05,0,3.654e-05,0,9.515e-06,0,9,4,0,0
+"aut7.hoa:1.1-23.7",,3.1503e-05,0,1.7417e-05,0,8.147e-06,0,10,5,0,0
++ wc -l
++ test 4 = 4
++ ltlsynt --from-pgame starve.ehoa --from-pgame UnderapproxDemo2.ehoa --from-pgame aut7.hoa --csv=out.csv
++ :
++ wc -l
++ test 4 = 4
++ cut -d, -f 9,10,11,12,13
++ end="strat_num_states","strat_num_edges"
++ cat
++ diff right expect
+PASS core/ltlsynt-pgame.test (exit status: 0)

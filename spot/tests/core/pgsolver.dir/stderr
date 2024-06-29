@@ -1,0 +1,2 @@
+example3.pg:5.5-6: node owner should be 0 or 1
+example3.pg:6.5: node owner should be 0 or 1

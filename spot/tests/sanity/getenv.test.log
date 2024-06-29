@@ -1,0 +1,2 @@
++ set +x
+PASS sanity/getenv.test (exit status: 0)

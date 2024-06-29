@@ -1,0 +1,74 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test wdba2.test
+== Running test wdba2.test
++ echo wdba2.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=wdba2
++ testSubDir=wdba2.dir
++ chmod -R a+rwx wdba2.dir
++ rm -rf wdba2.dir
++ mkdir wdba2.dir
++ cd wdba2.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 ../ikwiad -Rm -kt a | X(Gd|Fa)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -Rm -kt a | X(Gd|Fa)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -Rm -kt a | X(Gd|Fa)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -Rm -kt Fa | XGd
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -Rm -kt Fa | XGd
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -Rm -kt Fa | XGd
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cmp out expected
++ cmp out2 expected
++ cat
++ cat
++ autfilt --small --high -C -Hi input
++ diff output expected
++ cat
++ autfilt --small -S input
++ cat
++ diff output expected
+PASS core/wdba2.test (exit status: 0)

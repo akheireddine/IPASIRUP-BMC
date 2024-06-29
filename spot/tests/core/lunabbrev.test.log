@@ -1,0 +1,85 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test lunabbrev.test
+== Running test lunabbrev.test
++ echo lunabbrev.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=lunabbrev
++ testSubDir=lunabbrev.dir
++ chmod -R a+rwx lunabbrev.dir
++ rm -rf lunabbrev.dir
++ mkdir lunabbrev.dir
++ cd lunabbrev.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 ../lunabbrev lunabbrev.txt
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../lunabbrev
++ cmd=../lunabbrev
++ shift
++ test -n ../lunabbrev
++ set ../lunabbrev lunabbrev.txt
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../lunabbrev lunabbrev.txt
+1: # A few things that do not change
+2: a, a
+ap(@3 #4 "a")
+3: 1, 1
+tt(@1 #3)
+4: 0, 0
+ff(@0 #3)
+5: G a ,  G a
+G(@5 #4 [ap(@4 #0 "a")])
+6: a U b, a U b
+U(@9 #4 [ap(@7 #0 "a"), ap(@8 #0 "b")])
+7: a & b, a & b
+And(@13 #4 [ap(@11 #0 "a"), ap(@12 #0 "b")])
+8: a & b, b & a
+And(@17 #4 [ap(@16 #0 "a"), ap(@15 #0 "b")])
+9: a & b & c, c & a & b
+And(@22 #4 [ap(@20 #0 "a"), ap(@21 #0 "b"), ap(@19 #0 "c")])
+10: a & b & c, b & c & a
+And(@27 #4 [ap(@26 #0 "a"), ap(@24 #0 "b"), ap(@25 #0 "c")])
+11: a & b & a, b & a & b
+And(@31 #4 [ap(@30 #0 "a"), ap(@29 #0 "b")])
+12: a & b, b & a & b
+And(@35 #4 [ap(@34 #0 "a"), ap(@33 #0 "b")])
+13: a & b, b & a & a
+And(@39 #4 [ap(@38 #0 "a"), ap(@37 #0 "b")])
+14: a & b & (c |(f U g)| e), b & a & a & (c | e |(f U g)| e | c) & b
+And(@49 #4 [ap(@42 #0 "a"), ap(@41 #0 "b"), Or(@48 #0 [ap(@43 #0 "c"), ap(@44 #0 "e"), U(@47 #0 [ap(@45 #0 "f"), ap(@46 #0 "g")])])])
+15: # other formulae that do change
+16: a ^ b, (a & !b) | (!a & b)
+Or(@59 #2 [And(@57 #0 [ap(@53 #2 "a"), Not(@55 #0 [ap(@54 #2 "b")])]), And(@58 #0 [Not(@56 #0 [ap(@53 #2 "a")]), ap(@54 #2 "b")])])
+17: a ^ Xb, (!Xb & a) | (!a & Xb) | (Xb & !a)
+Or(@78 #2 [And(@73 #0 [ap(@70 #2 "a"), Not(@69 #0 [X(@68 #2 [ap(@67 #0 "b")])])]), And(@74 #0 [Not(@71 #0 [ap(@70 #2 "a")]), X(@68 #2 [ap(@67 #0 "b")])])])
+18: GF a => F G(b), !GFa | F Gb
+Or(@94 #2 [Not(@90 #0 [G(@89 #1 [F(@88 #0 [ap(@87 #0 "a")])])]), F(@93 #1 [G(@92 #0 [ap(@91 #0 "b")])])])
+19: !a <-> Xb, (Xb & !a) | (!!a & !Xb)
+Or(@112 #2 [And(@110 #0 [Not(@106 #1 [ap(@105 #1 "a")]), X(@104 #2 [ap(@103 #0 "b")])]), And(@111 #0 [ap(@105 #1 "a"), Not(@109 #0 [X(@104 #2 [ap(@103 #0 "b")])])])])
+20: (a ^ b) | (b ^ c), (c & !b) | (!c & b) | (a & !b) | (!a & b)
+Or(@132 #2 [And(@125 #0 [Not(@123 #1 [ap(@122 #4 "b")]), ap(@121 #2 "c")]), And(@126 #0 [ap(@122 #4 "b"), Not(@124 #0 [ap(@121 #2 "c")])]), And(@129 #0 [ap(@127 #2 "a"), Not(@123 #1 [ap(@122 #4 "b")])]), And(@131 #0 [Not(@130 #0 [ap(@127 #2 "a")]), ap(@122 #4 "b")])])
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
+PASS core/lunabbrev.test (exit status: 0)

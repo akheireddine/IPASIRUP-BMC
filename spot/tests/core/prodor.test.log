@@ -1,0 +1,181 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test prodor.test
+== Running test prodor.test
++ + sed -e s,.*[\/],,;s/\.test$//echo
+ prodor.test
++ me=prodor
++ testSubDir=prodor.dir
++ chmod -R a+rwx prodor.dir
++ rm -rf prodor.dir
++ mkdir prodor.dir
++ cd prodor.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ cat
++ autfilt --product-or a1.hoa a2.hoa -H
++ autfilt --is-empty
+HOA: v1
+States: 1
+Start: 0
+AP: 1 "a"
+acc-name: co-Buchi
+Acceptance: 1 Fin(0)
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic
+--BODY--
+State: 0 {0}
+[t] 0
+--END--
++ ltl2tgba -DH GFa
++ ltl2tgba -DH FGb
++ autfilt --product-or gfa.hoa fgb.hoa -H
++ cat por.hoa
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc complete
+properties: stutter-invariant
+--BODY--
+State: 0
+[0] 0 {0}
+[!0] 0
+[0&1] 1 {0}
+[!0&1] 1
+State: 1
+[0&1] 1 {0}
+[!0&1] 1 {0}
+[0&!1] 2 {0}
+[!0&!1] 2 {0}
+State: 2
+[0] 2 {0}
+[!0] 2
+--END--
++ cat
++ diff -u por.hoa exp
++ autfilt -c --intersect por.hoa gfa.hoa fgb.hoa
++ test 2 = 2
++ autfilt --product-and gfa.hoa fgb.hoa -H
++ cat pand.hoa
+HOA: v1
+States: 2
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc stutter-invariant
+--BODY--
+State: 0
+[0] 0
+[!0] 0
+[0&1] 1
+[!0&1] 1
+State: 1
+[0&1] 1 {0}
+[!0&1] 1
+--END--
++ cat
++ diff pand.hoa exp
++ autfilt -c --intersect pand.hoa gfa.hoa fgb.hoa
++ test 2 = 2
++ ltl2tgba -BDH GFa
++ ltl2tgba -BDH Xb
++ autfilt --product-or gfa.hoa xb.hoa -H
++ cat por.hoa
+HOA: v1
+States: 7
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic
+--BODY--
+State: 0 {0}
+[0] 1
+[!0] 2
+State: 1 {0}
+[0&1] 3
+[!0&1] 4
+[0&!1] 5
+[!0&!1] 6
+State: 2
+[0&1] 3
+[!0&1] 4
+[0&!1] 5
+[!0&!1] 6
+State: 3 {0}
+[0] 3
+[!0] 4
+State: 4 {0}
+[0] 3
+[!0] 4
+State: 5 {0}
+[0] 5
+[!0] 6
+State: 6
+[0] 5
+[!0] 6
+--END--
++ cat
++ diff por.hoa exp
++ ltl2tgba -BDH GFa
++ ltl2tgba -x !wdba-minimize -DH Xb
++ autfilt --product-or gfa.hoa xb.hoa -H
++ cat por2.hoa
+HOA: v1
+States: 7
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic
+--BODY--
+State: 0 {0}
+[0] 1
+[!0] 2
+State: 1 {0}
+[0&1] 3
+[!0&1] 4
+[0&!1] 5
+[!0&!1] 6
+State: 2 {0}
+[0&1] 3
+[!0&1] 4
+[0&!1] 5
+[!0&!1] 6
+State: 3 {0}
+[0] 3
+[!0] 4
+State: 4 {0}
+[0] 3
+[!0] 4
+State: 5 {0}
+[0] 5
+[!0] 6
+State: 6
+[0] 5
+[!0] 6
+--END--
++ cat
++ diff por2.hoa exp
+PASS core/prodor.test (exit status: 0)

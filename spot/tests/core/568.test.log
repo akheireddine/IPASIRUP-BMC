@@ -1,0 +1,98 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test 568.test
+== Running test 568.test
++ echo 568.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=568
++ testSubDir=568.dir
++ chmod -R a+rwx 568.dir
++ rm -rf 568.dir
++ mkdir 568.dir
++ cd 568.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ genaut --cycle-onehot-nba=20 --cycle-onehot-nba=40 --cycle-onehot-nba=60 --cycle-onehot-nba=80 --cycle-log-nba=20 --cycle-log-nba=40 --cycle-log-nba=60 --cycle-log-nba=80
++ autfilt --small --stats=%S -> %s
++ cat
++ diff expected out
++ genaut --cycle-onehot-nba=80 --cycle-log-nba=80
++ autfilt -x simul-max=6400 --small --stats=%S -> %s
++ cat
++ diff expected out
++ genaut --cycle-onehot=7..12
++ autfilt --parity -D --stats=%S -> %s
++ cat
++ genaut --cycle-onehot=7..12
++ autfilt -x simul-max=10000 --parity -D --stats=%S -> %s
++ cat
++ genaut --cycle-onehot-nba=11..12 --cycle-log-nba=11..12
++ autcross --language-preserved autfilt --small --verbose
+-:1.1-361.7
+info: input	(121 st.,231 ed.,1 sets)
+Running [A0]: autfilt --small 'lcr-i0-teNL4B'>'lcr-o0-2nQzQa'
+info: collected automata:
+info:   A0	(11 st.,21 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(11 st.,21 ed.,1 sets) -> (5641 st.,67671 ed.,1 sets)	Comp(A0)
+info:      input	(121 st.,231 ed.,1 sets) -> (5641 st.,67671 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:362.1-790.7
+info: input	(144 st.,276 ed.,1 sets)
+Running [A0]: autfilt --small 'lcr-i1-Ce2fin'>'lcr-o0-iE30GQ'
+info: collected automata:
+info:   A0	(12 st.,23 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(12 st.,23 ed.,1 sets) -> (12298 st.,159851 ed.,1 sets)	Comp(A0)
+info:      input	(144 st.,276 ed.,1 sets) -> (12298 st.,159851 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:791.1-1151.7
+info: input	(121 st.,231 ed.,1 sets)
+Running [A0]: autfilt --small 'lcr-i2-W3jpy6'>'lcr-o0-kb33ll'
+info: collected automata:
+info:   A0	(11 st.,21 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(11 st.,21 ed.,1 sets) -> (5641 st.,90227 ed.,1 sets)	Comp(A0)
+info:      input	(121 st.,231 ed.,1 sets) -> (5641 st.,90227 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:1152.1-1580.7
+info: input	(144 st.,276 ed.,1 sets)
+Running [A0]: autfilt --small 'lcr-i3-vsJZeJ'>'lcr-o0-qA1z5s'
+info: collected automata:
+info:   A0	(12 st.,23 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(12 st.,23 ed.,1 sets) -> (12298 st.,196739 ed.,1 sets)	Comp(A0)
+info:      input	(144 st.,276 ed.,1 sets) -> (12298 st.,196739 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(input)
+info: check_empty input*Comp(A0)
+
+No problem detected.
++ cat
++ autfilt --small 575.hoa -H
++ autfilt --stats=%s %e %d res.hoa
++ test 16 49 0 = 16 49 0
+PASS core/568.test (exit status: 0)

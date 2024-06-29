@@ -1,0 +1,55 @@
+HOA: v1
+States: 4
+Start: 0
+AP: 2 "a" "b"
+acc-name: all
+Acceptance: 0 t
+properties: state-labels explicit-labels state-acc weak
+--BODY--
+State: [!1] 0
+1
+State: [0&1] 1
+2
+State: [0] 2
+3 0
+State: [1] 3
+0
+--END--HOA: v1
+States: 2
+Start: 0
+AP: 0
+acc-name: all
+Acceptance: 0 t
+properties: state-labels explicit-labels state-acc complete weak
+--BODY--
+State: [t] 0
+0 1
+State: [t] 1
+0 1
+--END--HOA: v1
+States: 1
+Start: 0
+AP: 2 "a" "b"
+acc-name: all
+Acceptance: 0 t
+properties: state-labels explicit-labels state-acc deterministic
+properties: very-weak
+--BODY--
+State: [0&1] 0
+0
+--END--HOA: v1
+States: 6
+Start: 0
+AP: 0
+acc-name: all
+Acceptance: 0 t
+properties: state-labels explicit-labels state-acc weak
+--BODY--
+State: [t] 0
+1 2 3 4 5
+State: [f] 1
+State: [f] 2
+State: [f] 3
+State: [f] 4
+State: [f] 5
+--END--

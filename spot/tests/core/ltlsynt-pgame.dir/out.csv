@@ -1,0 +1,4 @@
+"formula","algo","tot_time","trans_time","split_time","todpa_time","solve_time","strat2aut_time","realizable","dpa_num_states","dpa_num_states_env","strat_num_states","strat_num_edges"
+"starve.ehoa:1.1-18.7",,0.000258742,0,8.4657e-05,0,3.0856e-05,1.2197e-05,1,4,2,1,2
+"UnderapproxDemo2.ehoa:1.1-25.7",,6.9468e-05,0,4.8086e-05,0,1.3563e-05,0,0,9,4,0,0
+"aut7.hoa:1.1-23.7",,4.2556e-05,0,2.4429e-05,0,1.1245e-05,0,0,10,5,0,0

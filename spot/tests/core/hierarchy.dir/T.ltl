@@ -1,0 +1,25 @@
+F(XG(F!b M Fb) W (b R a))
+(b <-> FGc) M 1
+XG(b <-> GX(c M 1))
+GFb xor XXa
+X(GF!(c <-> X(0)) xor F!(a R Fa))
+G(Fb & ((c U Gb) xor (!a U Ga)))
+!((c <-> Fa) | G(!a U ((0 R b) W a)))
+c <-> F((1 U a) xor !(Ga W b))
+G((a M G(a U c)) M X!b)
+F(b xor (XXXa M c)) W 0
+F((a W Xc) <-> F(c R !b))
+F((a -> !b) & G(Fc xor (a W 0)))
+b <-> (F(Gc xor (b xor (!a W c))) -> Xc)
+F((a W b) <-> FG!F!Fa)
+(Fc & Ga) M (!b M XX(b R Fc))
+XGF((!b -> b) W (Xc R c))
+G(FGa -> (G(!a R c) M (c U a)))
+!FG((Fb W b) M ((c -> Fa) -> Xc))
+G((a W b) M 1)
+a <-> FX(Ga & (b <-> Ga))
+!X(F!Gc xor ((c xor GFb) M b))
+GF((Ga & F(b W Xb)) W 0)
+GF(!Fb -> Ga) W a
+F(X(c & GF(Fa W a)) R (a R !c))
+GXc xor G(F(a -> Gb) U Xb)

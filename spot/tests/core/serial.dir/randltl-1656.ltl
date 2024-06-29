@@ -1,0 +1,1 @@
+Fp0 xor (Fp1 | (Gp0 xor Xp1))

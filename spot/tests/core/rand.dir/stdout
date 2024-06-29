@@ -1,0 +1,23 @@
+Use --sere-priorities to set the following SERE priorities:
+eword	0
+boolform	1
+star	0
+star_b	0
+fstar	0
+fstar_b	0
+first_match	0
+and	0
+andNLM	0
+or	0
+concat	0
+fusion	0
+Use --boolean-priorities to set the following Boolean formula priorities:
+ap	3
+false	0
+true	0
+not	0
+equiv	0
+implies	0
+xor	0
+and	0
+or	0

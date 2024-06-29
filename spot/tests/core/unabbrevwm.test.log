@@ -1,0 +1,522 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test unabbrevwm.test
+== Running test unabbrevwm.test
++ echo unabbrevwm.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=unabbrevwm
++ testSubDir=unabbrevwm.dir
++ chmod -R a+rwx unabbrevwm.dir
++ rm -rf unabbrevwm.dir
++ mkdir unabbrevwm.dir
++ cd unabbrevwm.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ run 0 ltlfilt --remove-wm
++ expected_exitcode=0
++ shift
++ + exitcode=0
+uniq+ 
+test -n valgrind
++ command -v ltlfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt --remove-wm
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt --remove-wm
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ wc -l
++ test 1 = 1
++ f=(Fp0 U(Fp0&!(Gp0 U((FXp1 &(Gp2 R(p2|Gp2))) U(Fp0&FXp1&(Gp2 R(p2|Gp2)))))))
++ ltlfilt -c --equivalent-to=(Fp0 U(Fp0&!(Gp0 U((FXp1 &(Gp2 R(p2|Gp2))) U(Fp0&FXp1&(Gp2 R(p2|Gp2))))))) out
++ test 1 = 1
++ simon=!p0 W (p0 W (!p0 W (p0 W G!p0)))
++ ltlfilt --unabbrev=WRMF -f !p0 W (p0 W (!p0 W (p0 W G!p0))) -f FGFa -f a M Fb -f a R Gb
++ cat out
+G(!p0 | G(p0 | G(!p0 | G(p0 | G!p0))))
+G(1 U a)
+1 U (a & (1 U b))
+Gb
++ cat
++ diff out expected
++ ltlfilt -f GFa --unabbrev= --equivalent-to GFa
++ test -n 
++ ltlfilt -f GFa --unabbrev=R --equivalent-to GFa
++ test -n R
++ grep [R] out
++ ltlfilt -f GFa --unabbrev=W --equivalent-to GFa
++ test -n W
++ grep [W] out
++ ltlfilt -f GFa --unabbrev=M --equivalent-to GFa
++ test -n M
++ grep [M] out
++ ltlfilt -f GFa --unabbrev=RW --equivalent-to GFa
++ test -n RW
++ grep [RW] out
++ ltlfilt -f GFa --unabbrev=RM --equivalent-to GFa
++ test -n RM
++ grep [RM] out
++ ltlfilt -f GFa --unabbrev=WM --equivalent-to GFa
++ test -n WM
++ grep [WM] out
++ ltlfilt -f GFa --unabbrev=RWM --equivalent-to GFa
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f GFa --unabbrev=F --equivalent-to GFa
++ test -n 
++ ltlfilt -f GFa --unabbrev=FR --equivalent-to GFa
++ test -n R
++ grep [R] out
++ ltlfilt -f GFa --unabbrev=FW --equivalent-to GFa
++ test -n W
++ grep [W] out
++ ltlfilt -f GFa --unabbrev=FM --equivalent-to GFa
++ test -n M
++ grep [M] out
++ ltlfilt -f GFa --unabbrev=FRW --equivalent-to GFa
++ test -n RW
++ grep [RW] out
++ ltlfilt -f GFa --unabbrev=FRM --equivalent-to GFa
++ test -n RM
++ grep [RM] out
++ ltlfilt -f GFa --unabbrev=FWM --equivalent-to GFa
++ test -n WM
++ grep [WM] out
++ ltlfilt -f GFa --unabbrev=FRWM --equivalent-to GFa
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f GFa --unabbrev=G --equivalent-to GFa
++ test -n 
++ ltlfilt -f GFa --unabbrev=GR --equivalent-to GFa
++ test -n R
++ grep [R] out
++ ltlfilt -f GFa --unabbrev=GW --equivalent-to GFa
++ test -n W
++ grep [W] out
++ ltlfilt -f GFa --unabbrev=GM --equivalent-to GFa
++ test -n M
++ grep [M] out
++ ltlfilt -f GFa --unabbrev=GRW --equivalent-to GFa
++ test -n RW
++ grep [RW] out
++ ltlfilt -f GFa --unabbrev=GRM --equivalent-to GFa
++ test -n RM
++ grep [RM] out
++ ltlfilt -f GFa --unabbrev=GWM --equivalent-to GFa
++ test -n WM
++ grep [WM] out
++ ltlfilt -f GFa --unabbrev=GRWM --equivalent-to GFa
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f GFa --unabbrev=GF --equivalent-to GFa
++ test -n 
++ ltlfilt -f GFa --unabbrev=GFR --equivalent-to GFa
++ test -n R
++ grep [R] out
++ ltlfilt -f GFa --unabbrev=GFW --equivalent-to GFa
++ test -n W
++ grep [W] out
++ ltlfilt -f GFa --unabbrev=GFM --equivalent-to GFa
++ test -n M
++ grep [M] out
++ ltlfilt -f GFa --unabbrev=GFRW --equivalent-to GFa
++ test -n RW
++ grep [RW] out
++ ltlfilt -f GFa --unabbrev=GFRM --equivalent-to GFa
++ test -n RM
++ grep [RM] out
++ ltlfilt -f GFa --unabbrev=GFWM --equivalent-to GFa
++ test -n WM
++ grep [WM] out
++ ltlfilt -f GFa --unabbrev=GFRWM --equivalent-to GFa
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f a R b --unabbrev= --equivalent-to a R b
++ test -n 
++ ltlfilt -f a R b --unabbrev=R --equivalent-to a R b
++ test -n R
++ grep [R] out
++ ltlfilt -f a R b --unabbrev=W --equivalent-to a R b
++ test -n W
++ grep [W] out
++ ltlfilt -f a R b --unabbrev=M --equivalent-to a R b
++ test -n M
++ grep [M] out
++ ltlfilt -f a R b --unabbrev=RW --equivalent-to a R b
++ test -n RW
++ grep [RW] out
++ ltlfilt -f a R b --unabbrev=RM --equivalent-to a R b
++ test -n RM
++ grep [RM] out
++ ltlfilt -f a R b --unabbrev=WM --equivalent-to a R b
++ test -n WM
++ grep [WM] out
++ ltlfilt -f a R b --unabbrev=RWM --equivalent-to a R b
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f a R b --unabbrev=F --equivalent-to a R b
++ test -n 
++ ltlfilt -f a R b --unabbrev=FR --equivalent-to a R b
++ test -n R
++ grep [R] out
++ ltlfilt -f a R b --unabbrev=FW --equivalent-to a R b
++ test -n W
++ grep [W] out
++ ltlfilt -f a R b --unabbrev=FM --equivalent-to a R b
++ test -n M
++ grep [M] out
++ ltlfilt -f a R b --unabbrev=FRW --equivalent-to a R b
++ test -n RW
++ grep [RW] out
++ ltlfilt -f a R b --unabbrev=FRM --equivalent-to a R b
++ test -n RM
++ grep [RM] out
++ ltlfilt -f a R b --unabbrev=FWM --equivalent-to a R b
++ test -n WM
++ grep [WM] out
++ ltlfilt -f a R b --unabbrev=FRWM --equivalent-to a R b
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f a R b --unabbrev=G --equivalent-to a R b
++ test -n 
++ ltlfilt -f a R b --unabbrev=GR --equivalent-to a R b
++ test -n R
++ grep [R] out
++ ltlfilt -f a R b --unabbrev=GW --equivalent-to a R b
++ test -n W
++ grep [W] out
++ ltlfilt -f a R b --unabbrev=GM --equivalent-to a R b
++ test -n M
++ grep [M] out
++ ltlfilt -f a R b --unabbrev=GRW --equivalent-to a R b
++ test -n RW
++ grep [RW] out
++ ltlfilt -f a R b --unabbrev=GRM --equivalent-to a R b
++ test -n RM
++ grep [RM] out
++ ltlfilt -f a R b --unabbrev=GWM --equivalent-to a R b
++ test -n WM
++ grep [WM] out
++ ltlfilt -f a R b --unabbrev=GRWM --equivalent-to a R b
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f a R b --unabbrev=GF --equivalent-to a R b
++ test -n 
++ ltlfilt -f a R b --unabbrev=GFR --equivalent-to a R b
++ test -n R
++ grep [R] out
++ ltlfilt -f a R b --unabbrev=GFW --equivalent-to a R b
++ test -n W
++ grep [W] out
++ ltlfilt -f a R b --unabbrev=GFM --equivalent-to a R b
++ test -n M
++ grep [M] out
++ ltlfilt -f a R b --unabbrev=GFRW --equivalent-to a R b
++ test -n RW
++ grep [RW] out
++ ltlfilt -f a R b --unabbrev=GFRM --equivalent-to a R b
++ test -n RM
++ grep [RM] out
++ ltlfilt -f a R b --unabbrev=GFWM --equivalent-to a R b
++ test -n WM
++ grep [WM] out
++ ltlfilt -f a R b --unabbrev=GFRWM --equivalent-to a R b
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f a W b --unabbrev= --equivalent-to a W b
++ test -n 
++ ltlfilt -f a W b --unabbrev=R --equivalent-to a W b
++ test -n R
++ grep [R] out
++ ltlfilt -f a W b --unabbrev=W --equivalent-to a W b
++ test -n W
++ grep [W] out
++ ltlfilt -f a W b --unabbrev=M --equivalent-to a W b
++ test -n M
++ grep [M] out
++ ltlfilt -f a W b --unabbrev=RW --equivalent-to a W b
++ test -n RW
++ grep [RW] out
++ ltlfilt -f a W b --unabbrev=RM --equivalent-to a W b
++ test -n RM
++ grep [RM] out
++ ltlfilt -f a W b --unabbrev=WM --equivalent-to a W b
++ test -n WM
++ grep [WM] out
++ ltlfilt -f a W b --unabbrev=RWM --equivalent-to a W b
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f a W b --unabbrev=F --equivalent-to a W b
++ test -n 
++ ltlfilt -f a W b --unabbrev=FR --equivalent-to a W b
++ test -n R
++ grep [R] out
++ ltlfilt -f a W b --unabbrev=FW --equivalent-to a W b
++ test -n W
++ grep [W] out
++ ltlfilt -f a W b --unabbrev=FM --equivalent-to a W b
++ test -n M
++ grep [M] out
++ ltlfilt -f a W b --unabbrev=FRW --equivalent-to a W b
++ test -n RW
++ grep [RW] out
++ ltlfilt -f a W b --unabbrev=FRM --equivalent-to a W b
++ test -n RM
++ grep [RM] out
++ ltlfilt -f a W b --unabbrev=FWM --equivalent-to a W b
++ test -n WM
++ grep [WM] out
++ ltlfilt -f a W b --unabbrev=FRWM --equivalent-to a W b
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f a W b --unabbrev=G --equivalent-to a W b
++ test -n 
++ ltlfilt -f a W b --unabbrev=GR --equivalent-to a W b
++ test -n R
++ grep [R] out
++ ltlfilt -f a W b --unabbrev=GW --equivalent-to a W b
++ test -n W
++ grep [W] out
++ ltlfilt -f a W b --unabbrev=GM --equivalent-to a W b
++ test -n M
++ grep [M] out
++ ltlfilt -f a W b --unabbrev=GRW --equivalent-to a W b
++ test -n RW
++ grep [RW] out
++ ltlfilt -f a W b --unabbrev=GRM --equivalent-to a W b
++ test -n RM
++ grep [RM] out
++ ltlfilt -f a W b --unabbrev=GWM --equivalent-to a W b
++ test -n WM
++ grep [WM] out
++ ltlfilt -f a W b --unabbrev=GRWM --equivalent-to a W b
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f a W b --unabbrev=GF --equivalent-to a W b
++ test -n 
++ ltlfilt -f a W b --unabbrev=GFR --equivalent-to a W b
++ test -n R
++ grep [R] out
++ ltlfilt -f a W b --unabbrev=GFW --equivalent-to a W b
++ test -n W
++ grep [W] out
++ ltlfilt -f a W b --unabbrev=GFM --equivalent-to a W b
++ test -n M
++ grep [M] out
++ ltlfilt -f a W b --unabbrev=GFRW --equivalent-to a W b
++ test -n RW
++ grep [RW] out
++ ltlfilt -f a W b --unabbrev=GFRM --equivalent-to a W b
++ test -n RM
++ grep [RM] out
++ ltlfilt -f a W b --unabbrev=GFWM --equivalent-to a W b
++ test -n WM
++ grep [WM] out
++ ltlfilt -f a W b --unabbrev=GFRWM --equivalent-to a W b
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f a M b --unabbrev= --equivalent-to a M b
++ test -n 
++ ltlfilt -f a M b --unabbrev=R --equivalent-to a M b
++ test -n R
++ grep [R] out
++ ltlfilt -f a M b --unabbrev=W --equivalent-to a M b
++ test -n W
++ grep [W] out
++ ltlfilt -f a M b --unabbrev=M --equivalent-to a M b
++ test -n M
++ grep [M] out
++ ltlfilt -f a M b --unabbrev=RW --equivalent-to a M b
++ test -n RW
++ grep [RW] out
++ ltlfilt -f a M b --unabbrev=RM --equivalent-to a M b
++ test -n RM
++ grep [RM] out
++ ltlfilt -f a M b --unabbrev=WM --equivalent-to a M b
++ test -n WM
++ grep [WM] out
++ ltlfilt -f a M b --unabbrev=RWM --equivalent-to a M b
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f a M b --unabbrev=F --equivalent-to a M b
++ test -n 
++ ltlfilt -f a M b --unabbrev=FR --equivalent-to a M b
++ test -n R
++ grep [R] out
++ ltlfilt -f a M b --unabbrev=FW --equivalent-to a M b
++ test -n W
++ grep [W] out
++ ltlfilt -f a M b --unabbrev=FM --equivalent-to a M b
++ test -n M
++ grep [M] out
++ ltlfilt -f a M b --unabbrev=FRW --equivalent-to a M b
++ test -n RW
++ grep [RW] out
++ ltlfilt -f a M b --unabbrev=FRM --equivalent-to a M b
++ test -n RM
++ grep [RM] out
++ ltlfilt -f a M b --unabbrev=FWM --equivalent-to a M b
++ test -n WM
++ grep [WM] out
++ ltlfilt -f a M b --unabbrev=FRWM --equivalent-to a M b
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f a M b --unabbrev=G --equivalent-to a M b
++ test -n 
++ ltlfilt -f a M b --unabbrev=GR --equivalent-to a M b
++ test -n R
++ grep [R] out
++ ltlfilt -f a M b --unabbrev=GW --equivalent-to a M b
++ test -n W
++ grep [W] out
++ ltlfilt -f a M b --unabbrev=GM --equivalent-to a M b
++ test -n M
++ grep [M] out
++ ltlfilt -f a M b --unabbrev=GRW --equivalent-to a M b
++ test -n RW
++ grep [RW] out
++ ltlfilt -f a M b --unabbrev=GRM --equivalent-to a M b
++ test -n RM
++ grep [RM] out
++ ltlfilt -f a M b --unabbrev=GWM --equivalent-to a M b
++ test -n WM
++ grep [WM] out
++ ltlfilt -f a M b --unabbrev=GRWM --equivalent-to a M b
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f a M b --unabbrev=GF --equivalent-to a M b
++ test -n 
++ ltlfilt -f a M b --unabbrev=GFR --equivalent-to a M b
++ test -n R
++ grep [R] out
++ ltlfilt -f a M b --unabbrev=GFW --equivalent-to a M b
++ test -n W
++ grep [W] out
++ ltlfilt -f a M b --unabbrev=GFM --equivalent-to a M b
++ test -n M
++ grep [M] out
++ ltlfilt -f a M b --unabbrev=GFRW --equivalent-to a M b
++ test -n RW
++ grep [RW] out
++ ltlfilt -f a M b --unabbrev=GFRM --equivalent-to a M b
++ test -n RM
++ grep [RM] out
++ ltlfilt -f a M b --unabbrev=GFWM --equivalent-to a M b
++ test -n WM
++ grep [WM] out
++ ltlfilt -f a M b --unabbrev=GFRWM --equivalent-to a M b
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev= --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n 
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=R --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n R
++ grep [R] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=W --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n W
++ grep [W] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=M --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n M
++ grep [M] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=RW --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n RW
++ grep [RW] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=RM --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n RM
++ grep [RM] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=WM --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n WM
++ grep [WM] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=RWM --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=F --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n 
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=FR --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n R
++ grep [R] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=FW --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n W
++ grep [W] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=FM --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n M
++ grep [M] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=FRW --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n RW
++ grep [RW] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=FRM --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n RM
++ grep [RM] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=FWM --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n WM
++ grep [WM] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=FRWM --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=G --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n 
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=GR --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n R
++ grep [R] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=GW --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n W
++ grep [W] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=GM --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n M
++ grep [M] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=GRW --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n RW
++ grep [RW] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=GRM --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n RM
++ grep [RM] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=GWM --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n WM
++ grep [WM] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=GRWM --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n RWM
++ grep [RWM] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=GF --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n 
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=GFR --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n R
++ grep [R] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=GFW --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n W
++ grep [W] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=GFM --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n M
++ grep [M] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=GFRW --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n RW
++ grep [RW] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=GFRM --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n RM
++ grep [RM] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=GFWM --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n WM
++ grep [WM] out
++ ltlfilt -f !p0 W (p0 W (!p0 W (p0 W G!p0))) --unabbrev=GFRWM --equivalent-to !p0 W (p0 W (!p0 W (p0 W G!p0)))
++ test -n RWM
++ grep [RWM] out
++ true
+PASS core/unabbrevwm.test (exit status: 0)

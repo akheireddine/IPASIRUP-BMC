@@ -1,0 +1,292 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test randaut.test
+== Running test randaut.test
++ echo randaut.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=randaut
++ testSubDir=randaut.dir
++ chmod -R a+rwx randaut.dir
++ rm -rf randaut.dir
++ mkdir randaut.dir
++ cd randaut.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ randaut -e foo
++ grep randaut: failed to parse 'foo' as a float (in argument of -e err
+randaut: failed to parse 'foo' as a float (in argument of -e/--density)
++ randaut -e 3.14
++ grep randaut: 3.1.*is not between 0 and 1 (in argument of -e err
+randaut: 3.140000 is not between 0 and 1 (in argument of -e/--density).
++ randaut -n1a 3
++ grep randaut: failed to parse '1a' as an integer.* -n/--automata) err
+randaut: failed to parse '1a' as an integer (in argument of -n/--automata).
++ randaut -n99999999999999999999999999 3
++ grep randaut:.*too large err
+randaut: value '99999999999999999999999999' is too large for an int (in argument of -n/--automata).
++ ../ikwiad -H -XN -
++ randaut --spin -Q4 a b
++ grep States: 4 out
+States: 4
++ grep AP: 2 out
+AP: 2 "a" "b"
++ grep state-acc out
+properties: trans-labels explicit-labels state-acc
++ grep Acceptance: 1 out
+Acceptance: 1 Inf(0)
++ randaut -n 3 --hoa -Q5..9 -A1..3 3
++ grep -c States: [5-9]$ out
++ test 3 = 3
++ grep -c Acceptance: [1-3]  out
++ test 3 = 3
++ grep -c AP: 3  out
++ test 3 = 3
++ randaut --spin -A2 3
++ grep spin.*incompatible stderr
+randaut: --spin is incompatible with --acceptance=2..2
++ randaut --spin -A0 3
+never {
+T0_init:
+  if
+  :: ((!(p0)) && (!(p1)) && (!(p2))) -> goto T0_S3
+  :: ((!(p0)) && (!(p1)) && (!(p2))) -> goto T0_S9
+  :: ((!(p0)) && (p1) && (!(p2))) -> goto T0_S2
+  fi;
+accept_S1:
+  if
+  :: ((!(p0)) && (!(p1)) && (p2)) -> goto T0_S8
+  :: ((p0) && (!(p1)) && (p2)) -> goto T0_S7
+  fi;
+T0_S2:
+  if
+  :: ((p0) && (!(p1)) && (p2)) -> goto T0_init
+  :: ((p0) && (p1) && (!(p2))) -> goto T0_S8
+  :: ((!(p0)) && (!(p1)) && (p2)) -> goto T0_S3
+  :: ((!(p0)) && (p1) && (!(p2))) -> goto T0_S4
+  fi;
+T0_S3:
+  if
+  :: ((!(p0)) && (!(p1)) && (!(p2))) -> goto T0_S6
+  :: ((p0) && (!(p1)) && (!(p2))) -> goto T0_S3
+  fi;
+T0_S4:
+  if
+  :: ((p0) && (!(p1)) && (!(p2))) -> goto accept_S1
+  :: ((!(p0)) && (p1) && (!(p2))) -> goto T0_S9
+  :: ((!(p0)) && (!(p1)) && (p2)) -> goto T0_S3
+  :: ((!(p0)) && (!(p1)) && (!(p2))) -> goto T0_S6
+  fi;
+accept_S5:
+  if
+  :: ((p0) && (!(p1)) && (!(p2))) -> goto T0_S7
+  :: ((p0) && (p1) && (!(p2))) -> goto accept_S1
+  :: ((!(p0)) && (!(p1)) && (!(p2))) -> goto T0_S4
+  fi;
+T0_S6:
+  if
+  :: ((!(p0)) && (p1) && (!(p2))) -> goto T0_init
+  :: ((p0) && (!(p1)) && (!(p2))) -> goto accept_S5
+  fi;
+T0_S7:
+  if
+  :: ((p0) && (!(p1)) && (p2)) -> goto T0_S6
+  :: ((p0) && (!(p1)) && (p2)) -> goto T0_S3
+  :: ((p0) && (!(p1)) && (!(p2))) -> goto T0_S4
+  :: ((!(p0)) && (p1) && (!(p2))) -> goto T0_S8
+  fi;
+T0_S8:
+  if
+  :: ((p0) && (p1) && (p2)) -> goto T0_S8
+  :: ((p0) && (p1) && (!(p2))) -> goto T0_init
+  :: ((p0) && (p1) && (p2)) -> goto accept_S1
+  fi;
+T0_S9:
+  if
+  :: ((p0) && (!(p1)) && (p2)) -> goto T0_init
+  :: ((!(p0)) && (!(p1)) && (p2)) -> goto T0_S7
+  :: ((p0) && (!(p1)) && (!(p2))) -> goto T0_S8
+  :: ((!(p0)) && (p1) && (!(p2))) -> goto T0_S6
+  fi;
+}
++ randaut --ba -A2 3
++ grep ba.*incompatible stderr
+randaut: --ba is incompatible with --acceptance=2..2
++ randaut --ba -A0 3
++ grep ba.*incompatible stderr
+randaut: --ba is incompatible with --acceptance=0..0
++ randaut --buchi -A2 3
++ grep buchi.*incompatible stderr
+randaut: --buchi is incompatible with --acceptance=2..2
++ randaut -b 2
++ autfilt --acceptance-is=Buchi
++ grep trans-acc
+properties: trans-labels explicit-labels trans-acc
++ randaut -B 2
++ autfilt --acceptance-is=Buchi
++ grep state-acc
+properties: trans-labels explicit-labels state-acc
++ randaut --states 10..20 2 -n 100 -H
++ autfilt --states=..14 -c
++ a=48
++ autfilt aut.hoa --states=15.. -c
++ b=52
++ expr 48 + 52
++ test 100 = 100
++ randaut -n 5 --name=%F-%L-%s-%c-%e+  -H a
+grep ^name
++ cat
++ diff out expected
++ randaut -n 5 --stats=name: "%F-%L-%s-%c-%e" a
++ diff out2 expected
++ randaut -n 5 --dot=~ a
++ grep randaut: unknown option.*~ stderr
+randaut: unknown option for print_dot(): ~
++ randaut -n -1 -Q2 2 -H+ 
+autfilt -H --is-deterministic -n 3 -o out.hoa
++ randaut -n -1 -Q2 2 -H
++ autfilt -H -v --is-deterministic -n 4 -o >>out.hoa
++ autfilt -H out.hoa -o out-det%d.hoa
++ autfilt -H out.hoa -o >>out-det%d.hoa
++ autfilt -c out-det0.hoa
++ test 8 = 8
++ autfilt -c out-det1.hoa
++ test 6 = 6
++ autfilt -H out.hoa -o foo -c
++ grep autfilt: options --output and --count are incompatible stderr
+autfilt: options --output and --count are incompatible
++ randaut -n 2 -Q5 -A4 -H 2
++ tee input
++ grep -E (acc-name:|Acceptance:)
++ randaut -A random 4 -n 2 -Q5 -H 2
++ randaut -A parity rand rand 2..4 -n3 -Q5 -H 2
++ randaut -A generalized-Rabin 3 1..2 2..3 0 -n3 -Q5 -H 2
++ cat output
+acc-name: generalized-Buchi 4
+Acceptance: 4 Inf(0)&Inf(1)&Inf(2)&Inf(3)
+acc-name: generalized-Buchi 4
+Acceptance: 4 Inf(0)&Inf(1)&Inf(2)&Inf(3)
+Acceptance: 4 Fin(1) | (Fin(2) & Fin(3) & Fin(0))
+Acceptance: 4 (Fin(0) & Fin(3)) | (Fin(2) & Inf(1))
+acc-name: parity min even 4
+Acceptance: 4 Inf(0) | (Fin(1) & (Inf(2) | Fin(3)))
+acc-name: parity max even 2
+Acceptance: 2 Fin(1) & Inf(0)
+acc-name: parity max odd 4
+Acceptance: 4 Inf(3) | (Fin(2) & (Inf(1) | Fin(0)))
+acc-name: generalized-Rabin 3 2 3 0
+Acceptance: 8 (Fin(0) & (Inf(1)&Inf(2))) | (Fin(3) & (Inf(4)&Inf(5)&Inf(6))) | Fin(7)
+acc-name: generalized-Rabin 3 2 2 0
+Acceptance: 7 (Fin(0) & (Inf(1)&Inf(2))) | (Fin(3) & (Inf(4)&Inf(5))) | Fin(6)
+acc-name: generalized-Rabin 3 2 3 0
+Acceptance: 8 (Fin(0) & (Inf(1)&Inf(2))) | (Fin(3) & (Inf(4)&Inf(5)&Inf(6))) | Fin(7)
++ a=Acceptance
++ cat
++ diff output expected
++ autfilt --acceptance-is=generalized-Buchi --stats=%g,%[s]g
++ cat
++ diff stdout expected
++ autfilt --acceptance-is=Fin-less --stats=%g,%[s]g
++ diff stdout expected
++ autfilt --acceptance-is=generalized-Rabin --stats=%[sb]g
++ cat
++ diff stdout expected
++ autfilt --acceptance-is=parity --stats=%g,%[sb]g
++ cat
++ diff stdout expected
++ autfilt --acceptance-is=parity-odd --stats=%g,%[m]g
++ cat
++ diff stdout expected
++ autfilt --acceptance-is=parity-min --stats=%g,%[m]g
++ cat
++ diff stdout expected
++ autfilt --acceptance-is=parity-max-even --stats=%g,%[m]g
++ cat
++ diff stdout expected
++ autfilt --acceptance-is=Streett
++ autfilt --acceptance-is=Fin(1)|Fin(2)&Fin(3)&Fin(0) --stats=%g,%[s]g
++ cat
++ diff stdout expected
++ autfilt --acceptance-is=Fin(1)|
++ grep acceptance-is err
+autfilt: failed to parse 'Fin(1)|' as an acceptance formula for --acceptance-is
++ grep syntax error at end of acceptance err
+	syntax error at end of acceptance: unexpected character.
++ grep  - 'generalized-Streett' err
+  - 'generalized-Streett', 'gen-Streett', 'genStreett'
++ randaut --spin -A random 2 2
++ grep randaut: --spin.*--acceptance stderr
+randaut: --spin implies --ba so should not be used with --acceptance
++ randaut --ba --acceptance=random 2 2
++ grep randaut: --acceptance.*--ba stderr
+randaut: --acceptance and --ba may not be used together
++ randaut -n 10 2..4 -H
++ grep AP:
++ cat output
+AP: 3 "p0" "p1" "p2"
+AP: 4 "p0" "p1" "p2" "p3"
+AP: 3 "p0" "p1" "p2"
+AP: 4 "p0" "p1" "p2" "p3"
+AP: 3 "p0" "p1" "p2"
+AP: 4 "p0" "p1" "p2" "p3"
+AP: 2 "p0" "p1"
+AP: 3 "p0" "p1" "p2"
+AP: 2 "p0" "p1"
+AP: 3 "p0" "p1" "p2"
++ cat
++ diff output expected
++ randaut -A3 --colored 2 -H
++ grep properties:.*colored
+properties: trans-labels explicit-labels trans-acc colored
++ randaut -S -Aparity min even 3 --colored 2 -H
++ grep properties:.*colored
+properties: trans-labels explicit-labels state-acc colored
++ randaut --colored 2
++ grep randaut: --colored requires stderr
+randaut: --colored requires at least one acceptance set; use --acceptance
++ randaut -A0..2 --colored 2
++ grep randaut: --colored requires stderr
+randaut: --colored requires at least one acceptance set; fix the range of --acceptance
++ randaut -S -Aparity min even 0..3 -q -n10 --colored 2
++ grep randaut: --colored requires stderr
+randaut: --colored requires at least one acceptance set; fix the range of --acceptance
++ randaut -Aparity foo 2 -q
++ grep randaut:.*foo.*min.*max.*rand stderr
+randaut: syntax error at 'foo': expecting 'min', 'max', or 'rand'.
++ randaut -Aparity  2 -q
++ grep randaut:.*end of acceptance.*min.*max.*rand stderr
+randaut: syntax error at end of acceptance: expecting 'min', 'max', or 'rand'.
++ randaut -Aparity min foo 2 -q
++ grep randaut:.*foo.*odd.*even.*rand stderr
+randaut: syntax error at 'foo': expecting 'odd', 'even', or 'rand'.
++ randaut -Aparity min 2 -q
++ grep randaut:.*end of acceptance.*odd.*even.*rand stderr
+randaut: syntax error at end of acceptance: expecting 'odd', 'even', or 'rand'.
++ randaut -Aparity min rand foo 2 -q
++ grep randaut:.*foo.*invalid range stderr
+randaut: syntax error at 'foo': invalid range.
++ randaut -Aparity min rand   2 -q
++ grep randaut:.*end of acceptance.*invalid range stderr
+randaut: syntax error at end of acceptance: invalid range.
++ randaut -Q0 1
++ grep 0 states stderr
+randaut: cannot build an automaton with 0 states
++ randaut -Q1 -A Fin(1) & Inf(2) & Fin(0) 2
++ grep Acceptance: out.hoa
++ echo Acceptance: 3 Fin(1) & Inf(2) & Fin(0)
++ diff out.acc out.exp
++ :
+PASS core/randaut.test (exit status: 0)

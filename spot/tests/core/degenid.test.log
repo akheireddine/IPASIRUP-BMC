@@ -1,0 +1,307 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test degenid.test
+== Running test degenid.test
++ echo degenid.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=degenid
++ testSubDir=degenid.dir
++ chmod -R a+rwx degenid.dir
++ rm -rf degenid.dir
++ mkdir degenid.dir
++ cd degenid.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ../ikwiad -DS -H FGa|GFb
++ ../ikwiad -XH -kt autX.spot
++ cat base.size
+transitions: 30
+edges: 10
+states: 5
+nondeterministic states: 4
++ ../ikwiad -XH -DS -H autX.spot
++ ../ikwiad -XH -kt autXX.spot
++ cat new.size
+transitions: 30
+edges: 10
+states: 5
+nondeterministic states: 4
++ cmp base.size new.size
++ ../ikwiad -XH -DS -H autXX.spot
++ ../ikwiad -XH -kt autXXX.spot
++ cat new.size
+transitions: 30
+edges: 10
+states: 5
+nondeterministic states: 4
++ cmp base.size new.size
++ ../ikwiad -XH -DS -H autXXX.spot
++ ../ikwiad -XH -kt autXXXX.spot
++ cat new.size
+transitions: 30
+edges: 10
+states: 5
+nondeterministic states: 4
++ cmp base.size new.size
++ ../ikwiad -DT -H FGa|GFb
++ ../ikwiad -XH -kt autX.spot
++ cat base.size
+transitions: 26
+edges: 9
+states: 4
+nondeterministic states: 3
++ ../ikwiad -XH -DT -H autX.spot
++ ../ikwiad -XH -kt autXX.spot
++ cat new.size
+transitions: 26
+edges: 9
+states: 4
+nondeterministic states: 3
++ cmp base.size new.size
++ ../ikwiad -XH -DT -H autXX.spot
++ ../ikwiad -XH -kt autXXX.spot
++ cat new.size
+transitions: 26
+edges: 9
+states: 4
+nondeterministic states: 3
++ cmp base.size new.size
++ ../ikwiad -XH -DT -H autXXX.spot
++ ../ikwiad -XH -kt autXXXX.spot
++ cat new.size
+transitions: 26
+edges: 9
+states: 4
+nondeterministic states: 3
++ cmp base.size new.size
++ ../ikwiad -DS -H GFa & GFb & GFc
++ ../ikwiad -XH -kt autX.spot
++ cat base.size
+transitions: 56
+edges: 13
+states: 4
+nondeterministic states: 4
++ ../ikwiad -XH -DS -H autX.spot
++ ../ikwiad -XH -kt autXX.spot
++ cat new.size
+transitions: 56
+edges: 13
+states: 4
+nondeterministic states: 4
++ cmp base.size new.size
++ ../ikwiad -XH -DS -H autXX.spot
++ ../ikwiad -XH -kt autXXX.spot
++ cat new.size
+transitions: 56
+edges: 13
+states: 4
+nondeterministic states: 4
++ cmp base.size new.size
++ ../ikwiad -XH -DS -H autXXX.spot
++ ../ikwiad -XH -kt autXXXX.spot
++ cat new.size
+transitions: 56
+edges: 13
+states: 4
+nondeterministic states: 4
++ cmp base.size new.size
++ ../ikwiad -DT -H GFa & GFb & GFc
++ ../ikwiad -XH -kt autX.spot
++ cat base.size
+transitions: 43
+edges: 10
+states: 3
+nondeterministic states: 3
++ ../ikwiad -XH -DT -H autX.spot
++ ../ikwiad -XH -kt autXX.spot
++ cat new.size
+transitions: 43
+edges: 10
+states: 3
+nondeterministic states: 3
++ cmp base.size new.size
++ ../ikwiad -XH -DT -H autXX.spot
++ ../ikwiad -XH -kt autXXX.spot
++ cat new.size
+transitions: 43
+edges: 10
+states: 3
+nondeterministic states: 3
++ cmp base.size new.size
++ ../ikwiad -XH -DT -H autXXX.spot
++ ../ikwiad -XH -kt autXXXX.spot
++ cat new.size
+transitions: 43
+edges: 10
+states: 3
+nondeterministic states: 3
++ cmp base.size new.size
++ ../ikwiad -DS -H GF(a->FGb)&GF(c->FGd)
++ ../ikwiad -XH -kt autX.spot
++ cat base.size
+transitions: 612
+edges: 69
+states: 13
+nondeterministic states: 12
++ ../ikwiad -XH -DS -H autX.spot
++ ../ikwiad -XH -kt autXX.spot
++ cat new.size
+transitions: 612
+edges: 69
+states: 13
+nondeterministic states: 12
++ cmp base.size new.size
++ ../ikwiad -XH -DS -H autXX.spot
++ ../ikwiad -XH -kt autXXX.spot
++ cat new.size
+transitions: 612
+edges: 69
+states: 13
+nondeterministic states: 12
++ cmp base.size new.size
++ ../ikwiad -XH -DS -H autXXX.spot
++ ../ikwiad -XH -kt autXXXX.spot
++ cat new.size
+transitions: 612
+edges: 69
+states: 13
+nondeterministic states: 12
++ cmp base.size new.size
++ ../ikwiad -DT -H GF(a->FGb)&GF(c->FGd)
++ ../ikwiad -XH -kt autX.spot
++ cat base.size
+transitions: 484
+edges: 56
+states: 11
+nondeterministic states: 10
++ ../ikwiad -XH -DT -H autX.spot
++ ../ikwiad -XH -kt autXX.spot
++ cat new.size
+transitions: 484
+edges: 56
+states: 11
+nondeterministic states: 10
++ cmp base.size new.size
++ ../ikwiad -XH -DT -H autXX.spot
++ ../ikwiad -XH -kt autXXX.spot
++ cat new.size
+transitions: 484
+edges: 56
+states: 11
+nondeterministic states: 10
++ cmp base.size new.size
++ ../ikwiad -XH -DT -H autXXX.spot
++ ../ikwiad -XH -kt autXXXX.spot
++ cat new.size
+transitions: 484
+edges: 56
+states: 11
+nondeterministic states: 10
++ cmp base.size new.size
++ cat
++ run 0 ../ikwiad -ks -XH -DS bug
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -ks -XH -DS bug
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -ks -XH -DS bug
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep states: 6 out
+states: 6
++ cat
++ run 0 ../ikwiad -ks -XH -DS bug2
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -ks -XH -DS bug2
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -ks -XH -DS bug2
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep states: 8 out
+states: 8
++ ltl2tgba -B G(a|G(b|Fc)) --stats=%s
++ test 3 = 3
++ cat
++ run 0 dstar2tgba in.dra -BD --stats=%s
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v dstar2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/dstar2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/dstar2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/dstar2tgba in.dra -BD --stats=%s
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/dstar2tgba in.dra -BD --stats=%s
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out.stat
++ test 5 = 5
++ ltl2tgba -BH a & GFb & GFc
++ cat out
+HOA: v1
+name: "a & G(Fb & Fc)"
+States: 4
+Start: 0
+AP: 3 "a" "b" "c"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc deterministic
+properties: stutter-invariant
+--BODY--
+State: 0
+[0&1&2] 1
+[0&!2] 2
+[0&!1&2] 3
+State: 1 {0}
+[1&2] 1
+[!2] 2
+[!1&2] 3
+State: 2
+[1&2] 1
+[!2] 2
+[!1&2] 3
+State: 3
+[1] 1
+[!1] 3
+--END--
++ cat
++ diff out expected
+PASS core/degenid.test (exit status: 0)

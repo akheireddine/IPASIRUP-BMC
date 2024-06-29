@@ -1,0 +1,103 @@
+Fc | !(X(c xor Gc) R (b W !Fc))
+(b W a) U b
+X(XG(a <-> c) -> (X(0) M (a xor (1 U c))))
+X!c U a
+!b & (Fb xor (!Fc xor !Fb))
+!(X(0) U Gb)
+((1 U c) -> (!c <-> (c -> b))) U (a <-> Xc)
+F(c U Xa)
+F!b M !a
+(b U c) U (!c | ((Fa U (a & c)) M 1))
+F((1 U a) W (!a -> !Gb))
+a M 1
+FXXc
+F(XGc -> (1 U (a -> Xb)))
+!(Xc -> (b W a))
+b U ((b | !c) M 1)
+F!b | F(1 U Fa)
+Ga -> X!b
+!b M 1
+1 U (c & (c <-> Fa))
+(!b U Fb) M 1
+(a U c) M b
+F!X(b W Xa)
+X(Fa U X(!b <-> ((a | b) <-> Xc)))
+b & ((0 R c) U Fc)
+F(1 U !c)
+(a U b) & ((a | b) R FX!Ga)
+F(!a | F!((Fc | Ga) R c))
+Xc M 1
+(a | b | !b) xor !((c M b) | (a U b))
+!a U c
+Fa
+a M Fa
+(a U b) -> F(c U Xa)
+F((b <-> c) | Xb) M 1
+!b M ((b <-> Fc) W !Gb)
+F!(a xor (a | c))
+(!c M b) U ((1 U b) W (Xc -> c))
+1 U FXb
+a R (XFXc & X(a & Fc))
+!(Ga W Gc)
+b U c
+X((1 U b) | ((b | Fa) U (0 R (c M b))))
+XX(b xor Xc) M (1 U c)
+Fc
+b xor Gb
+a R X(a & F!(a <-> b))
+(X!c U a) W a
+Fb
+!XXb M (a | (a W c))
+F((1 U c) M FXFc)
+FX!((a W Xa) R (c M Gc))
+(1 U Fa) xor ((0 R Xb) R a)
+(a & !a) U F(Fb | (!b -> (0 R b)))
+!(a M GXGa)
+((c | Fa) U Fb) M c
+!(!b W X(0))
+Fa | F(b M !c)
+(Xa M 1) M !b
+b & F!(b | c)
+(Xc M (a U b)) M XFa
+F(X(0) xor ((b | c) U (Fc U b)))
+c M 1
+Fb & FX!c
+!G(c <-> FXc) U c
+!(Fb -> Gb)
+!(Fc R Gb)
+c & XFa
+XF(b U !b)
+FXc U !(a xor (b M a))
+X(!c & !Gc) <-> (c W Xb)
+(a U (1 U (1 U b))) & X(b R (1 U b))
+X!X(Xc R c) -> (Xb M (a xor Fa))
+c & (FXa M !a)
+b M Fb
+X(b xor Fc) | F(Xb | (1 U FGb))
+FX!((a | !b) W 0)
+!(a W b)
+!((a xor b) W Ga)
+1 U (!a xor Xa)
+Gb -> GXXF(a & ((b | c) U !b))
+!c M !((c M a) U Xa)
+!a U F(X!(b R c) U !a)
+(c xor Gc) & (Gb -> c)
+!XGa | X(Fc R !a)
+!(c <-> ((a & Gc & G(a <-> c)) W 0))
+1 U (c U Xc)
+!(Fb -> Gc)
+F(a & (!Xc -> X(0)))
+X(b | Xc) U !b
+F(((b | c) R !Gb) U b)
+F(b & c & Fc & F!c)
+!(b -> G!Fc)
+!Xb M (Fb M (c | Xa))
+X((Xc R !c) U !Gc)
+X(a | Fb) U (b <-> !(!X(0) W Gb))
+!X(Xa M !c) -> F(a -> b)
+(c W 0) | F(b | c | (c M a))
+!Gb
+1 U (Xc -> b)
+F((b U (X(0) U Xc)) U !(c -> !b))
+1 U (b & (1 U c) & !(a <-> X(0)))
+b & (!c -> F!X(a | !b))

@@ -1,0 +1,6 @@
+Testing support
+Testing ITE for vector
+Testing bdd_satoneshortest()
+Testing is_cube()
+Testing have_common_assignment()
+PASS bddtest (exit status: 0)

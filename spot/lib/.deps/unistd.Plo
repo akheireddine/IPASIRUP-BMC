@@ -1,0 +1,51 @@
+unistd.lo: unistd.c /usr/x86_64-linux-gnu/include/stdc-predef.h \
+ ../config.h unistd.h unistd.h /usr/x86_64-linux-gnu/include/unistd.h \
+ /usr/x86_64-linux-gnu/include/features.h \
+ /usr/x86_64-linux-gnu/include/features-time64.h \
+ /usr/x86_64-linux-gnu/include/bits/wordsize.h \
+ /usr/x86_64-linux-gnu/include/bits/timesize.h \
+ /usr/x86_64-linux-gnu/include/sys/cdefs.h \
+ /usr/x86_64-linux-gnu/include/bits/long-double.h \
+ /usr/x86_64-linux-gnu/include/gnu/stubs.h \
+ /usr/x86_64-linux-gnu/include/gnu/stubs-64.h \
+ /usr/x86_64-linux-gnu/include/bits/posix_opt.h \
+ /usr/x86_64-linux-gnu/include/bits/environments.h \
+ /usr/x86_64-linux-gnu/include/bits/types.h \
+ /usr/x86_64-linux-gnu/include/bits/typesizes.h \
+ /usr/x86_64-linux-gnu/include/bits/time64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
+ /usr/x86_64-linux-gnu/include/bits/confname.h \
+ /usr/x86_64-linux-gnu/include/bits/getopt_posix.h \
+ /usr/x86_64-linux-gnu/include/bits/getopt_core.h \
+ /usr/x86_64-linux-gnu/include/bits/unistd.h \
+ /usr/x86_64-linux-gnu/include/bits/unistd_ext.h \
+ /usr/x86_64-linux-gnu/include/linux/close_range.h getopt-cdefs.h \
+ getopt-pfx-core.h getopt-core.h
+/usr/x86_64-linux-gnu/include/stdc-predef.h:
+../config.h:
+unistd.h:
+unistd.h:
+/usr/x86_64-linux-gnu/include/unistd.h:
+/usr/x86_64-linux-gnu/include/features.h:
+/usr/x86_64-linux-gnu/include/features-time64.h:
+/usr/x86_64-linux-gnu/include/bits/wordsize.h:
+/usr/x86_64-linux-gnu/include/bits/timesize.h:
+/usr/x86_64-linux-gnu/include/sys/cdefs.h:
+/usr/x86_64-linux-gnu/include/bits/long-double.h:
+/usr/x86_64-linux-gnu/include/gnu/stubs.h:
+/usr/x86_64-linux-gnu/include/gnu/stubs-64.h:
+/usr/x86_64-linux-gnu/include/bits/posix_opt.h:
+/usr/x86_64-linux-gnu/include/bits/environments.h:
+/usr/x86_64-linux-gnu/include/bits/types.h:
+/usr/x86_64-linux-gnu/include/bits/typesizes.h:
+/usr/x86_64-linux-gnu/include/bits/time64.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
+/usr/x86_64-linux-gnu/include/bits/confname.h:
+/usr/x86_64-linux-gnu/include/bits/getopt_posix.h:
+/usr/x86_64-linux-gnu/include/bits/getopt_core.h:
+/usr/x86_64-linux-gnu/include/bits/unistd.h:
+/usr/x86_64-linux-gnu/include/bits/unistd_ext.h:
+/usr/x86_64-linux-gnu/include/linux/close_range.h:
+getopt-cdefs.h:
+getopt-pfx-core.h:
+getopt-core.h:

@@ -1,0 +1,794 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test readsave.test
+== Running test readsave.test
++ echo readsave.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=readsave
++ testSubDir=readsave.dir
++ chmod -R a+rwx readsave.dir
++ rm -rf readsave.dir
++ mkdir readsave.dir
++ cd readsave.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 autfilt --hoa input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --hoa input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --hoa input
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff stdout input
++ autfilt -c --is-weak input
++ test 0 = 0
++ autfilt -H1.1 -v --is-weak input
++ grep properties:
++ tee props
+properties: trans-labels explicit-labels state-acc !complete
+properties: deterministic !weak
++ cat
++ diff expected.props props
++ cat
++ cat
++ run 0 autfilt --merge-transitions --hoa input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --merge-transitions --hoa input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --merge-transitions --hoa input
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat stdout
+HOA: v1
+States: 2
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc
+controllable-AP:
+--BODY--
+State: 0
+[!1] 1
+[0] 1 {0}
+State: 1
+[!1] 0
+[0] 0 {0}
+--END--
++ run 0 autfilt -F stdout --isomorph expected
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -F stdout --isomorph expected
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -F stdout --isomorph expected
+HOA: v1
+States: 2
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc
+controllable-AP:
+--BODY--
+State: 0
+[!1] 1
+[0] 1 {0}
+State: 1
+[!1] 0
+[0] 0 {0}
+--END--
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ tee input
++ run 0 randaut -Q 20 a b -e 0.2 -a 0.2 -A 2 --hoa
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v randaut
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randaut
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randaut
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randaut -Q 20 a b -e 0.2 -a 0.2 -A 2 --hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randaut -Q 20 a b -e 0.2 -a 0.2 -A 2 --hoa
+HOA: v1
+States: 20
+Start: 0
+AP: 2 "a" "b"
+acc-name: generalized-Buchi 2
+Acceptance: 2 Inf(0)&Inf(1)
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[!0&!1] 5
+[!0&!1] 18 {1}
+[!0&!1] 8
+[!0&1] 17
+[!0&!1] 6
+State: 1
+[0&!1] 14
+[0&!1] 6 {1}
+[0&1] 13
+[!0&1] 9
+State: 2
+[!0&1] 14
+[0&!1] 18
+[0&1] 2
+[0&!1] 1 {1}
+[0&!1] 10
+[0&!1] 3 {1}
+State: 3
+[0&1] 17
+[0&1] 15 {0}
+[!0&1] 11
+[0&1] 12 {1}
+State: 4
+[!0&1] 4
+[0&!1] 5
+[!0&!1] 1
+[0&1] 11
+[!0&!1] 8
+[0&1] 3
+[!0&!1] 2
+[0&!1] 6
+State: 5
+[!0&1] 17
+[0&1] 14
+[!0&1] 12 {1}
+[0&!1] 2
+[!0&!1] 8
+[0&!1] 15 {1}
+[!0&!1] 5
+State: 6
+[!0&!1] 3
+[0&!1] 16 {0 1}
+[!0&!1] 2
+[0&!1] 15
+[!0&1] 19 {0}
+State: 7
+[0&1] 4
+[!0&!1] 7
+[0&!1] 8
+[!0&1] 2
+State: 8
+[0&!1] 16 {1}
+[0&1] 0
+[!0&!1] 11
+[!0&!1] 17
+[0&!1] 2
+[!0&!1] 12
+[0&!1] 7 {0 1}
+State: 9
+[!0&!1] 13
+[0&!1] 12
+[0&1] 4
+[0&1] 18
+State: 10
+[0&1] 17
+[0&1] 19
+[!0&!1] 5
+[0&!1] 7 {0}
+[!0&!1] 6 {0 1}
+[0&1] 8
+[0&!1] 9
+State: 11
+[0&1] 0 {0}
+[!0&!1] 7 {1}
+[0&1] 9 {1}
+[0&!1] 3
+State: 12
+[0&1] 14
+[!0&1] 1
+[0&1] 4
+[0&1] 15 {1}
+[0&1] 13 {1}
+[!0&1] 8
+State: 13
+[0&!1] 16 {1}
+[!0&!1] 8
+[!0&!1] 4
+[!0&!1] 14
+[!0&1] 9 {0 1}
+[!0&1] 15
+[0&1] 5
+State: 14
+[!0&1] 5
+[!0&1] 4
+[!0&1] 3
+[!0&!1] 7
+State: 15
+[0&1] 3 {1}
+[0&1] 8
+[!0&!1] 11
+[0&!1] 17
+[0&!1] 5
+[!0&1] 9
+[!0&!1] 15
+State: 16
+[0&!1] 7
+[!0&1] 1
+[0&!1] 18 {1}
+[0&1] 19
+State: 17
+[!0&!1] 6
+[0&1] 16
+[0&!1] 12 {1}
+State: 18
+[0&1] 9 {1}
+[!0&!1] 14
+[0&!1] 1 {0}
+[!0&!1] 8
+[0&!1] 2 {1}
+State: 19
+[!0&!1] 8 {0}
+--END--
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 autfilt --hoa --merge-transitions input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --hoa --merge-transitions input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --hoa --merge-transitions input
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 autfilt -F input --isomorph stdout
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -F input --isomorph stdout
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -F input --isomorph stdout
+HOA: v1
+States: 20
+Start: 0
+AP: 2 "a" "b"
+acc-name: generalized-Buchi 2
+Acceptance: 2 Inf(0)&Inf(1)
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[!0&!1] 5
+[!0&!1] 18 {1}
+[!0&!1] 8
+[!0&1] 17
+[!0&!1] 6
+State: 1
+[0&!1] 14
+[0&!1] 6 {1}
+[0&1] 13
+[!0&1] 9
+State: 2
+[!0&1] 14
+[0&!1] 18
+[0&1] 2
+[0&!1] 1 {1}
+[0&!1] 10
+[0&!1] 3 {1}
+State: 3
+[0&1] 17
+[0&1] 15 {0}
+[!0&1] 11
+[0&1] 12 {1}
+State: 4
+[!0&1] 4
+[0&!1] 5
+[!0&!1] 1
+[0&1] 11
+[!0&!1] 8
+[0&1] 3
+[!0&!1] 2
+[0&!1] 6
+State: 5
+[!0&1] 17
+[0&1] 14
+[!0&1] 12 {1}
+[0&!1] 2
+[!0&!1] 8
+[0&!1] 15 {1}
+[!0&!1] 5
+State: 6
+[!0&!1] 3
+[0&!1] 16 {0 1}
+[!0&!1] 2
+[0&!1] 15
+[!0&1] 19 {0}
+State: 7
+[0&1] 4
+[!0&!1] 7
+[0&!1] 8
+[!0&1] 2
+State: 8
+[0&!1] 16 {1}
+[0&1] 0
+[!0&!1] 11
+[!0&!1] 17
+[0&!1] 2
+[!0&!1] 12
+[0&!1] 7 {0 1}
+State: 9
+[!0&!1] 13
+[0&!1] 12
+[0&1] 4
+[0&1] 18
+State: 10
+[0&1] 17
+[0&1] 19
+[!0&!1] 5
+[0&!1] 7 {0}
+[!0&!1] 6 {0 1}
+[0&1] 8
+[0&!1] 9
+State: 11
+[0&1] 0 {0}
+[!0&!1] 7 {1}
+[0&1] 9 {1}
+[0&!1] 3
+State: 12
+[0&1] 14
+[!0&1] 1
+[0&1] 4
+[0&1] 15 {1}
+[0&1] 13 {1}
+[!0&1] 8
+State: 13
+[0&!1] 16 {1}
+[!0&!1] 8
+[!0&!1] 4
+[!0&!1] 14
+[!0&1] 9 {0 1}
+[!0&1] 15
+[0&1] 5
+State: 14
+[!0&1] 5
+[!0&1] 4
+[!0&1] 3
+[!0&!1] 7
+State: 15
+[0&1] 3 {1}
+[0&1] 8
+[!0&!1] 11
+[0&!1] 17
+[0&!1] 5
+[!0&1] 9
+[!0&!1] 15
+State: 16
+[0&!1] 7
+[!0&1] 1
+[0&!1] 18 {1}
+[0&1] 19
+State: 17
+[!0&!1] 6
+[0&1] 16
+[0&!1] 12 {1}
+State: 18
+[0&1] 9 {1}
+[!0&!1] 14
+[0&!1] 1 {0}
+[!0&!1] 8
+[0&!1] 2 {1}
+State: 19
+[!0&!1] 8 {0}
+--END--
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 autfilt --hoa stdout
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --hoa stdout
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --hoa stdout
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff stdout stdout2
++ randltl -n -1 a b
++ ltl2tgba
++ autfilt -F - -F nonexistant --states=3 --edges=..10 --acc-sets=1.. --name=%M, %S states --stats=<%m>, %e, %a -n 10
++ cat
++ diff output expected
++ cat
++ cat
++ autfilt --merge -Hm input --name=%E->%e edges, %T->%t transitions
++ diff output expected
++ ltl2tgba -x degen-lskip=1 --ba
++ autfilt --stats="%M","%w"
++ cat
++ diff output expected
++ cat
++ autfilt -H input
++ SPOT_DEFAULT_FORMAT=dot SPOT_DOTDEFAULT=vcsnaAi SPOT_DOTEXTRA=/* hello world */ autfilt
++ cat
++ diff output expected
++ autfilt -H input --complete
++ autfilt --is-complete --count
++ test 1 = 1
++ SPOT_DEFAULT_FORMAT=hoa ltl2tgba --dot=ak GFa & GFb
++ cat output
+digraph "G(Fa & Fb)" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 0 [label="!a & !b"]
+  0 -> 0 [label="a & !b\n{0}"]
+  0 -> 0 [label="!a & b\n{1}"]
+  0 -> 0 [label="a & b\n{0,1}"]
+}
++ cat
++ diff output expected
++ ltl2tgba -dbani(foo) GFa & GFb
++ cat output
+digraph "G(Fa & Fb)" {
+  rankdir=LR
+  label="G(Fa & Fb)\nInf(⓿)&Inf(❶)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  id="foo"
+  node [id="S\N"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 0 [label="!a & !b", id="E1", tooltip="\\E\n#1"]
+  0 -> 0 [label="a & !b\n⓿", id="E2", tooltip="\\E\n#2"]
+  0 -> 0 [label="!a & b\n❶", id="E3", tooltip="\\E\n#3"]
+  0 -> 0 [label="a & b\n⓿❶", id="E4", tooltip="\\E\n#4"]
+}
++ cat
++ diff output expected
++ ltl2tgba -dbang GFa & GFb
++ cat output
+digraph "G(Fa & Fb)" {
+  rankdir=LR
+  label="G(Fa & Fb)\nInf(⓿)&Inf(❶)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 0 [label=""]
+  0 -> 0 [label="⓿"]
+  0 -> 0 [label="❶"]
+  0 -> 0 [label="⓿❶"]
+}
++ cat
++ diff output expected
++ SPOT_DOTDEFAULT=bra ltl2tgba --dot=Ae.f(Lato) GFa & GFb
++ cat output
+digraph "G(Fa & Fb)" {
+  rankdir=LR
+  label=<Inf(<font color="#1F78B4">⓿</font>)&amp;Inf(<font color="#FF4DA0">❶</font>)<br/>[gen. Büchi 2]>
+  labelloc="t"
+  node [shape="ellipse",width="0.5",height="0.5"]
+  fontname="Lato"
+  node [fontname="Lato"]
+  edge [fontname="Lato"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label=<0>]
+  0 -> 0 [label=<!a &amp; !b>]
+  0 -> 0 [label=<a &amp; !b<br/><font color="#1F78B4">⓿</font>>]
+  0 -> 0 [label=<!a &amp; b<br/><font color="#FF4DA0">❶</font>>]
+  0 -> 0 [label=<a &amp; b<br/><font color="#1F78B4">⓿</font><font color="#FF4DA0">❶</font>>]
+}
++ zero=<font color="#1F78B4">⓿</font>
++ one=<font color="#FF4DA0">❶</font>
++ cat
++ diff output expected
++ cat
++ cat
++ autfilt --dot=bao in
++ diff out expected
++ cat
++ autfilt --dot=bao1 in
++ grep -v >
++ diff out expected2
++ cat
++ ltl2tgba --det Ga | Gb | Gc -dA<5
++ grep -v >
++ diff out expected3
++ cat
++ autfilt -H input
+input:22.7: state number is larger than state count...
+input:2.1-9: ... declared here.
+input:10.8: state 0 has no definition
+input:13.9: state 2 has no definition
+input:16.7: state 5 has no definition
++ cat
++ diff output1 expect1
++ autfilt -H output1
++ diff output1 output1b
++ SPOT_DEFAULT_FORMAT=hoa autfilt --remove-dead input
+input:22.7: state number is larger than state count...
+input:2.1-9: ... declared here.
+input:10.8: state 0 has no definition
+input:13.9: state 2 has no definition
+input:16.7: state 5 has no definition
++ cat
++ diff output2 expect2
++ SPOT_DEFAULT_FORMAT=hoa=kb autfilt expect2
++ cat
++ diff output2b expect2b
++ cat
++ autfilt -H --remove-unreach input
++ autfilt -Hb --remove-dead input
++ cat
++ diff output3 expect3
++ autfilt -Hz input
++ grep print_hoa.*z stderr
+autfilt: unknown option for print_hoa(): z
++ cat
++ autfilt --is-weak -c input4
++ test 1 = 1
++ autfilt --is-inherently-weak -c input4
++ test 1 = 1
++ autfilt --is-terminal -c input4
++ test 0 = 0
++ autfilt -H --small --high input4
++ autfilt -H --small input4
++ autfilt -H --high input4
++ cat output4
+HOA: v1
+States: 3
+Start: 1
+AP: 2 "a" "b"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+properties: very-weak
+--BODY--
+State: 0
+[1] 2
+State: 1
+[0] 0
+State: 2
+[0] 2
+--END--
++ cat
++ diff output4 expect4
++ diff output4b expect4
++ diff output4c expect4
++ autfilt --is-weak -c output4
++ test 1 = 1
++ autfilt -B --small output4d
++ autfilt --is-terminal -c
+autfilt: Cannot open file output4d
++ test 0 = 0
++ autfilt --is-terminal -c output4
++ test 0 = 0
++ sed s/\[0\]/[t]/g expect4
++ autfilt -B --small+  output4d
+autfilt --is-terminal -c
++ test 1 = 1
++ autfilt --is-terminal -c output4d
++ test 1 = 1
++ autfilt -B -Hv --small input4
++ cat
++ diff output5 expect5
++ cat
++ run 0 autfilt -Hk input6
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -Hk input6
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -Hk input6
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff output6 expect6
++ run 0 autfilt -dAk input6
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -dAk input6
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -dAk input6
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff output6d expect6d
++ run 0 autfilt -dbark input6
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -dbark input6
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -dbark input6
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff output6d2 expect6d2
++ cat
++ autfilt -c --is-inherently-weak input7
+input7:2.1-9: state 2 is unused and undefined
++ test 1 = 1
++ autfilt -c --is-weak input7
+input7:2.1-9: state 2 is unused and undefined
++ test 0 = 0
++ autfilt -c --is-stutter-invariant input7
+input7:2.1-9: state 2 is unused and undefined
++ test 1 = 1
++ autfilt --check input7 -H
+input7:2.1-9: state 2 is unused and undefined
++ test 2 -eq 2
++ cat
++ diff output7 expected7
++ cat
++ autfilt -c --is-inherently-weak input8
+input8:2.1-9: state 2 is unused and undefined
++ test 0 = 0
++ autfilt -c --is-weak input8
+input8:2.1-9: state 2 is unused and undefined
++ test 0 = 0
++ autfilt input8 -Hl
+input8:2.1-9: state 2 is unused and undefined
++ autfilt input8 --stats=%h
+input8:2.1-9: state 2 is unused and undefined
++ autfilt input8 --stats=%H
+input8:2.1-9: state 2 is unused and undefined
++ autfilt input8 --randomize --stats=%h
+input8:2.1-9: state 2 is unused and undefined
++ autfilt input8 --randomize --stats=%H
+input8:2.1-9: state 2 is unused and undefined
++ diff oneline.hoa oneline2.hoa
++ diff oneline.hoa oneline3.hoa
++ diff oneline.hoa oneline4.hoa
+1c1
+< HOA: v1 States: 3 Start: 1 AP: 0 acc-name: generalized-Buchi 2 Acceptance: 2 Inf(0)&Inf(1) properties: trans-labels explicit-labels trans-acc --BODY-- State: 0 [t] 1 {0} [t] 0 {0 1} State: 1 [t] 0 {1} [t] 1 {0} State: 2 --END--
+---
+> HOA: v1 States: 3 Start: 2 AP: 0 acc-name: generalized-Buchi 2 Acceptance: 2 Inf(0)&Inf(1) properties: trans-labels explicit-labels trans-acc --BODY-- State: 0 State: 1 [t] 1 {0 1} [t] 2 {0} State: 2 [t] 1 {1} [t] 2 {0} --END--
++ diff oneline.hoa oneline5.hoa
++ cat
++ autfilt -dA input9
++ cat
++ diff output9 expected9
++ autfilt -dbar input9
++ style=, style="bold,rounded", color="#1F78B4"
++ cat
++ diff output9a expected9a
++ autfilt input9 -H1
++ grep+  highlight
+autfilt -H1
++ autfilt input9 -H1
++ grep highlight
++ autfilt -H1.1
++ autfilt -H1.1 input9+ 
+autfilt -H1.1
++ grep highlight
+spot.highlight.states: 0 0 2 3
+spot.highlight.edges: 1 0 2 1 3 2 4 3
++ autfilt -H1.1 input9
++ autfilt -dA
++ diff output9 output9b
++ ltl2tgba GFa a U b a U b U c
++ autfilt --ap=2..3 --count
++ test 2 = 2
++ + genltl --dac=1..3
+ltl2tgba --stats=%e,"%h",%s
++ dstar2tgba -F-/2 --stats=%<,%>,"%h"
++ wc -l
++ autfilt --states=2..3 -F-/3 --stats=%<,"%h"
++ test 2 = 2
++ ltl2tgba GF(a <-> Fb)
++ autfilt -B --dot=dA
++ grep  (
++ cat
++ diff out expected
++ ltl2tgba a U b
++ autfilt --remove-ap=b=0 --name=%M --dot=dA
++ cat
++ diff out expected
++ + genltl --rv-counter-carry-linear=7
+ltl2tgba -d<10
++ grep -c hidden
++ test 2 = 2
++ f={{!a;!b}:{{c <-> d} && {e xor f} && {m | {l && {k | {j <-> {i xor {g && h}
++ f={{!a;!b}:{{c <-> d} && {e xor f} && {m | {l && {k | {j <-> {i xor {g && h}}}}}} && {{n && o} | {!n && p}} && {q -> {r <-> s}}}:{[*0..1];t}}[]-> u
++ ltl2tgba -f {{!a;!b}:{{c <-> d} && {e xor f} && {m | {l && {k | {j <-> {i xor {g && h}}}}}} && {{n && o} | {!n && p}} && {q -> {r <-> s}}}:{[*0..1];t}}[]-> u --dot=bar
++ grep label too long out.dot
+  0 -> 3 [label=<(label too long)>]
++ cat
++ autfilt andfg32.hoa --stats=%t
++ test 4294967298 = 4294967298
+PASS core/readsave.test (exit status: 0)

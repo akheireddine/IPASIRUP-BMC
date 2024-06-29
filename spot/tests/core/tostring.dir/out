@@ -1,0 +1,44 @@
+a
+1
+0
+a -> b
+Ga
+a U b
+a & b
+a & b & c
+a & b
+a & b
+a & b & (c | e | (f U g))
+a & b & (c | e | (f U g))
+a <-> b
+a & b & (c | e | (f U g))
+a & b & (c | e | g)
+F"F1" & G"G" & X"X"
+0
+1
+!p U (q U t)
+F"FALSE"
+G"TruE"
+0
+1
+!p U FXp
+GF"GF"
+GF"foo bar"
+FG__GFF
+X"U"
+X"W"
+X"M"
+X"R"
+{a;b;{c && d[*]};[+]}[]-> G{a[*]:b[*]}
+GF!(b & (a | c))
+GF!({b && {a | c[*]}}<>-> {{!a}[*]})
+GF({b[*] & {a | c[*]}}[]-> d)
+{a[*2..3]}
+{a[*0..1]}
+{a[*]}
+{a[*]}
+{a[+]}
+{a[+]}
+{[+]}
+{a[*8..15]}
+{a[*]}!

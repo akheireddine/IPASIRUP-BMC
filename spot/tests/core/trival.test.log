@@ -1,0 +1,48 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test trival.test
+== Running test trival.test
++ echo trival.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=trival
++ testSubDir=trival.dir
++ chmod -R a+rwx trival.dir
++ rm -rf trival.dir
++ mkdir trival.dir
++ cd trival.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ run 0 ../trival
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../trival
++ cmd=../trival
++ shift
++ test -n ../trival
++ set ../trival
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../trival
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff trival.out expected
+PASS core/trival.test (exit status: 0)

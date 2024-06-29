@@ -1,0 +1,82 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test randtgba.test
+== Running test randtgba.test
++ echo randtgba.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=randtgba
++ testSubDir=randtgba.dir
++ chmod -R a+rwx randtgba.dir
++ rm -rf randtgba.dir
++ mkdir randtgba.dir
++ cd randtgba.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ randaut -Q10 3 -Hl
++ sed s/.*--BODY--//;s/State:/\n&/g;s/--END--//
++ grep -q State: [0-9][0-9]* .*$ out
++ grep -q State: [0-9]* *$ out
++ randaut -Q20 3 -Hl
++ sed s/.*--BODY--//;s/State:/\n&/g;s/--END--//
++ grep -q State: [0-9][0-9]* .*$ out
++ grep -q State: [0-9]* *$ out
++ randaut -Q30 3 -Hl
++ sed s/.*--BODY--//;s/State:/\n&/g;s/--END--//
++ grep -q State: [0-9][0-9]* .*$ out
++ grep -q State: [0-9]* *$ out
++ randaut -Q40 3 -Hl
++ sed s/.*--BODY--//;s/State:/\n&/g;s/--END--//
++ grep -q State: [0-9][0-9]* .*$ out
++ grep -q State: [0-9]* *$ out
++ randaut -Q50 3 -Hl
++ sed s/.*--BODY--//;s/State:/\n&/g;s/--END--//
++ grep -q State: [0-9][0-9]* .*$ out
++ grep -q State: [0-9]* *$ out
++ randaut -Q60 3 -Hl
++ sed s/.*--BODY--//;s/State:/\n&/g;s/--END--//
++ grep -q State: [0-9][0-9]* .*$ out
++ grep -q State: [0-9]* *$ out
++ randaut -Q70 3 -Hl
++ sed s/.*--BODY--//;s/State:/\n&/g;s/--END--//
++ grep -q State: [0-9][0-9]* .*$ out
++ grep -q State: [0-9]* *$ out
++ randaut -Q80 3 -Hl
++ sed s/.*--BODY--//;s/State:/\n&/g;s/--END--//
++ grep -q State: [0-9][0-9]* .*$ out
++ grep -q State: [0-9]* *$ out
++ randaut -Q90 3 -Hl
++ sed s/.*--BODY--//;s/State:/\n&/g;s/--END--//
++ grep -q State: [0-9][0-9]* .*$ out
++ grep -q State: [0-9]* *$ out
++ + randaut -Q100 3 -Hlsed
+ s/.*--BODY--//;s/State:/\n&/g;s/--END--//
++ grep -q State: [0-9][0-9]* .*$ out
++ grep -q State: [0-9]* *$ out
++ randaut -Q200 3 -Hl
++ sed s/.*--BODY--//;s/State:/\n&/g;s/--END--//
++ grep -q State: [0-9][0-9]* .*$ out
++ grep -q State: [0-9]* *$ out
++ randaut -Q500 3 -Hl
++ sed s/.*--BODY--//;s/State:/\n&/g;s/--END--//
++ grep -q State: [0-9][0-9]* .*$ out
++ grep -q State: [0-9]* *$ out
++ randaut -Q1000 3 -Hl
++ sed s/.*--BODY--//;s/State:/\n&/g;s/--END--//
++ grep -q State: [0-9][0-9]* .*$ out
++ grep -q State: [0-9]* *$ out
++ true
+PASS core/randtgba.test (exit status: 0)

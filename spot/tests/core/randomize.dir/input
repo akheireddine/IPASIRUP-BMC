@@ -1,0 +1,22 @@
+HOA: v1
+States: 5
+Start: 4
+AP: 4 "a" "b" "c" "d"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc
+--BODY--
+State: 0 "s1"
+[0] 0
+State: 1 "s3"
+[2] 1
+State: 2 "s2"
+[1] 2
+State: 3 "s4"
+[3] 3
+State: 4 "s0"
+[3] 3
+[2] 1
+[0] 0
+[1] 2
+--END--

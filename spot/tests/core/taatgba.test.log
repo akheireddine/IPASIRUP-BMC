@@ -1,0 +1,60 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test taatgba.test
+== Running test taatgba.test
++ echo taatgba.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=taatgba
++ testSubDir=taatgba.dir
++ chmod -R a+rwx taatgba.dir
++ rm -rf taatgba.dir
++ mkdir taatgba.dir
++ cd taatgba.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ run 0 ../taatgba
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../taatgba
++ cmd=../taatgba
++ shift
++ test -n ../taatgba
++ set ../taatgba
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../taatgba
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="box",style="rounded",width="0.5"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="{state 1}"]
+  0 -> 1 [label="a"]
+  1 [label="{state 2}"]
+  1 -> 2 [label="b | c"]
+  2 [label="{}"]
+  2 -> 2 [label="1"]
+}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
+PASS core/taatgba.test (exit status: 0)

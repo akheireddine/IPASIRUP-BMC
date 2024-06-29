@@ -1,0 +1,315 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test pdegen.test
+== Running test pdegen.test
++ echo pdegen.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=pdegen
++ testSubDir=pdegen.dir
++ chmod -R a+rwx pdegen.dir
++ rm -rf pdegen.dir
++ mkdir pdegen.dir
++ cd pdegen.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ + autcrossrandaut --verbose -n10 --language-preserved -e.3 autfilt --partial-degen -Q7 autfilt --partial-degen=1,2,3 -A
+ generalized-co-Buchi 2..5 2
+-:1.1-40.7
+info: input	(7 st.,24 ed.,4 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i0-aZph8s'>'lcr-o0-Dm2BCi'
+Running [A1]: autfilt --partial-degen=1,2,3 'lcr-i0-qFxXPV'>'lcr-o1-T7VRIC'
+info: collected automata:
+info:   A0	(21 st.,72 ed.,1 sets)
+info:   A1	(14 st.,48 ed.,2 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(21 st.,72 ed.,1 sets) -> (882 st.,3461 ed.,1 sets)	Comp(A0)
+info:         A1	(14 st.,48 ed.,2 sets) -> (573 st.,2231 ed.,1 sets)	Comp(A1)
+info:      input	(7 st.,24 ed.,4 sets) -> (383 st.,1504 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:41.1-72.7
+info: input	(7 st.,16 ed.,4 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i1-e4zZMS'>'lcr-o0-LfWgwO'
+Running [A1]: autfilt --partial-degen=1,2,3 'lcr-i1-TmbV4K'>'lcr-o1-eeFXYo'
+info: collected automata:
+info:   A0	(7 st.,16 ed.,1 sets)
+info:   A1	(10 st.,22 ed.,2 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(7 st.,16 ed.,0 sets) -> (15 st.,48 ed.,1 sets)	Comp(A0)
+info:         A1	(10 st.,22 ed.,0 sets) -> (15 st.,48 ed.,1 sets)	Comp(A1)
+info:      input	(7 st.,16 ed.,0 sets) -> (15 st.,48 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:73.1-112.7
+info: input	(7 st.,24 ed.,4 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i2-UApfp6'>'lcr-o0-QB4yl1'
+Running [A1]: autfilt --partial-degen=1,2,3 'lcr-i2-qmYXjH'>'lcr-o1-3OINW7'
+info: collected automata:
+info:   A0	(25 st.,85 ed.,1 sets)
+info:   A1	(21 st.,72 ed.,2 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(25 st.,85 ed.,1 sets) -> (4511 st.,17815 ed.,1 sets)	Comp(A0)
+info:         A1	(21 st.,72 ed.,2 sets) -> (8147 st.,32326 ed.,1 sets)	Comp(A1)
+info:      input	(7 st.,24 ed.,4 sets) -> (2972 st.,11773 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:113.1-149.7
+info: input	(7 st.,21 ed.,3 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i3-ZrOUMy'>'lcr-o0-og7F6A'
+Running [A1]: autfilt --partial-degen=1,2,3 'lcr-i3-GLS2qk'>'lcr-o1-PRGbWK'
+info: collected automata:
+info:   A0	(7 st.,21 ed.,1 sets)
+info:   A1	(7 st.,21 ed.,2 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(7 st.,21 ed.,0 sets) -> (21 st.,75 ed.,1 sets)	Comp(A0)
+info:         A1	(7 st.,21 ed.,0 sets) -> (21 st.,75 ed.,1 sets)	Comp(A1)
+info:      input	(7 st.,21 ed.,0 sets) -> (21 st.,75 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:150.1-183.7
+info: input	(7 st.,18 ed.,2 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i4-PR6DQr'>'lcr-o0-OBhI6L'
+Running [A1]: autfilt --partial-degen=1,2,3 'lcr-i4-MjPsrD'>'lcr-o1-MLv3QX'
+info: collected automata:
+info:   A0	(12 st.,31 ed.,1 sets)
+info:   A1	(7 st.,18 ed.,2 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(12 st.,31 ed.,1 sets) -> (66 st.,238 ed.,1 sets)	Comp(A0)
+info:         A1	(7 st.,18 ed.,2 sets) -> (73 st.,261 ed.,1 sets)	Comp(A1)
+info:      input	(7 st.,18 ed.,2 sets) -> (78 st.,282 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:184.1-220.7
+info: input	(7 st.,21 ed.,4 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i5-s55gr0'>'lcr-o0-sRbdjl'
+Running [A1]: autfilt --partial-degen=1,2,3 'lcr-i5-6TaTjN'>'lcr-o1-Naplvz'
+info: collected automata:
+info:   A0	(27 st.,81 ed.,1 sets)
+info:   A1	(21 st.,63 ed.,2 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(27 st.,81 ed.,1 sets) -> (890 st.,3474 ed.,1 sets)	Comp(A0)
+info:         A1	(21 st.,63 ed.,2 sets) -> (777 st.,3022 ed.,1 sets)	Comp(A1)
+info:      input	(7 st.,21 ed.,4 sets) -> (515 st.,2001 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:221.1-263.7
+info: input	(7 st.,27 ed.,2 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i6-iF2CyC'>'lcr-o0-2YpIcT'
+Running [A1]: autfilt --partial-degen=1,2,3 'lcr-i6-UWCc9J'>'lcr-o1-Y5JVfR'
+info: collected automata:
+info:   A0	(13 st.,51 ed.,1 sets)
+info:   A1	(7 st.,27 ed.,2 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(13 st.,51 ed.,1 sets) -> (802 st.,3177 ed.,1 sets)	Comp(A0)
+info:         A1	(7 st.,27 ed.,2 sets) -> (522 st.,2063 ed.,1 sets)	Comp(A1)
+info:      input	(7 st.,27 ed.,2 sets) -> (495 st.,1957 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:264.1-300.7
+info: input	(7 st.,21 ed.,5 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i7-miZ2qx'>'lcr-o0-0VBTFo'
+Running [A1]: autfilt --partial-degen=1,2,3 'lcr-i7-AhnMGZ'>'lcr-o1-0b8M7b'
+info: collected automata:
+info:   A0	(34 st.,103 ed.,1 sets)
+info:   A1	(21 st.,63 ed.,3 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(34 st.,103 ed.,1 sets) -> (1867 st.,7160 ed.,1 sets)	Comp(A0)
+info:         A1	(21 st.,63 ed.,3 sets) -> (2395 st.,9207 ed.,1 sets)	Comp(A1)
+info:      input	(7 st.,21 ed.,5 sets) -> (1851 st.,7183 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:301.1-342.7
+info: input	(7 st.,26 ed.,2 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i8-kmlili'>'lcr-o0-NIXKmn'
+Running [A1]: autfilt --partial-degen=1,2,3 'lcr-i8-CvE1tI'>'lcr-o1-Jam4lF'
+info: collected automata:
+info:   A0	(14 st.,52 ed.,1 sets)
+info:   A1	(7 st.,26 ed.,2 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(14 st.,52 ed.,1 sets) -> (1593 st.,6340 ed.,1 sets)	Comp(A0)
+info:         A1	(7 st.,26 ed.,2 sets) -> (653 st.,2591 ed.,1 sets)	Comp(A1)
+info:      input	(7 st.,26 ed.,2 sets) -> (527 st.,2092 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:343.1-384.7
+info: input	(7 st.,26 ed.,4 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i9-V8njtt'>'lcr-o0-UAUL2j'
+Running [A1]: autfilt --partial-degen=1,2,3 'lcr-i9-bShdVs'>'lcr-o1-E1EkG5'
+info: collected automata:
+info:   A0	(28 st.,104 ed.,1 sets)
+info:   A1	(21 st.,78 ed.,2 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(28 st.,104 ed.,1 sets) -> (35130 st.,140483 ed.,1 sets)	Comp(A0)
+info:         A1	(21 st.,78 ed.,2 sets) -> (28487 st.,113913 ed.,1 sets)	Comp(A1)
+info:      input	(7 st.,26 ed.,4 sets) -> (18965 st.,75837 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(input)
+info: check_empty input*Comp(A0)
+
+No problem detected.
++ + randaut -n10 -e.3 -Q7autcross -A --verbose random 2..5 --language-preserved 2 autfilt --partial-degen
+
+-:1.1-39.7
+info: input	(7 st.,24 ed.,4 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i0-3RUyTG'>'lcr-o0-J6HQpA'
+info: collected automata:
+info:   A0	(7 st.,24 ed.,4 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(7 st.,24 ed.,4 sets) -> (53 st.,204 ed.,1 sets)	Comp(A0)
+info:      input	(7 st.,24 ed.,4 sets) -> (53 st.,204 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:40.1-71.7
+info: input	(7 st.,17 ed.,3 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i1-pK9SCQ'>'lcr-o0-ku8dzQ'
+info: collected automata:
+info:   A0	(7 st.,17 ed.,3 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(7 st.,17 ed.,3 sets) -> (40 st.,144 ed.,2 sets)	Comp(A0)
+info:      input	(7 st.,17 ed.,3 sets) -> (40 st.,144 ed.,2 sets)	Comp(input)
+info: check_empty A0*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:72.1-113.7
+info: input	(7 st.,26 ed.,2 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i2-3Wg4w8'>'lcr-o0-ms5JH0'
+info: collected automata:
+info:   A0	(14 st.,52 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(14 st.,52 ed.,1 sets) -> (652 st.,2592 ed.,1 sets)	Comp(A0)
+info:      input	(7 st.,26 ed.,2 sets) -> (296 st.,1172 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:114.1-151.7
+info: input	(7 st.,23 ed.,3 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i3-KLB0Fm'>'lcr-o0-kiiItF'
+info: collected automata:
+info:   A0	(7 st.,23 ed.,3 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(7 st.,23 ed.,3 sets) -> (51 st.,197 ed.,1 sets)	Comp(A0)
+info:      input	(7 st.,23 ed.,3 sets) -> (51 st.,197 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:152.1-186.7
+info: input	(7 st.,19 ed.,2 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i4-MM2l9L'>'lcr-o0-tVYZo3'
+info: collected automata:
+info:   A0	(8 st.,22 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(8 st.,22 ed.,1 sets) -> (38 st.,142 ed.,1 sets)	Comp(A0)
+info:      input	(7 st.,19 ed.,2 sets) -> (43 st.,160 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:187.1-223.7
+info: input	(7 st.,22 ed.,2 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i5-ySOwYf'>'lcr-o0-XPR8CK'
+info: collected automata:
+info:   A0	(7 st.,22 ed.,2 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(7 st.,22 ed.,2 sets) -> (66 st.,254 ed.,1 sets)	Comp(A0)
+info:      input	(7 st.,22 ed.,2 sets) -> (66 st.,254 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:224.1-259.7
+info: input	(7 st.,21 ed.,5 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i6-l5WFub'>'lcr-o0-YiJG2o'
+info: collected automata:
+info:   A0	(7 st.,21 ed.,5 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(7 st.,21 ed.,5 sets) -> (55 st.,209 ed.,3 sets)	Comp(A0)
+info:      input	(7 st.,21 ed.,5 sets) -> (55 st.,209 ed.,3 sets)	Comp(input)
+info: check_empty A0*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:260.1-293.7
+info: input	(7 st.,19 ed.,4 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i7-ocbcVA'>'lcr-o0-mRx5B6'
+info: collected automata:
+info:   A0	(10 st.,29 ed.,3 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(10 st.,29 ed.,3 sets) -> (25 st.,89 ed.,2 sets)	Comp(A0)
+info:      input	(7 st.,19 ed.,4 sets) -> (24 st.,86 ed.,2 sets)	Comp(input)
+info: check_empty A0*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:294.1-330.7
+info: input	(7 st.,22 ed.,4 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i8-ZyX75z'>'lcr-o0-D4nSnu'
+info: collected automata:
+info:   A0	(17 st.,58 ed.,2 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(17 st.,58 ed.,2 sets) -> (259 st.,995 ed.,2 sets)	Comp(A0)
+info:      input	(7 st.,22 ed.,4 sets) -> (132 st.,509 ed.,2 sets)	Comp(input)
+info: check_empty A0*Comp(input)
+info: check_empty input*Comp(A0)
+
+-:331.1-362.7
+info: input	(7 st.,17 ed.,5 sets)
+Running [A0]: autfilt --partial-degen 'lcr-i9-qqnP64'>'lcr-o0-MANno6'
+info: collected automata:
+info:   A0	(7 st.,17 ed.,4 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(7 st.,17 ed.,4 sets) -> (27 st.,94 ed.,2 sets)	Comp(A0)
+info:      input	(7 st.,17 ed.,5 sets) -> (25 st.,86 ed.,2 sets)	Comp(input)
+info: check_empty A0*Comp(input)
+info: check_empty input*Comp(A0)
+
+No problem detected.
+PASS core/pdegen.test (exit status: 0)

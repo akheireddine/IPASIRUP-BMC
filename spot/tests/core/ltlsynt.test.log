@@ -1,0 +1,1315 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltlsynt.test
+== Running test ltlsynt.test
++ echo ltlsynt.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltlsynt
++ testSubDir=ltlsynt.dir
++ chmod -R a+rwx ltlsynt.dir
++ rm -rf ltlsynt.dir
++ mkdir ltlsynt.dir
++ cd ltlsynt.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ :
++ ltlsynt --ins=a --outs=b -f GFa <-> GFb --algo=ds --print-pg
++ ltlsynt --ins=a --outs=b -f GFa <-> GFb --algo=sd --print-pg
++ ltlsynt --ins=a --outs=b -f GFa <-> GFb --algo=lar --print-pg
++ diff out exp
++ cat
++ ltlsynt --ins=a --outs=b -f GFa <-> GFb --aiger=isop
++ diff out exp
++ cat
++ ltlsynt --ins=a --outs=b -f GFa <-> GFb --aiger=isop+dc
++ diff out exp
++ cat
++ ltlsynt --ins=a --outs=b -f GFa <-> GFb --aiger=isop+ud
++ diff out exp
++ cat
++ ltlsynt --ins=a --outs=b -f GFa <-> GFb --aiger=isop+sub1
++ diff out exp
++ cat
++ ltlsynt --ins=a --outs=b -f GFa <-> GFb --aiger=isop+sub2
++ diff out exp
++ cat
++ ltlsynt --ins=a --outs=b -f GFa <-> GFb --aiger=isop,isop+dc,isop+ud
++ diff out exp
++ ltlsynt --ins=a --outs=b -f GFa <-> GFb --aiger=ite
++ diff out exp
++ ltlsynt --ins=a --outs=b -f GFa <-> GFb --aiger=ite+ud+dc
++ diff out exp
++ ltlsynt --ins=a --outs=b -f GFa <-> GFb --aiger
++ diff out exp
++ cat
++ ltlsynt --ins=a --outs=b,c -f GFa <-> (GFb & GFc) --algo=ds --simplify=no --aiger=isop
++ diff out exp
++ ltlsynt --ins=a --outs=b,c -f GFa <-> (GFb & GFc) --algo=ds --simplify=no --aiger=optim
++ diff out exp
++ cat
++ ltlsynt --ins=a --outs=b,c -f GFa <-> (GFb & GFc) --algo=ds --simplify=no --aiger=isop+dc
++ diff out exp
++ cat
++ ltlsynt --ins=a --outs=b,c -f GFa <-> (GFb & GFc) --algo=ds --simplify=no --aiger=ite
++ diff out exp
++ cat
++ ltlsynt --ins=a --outs=b -f GFa <-> GFb --verbose --realizability
+REALIZABLE
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt --ins=a --outs=b -f GFa <-> GFb --verbose --algo=ps
+REALIZABLE
+HOA: v1
+States: 1
+Start: 0
+AP: 2 "b" "a"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+properties: stutter-invariant weak
+controllable-AP: 0
+--BODY--
+State: 0
+[!0&!1 | 0&1] 0
+--END--
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt --ins=a,b,c,d --outs=e -f (Fa & Fb & Fc & Fd) <-> GFe --verbose --realizability --algo=lar
+REALIZABLE
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f G(Fi0 && Fi1 && Fi2) -> G(i1 <-> o0) --algo=lar --verbose --realizability
+REALIZABLE
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ opts= --ins=a,c --outs=b -f
++ ltlsynt --algo=ds --ins=a,c --outs=b -f GFa <-> GFb --csv=FILE
+REALIZABLE
+HOA: v1
+States: 1
+Start: 0
+AP: 2 "b" "a"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+properties: stutter-invariant weak
+controllable-AP: 0
+--BODY--
+State: 0
+[!0&!1 | 0&1] 0
+--END--
++ ltlsynt --algo=sd --ins=a,c --outs=b -f FGa <-> GF(b&XXb) --csv=>>FILE
+UNREALIZABLE
++ :
++ ltlsynt --algo=ps --ins=a,c --outs=b -f FGa <-> GF(b&XXb) --csv=>>FILE
+UNREALIZABLE
++ :
++ ltlsynt --algo=lar --ins=a,c --outs=b -f FGc <-> GF(!b&XXb) --csv=>>FILE
+UNREALIZABLE
++ :
++ ltlsynt --algo=lar.old --ins=a,c --outs=b -f FGa <-> GF(c&a) --csv=>>FILE
+UNREALIZABLE
++ :
++ wc -l
++ test 6 = 6
++ sed s/[^,]//g
++ read first
++ read l
++ test x,,,,,,,,,,,, = x,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,, = x,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,, = x,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,, = x,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,, = x,,,,,,,,,,,,
++ read l
++ opts=--real --ins=a,c --outs=b -f
++ ltlsynt --algo=ds --real --ins=a,c --outs=b -f GFa <-> GFb --csv=FILE
+REALIZABLE
++ ltlsynt --algo=sd --real --ins=a,c --outs=b -f FGa <-> GF(b&XXb) --csv=>>FILE
+UNREALIZABLE
++ :
++ ltlsynt --algo=ps --real --ins=a,c --outs=b -f FGa <-> GF(b&XXb) --csv=>>FILE
+UNREALIZABLE
++ :
++ ltlsynt --algo=lar --real --ins=a,c --outs=b -f FGc <-> GF(!b&XXb) --csv=>>FILE
+UNREALIZABLE
++ :
++ ltlsynt --algo=lar.old --real --ins=a,c --outs=b -f FGa <-> GF(c&a) --csv=>>FILE
+UNREALIZABLE
++ :
++ wc -l
++ test 6 = 6
++ sed s/[^,]//g
++ read first
++ read l
++ test x,,,,,,,,,,, = x,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,, = x,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,, = x,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,, = x,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,, = x,,,,,,,,,,,
++ read l
++ grep -c ,.sd., FILE
++ test 1 = 1
++ grep -c ,.ds., FILE
++ test 1 = 1
++ grep -c ,.lar., FILE
++ test 1 = 1
++ grep -c ,.lar.old., FILE
++ test 1 = 1
++ F0=(G ((((req) -> (X ((grant) && (X ((grant) && (X (grant))))))) && ((grant)
+-> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))
++ IN0=cancel, go, req
++ OUT0=grant
++ EXP0=UNREALIZABLE
++ F1=(G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant)
+-> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))
++ IN1=cancel, go, req
++ OUT1=grant
++ EXP1=UNREALIZABLE
++ F2=((G ((cancel) -> (X (go)))) -> (G ((((req) -> (X ((grant) || (X ((grant) ||
+(X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((!
+(grant)) U (go)))))))
++ IN2=cancel, go, req
++ OUT2=grant
++ EXP2=REALIZABLE
++ F3=((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X ((grant) ||
+(X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel)
+-> (X ((! (grant)) U (go)))))))
++ IN3=cancel, go, req
++ OUT3=grant
++ EXP3=REALIZABLE
++ F4=((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X (((grant) ||
+(cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))) &&
+((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go)))))))
++ IN4=cancel, go, req
++ OUT4=grant
++ EXP4=REALIZABLE
++ F5=((G ((cancel) -> (X ((go) || (X ((go) || (X (go)))))))) -> (G ((((req) ->
+(X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) ||
+(cancel)))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((!
+(grant)) U (go)))))))
++ IN5=cancel, go, req
++ OUT5=grant
++ EXP5=REALIZABLE
++ F6=((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((cancel) -> (X ((!
+(grant)) U (go)))) && ((grant) -> (X (! (grant))))) && ((req) -> (((grant) ||
+(cancel)) || (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X
+((grant) || (cancel))))))))))))
++ IN6=cancel, go, req
++ OUT6=grant
++ EXP6=REALIZABLE
++ F7=(! ((G ((req) -> (F (ack)))) && (G ((go) -> (F (grant))))))
++ IN7=go, req
++ OUT7=ack, grant
++ EXP7=UNREALIZABLE
++ F8=(((G ((((r1) -> (F (a1))) && ((r2) -> (F (a2)))) && (! ((a1) && (a2))))) &&
+(((a1) U (r1)) || (G (a1)))) && (((a2) U (r2)) || (G (a2))))
++ IN8=r1, r2
++ OUT8=a1, a2
++ EXP8=UNREALIZABLE
++ F9=((((G (((((((r0) -> (F (a0))) && ((r1) -> (F (a1)))) && ((r2) -> (F (a2))))
+&& (! ((a0) && (a1)))) && (! ((a0) && (a2)))) && (! ((a1) && (a2))))) && (((a0)
+U (r0)) || (G (a0)))) && (((a1) U (r1)) || (G (a1)))) && (((a2) U (r2)) || (G
+(a2))))
++ IN9=r0, r1, r2
++ OUT9=a0, a1, a2
++ EXP9=UNREALIZABLE
++ IN10=a, b, c
++ OUT10=p0, p1, p2
++ F10=G (p0 && ! p1 && ! p2 || (! p0 && p1 && ! p2) || (! p0 && ! p1 && p2)) &&
+  (F (G a) || F (G b) || G (F c) <-> (G (F p0) || (G (F p1) && ! G (F p2))))
++ EXP10=REALIZABLE
++ eval echo $F0
++ echo (G ((((req) -> (X ((grant) && (X ((grant) && (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))
++ F=(G ((((req) -> (X ((grant) && (X ((grant) && (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))
++ eval echo $IN0
++ echo cancel, go, req
++ IN=cancel, go, req
++ eval echo $OUT0
++ echo grant
++ OUT=grant
++ eval echo $EXP0
++ echo UNREALIZABLE
++ EXP=UNREALIZABLE
++ ltlsynt -f (G ((((req) -> (X ((grant) && (X ((grant) && (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go)))))) --ins=cancel, go, req --outs=grant --realizability --algo=sd
++ test UNREALIZABLE = UNREALIZABLE
++ ltlsynt -f (G ((((req) -> (X ((grant) && (X ((grant) && (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go)))))) --ins=cancel, go, req --outs=grant --realizability --algo=ds
++ test UNREALIZABLE = UNREALIZABLE
++ ltlsynt -f (G ((((req) -> (X ((grant) && (X ((grant) && (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go)))))) --ins=cancel, go, req --outs=grant --realizability --algo=lar
++ test UNREALIZABLE = UNREALIZABLE
++ eval echo $F1
++ echo (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))
++ F=(G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))
++ eval echo $IN1
++ echo cancel, go, req
++ IN=cancel, go, req
++ eval echo $OUT1
++ echo grant
++ OUT=grant
++ eval echo $EXP1
++ echo UNREALIZABLE
++ EXP=UNREALIZABLE
++ ltlsynt -f (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go)))))) --ins=cancel, go, req --outs=grant --realizability --algo=sd
++ test UNREALIZABLE = UNREALIZABLE
++ ltlsynt -f (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go)))))) --ins=cancel, go, req --outs=grant --realizability --algo=ds
++ test UNREALIZABLE = UNREALIZABLE
++ ltlsynt -f (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go)))))) --ins=cancel, go, req --outs=grant --realizability --algo=lar
++ test UNREALIZABLE = UNREALIZABLE
++ eval echo $F7
++ echo (! ((G ((req) -> (F (ack)))) && (G ((go) -> (F (grant))))))
++ F=(! ((G ((req) -> (F (ack)))) && (G ((go) -> (F (grant))))))
++ eval echo $IN7
++ echo go, req
++ IN=go, req
++ eval echo $OUT7
++ echo ack, grant
++ OUT=ack, grant
++ eval echo $EXP7
++ echo UNREALIZABLE
++ EXP=UNREALIZABLE
++ ltlsynt -f (! ((G ((req) -> (F (ack)))) && (G ((go) -> (F (grant)))))) --ins=go, req --outs=ack, grant --realizability --algo=sd
++ test UNREALIZABLE = UNREALIZABLE
++ ltlsynt -f (! ((G ((req) -> (F (ack)))) && (G ((go) -> (F (grant)))))) --ins=go, req --outs=ack, grant --realizability --algo=ds
++ test UNREALIZABLE = UNREALIZABLE
++ ltlsynt -f (! ((G ((req) -> (F (ack)))) && (G ((go) -> (F (grant)))))) --ins=go, req --outs=ack, grant --realizability --algo=lar
++ test UNREALIZABLE = UNREALIZABLE
++ eval echo $F8
++ echo (((G ((((r1) -> (F (a1))) && ((r2) -> (F (a2)))) && (! ((a1) && (a2))))) && (((a1) U (r1)) || (G (a1)))) && (((a2) U (r2)) || (G (a2))))
++ F=(((G ((((r1) -> (F (a1))) && ((r2) -> (F (a2)))) && (! ((a1) && (a2))))) && (((a1) U (r1)) || (G (a1)))) && (((a2) U (r2)) || (G (a2))))
++ eval echo $IN8
++ echo r1, r2
++ IN=r1, r2
++ eval echo $OUT8
++ echo a1, a2
++ OUT=a1, a2
++ eval echo $EXP8
++ echo UNREALIZABLE
++ EXP=UNREALIZABLE
++ ltlsynt -f (((G ((((r1) -> (F (a1))) && ((r2) -> (F (a2)))) && (! ((a1) && (a2))))) && (((a1) U (r1)) || (G (a1)))) && (((a2) U (r2)) || (G (a2)))) --ins=r1, r2 --outs=a1, a2 --realizability --algo=sd
++ test UNREALIZABLE = UNREALIZABLE
++ ltlsynt -f (((G ((((r1) -> (F (a1))) && ((r2) -> (F (a2)))) && (! ((a1) && (a2))))) && (((a1) U (r1)) || (G (a1)))) && (((a2) U (r2)) || (G (a2)))) --ins=r1, r2 --outs=a1, a2 --realizability --algo=ds
++ test UNREALIZABLE = UNREALIZABLE
++ ltlsynt -f (((G ((((r1) -> (F (a1))) && ((r2) -> (F (a2)))) && (! ((a1) && (a2))))) && (((a1) U (r1)) || (G (a1)))) && (((a2) U (r2)) || (G (a2)))) --ins=r1, r2 --outs=a1, a2 --realizability --algo=lar
++ test UNREALIZABLE = UNREALIZABLE
++ eval echo $F9
++ echo ((((G (((((((r0) -> (F (a0))) && ((r1) -> (F (a1)))) && ((r2) -> (F (a2)))) && (! ((a0) && (a1)))) && (! ((a0) && (a2)))) && (! ((a1) && (a2))))) && (((a0) U (r0)) || (G (a0)))) && (((a1) U (r1)) || (G (a1)))) && (((a2) U (r2)) || (G (a2))))
++ F=((((G (((((((r0) -> (F (a0))) && ((r1) -> (F (a1)))) && ((r2) -> (F (a2)))) && (! ((a0) && (a1)))) && (! ((a0) && (a2)))) && (! ((a1) && (a2))))) && (((a0) U (r0)) || (G (a0)))) && (((a1) U (r1)) || (G (a1)))) && (((a2) U (r2)) || (G (a2))))
++ eval echo $IN9
++ echo r0, r1, r2
++ IN=r0, r1, r2
++ eval echo $OUT9
++ echo a0, a1, a2
++ OUT=a0, a1, a2
++ eval echo $EXP9
++ echo UNREALIZABLE
++ EXP=UNREALIZABLE
++ ltlsynt -f ((((G (((((((r0) -> (F (a0))) && ((r1) -> (F (a1)))) && ((r2) -> (F (a2)))) && (! ((a0) && (a1)))) && (! ((a0) && (a2)))) && (! ((a1) && (a2))))) && (((a0) U (r0)) || (G (a0)))) && (((a1) U (r1)) || (G (a1)))) && (((a2) U (r2)) || (G (a2)))) --ins=r0, r1, r2 --outs=a0, a1, a2 --realizability --algo=sd
++ test UNREALIZABLE = UNREALIZABLE
++ ltlsynt -f ((((G (((((((r0) -> (F (a0))) && ((r1) -> (F (a1)))) && ((r2) -> (F (a2)))) && (! ((a0) && (a1)))) && (! ((a0) && (a2)))) && (! ((a1) && (a2))))) && (((a0) U (r0)) || (G (a0)))) && (((a1) U (r1)) || (G (a1)))) && (((a2) U (r2)) || (G (a2)))) --ins=r0, r1, r2 --outs=a0, a1, a2 --realizability --algo=ds
++ test UNREALIZABLE = UNREALIZABLE
++ ltlsynt -f ((((G (((((((r0) -> (F (a0))) && ((r1) -> (F (a1)))) && ((r2) -> (F (a2)))) && (! ((a0) && (a1)))) && (! ((a0) && (a2)))) && (! ((a1) && (a2))))) && (((a0) U (r0)) || (G (a0)))) && (((a1) U (r1)) || (G (a1)))) && (((a2) U (r2)) || (G (a2)))) --ins=r0, r1, r2 --outs=a0, a1, a2 --realizability --algo=lar
++ test UNREALIZABLE = UNREALIZABLE
++ eval echo $F2
++ echo ((G ((cancel) -> (X (go)))) -> (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go)))))))
++ F=((G ((cancel) -> (X (go)))) -> (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go)))))))
++ eval echo $IN2
++ echo cancel, go, req
++ IN=cancel, go, req
++ eval echo $OUT2
++ echo grant
++ OUT=grant
++ eval echo $EXP2
++ echo REALIZABLE
++ EXP=REALIZABLE
++ ltl2tgba -f !(((G ((cancel) -> (X (go)))) -> (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))))
++ ltlsynt -f ((G ((cancel) -> (X (go)))) -> (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=sd
++ head -1 out2
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out2
++ autfilt -q -v --intersect=negf_aut2 res2
++ autfilt --remove-ap=grant res2+ 
+autfilt --dualize
++ autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X (go)))) -> (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=ds
++ head -1 out2
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out2
++ autfilt -q -v --intersect=negf_aut2 res2
++ autfilt --remove-ap=grant res2
++ autfilt --dualize
++ autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X (go)))) -> (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=ps
++ head -1 out2
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out2
++ autfilt -q -v --intersect=negf_aut2 res2
++ autfilt --remove-ap=grant res2+ 
+autfilt --dualize
++ autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X (go)))) -> (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=lar
++ head -1 out2
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out2
++ autfilt -q -v --intersect=negf_aut2 res2
++ autfilt --remove-ap=grant res2
++ autfilt --dualize
++ autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X (go)))) -> (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=lar.old
++ head -1 out2
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out2
++ autfilt -q -v --intersect=negf_aut2 res2
++ autfilt --remove-ap=grant+  res2
+autfilt --dualize
++ autfilt --is-empty -q
++ eval echo $F3
++ echo ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go)))))))
++ F=((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go)))))))
++ eval echo $IN3
++ echo cancel, go, req
++ IN=cancel, go, req
++ eval echo $OUT3
++ echo grant
++ OUT=grant
++ eval echo $EXP3
++ echo REALIZABLE
++ EXP=REALIZABLE
++ ltl2tgba -f !(((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))))
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=sd
++ head -1 out3
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out3
++ autfilt -q -v --intersect=negf_aut3 res3
++ autfilt --remove-ap=grant res3
++ autfilt --dualize
++ autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=ds
++ head -1 out3
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out3
++ autfilt -q -v --intersect=negf_aut3 res3
++ autfilt --remove-ap=grant res3
++ autfilt --dualize
++ autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=ps
++ head -1 out3
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out3
++ autfilt -q -v --intersect=negf_aut3 res3
++ autfilt --remove-ap=grant res3
++ autfilt --dualize
++ autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=lar
++ head -1 out3
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out3
++ autfilt -q -v --intersect=negf_aut3 res3
++ autfilt --remove-ap=grant res3
++ autfilt --dualize
++ autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X ((grant) || (X ((grant) || (X (grant))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=lar.old
++ head -1 out3
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out3
++ autfilt -q -v --intersect=negf_aut3 res3
++ autfilt --remove-ap=grant res3
++ + autfilt --dualize
+autfilt --is-empty -q
++ eval echo $F4
++ echo ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go)))))))
++ F=((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go)))))))
++ eval echo $IN4
++ echo cancel, go, req
++ IN=cancel, go, req
++ eval echo $OUT4
++ echo grant
++ OUT=grant
++ eval echo $EXP4
++ echo REALIZABLE
++ EXP=REALIZABLE
++ ltl2tgba -f !(((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))))
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=sd
++ head -1 out4
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out4
++ autfilt -q -v --intersect=negf_aut4 res4
++ autfilt --remove-ap=grant res4
++ autfilt --dualize
++ autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=ds
++ head -1 out4
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out4
++ autfilt -q -v --intersect=negf_aut4 res4
++ autfilt --remove-ap=grant res4
++ autfilt --dualize
++ autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=ps
++ head -1 out4
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out4
++ autfilt -q -v --intersect=negf_aut4 res4
++ autfilt --remove-ap=grant res4
++ autfilt --dualize
++ autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=lar
++ head -1 out4
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out4
++ autfilt -q -v --intersect=negf_aut4 res4
++ autfilt --remove-ap=grant res4
++ + autfilt --dualize
+autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((req) -> (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=lar.old
++ head -1 out4
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out4
++ autfilt -q -v --intersect=negf_aut4 res4
++ autfilt --remove-ap=grant res4
++ autfilt --is-empty -q
++ autfilt --dualize
++ eval echo $F5
++ echo ((G ((cancel) -> (X ((go) || (X ((go) || (X (go)))))))) -> (G ((((req) -> (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go)))))))
++ F=((G ((cancel) -> (X ((go) || (X ((go) || (X (go)))))))) -> (G ((((req) -> (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go)))))))
++ eval echo $IN5
++ echo cancel, go, req
++ IN=cancel, go, req
++ eval echo $OUT5
++ echo grant
++ OUT=grant
++ eval echo $EXP5
++ echo REALIZABLE
++ EXP=REALIZABLE
++ ltl2tgba -f !(((G ((cancel) -> (X ((go) || (X ((go) || (X (go)))))))) -> (G ((((req) -> (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))))
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X ((go) || (X (go)))))))) -> (G ((((req) -> (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=sd
++ head -1 out5
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out5
++ autfilt -q -v --intersect=negf_aut5 res5
++ autfilt+  --remove-ap=grant res5
+autfilt --dualize
++ autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X ((go) || (X (go)))))))) -> (G ((((req) -> (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=ds
++ head -1 out5
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out5
++ autfilt -q -v --intersect=negf_aut5 res5
++ autfilt+  --remove-ap=grant res5
+autfilt --dualize
++ autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X ((go) || (X (go)))))))) -> (G ((((req) -> (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=ps
++ head -1 out5
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out5
++ autfilt -q -v --intersect=negf_aut5 res5
++ autfilt --remove-ap=grant res5
++ + autfilt --dualize
+autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X ((go) || (X (go)))))))) -> (G ((((req) -> (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=lar
++ head -1 out5
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out5
++ autfilt -q -v --intersect=negf_aut5 res5
++ autfilt --remove-ap=grant res5
++ + autfilt --dualize
+autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X ((go) || (X (go)))))))) -> (G ((((req) -> (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))) && ((grant) -> (X (! (grant))))) && ((cancel) -> (X ((! (grant)) U (go))))))) --ins=cancel, go, req --outs=grant --algo=lar.old
++ head -1 out5
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out5
++ autfilt -q -v --intersect=negf_aut5 res5
++ autfilt --remove-ap=grant res5
++ + autfiltautfilt --dualize --is-empty
+ -q
++ eval echo $F6
++ echo ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((cancel) -> (X ((! (grant)) U (go)))) && ((grant) -> (X (! (grant))))) && ((req) -> (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel))))))))))))
++ F=((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((cancel) -> (X ((! (grant)) U (go)))) && ((grant) -> (X (! (grant))))) && ((req) -> (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel))))))))))))
++ eval echo $IN6
++ echo cancel, go, req
++ IN=cancel, go, req
++ eval echo $OUT6
++ echo grant
++ OUT=grant
++ eval echo $EXP6
++ echo REALIZABLE
++ EXP=REALIZABLE
++ ltl2tgba -f !(((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((cancel) -> (X ((! (grant)) U (go)))) && ((grant) -> (X (! (grant))))) && ((req) -> (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))))))))
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((cancel) -> (X ((! (grant)) U (go)))) && ((grant) -> (X (! (grant))))) && ((req) -> (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))))))) --ins=cancel, go, req --outs=grant --algo=sd
++ head -1 out6
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out6
++ autfilt -q -v --intersect=negf_aut6 res6
++ autfilt --remove-ap=grant res6
++ autfilt+  --dualize
+autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((cancel) -> (X ((! (grant)) U (go)))) && ((grant) -> (X (! (grant))))) && ((req) -> (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))))))) --ins=cancel, go, req --outs=grant --algo=ds
++ head -1 out6
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out6
++ autfilt -q -v --intersect=negf_aut6 res6
++ autfilt --remove-ap=grant res6
++ autfilt --dualize
++ autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((cancel) -> (X ((! (grant)) U (go)))) && ((grant) -> (X (! (grant))))) && ((req) -> (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))))))) --ins=cancel, go, req --outs=grant --algo=ps
++ head -1 out6
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out6
++ autfilt -q -v --intersect=negf_aut6 res6
++ autfilt --remove-ap=grant res6
++ autfilt --dualize
++ autfilt --is-empty -q
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((cancel) -> (X ((! (grant)) U (go)))) && ((grant) -> (X (! (grant))))) && ((req) -> (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))))))) --ins=cancel, go, req --outs=grant --algo=lar
++ head -1 out6
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out6
++ autfilt -q -v --intersect=negf_aut6 res6
++ autfilt --remove-ap=grant res6
++ + autfiltautfilt --dualize --is-empty
+ -q
++ ltlsynt -f ((G ((cancel) -> (X ((go) || (X (go)))))) -> (G ((((cancel) -> (X ((! (grant)) U (go)))) && ((grant) -> (X (! (grant))))) && ((req) -> (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X (((grant) || (cancel)) || (X ((grant) || (cancel)))))))))))) --ins=cancel, go, req --outs=grant --algo=lar.old
++ head -1 out6
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out6
++ autfilt -q -v --intersect=negf_aut6 res6
++ autfilt --remove-ap=grant res6
++ + autfilt --dualize
+autfilt --is-empty -q
++ eval echo $F10
++ echo G (p0 && ! p1 && ! p2 || (! p0 && p1 && ! p2) || (! p0 && ! p1 && p2)) && (F (G a) || F (G b) || G (F c) <-> (G (F p0) || (G (F p1) && ! G (F p2))))
++ F=G (p0 && ! p1 && ! p2 || (! p0 && p1 && ! p2) || (! p0 && ! p1 && p2)) && (F (G a) || F (G b) || G (F c) <-> (G (F p0) || (G (F p1) && ! G (F p2))))
++ eval echo $IN10
++ echo a, b, c
++ IN=a, b, c
++ eval echo $OUT10
++ echo p0, p1, p2
++ OUT=p0, p1, p2
++ eval echo $EXP10
++ echo REALIZABLE
++ EXP=REALIZABLE
++ ltl2tgba -f !(G (p0 && ! p1 && ! p2 || (! p0 && p1 && ! p2) || (! p0 && ! p1 && p2)) && (F (G a) || F (G b) || G (F c) <-> (G (F p0) || (G (F p1) && ! G (F p2)))))
++ ltlsynt -f G (p0 && ! p1 && ! p2 || (! p0 && p1 && ! p2) || (! p0 && ! p1 && p2)) && (F (G a) || F (G b) || G (F c) <-> (G (F p0) || (G (F p1) && ! G (F p2)))) --ins=a, b, c --outs=p0, p1, p2 --algo=sd
++ head -1 out10
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out10
++ autfilt -q -v --intersect=negf_aut10 res10
++ autfilt --remove-ap=p0, p1, p2 res10
++ autfilt --dualize+ 
+autfilt --is-empty -q
++ ltlsynt -f G (p0 && ! p1 && ! p2 || (! p0 && p1 && ! p2) || (! p0 && ! p1 && p2)) && (F (G a) || F (G b) || G (F c) <-> (G (F p0) || (G (F p1) && ! G (F p2)))) --ins=a, b, c --outs=p0, p1, p2 --algo=ds
++ head -1 out10
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out10
++ autfilt -q -v --intersect=negf_aut10 res10
++ autfilt --remove-ap=p0, p1, p2 res10
++ autfilt --dualize+ 
+autfilt --is-empty -q
++ ltlsynt -f G (p0 && ! p1 && ! p2 || (! p0 && p1 && ! p2) || (! p0 && ! p1 && p2)) && (F (G a) || F (G b) || G (F c) <-> (G (F p0) || (G (F p1) && ! G (F p2)))) --ins=a, b, c --outs=p0, p1, p2 --algo=ps
++ head -1 out10
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out10
++ autfilt -q -v --intersect=negf_aut10 res10
++ + autfilt --remove-ap=p0, p1, p2 res10autfilt
+ --dualize+ 
+autfilt --is-empty -q
++ ltlsynt -f G (p0 && ! p1 && ! p2 || (! p0 && p1 && ! p2) || (! p0 && ! p1 && p2)) && (F (G a) || F (G b) || G (F c) <-> (G (F p0) || (G (F p1) && ! G (F p2)))) --ins=a, b, c --outs=p0, p1, p2 --algo=lar
++ head -1 out10
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out10
++ autfilt -q -v --intersect=negf_aut10 res10
++ autfilt --remove-ap=p0, p1, p2 res10
++ autfilt --is-empty -q
++ autfilt --dualize
++ ltlsynt -f G (p0 && ! p1 && ! p2 || (! p0 && p1 && ! p2) || (! p0 && ! p1 && p2)) && (F (G a) || F (G b) || G (F c) <-> (G (F p0) || (G (F p1) && ! G (F p2)))) --ins=a, b, c --outs=p0, p1, p2 --algo=lar.old
++ head -1 out10
++ REAL=REALIZABLE
++ test REALIZABLE = REALIZABLE
++ tail -n +2 out10
++ autfilt -q -v --intersect=negf_aut10 res10
++ autfilt --remove-ap=p0, p1, p2 res10
++ autfilt --dualize
++ autfilt --is-empty -q
++ cat
++ ltlsynt --outs=p0 -x tls-impl=0 --polar=no --simpl=no -f !XXF(p0 & (p0 M Gp0))
++ diff out exp
++ cat
++ ltlsynt --outs=p0 -x tls-impl=1 --polar=no -f !XXF(p0 & (p0 M Gp0))
++ diff out exp
++ ltlsynt --outs=p0 -x tls-impl=0 -f !XXF(p0 & (p0 M Gp0))
++ diff out exp
++ ltlsynt --outs=p0 -f !XXF(p0 & (p0 M Gp0))
++ diff out exp
++ f=Fp0 U XX((p0 & F!p1) | (!p0 & Gp1))
++ ltlsynt --verbose --algo=ps --outs p1 --ins p0 -f Fp0 U XX((p0 & F!p1) | (!p0 & Gp1)) -xdpa-simul=1
+REALIZABLE
+HOA: v1
+States: 6
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+controllable-AP: 1
+--BODY--
+State: 0
+[!0] 1
+[0] 2
+State: 1
+[0] 3
+[!0] 4
+State: 2
+[0] 3
+[!0] 5
+State: 3
+[0&!1] 5
+[!0&!1] 5
+State: 4
+[0&!1] 5
+[!0&1] 4
+State: 5
+[0&!1] 5
+[!0&!1] 4
+--END--
++ grep DPA has 13 states err
+DPA has 13 states
++ ltlsynt -x dpa-simul=0 --verbose --algo=ps --outs=p1 --ins=p0 -f Fp0 U XX((p0 & F!p1) | (!p0 & Gp1))
+REALIZABLE
+HOA: v1
+States: 7
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+controllable-AP: 1
+--BODY--
+State: 0
+[!0] 1
+[0] 2
+State: 1
+[0] 3
+[!0] 4
+State: 2
+[0] 3
+[!0] 5
+State: 3
+[0&!1] 6
+[!0&!1] 5
+State: 4
+[0&!1] 6
+[!0&1] 4
+State: 5
+[0&!1] 6
+[!0&!1] 4
+State: 6
+[!1] 6
+--END--
++ grep DPA has 29 states err
+DPA has 29 states
++ ltlsynt --verbose -x wdba-minimize=1 --algo=ps --outs=p1 --ins=p0 -f Fp0 U XX((p0 & F!p1) | (!p0 & Gp1))
+REALIZABLE
+HOA: v1
+States: 6
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+controllable-AP: 1
+--BODY--
+State: 0
+[!0] 1
+[0] 2
+State: 1
+[0] 3
+[!0] 4
+State: 2
+[!0] 5
+[0] 3
+State: 3
+[0&!1] 4
+[!0&1] 5
+State: 4
+[0&!1] 4
+[!0&1] 4
+State: 5
+[0&!1] 4
+[!0&!1] 4
+--END--
++ grep DPA has 12 states err
+DPA has 12 states
++ + ltlsynt --outs=p1 -fgrep Fp0 U XX((p0 & F!p1) | (!p0 & Gp1)) States: 7 -xdpa-simul=1
+ --simpl=no
+States: 7
++ ltlsynt --outs=p1 -f Fp0 U XX((p0 & F!p1) | (!p0 & Gp1))+  -xdpa-simul=1 --simpl=bisim
+grep States: 7
+States: 7
++ ltlsynt --outs=p1 -f Fp0 U XX((p0 & F!p1) | (!p0 & Gp1)) -xdpa-simul=1 --simpl=bwoa
++ grep States: 6
+States: 6
++ ltlsynt+  --outs=p1 -f Fp0 U XX((p0 & F!p1) | (!p0 & Gp1)) -xdpa-simul=1grep
+ States: 6
+States: 6
++ ltlsynt --outs=p1 -f Fp0 U XX((p0 & F!p1) | (!p0 & Gp1)) -xdpa-simul=1 --simpl=sat
++ grep States: 3
+States: 3
++ ltlsynt --outs=p1 -f Fp0 U XX((p0 & F!p1) | (!p0 & Gp1)) -xdpa-simul=1 --simpl=bisim-sat
++ grep States: 3
+States: 3
++ ltlsynt --outs=p1 -f Fp0 U XX((p0 & F!p1) | (!p0 & Gp1)) -xdpa-simul=1 --simpl=bwoa-sat
++ grep States: 6
+States: 6
++ ltlsynt --ins=a -f GFa <-> GFb+  --simplify=0
+grep States: 1
+States: 1
++ ltlsynt --ins=a -f GFa <-> GFb --simplify=1
++ grep States: 1
+States: 1
++ + ltlsynt --ins=a -f GFa <-> GFbgrep --simplify=2 States: 1
+
+States: 1
++ + ltlsynt --ins=a -f GFa <-> GFb --simplify=3
+grep States: 1
+States: 1
++ + ltlsynt --ins=a -f GFa <-> GFb --simplify=4
+grep States: 1
+States: 1
++ ltlsynt --ins=a -f GFa <-> GFb --simplify=5
++ grep States: 1
+States: 1
++ cat
++ ltlsynt -f G((i0 && i1)<->X(o0)) && G((i2|i3)<->X(o1)) --outs=o0,o1 --aiger=isop+ud --algo=lar --decompose=no --simpl=no
++ diff out exp
++ cat
++ ltlsynt -f G((i0 && i1)<->X(o0)) && G((i2|i3)<->X(o1)) --outs=o0,o1 --aiger=isop --algo=lar --decompose=no --simpl=no
++ diff out exp
++ cat
++ ltlsynt -f G((i0 && i1)<->X(o0)) && G((i2|i3)<->X(o1)) --outs=o0,o1 --aiger=isop+ud --algo=lar --decompose=yes --simpl=no
++ diff out exp
++ ltlsynt -f G((i0 && i1)<->X(o0)) && G((i2|i3)<->X(o1)) --outs=o0,o1 --aiger=isop+ud --algo=lar --simpl=no
++ diff out exp
++ ltlsynt -f a U (b
++ test 2 -eq 2
++ wc -l
++ test 4 -eq 4
++ cat
++ ltlsynt --ins=a,b -f G (a & b <=> c)
++ diff stdout expected
++ ltlsynt --outs=c -f G (a & b <=> c)
++ diff stdout expected
++ ltlsynt --ins=a,b --outs=c,a -f GFa | FGc | GFb
++ test 2 -eq 2
++ grep 'a' appears in both stderr
+ltlsynt: 'a' appears in both --ins and --outs
++ ltlsynt --ins=a --outs=c -f GFa | FGb | GFc
++ test 2 -eq 2
++ grep one.*should match 'b' stderr
+ltlsynt: one of --ins or --outs should match 'b'
++ ltlsynt -f GFa | FGb | GFc
++ test 2 -eq 2
++ grep [-]-ins or --outs stderr
+    use --ins or --outs
++ cat
++ ltlsynt -f (GFa <-> GFb) && (G(c <-> d)) --outs=b,c --verbose
+REALIZABLE
+HOA: v1
+States: 1
+Start: 0
+AP: 4 "b" "a" "c" "d"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+properties: stutter-invariant weak
+controllable-AP: 0 2
+--BODY--
+State: 0
+[!0&!1&!2&!3 | !0&!1&2&3 | 0&1&!2&!3 | 0&1&2&3] 0
+--END--
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f (GFa <-> GFb) & G(c <-> d) --outs=b,c --verbose --decompose=0 --global-equiv=no --verify
+REALIZABLE
+HOA: v1
+States: 1
+Start: 0
+AP: 4 "b" "c" "d" "a"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+properties: stutter-invariant weak
+controllable-AP: 0 1
+--BODY--
+State: 0
+[!0&!1&!2&!3 | !0&1&2&!3 | 0&!1&!2&3 | 0&1&2&3] 0
+--END--
+/*Strategy was verified*/
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f (GFb <-> GFa) & G(c <-> d) --outs=b,c --verbose --decompose=0 --global-equiv=no --verify
+REALIZABLE
+HOA: v1
+States: 1
+Start: 0
+AP: 4 "b" "c" "d" "a"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+properties: stutter-invariant weak
+controllable-AP: 0 1
+--BODY--
+State: 0
+[!0&!1&!2&!3 | !0&1&2&!3 | 0&!1&!2&3 | 0&1&2&3] 0
+--END--
+/*Strategy was verified*/
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f G(c <-> d) & (GFa <-> GFb) --outs=b,c --verbose --decompose=0 --global-equiv=no --verify
+REALIZABLE
+HOA: v1
+States: 1
+Start: 0
+AP: 4 "c" "b" "d" "a"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+properties: stutter-invariant weak
+controllable-AP: 0 1
+--BODY--
+State: 0
+[!0&!1&!2&!3 | !0&1&!2&3 | 0&!1&2&!3 | 0&1&2&3] 0
+--END--
+/*Strategy was verified*/
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f G(c <-> d) & (GFb <-> GFa) --outs=b,c --verbose --decompose=0 --global-equiv=no --verify
+REALIZABLE
+HOA: v1
+States: 1
+Start: 0
+AP: 4 "c" "b" "d" "a"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+properties: stutter-invariant weak
+controllable-AP: 0 1
+--BODY--
+State: 0
+[!0&!1&!2&!3 | !0&1&!2&3 | 0&!1&2&!3 | 0&1&2&3] 0
+--END--
+/*Strategy was verified*/
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f (GFb <-> GFa) && G(a&c) --outs=b,c --verbose --decompose=0
+UNREALIZABLE
++ true
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f (GFb <-> GFa) && (G((a&c)|(!a&!c))) --outs=b,c --verbose --verify --decompose=0
+REALIZABLE
+HOA: v1
+States: 1
+Start: 0
+AP: 3 "b" "c" "a"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+properties: stutter-invariant weak
+controllable-AP: 0 1
+--BODY--
+State: 0
+[!0&!1&!2 | 0&1&2] 0
+--END--
+/*Strategy was verified*/
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f Fa <-> FGb --outs=b,c --verbose --decompose=0 --verify
+REALIZABLE
+HOA: v1
+States: 2
+Start: 1
+AP: 2 "b" "a"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+properties: stutter-invariant terminal very-weak
+controllable-AP: 0
+--BODY--
+State: 0
+[0] 0
+State: 1
+[1] 0
+[!0&!1] 1
+--END--
+/*Strategy was verified*/
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f Ga <-> Gb --outs=b --verbose --decompose=0 --verify --aiger
+REALIZABLE
+aag 1 1 0 1 0
+2
+2
+i0 a
+o0 b
+c
+Circuit was verified
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f ((a|x) & (b | y) & b) => (x & y) --outs=x,y --aiger=ite --pol=no --verify --verbose
+REALIZABLE
+aag 2 2 0 2 0
+2
+4
+2
+4
+i0 b
+i1 a
+o0 y
+o1 x
+c
+Circuit was verified
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f ((a|x) & (b | y) & b) => (x & y) --outs=x,y --aiger=ite --verify --verbose
+REALIZABLE
+aag 2 2 0 2 0
+2
+4
+1
+1
+i0 a
+i1 b
+o0 x
+o1 y
+c
+Circuit was verified
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f G!(!x | !y) --outs=x, y --pol=no --aiger=ite --verify --verbose
+REALIZABLE
+aag 0 0 0 2 0
+1
+1
+o0 x
+o1 y
+c
+Circuit was verified
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f !F(a|b) --outs=b --pol=no --decompose=yes --aiger --verbose
+UNREALIZABLE
++ true
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f G!(a -> b) --outs=b --decompose=yes --aiger --pol=no --verbose
+UNREALIZABLE
++ true
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f (a & b) U (b & c) --outs=b,c --decompose=yes --aiger --verbose --pol=no --verify
+REALIZABLE
+aag 1 1 0 2 0
+2
+1
+1
+i0 a
+o0 b
+o1 c
+c
+Circuit was verified
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f a => (b & c & d) --outs=b,c,d, --decompose=yes --pol=no --verbose --aiger
+REALIZABLE
+aag 1 1 0 3 0
+2
+2
+2
+2
+i0 a
+o0 b
+o1 c
+o2 d
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f !(F(a | b)) --outs=b, --decompose=yes --verbose --pol=no --aiger
+UNREALIZABLE
++ true
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ ltlsynt --ins= -f GFa
+REALIZABLE
+HOA: v1
+States: 1
+Start: 0
+AP: 1 "a"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic weak
+controllable-AP: 0
+--BODY--
+State: 0
+[0] 0
+--END--
++ ltlsynt --outs= -f GFb
++ grep UNREALIZABLE
+UNREALIZABLE
++ ltlsynt --outs= -f 1
+REALIZABLE
+HOA: v1
+States: 1
+Start: 0
+AP: 0
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic weak
+controllable-AP:
+--BODY--
+State: 0
+[t] 0
+--END--
++ ltlsynt --outs= --ins= -f GFa
++ grep one of --ins or --outs should match 'a'
+ltlsynt: one of --ins or --outs should match 'a'
++ LTL=(((((G (((((((g_0) && (G (! (r_0)))) -> (F (! (g_0)))) && (((g_0) &&
+(X ((! (r_0)) && (! (g_0))))) -> (X ((r_0) R (! (g_0)))))) && (((g_1) &&
+(G (! (r_1)))) -> (F (! (g_1))))) && (((g_1) && (X ((! (r_1)) && (! (g_1))))) ->
+(X ((r_1) R (! (g_1)))))) && (((! (g_0)) && (true)) || ((true) && (! (g_1))))))
+&& ((r_0) R (! (g_0)))) && (G ((r_0) -> (F (g_0))))) && ((r_1) R (! (g_1)))) &&
+(G ((r_1) -> (F (g_1)))))
++ OUT=g_0, g_1
++ ltlsynt --outs=g_0, g_1 -f (((((G (((((((g_0) && (G (! (r_0)))) -> (F (! (g_0)))) && (((g_0) &&
+(X ((! (r_0)) && (! (g_0))))) -> (X ((r_0) R (! (g_0)))))) && (((g_1) &&
+(G (! (r_1)))) -> (F (! (g_1))))) && (((g_1) && (X ((! (r_1)) && (! (g_1))))) ->
+(X ((r_1) R (! (g_1)))))) && (((! (g_0)) && (true)) || ((true) && (! (g_1))))))
+&& ((r_0) R (! (g_0)))) && (G ((r_0) -> (F (g_0))))) && ((r_1) R (! (g_1)))) &&
+(G ((r_1) -> (F (g_1))))) --aiger=both+ud --algo=acd
++ grep aag 8 2 2 2 4
+aag 8 2 2 2 4
++ ltlsynt --outs=g_0, g_1 -f (((((G (((((((g_0) && (G (! (r_0)))) -> (F (! (g_0)))) && (((g_0) &&
+(X ((! (r_0)) && (! (g_0))))) -> (X ((r_0) R (! (g_0)))))) && (((g_1) &&
+(G (! (r_1)))) -> (F (! (g_1))))) && (((g_1) && (X ((! (r_1)) && (! (g_1))))) ->
+(X ((r_1) R (! (g_1)))))) && (((! (g_0)) && (true)) || ((true) && (! (g_1))))))
+&& ((r_0) R (! (g_0)))) && (G ((r_0) -> (F (g_0))))) && ((r_1) R (! (g_1)))) &&
+(G ((r_1) -> (F (g_1)))))+  --aiger=both+ud --algo=lar
+grep aag 34 2 3 2 29
+aag 34 2 3 2 29
++ ltlsynt -f G(c) & (G(a) <-> GFb) --outs=b,c --decompose=yes --verbose --pol=no --realizability
+REALIZABLE
++ cat
++ diff out exp
++ ltlsynt -f G(c) & (G(a) <-> GFb) --outs=b,c --decompose=yes --pol=no --verbose --realizability --bypass=no
+REALIZABLE
++ cat
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f (GFa <-> GFb) && (Gc) --outs=b,c --verbose --bypass=no --algo=acd --pol=no
+REALIZABLE
+HOA: v1
+States: 2
+Start: 0
+AP: 3 "a" "b" "c"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+controllable-AP: 1 2
+--BODY--
+State: 0
+[!0&!1&2] 0
+[0&2] 1
+State: 1
+[1&2] 0
+--END--
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f G(o1) & (GFi <-> GFo1) --outs=o1 --verbose --bypass=yes --pol=no
+UNREALIZABLE
++ true
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f G(o1|o2) & (GFi <-> GFo1) --outs=o1,o2 --verbose --bypass=yes --pol=no
+REALIZABLE
+HOA: v1
+States: 2
+Start: 0
+AP: 3 "i" "o1" "o2"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+controllable-AP: 1 2
+--BODY--
+State: 0
+[!0&!1&2] 0
+[0&1 | 0&2] 1
+State: 1
+[!0&1] 0
+[0&1] 1
+--END--
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f G(o1|o2) & (GFi <-> GFo1) --outs=o1,o2 --verbose --bypass=yes
+REALIZABLE
+HOA: v1
+States: 1
+Start: 0
+AP: 3 "o1" "i" "o2"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic
+properties: stutter-invariant weak
+controllable-AP: 0 2
+--BODY--
+State: 0
+[!0&!1&2 | 0&1&2] 0
+--END--
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ cat
++ ltlsynt -f G(o<->i) & G(o2 <-> o) & G(!o | !o3) & G(r3 -> Fo3) --ins=i,r3 --verbose
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ ltlsynt -f i <-> Fo --ins=i --aiger --dot
++ grep arrowhead=dot
+  6 -> L0 [arrowhead=dot]
+  4 -> 6 [arrowhead=dot]
++ ltlsynt -f+  i <-> Fo --ins=i --print-game-hoa --dotgrep
+ shape="diamond"
+  4 [label="4", shape="diamond"]
+  5 [label="5", shape="diamond"]
+  6 [label="6", shape="diamond"]
+  7 [label="7", shape="diamond"]
++ ltlsynt -f i <-> Fo --ins=i --dot --hide-status
++ cat
++ diff res exp
++ s1=G(!((!o15 & !((!o14 & o16) <-> (o14 & !o16))) <-> (o15 & !(o14 | o16)))
++ s2= & !((!o12 & !((!o11 & o13) <-> (o11 & !o13))) <-> (o12 & !(o11 | o13)))
++ s3= & !((o09 & !o10) <-> (!o09 & o10)) & !((o07 & !o08) <-> (!o07 & o08))
++ s4= & !((!o05 & !((!o04 & o06) <-> (o04 & !o06))) <-> (o05 & !(o04 | o06)))
++ s5= & !((!o02 & !((!o01 & o03) <-> (o01 & !o03))) <-> (o02 & !(o01 | o03))))
++ s6= & ((G!(i2 & i7) & G(o15 -> Fi3)) -> (Go09 & G(o14 <-> (i6 & !i7)) & 
++ s7=G(o07 <-> (i7 & i8)) & G((i7 & i8) -> (o11 U i3)) & GFo12 & G(o04 <-> 
++ s8=(i4 & i6)) & G(o05 <-> !(i4 & i6)) & G(o15 <-> (i7 & i8)) & G(i7 -> o02) & 
++ s9=G((!i7 & !(i1 & i2 & !i5 & i6)) -> o03) & G(o01 <-> (i1 & i2 & !i5 & i6))))
++ s=G(!((!o15 & !((!o14 & o16) <-> (o14 & !o16))) <-> (o15 & !(o14 | o16))) & !((!o12 & !((!o11 & o13) <-> (o11 & !o13))) <-> (o12 & !(o11 | o13))) & !((o09 & !o10) <-> (!o09 & o10)) & !((o07 & !o08) <-> (!o07 & o08)) & !((!o05 & !((!o04 & o06) <-> (o04 & !o06))) <-> (o05 & !(o04 | o06))) & !((!o02 & !((!o01 & o03) <-> (o01 & !o03))) <-> (o02 & !(o01 | o03)))) & ((G!(i2 & i7) & G(o15 -> Fi3)) -> (Go09 & G(o14 <-> (i6 & !i7)) & G(o07 <-> (i7 & i8)) & G((i7 & i8) -> (o11 U i3)) & GFo12 & G(o04 <-> (i4 & i6)) & G(o05 <-> !(i4 & i6)) & G(o15 <-> (i7 & i8)) & G(i7 -> o02) & G((!i7 & !(i1 & i2 & !i5 & i6)) -> o03) & G(o01 <-> (i1 & i2 & !i5 & i6))))
++ ltlsynt --decomp=yes -f G(!((!o15 & !((!o14 & o16) <-> (o14 & !o16))) <-> (o15 & !(o14 | o16))) & !((!o12 & !((!o11 & o13) <-> (o11 & !o13))) <-> (o12 & !(o11 | o13))) & !((o09 & !o10) <-> (!o09 & o10)) & !((o07 & !o08) <-> (!o07 & o08)) & !((!o05 & !((!o04 & o06) <-> (o04 & !o06))) <-> (o05 & !(o04 | o06))) & !((!o02 & !((!o01 & o03) <-> (o01 & !o03))) <-> (o02 & !(o01 | o03)))) & ((G!(i2 & i7) & G(o15 -> Fi3)) -> (Go09 & G(o14 <-> (i6 & !i7)) & G(o07 <-> (i7 & i8)) & G((i7 & i8) -> (o11 U i3)) & GFo12 & G(o04 <-> (i4 & i6)) & G(o05 <-> !(i4 & i6)) & G(o15 <-> (i7 & i8)) & G(i7 -> o02) & G((!i7 & !(i1 & i2 & !i5 & i6)) -> o03) & G(o01 <-> (i1 & i2 & !i5 & i6)))) --realizability
++ ltlsynt --decomp=no --outs=/^o[0-9]*$/ -f G(!((!o15 & !((!o14 & o16) <-> (o14 & !o16))) <-> (o15 & !(o14 | o16))) & !((!o12 & !((!o11 & o13) <-> (o11 & !o13))) <-> (o12 & !(o11 | o13))) & !((o09 & !o10) <-> (!o09 & o10)) & !((o07 & !o08) <-> (!o07 & o08)) & !((!o05 & !((!o04 & o06) <-> (o04 & !o06))) <-> (o05 & !(o04 | o06))) & !((!o02 & !((!o01 & o03) <-> (o01 & !o03))) <-> (o02 & !(o01 | o03)))) & ((G!(i2 & i7) & G(o15 -> Fi3)) -> (Go09 & G(o14 <-> (i6 & !i7)) & G(o07 <-> (i7 & i8)) & G((i7 & i8) -> (o11 U i3)) & GFo12 & G(o04 <-> (i4 & i6)) & G(o05 <-> !(i4 & i6)) & G(o15 <-> (i7 & i8)) & G(i7 -> o02) & G((!i7 & !(i1 & i2 & !i5 & i6)) -> o03) & G(o01 <-> (i1 & i2 & !i5 & i6)))) --realizability
++ ltlsynt --decomp=no --outs=/^o[0-9]$/ -f G(!((!o15 & !((!o14 & o16) <-> (o14 & !o16))) <-> (o15 & !(o14 | o16))) & !((!o12 & !((!o11 & o13) <-> (o11 & !o13))) <-> (o12 & !(o11 | o13))) & !((o09 & !o10) <-> (!o09 & o10)) & !((o07 & !o08) <-> (!o07 & o08)) & !((!o05 & !((!o04 & o06) <-> (o04 & !o06))) <-> (o05 & !(o04 | o06))) & !((!o02 & !((!o01 & o03) <-> (o01 & !o03))) <-> (o02 & !(o01 | o03)))) & ((G!(i2 & i7) & G(o15 -> Fi3)) -> (Go09 & G(o14 <-> (i6 & !i7)) & G(o07 <-> (i7 & i8)) & G((i7 & i8) -> (o11 U i3)) & GFo12 & G(o04 <-> (i4 & i6)) & G(o05 <-> !(i4 & i6)) & G(o15 <-> (i7 & i8)) & G(i7 -> o02) & G((!i7 & !(i1 & i2 & !i5 & i6)) -> o03) & G(o01 <-> (i1 & i2 & !i5 & i6)))) --realizability
++ ltlsynt -f G(!((!o15 & !((!o14 & o16) <-> (o14 & !o16))) <-> (o15 & !(o14 | o16))) & !((!o12 & !((!o11 & o13) <-> (o11 & !o13))) <-> (o12 & !(o11 | o13))) & !((o09 & !o10) <-> (!o09 & o10)) & !((o07 & !o08) <-> (!o07 & o08)) & !((!o05 & !((!o04 & o06) <-> (o04 & !o06))) <-> (o05 & !(o04 | o06))) & !((!o02 & !((!o01 & o03) <-> (o01 & !o03))) <-> (o02 & !(o01 | o03)))) & ((G!(i2 & i7) & G(o15 -> Fi3)) -> (Go09 & G(o14 <-> (i6 & !i7)) & G(o07 <-> (i7 & i8)) & G((i7 & i8) -> (o11 U i3)) & GFo12 & G(o04 <-> (i4 & i6)) & G(o05 <-> !(i4 & i6)) & G(o15 <-> (i7 & i8)) & G(i7 -> o02) & G((!i7 & !(i1 & i2 & !i5 & i6)) -> o03) & G(o01 <-> (i1 & i2 & !i5 & i6)))) --ins=/^i[0-9]*$/ --realizability
++ cat
++ diff out expected
++ f1=((G ((p0) <-> (! (p1)))) && (((((F ((b) && (G (F (a))))) ||  (F ((c) && (G (F (! (a))))))) && (F (b))) && (F (c))) <-> (G (F (p0)))))
++ ltlsynt -f ((G ((p0) <-> (! (p1)))) && (((((F ((b) && (G (F (a))))) ||  (F ((c) && (G (F (! (a))))))) && (F (b))) && (F (c))) <-> (G (F (p0))))) --outs=p1, p0 --aiger
++ ltlsynt -f ((G ((p0) <-> (! (p1)))) && (((((F ((b) && (G (F (a))))) ||  (F ((c) && (G (F (! (a))))))) && (F (b))) && (F (c))) <-> (G (F (p0))))) --outs=p1, /^p/ --aiger
++ diff out1.hoa out2.hoa
++ ltlsynt -f G(in1 <-> out0) & G(in0 <-> out1) --ins=in1,in0 --verb
++ grep := err
++ cat
++ diff err2 err2.ex
++ grep -F [!0&!1&!2&!3 | !0&!1&2&3 | 0&1&!2&!3 | 0&1&2&3] 0 out
+[!0&!1&!2&!3 | !0&!1&2&3 | 0&1&!2&!3 | 0&1&2&3] 0
++ ltlsynt -f G((in1 && in2) <-> XXout2) && G((in1 | !in2) -> Fout2) --realizability
++ test 1 -eq 1
++ ltlsynt -f G((in1 && in2) <-> XXout2) && G((in1 | !in2) -> Fout2) --realizability --ins=/^i/ --outs=out2,in2
++ cat
++ diff out expected
++ ltlsynt --ins=/^in/,/env/ --outs=/^out/,/control/ -f G(controlenv <-> input)
++ test 2 -eq 2
++ grep controlenv.*matches both err
+ltlsynt: 'controlenv' matches both --ins and --outs
++ ltlsynt --polarity=1 --global-e=1 -f G(i -> Xo) & G(!i -> F!o) --real
+REALIZABLE
++ ltlsynt --polarity=0 --global-e=0 -f G(i -> Xo) & G(!i -> F!o) --real
+REALIZABLE
++ cat
++ f1=G(i1->(o1|!o2)) & G(!i1->(o3|!o4)) & G(i2->X(!o1|o2)) & G(!i2->X(!o3|o4))
++ ltlsynt -f G(i1->(o1|!o2)) & G(!i1->(o3|!o4)) & G(i2->X(!o1|o2)) & G(!i2->X(!o3|o4)) --verbose
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ gg=G(i2 -> (!o1 | o2)) & G(!i2 -> (!o3 | o4))
++ cat
++ f2=G(i1->(o1|!o2)) & G(!i1->(o3|!o4)) & G(i2->(!o1|o2)) & G(!i2->(!o3|o4))&Go5
++ ltlsynt -f G(i1->(o1|!o2)) & G(!i1->(o3|!o4)) & G(i2->(!o1|o2)) & G(!i2->(!o3|o4))&Go5 --verbose
++ sed s/ [0-9.e-]* seconds/ X seconds/g out
++ diff outx exp
++ gg=G(i2->(!o1 | o2)) & G(!i2->(!o3 | o4))
++ hh=0&1&3&!5&6 | 0&!3&!4&!5&6 | !1&2&!3&5&6 | !1&!3&!4&!5&6 | 
++ ii=1&!2&3&!5&6 | 1&!2&4&5&6 | !2&!3&!4&!5&6 | !2&!3&4&5&6
++ cat
++ f2=G(i1->(o1|!o2)) & G(!i1->(o3|!o4)) & G(i2->(!o1|o2)) & G(!i2->(!o3|o4))&Go5
++ ltlsynt -f G(i1->(o1|!o2)) & G(!i1->(o3|!o4)) & G(i2->(!o1|o2)) & G(!i2->(!o3|o4))&Go5 --polarity=before-decom --verbose
++ sed s/ [0-9.e-]* seconds/ X seconds/g;s/ -> /->/g; out
++ diff outx exp
+PASS core/ltlsynt.test (exit status: 0)

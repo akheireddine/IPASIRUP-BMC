@@ -1,0 +1,85 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test wdba.test
+== Running test wdba.test
++ echo wdba.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=wdba
++ testSubDir=wdba.dir
++ chmod -R a+rwx wdba.dir
++ rm -rf wdba.dir
++ mkdir wdba.dir
++ cd wdba.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set +x
+OK !(G(!p))
+OK !(Fr->(!p U r))
+OK !(G(q->G(!p)))
+OK !(G((q&!r&Fr)->(!p U r)))
+OK !(G(q&!r->((!p U r)|G!p )))
+OK !((!r U (p&!r))|(G!r))
+OK !(G(q&!r->((!r U (p&!r))|G!r)))
+OK !((!p U ((p U ((!p U ((p U G!p)|Gp))|G!p))|Gp))|G!p)
+OK !(Fr->((!p&!r)U(r|((p&!r)U(r|((!p&!r)U(r|((p&!r)U(r|(!p U r))))))))))
+OK !(Fq->(!q U (q&((!p U ((p U ((!p U ((p U G!p)|Gp))|G!p))|Gp))|G!p))))
+OK !(G((q&Fr)->((!p&!r)U(r|((p&!r)U(r|((!p&!r)U(r|((p&!r)U(r|(!p U r)))))))))))
+OK !(G(q->((!p&!r)U(r|((p&!r)U(r|((!p&!r)U(r|((p&!r)U(r|((!p U r)|G!p)|Gp))))))))))
+OK !(G(p))
+OK !(Fr->(p U r))
+OK !(G(q->G(p)))
+OK !(G((p&!r&Fr)->(p U r)))
+OK !(G(q&!r->((p U r)|Gp)))
+OK !(Fr->(!p U (s|r)))
+OK !(G((q&!r&Fr)->(!p U (s|r))))
+OK !(G(q&!r->((!p U (s|r))|G!p)))
+OK !(Fr->(p->(!r U (s&!r))) U r)
+OK !(G((q&!r&Fr)->(p->(!r U (s&!r))) U r))
+OK !(Fp->(!p U (s&!p&X(!p U t))))
+OK !(Fr->(!p U (r|(s&!p&X(!p U t)))))
+OK !((G!q)|(!q U (q&Fp->(!p U (s&!p&X(!p U t))))))
+OK !(G((q&Fr)->(!p U (r|(s&!p&X(!p U t))))))
+OK !(G(q->(Fp->(!p U (r|(s&!p&X(!p U t)))))))
+OK !((F(s&XFt))->((!s) U p))
+OK !(Fr->((!(s&(!r)&X(!r U (t&!r))))U(r|p)))
+OK !((G!q)|((!q)U(q&((F(s&XFt))->((!s) U p)))))
+OK !(G((q&Fr)->((!(s&(!r)&X(!r U (t&!r))))U(r|p))))
+OK !(Fr->(p->(!r U (s&!r&X(!r U t)))) U r)
+OK !(G((q&Fr)->(p->(!r U (s&!r&X(!r U t)))) U r))
+OK !(Fr->(p->(!r U (s&!r&!z&X((!r&!z) U t)))) U r)
+OK !(G((q&Fr)->(p->(!r U (s&!r&!z&X((!r&!z) U t)))) U r))
+OK !(Fp)
+OK !(G(!q)|F(q&Fp))
+OK !((!p U s)|Gp)
+OK !(G(q->(!(s&(!r)&X(!r U (t&!r)))U(r|p)|G(!(s&XFt)))))
+OK !(Fr->(s&X(!r U t)->X(!r U (t&Fp))) U r)
+====
+OK !(G(q&!r->(!r U (p&!r))))
+OK !(G!q|F(q&((!p U s)|G!p)))
+OK !(G(p->Fs))
+OK !(G(q->G(p->Fs)))
+OK !(G(q&!r->(((p->(!r U (s&!r))) U r)|G(p->(!r U (s&!r))))))
+OK !(G(s&XFt->X(F(t&Fp))))
+OK !(G(q->G(s&XFt->X(!t U (t&Fp)))))
+OK !(G((q&Fr)->(s&X(!r U t)->X(!r U (t&Fp))) U r))
+OK !(G(q->(s&X(!r U t)->X(!r U (t&Fp)))U(r|G(s&X(!r U t)->X(!r U (t&Fp))))))
+OK !(G(p->F(s&XFt)))
+OK !(G(q->G(p->(s&XFt))))
+OK !(G(q->(p->(!r U (s&!r&X(!r U t))))U(r|G(p->(s&XFt)))))
+OK !(G(p->F(s&!z&X(!z U t))))
+OK !(G(q->G(p->(s&!z&X(!z U t)))))
+OK !(G(q->(p->(!r U (s&!r&!z&X((!r&!z) U t))))U(r|G(p->(s&!z&X(!z U t))))))
+PASS core/wdba.test (exit status: 0)

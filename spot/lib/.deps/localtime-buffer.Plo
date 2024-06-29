@@ -1,0 +1,60 @@
+localtime-buffer.lo: localtime-buffer.c \
+ /usr/x86_64-linux-gnu/include/stdc-predef.h ../config.h \
+ localtime-buffer.h time.h /usr/x86_64-linux-gnu/include/time.h \
+ /usr/x86_64-linux-gnu/include/features.h \
+ /usr/x86_64-linux-gnu/include/features-time64.h \
+ /usr/x86_64-linux-gnu/include/bits/wordsize.h \
+ /usr/x86_64-linux-gnu/include/bits/timesize.h \
+ /usr/x86_64-linux-gnu/include/sys/cdefs.h \
+ /usr/x86_64-linux-gnu/include/bits/long-double.h \
+ /usr/x86_64-linux-gnu/include/gnu/stubs.h \
+ /usr/x86_64-linux-gnu/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
+ /usr/x86_64-linux-gnu/include/bits/time.h \
+ /usr/x86_64-linux-gnu/include/bits/types.h \
+ /usr/x86_64-linux-gnu/include/bits/typesizes.h \
+ /usr/x86_64-linux-gnu/include/bits/time64.h \
+ /usr/x86_64-linux-gnu/include/bits/timex.h \
+ /usr/x86_64-linux-gnu/include/bits/types/struct_timeval.h \
+ /usr/x86_64-linux-gnu/include/bits/types/clock_t.h \
+ /usr/x86_64-linux-gnu/include/bits/types/time_t.h \
+ /usr/x86_64-linux-gnu/include/bits/types/struct_tm.h \
+ /usr/x86_64-linux-gnu/include/bits/types/struct_timespec.h \
+ /usr/x86_64-linux-gnu/include/bits/endian.h \
+ /usr/x86_64-linux-gnu/include/bits/endianness.h \
+ /usr/x86_64-linux-gnu/include/bits/types/clockid_t.h \
+ /usr/x86_64-linux-gnu/include/bits/types/timer_t.h \
+ /usr/x86_64-linux-gnu/include/bits/types/struct_itimerspec.h \
+ /usr/x86_64-linux-gnu/include/bits/types/locale_t.h \
+ /usr/x86_64-linux-gnu/include/bits/types/__locale_t.h
+/usr/x86_64-linux-gnu/include/stdc-predef.h:
+../config.h:
+localtime-buffer.h:
+time.h:
+/usr/x86_64-linux-gnu/include/time.h:
+/usr/x86_64-linux-gnu/include/features.h:
+/usr/x86_64-linux-gnu/include/features-time64.h:
+/usr/x86_64-linux-gnu/include/bits/wordsize.h:
+/usr/x86_64-linux-gnu/include/bits/timesize.h:
+/usr/x86_64-linux-gnu/include/sys/cdefs.h:
+/usr/x86_64-linux-gnu/include/bits/long-double.h:
+/usr/x86_64-linux-gnu/include/gnu/stubs.h:
+/usr/x86_64-linux-gnu/include/gnu/stubs-64.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
+/usr/x86_64-linux-gnu/include/bits/time.h:
+/usr/x86_64-linux-gnu/include/bits/types.h:
+/usr/x86_64-linux-gnu/include/bits/typesizes.h:
+/usr/x86_64-linux-gnu/include/bits/time64.h:
+/usr/x86_64-linux-gnu/include/bits/timex.h:
+/usr/x86_64-linux-gnu/include/bits/types/struct_timeval.h:
+/usr/x86_64-linux-gnu/include/bits/types/clock_t.h:
+/usr/x86_64-linux-gnu/include/bits/types/time_t.h:
+/usr/x86_64-linux-gnu/include/bits/types/struct_tm.h:
+/usr/x86_64-linux-gnu/include/bits/types/struct_timespec.h:
+/usr/x86_64-linux-gnu/include/bits/endian.h:
+/usr/x86_64-linux-gnu/include/bits/endianness.h:
+/usr/x86_64-linux-gnu/include/bits/types/clockid_t.h:
+/usr/x86_64-linux-gnu/include/bits/types/timer_t.h:
+/usr/x86_64-linux-gnu/include/bits/types/struct_itimerspec.h:
+/usr/x86_64-linux-gnu/include/bits/types/locale_t.h:
+/usr/x86_64-linux-gnu/include/bits/types/__locale_t.h:

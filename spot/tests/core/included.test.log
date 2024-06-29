@@ -1,0 +1,435 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test included.test
+== Running test included.test
++ echo included.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=included
++ testSubDir=included.dir
++ chmod -R a+rwx included.dir
++ rm -rf included.dir
++ mkdir included.dir
++ cd included.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -x
++ ltl2tgba G(a&b)
++ ltl2tgba Ga
++ ltl2tgba false
++ ltl2tgba FGa
++ ltl2tgba FGb
++ ltl2tgba GFa
++ run 0 autfilt -q fga.hoa --included-in gfa.hoa
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q fga.hoa --included-in gfa.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q fga.hoa --included-in gfa.hoa
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 autfilt -q fga.hoa --included-in fga.hoa
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q fga.hoa --included-in fga.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q fga.hoa --included-in fga.hoa
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 1 autfilt -q gfa.hoa --included-in fga.hoa
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q gfa.hoa --included-in fga.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q gfa.hoa --included-in fga.hoa
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 0 autfilt -q gab.hoa --included-in fga.hoa --included-in fgb.hoa
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q gab.hoa --included-in fga.hoa --included-in fgb.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q gab.hoa --included-in fga.hoa --included-in fgb.hoa
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 1 autfilt -q ga.hoa --included-in fga.hoa --included-in fgb.hoa
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q ga.hoa --included-in fga.hoa --included-in fgb.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q ga.hoa --included-in fga.hoa --included-in fgb.hoa
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 0 autfilt -q false.hoa --included-in fga.hoa
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q false.hoa --included-in fga.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q false.hoa --included-in fga.hoa
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ SPOT_CONTAINMENT_CHECK=forq run 0 autfilt -q fga.hoa --included-in gfa.hoa
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q fga.hoa --included-in gfa.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q fga.hoa --included-in gfa.hoa
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ SPOT_CONTAINMENT_CHECK=forq run 0 autfilt -q fga.hoa --included-in fga.hoa
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q fga.hoa --included-in fga.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q fga.hoa --included-in fga.hoa
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ SPOT_CONTAINMENT_CHECK=forq run 1 autfilt -q gfa.hoa --included-in fga.hoa
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q gfa.hoa --included-in fga.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q gfa.hoa --included-in fga.hoa
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ SPOT_CONTAINMENT_CHECK=forq run 2 autfilt -q gab.hoa --included-in fga.hoa --included-in fgb.hoa
++ expected_exitcode=2
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q gab.hoa --included-in fga.hoa --included-in fgb.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q gab.hoa --included-in fga.hoa --included-in fgb.hoa
+autfilt: FORQ-based inclusion check only works with one inclusion-test at a time
++ exitcode=2
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 2 = 2
++ SPOT_CONTAINMENT_CHECK=forq run 2 autfilt -q ga.hoa --included-in fga.hoa --included-in fgb.hoa
++ expected_exitcode=2
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q ga.hoa --included-in fga.hoa --included-in fgb.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q ga.hoa --included-in fga.hoa --included-in fgb.hoa
+autfilt: FORQ-based inclusion check only works with one inclusion-test at a time
++ exitcode=2
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 2 = 2
++ SPOT_CONTAINMENT_CHECK=forq run 0 autfilt -q false.hoa --included-in fga.hoa
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q false.hoa --included-in fga.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q false.hoa --included-in fga.hoa
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ SPOT_CONTAINMENT_CHECK=error autfilt -q fga.hoa --included-in gfa.hoa
+autfilt: SPOT_CONTAINMENT_CHECK should be one of {default,forq}
++ test 2 -eq 2
++ grep SPOT_CONTAINMENT_CHECK.*forq error
+grep: error: Aucun fichier ou dossier de ce nom
++ run 1 autfilt -q gfa.hoa --equivalent-to fga.hoa
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q gfa.hoa --equivalent-to fga.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q gfa.hoa --equivalent-to fga.hoa
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 autfilt -q fga.hoa --equivalent-to gfa.hoa
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q fga.hoa --equivalent-to gfa.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q fga.hoa --equivalent-to gfa.hoa
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 0 autfilt -D fga.hoa
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -D fga.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -D fga.hoa
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep deterministic fga.hoa
++ grep deterministic fgaD.hoa
+properties: deterministic stutter-invariant
++ run 0 autfilt -q fga.hoa --equivalent-to fgaD.hoa
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q fga.hoa --equivalent-to fgaD.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q fga.hoa --equivalent-to fgaD.hoa
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 autfilt -q fgaD.hoa --equivalent-to fga.hoa
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q fgaD.hoa --equivalent-to fga.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q fgaD.hoa --equivalent-to fga.hoa
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ ltl2tgba a U b
++ ltl2tgba !(a U b)
++ autfilt --product-or a1.hoa
++ ltl2tgba true
++ autfilt out.hoa --equivalent-to -
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic stutter-invariant weak
+--BODY--
+State: 0 {0}
+[!0&!1] 1
+[0&!1] 0
+[1] 2
+State: 1 {0}
+[t] 1
+State: 2 {0}
+[t] 2
+--END--
++ ltl2tgba !(a U c)
++ autfilt --product-or a1.hoa
++ + ltl2tgba true
+autfilt out.hoa --equivalent-to -
++ export SPOT_CONTAINMENT_CHECK=default
++ genaut --cyclist-trace-nba=1
++ genaut --cyclist-proof-dba=1
++ autfilt -q --included-in=trace.hoa proof.hoa
++ autfilt -q --included-in=proof.hoa trace.hoa
++ genaut --cyclist-trace-nba=2
++ genaut --cyclist-proof-dba=2
++ autfilt -q --included-in=trace.hoa proof.hoa
++ autfilt -q --included-in=proof.hoa trace.hoa
++ genaut --cyclist-trace-nba=4
++ genaut --cyclist-proof-dba=4
++ autfilt -q --included-in=trace.hoa proof.hoa
++ autfilt -q --included-in=proof.hoa trace.hoa
++ genaut --cyclist-trace-nba=8
++ genaut --cyclist-proof-dba=8
++ autfilt -q --included-in=trace.hoa proof.hoa
++ autfilt -q --included-in=proof.hoa trace.hoa
++ genaut --cyclist-trace-nba=16
++ genaut --cyclist-proof-dba=16
++ autfilt -q --included-in=trace.hoa proof.hoa
++ autfilt -q --included-in=proof.hoa trace.hoa
++ genaut --cyclist-trace-nba=512
++ genaut --cyclist-proof-dba=512
++ autfilt -q --included-in=trace.hoa proof.hoa
++ autfilt -q --included-in=proof.hoa trace.hoa
++ genaut --cyclist-trace-nba=1024
++ genaut --cyclist-proof-dba=1024
++ autfilt -q --included-in=trace.hoa proof.hoa
++ autfilt -q --included-in=proof.hoa trace.hoa
++ genaut --cyclist-trace-nba=2048
++ genaut --cyclist-proof-dba=2048
++ autfilt -q --included-in=trace.hoa proof.hoa
++ autfilt -q --included-in=proof.hoa trace.hoa
++ genaut --cyclist-trace-nba=4096
++ genaut --cyclist-proof-dba=4096
++ autfilt -q --included-in=trace.hoa proof.hoa
++ autfilt -q --included-in=proof.hoa trace.hoa
++ genaut --cyclist-trace-nba=8192
++ genaut --cyclist-proof-dba=8192
++ autfilt -q --included-in=trace.hoa proof.hoa
++ autfilt -q --included-in=proof.hoa trace.hoa
++ export SPOT_CONTAINMENT_CHECK=forq
++ genaut --cyclist-trace-nba=1
++ genaut --cyclist-proof-dba=1
++ autfilt -q --included-in=trace.hoa proof.hoa
++ autfilt -q --included-in=proof.hoa trace.hoa
++ genaut --cyclist-trace-nba=2
++ genaut --cyclist-proof-dba=2
++ autfilt -q --included-in=trace.hoa proof.hoa
++ autfilt -q --included-in=proof.hoa trace.hoa
++ genaut --cyclist-trace-nba=4
++ genaut --cyclist-proof-dba=4
++ autfilt -q --included-in=trace.hoa proof.hoa
++ autfilt -q --included-in=proof.hoa trace.hoa
++ genaut --cyclist-trace-nba=8
++ genaut --cyclist-proof-dba=8
++ autfilt -q --included-in=trace.hoa proof.hoa
++ autfilt -q --included-in=proof.hoa trace.hoa
++ genaut --cyclist-trace-nba=16
++ genaut --cyclist-proof-dba=16
++ autfilt -q --included-in=trace.hoa proof.hoa
++ autfilt -q --included-in=proof.hoa trace.hoa
++ genaut --cyclist-trace-nba=128
++ genaut --cyclist-proof-dba=128
++ autfilt -q --included-in=trace.hoa proof.hoa
++ autfilt -q --included-in=proof.hoa trace.hoa
++ :
+PASS core/included.test (exit status: 0)

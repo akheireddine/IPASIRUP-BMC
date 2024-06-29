@@ -1,0 +1,39 @@
+# A few things that do not change
+a, a
+1, 1
+0, 0
+!a, !a
+a U b, a U b
+a & b, a & b
+a & b, b & a
+a & !b & c, c & a & !b
+a & b & c, b & c & a
+Xa & b & Xa, b & Xa & b
+a & b, b & a & b
+a & !b, !b & a & a
+a & b & (Xc |(f U !g)| e), b & a & a & (Xc | e |(f U !g)| e | Xc) & b
+GFa => FGb, FG!a || FGb
+
+# Basic rewritings
+!!a, a
+!!!!!a, !a
+!Xa, X!a
+!Fa, G!a
+!Ga, F!a
+!(a ^ b), !a&!b | a&b
+!(a <=> b), (!a&b) | a&!b
+!(a => b), a&!b
+!(!a => !b), !a&b
+!(a U b), !a R !b
+!(a R b), !a U !b
+!(!a R !b), a U b
+!(a & b & c & d & b), !a | !b | !c | !d
+!(a | b | c | d), !a & !b & !c & !d
+
+# Nested rewritings
+!(a U (!b U ((a & b & c) R d))), !a R (b R ((!a | !b | !c) U !d))
+!(GF a => FG b), GFa & GF!b
+
+# Rational operators
+!X{a;b}<>->Fx, X{a;b}[]->G!x
+!F({a*}<>->{b*}<>->c), G({a*}[]->{b*}[]->!c)

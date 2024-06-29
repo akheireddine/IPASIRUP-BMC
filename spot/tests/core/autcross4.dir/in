@@ -1,0 +1,17 @@
+HOA: v1
+name: "yes"
+States: 1
+Start: 0
+AP: 0
+Acceptance: 0 t
+--BODY--
+State: 0
+--END--
+HOA: v1
+States: 1
+Start: 0
+AP: 0
+Acceptance: 0 t
+--BODY--
+State: 0
+--END--

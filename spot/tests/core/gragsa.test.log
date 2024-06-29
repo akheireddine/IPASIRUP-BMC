@@ -1,0 +1,1514 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test gragsa.test
+== Running test gragsa.test
++ echo gragsa.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=gragsa
++ testSubDir=gragsa.dir
++ chmod -R a+rwx gragsa.dir
++ rm -rf gragsa.dir
++ mkdir gragsa.dir
++ cd gragsa.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ randltl -n 100 p1 p2+  p3 --tree-size 5..15 --seed=200ltlcross
+ -F- -f XX((Fa|Gb)&FGc) --timeout=60 ltl2tgba %f > %T ltl2tgba -G -D %f > %T ltl2tgba -G -D %f | autfilt --gsa=unique-fin > %T ltl2tgba -G -D %f | autfilt --gra=unique-inf > %T ltl2tgba -G -D %f | autfilt --gsa=share-fin > %T ltl2tgba -G -D %f | autfilt --gra=share-inf > %T
+-:1: 0
+Running [P0]: ltl2tgba '0' > 'lcr-o0-JzJkUv'
+Running [P1]: ltl2tgba -G -D '0' > 'lcr-o1-iPhUmE'
+Running [P2]: ltl2tgba -G -D '0' | autfilt --gsa=unique-fin > 'lcr-o2-jDhgFH'
+Running [P3]: ltl2tgba -G -D '0' | autfilt --gra=unique-inf > 'lcr-o3-lUVf25'
+Running [P4]: ltl2tgba -G -D '0' | autfilt --gsa=share-fin > 'lcr-o4-y9L7GE'
+Running [P5]: ltl2tgba -G -D '0' | autfilt --gra=share-inf > 'lcr-o5-HtH3uz'
+Running [N0]: ltl2tgba '1' > 'lcr-o0-4SDXq7'
+Running [N1]: ltl2tgba -G -D '1' > 'lcr-o1-mpQukd'
+Running [N2]: ltl2tgba -G -D '1' | autfilt --gsa=unique-fin > 'lcr-o2-MVTwX4'
+Running [N3]: ltl2tgba -G -D '1' | autfilt --gra=unique-inf > 'lcr-o3-5ZypUA'
+Running [N4]: ltl2tgba -G -D '1' | autfilt --gsa=share-fin > 'lcr-o4-QKTUaf'
+Running [N5]: ltl2tgba -G -D '1' | autfilt --gra=share-inf > 'lcr-o5-Wz8BnQ'
+Performing sanity checks and gathering statistics...
+
+-:2: (p1) M (1)
+Running [P0]: ltl2tgba '(p1) M (1)' > 'lcr-o0-jGpAtl'
+Running [P1]: ltl2tgba -G -D '(p1) M (1)' > 'lcr-o1-53vTYG'
+Running [P2]: ltl2tgba -G -D '(p1) M (1)' | autfilt --gsa=unique-fin > 'lcr-o2-2OFGed'
+Running [P3]: ltl2tgba -G -D '(p1) M (1)' | autfilt --gra=unique-inf > 'lcr-o3-C5G7n7'
+Running [P4]: ltl2tgba -G -D '(p1) M (1)' | autfilt --gsa=share-fin > 'lcr-o4-yVcCjc'
+Running [P5]: ltl2tgba -G -D '(p1) M (1)' | autfilt --gra=share-inf > 'lcr-o5-tloLWi'
+Running [N0]: ltl2tgba '!((p1) M (1))' > 'lcr-o0-t9viIb'
+Running [N1]: ltl2tgba -G -D '!((p1) M (1))' > 'lcr-o1-13bW4E'
+Running [N2]: ltl2tgba -G -D '!((p1) M (1))' | autfilt --gsa=unique-fin > 'lcr-o2-MouRNE'
+Running [N3]: ltl2tgba -G -D '!((p1) M (1))' | autfilt --gra=unique-inf > 'lcr-o3-TYd1KV'
+Running [N4]: ltl2tgba -G -D '!((p1) M (1))' | autfilt --gsa=share-fin > 'lcr-o4-kdTtcu'
+Running [N5]: ltl2tgba -G -D '!((p1) M (1))' | autfilt --gra=share-inf > 'lcr-o5-t2mh9S'
+Performing sanity checks and gathering statistics...
+
+-:3: F(!(p3))
+Running [P0]: ltl2tgba 'F(!(p3))' > 'lcr-o0-agZf1G'
+Running [P1]: ltl2tgba -G -D 'F(!(p3))' > 'lcr-o1-wq8IHt'
+Running [P2]: ltl2tgba -G -D 'F(!(p3))' | autfilt --gsa=unique-fin > 'lcr-o2-9TAFqN'
+Running [P3]: ltl2tgba -G -D 'F(!(p3))' | autfilt --gra=unique-inf > 'lcr-o3-OGV8IC'
+Running [P4]: ltl2tgba -G -D 'F(!(p3))' | autfilt --gsa=share-fin > 'lcr-o4-e68k6f'
+Running [P5]: ltl2tgba -G -D 'F(!(p3))' | autfilt --gra=share-inf > 'lcr-o5-6QlGaB'
+Running [N0]: ltl2tgba '!(F(!(p3)))' > 'lcr-o0-62zJwv'
+Running [N1]: ltl2tgba -G -D '!(F(!(p3)))' > 'lcr-o1-8bLOYU'
+Running [N2]: ltl2tgba -G -D '!(F(!(p3)))' | autfilt --gsa=unique-fin > 'lcr-o2-HqjGUr'
+Running [N3]: ltl2tgba -G -D '!(F(!(p3)))' | autfilt --gra=unique-inf > 'lcr-o3-jCaxxq'
+Running [N4]: ltl2tgba -G -D '!(F(!(p3)))' | autfilt --gsa=share-fin > 'lcr-o4-lQzwas'
+Running [N5]: ltl2tgba -G -D '!(F(!(p3)))' | autfilt --gra=share-inf > 'lcr-o5-D3jMGZ'
+Performing sanity checks and gathering statistics...
+
+-:4: 1
+warning: This formula or its negation has already been checked.
+         Use --allow-dups if it should not be ignored.
+
+-:5: (F(((p1) & (p2)) | (X(X((0)))))) U (!(p1))
+Running [P0]: ltl2tgba '(F(((p1) & (p2)) | (X(X((0)))))) U (!(p1))' > 'lcr-o0-3Vf2hH'
+Running [P1]: ltl2tgba -G -D '(F(((p1) & (p2)) | (X(X((0)))))) U (!(p1))' > 'lcr-o1-pAbNgU'
+Running [P2]: ltl2tgba -G -D '(F(((p1) & (p2)) | (X(X((0)))))) U (!(p1))' | autfilt --gsa=unique-fin > 'lcr-o2-hLSj6E'
+Running [P3]: ltl2tgba -G -D '(F(((p1) & (p2)) | (X(X((0)))))) U (!(p1))' | autfilt --gra=unique-inf > 'lcr-o3-cMAjn6'
+Running [P4]: ltl2tgba -G -D '(F(((p1) & (p2)) | (X(X((0)))))) U (!(p1))' | autfilt --gsa=share-fin > 'lcr-o4-8boaXL'
+Running [P5]: ltl2tgba -G -D '(F(((p1) & (p2)) | (X(X((0)))))) U (!(p1))' | autfilt --gra=share-inf > 'lcr-o5-8Akzz9'
+Running [N0]: ltl2tgba '!((F(((p1) & (p2)) | (X(X((0)))))) U (!(p1)))' > 'lcr-o0-wX8lLA'
+Running [N1]: ltl2tgba -G -D '!((F(((p1) & (p2)) | (X(X((0)))))) U (!(p1)))' > 'lcr-o1-LyKX9b'
+Running [N2]: ltl2tgba -G -D '!((F(((p1) & (p2)) | (X(X((0)))))) U (!(p1)))' | autfilt --gsa=unique-fin > 'lcr-o2-ch3w5p'
+Running [N3]: ltl2tgba -G -D '!((F(((p1) & (p2)) | (X(X((0)))))) U (!(p1)))' | autfilt --gra=unique-inf > 'lcr-o3-6uXdvd'
+Running [N4]: ltl2tgba -G -D '!((F(((p1) & (p2)) | (X(X((0)))))) U (!(p1)))' | autfilt --gsa=share-fin > 'lcr-o4-1fnE7A'
+Running [N5]: ltl2tgba -G -D '!((F(((p1) & (p2)) | (X(X((0)))))) U (!(p1)))' | autfilt --gra=share-inf > 'lcr-o5-P2F4r0'
+Performing sanity checks and gathering statistics...
+
+-:6: (X((0))) U ((p1) xor (G(p2)))
+Running [P0]: ltl2tgba '(X((0))) U ((p1) xor (G(p2)))' > 'lcr-o0-UvTNaH'
+Running [P1]: ltl2tgba -G -D '(X((0))) U ((p1) xor (G(p2)))' > 'lcr-o1-xkRaEE'
+Running [P2]: ltl2tgba -G -D '(X((0))) U ((p1) xor (G(p2)))' | autfilt --gsa=unique-fin > 'lcr-o2-3ltHdE'
+Running [P3]: ltl2tgba -G -D '(X((0))) U ((p1) xor (G(p2)))' | autfilt --gra=unique-inf > 'lcr-o3-wTESKR'
+Running [P4]: ltl2tgba -G -D '(X((0))) U ((p1) xor (G(p2)))' | autfilt --gsa=share-fin > 'lcr-o4-vvry9U'
+Running [P5]: ltl2tgba -G -D '(X((0))) U ((p1) xor (G(p2)))' | autfilt --gra=share-inf > 'lcr-o5-LGGgbf'
+Running [N0]: ltl2tgba '!((X((0))) U ((p1) xor (G(p2))))' > 'lcr-o0-gTWCy8'
+Running [N1]: ltl2tgba -G -D '!((X((0))) U ((p1) xor (G(p2))))' > 'lcr-o1-z6OCCA'
+Running [N2]: ltl2tgba -G -D '!((X((0))) U ((p1) xor (G(p2))))' | autfilt --gsa=unique-fin > 'lcr-o2-VWAjID'
+Running [N3]: ltl2tgba -G -D '!((X((0))) U ((p1) xor (G(p2))))' | autfilt --gra=unique-inf > 'lcr-o3-Wkbx95'
+Running [N4]: ltl2tgba -G -D '!((X((0))) U ((p1) xor (G(p2))))' | autfilt --gsa=share-fin > 'lcr-o4-GWw0PH'
+Running [N5]: ltl2tgba -G -D '!((X((0))) U ((p1) xor (G(p2))))' | autfilt --gra=share-inf > 'lcr-o5-wl8sYw'
+Performing sanity checks and gathering statistics...
+
+-:7: (G(!(p2))) & ((p2) | (!(X(!(p2)))))
+Running [P0]: ltl2tgba '(G(!(p2))) & ((p2) | (!(X(!(p2)))))' > 'lcr-o0-R2wS8D'
+Running [P1]: ltl2tgba -G -D '(G(!(p2))) & ((p2) | (!(X(!(p2)))))' > 'lcr-o1-KIVKHB'
+Running [P2]: ltl2tgba -G -D '(G(!(p2))) & ((p2) | (!(X(!(p2)))))' | autfilt --gsa=unique-fin > 'lcr-o2-DQYKdv'
+Running [P3]: ltl2tgba -G -D '(G(!(p2))) & ((p2) | (!(X(!(p2)))))' | autfilt --gra=unique-inf > 'lcr-o3-pCjFwB'
+Running [P4]: ltl2tgba -G -D '(G(!(p2))) & ((p2) | (!(X(!(p2)))))' | autfilt --gsa=share-fin > 'lcr-o4-uHRjca'
+Running [P5]: ltl2tgba -G -D '(G(!(p2))) & ((p2) | (!(X(!(p2)))))' | autfilt --gra=share-inf > 'lcr-o5-YgUNFp'
+Running [N0]: ltl2tgba '!((G(!(p2))) & ((p2) | (!(X(!(p2))))))' > 'lcr-o0-RLANtE'
+Running [N1]: ltl2tgba -G -D '!((G(!(p2))) & ((p2) | (!(X(!(p2))))))' > 'lcr-o1-MqgSfA'
+Running [N2]: ltl2tgba -G -D '!((G(!(p2))) & ((p2) | (!(X(!(p2))))))' | autfilt --gsa=unique-fin > 'lcr-o2-jnMaB1'
+Running [N3]: ltl2tgba -G -D '!((G(!(p2))) & ((p2) | (!(X(!(p2))))))' | autfilt --gra=unique-inf > 'lcr-o3-2G1sjn'
+Running [N4]: ltl2tgba -G -D '!((G(!(p2))) & ((p2) | (!(X(!(p2))))))' | autfilt --gsa=share-fin > 'lcr-o4-bj01bx'
+Running [N5]: ltl2tgba -G -D '!((G(!(p2))) & ((p2) | (!(X(!(p2))))))' | autfilt --gra=share-inf > 'lcr-o5-dacpyV'
+Performing sanity checks and gathering statistics...
+
+-:8: X((1) U (p1))
+Running [P0]: ltl2tgba 'X((1) U (p1))' > 'lcr-o0-aK6k6F'
+Running [P1]: ltl2tgba -G -D 'X((1) U (p1))' > 'lcr-o1-pk6iY9'
+Running [P2]: ltl2tgba -G -D 'X((1) U (p1))' | autfilt --gsa=unique-fin > 'lcr-o2-Nhk0Tp'
+Running [P3]: ltl2tgba -G -D 'X((1) U (p1))' | autfilt --gra=unique-inf > 'lcr-o3-uceBfY'
+Running [P4]: ltl2tgba -G -D 'X((1) U (p1))' | autfilt --gsa=share-fin > 'lcr-o4-lYeTvL'
+Running [P5]: ltl2tgba -G -D 'X((1) U (p1))' | autfilt --gra=share-inf > 'lcr-o5-SlIL6L'
+Running [N0]: ltl2tgba '!(X((1) U (p1)))' > 'lcr-o0-GjOM4Q'
+Running [N1]: ltl2tgba -G -D '!(X((1) U (p1)))' > 'lcr-o1-UTCoj6'
+Running [N2]: ltl2tgba -G -D '!(X((1) U (p1)))' | autfilt --gsa=unique-fin > 'lcr-o2-IE8NcC'
+Running [N3]: ltl2tgba -G -D '!(X((1) U (p1)))' | autfilt --gra=unique-inf > 'lcr-o3-Mdz9TH'
+Running [N4]: ltl2tgba -G -D '!(X((1) U (p1)))' | autfilt --gsa=share-fin > 'lcr-o4-WYuJE8'
+Running [N5]: ltl2tgba -G -D '!(X((1) U (p1)))' | autfilt --gra=share-inf > 'lcr-o5-UG9s6a'
+Performing sanity checks and gathering statistics...
+
+-:9: (G(p2)) W ((!(p1)) <-> ((p1) & (p2)))
+Running [P0]: ltl2tgba '(G(p2)) W ((!(p1)) <-> ((p1) & (p2)))' > 'lcr-o0-CL9yZG'
+Running [P1]: ltl2tgba -G -D '(G(p2)) W ((!(p1)) <-> ((p1) & (p2)))' > 'lcr-o1-z0INgN'
+Running [P2]: ltl2tgba -G -D '(G(p2)) W ((!(p1)) <-> ((p1) & (p2)))' | autfilt --gsa=unique-fin > 'lcr-o2-GNgu7u'
+Running [P3]: ltl2tgba -G -D '(G(p2)) W ((!(p1)) <-> ((p1) & (p2)))' | autfilt --gra=unique-inf > 'lcr-o3-yvLBW8'
+Running [P4]: ltl2tgba -G -D '(G(p2)) W ((!(p1)) <-> ((p1) & (p2)))' | autfilt --gsa=share-fin > 'lcr-o4-TunyOX'
+Running [P5]: ltl2tgba -G -D '(G(p2)) W ((!(p1)) <-> ((p1) & (p2)))' | autfilt --gra=share-inf > 'lcr-o5-8NF1iW'
+Running [N0]: ltl2tgba '!((G(p2)) W ((!(p1)) <-> ((p1) & (p2))))' > 'lcr-o0-KLbCWP'
+Running [N1]: ltl2tgba -G -D '!((G(p2)) W ((!(p1)) <-> ((p1) & (p2))))' > 'lcr-o1-AYAq52'
+Running [N2]: ltl2tgba -G -D '!((G(p2)) W ((!(p1)) <-> ((p1) & (p2))))' | autfilt --gsa=unique-fin > 'lcr-o2-aagb9b'
+Running [N3]: ltl2tgba -G -D '!((G(p2)) W ((!(p1)) <-> ((p1) & (p2))))' | autfilt --gra=unique-inf > 'lcr-o3-rDFFIE'
+Running [N4]: ltl2tgba -G -D '!((G(p2)) W ((!(p1)) <-> ((p1) & (p2))))' | autfilt --gsa=share-fin > 'lcr-o4-alNtzb'
+Running [N5]: ltl2tgba -G -D '!((G(p2)) W ((!(p1)) <-> ((p1) & (p2))))' | autfilt --gra=share-inf > 'lcr-o5-uNdcjE'
+Performing sanity checks and gathering statistics...
+
+-:10: X((0))
+Running [P0]: ltl2tgba 'X((0))' > 'lcr-o0-SaRGCK'
+Running [P1]: ltl2tgba -G -D 'X((0))' > 'lcr-o1-ecfoNi'
+Running [P2]: ltl2tgba -G -D 'X((0))' | autfilt --gsa=unique-fin > 'lcr-o2-3PlWgq'
+Running [P3]: ltl2tgba -G -D 'X((0))' | autfilt --gra=unique-inf > 'lcr-o3-bgvGZQ'
+Running [P4]: ltl2tgba -G -D 'X((0))' | autfilt --gsa=share-fin > 'lcr-o4-170L80'
+Running [P5]: ltl2tgba -G -D 'X((0))' | autfilt --gra=share-inf > 'lcr-o5-dQYy7q'
+Running [N0]: ltl2tgba '!(X((0)))' > 'lcr-o0-IpxzSC'
+Running [N1]: ltl2tgba -G -D '!(X((0)))' > 'lcr-o1-U1vXDK'
+Running [N2]: ltl2tgba -G -D '!(X((0)))' | autfilt --gsa=unique-fin > 'lcr-o2-4hdfjp'
+Running [N3]: ltl2tgba -G -D '!(X((0)))' | autfilt --gra=unique-inf > 'lcr-o3-OywIjB'
+Running [N4]: ltl2tgba -G -D '!(X((0)))' | autfilt --gsa=share-fin > 'lcr-o4-05yeAf'
+Running [N5]: ltl2tgba -G -D '!(X((0)))' | autfilt --gra=share-inf > 'lcr-o5-zidYew'
+Performing sanity checks and gathering statistics...
+
+-:11: (!(p1)) xor (((p1) & (p2)) M (!(p1)))
+Running [P0]: ltl2tgba '(!(p1)) xor (((p1) & (p2)) M (!(p1)))' > 'lcr-o0-7FsaaM'
+Running [P1]: ltl2tgba -G -D '(!(p1)) xor (((p1) & (p2)) M (!(p1)))' > 'lcr-o1-3siza6'
+Running [P2]: ltl2tgba -G -D '(!(p1)) xor (((p1) & (p2)) M (!(p1)))' | autfilt --gsa=unique-fin > 'lcr-o2-IJ2tij'
+Running [P3]: ltl2tgba -G -D '(!(p1)) xor (((p1) & (p2)) M (!(p1)))' | autfilt --gra=unique-inf > 'lcr-o3-pXT0tF'
+Running [P4]: ltl2tgba -G -D '(!(p1)) xor (((p1) & (p2)) M (!(p1)))' | autfilt --gsa=share-fin > 'lcr-o4-ndk73C'
+Running [P5]: ltl2tgba -G -D '(!(p1)) xor (((p1) & (p2)) M (!(p1)))' | autfilt --gra=share-inf > 'lcr-o5-Ukq1Pt'
+Running [N0]: ltl2tgba '!((!(p1)) xor (((p1) & (p2)) M (!(p1))))' > 'lcr-o0-dr5rdN'
+Running [N1]: ltl2tgba -G -D '!((!(p1)) xor (((p1) & (p2)) M (!(p1))))' > 'lcr-o1-Wj2GAm'
+Running [N2]: ltl2tgba -G -D '!((!(p1)) xor (((p1) & (p2)) M (!(p1))))' | autfilt --gsa=unique-fin > 'lcr-o2-kp1xWU'
+Running [N3]: ltl2tgba -G -D '!((!(p1)) xor (((p1) & (p2)) M (!(p1))))' | autfilt --gra=unique-inf > 'lcr-o3-voUKZb'
+Running [N4]: ltl2tgba -G -D '!((!(p1)) xor (((p1) & (p2)) M (!(p1))))' | autfilt --gsa=share-fin > 'lcr-o4-dqwaOy'
+Running [N5]: ltl2tgba -G -D '!((!(p1)) xor (((p1) & (p2)) M (!(p1))))' | autfilt --gra=share-inf > 'lcr-o5-hPmda7'
+Performing sanity checks and gathering statistics...
+
+-:12: F((((p2) M (p1)) & (F(p3))) R (p1))
+Running [P0]: ltl2tgba 'F((((p2) M (p1)) & (F(p3))) R (p1))' > 'lcr-o0-8uzi2U'
+Running [P1]: ltl2tgba -G -D 'F((((p2) M (p1)) & (F(p3))) R (p1))' > 'lcr-o1-gBt37m'
+Running [P2]: ltl2tgba -G -D 'F((((p2) M (p1)) & (F(p3))) R (p1))' | autfilt --gsa=unique-fin > 'lcr-o2-uSRucx'
+Running [P3]: ltl2tgba -G -D 'F((((p2) M (p1)) & (F(p3))) R (p1))' | autfilt --gra=unique-inf > 'lcr-o3-vV4OBX'
+Running [P4]: ltl2tgba -G -D 'F((((p2) M (p1)) & (F(p3))) R (p1))' | autfilt --gsa=share-fin > 'lcr-o4-RKnktq'
+Running [P5]: ltl2tgba -G -D 'F((((p2) M (p1)) & (F(p3))) R (p1))' | autfilt --gra=share-inf > 'lcr-o5-ZpcVD8'
+Running [N0]: ltl2tgba '!(F((((p2) M (p1)) & (F(p3))) R (p1)))' > 'lcr-o0-XAK8v8'
+Running [N1]: ltl2tgba -G -D '!(F((((p2) M (p1)) & (F(p3))) R (p1)))' > 'lcr-o1-MdO2gP'
+Running [N2]: ltl2tgba -G -D '!(F((((p2) M (p1)) & (F(p3))) R (p1)))' | autfilt --gsa=unique-fin > 'lcr-o2-SCrmJ9'
+Running [N3]: ltl2tgba -G -D '!(F((((p2) M (p1)) & (F(p3))) R (p1)))' | autfilt --gra=unique-inf > 'lcr-o3-aEtfmd'
+Running [N4]: ltl2tgba -G -D '!(F((((p2) M (p1)) & (F(p3))) R (p1)))' | autfilt --gsa=share-fin > 'lcr-o4-KsKOaZ'
+Running [N5]: ltl2tgba -G -D '!(F((((p2) M (p1)) & (F(p3))) R (p1)))' | autfilt --gra=share-inf > 'lcr-o5-SkLFGf'
+Performing sanity checks and gathering statistics...
+
+-:13: G((((p1) & (p3)) -> (F(p2))) R (!(p2)))
+Running [P0]: ltl2tgba 'G((((p1) & (p3)) -> (F(p2))) R (!(p2)))' > 'lcr-o0-yyLnYf'
+Running [P1]: ltl2tgba -G -D 'G((((p1) & (p3)) -> (F(p2))) R (!(p2)))' > 'lcr-o1-3GoTAf'
+Running [P2]: ltl2tgba -G -D 'G((((p1) & (p3)) -> (F(p2))) R (!(p2)))' | autfilt --gsa=unique-fin > 'lcr-o2-WaLIw0'
+Running [P3]: ltl2tgba -G -D 'G((((p1) & (p3)) -> (F(p2))) R (!(p2)))' | autfilt --gra=unique-inf > 'lcr-o3-DMYvG9'
+Running [P4]: ltl2tgba -G -D 'G((((p1) & (p3)) -> (F(p2))) R (!(p2)))' | autfilt --gsa=share-fin > 'lcr-o4-cwuRhs'
+Running [P5]: ltl2tgba -G -D 'G((((p1) & (p3)) -> (F(p2))) R (!(p2)))' | autfilt --gra=share-inf > 'lcr-o5-PmsCf4'
+Running [N0]: ltl2tgba '!(G((((p1) & (p3)) -> (F(p2))) R (!(p2))))' > 'lcr-o0-JTkLLf'
+Running [N1]: ltl2tgba -G -D '!(G((((p1) & (p3)) -> (F(p2))) R (!(p2))))' > 'lcr-o1-zlCXdA'
+Running [N2]: ltl2tgba -G -D '!(G((((p1) & (p3)) -> (F(p2))) R (!(p2))))' | autfilt --gsa=unique-fin > 'lcr-o2-UClyWB'
+Running [N3]: ltl2tgba -G -D '!(G((((p1) & (p3)) -> (F(p2))) R (!(p2))))' | autfilt --gra=unique-inf > 'lcr-o3-8bBRih'
+Running [N4]: ltl2tgba -G -D '!(G((((p1) & (p3)) -> (F(p2))) R (!(p2))))' | autfilt --gsa=share-fin > 'lcr-o4-PDOAdF'
+Running [N5]: ltl2tgba -G -D '!(G((((p1) & (p3)) -> (F(p2))) R (!(p2))))' | autfilt --gra=share-inf > 'lcr-o5-JNXC2K'
+Performing sanity checks and gathering statistics...
+
+-:14: (p2) & (X(p2))
+Running [P0]: ltl2tgba '(p2) & (X(p2))' > 'lcr-o0-afl8Do'
+Running [P1]: ltl2tgba -G -D '(p2) & (X(p2))' > 'lcr-o1-5MG9Or'
+Running [P2]: ltl2tgba -G -D '(p2) & (X(p2))' | autfilt --gsa=unique-fin > 'lcr-o2-z89yK5'
+Running [P3]: ltl2tgba -G -D '(p2) & (X(p2))' | autfilt --gra=unique-inf > 'lcr-o3-IktzMp'
+Running [P4]: ltl2tgba -G -D '(p2) & (X(p2))' | autfilt --gsa=share-fin > 'lcr-o4-zkulhR'
+Running [P5]: ltl2tgba -G -D '(p2) & (X(p2))' | autfilt --gra=share-inf > 'lcr-o5-Lf956J'
+Running [N0]: ltl2tgba '!((p2) & (X(p2)))' > 'lcr-o0-fDBkDH'
+Running [N1]: ltl2tgba -G -D '!((p2) & (X(p2)))' > 'lcr-o1-eINn2P'
+Running [N2]: ltl2tgba -G -D '!((p2) & (X(p2)))' | autfilt --gsa=unique-fin > 'lcr-o2-pEXV6q'
+Running [N3]: ltl2tgba -G -D '!((p2) & (X(p2)))' | autfilt --gra=unique-inf > 'lcr-o3-UzHx3n'
+Running [N4]: ltl2tgba -G -D '!((p2) & (X(p2)))' | autfilt --gsa=share-fin > 'lcr-o4-34gxNb'
+Running [N5]: ltl2tgba -G -D '!((p2) & (X(p2)))' | autfilt --gra=share-inf > 'lcr-o5-jKqsS0'
+Performing sanity checks and gathering statistics...
+
+-:15: ((F((X(p3)) -> (p3))) R (p2)) U (p2)
+Running [P0]: ltl2tgba '((F((X(p3)) -> (p3))) R (p2)) U (p2)' > 'lcr-o0-yhq8kT'
+Running [P1]: ltl2tgba -G -D '((F((X(p3)) -> (p3))) R (p2)) U (p2)' > 'lcr-o1-KYkTmZ'
+Running [P2]: ltl2tgba -G -D '((F((X(p3)) -> (p3))) R (p2)) U (p2)' | autfilt --gsa=unique-fin > 'lcr-o2-YB5DV4'
+Running [P3]: ltl2tgba -G -D '((F((X(p3)) -> (p3))) R (p2)) U (p2)' | autfilt --gra=unique-inf > 'lcr-o3-6MlQqO'
+Running [P4]: ltl2tgba -G -D '((F((X(p3)) -> (p3))) R (p2)) U (p2)' | autfilt --gsa=share-fin > 'lcr-o4-nRouRq'
+Running [P5]: ltl2tgba -G -D '((F((X(p3)) -> (p3))) R (p2)) U (p2)' | autfilt --gra=share-inf > 'lcr-o5-MlICcF'
+Running [N0]: ltl2tgba '!(((F((X(p3)) -> (p3))) R (p2)) U (p2))' > 'lcr-o0-qxxOqU'
+Running [N1]: ltl2tgba -G -D '!(((F((X(p3)) -> (p3))) R (p2)) U (p2))' > 'lcr-o1-kJovvY'
+Running [N2]: ltl2tgba -G -D '!(((F((X(p3)) -> (p3))) R (p2)) U (p2))' | autfilt --gsa=unique-fin > 'lcr-o2-TdH4v8'
+Running [N3]: ltl2tgba -G -D '!(((F((X(p3)) -> (p3))) R (p2)) U (p2))' | autfilt --gra=unique-inf > 'lcr-o3-pT2L5N'
+Running [N4]: ltl2tgba -G -D '!(((F((X(p3)) -> (p3))) R (p2)) U (p2))' | autfilt --gsa=share-fin > 'lcr-o4-dHi4pB'
+Running [N5]: ltl2tgba -G -D '!(((F((X(p3)) -> (p3))) R (p2)) U (p2))' | autfilt --gra=share-inf > 'lcr-o5-J4peHL'
+Performing sanity checks and gathering statistics...
+
+-:16: (X(X(p3))) W (G((0) R (p3)))
+Running [P0]: ltl2tgba '(X(X(p3))) W (G((0) R (p3)))' > 'lcr-o0-u5ijTq'
+Running [P1]: ltl2tgba -G -D '(X(X(p3))) W (G((0) R (p3)))' > 'lcr-o1-X4Nwyy'
+Running [P2]: ltl2tgba -G -D '(X(X(p3))) W (G((0) R (p3)))' | autfilt --gsa=unique-fin > 'lcr-o2-bVcA9H'
+Running [P3]: ltl2tgba -G -D '(X(X(p3))) W (G((0) R (p3)))' | autfilt --gra=unique-inf > 'lcr-o3-hYo3ZV'
+Running [P4]: ltl2tgba -G -D '(X(X(p3))) W (G((0) R (p3)))' | autfilt --gsa=share-fin > 'lcr-o4-a7DZ5F'
+Running [P5]: ltl2tgba -G -D '(X(X(p3))) W (G((0) R (p3)))' | autfilt --gra=share-inf > 'lcr-o5-3Azq1U'
+Running [N0]: ltl2tgba '!((X(X(p3))) W (G((0) R (p3))))' > 'lcr-o0-5Az29G'
+Running [N1]: ltl2tgba -G -D '!((X(X(p3))) W (G((0) R (p3))))' > 'lcr-o1-Ip9K9Q'
+Running [N2]: ltl2tgba -G -D '!((X(X(p3))) W (G((0) R (p3))))' | autfilt --gsa=unique-fin > 'lcr-o2-URCsXX'
+Running [N3]: ltl2tgba -G -D '!((X(X(p3))) W (G((0) R (p3))))' | autfilt --gra=unique-inf > 'lcr-o3-jq4DgH'
+Running [N4]: ltl2tgba -G -D '!((X(X(p3))) W (G((0) R (p3))))' | autfilt --gsa=share-fin > 'lcr-o4-fYz3WR'
+Running [N5]: ltl2tgba -G -D '!((X(X(p3))) W (G((0) R (p3))))' | autfilt --gra=share-inf > 'lcr-o5-cXn0Or'
+Performing sanity checks and gathering statistics...
+
+-:17: (p3) & ((p1) W (0))
+Running [P0]: ltl2tgba '(p3) & ((p1) W (0))' > 'lcr-o0-pzoEKe'
+Running [P1]: ltl2tgba -G -D '(p3) & ((p1) W (0))' > 'lcr-o1-nNRbJt'
+Running [P2]: ltl2tgba -G -D '(p3) & ((p1) W (0))' | autfilt --gsa=unique-fin > 'lcr-o2-h2P0Sj'
+Running [P3]: ltl2tgba -G -D '(p3) & ((p1) W (0))' | autfilt --gra=unique-inf > 'lcr-o3-SZFdSb'
+Running [P4]: ltl2tgba -G -D '(p3) & ((p1) W (0))' | autfilt --gsa=share-fin > 'lcr-o4-bRhuHz'
+Running [P5]: ltl2tgba -G -D '(p3) & ((p1) W (0))' | autfilt --gra=share-inf > 'lcr-o5-FORKEh'
+Running [N0]: ltl2tgba '!((p3) & ((p1) W (0)))' > 'lcr-o0-sBY9Of'
+Running [N1]: ltl2tgba -G -D '!((p3) & ((p1) W (0)))' > 'lcr-o1-jpSKBa'
+Running [N2]: ltl2tgba -G -D '!((p3) & ((p1) W (0)))' | autfilt --gsa=unique-fin > 'lcr-o2-rfjs10'
+Running [N3]: ltl2tgba -G -D '!((p3) & ((p1) W (0)))' | autfilt --gra=unique-inf > 'lcr-o3-yeQLQu'
+Running [N4]: ltl2tgba -G -D '!((p3) & ((p1) W (0)))' | autfilt --gsa=share-fin > 'lcr-o4-eNgKct'
+Running [N5]: ltl2tgba -G -D '!((p3) & ((p1) W (0)))' | autfilt --gra=share-inf > 'lcr-o5-Jal7MZ'
+Performing sanity checks and gathering statistics...
+
+-:18: X(F((p2) <-> (p3)))
+Running [P0]: ltl2tgba 'X(F((p2) <-> (p3)))' > 'lcr-o0-XV5NAm'
+Running [P1]: ltl2tgba -G -D 'X(F((p2) <-> (p3)))' > 'lcr-o1-KW2tsO'
+Running [P2]: ltl2tgba -G -D 'X(F((p2) <-> (p3)))' | autfilt --gsa=unique-fin > 'lcr-o2-tpvBqz'
+Running [P3]: ltl2tgba -G -D 'X(F((p2) <-> (p3)))' | autfilt --gra=unique-inf > 'lcr-o3-320Yfd'
+Running [P4]: ltl2tgba -G -D 'X(F((p2) <-> (p3)))' | autfilt --gsa=share-fin > 'lcr-o4-E7HU2j'
+Running [P5]: ltl2tgba -G -D 'X(F((p2) <-> (p3)))' | autfilt --gra=share-inf > 'lcr-o5-5zYgeE'
+Running [N0]: ltl2tgba '!(X(F((p2) <-> (p3))))' > 'lcr-o0-5oQFjO'
+Running [N1]: ltl2tgba -G -D '!(X(F((p2) <-> (p3))))' > 'lcr-o1-dSwVxP'
+Running [N2]: ltl2tgba -G -D '!(X(F((p2) <-> (p3))))' | autfilt --gsa=unique-fin > 'lcr-o2-rhqRoR'
+Running [N3]: ltl2tgba -G -D '!(X(F((p2) <-> (p3))))' | autfilt --gra=unique-inf > 'lcr-o3-xFSfJ6'
+Running [N4]: ltl2tgba -G -D '!(X(F((p2) <-> (p3))))' | autfilt --gsa=share-fin > 'lcr-o4-FiN1aE'
+Running [N5]: ltl2tgba -G -D '!(X(F((p2) <-> (p3))))' | autfilt --gra=share-inf > 'lcr-o5-wN3E8b'
+Performing sanity checks and gathering statistics...
+
+-:19: X((p3) M (X((0))))
+Running [P0]: ltl2tgba 'X((p3) M (X((0))))' > 'lcr-o0-xRuInj'
+Running [P1]: ltl2tgba -G -D 'X((p3) M (X((0))))' > 'lcr-o1-lABLFS'
+Running [P2]: ltl2tgba -G -D 'X((p3) M (X((0))))' | autfilt --gsa=unique-fin > 'lcr-o2-dt9W6v'
+Running [P3]: ltl2tgba -G -D 'X((p3) M (X((0))))' | autfilt --gra=unique-inf > 'lcr-o3-ycdja3'
+Running [P4]: ltl2tgba -G -D 'X((p3) M (X((0))))' | autfilt --gsa=share-fin > 'lcr-o4-GLsKfy'
+Running [P5]: ltl2tgba -G -D 'X((p3) M (X((0))))' | autfilt --gra=share-inf > 'lcr-o5-bY3mVj'
+Running [N0]: ltl2tgba '!(X((p3) M (X((0)))))' > 'lcr-o0-Vb3MK3'
+Running [N1]: ltl2tgba -G -D '!(X((p3) M (X((0)))))' > 'lcr-o1-dr0CXA'
+Running [N2]: ltl2tgba -G -D '!(X((p3) M (X((0)))))' | autfilt --gsa=unique-fin > 'lcr-o2-py0Kme'
+Running [N3]: ltl2tgba -G -D '!(X((p3) M (X((0)))))' | autfilt --gra=unique-inf > 'lcr-o3-qjGNvW'
+Running [N4]: ltl2tgba -G -D '!(X((p3) M (X((0)))))' | autfilt --gsa=share-fin > 'lcr-o4-43199O'
+Running [N5]: ltl2tgba -G -D '!(X((p3) M (X((0)))))' | autfilt --gra=share-inf > 'lcr-o5-DOXRjv'
+Performing sanity checks and gathering statistics...
+
+-:20: !(p3)
+Running [P0]: ltl2tgba '!(p3)' > 'lcr-o0-WJeJld'
+Running [P1]: ltl2tgba -G -D '!(p3)' > 'lcr-o1-f14COV'
+Running [P2]: ltl2tgba -G -D '!(p3)' | autfilt --gsa=unique-fin > 'lcr-o2-59x2WG'
+Running [P3]: ltl2tgba -G -D '!(p3)' | autfilt --gra=unique-inf > 'lcr-o3-U1SnfL'
+Running [P4]: ltl2tgba -G -D '!(p3)' | autfilt --gsa=share-fin > 'lcr-o4-tgw7tV'
+Running [P5]: ltl2tgba -G -D '!(p3)' | autfilt --gra=share-inf > 'lcr-o5-ypC2v6'
+Running [N0]: ltl2tgba 'p3' > 'lcr-o0-AhFTeR'
+Running [N1]: ltl2tgba -G -D 'p3' > 'lcr-o1-66qch9'
+Running [N2]: ltl2tgba -G -D 'p3' | autfilt --gsa=unique-fin > 'lcr-o2-dyA1n9'
+Running [N3]: ltl2tgba -G -D 'p3' | autfilt --gra=unique-inf > 'lcr-o3-Ycn0TQ'
+Running [N4]: ltl2tgba -G -D 'p3' | autfilt --gsa=share-fin > 'lcr-o4-iLNu2M'
+Running [N5]: ltl2tgba -G -D 'p3' | autfilt --gra=share-inf > 'lcr-o5-WTsIMH'
+Performing sanity checks and gathering statistics...
+
+-:21: (X(p3)) -> ((p1) -> (p2))
+Running [P0]: ltl2tgba '(X(p3)) -> ((p1) -> (p2))' > 'lcr-o0-WqiUol'
+Running [P1]: ltl2tgba -G -D '(X(p3)) -> ((p1) -> (p2))' > 'lcr-o1-FLhx7a'
+Running [P2]: ltl2tgba -G -D '(X(p3)) -> ((p1) -> (p2))' | autfilt --gsa=unique-fin > 'lcr-o2-dkZKQr'
+Running [P3]: ltl2tgba -G -D '(X(p3)) -> ((p1) -> (p2))' | autfilt --gra=unique-inf > 'lcr-o3-aBNbWq'
+Running [P4]: ltl2tgba -G -D '(X(p3)) -> ((p1) -> (p2))' | autfilt --gsa=share-fin > 'lcr-o4-Zkn6Wh'
+Running [P5]: ltl2tgba -G -D '(X(p3)) -> ((p1) -> (p2))' | autfilt --gra=share-inf > 'lcr-o5-3drK6U'
+Running [N0]: ltl2tgba '!((X(p3)) -> ((p1) -> (p2)))' > 'lcr-o0-uqp8gi'
+Running [N1]: ltl2tgba -G -D '!((X(p3)) -> ((p1) -> (p2)))' > 'lcr-o1-DnKy59'
+Running [N2]: ltl2tgba -G -D '!((X(p3)) -> ((p1) -> (p2)))' | autfilt --gsa=unique-fin > 'lcr-o2-0ifWLn'
+Running [N3]: ltl2tgba -G -D '!((X(p3)) -> ((p1) -> (p2)))' | autfilt --gra=unique-inf > 'lcr-o3-nLqbUj'
+Running [N4]: ltl2tgba -G -D '!((X(p3)) -> ((p1) -> (p2)))' | autfilt --gsa=share-fin > 'lcr-o4-iE0CAu'
+Running [N5]: ltl2tgba -G -D '!((X(p3)) -> ((p1) -> (p2)))' | autfilt --gra=share-inf > 'lcr-o5-nW6V8C'
+Performing sanity checks and gathering statistics...
+
+-:22: (p2) R (((!(p2)) & (p3)) M (p3))
+Running [P0]: ltl2tgba '(p2) R (((!(p2)) & (p3)) M (p3))' > 'lcr-o0-bKmBVp'
+Running [P1]: ltl2tgba -G -D '(p2) R (((!(p2)) & (p3)) M (p3))' > 'lcr-o1-QZmVFk'
+Running [P2]: ltl2tgba -G -D '(p2) R (((!(p2)) & (p3)) M (p3))' | autfilt --gsa=unique-fin > 'lcr-o2-uJdsMO'
+Running [P3]: ltl2tgba -G -D '(p2) R (((!(p2)) & (p3)) M (p3))' | autfilt --gra=unique-inf > 'lcr-o3-XLoVfi'
+Running [P4]: ltl2tgba -G -D '(p2) R (((!(p2)) & (p3)) M (p3))' | autfilt --gsa=share-fin > 'lcr-o4-EpH1Cf'
+Running [P5]: ltl2tgba -G -D '(p2) R (((!(p2)) & (p3)) M (p3))' | autfilt --gra=share-inf > 'lcr-o5-LJ8vbn'
+Running [N0]: ltl2tgba '!((p2) R (((!(p2)) & (p3)) M (p3)))' > 'lcr-o0-0U3HdN'
+Running [N1]: ltl2tgba -G -D '!((p2) R (((!(p2)) & (p3)) M (p3)))' > 'lcr-o1-dHOSmK'
+Running [N2]: ltl2tgba -G -D '!((p2) R (((!(p2)) & (p3)) M (p3)))' | autfilt --gsa=unique-fin > 'lcr-o2-eg0Afu'
+Running [N3]: ltl2tgba -G -D '!((p2) R (((!(p2)) & (p3)) M (p3)))' | autfilt --gra=unique-inf > 'lcr-o3-m9W5K0'
+Running [N4]: ltl2tgba -G -D '!((p2) R (((!(p2)) & (p3)) M (p3)))' | autfilt --gsa=share-fin > 'lcr-o4-BW5nju'
+Running [N5]: ltl2tgba -G -D '!((p2) R (((!(p2)) & (p3)) M (p3)))' | autfilt --gra=share-inf > 'lcr-o5-CWYbUU'
+Performing sanity checks and gathering statistics...
+
+-:23: (F(!(p2))) W (!(G(X(F((p1) & (p3))))))
+Running [P0]: ltl2tgba '(F(!(p2))) W (!(G(X(F((p1) & (p3))))))' > 'lcr-o0-1GjoGZ'
+Running [P1]: ltl2tgba -G -D '(F(!(p2))) W (!(G(X(F((p1) & (p3))))))' > 'lcr-o1-C0I2cZ'
+Running [P2]: ltl2tgba -G -D '(F(!(p2))) W (!(G(X(F((p1) & (p3))))))' | autfilt --gsa=unique-fin > 'lcr-o2-3lqFhP'
+Running [P3]: ltl2tgba -G -D '(F(!(p2))) W (!(G(X(F((p1) & (p3))))))' | autfilt --gra=unique-inf > 'lcr-o3-ao10EG'
+Running [P4]: ltl2tgba -G -D '(F(!(p2))) W (!(G(X(F((p1) & (p3))))))' | autfilt --gsa=share-fin > 'lcr-o4-aAviJ4'
+Running [P5]: ltl2tgba -G -D '(F(!(p2))) W (!(G(X(F((p1) & (p3))))))' | autfilt --gra=share-inf > 'lcr-o5-axrpDJ'
+Running [N0]: ltl2tgba '!((F(!(p2))) W (!(G(X(F((p1) & (p3)))))))' > 'lcr-o0-ksp1dX'
+Running [N1]: ltl2tgba -G -D '!((F(!(p2))) W (!(G(X(F((p1) & (p3)))))))' > 'lcr-o1-k6kGQn'
+Running [N2]: ltl2tgba -G -D '!((F(!(p2))) W (!(G(X(F((p1) & (p3)))))))' | autfilt --gsa=unique-fin > 'lcr-o2-ifl36W'
+Running [N3]: ltl2tgba -G -D '!((F(!(p2))) W (!(G(X(F((p1) & (p3)))))))' | autfilt --gra=unique-inf > 'lcr-o3-rBRBG7'
+Running [N4]: ltl2tgba -G -D '!((F(!(p2))) W (!(G(X(F((p1) & (p3)))))))' | autfilt --gsa=share-fin > 'lcr-o4-dv1VYS'
+Running [N5]: ltl2tgba -G -D '!((F(!(p2))) W (!(G(X(F((p1) & (p3)))))))' | autfilt --gra=share-inf > 'lcr-o5-oRLbws'
+Performing sanity checks and gathering statistics...
+
+-:24: p1
+Running [P0]: ltl2tgba 'p1' > 'lcr-o0-rUvCr1'
+Running [P1]: ltl2tgba -G -D 'p1' > 'lcr-o1-zw6MRp'
+Running [P2]: ltl2tgba -G -D 'p1' | autfilt --gsa=unique-fin > 'lcr-o2-g0eP5D'
+Running [P3]: ltl2tgba -G -D 'p1' | autfilt --gra=unique-inf > 'lcr-o3-SubVIh'
+Running [P4]: ltl2tgba -G -D 'p1' | autfilt --gsa=share-fin > 'lcr-o4-A7LExF'
+Running [P5]: ltl2tgba -G -D 'p1' | autfilt --gra=share-inf > 'lcr-o5-7qBcUP'
+Running [N0]: ltl2tgba '!(p1)' > 'lcr-o0-CM6NYn'
+Running [N1]: ltl2tgba -G -D '!(p1)' > 'lcr-o1-0Yj85G'
+Running [N2]: ltl2tgba -G -D '!(p1)' | autfilt --gsa=unique-fin > 'lcr-o2-iNeKok'
+Running [N3]: ltl2tgba -G -D '!(p1)' | autfilt --gra=unique-inf > 'lcr-o3-2mYnYf'
+Running [N4]: ltl2tgba -G -D '!(p1)' | autfilt --gsa=share-fin > 'lcr-o4-ktXxie'
+Running [N5]: ltl2tgba -G -D '!(p1)' | autfilt --gra=share-inf > 'lcr-o5-ZyFeI4'
+Performing sanity checks and gathering statistics...
+
+-:25: X((p1) M (!(F((p3) -> (p1)))))
+Running [P0]: ltl2tgba 'X((p1) M (!(F((p3) -> (p1)))))' > 'lcr-o0-G0veZ5'
+Running [P1]: ltl2tgba -G -D 'X((p1) M (!(F((p3) -> (p1)))))' > 'lcr-o1-5LARGn'
+Running [P2]: ltl2tgba -G -D 'X((p1) M (!(F((p3) -> (p1)))))' | autfilt --gsa=unique-fin > 'lcr-o2-adu4un'
+Running [P3]: ltl2tgba -G -D 'X((p1) M (!(F((p3) -> (p1)))))' | autfilt --gra=unique-inf > 'lcr-o3-HnS5FZ'
+Running [P4]: ltl2tgba -G -D 'X((p1) M (!(F((p3) -> (p1)))))' | autfilt --gsa=share-fin > 'lcr-o4-z2yXRM'
+Running [P5]: ltl2tgba -G -D 'X((p1) M (!(F((p3) -> (p1)))))' | autfilt --gra=share-inf > 'lcr-o5-uO8XLD'
+Running [N0]: ltl2tgba '!(X((p1) M (!(F((p3) -> (p1))))))' > 'lcr-o0-Mc87QU'
+Running [N1]: ltl2tgba -G -D '!(X((p1) M (!(F((p3) -> (p1))))))' > 'lcr-o1-m8Ae1w'
+Running [N2]: ltl2tgba -G -D '!(X((p1) M (!(F((p3) -> (p1))))))' | autfilt --gsa=unique-fin > 'lcr-o2-IkH1it'
+Running [N3]: ltl2tgba -G -D '!(X((p1) M (!(F((p3) -> (p1))))))' | autfilt --gra=unique-inf > 'lcr-o3-OWzvrP'
+Running [N4]: ltl2tgba -G -D '!(X((p1) M (!(F((p3) -> (p1))))))' | autfilt --gsa=share-fin > 'lcr-o4-6PBI41'
+Running [N5]: ltl2tgba -G -D '!(X((p1) M (!(F((p3) -> (p1))))))' | autfilt --gra=share-inf > 'lcr-o5-TUjXSx'
+Performing sanity checks and gathering statistics...
+
+-:26: F(X((1) U (p1)))
+Running [P0]: ltl2tgba 'F(X((1) U (p1)))' > 'lcr-o0-JuLyUP'
+Running [P1]: ltl2tgba -G -D 'F(X((1) U (p1)))' > 'lcr-o1-dMFrvK'
+Running [P2]: ltl2tgba -G -D 'F(X((1) U (p1)))' | autfilt --gsa=unique-fin > 'lcr-o2-HEWZi1'
+Running [P3]: ltl2tgba -G -D 'F(X((1) U (p1)))' | autfilt --gra=unique-inf > 'lcr-o3-HIAOOF'
+Running [P4]: ltl2tgba -G -D 'F(X((1) U (p1)))' | autfilt --gsa=share-fin > 'lcr-o4-hYkTwW'
+Running [P5]: ltl2tgba -G -D 'F(X((1) U (p1)))' | autfilt --gra=share-inf > 'lcr-o5-8XsWCv'
+Running [N0]: ltl2tgba '!(F(X((1) U (p1))))' > 'lcr-o0-79jEbV'
+Running [N1]: ltl2tgba -G -D '!(F(X((1) U (p1))))' > 'lcr-o1-2SNKMG'
+Running [N2]: ltl2tgba -G -D '!(F(X((1) U (p1))))' | autfilt --gsa=unique-fin > 'lcr-o2-0eD5vs'
+Running [N3]: ltl2tgba -G -D '!(F(X((1) U (p1))))' | autfilt --gra=unique-inf > 'lcr-o3-nqO9t4'
+Running [N4]: ltl2tgba -G -D '!(F(X((1) U (p1))))' | autfilt --gsa=share-fin > 'lcr-o4-HXda01'
+Running [N5]: ltl2tgba -G -D '!(F(X((1) U (p1))))' | autfilt --gra=share-inf > 'lcr-o5-JedROb'
+Performing sanity checks and gathering statistics...
+
+-:27: G(X(G((X((0))) <-> (G((p3) M (X(p1)))))))
+Running [P0]: ltl2tgba 'G(X(G((X((0))) <-> (G((p3) M (X(p1)))))))' > 'lcr-o0-zVc3hB'
+Running [P1]: ltl2tgba -G -D 'G(X(G((X((0))) <-> (G((p3) M (X(p1)))))))' > 'lcr-o1-xTOq3t'
+Running [P2]: ltl2tgba -G -D 'G(X(G((X((0))) <-> (G((p3) M (X(p1)))))))' | autfilt --gsa=unique-fin > 'lcr-o2-Op0fSk'
+Running [P3]: ltl2tgba -G -D 'G(X(G((X((0))) <-> (G((p3) M (X(p1)))))))' | autfilt --gra=unique-inf > 'lcr-o3-onvWD5'
+Running [P4]: ltl2tgba -G -D 'G(X(G((X((0))) <-> (G((p3) M (X(p1)))))))' | autfilt --gsa=share-fin > 'lcr-o4-m6AuGS'
+Running [P5]: ltl2tgba -G -D 'G(X(G((X((0))) <-> (G((p3) M (X(p1)))))))' | autfilt --gra=share-inf > 'lcr-o5-nzCjZN'
+Running [N0]: ltl2tgba '!(G(X(G((X((0))) <-> (G((p3) M (X(p1))))))))' > 'lcr-o0-1UyvXg'
+Running [N1]: ltl2tgba -G -D '!(G(X(G((X((0))) <-> (G((p3) M (X(p1))))))))' > 'lcr-o1-g7KocS'
+Running [N2]: ltl2tgba -G -D '!(G(X(G((X((0))) <-> (G((p3) M (X(p1))))))))' | autfilt --gsa=unique-fin > 'lcr-o2-Nwrsv9'
+Running [N3]: ltl2tgba -G -D '!(G(X(G((X((0))) <-> (G((p3) M (X(p1))))))))' | autfilt --gra=unique-inf > 'lcr-o3-BbKRHf'
+Running [N4]: ltl2tgba -G -D '!(G(X(G((X((0))) <-> (G((p3) M (X(p1))))))))' | autfilt --gsa=share-fin > 'lcr-o4-A9RLAa'
+Running [N5]: ltl2tgba -G -D '!(G(X(G((X((0))) <-> (G((p3) M (X(p1))))))))' | autfilt --gra=share-inf > 'lcr-o5-RsS5Cp'
+Performing sanity checks and gathering statistics...
+
+-:28: G(F(p3))
+Running [P0]: ltl2tgba 'G(F(p3))' > 'lcr-o0-72WXsx'
+Running [P1]: ltl2tgba -G -D 'G(F(p3))' > 'lcr-o1-ibdXC1'
+Running [P2]: ltl2tgba -G -D 'G(F(p3))' | autfilt --gsa=unique-fin > 'lcr-o2-fGjy8F'
+Running [P3]: ltl2tgba -G -D 'G(F(p3))' | autfilt --gra=unique-inf > 'lcr-o3-XvBKcx'
+Running [P4]: ltl2tgba -G -D 'G(F(p3))' | autfilt --gsa=share-fin > 'lcr-o4-kVnHvK'
+Running [P5]: ltl2tgba -G -D 'G(F(p3))' | autfilt --gra=share-inf > 'lcr-o5-F6auGe'
+Running [N0]: ltl2tgba '!(G(F(p3)))' > 'lcr-o0-se6RnW'
+Running [N1]: ltl2tgba -G -D '!(G(F(p3)))' > 'lcr-o1-HEyikm'
+Running [N2]: ltl2tgba -G -D '!(G(F(p3)))' | autfilt --gsa=unique-fin > 'lcr-o2-e4iJq3'
+Running [N3]: ltl2tgba -G -D '!(G(F(p3)))' | autfilt --gra=unique-inf > 'lcr-o3-xqEEig'
+Running [N4]: ltl2tgba -G -D '!(G(F(p3)))' | autfilt --gsa=share-fin > 'lcr-o4-4R0CkK'
+Running [N5]: ltl2tgba -G -D '!(G(F(p3)))' | autfilt --gra=share-inf > 'lcr-o5-uQKVPu'
+Performing sanity checks and gathering statistics...
+
+-:29: (!(p1)) W ((X(p3)) U (X((p3) M (p2))))
+Running [P0]: ltl2tgba '(!(p1)) W ((X(p3)) U (X((p3) M (p2))))' > 'lcr-o0-I9RI81'
+Running [P1]: ltl2tgba -G -D '(!(p1)) W ((X(p3)) U (X((p3) M (p2))))' > 'lcr-o1-VLu8Ee'
+Running [P2]: ltl2tgba -G -D '(!(p1)) W ((X(p3)) U (X((p3) M (p2))))' | autfilt --gsa=unique-fin > 'lcr-o2-XN8vj1'
+Running [P3]: ltl2tgba -G -D '(!(p1)) W ((X(p3)) U (X((p3) M (p2))))' | autfilt --gra=unique-inf > 'lcr-o3-DaZIQI'
+Running [P4]: ltl2tgba -G -D '(!(p1)) W ((X(p3)) U (X((p3) M (p2))))' | autfilt --gsa=share-fin > 'lcr-o4-Jl8aMi'
+Running [P5]: ltl2tgba -G -D '(!(p1)) W ((X(p3)) U (X((p3) M (p2))))' | autfilt --gra=share-inf > 'lcr-o5-g1WqqP'
+Running [N0]: ltl2tgba '!((!(p1)) W ((X(p3)) U (X((p3) M (p2)))))' > 'lcr-o0-iyJLU5'
+Running [N1]: ltl2tgba -G -D '!((!(p1)) W ((X(p3)) U (X((p3) M (p2)))))' > 'lcr-o1-RkWOl8'
+Running [N2]: ltl2tgba -G -D '!((!(p1)) W ((X(p3)) U (X((p3) M (p2)))))' | autfilt --gsa=unique-fin > 'lcr-o2-KWsf5L'
+Running [N3]: ltl2tgba -G -D '!((!(p1)) W ((X(p3)) U (X((p3) M (p2)))))' | autfilt --gra=unique-inf > 'lcr-o3-7btxue'
+Running [N4]: ltl2tgba -G -D '!((!(p1)) W ((X(p3)) U (X((p3) M (p2)))))' | autfilt --gsa=share-fin > 'lcr-o4-bJUUEY'
+Running [N5]: ltl2tgba -G -D '!((!(p1)) W ((X(p3)) U (X((p3) M (p2)))))' | autfilt --gra=share-inf > 'lcr-o5-nKAPjS'
+Performing sanity checks and gathering statistics...
+
+-:30: !(G(p2))
+Running [P0]: ltl2tgba '!(G(p2))' > 'lcr-o0-dee2K0'
+Running [P1]: ltl2tgba -G -D '!(G(p2))' > 'lcr-o1-K4rF5t'
+Running [P2]: ltl2tgba -G -D '!(G(p2))' | autfilt --gsa=unique-fin > 'lcr-o2-9UOY5T'
+Running [P3]: ltl2tgba -G -D '!(G(p2))' | autfilt --gra=unique-inf > 'lcr-o3-sCcKKq'
+Running [P4]: ltl2tgba -G -D '!(G(p2))' | autfilt --gsa=share-fin > 'lcr-o4-Z8UZce'
+Running [P5]: ltl2tgba -G -D '!(G(p2))' | autfilt --gra=share-inf > 'lcr-o5-erPAT7'
+Running [N0]: ltl2tgba 'G(p2)' > 'lcr-o0-PVtFJt'
+Running [N1]: ltl2tgba -G -D 'G(p2)' > 'lcr-o1-XxFR8o'
+Running [N2]: ltl2tgba -G -D 'G(p2)' | autfilt --gsa=unique-fin > 'lcr-o2-5NcXQM'
+Running [N3]: ltl2tgba -G -D 'G(p2)' | autfilt --gra=unique-inf > 'lcr-o3-FF7gaW'
+Running [N4]: ltl2tgba -G -D 'G(p2)' | autfilt --gsa=share-fin > 'lcr-o4-I6jJRh'
+Running [N5]: ltl2tgba -G -D 'G(p2)' | autfilt --gra=share-inf > 'lcr-o5-BWnxoT'
+Performing sanity checks and gathering statistics...
+
+-:31: ((X(p3)) R (p3)) W (p1)
+Running [P0]: ltl2tgba '((X(p3)) R (p3)) W (p1)' > 'lcr-o0-MQhGMH'
+Running [P1]: ltl2tgba -G -D '((X(p3)) R (p3)) W (p1)' > 'lcr-o1-TxOJGN'
+Running [P2]: ltl2tgba -G -D '((X(p3)) R (p3)) W (p1)' | autfilt --gsa=unique-fin > 'lcr-o2-0mklBy'
+Running [P3]: ltl2tgba -G -D '((X(p3)) R (p3)) W (p1)' | autfilt --gra=unique-inf > 'lcr-o3-k4JnI9'
+Running [P4]: ltl2tgba -G -D '((X(p3)) R (p3)) W (p1)' | autfilt --gsa=share-fin > 'lcr-o4-XMyTkI'
+Running [P5]: ltl2tgba -G -D '((X(p3)) R (p3)) W (p1)' | autfilt --gra=share-inf > 'lcr-o5-2E6O9b'
+Running [N0]: ltl2tgba '!(((X(p3)) R (p3)) W (p1))' > 'lcr-o0-nM7WuM'
+Running [N1]: ltl2tgba -G -D '!(((X(p3)) R (p3)) W (p1))' > 'lcr-o1-ARC9EJ'
+Running [N2]: ltl2tgba -G -D '!(((X(p3)) R (p3)) W (p1))' | autfilt --gsa=unique-fin > 'lcr-o2-Aum0ZP'
+Running [N3]: ltl2tgba -G -D '!(((X(p3)) R (p3)) W (p1))' | autfilt --gra=unique-inf > 'lcr-o3-p73UPT'
+Running [N4]: ltl2tgba -G -D '!(((X(p3)) R (p3)) W (p1))' | autfilt --gsa=share-fin > 'lcr-o4-3gwZCz'
+Running [N5]: ltl2tgba -G -D '!(((X(p3)) R (p3)) W (p1))' | autfilt --gra=share-inf > 'lcr-o5-VLmjBk'
+Performing sanity checks and gathering statistics...
+
+-:32: ((X(p2)) W (p3)) R (X(p2))
+Running [P0]: ltl2tgba '((X(p2)) W (p3)) R (X(p2))' > 'lcr-o0-9y3ZoS'
+Running [P1]: ltl2tgba -G -D '((X(p2)) W (p3)) R (X(p2))' > 'lcr-o1-XS0atJ'
+Running [P2]: ltl2tgba -G -D '((X(p2)) W (p3)) R (X(p2))' | autfilt --gsa=unique-fin > 'lcr-o2-xJdN8D'
+Running [P3]: ltl2tgba -G -D '((X(p2)) W (p3)) R (X(p2))' | autfilt --gra=unique-inf > 'lcr-o3-Wqp5dX'
+Running [P4]: ltl2tgba -G -D '((X(p2)) W (p3)) R (X(p2))' | autfilt --gsa=share-fin > 'lcr-o4-O6YbJa'
+Running [P5]: ltl2tgba -G -D '((X(p2)) W (p3)) R (X(p2))' | autfilt --gra=share-inf > 'lcr-o5-v6d8xm'
+Running [N0]: ltl2tgba '!(((X(p2)) W (p3)) R (X(p2)))' > 'lcr-o0-A9yhuZ'
+Running [N1]: ltl2tgba -G -D '!(((X(p2)) W (p3)) R (X(p2)))' > 'lcr-o1-oFmUwa'
+Running [N2]: ltl2tgba -G -D '!(((X(p2)) W (p3)) R (X(p2)))' | autfilt --gsa=unique-fin > 'lcr-o2-8Z0v9y'
+Running [N3]: ltl2tgba -G -D '!(((X(p2)) W (p3)) R (X(p2)))' | autfilt --gra=unique-inf > 'lcr-o3-H2qlEd'
+Running [N4]: ltl2tgba -G -D '!(((X(p2)) W (p3)) R (X(p2)))' | autfilt --gsa=share-fin > 'lcr-o4-5ehNMq'
+Running [N5]: ltl2tgba -G -D '!(((X(p2)) W (p3)) R (X(p2)))' | autfilt --gra=share-inf > 'lcr-o5-CnJznd'
+Performing sanity checks and gathering statistics...
+
+-:33: G(!((!(p1)) <-> (F(p2))))
+Running [P0]: ltl2tgba 'G(!((!(p1)) <-> (F(p2))))' > 'lcr-o0-p58Cq4'
+Running [P1]: ltl2tgba -G -D 'G(!((!(p1)) <-> (F(p2))))' > 'lcr-o1-PuaeVB'
+Running [P2]: ltl2tgba -G -D 'G(!((!(p1)) <-> (F(p2))))' | autfilt --gsa=unique-fin > 'lcr-o2-OUxQlR'
+Running [P3]: ltl2tgba -G -D 'G(!((!(p1)) <-> (F(p2))))' | autfilt --gra=unique-inf > 'lcr-o3-3B5vWz'
+Running [P4]: ltl2tgba -G -D 'G(!((!(p1)) <-> (F(p2))))' | autfilt --gsa=share-fin > 'lcr-o4-i5eDYl'
+Running [P5]: ltl2tgba -G -D 'G(!((!(p1)) <-> (F(p2))))' | autfilt --gra=share-inf > 'lcr-o5-xobHXY'
+Running [N0]: ltl2tgba '!(G(!((!(p1)) <-> (F(p2)))))' > 'lcr-o0-ZdmRI2'
+Running [N1]: ltl2tgba -G -D '!(G(!((!(p1)) <-> (F(p2)))))' > 'lcr-o1-CS0Bl5'
+Running [N2]: ltl2tgba -G -D '!(G(!((!(p1)) <-> (F(p2)))))' | autfilt --gsa=unique-fin > 'lcr-o2-bscKPL'
+Running [N3]: ltl2tgba -G -D '!(G(!((!(p1)) <-> (F(p2)))))' | autfilt --gra=unique-inf > 'lcr-o3-ktiM0J'
+Running [N4]: ltl2tgba -G -D '!(G(!((!(p1)) <-> (F(p2)))))' | autfilt --gsa=share-fin > 'lcr-o4-GAbmVw'
+Running [N5]: ltl2tgba -G -D '!(G(!((!(p1)) <-> (F(p2)))))' | autfilt --gra=share-inf > 'lcr-o5-Pn7Fxf'
+Performing sanity checks and gathering statistics...
+
+-:34: (X(G(p2))) R (!(p1))
+Running [P0]: ltl2tgba '(X(G(p2))) R (!(p1))' > 'lcr-o0-gomGQ5'
+Running [P1]: ltl2tgba -G -D '(X(G(p2))) R (!(p1))' > 'lcr-o1-9gOVc2'
+Running [P2]: ltl2tgba -G -D '(X(G(p2))) R (!(p1))' | autfilt --gsa=unique-fin > 'lcr-o2-AVUU6B'
+Running [P3]: ltl2tgba -G -D '(X(G(p2))) R (!(p1))' | autfilt --gra=unique-inf > 'lcr-o3-KgO6sZ'
+Running [P4]: ltl2tgba -G -D '(X(G(p2))) R (!(p1))' | autfilt --gsa=share-fin > 'lcr-o4-IPAHR1'
+Running [P5]: ltl2tgba -G -D '(X(G(p2))) R (!(p1))' | autfilt --gra=share-inf > 'lcr-o5-WEq8s4'
+Running [N0]: ltl2tgba '!((X(G(p2))) R (!(p1)))' > 'lcr-o0-6OPwP0'
+Running [N1]: ltl2tgba -G -D '!((X(G(p2))) R (!(p1)))' > 'lcr-o1-rBlK6Z'
+Running [N2]: ltl2tgba -G -D '!((X(G(p2))) R (!(p1)))' | autfilt --gsa=unique-fin > 'lcr-o2-c2p1Jq'
+Running [N3]: ltl2tgba -G -D '!((X(G(p2))) R (!(p1)))' | autfilt --gra=unique-inf > 'lcr-o3-GNrN9R'
+Running [N4]: ltl2tgba -G -D '!((X(G(p2))) R (!(p1)))' | autfilt --gsa=share-fin > 'lcr-o4-kqXzwa'
+Running [N5]: ltl2tgba -G -D '!((X(G(p2))) R (!(p1)))' | autfilt --gra=share-inf > 'lcr-o5-VDpNKH'
+Performing sanity checks and gathering statistics...
+
+-:35: (p2) & (p3)
+Running [P0]: ltl2tgba '(p2) & (p3)' > 'lcr-o0-x1Xnm4'
+Running [P1]: ltl2tgba -G -D '(p2) & (p3)' > 'lcr-o1-O0I2TF'
+Running [P2]: ltl2tgba -G -D '(p2) & (p3)' | autfilt --gsa=unique-fin > 'lcr-o2-OiOxNp'
+Running [P3]: ltl2tgba -G -D '(p2) & (p3)' | autfilt --gra=unique-inf > 'lcr-o3-SDODU9'
+Running [P4]: ltl2tgba -G -D '(p2) & (p3)' | autfilt --gsa=share-fin > 'lcr-o4-wS9bhQ'
+Running [P5]: ltl2tgba -G -D '(p2) & (p3)' | autfilt --gra=share-inf > 'lcr-o5-8NZTsw'
+Running [N0]: ltl2tgba '!((p2) & (p3))' > 'lcr-o0-7M3cKM'
+Running [N1]: ltl2tgba -G -D '!((p2) & (p3))' > 'lcr-o1-VEtm1g'
+Running [N2]: ltl2tgba -G -D '!((p2) & (p3))' | autfilt --gsa=unique-fin > 'lcr-o2-AlGwPn'
+Running [N3]: ltl2tgba -G -D '!((p2) & (p3))' | autfilt --gra=unique-inf > 'lcr-o3-RXVNty'
+Running [N4]: ltl2tgba -G -D '!((p2) & (p3))' | autfilt --gsa=share-fin > 'lcr-o4-L8IhbB'
+Running [N5]: ltl2tgba -G -D '!((p2) & (p3))' | autfilt --gra=share-inf > 'lcr-o5-CYuuSR'
+Performing sanity checks and gathering statistics...
+
+-:36: G((X((0))) & (X((G(p3)) W (p1))))
+Running [P0]: ltl2tgba 'G((X((0))) & (X((G(p3)) W (p1))))' > 'lcr-o0-6TA4ZH'
+Running [P1]: ltl2tgba -G -D 'G((X((0))) & (X((G(p3)) W (p1))))' > 'lcr-o1-oOqNB1'
+Running [P2]: ltl2tgba -G -D 'G((X((0))) & (X((G(p3)) W (p1))))' | autfilt --gsa=unique-fin > 'lcr-o2-lV1CV1'
+Running [P3]: ltl2tgba -G -D 'G((X((0))) & (X((G(p3)) W (p1))))' | autfilt --gra=unique-inf > 'lcr-o3-2gRlti'
+Running [P4]: ltl2tgba -G -D 'G((X((0))) & (X((G(p3)) W (p1))))' | autfilt --gsa=share-fin > 'lcr-o4-krMdjx'
+Running [P5]: ltl2tgba -G -D 'G((X((0))) & (X((G(p3)) W (p1))))' | autfilt --gra=share-inf > 'lcr-o5-1iZNIs'
+Running [N0]: ltl2tgba '!(G((X((0))) & (X((G(p3)) W (p1)))))' > 'lcr-o0-Ksl58j'
+Running [N1]: ltl2tgba -G -D '!(G((X((0))) & (X((G(p3)) W (p1)))))' > 'lcr-o1-nyTKPW'
+Running [N2]: ltl2tgba -G -D '!(G((X((0))) & (X((G(p3)) W (p1)))))' | autfilt --gsa=unique-fin > 'lcr-o2-OLSEb5'
+Running [N3]: ltl2tgba -G -D '!(G((X((0))) & (X((G(p3)) W (p1)))))' | autfilt --gra=unique-inf > 'lcr-o3-shC0if'
+Running [N4]: ltl2tgba -G -D '!(G((X((0))) & (X((G(p3)) W (p1)))))' | autfilt --gsa=share-fin > 'lcr-o4-G98CCg'
+Running [N5]: ltl2tgba -G -D '!(G((X((0))) & (X((G(p3)) W (p1)))))' | autfilt --gra=share-inf > 'lcr-o5-zpiOUi'
+Performing sanity checks and gathering statistics...
+
+-:37: F(((p1) xor (p2)) <-> ((0) R ((p2) R (!(p1)))))
+Running [P0]: ltl2tgba 'F(((p1) xor (p2)) <-> ((0) R ((p2) R (!(p1)))))' > 'lcr-o0-gKMIpB'
+Running [P1]: ltl2tgba -G -D 'F(((p1) xor (p2)) <-> ((0) R ((p2) R (!(p1)))))' > 'lcr-o1-Yw3mxb'
+Running [P2]: ltl2tgba -G -D 'F(((p1) xor (p2)) <-> ((0) R ((p2) R (!(p1)))))' | autfilt --gsa=unique-fin > 'lcr-o2-9IOCHy'
+Running [P3]: ltl2tgba -G -D 'F(((p1) xor (p2)) <-> ((0) R ((p2) R (!(p1)))))' | autfilt --gra=unique-inf > 'lcr-o3-JBibWP'
+Running [P4]: ltl2tgba -G -D 'F(((p1) xor (p2)) <-> ((0) R ((p2) R (!(p1)))))' | autfilt --gsa=share-fin > 'lcr-o4-ti9Rc3'
+Running [P5]: ltl2tgba -G -D 'F(((p1) xor (p2)) <-> ((0) R ((p2) R (!(p1)))))' | autfilt --gra=share-inf > 'lcr-o5-ACryaa'
+Running [N0]: ltl2tgba '!(F(((p1) xor (p2)) <-> ((0) R ((p2) R (!(p1))))))' > 'lcr-o0-r7a408'
+Running [N1]: ltl2tgba -G -D '!(F(((p1) xor (p2)) <-> ((0) R ((p2) R (!(p1))))))' > 'lcr-o1-sTtH8q'
+Running [N2]: ltl2tgba -G -D '!(F(((p1) xor (p2)) <-> ((0) R ((p2) R (!(p1))))))' | autfilt --gsa=unique-fin > 'lcr-o2-d7vYw0'
+Running [N3]: ltl2tgba -G -D '!(F(((p1) xor (p2)) <-> ((0) R ((p2) R (!(p1))))))' | autfilt --gra=unique-inf > 'lcr-o3-STPREC'
+Running [N4]: ltl2tgba -G -D '!(F(((p1) xor (p2)) <-> ((0) R ((p2) R (!(p1))))))' | autfilt --gsa=share-fin > 'lcr-o4-DXBgPJ'
+Running [N5]: ltl2tgba -G -D '!(F(((p1) xor (p2)) <-> ((0) R ((p2) R (!(p1))))))' | autfilt --gra=share-inf > 'lcr-o5-GD7F4L'
+Performing sanity checks and gathering statistics...
+
+-:38: !(G((p1) & ((p1) M (1))))
+Running [P0]: ltl2tgba '!(G((p1) & ((p1) M (1))))' > 'lcr-o0-IAeI2d'
+Running [P1]: ltl2tgba -G -D '!(G((p1) & ((p1) M (1))))' > 'lcr-o1-pi9ziU'
+Running [P2]: ltl2tgba -G -D '!(G((p1) & ((p1) M (1))))' | autfilt --gsa=unique-fin > 'lcr-o2-N7CzTX'
+Running [P3]: ltl2tgba -G -D '!(G((p1) & ((p1) M (1))))' | autfilt --gra=unique-inf > 'lcr-o3-5HFKu8'
+Running [P4]: ltl2tgba -G -D '!(G((p1) & ((p1) M (1))))' | autfilt --gsa=share-fin > 'lcr-o4-aJYJXD'
+Running [P5]: ltl2tgba -G -D '!(G((p1) & ((p1) M (1))))' | autfilt --gra=share-inf > 'lcr-o5-xP12eX'
+Running [N0]: ltl2tgba 'G((p1) & ((p1) M (1)))' > 'lcr-o0-tTqUtt'
+Running [N1]: ltl2tgba -G -D 'G((p1) & ((p1) M (1)))' > 'lcr-o1-zFC3wr'
+Running [N2]: ltl2tgba -G -D 'G((p1) & ((p1) M (1)))' | autfilt --gsa=unique-fin > 'lcr-o2-9KZQ9f'
+Running [N3]: ltl2tgba -G -D 'G((p1) & ((p1) M (1)))' | autfilt --gra=unique-inf > 'lcr-o3-3YZbv3'
+Running [N4]: ltl2tgba -G -D 'G((p1) & ((p1) M (1)))' | autfilt --gsa=share-fin > 'lcr-o4-RiymZn'
+Running [N5]: ltl2tgba -G -D 'G((p1) & ((p1) M (1)))' | autfilt --gra=share-inf > 'lcr-o5-wMjIKu'
+Performing sanity checks and gathering statistics...
+
+-:39: ((p1) <-> ((p3) | ((p1) W (0)))) R (p2)
+Running [P0]: ltl2tgba '((p1) <-> ((p3) | ((p1) W (0)))) R (p2)' > 'lcr-o0-chie3H'
+Running [P1]: ltl2tgba -G -D '((p1) <-> ((p3) | ((p1) W (0)))) R (p2)' > 'lcr-o1-M7zLXh'
+Running [P2]: ltl2tgba -G -D '((p1) <-> ((p3) | ((p1) W (0)))) R (p2)' | autfilt --gsa=unique-fin > 'lcr-o2-2vVgh7'
+Running [P3]: ltl2tgba -G -D '((p1) <-> ((p3) | ((p1) W (0)))) R (p2)' | autfilt --gra=unique-inf > 'lcr-o3-S8jc8g'
+Running [P4]: ltl2tgba -G -D '((p1) <-> ((p3) | ((p1) W (0)))) R (p2)' | autfilt --gsa=share-fin > 'lcr-o4-FdQzqC'
+Running [P5]: ltl2tgba -G -D '((p1) <-> ((p3) | ((p1) W (0)))) R (p2)' | autfilt --gra=share-inf > 'lcr-o5-TZ2SXS'
+Running [N0]: ltl2tgba '!(((p1) <-> ((p3) | ((p1) W (0)))) R (p2))' > 'lcr-o0-8dow0Y'
+Running [N1]: ltl2tgba -G -D '!(((p1) <-> ((p3) | ((p1) W (0)))) R (p2))' > 'lcr-o1-5iVlti'
+Running [N2]: ltl2tgba -G -D '!(((p1) <-> ((p3) | ((p1) W (0)))) R (p2))' | autfilt --gsa=unique-fin > 'lcr-o2-cTZ3LT'
+Running [N3]: ltl2tgba -G -D '!(((p1) <-> ((p3) | ((p1) W (0)))) R (p2))' | autfilt --gra=unique-inf > 'lcr-o3-kVFzqG'
+Running [N4]: ltl2tgba -G -D '!(((p1) <-> ((p3) | ((p1) W (0)))) R (p2))' | autfilt --gsa=share-fin > 'lcr-o4-PoHF8F'
+Running [N5]: ltl2tgba -G -D '!(((p1) <-> ((p3) | ((p1) W (0)))) R (p2))' | autfilt --gra=share-inf > 'lcr-o5-Ms41hQ'
+Performing sanity checks and gathering statistics...
+
+-:40: ((X((0))) & (F(p1))) W (p1)
+Running [P0]: ltl2tgba '((X((0))) & (F(p1))) W (p1)' > 'lcr-o0-rn7rDp'
+Running [P1]: ltl2tgba -G -D '((X((0))) & (F(p1))) W (p1)' > 'lcr-o1-kmKqWN'
+Running [P2]: ltl2tgba -G -D '((X((0))) & (F(p1))) W (p1)' | autfilt --gsa=unique-fin > 'lcr-o2-OLqKsM'
+Running [P3]: ltl2tgba -G -D '((X((0))) & (F(p1))) W (p1)' | autfilt --gra=unique-inf > 'lcr-o3-qiCfMf'
+Running [P4]: ltl2tgba -G -D '((X((0))) & (F(p1))) W (p1)' | autfilt --gsa=share-fin > 'lcr-o4-5LMpsM'
+Running [P5]: ltl2tgba -G -D '((X((0))) & (F(p1))) W (p1)' | autfilt --gra=share-inf > 'lcr-o5-fIbBeL'
+Running [N0]: ltl2tgba '!(((X((0))) & (F(p1))) W (p1))' > 'lcr-o0-UbrXp1'
+Running [N1]: ltl2tgba -G -D '!(((X((0))) & (F(p1))) W (p1))' > 'lcr-o1-G6mR59'
+Running [N2]: ltl2tgba -G -D '!(((X((0))) & (F(p1))) W (p1))' | autfilt --gsa=unique-fin > 'lcr-o2-h1RPDa'
+Running [N3]: ltl2tgba -G -D '!(((X((0))) & (F(p1))) W (p1))' | autfilt --gra=unique-inf > 'lcr-o3-oVeRuF'
+Running [N4]: ltl2tgba -G -D '!(((X((0))) & (F(p1))) W (p1))' | autfilt --gsa=share-fin > 'lcr-o4-5nvuh5'
+Running [N5]: ltl2tgba -G -D '!(((X((0))) & (F(p1))) W (p1))' | autfilt --gra=share-inf > 'lcr-o5-aIBUYX'
+Performing sanity checks and gathering statistics...
+
+-:41: X((p1) <-> ((X((0))) -> (!(p3))))
+Running [P0]: ltl2tgba 'X((p1) <-> ((X((0))) -> (!(p3))))' > 'lcr-o0-Xl81oS'
+Running [P1]: ltl2tgba -G -D 'X((p1) <-> ((X((0))) -> (!(p3))))' > 'lcr-o1-wKVqEm'
+Running [P2]: ltl2tgba -G -D 'X((p1) <-> ((X((0))) -> (!(p3))))' | autfilt --gsa=unique-fin > 'lcr-o2-sCv2zC'
+Running [P3]: ltl2tgba -G -D 'X((p1) <-> ((X((0))) -> (!(p3))))' | autfilt --gra=unique-inf > 'lcr-o3-OGEOOu'
+Running [P4]: ltl2tgba -G -D 'X((p1) <-> ((X((0))) -> (!(p3))))' | autfilt --gsa=share-fin > 'lcr-o4-E8TMcT'
+Running [P5]: ltl2tgba -G -D 'X((p1) <-> ((X((0))) -> (!(p3))))' | autfilt --gra=share-inf > 'lcr-o5-eZmiSM'
+Running [N0]: ltl2tgba '!(X((p1) <-> ((X((0))) -> (!(p3)))))' > 'lcr-o0-mwbvIY'
+Running [N1]: ltl2tgba -G -D '!(X((p1) <-> ((X((0))) -> (!(p3)))))' > 'lcr-o1-cRgjNv'
+Running [N2]: ltl2tgba -G -D '!(X((p1) <-> ((X((0))) -> (!(p3)))))' | autfilt --gsa=unique-fin > 'lcr-o2-MnzSS5'
+Running [N3]: ltl2tgba -G -D '!(X((p1) <-> ((X((0))) -> (!(p3)))))' | autfilt --gra=unique-inf > 'lcr-o3-Q4qD2Q'
+Running [N4]: ltl2tgba -G -D '!(X((p1) <-> ((X((0))) -> (!(p3)))))' | autfilt --gsa=share-fin > 'lcr-o4-A6sZEI'
+Running [N5]: ltl2tgba -G -D '!(X((p1) <-> ((X((0))) -> (!(p3)))))' | autfilt --gra=share-inf > 'lcr-o5-ZqLFaK'
+Performing sanity checks and gathering statistics...
+
+-:42: !(X((0)))
+warning: This formula or its negation has already been checked.
+         Use --allow-dups if it should not be ignored.
+
+-:43: (p3) M (1)
+Running [P0]: ltl2tgba '(p3) M (1)' > 'lcr-o0-4PeaNz'
+Running [P1]: ltl2tgba -G -D '(p3) M (1)' > 'lcr-o1-HFP3cX'
+Running [P2]: ltl2tgba -G -D '(p3) M (1)' | autfilt --gsa=unique-fin > 'lcr-o2-NS13qQ'
+Running [P3]: ltl2tgba -G -D '(p3) M (1)' | autfilt --gra=unique-inf > 'lcr-o3-4ccSqK'
+Running [P4]: ltl2tgba -G -D '(p3) M (1)' | autfilt --gsa=share-fin > 'lcr-o4-X3cZ2m'
+Running [P5]: ltl2tgba -G -D '(p3) M (1)' | autfilt --gra=share-inf > 'lcr-o5-04MkkB'
+Running [N0]: ltl2tgba '!((p3) M (1))' > 'lcr-o0-Yzk5zk'
+Running [N1]: ltl2tgba -G -D '!((p3) M (1))' > 'lcr-o1-K05rvv'
+Running [N2]: ltl2tgba -G -D '!((p3) M (1))' | autfilt --gsa=unique-fin > 'lcr-o2-5GrceQ'
+Running [N3]: ltl2tgba -G -D '!((p3) M (1))' | autfilt --gra=unique-inf > 'lcr-o3-pjcKJa'
+Running [N4]: ltl2tgba -G -D '!((p3) M (1))' | autfilt --gsa=share-fin > 'lcr-o4-knshTq'
+Running [N5]: ltl2tgba -G -D '!((p3) M (1))' | autfilt --gra=share-inf > 'lcr-o5-vd4iYP'
+Performing sanity checks and gathering statistics...
+
+-:44: ((p3) -> (X((0)))) W (p2)
+Running [P0]: ltl2tgba '((p3) -> (X((0)))) W (p2)' > 'lcr-o0-NcmBb4'
+Running [P1]: ltl2tgba -G -D '((p3) -> (X((0)))) W (p2)' > 'lcr-o1-MDkFZS'
+Running [P2]: ltl2tgba -G -D '((p3) -> (X((0)))) W (p2)' | autfilt --gsa=unique-fin > 'lcr-o2-RJTFys'
+Running [P3]: ltl2tgba -G -D '((p3) -> (X((0)))) W (p2)' | autfilt --gra=unique-inf > 'lcr-o3-uVqRZ1'
+Running [P4]: ltl2tgba -G -D '((p3) -> (X((0)))) W (p2)' | autfilt --gsa=share-fin > 'lcr-o4-usi3Hr'
+Running [P5]: ltl2tgba -G -D '((p3) -> (X((0)))) W (p2)' | autfilt --gra=share-inf > 'lcr-o5-iAh8mh'
+Running [N0]: ltl2tgba '!(((p3) -> (X((0)))) W (p2))' > 'lcr-o0-EZj2n0'
+Running [N1]: ltl2tgba -G -D '!(((p3) -> (X((0)))) W (p2))' > 'lcr-o1-Uvigej'
+Running [N2]: ltl2tgba -G -D '!(((p3) -> (X((0)))) W (p2))' | autfilt --gsa=unique-fin > 'lcr-o2-gSrzA6'
+Running [N3]: ltl2tgba -G -D '!(((p3) -> (X((0)))) W (p2))' | autfilt --gra=unique-inf > 'lcr-o3-zcWMDh'
+Running [N4]: ltl2tgba -G -D '!(((p3) -> (X((0)))) W (p2))' | autfilt --gsa=share-fin > 'lcr-o4-ZfQVjl'
+Running [N5]: ltl2tgba -G -D '!(((p3) -> (X((0)))) W (p2))' | autfilt --gra=share-inf > 'lcr-o5-DMu4bp'
+Performing sanity checks and gathering statistics...
+
+-:45: F((p3) U ((p3) M (1)))
+Running [P0]: ltl2tgba 'F((p3) U ((p3) M (1)))' > 'lcr-o0-z7AYBk'
+Running [P1]: ltl2tgba -G -D 'F((p3) U ((p3) M (1)))' > 'lcr-o1-b416hP'
+Running [P2]: ltl2tgba -G -D 'F((p3) U ((p3) M (1)))' | autfilt --gsa=unique-fin > 'lcr-o2-ldifUs'
+Running [P3]: ltl2tgba -G -D 'F((p3) U ((p3) M (1)))' | autfilt --gra=unique-inf > 'lcr-o3-FYkRgE'
+Running [P4]: ltl2tgba -G -D 'F((p3) U ((p3) M (1)))' | autfilt --gsa=share-fin > 'lcr-o4-t35LaR'
+Running [P5]: ltl2tgba -G -D 'F((p3) U ((p3) M (1)))' | autfilt --gra=share-inf > 'lcr-o5-pkWZzR'
+Running [N0]: ltl2tgba '!(F((p3) U ((p3) M (1))))' > 'lcr-o0-EQwV9A'
+Running [N1]: ltl2tgba -G -D '!(F((p3) U ((p3) M (1))))' > 'lcr-o1-3kqtqv'
+Running [N2]: ltl2tgba -G -D '!(F((p3) U ((p3) M (1))))' | autfilt --gsa=unique-fin > 'lcr-o2-BOf4ae'
+Running [N3]: ltl2tgba -G -D '!(F((p3) U ((p3) M (1))))' | autfilt --gra=unique-inf > 'lcr-o3-OeRNuq'
+Running [N4]: ltl2tgba -G -D '!(F((p3) U ((p3) M (1))))' | autfilt --gsa=share-fin > 'lcr-o4-neByme'
+Running [N5]: ltl2tgba -G -D '!(F((p3) U ((p3) M (1))))' | autfilt --gra=share-inf > 'lcr-o5-U8FUHi'
+Performing sanity checks and gathering statistics...
+
+-:46: ((X((0))) M (!(F(p1)))) M ((p2) | (F(p2)))
+Running [P0]: ltl2tgba '((X((0))) M (!(F(p1)))) M ((p2) | (F(p2)))' > 'lcr-o0-DyAaqz'
+Running [P1]: ltl2tgba -G -D '((X((0))) M (!(F(p1)))) M ((p2) | (F(p2)))' > 'lcr-o1-WEAflD'
+Running [P2]: ltl2tgba -G -D '((X((0))) M (!(F(p1)))) M ((p2) | (F(p2)))' | autfilt --gsa=unique-fin > 'lcr-o2-573usJ'
+Running [P3]: ltl2tgba -G -D '((X((0))) M (!(F(p1)))) M ((p2) | (F(p2)))' | autfilt --gra=unique-inf > 'lcr-o3-PHdTLR'
+Running [P4]: ltl2tgba -G -D '((X((0))) M (!(F(p1)))) M ((p2) | (F(p2)))' | autfilt --gsa=share-fin > 'lcr-o4-M3v7D3'
+Running [P5]: ltl2tgba -G -D '((X((0))) M (!(F(p1)))) M ((p2) | (F(p2)))' | autfilt --gra=share-inf > 'lcr-o5-QhQzPo'
+Running [N0]: ltl2tgba '!(((X((0))) M (!(F(p1)))) M ((p2) | (F(p2))))' > 'lcr-o0-1D5xcO'
+Running [N1]: ltl2tgba -G -D '!(((X((0))) M (!(F(p1)))) M ((p2) | (F(p2))))' > 'lcr-o1-P2nES2'
+Running [N2]: ltl2tgba -G -D '!(((X((0))) M (!(F(p1)))) M ((p2) | (F(p2))))' | autfilt --gsa=unique-fin > 'lcr-o2-0AFs3K'
+Running [N3]: ltl2tgba -G -D '!(((X((0))) M (!(F(p1)))) M ((p2) | (F(p2))))' | autfilt --gra=unique-inf > 'lcr-o3-U9ZzvX'
+Running [N4]: ltl2tgba -G -D '!(((X((0))) M (!(F(p1)))) M ((p2) | (F(p2))))' | autfilt --gsa=share-fin > 'lcr-o4-ZPYTSG'
+Running [N5]: ltl2tgba -G -D '!(((X((0))) M (!(F(p1)))) M ((p2) | (F(p2))))' | autfilt --gra=share-inf > 'lcr-o5-Ms4qUe'
+Performing sanity checks and gathering statistics...
+
+-:47: (p3) & (G(p2)) & ((!(p3)) R ((p1) | (X(G(p1)))))
+Running [P0]: ltl2tgba '(p3) & (G(p2)) & ((!(p3)) R ((p1) | (X(G(p1)))))' > 'lcr-o0-S8UZxN'
+Running [P1]: ltl2tgba -G -D '(p3) & (G(p2)) & ((!(p3)) R ((p1) | (X(G(p1)))))' > 'lcr-o1-UccVE8'
+Running [P2]: ltl2tgba -G -D '(p3) & (G(p2)) & ((!(p3)) R ((p1) | (X(G(p1)))))' | autfilt --gsa=unique-fin > 'lcr-o2-wZGx8m'
+Running [P3]: ltl2tgba -G -D '(p3) & (G(p2)) & ((!(p3)) R ((p1) | (X(G(p1)))))' | autfilt --gra=unique-inf > 'lcr-o3-bz9vFN'
+Running [P4]: ltl2tgba -G -D '(p3) & (G(p2)) & ((!(p3)) R ((p1) | (X(G(p1)))))' | autfilt --gsa=share-fin > 'lcr-o4-a2ossF'
+Running [P5]: ltl2tgba -G -D '(p3) & (G(p2)) & ((!(p3)) R ((p1) | (X(G(p1)))))' | autfilt --gra=share-inf > 'lcr-o5-rSmdRL'
+Running [N0]: ltl2tgba '!((p3) & (G(p2)) & ((!(p3)) R ((p1) | (X(G(p1))))))' > 'lcr-o0-bfYIkV'
+Running [N1]: ltl2tgba -G -D '!((p3) & (G(p2)) & ((!(p3)) R ((p1) | (X(G(p1))))))' > 'lcr-o1-i6yExW'
+Running [N2]: ltl2tgba -G -D '!((p3) & (G(p2)) & ((!(p3)) R ((p1) | (X(G(p1))))))' | autfilt --gsa=unique-fin > 'lcr-o2-S0ouMl'
+Running [N3]: ltl2tgba -G -D '!((p3) & (G(p2)) & ((!(p3)) R ((p1) | (X(G(p1))))))' | autfilt --gra=unique-inf > 'lcr-o3-rDm5oi'
+Running [N4]: ltl2tgba -G -D '!((p3) & (G(p2)) & ((!(p3)) R ((p1) | (X(G(p1))))))' | autfilt --gsa=share-fin > 'lcr-o4-osUunn'
+Running [N5]: ltl2tgba -G -D '!((p3) & (G(p2)) & ((!(p3)) R ((p1) | (X(G(p1))))))' | autfilt --gra=share-inf > 'lcr-o5-S3GhyN'
+Performing sanity checks and gathering statistics...
+
+-:48: G(((!(p1)) | (G(p1))) R ((p2) R ((p2) R (p3))))
+Running [P0]: ltl2tgba 'G(((!(p1)) | (G(p1))) R ((p2) R ((p2) R (p3))))' > 'lcr-o0-n4Hchp'
+Running [P1]: ltl2tgba -G -D 'G(((!(p1)) | (G(p1))) R ((p2) R ((p2) R (p3))))' > 'lcr-o1-sdBLNs'
+Running [P2]: ltl2tgba -G -D 'G(((!(p1)) | (G(p1))) R ((p2) R ((p2) R (p3))))' | autfilt --gsa=unique-fin > 'lcr-o2-jrIXVe'
+Running [P3]: ltl2tgba -G -D 'G(((!(p1)) | (G(p1))) R ((p2) R ((p2) R (p3))))' | autfilt --gra=unique-inf > 'lcr-o3-Swxi3d'
+Running [P4]: ltl2tgba -G -D 'G(((!(p1)) | (G(p1))) R ((p2) R ((p2) R (p3))))' | autfilt --gsa=share-fin > 'lcr-o4-GquIc8'
+Running [P5]: ltl2tgba -G -D 'G(((!(p1)) | (G(p1))) R ((p2) R ((p2) R (p3))))' | autfilt --gra=share-inf > 'lcr-o5-Geegmx'
+Running [N0]: ltl2tgba '!(G(((!(p1)) | (G(p1))) R ((p2) R ((p2) R (p3)))))' > 'lcr-o0-QgEere'
+Running [N1]: ltl2tgba -G -D '!(G(((!(p1)) | (G(p1))) R ((p2) R ((p2) R (p3)))))' > 'lcr-o1-rrMZVI'
+Running [N2]: ltl2tgba -G -D '!(G(((!(p1)) | (G(p1))) R ((p2) R ((p2) R (p3)))))' | autfilt --gsa=unique-fin > 'lcr-o2-dJ13al'
+Running [N3]: ltl2tgba -G -D '!(G(((!(p1)) | (G(p1))) R ((p2) R ((p2) R (p3)))))' | autfilt --gra=unique-inf > 'lcr-o3-flGeLQ'
+Running [N4]: ltl2tgba -G -D '!(G(((!(p1)) | (G(p1))) R ((p2) R ((p2) R (p3)))))' | autfilt --gsa=share-fin > 'lcr-o4-mTwtrl'
+Running [N5]: ltl2tgba -G -D '!(G(((!(p1)) | (G(p1))) R ((p2) R ((p2) R (p3)))))' | autfilt --gra=share-inf > 'lcr-o5-2ok0rp'
+Performing sanity checks and gathering statistics...
+
+-:49: !(X((!(p2)) | (X((0)))))
+Running [P0]: ltl2tgba '!(X((!(p2)) | (X((0)))))' > 'lcr-o0-pIdNpu'
+Running [P1]: ltl2tgba -G -D '!(X((!(p2)) | (X((0)))))' > 'lcr-o1-avc2V8'
+Running [P2]: ltl2tgba -G -D '!(X((!(p2)) | (X((0)))))' | autfilt --gsa=unique-fin > 'lcr-o2-t77LzH'
+Running [P3]: ltl2tgba -G -D '!(X((!(p2)) | (X((0)))))' | autfilt --gra=unique-inf > 'lcr-o3-vMdHyi'
+Running [P4]: ltl2tgba -G -D '!(X((!(p2)) | (X((0)))))' | autfilt --gsa=share-fin > 'lcr-o4-DH6q4y'
+Running [P5]: ltl2tgba -G -D '!(X((!(p2)) | (X((0)))))' | autfilt --gra=share-inf > 'lcr-o5-LTvy2L'
+Running [N0]: ltl2tgba 'X((!(p2)) | (X((0))))' > 'lcr-o0-hLKd0a'
+Running [N1]: ltl2tgba -G -D 'X((!(p2)) | (X((0))))' > 'lcr-o1-BwVVzc'
+Running [N2]: ltl2tgba -G -D 'X((!(p2)) | (X((0))))' | autfilt --gsa=unique-fin > 'lcr-o2-MiCnUg'
+Running [N3]: ltl2tgba -G -D 'X((!(p2)) | (X((0))))' | autfilt --gra=unique-inf > 'lcr-o3-OBCS0t'
+Running [N4]: ltl2tgba -G -D 'X((!(p2)) | (X((0))))' | autfilt --gsa=share-fin > 'lcr-o4-lPObZz'
+Running [N5]: ltl2tgba -G -D 'X((!(p2)) | (X((0))))' | autfilt --gra=share-inf > 'lcr-o5-kiavKc'
+Performing sanity checks and gathering statistics...
+
+-:50: G((G(X(p2))) R (!(G(p3))))
+Running [P0]: ltl2tgba 'G((G(X(p2))) R (!(G(p3))))' > 'lcr-o0-m3YnJN'
+Running [P1]: ltl2tgba -G -D 'G((G(X(p2))) R (!(G(p3))))' > 'lcr-o1-jfos1R'
+Running [P2]: ltl2tgba -G -D 'G((G(X(p2))) R (!(G(p3))))' | autfilt --gsa=unique-fin > 'lcr-o2-C04SYQ'
+Running [P3]: ltl2tgba -G -D 'G((G(X(p2))) R (!(G(p3))))' | autfilt --gra=unique-inf > 'lcr-o3-HIQbZG'
+Running [P4]: ltl2tgba -G -D 'G((G(X(p2))) R (!(G(p3))))' | autfilt --gsa=share-fin > 'lcr-o4-0KGj2o'
+Running [P5]: ltl2tgba -G -D 'G((G(X(p2))) R (!(G(p3))))' | autfilt --gra=share-inf > 'lcr-o5-L4rBs1'
+Running [N0]: ltl2tgba '!(G((G(X(p2))) R (!(G(p3)))))' > 'lcr-o0-YmLvji'
+Running [N1]: ltl2tgba -G -D '!(G((G(X(p2))) R (!(G(p3)))))' > 'lcr-o1-pIkIsp'
+Running [N2]: ltl2tgba -G -D '!(G((G(X(p2))) R (!(G(p3)))))' | autfilt --gsa=unique-fin > 'lcr-o2-8LXicT'
+Running [N3]: ltl2tgba -G -D '!(G((G(X(p2))) R (!(G(p3)))))' | autfilt --gra=unique-inf > 'lcr-o3-1QGMmp'
+Running [N4]: ltl2tgba -G -D '!(G((G(X(p2))) R (!(G(p3)))))' | autfilt --gsa=share-fin > 'lcr-o4-hFdsOW'
+Running [N5]: ltl2tgba -G -D '!(G((G(X(p2))) R (!(G(p3)))))' | autfilt --gra=share-inf > 'lcr-o5-j7bjJJ'
+Performing sanity checks and gathering statistics...
+
+-:51: p3
+warning: This formula or its negation has already been checked.
+         Use --allow-dups if it should not be ignored.
+
+-:52: ((p2) xor (X(p1))) | (F(!(p1)))
+Running [P0]: ltl2tgba '((p2) xor (X(p1))) | (F(!(p1)))' > 'lcr-o0-N9O8Pd'
+Running [P1]: ltl2tgba -G -D '((p2) xor (X(p1))) | (F(!(p1)))' > 'lcr-o1-tYmhLt'
+Running [P2]: ltl2tgba -G -D '((p2) xor (X(p1))) | (F(!(p1)))' | autfilt --gsa=unique-fin > 'lcr-o2-g9AKaX'
+Running [P3]: ltl2tgba -G -D '((p2) xor (X(p1))) | (F(!(p1)))' | autfilt --gra=unique-inf > 'lcr-o3-aWN8Le'
+Running [P4]: ltl2tgba -G -D '((p2) xor (X(p1))) | (F(!(p1)))' | autfilt --gsa=share-fin > 'lcr-o4-drP8XV'
+Running [P5]: ltl2tgba -G -D '((p2) xor (X(p1))) | (F(!(p1)))' | autfilt --gra=share-inf > 'lcr-o5-PX9tXY'
+Running [N0]: ltl2tgba '!(((p2) xor (X(p1))) | (F(!(p1))))' > 'lcr-o0-JEBbAb'
+Running [N1]: ltl2tgba -G -D '!(((p2) xor (X(p1))) | (F(!(p1))))' > 'lcr-o1-LTS9PO'
+Running [N2]: ltl2tgba -G -D '!(((p2) xor (X(p1))) | (F(!(p1))))' | autfilt --gsa=unique-fin > 'lcr-o2-CtSUEq'
+Running [N3]: ltl2tgba -G -D '!(((p2) xor (X(p1))) | (F(!(p1))))' | autfilt --gra=unique-inf > 'lcr-o3-0LpM38'
+Running [N4]: ltl2tgba -G -D '!(((p2) xor (X(p1))) | (F(!(p1))))' | autfilt --gsa=share-fin > 'lcr-o4-9pJeX3'
+Running [N5]: ltl2tgba -G -D '!(((p2) xor (X(p1))) | (F(!(p1))))' | autfilt --gra=share-inf > 'lcr-o5-uksC3y'
+Performing sanity checks and gathering statistics...
+
+-:53: G((p2) & (F(X((0)))))
+Running [P0]: ltl2tgba 'G((p2) & (F(X((0)))))' > 'lcr-o0-S94O6A'
+Running [P1]: ltl2tgba -G -D 'G((p2) & (F(X((0)))))' > 'lcr-o1-Nh489E'
+Running [P2]: ltl2tgba -G -D 'G((p2) & (F(X((0)))))' | autfilt --gsa=unique-fin > 'lcr-o2-sCU6jh'
+Running [P3]: ltl2tgba -G -D 'G((p2) & (F(X((0)))))' | autfilt --gra=unique-inf > 'lcr-o3-p3Jzag'
+Running [P4]: ltl2tgba -G -D 'G((p2) & (F(X((0)))))' | autfilt --gsa=share-fin > 'lcr-o4-DOktOd'
+Running [P5]: ltl2tgba -G -D 'G((p2) & (F(X((0)))))' | autfilt --gra=share-inf > 'lcr-o5-RYhtpv'
+Running [N0]: ltl2tgba '!(G((p2) & (F(X((0))))))' > 'lcr-o0-8Hr9D5'
+Running [N1]: ltl2tgba -G -D '!(G((p2) & (F(X((0))))))' > 'lcr-o1-okyPMf'
+Running [N2]: ltl2tgba -G -D '!(G((p2) & (F(X((0))))))' | autfilt --gsa=unique-fin > 'lcr-o2-3nTgkD'
+Running [N3]: ltl2tgba -G -D '!(G((p2) & (F(X((0))))))' | autfilt --gra=unique-inf > 'lcr-o3-Ahf41Q'
+Running [N4]: ltl2tgba -G -D '!(G((p2) & (F(X((0))))))' | autfilt --gsa=share-fin > 'lcr-o4-toU090'
+Running [N5]: ltl2tgba -G -D '!(G((p2) & (F(X((0))))))' | autfilt --gra=share-inf > 'lcr-o5-mz4q1m'
+Performing sanity checks and gathering statistics...
+
+-:54: ((p2) W (0)) -> (G((X(p3)) M (p2)))
+Running [P0]: ltl2tgba '((p2) W (0)) -> (G((X(p3)) M (p2)))' > 'lcr-o0-tz0G0t'
+Running [P1]: ltl2tgba -G -D '((p2) W (0)) -> (G((X(p3)) M (p2)))' > 'lcr-o1-FM8hcA'
+Running [P2]: ltl2tgba -G -D '((p2) W (0)) -> (G((X(p3)) M (p2)))' | autfilt --gsa=unique-fin > 'lcr-o2-8d8kBr'
+Running [P3]: ltl2tgba -G -D '((p2) W (0)) -> (G((X(p3)) M (p2)))' | autfilt --gra=unique-inf > 'lcr-o3-B0U7KJ'
+Running [P4]: ltl2tgba -G -D '((p2) W (0)) -> (G((X(p3)) M (p2)))' | autfilt --gsa=share-fin > 'lcr-o4-5icsSI'
+Running [P5]: ltl2tgba -G -D '((p2) W (0)) -> (G((X(p3)) M (p2)))' | autfilt --gra=share-inf > 'lcr-o5-y6yN0A'
+Running [N0]: ltl2tgba '!(((p2) W (0)) -> (G((X(p3)) M (p2))))' > 'lcr-o0-QmByhn'
+Running [N1]: ltl2tgba -G -D '!(((p2) W (0)) -> (G((X(p3)) M (p2))))' > 'lcr-o1-4fM53N'
+Running [N2]: ltl2tgba -G -D '!(((p2) W (0)) -> (G((X(p3)) M (p2))))' | autfilt --gsa=unique-fin > 'lcr-o2-qttZFC'
+Running [N3]: ltl2tgba -G -D '!(((p2) W (0)) -> (G((X(p3)) M (p2))))' | autfilt --gra=unique-inf > 'lcr-o3-1M8PH8'
+Running [N4]: ltl2tgba -G -D '!(((p2) W (0)) -> (G((X(p3)) M (p2))))' | autfilt --gsa=share-fin > 'lcr-o4-siQp8f'
+Running [N5]: ltl2tgba -G -D '!(((p2) W (0)) -> (G((X(p3)) M (p2))))' | autfilt --gra=share-inf > 'lcr-o5-i2XsK8'
+Performing sanity checks and gathering statistics...
+
+-:55: (p3) M (F(((p1) <-> (p2)) W (p1)))
+Running [P0]: ltl2tgba '(p3) M (F(((p1) <-> (p2)) W (p1)))' > 'lcr-o0-sV5Ujb'
+Running [P1]: ltl2tgba -G -D '(p3) M (F(((p1) <-> (p2)) W (p1)))' > 'lcr-o1-nt4dGO'
+Running [P2]: ltl2tgba -G -D '(p3) M (F(((p1) <-> (p2)) W (p1)))' | autfilt --gsa=unique-fin > 'lcr-o2-q66zST'
+Running [P3]: ltl2tgba -G -D '(p3) M (F(((p1) <-> (p2)) W (p1)))' | autfilt --gra=unique-inf > 'lcr-o3-ygdiCT'
+Running [P4]: ltl2tgba -G -D '(p3) M (F(((p1) <-> (p2)) W (p1)))' | autfilt --gsa=share-fin > 'lcr-o4-G6HFsA'
+Running [P5]: ltl2tgba -G -D '(p3) M (F(((p1) <-> (p2)) W (p1)))' | autfilt --gra=share-inf > 'lcr-o5-rdTyn2'
+Running [N0]: ltl2tgba '!((p3) M (F(((p1) <-> (p2)) W (p1))))' > 'lcr-o0-dP5S2X'
+Running [N1]: ltl2tgba -G -D '!((p3) M (F(((p1) <-> (p2)) W (p1))))' > 'lcr-o1-xdthAU'
+Running [N2]: ltl2tgba -G -D '!((p3) M (F(((p1) <-> (p2)) W (p1))))' | autfilt --gsa=unique-fin > 'lcr-o2-4B7IiP'
+Running [N3]: ltl2tgba -G -D '!((p3) M (F(((p1) <-> (p2)) W (p1))))' | autfilt --gra=unique-inf > 'lcr-o3-Mwc94o'
+Running [N4]: ltl2tgba -G -D '!((p3) M (F(((p1) <-> (p2)) W (p1))))' | autfilt --gsa=share-fin > 'lcr-o4-em6YeF'
+Running [N5]: ltl2tgba -G -D '!((p3) M (F(((p1) <-> (p2)) W (p1))))' | autfilt --gra=share-inf > 'lcr-o5-eVXtLV'
+Performing sanity checks and gathering statistics...
+
+-:56: G(p1)
+Running [P0]: ltl2tgba 'G(p1)' > 'lcr-o0-vssyIq'
+Running [P1]: ltl2tgba -G -D 'G(p1)' > 'lcr-o1-OL3qgL'
+Running [P2]: ltl2tgba -G -D 'G(p1)' | autfilt --gsa=unique-fin > 'lcr-o2-RZ4B45'
+Running [P3]: ltl2tgba -G -D 'G(p1)' | autfilt --gra=unique-inf > 'lcr-o3-g2WHbF'
+Running [P4]: ltl2tgba -G -D 'G(p1)' | autfilt --gsa=share-fin > 'lcr-o4-n71eqX'
+Running [P5]: ltl2tgba -G -D 'G(p1)' | autfilt --gra=share-inf > 'lcr-o5-6v7J8y'
+Running [N0]: ltl2tgba '!(G(p1))' > 'lcr-o0-yGkM7k'
+Running [N1]: ltl2tgba -G -D '!(G(p1))' > 'lcr-o1-I4Pg4S'
+Running [N2]: ltl2tgba -G -D '!(G(p1))' | autfilt --gsa=unique-fin > 'lcr-o2-59ddDx'
+Running [N3]: ltl2tgba -G -D '!(G(p1))' | autfilt --gra=unique-inf > 'lcr-o3-NGaE9J'
+Running [N4]: ltl2tgba -G -D '!(G(p1))' | autfilt --gsa=share-fin > 'lcr-o4-O1b34R'
+Running [N5]: ltl2tgba -G -D '!(G(p1))' | autfilt --gra=share-inf > 'lcr-o5-0oznkn'
+Performing sanity checks and gathering statistics...
+
+-:57: X(p2)
+Running [P0]: ltl2tgba 'X(p2)' > 'lcr-o0-hijxDw'
+Running [P1]: ltl2tgba -G -D 'X(p2)' > 'lcr-o1-vn3k9y'
+Running [P2]: ltl2tgba -G -D 'X(p2)' | autfilt --gsa=unique-fin > 'lcr-o2-oLcYej'
+Running [P3]: ltl2tgba -G -D 'X(p2)' | autfilt --gra=unique-inf > 'lcr-o3-83f1Ge'
+Running [P4]: ltl2tgba -G -D 'X(p2)' | autfilt --gsa=share-fin > 'lcr-o4-7Rfngw'
+Running [P5]: ltl2tgba -G -D 'X(p2)' | autfilt --gra=share-inf > 'lcr-o5-CBdf5T'
+Running [N0]: ltl2tgba '!(X(p2))' > 'lcr-o0-H6vXsV'
+Running [N1]: ltl2tgba -G -D '!(X(p2))' > 'lcr-o1-3g9RI1'
+Running [N2]: ltl2tgba -G -D '!(X(p2))' | autfilt --gsa=unique-fin > 'lcr-o2-kSr8RW'
+Running [N3]: ltl2tgba -G -D '!(X(p2))' | autfilt --gra=unique-inf > 'lcr-o3-Cm30hi'
+Running [N4]: ltl2tgba -G -D '!(X(p2))' | autfilt --gsa=share-fin > 'lcr-o4-vJjILl'
+Running [N5]: ltl2tgba -G -D '!(X(p2))' | autfilt --gra=share-inf > 'lcr-o5-93r2y6'
+Performing sanity checks and gathering statistics...
+
+-:58: (X((0))) | (X(p1))
+Running [P0]: ltl2tgba '(X((0))) | (X(p1))' > 'lcr-o0-kTOwB8'
+Running [P1]: ltl2tgba -G -D '(X((0))) | (X(p1))' > 'lcr-o1-FKXA9x'
+Running [P2]: ltl2tgba -G -D '(X((0))) | (X(p1))' | autfilt --gsa=unique-fin > 'lcr-o2-tB0OMY'
+Running [P3]: ltl2tgba -G -D '(X((0))) | (X(p1))' | autfilt --gra=unique-inf > 'lcr-o3-6umLrm'
+Running [P4]: ltl2tgba -G -D '(X((0))) | (X(p1))' | autfilt --gsa=share-fin > 'lcr-o4-Ss4bI7'
+Running [P5]: ltl2tgba -G -D '(X((0))) | (X(p1))' | autfilt --gra=share-inf > 'lcr-o5-8vuyRp'
+Running [N0]: ltl2tgba '!((X((0))) | (X(p1)))' > 'lcr-o0-x8qXcI'
+Running [N1]: ltl2tgba -G -D '!((X((0))) | (X(p1)))' > 'lcr-o1-ZZcATA'
+Running [N2]: ltl2tgba -G -D '!((X((0))) | (X(p1)))' | autfilt --gsa=unique-fin > 'lcr-o2-qVOPhf'
+Running [N3]: ltl2tgba -G -D '!((X((0))) | (X(p1)))' | autfilt --gra=unique-inf > 'lcr-o3-P2TNV4'
+Running [N4]: ltl2tgba -G -D '!((X((0))) | (X(p1)))' | autfilt --gsa=share-fin > 'lcr-o4-TOBJ4w'
+Running [N5]: ltl2tgba -G -D '!((X((0))) | (X(p1)))' | autfilt --gra=share-inf > 'lcr-o5-6HnmFN'
+Performing sanity checks and gathering statistics...
+
+-:59: (F(p3)) <-> ((p2) M (1))
+Running [P0]: ltl2tgba '(F(p3)) <-> ((p2) M (1))' > 'lcr-o0-YG7jtD'
+Running [P1]: ltl2tgba -G -D '(F(p3)) <-> ((p2) M (1))' > 'lcr-o1-GLqizP'
+Running [P2]: ltl2tgba -G -D '(F(p3)) <-> ((p2) M (1))' | autfilt --gsa=unique-fin > 'lcr-o2-eiHaSw'
+Running [P3]: ltl2tgba -G -D '(F(p3)) <-> ((p2) M (1))' | autfilt --gra=unique-inf > 'lcr-o3-XR9lCO'
+Running [P4]: ltl2tgba -G -D '(F(p3)) <-> ((p2) M (1))' | autfilt --gsa=share-fin > 'lcr-o4-e5B5bp'
+Running [P5]: ltl2tgba -G -D '(F(p3)) <-> ((p2) M (1))' | autfilt --gra=share-inf > 'lcr-o5-FmfJl6'
+Running [N0]: ltl2tgba '!((F(p3)) <-> ((p2) M (1)))' > 'lcr-o0-ozausr'
+Running [N1]: ltl2tgba -G -D '!((F(p3)) <-> ((p2) M (1)))' > 'lcr-o1-gio5tn'
+Running [N2]: ltl2tgba -G -D '!((F(p3)) <-> ((p2) M (1)))' | autfilt --gsa=unique-fin > 'lcr-o2-DqiKuY'
+Running [N3]: ltl2tgba -G -D '!((F(p3)) <-> ((p2) M (1)))' | autfilt --gra=unique-inf > 'lcr-o3-RCi6Ec'
+Running [N4]: ltl2tgba -G -D '!((F(p3)) <-> ((p2) M (1)))' | autfilt --gsa=share-fin > 'lcr-o4-xdl0Ln'
+Running [N5]: ltl2tgba -G -D '!((F(p3)) <-> ((p2) M (1)))' | autfilt --gra=share-inf > 'lcr-o5-E8Jkvt'
+Performing sanity checks and gathering statistics...
+
+-:60: ((p1) & (p2)) W (p2)
+Running [P0]: ltl2tgba '((p1) & (p2)) W (p2)' > 'lcr-o0-Qej7vz'
+Running [P1]: ltl2tgba -G -D '((p1) & (p2)) W (p2)' > 'lcr-o1-A9HqTA'
+Running [P2]: ltl2tgba -G -D '((p1) & (p2)) W (p2)' | autfilt --gsa=unique-fin > 'lcr-o2-Mc77ah'
+Running [P3]: ltl2tgba -G -D '((p1) & (p2)) W (p2)' | autfilt --gra=unique-inf > 'lcr-o3-z9yzw3'
+Running [P4]: ltl2tgba -G -D '((p1) & (p2)) W (p2)' | autfilt --gsa=share-fin > 'lcr-o4-BxZIT5'
+Running [P5]: ltl2tgba -G -D '((p1) & (p2)) W (p2)' | autfilt --gra=share-inf > 'lcr-o5-GGlVOt'
+Running [N0]: ltl2tgba '!(((p1) & (p2)) W (p2))' > 'lcr-o0-8LdH9y'
+Running [N1]: ltl2tgba -G -D '!(((p1) & (p2)) W (p2))' > 'lcr-o1-CVAxIP'
+Running [N2]: ltl2tgba -G -D '!(((p1) & (p2)) W (p2))' | autfilt --gsa=unique-fin > 'lcr-o2-r9mnmy'
+Running [N3]: ltl2tgba -G -D '!(((p1) & (p2)) W (p2))' | autfilt --gra=unique-inf > 'lcr-o3-17MVcD'
+Running [N4]: ltl2tgba -G -D '!(((p1) & (p2)) W (p2))' | autfilt --gsa=share-fin > 'lcr-o4-LwMgAR'
+Running [N5]: ltl2tgba -G -D '!(((p1) & (p2)) W (p2))' | autfilt --gra=share-inf > 'lcr-o5-x2xtVY'
+Performing sanity checks and gathering statistics...
+
+-:61: (F(p1)) U (p3)
+Running [P0]: ltl2tgba '(F(p1)) U (p3)' > 'lcr-o0-J06Dm8'
+Running [P1]: ltl2tgba -G -D '(F(p1)) U (p3)' > 'lcr-o1-pA2AtN'
+Running [P2]: ltl2tgba -G -D '(F(p1)) U (p3)' | autfilt --gsa=unique-fin > 'lcr-o2-2ysSEA'
+Running [P3]: ltl2tgba -G -D '(F(p1)) U (p3)' | autfilt --gra=unique-inf > 'lcr-o3-qXzcLn'
+Running [P4]: ltl2tgba -G -D '(F(p1)) U (p3)' | autfilt --gsa=share-fin > 'lcr-o4-K8JCnU'
+Running [P5]: ltl2tgba -G -D '(F(p1)) U (p3)' | autfilt --gra=share-inf > 'lcr-o5-olR9Gw'
+Running [N0]: ltl2tgba '!((F(p1)) U (p3))' > 'lcr-o0-C1F88h'
+Running [N1]: ltl2tgba -G -D '!((F(p1)) U (p3))' > 'lcr-o1-E1URVe'
+Running [N2]: ltl2tgba -G -D '!((F(p1)) U (p3))' | autfilt --gsa=unique-fin > 'lcr-o2-Plo2QI'
+Running [N3]: ltl2tgba -G -D '!((F(p1)) U (p3))' | autfilt --gra=unique-inf > 'lcr-o3-sXS2xZ'
+Running [N4]: ltl2tgba -G -D '!((F(p1)) U (p3))' | autfilt --gsa=share-fin > 'lcr-o4-5o7wq6'
+Running [N5]: ltl2tgba -G -D '!((F(p1)) U (p3))' | autfilt --gra=share-inf > 'lcr-o5-PEhJNe'
+Performing sanity checks and gathering statistics...
+
+-:62: (!(p2)) <-> (!((p1) xor (p3)))
+Running [P0]: ltl2tgba '(!(p2)) <-> (!((p1) xor (p3)))' > 'lcr-o0-SzAq0f'
+Running [P1]: ltl2tgba -G -D '(!(p2)) <-> (!((p1) xor (p3)))' > 'lcr-o1-0NlQWb'
+Running [P2]: ltl2tgba -G -D '(!(p2)) <-> (!((p1) xor (p3)))' | autfilt --gsa=unique-fin > 'lcr-o2-TfBCMg'
+Running [P3]: ltl2tgba -G -D '(!(p2)) <-> (!((p1) xor (p3)))' | autfilt --gra=unique-inf > 'lcr-o3-xGrPrz'
+Running [P4]: ltl2tgba -G -D '(!(p2)) <-> (!((p1) xor (p3)))' | autfilt --gsa=share-fin > 'lcr-o4-44zzXF'
+Running [P5]: ltl2tgba -G -D '(!(p2)) <-> (!((p1) xor (p3)))' | autfilt --gra=share-inf > 'lcr-o5-gayrKA'
+Running [N0]: ltl2tgba '!((!(p2)) <-> (!((p1) xor (p3))))' > 'lcr-o0-HjrbKT'
+Running [N1]: ltl2tgba -G -D '!((!(p2)) <-> (!((p1) xor (p3))))' > 'lcr-o1-wUtaCl'
+Running [N2]: ltl2tgba -G -D '!((!(p2)) <-> (!((p1) xor (p3))))' | autfilt --gsa=unique-fin > 'lcr-o2-b8sSlc'
+Running [N3]: ltl2tgba -G -D '!((!(p2)) <-> (!((p1) xor (p3))))' | autfilt --gra=unique-inf > 'lcr-o3-v9yQ77'
+Running [N4]: ltl2tgba -G -D '!((!(p2)) <-> (!((p1) xor (p3))))' | autfilt --gsa=share-fin > 'lcr-o4-BKf34u'
+Running [N5]: ltl2tgba -G -D '!((!(p2)) <-> (!((p1) xor (p3))))' | autfilt --gra=share-inf > 'lcr-o5-7elcAE'
+Performing sanity checks and gathering statistics...
+
+-:63: ((F(p2)) -> (p3)) W (X(p2))
+Running [P0]: ltl2tgba '((F(p2)) -> (p3)) W (X(p2))' > 'lcr-o0-VehsIo'
+Running [P1]: ltl2tgba -G -D '((F(p2)) -> (p3)) W (X(p2))' > 'lcr-o1-kLpPkc'
+Running [P2]: ltl2tgba -G -D '((F(p2)) -> (p3)) W (X(p2))' | autfilt --gsa=unique-fin > 'lcr-o2-NLtNRg'
+Running [P3]: ltl2tgba -G -D '((F(p2)) -> (p3)) W (X(p2))' | autfilt --gra=unique-inf > 'lcr-o3-0yadIa'
+Running [P4]: ltl2tgba -G -D '((F(p2)) -> (p3)) W (X(p2))' | autfilt --gsa=share-fin > 'lcr-o4-fYWnUN'
+Running [P5]: ltl2tgba -G -D '((F(p2)) -> (p3)) W (X(p2))' | autfilt --gra=share-inf > 'lcr-o5-UNx4a0'
+Running [N0]: ltl2tgba '!(((F(p2)) -> (p3)) W (X(p2)))' > 'lcr-o0-kZkUwv'
+Running [N1]: ltl2tgba -G -D '!(((F(p2)) -> (p3)) W (X(p2)))' > 'lcr-o1-3dWOLL'
+Running [N2]: ltl2tgba -G -D '!(((F(p2)) -> (p3)) W (X(p2)))' | autfilt --gsa=unique-fin > 'lcr-o2-bp3x2n'
+Running [N3]: ltl2tgba -G -D '!(((F(p2)) -> (p3)) W (X(p2)))' | autfilt --gra=unique-inf > 'lcr-o3-4lCfZg'
+Running [N4]: ltl2tgba -G -D '!(((F(p2)) -> (p3)) W (X(p2)))' | autfilt --gsa=share-fin > 'lcr-o4-zZU1es'
+Running [N5]: ltl2tgba -G -D '!(((F(p2)) -> (p3)) W (X(p2)))' | autfilt --gra=share-inf > 'lcr-o5-Yus91V'
+Performing sanity checks and gathering statistics...
+
+-:64: (((F(p1)) U (p3)) -> (X((F(p1)) R (p2)))) W (0)
+Running [P0]: ltl2tgba '(((F(p1)) U (p3)) -> (X((F(p1)) R (p2)))) W (0)' > 'lcr-o0-4VSSBO'
+Running [P1]: ltl2tgba -G -D '(((F(p1)) U (p3)) -> (X((F(p1)) R (p2)))) W (0)' > 'lcr-o1-7tQpRd'
+Running [P2]: ltl2tgba -G -D '(((F(p1)) U (p3)) -> (X((F(p1)) R (p2)))) W (0)' | autfilt --gsa=unique-fin > 'lcr-o2-ATS0B9'
+Running [P3]: ltl2tgba -G -D '(((F(p1)) U (p3)) -> (X((F(p1)) R (p2)))) W (0)' | autfilt --gra=unique-inf > 'lcr-o3-zcATNI'
+Running [P4]: ltl2tgba -G -D '(((F(p1)) U (p3)) -> (X((F(p1)) R (p2)))) W (0)' | autfilt --gsa=share-fin > 'lcr-o4-w2pxF8'
+Running [P5]: ltl2tgba -G -D '(((F(p1)) U (p3)) -> (X((F(p1)) R (p2)))) W (0)' | autfilt --gra=share-inf > 'lcr-o5-qkb9m4'
+Running [N0]: ltl2tgba '!((((F(p1)) U (p3)) -> (X((F(p1)) R (p2)))) W (0))' > 'lcr-o0-moYeiT'
+Running [N1]: ltl2tgba -G -D '!((((F(p1)) U (p3)) -> (X((F(p1)) R (p2)))) W (0))' > 'lcr-o1-EtYoRx'
+Running [N2]: ltl2tgba -G -D '!((((F(p1)) U (p3)) -> (X((F(p1)) R (p2)))) W (0))' | autfilt --gsa=unique-fin > 'lcr-o2-4xd1VB'
+Running [N3]: ltl2tgba -G -D '!((((F(p1)) U (p3)) -> (X((F(p1)) R (p2)))) W (0))' | autfilt --gra=unique-inf > 'lcr-o3-Dc1fbW'
+Running [N4]: ltl2tgba -G -D '!((((F(p1)) U (p3)) -> (X((F(p1)) R (p2)))) W (0))' | autfilt --gsa=share-fin > 'lcr-o4-p6GxGU'
+Running [N5]: ltl2tgba -G -D '!((((F(p1)) U (p3)) -> (X((F(p1)) R (p2)))) W (0))' | autfilt --gra=share-inf > 'lcr-o5-eZbvAL'
+Performing sanity checks and gathering statistics...
+
+-:65: G(F(X(p1)))
+Running [P0]: ltl2tgba 'G(F(X(p1)))' > 'lcr-o0-3w3s3q'
+Running [P1]: ltl2tgba -G -D 'G(F(X(p1)))' > 'lcr-o1-m8nW4X'
+Running [P2]: ltl2tgba -G -D 'G(F(X(p1)))' | autfilt --gsa=unique-fin > 'lcr-o2-lxjhxR'
+Running [P3]: ltl2tgba -G -D 'G(F(X(p1)))' | autfilt --gra=unique-inf > 'lcr-o3-xsqjZt'
+Running [P4]: ltl2tgba -G -D 'G(F(X(p1)))' | autfilt --gsa=share-fin > 'lcr-o4-OQbGAk'
+Running [P5]: ltl2tgba -G -D 'G(F(X(p1)))' | autfilt --gra=share-inf > 'lcr-o5-YTZVmL'
+Running [N0]: ltl2tgba '!(G(F(X(p1))))' > 'lcr-o0-Sr4OPc'
+Running [N1]: ltl2tgba -G -D '!(G(F(X(p1))))' > 'lcr-o1-GxSubV'
+Running [N2]: ltl2tgba -G -D '!(G(F(X(p1))))' | autfilt --gsa=unique-fin > 'lcr-o2-cxmhQv'
+Running [N3]: ltl2tgba -G -D '!(G(F(X(p1))))' | autfilt --gra=unique-inf > 'lcr-o3-BaEVf3'
+Running [N4]: ltl2tgba -G -D '!(G(F(X(p1))))' | autfilt --gsa=share-fin > 'lcr-o4-aIi0Jg'
+Running [N5]: ltl2tgba -G -D '!(G(F(X(p1))))' | autfilt --gra=share-inf > 'lcr-o5-wWVsJY'
+Performing sanity checks and gathering statistics...
+
+-:66: !(((!(G(F(p2)))) -> (p2)) -> (F(p2)))
+Running [P0]: ltl2tgba '!(((!(G(F(p2)))) -> (p2)) -> (F(p2)))' > 'lcr-o0-P4zkh1'
+Running [P1]: ltl2tgba -G -D '!(((!(G(F(p2)))) -> (p2)) -> (F(p2)))' > 'lcr-o1-Nqp4Fe'
+Running [P2]: ltl2tgba -G -D '!(((!(G(F(p2)))) -> (p2)) -> (F(p2)))' | autfilt --gsa=unique-fin > 'lcr-o2-dbOMM4'
+Running [P3]: ltl2tgba -G -D '!(((!(G(F(p2)))) -> (p2)) -> (F(p2)))' | autfilt --gra=unique-inf > 'lcr-o3-UoP2uY'
+Running [P4]: ltl2tgba -G -D '!(((!(G(F(p2)))) -> (p2)) -> (F(p2)))' | autfilt --gsa=share-fin > 'lcr-o4-PoJnxP'
+Running [P5]: ltl2tgba -G -D '!(((!(G(F(p2)))) -> (p2)) -> (F(p2)))' | autfilt --gra=share-inf > 'lcr-o5-3yXWVF'
+Running [N0]: ltl2tgba '((!(G(F(p2)))) -> (p2)) -> (F(p2))' > 'lcr-o0-QGFg4C'
+Running [N1]: ltl2tgba -G -D '((!(G(F(p2)))) -> (p2)) -> (F(p2))' > 'lcr-o1-y1dk0G'
+Running [N2]: ltl2tgba -G -D '((!(G(F(p2)))) -> (p2)) -> (F(p2))' | autfilt --gsa=unique-fin > 'lcr-o2-VJBw6K'
+Running [N3]: ltl2tgba -G -D '((!(G(F(p2)))) -> (p2)) -> (F(p2))' | autfilt --gra=unique-inf > 'lcr-o3-dQVHaH'
+Running [N4]: ltl2tgba -G -D '((!(G(F(p2)))) -> (p2)) -> (F(p2))' | autfilt --gsa=share-fin > 'lcr-o4-g4ASsr'
+Running [N5]: ltl2tgba -G -D '((!(G(F(p2)))) -> (p2)) -> (F(p2))' | autfilt --gra=share-inf > 'lcr-o5-npNACe'
+Performing sanity checks and gathering statistics...
+
+-:67: ((1) U (p1)) | (X(G(X(p3))))
+Running [P0]: ltl2tgba '((1) U (p1)) | (X(G(X(p3))))' > 'lcr-o0-v851o5'
+Running [P1]: ltl2tgba -G -D '((1) U (p1)) | (X(G(X(p3))))' > 'lcr-o1-CNsl3K'
+Running [P2]: ltl2tgba -G -D '((1) U (p1)) | (X(G(X(p3))))' | autfilt --gsa=unique-fin > 'lcr-o2-eXJRjY'
+Running [P3]: ltl2tgba -G -D '((1) U (p1)) | (X(G(X(p3))))' | autfilt --gra=unique-inf > 'lcr-o3-VnZ2xK'
+Running [P4]: ltl2tgba -G -D '((1) U (p1)) | (X(G(X(p3))))' | autfilt --gsa=share-fin > 'lcr-o4-g4cPnM'
+Running [P5]: ltl2tgba -G -D '((1) U (p1)) | (X(G(X(p3))))' | autfilt --gra=share-inf > 'lcr-o5-3RwDOY'
+Running [N0]: ltl2tgba '!(((1) U (p1)) | (X(G(X(p3)))))' > 'lcr-o0-6H8O7U'
+Running [N1]: ltl2tgba -G -D '!(((1) U (p1)) | (X(G(X(p3)))))' > 'lcr-o1-D4BEWh'
+Running [N2]: ltl2tgba -G -D '!(((1) U (p1)) | (X(G(X(p3)))))' | autfilt --gsa=unique-fin > 'lcr-o2-1cEjDm'
+Running [N3]: ltl2tgba -G -D '!(((1) U (p1)) | (X(G(X(p3)))))' | autfilt --gra=unique-inf > 'lcr-o3-f0vSJV'
+Running [N4]: ltl2tgba -G -D '!(((1) U (p1)) | (X(G(X(p3)))))' | autfilt --gsa=share-fin > 'lcr-o4-OUwbu5'
+Running [N5]: ltl2tgba -G -D '!(((1) U (p1)) | (X(G(X(p3)))))' | autfilt --gra=share-inf > 'lcr-o5-8krvWH'
+Performing sanity checks and gathering statistics...
+
+-:68: !(F(X(p3)))
+Running [P0]: ltl2tgba '!(F(X(p3)))' > 'lcr-o0-sYq2Mn'
+Running [P1]: ltl2tgba -G -D '!(F(X(p3)))' > 'lcr-o1-tPxj30'
+Running [P2]: ltl2tgba -G -D '!(F(X(p3)))' | autfilt --gsa=unique-fin > 'lcr-o2-br2WNs'
+Running [P3]: ltl2tgba -G -D '!(F(X(p3)))' | autfilt --gra=unique-inf > 'lcr-o3-Riulmy'
+Running [P4]: ltl2tgba -G -D '!(F(X(p3)))' | autfilt --gsa=share-fin > 'lcr-o4-nc3NmM'
+Running [P5]: ltl2tgba -G -D '!(F(X(p3)))' | autfilt --gra=share-inf > 'lcr-o5-Li74H4'
+Running [N0]: ltl2tgba 'F(X(p3))' > 'lcr-o0-dofIuz'
+Running [N1]: ltl2tgba -G -D 'F(X(p3))' > 'lcr-o1-mF9nXt'
+Running [N2]: ltl2tgba -G -D 'F(X(p3))' | autfilt --gsa=unique-fin > 'lcr-o2-g2dBQt'
+Running [N3]: ltl2tgba -G -D 'F(X(p3))' | autfilt --gra=unique-inf > 'lcr-o3-I6gFwA'
+Running [N4]: ltl2tgba -G -D 'F(X(p3))' | autfilt --gsa=share-fin > 'lcr-o4-HgxmQO'
+Running [N5]: ltl2tgba -G -D 'F(X(p3))' | autfilt --gra=share-inf > 'lcr-o5-Oznzw4'
+Performing sanity checks and gathering statistics...
+
+-:69: (X((0))) <-> (F(p3))
+Running [P0]: ltl2tgba '(X((0))) <-> (F(p3))' > 'lcr-o0-sDVQWV'
+Running [P1]: ltl2tgba -G -D '(X((0))) <-> (F(p3))' > 'lcr-o1-ncboAz'
+Running [P2]: ltl2tgba -G -D '(X((0))) <-> (F(p3))' | autfilt --gsa=unique-fin > 'lcr-o2-ZuqCIA'
+Running [P3]: ltl2tgba -G -D '(X((0))) <-> (F(p3))' | autfilt --gra=unique-inf > 'lcr-o3-gwGKZ7'
+Running [P4]: ltl2tgba -G -D '(X((0))) <-> (F(p3))' | autfilt --gsa=share-fin > 'lcr-o4-buXSaQ'
+Running [P5]: ltl2tgba -G -D '(X((0))) <-> (F(p3))' | autfilt --gra=share-inf > 'lcr-o5-5xdiwu'
+Running [N0]: ltl2tgba '!((X((0))) <-> (F(p3)))' > 'lcr-o0-kbpaNO'
+Running [N1]: ltl2tgba -G -D '!((X((0))) <-> (F(p3)))' > 'lcr-o1-b1pcgU'
+Running [N2]: ltl2tgba -G -D '!((X((0))) <-> (F(p3)))' | autfilt --gsa=unique-fin > 'lcr-o2-bu4IW6'
+Running [N3]: ltl2tgba -G -D '!((X((0))) <-> (F(p3)))' | autfilt --gra=unique-inf > 'lcr-o3-WIMtFE'
+Running [N4]: ltl2tgba -G -D '!((X((0))) <-> (F(p3)))' | autfilt --gsa=share-fin > 'lcr-o4-GcTwlX'
+Running [N5]: ltl2tgba -G -D '!((X((0))) <-> (F(p3)))' | autfilt --gra=share-inf > 'lcr-o5-USaksr'
+Performing sanity checks and gathering statistics...
+
+-:70: ((p1) W (0)) M (p3)
+Running [P0]: ltl2tgba '((p1) W (0)) M (p3)' > 'lcr-o0-6Eh79I'
+Running [P1]: ltl2tgba -G -D '((p1) W (0)) M (p3)' > 'lcr-o1-JJ0Uno'
+Running [P2]: ltl2tgba -G -D '((p1) W (0)) M (p3)' | autfilt --gsa=unique-fin > 'lcr-o2-GyIy70'
+Running [P3]: ltl2tgba -G -D '((p1) W (0)) M (p3)' | autfilt --gra=unique-inf > 'lcr-o3-WKFIzF'
+Running [P4]: ltl2tgba -G -D '((p1) W (0)) M (p3)' | autfilt --gsa=share-fin > 'lcr-o4-0K7A00'
+Running [P5]: ltl2tgba -G -D '((p1) W (0)) M (p3)' | autfilt --gra=share-inf > 'lcr-o5-RmHMxI'
+Running [N0]: ltl2tgba '!(((p1) W (0)) M (p3))' > 'lcr-o0-B8dsXO'
+Running [N1]: ltl2tgba -G -D '!(((p1) W (0)) M (p3))' > 'lcr-o1-eualV5'
+Running [N2]: ltl2tgba -G -D '!(((p1) W (0)) M (p3))' | autfilt --gsa=unique-fin > 'lcr-o2-6CFOMw'
+Running [N3]: ltl2tgba -G -D '!(((p1) W (0)) M (p3))' | autfilt --gra=unique-inf > 'lcr-o3-qlXbM4'
+Running [N4]: ltl2tgba -G -D '!(((p1) W (0)) M (p3))' | autfilt --gsa=share-fin > 'lcr-o4-z7FlRT'
+Running [N5]: ltl2tgba -G -D '!(((p1) W (0)) M (p3))' | autfilt --gra=share-inf > 'lcr-o5-oTuNoD'
+Performing sanity checks and gathering statistics...
+
+-:71: ((!(X(p3))) M (p3)) -> ((p3) | (X((0))))
+Running [P0]: ltl2tgba '((!(X(p3))) M (p3)) -> ((p3) | (X((0))))' > 'lcr-o0-50RCKr'
+Running [P1]: ltl2tgba -G -D '((!(X(p3))) M (p3)) -> ((p3) | (X((0))))' > 'lcr-o1-Z66HMl'
+Running [P2]: ltl2tgba -G -D '((!(X(p3))) M (p3)) -> ((p3) | (X((0))))' | autfilt --gsa=unique-fin > 'lcr-o2-YReBAw'
+Running [P3]: ltl2tgba -G -D '((!(X(p3))) M (p3)) -> ((p3) | (X((0))))' | autfilt --gra=unique-inf > 'lcr-o3-aWkN9x'
+Running [P4]: ltl2tgba -G -D '((!(X(p3))) M (p3)) -> ((p3) | (X((0))))' | autfilt --gsa=share-fin > 'lcr-o4-g9QsBL'
+Running [P5]: ltl2tgba -G -D '((!(X(p3))) M (p3)) -> ((p3) | (X((0))))' | autfilt --gra=share-inf > 'lcr-o5-Atc5vB'
+Running [N0]: ltl2tgba '!(((!(X(p3))) M (p3)) -> ((p3) | (X((0)))))' > 'lcr-o0-qznvWg'
+Running [N1]: ltl2tgba -G -D '!(((!(X(p3))) M (p3)) -> ((p3) | (X((0)))))' > 'lcr-o1-v6TEKB'
+Running [N2]: ltl2tgba -G -D '!(((!(X(p3))) M (p3)) -> ((p3) | (X((0)))))' | autfilt --gsa=unique-fin > 'lcr-o2-gBNkxg'
+Running [N3]: ltl2tgba -G -D '!(((!(X(p3))) M (p3)) -> ((p3) | (X((0)))))' | autfilt --gra=unique-inf > 'lcr-o3-ZbQSni'
+Running [N4]: ltl2tgba -G -D '!(((!(X(p3))) M (p3)) -> ((p3) | (X((0)))))' | autfilt --gsa=share-fin > 'lcr-o4-E1csoe'
+Running [N5]: ltl2tgba -G -D '!(((!(X(p3))) M (p3)) -> ((p3) | (X((0)))))' | autfilt --gra=share-inf > 'lcr-o5-oxtd7Z'
+Performing sanity checks and gathering statistics...
+
+-:72: X((!(p2)) M (1))
+Running [P0]: ltl2tgba 'X((!(p2)) M (1))' > 'lcr-o0-UtzLuC'
+Running [P1]: ltl2tgba -G -D 'X((!(p2)) M (1))' > 'lcr-o1-cW1blD'
+Running [P2]: ltl2tgba -G -D 'X((!(p2)) M (1))' | autfilt --gsa=unique-fin > 'lcr-o2-tSKk8V'
+Running [P3]: ltl2tgba -G -D 'X((!(p2)) M (1))' | autfilt --gra=unique-inf > 'lcr-o3-hH1GIV'
+Running [P4]: ltl2tgba -G -D 'X((!(p2)) M (1))' | autfilt --gsa=share-fin > 'lcr-o4-qbs8e1'
+Running [P5]: ltl2tgba -G -D 'X((!(p2)) M (1))' | autfilt --gra=share-inf > 'lcr-o5-5RqE48'
+Running [N0]: ltl2tgba '!(X((!(p2)) M (1)))' > 'lcr-o0-ZY3eY8'
+Running [N1]: ltl2tgba -G -D '!(X((!(p2)) M (1)))' > 'lcr-o1-EK6oNH'
+Running [N2]: ltl2tgba -G -D '!(X((!(p2)) M (1)))' | autfilt --gsa=unique-fin > 'lcr-o2-pMLJtU'
+Running [N3]: ltl2tgba -G -D '!(X((!(p2)) M (1)))' | autfilt --gra=unique-inf > 'lcr-o3-Vgt8Mh'
+Running [N4]: ltl2tgba -G -D '!(X((!(p2)) M (1)))' | autfilt --gsa=share-fin > 'lcr-o4-rgeeGV'
+Running [N5]: ltl2tgba -G -D '!(X((!(p2)) M (1)))' | autfilt --gra=share-inf > 'lcr-o5-BdFVf0'
+Performing sanity checks and gathering statistics...
+
+-:73: (X(p1)) U (!(p3))
+Running [P0]: ltl2tgba '(X(p1)) U (!(p3))' > 'lcr-o0-pQpDEh'
+Running [P1]: ltl2tgba -G -D '(X(p1)) U (!(p3))' > 'lcr-o1-Wu7SEX'
+Running [P2]: ltl2tgba -G -D '(X(p1)) U (!(p3))' | autfilt --gsa=unique-fin > 'lcr-o2-2dm5c9'
+Running [P3]: ltl2tgba -G -D '(X(p1)) U (!(p3))' | autfilt --gra=unique-inf > 'lcr-o3-iVjNsO'
+Running [P4]: ltl2tgba -G -D '(X(p1)) U (!(p3))' | autfilt --gsa=share-fin > 'lcr-o4-wpG0PX'
+Running [P5]: ltl2tgba -G -D '(X(p1)) U (!(p3))' | autfilt --gra=share-inf > 'lcr-o5-w7OAaH'
+Running [N0]: ltl2tgba '!((X(p1)) U (!(p3)))' > 'lcr-o0-O58PUv'
+Running [N1]: ltl2tgba -G -D '!((X(p1)) U (!(p3)))' > 'lcr-o1-Uzr3H5'
+Running [N2]: ltl2tgba -G -D '!((X(p1)) U (!(p3)))' | autfilt --gsa=unique-fin > 'lcr-o2-oJxTko'
+Running [N3]: ltl2tgba -G -D '!((X(p1)) U (!(p3)))' | autfilt --gra=unique-inf > 'lcr-o3-qU8Ce1'
+Running [N4]: ltl2tgba -G -D '!((X(p1)) U (!(p3)))' | autfilt --gsa=share-fin > 'lcr-o4-RinZYz'
+Running [N5]: ltl2tgba -G -D '!((X(p1)) U (!(p3)))' | autfilt --gra=share-inf > 'lcr-o5-UPWJhL'
+Performing sanity checks and gathering statistics...
+
+-:74: G(F((p1) | (F(X(p2)))))
+Running [P0]: ltl2tgba 'G(F((p1) | (F(X(p2)))))' > 'lcr-o0-jZbiVM'
+Running [P1]: ltl2tgba -G -D 'G(F((p1) | (F(X(p2)))))' > 'lcr-o1-Sl2pRw'
+Running [P2]: ltl2tgba -G -D 'G(F((p1) | (F(X(p2)))))' | autfilt --gsa=unique-fin > 'lcr-o2-FP7yhx'
+Running [P3]: ltl2tgba -G -D 'G(F((p1) | (F(X(p2)))))' | autfilt --gra=unique-inf > 'lcr-o3-rGBYy0'
+Running [P4]: ltl2tgba -G -D 'G(F((p1) | (F(X(p2)))))' | autfilt --gsa=share-fin > 'lcr-o4-cZCLQN'
+Running [P5]: ltl2tgba -G -D 'G(F((p1) | (F(X(p2)))))' | autfilt --gra=share-inf > 'lcr-o5-u6tXxI'
+Running [N0]: ltl2tgba '!(G(F((p1) | (F(X(p2))))))' > 'lcr-o0-oyVlyH'
+Running [N1]: ltl2tgba -G -D '!(G(F((p1) | (F(X(p2))))))' > 'lcr-o1-7aUbeV'
+Running [N2]: ltl2tgba -G -D '!(G(F((p1) | (F(X(p2))))))' | autfilt --gsa=unique-fin > 'lcr-o2-0kSonK'
+Running [N3]: ltl2tgba -G -D '!(G(F((p1) | (F(X(p2))))))' | autfilt --gra=unique-inf > 'lcr-o3-bH1129'
+Running [N4]: ltl2tgba -G -D '!(G(F((p1) | (F(X(p2))))))' | autfilt --gsa=share-fin > 'lcr-o4-8QSem1'
+Running [N5]: ltl2tgba -G -D '!(G(F((p1) | (F(X(p2))))))' | autfilt --gra=share-inf > 'lcr-o5-1i6hw4'
+Performing sanity checks and gathering statistics...
+
+-:75: (G(p3)) R ((F((p2) | (X(!(p2))))) R (G(p2)))
+Running [P0]: ltl2tgba '(G(p3)) R ((F((p2) | (X(!(p2))))) R (G(p2)))' > 'lcr-o0-js9r0w'
+Running [P1]: ltl2tgba -G -D '(G(p3)) R ((F((p2) | (X(!(p2))))) R (G(p2)))' > 'lcr-o1-MJVKyv'
+Running [P2]: ltl2tgba -G -D '(G(p3)) R ((F((p2) | (X(!(p2))))) R (G(p2)))' | autfilt --gsa=unique-fin > 'lcr-o2-LzQugj'
+Running [P3]: ltl2tgba -G -D '(G(p3)) R ((F((p2) | (X(!(p2))))) R (G(p2)))' | autfilt --gra=unique-inf > 'lcr-o3-QzDS3w'
+Running [P4]: ltl2tgba -G -D '(G(p3)) R ((F((p2) | (X(!(p2))))) R (G(p2)))' | autfilt --gsa=share-fin > 'lcr-o4-uvsK9p'
+Running [P5]: ltl2tgba -G -D '(G(p3)) R ((F((p2) | (X(!(p2))))) R (G(p2)))' | autfilt --gra=share-inf > 'lcr-o5-9Sw5yd'
+Running [N0]: ltl2tgba '!((G(p3)) R ((F((p2) | (X(!(p2))))) R (G(p2))))' > 'lcr-o0-P4Rf1C'
+Running [N1]: ltl2tgba -G -D '!((G(p3)) R ((F((p2) | (X(!(p2))))) R (G(p2))))' > 'lcr-o1-PS4D2c'
+Running [N2]: ltl2tgba -G -D '!((G(p3)) R ((F((p2) | (X(!(p2))))) R (G(p2))))' | autfilt --gsa=unique-fin > 'lcr-o2-Bv3KNu'
+Running [N3]: ltl2tgba -G -D '!((G(p3)) R ((F((p2) | (X(!(p2))))) R (G(p2))))' | autfilt --gra=unique-inf > 'lcr-o3-YmdtEO'
+Running [N4]: ltl2tgba -G -D '!((G(p3)) R ((F((p2) | (X(!(p2))))) R (G(p2))))' | autfilt --gsa=share-fin > 'lcr-o4-dIXcWP'
+Running [N5]: ltl2tgba -G -D '!((G(p3)) R ((F((p2) | (X(!(p2))))) R (G(p2))))' | autfilt --gra=share-inf > 'lcr-o5-JvSm7M'
+Performing sanity checks and gathering statistics...
+
+-:76: F((p2) U (F(((p1) U (p2)) W (0))))
+Running [P0]: ltl2tgba 'F((p2) U (F(((p1) U (p2)) W (0))))' > 'lcr-o0-22TAQ2'
+Running [P1]: ltl2tgba -G -D 'F((p2) U (F(((p1) U (p2)) W (0))))' > 'lcr-o1-GVWa0t'
+Running [P2]: ltl2tgba -G -D 'F((p2) U (F(((p1) U (p2)) W (0))))' | autfilt --gsa=unique-fin > 'lcr-o2-KBQT62'
+Running [P3]: ltl2tgba -G -D 'F((p2) U (F(((p1) U (p2)) W (0))))' | autfilt --gra=unique-inf > 'lcr-o3-juM9cO'
+Running [P4]: ltl2tgba -G -D 'F((p2) U (F(((p1) U (p2)) W (0))))' | autfilt --gsa=share-fin > 'lcr-o4-qfQI80'
+Running [P5]: ltl2tgba -G -D 'F((p2) U (F(((p1) U (p2)) W (0))))' | autfilt --gra=share-inf > 'lcr-o5-Mghdqu'
+Running [N0]: ltl2tgba '!(F((p2) U (F(((p1) U (p2)) W (0)))))' > 'lcr-o0-xkXzbY'
+Running [N1]: ltl2tgba -G -D '!(F((p2) U (F(((p1) U (p2)) W (0)))))' > 'lcr-o1-2HtXps'
+Running [N2]: ltl2tgba -G -D '!(F((p2) U (F(((p1) U (p2)) W (0)))))' | autfilt --gsa=unique-fin > 'lcr-o2-QMewvb'
+Running [N3]: ltl2tgba -G -D '!(F((p2) U (F(((p1) U (p2)) W (0)))))' | autfilt --gra=unique-inf > 'lcr-o3-ykSYPi'
+Running [N4]: ltl2tgba -G -D '!(F((p2) U (F(((p1) U (p2)) W (0)))))' | autfilt --gsa=share-fin > 'lcr-o4-heF2p7'
+Running [N5]: ltl2tgba -G -D '!(F((p2) U (F(((p1) U (p2)) W (0)))))' | autfilt --gra=share-inf > 'lcr-o5-7jAiBg'
+Performing sanity checks and gathering statistics...
+
+-:77: (p3) | ((!(p3)) & ((p1) W (X(p1))))
+Running [P0]: ltl2tgba '(p3) | ((!(p3)) & ((p1) W (X(p1))))' > 'lcr-o0-kbzjhI'
+Running [P1]: ltl2tgba -G -D '(p3) | ((!(p3)) & ((p1) W (X(p1))))' > 'lcr-o1-ViWio8'
+Running [P2]: ltl2tgba -G -D '(p3) | ((!(p3)) & ((p1) W (X(p1))))' | autfilt --gsa=unique-fin > 'lcr-o2-lxygJO'
+Running [P3]: ltl2tgba -G -D '(p3) | ((!(p3)) & ((p1) W (X(p1))))' | autfilt --gra=unique-inf > 'lcr-o3-NOzB9A'
+Running [P4]: ltl2tgba -G -D '(p3) | ((!(p3)) & ((p1) W (X(p1))))' | autfilt --gsa=share-fin > 'lcr-o4-VErC6S'
+Running [P5]: ltl2tgba -G -D '(p3) | ((!(p3)) & ((p1) W (X(p1))))' | autfilt --gra=share-inf > 'lcr-o5-PJUjKo'
+Running [N0]: ltl2tgba '!((p3) | ((!(p3)) & ((p1) W (X(p1)))))' > 'lcr-o0-t3xWFo'
+Running [N1]: ltl2tgba -G -D '!((p3) | ((!(p3)) & ((p1) W (X(p1)))))' > 'lcr-o1-CsK7AM'
+Running [N2]: ltl2tgba -G -D '!((p3) | ((!(p3)) & ((p1) W (X(p1)))))' | autfilt --gsa=unique-fin > 'lcr-o2-sfZwG0'
+Running [N3]: ltl2tgba -G -D '!((p3) | ((!(p3)) & ((p1) W (X(p1)))))' | autfilt --gra=unique-inf > 'lcr-o3-3pLACq'
+Running [N4]: ltl2tgba -G -D '!((p3) | ((!(p3)) & ((p1) W (X(p1)))))' | autfilt --gsa=share-fin > 'lcr-o4-GJXrTj'
+Running [N5]: ltl2tgba -G -D '!((p3) | ((!(p3)) & ((p1) W (X(p1)))))' | autfilt --gra=share-inf > 'lcr-o5-paFgNO'
+Performing sanity checks and gathering statistics...
+
+-:78: !((0) R (p2))
+Running [P0]: ltl2tgba '!((0) R (p2))' > 'lcr-o0-R8kMRp'
+Running [P1]: ltl2tgba -G -D '!((0) R (p2))' > 'lcr-o1-TmTFCI'
+Running [P2]: ltl2tgba -G -D '!((0) R (p2))' | autfilt --gsa=unique-fin > 'lcr-o2-Uip4oW'
+Running [P3]: ltl2tgba -G -D '!((0) R (p2))' | autfilt --gra=unique-inf > 'lcr-o3-DvK5JP'
+Running [P4]: ltl2tgba -G -D '!((0) R (p2))' | autfilt --gsa=share-fin > 'lcr-o4-psHWCs'
+Running [P5]: ltl2tgba -G -D '!((0) R (p2))' | autfilt --gra=share-inf > 'lcr-o5-652XDB'
+Running [N0]: ltl2tgba '(0) R (p2)' > 'lcr-o0-Q7FiLa'
+Running [N1]: ltl2tgba -G -D '(0) R (p2)' > 'lcr-o1-zlRFIw'
+Running [N2]: ltl2tgba -G -D '(0) R (p2)' | autfilt --gsa=unique-fin > 'lcr-o2-QEqNcp'
+Running [N3]: ltl2tgba -G -D '(0) R (p2)' | autfilt --gra=unique-inf > 'lcr-o3-rpmXmw'
+Running [N4]: ltl2tgba -G -D '(0) R (p2)' | autfilt --gsa=share-fin > 'lcr-o4-4P1e8g'
+Running [N5]: ltl2tgba -G -D '(0) R (p2)' | autfilt --gra=share-inf > 'lcr-o5-TrnJOi'
+Performing sanity checks and gathering statistics...
+
+-:79: (G(p1)) M ((p2) -> ((1) U ((p3) <-> (G(p3)))))
+Running [P0]: ltl2tgba '(G(p1)) M ((p2) -> ((1) U ((p3) <-> (G(p3)))))' > 'lcr-o0-tvIV13'
+Running [P1]: ltl2tgba -G -D '(G(p1)) M ((p2) -> ((1) U ((p3) <-> (G(p3)))))' > 'lcr-o1-N2b8ST'
+Running [P2]: ltl2tgba -G -D '(G(p1)) M ((p2) -> ((1) U ((p3) <-> (G(p3)))))' | autfilt --gsa=unique-fin > 'lcr-o2-JMufNs'
+Running [P3]: ltl2tgba -G -D '(G(p1)) M ((p2) -> ((1) U ((p3) <-> (G(p3)))))' | autfilt --gra=unique-inf > 'lcr-o3-cjroJh'
+Running [P4]: ltl2tgba -G -D '(G(p1)) M ((p2) -> ((1) U ((p3) <-> (G(p3)))))' | autfilt --gsa=share-fin > 'lcr-o4-kGvRpu'
+Running [P5]: ltl2tgba -G -D '(G(p1)) M ((p2) -> ((1) U ((p3) <-> (G(p3)))))' | autfilt --gra=share-inf > 'lcr-o5-3qc672'
+Running [N0]: ltl2tgba '!((G(p1)) M ((p2) -> ((1) U ((p3) <-> (G(p3))))))' > 'lcr-o0-rzriAA'
+Running [N1]: ltl2tgba -G -D '!((G(p1)) M ((p2) -> ((1) U ((p3) <-> (G(p3))))))' > 'lcr-o1-WtzbO6'
+Running [N2]: ltl2tgba -G -D '!((G(p1)) M ((p2) -> ((1) U ((p3) <-> (G(p3))))))' | autfilt --gsa=unique-fin > 'lcr-o2-1IcDVl'
+Running [N3]: ltl2tgba -G -D '!((G(p1)) M ((p2) -> ((1) U ((p3) <-> (G(p3))))))' | autfilt --gra=unique-inf > 'lcr-o3-hxzuTM'
+Running [N4]: ltl2tgba -G -D '!((G(p1)) M ((p2) -> ((1) U ((p3) <-> (G(p3))))))' | autfilt --gsa=share-fin > 'lcr-o4-s2fQOa'
+Running [N5]: ltl2tgba -G -D '!((G(p1)) M ((p2) -> ((1) U ((p3) <-> (G(p3))))))' | autfilt --gra=share-inf > 'lcr-o5-J01k9i'
+Performing sanity checks and gathering statistics...
+
+-:80: G(p3)
+Running [P0]: ltl2tgba 'G(p3)' > 'lcr-o0-jPrR5s'
+Running [P1]: ltl2tgba -G -D 'G(p3)' > 'lcr-o1-SKTW3p'
+Running [P2]: ltl2tgba -G -D 'G(p3)' | autfilt --gsa=unique-fin > 'lcr-o2-PgGylj'
+Running [P3]: ltl2tgba -G -D 'G(p3)' | autfilt --gra=unique-inf > 'lcr-o3-971S1l'
+Running [P4]: ltl2tgba -G -D 'G(p3)' | autfilt --gsa=share-fin > 'lcr-o4-qCdMe4'
+Running [P5]: ltl2tgba -G -D 'G(p3)' | autfilt --gra=share-inf > 'lcr-o5-gmNtNM'
+Running [N0]: ltl2tgba '!(G(p3))' > 'lcr-o0-O5Qkp1'
+Running [N1]: ltl2tgba -G -D '!(G(p3))' > 'lcr-o1-4gxc0l'
+Running [N2]: ltl2tgba -G -D '!(G(p3))' | autfilt --gsa=unique-fin > 'lcr-o2-mB0NGd'
+Running [N3]: ltl2tgba -G -D '!(G(p3))' | autfilt --gra=unique-inf > 'lcr-o3-zqYlaK'
+Running [N4]: ltl2tgba -G -D '!(G(p3))' | autfilt --gsa=share-fin > 'lcr-o4-j2EEC9'
+Running [N5]: ltl2tgba -G -D '!(G(p3))' | autfilt --gra=share-inf > 'lcr-o5-B0Sd0w'
+Performing sanity checks and gathering statistics...
+
+-:81: ((p3) | ((G(p1)) -> (p1))) W (p3)
+Running [P0]: ltl2tgba '((p3) | ((G(p1)) -> (p1))) W (p3)' > 'lcr-o0-qyp4VU'
+Running [P1]: ltl2tgba -G -D '((p3) | ((G(p1)) -> (p1))) W (p3)' > 'lcr-o1-BRoNSK'
+Running [P2]: ltl2tgba -G -D '((p3) | ((G(p1)) -> (p1))) W (p3)' | autfilt --gsa=unique-fin > 'lcr-o2-Q3Shmj'
+Running [P3]: ltl2tgba -G -D '((p3) | ((G(p1)) -> (p1))) W (p3)' | autfilt --gra=unique-inf > 'lcr-o3-fzh0xj'
+Running [P4]: ltl2tgba -G -D '((p3) | ((G(p1)) -> (p1))) W (p3)' | autfilt --gsa=share-fin > 'lcr-o4-zXqvb3'
+Running [P5]: ltl2tgba -G -D '((p3) | ((G(p1)) -> (p1))) W (p3)' | autfilt --gra=share-inf > 'lcr-o5-wJ5FAW'
+Running [N0]: ltl2tgba '!(((p3) | ((G(p1)) -> (p1))) W (p3))' > 'lcr-o0-V0VvHH'
+Running [N1]: ltl2tgba -G -D '!(((p3) | ((G(p1)) -> (p1))) W (p3))' > 'lcr-o1-cGbJbf'
+Running [N2]: ltl2tgba -G -D '!(((p3) | ((G(p1)) -> (p1))) W (p3))' | autfilt --gsa=unique-fin > 'lcr-o2-PepWWi'
+Running [N3]: ltl2tgba -G -D '!(((p3) | ((G(p1)) -> (p1))) W (p3))' | autfilt --gra=unique-inf > 'lcr-o3-qW50gl'
+Running [N4]: ltl2tgba -G -D '!(((p3) | ((G(p1)) -> (p1))) W (p3))' | autfilt --gsa=share-fin > 'lcr-o4-165YqF'
+Running [N5]: ltl2tgba -G -D '!(((p3) | ((G(p1)) -> (p1))) W (p3))' | autfilt --gra=share-inf > 'lcr-o5-jtMr1x'
+Performing sanity checks and gathering statistics...
+
+-:82: (F(((F(p1)) -> (F(X(G(p2))))) W (!(p3)))) R (G(p1))
+Running [P0]: ltl2tgba '(F(((F(p1)) -> (F(X(G(p2))))) W (!(p3)))) R (G(p1))' > 'lcr-o0-SYLx9m'
+Running [P1]: ltl2tgba -G -D '(F(((F(p1)) -> (F(X(G(p2))))) W (!(p3)))) R (G(p1))' > 'lcr-o1-6kLfSO'
+Running [P2]: ltl2tgba -G -D '(F(((F(p1)) -> (F(X(G(p2))))) W (!(p3)))) R (G(p1))' | autfilt --gsa=unique-fin > 'lcr-o2-2sxHnf'
+Running [P3]: ltl2tgba -G -D '(F(((F(p1)) -> (F(X(G(p2))))) W (!(p3)))) R (G(p1))' | autfilt --gra=unique-inf > 'lcr-o3-j1HZdb'
+Running [P4]: ltl2tgba -G -D '(F(((F(p1)) -> (F(X(G(p2))))) W (!(p3)))) R (G(p1))' | autfilt --gsa=share-fin > 'lcr-o4-vWHk1u'
+Running [P5]: ltl2tgba -G -D '(F(((F(p1)) -> (F(X(G(p2))))) W (!(p3)))) R (G(p1))' | autfilt --gra=share-inf > 'lcr-o5-1scmXM'
+Running [N0]: ltl2tgba '!((F(((F(p1)) -> (F(X(G(p2))))) W (!(p3)))) R (G(p1)))' > 'lcr-o0-Nu6N6h'
+Running [N1]: ltl2tgba -G -D '!((F(((F(p1)) -> (F(X(G(p2))))) W (!(p3)))) R (G(p1)))' > 'lcr-o1-1JEhDs'
+Running [N2]: ltl2tgba -G -D '!((F(((F(p1)) -> (F(X(G(p2))))) W (!(p3)))) R (G(p1)))' | autfilt --gsa=unique-fin > 'lcr-o2-sFCC3U'
+Running [N3]: ltl2tgba -G -D '!((F(((F(p1)) -> (F(X(G(p2))))) W (!(p3)))) R (G(p1)))' | autfilt --gra=unique-inf > 'lcr-o3-oJShmG'
+Running [N4]: ltl2tgba -G -D '!((F(((F(p1)) -> (F(X(G(p2))))) W (!(p3)))) R (G(p1)))' | autfilt --gsa=share-fin > 'lcr-o4-lPOAVy'
+Running [N5]: ltl2tgba -G -D '!((F(((F(p1)) -> (F(X(G(p2))))) W (!(p3)))) R (G(p1)))' | autfilt --gra=share-inf > 'lcr-o5-CqCU9l'
+Performing sanity checks and gathering statistics...
+
+-:83: F(!(p1))
+Running [P0]: ltl2tgba 'F(!(p1))' > 'lcr-o0-kZytNo'
+Running [P1]: ltl2tgba -G -D 'F(!(p1))' > 'lcr-o1-PqXyN4'
+Running [P2]: ltl2tgba -G -D 'F(!(p1))' | autfilt --gsa=unique-fin > 'lcr-o2-kOJoM0'
+Running [P3]: ltl2tgba -G -D 'F(!(p1))' | autfilt --gra=unique-inf > 'lcr-o3-j1o2qi'
+Running [P4]: ltl2tgba -G -D 'F(!(p1))' | autfilt --gsa=share-fin > 'lcr-o4-9UiK96'
+Running [P5]: ltl2tgba -G -D 'F(!(p1))' | autfilt --gra=share-inf > 'lcr-o5-2C3PCn'
+Running [N0]: ltl2tgba '!(F(!(p1)))' > 'lcr-o0-4BLRqt'
+Running [N1]: ltl2tgba -G -D '!(F(!(p1)))' > 'lcr-o1-4GI9As'
+Running [N2]: ltl2tgba -G -D '!(F(!(p1)))' | autfilt --gsa=unique-fin > 'lcr-o2-BRCZQk'
+Running [N3]: ltl2tgba -G -D '!(F(!(p1)))' | autfilt --gra=unique-inf > 'lcr-o3-YekZ4i'
+Running [N4]: ltl2tgba -G -D '!(F(!(p1)))' | autfilt --gsa=share-fin > 'lcr-o4-keYgSE'
+Running [N5]: ltl2tgba -G -D '!(F(!(p1)))' | autfilt --gra=share-inf > 'lcr-o5-Hakmvh'
+Performing sanity checks and gathering statistics...
+
+-:84: (p1) xor (((p2) | (!(p3))) W (!(F(p3))))
+Running [P0]: ltl2tgba '(p1) xor (((p2) | (!(p3))) W (!(F(p3))))' > 'lcr-o0-W4UGob'
+Running [P1]: ltl2tgba -G -D '(p1) xor (((p2) | (!(p3))) W (!(F(p3))))' > 'lcr-o1-3xEqLr'
+Running [P2]: ltl2tgba -G -D '(p1) xor (((p2) | (!(p3))) W (!(F(p3))))' | autfilt --gsa=unique-fin > 'lcr-o2-xL303W'
+Running [P3]: ltl2tgba -G -D '(p1) xor (((p2) | (!(p3))) W (!(F(p3))))' | autfilt --gra=unique-inf > 'lcr-o3-063Ewh'
+Running [P4]: ltl2tgba -G -D '(p1) xor (((p2) | (!(p3))) W (!(F(p3))))' | autfilt --gsa=share-fin > 'lcr-o4-MWeBvK'
+Running [P5]: ltl2tgba -G -D '(p1) xor (((p2) | (!(p3))) W (!(F(p3))))' | autfilt --gra=share-inf > 'lcr-o5-HF8VcX'
+Running [N0]: ltl2tgba '!((p1) xor (((p2) | (!(p3))) W (!(F(p3)))))' > 'lcr-o0-FGLRjg'
+Running [N1]: ltl2tgba -G -D '!((p1) xor (((p2) | (!(p3))) W (!(F(p3)))))' > 'lcr-o1-M0COgz'
+Running [N2]: ltl2tgba -G -D '!((p1) xor (((p2) | (!(p3))) W (!(F(p3)))))' | autfilt --gsa=unique-fin > 'lcr-o2-ANbLwO'
+Running [N3]: ltl2tgba -G -D '!((p1) xor (((p2) | (!(p3))) W (!(F(p3)))))' | autfilt --gra=unique-inf > 'lcr-o3-yyzYzP'
+Running [N4]: ltl2tgba -G -D '!((p1) xor (((p2) | (!(p3))) W (!(F(p3)))))' | autfilt --gsa=share-fin > 'lcr-o4-60ZK4O'
+Running [N5]: ltl2tgba -G -D '!((p1) xor (((p2) | (!(p3))) W (!(F(p3)))))' | autfilt --gra=share-inf > 'lcr-o5-XviqPj'
+Performing sanity checks and gathering statistics...
+
+-:85: (F(p3)) R ((p1) W (X(p3)))
+Running [P0]: ltl2tgba '(F(p3)) R ((p1) W (X(p3)))' > 'lcr-o0-saPe8V'
+Running [P1]: ltl2tgba -G -D '(F(p3)) R ((p1) W (X(p3)))' > 'lcr-o1-Kh5CmM'
+Running [P2]: ltl2tgba -G -D '(F(p3)) R ((p1) W (X(p3)))' | autfilt --gsa=unique-fin > 'lcr-o2-FL4i5e'
+Running [P3]: ltl2tgba -G -D '(F(p3)) R ((p1) W (X(p3)))' | autfilt --gra=unique-inf > 'lcr-o3-8O0Sze'
+Running [P4]: ltl2tgba -G -D '(F(p3)) R ((p1) W (X(p3)))' | autfilt --gsa=share-fin > 'lcr-o4-BWCr0D'
+Running [P5]: ltl2tgba -G -D '(F(p3)) R ((p1) W (X(p3)))' | autfilt --gra=share-inf > 'lcr-o5-RyZR5o'
+Running [N0]: ltl2tgba '!((F(p3)) R ((p1) W (X(p3))))' > 'lcr-o0-wmweN1'
+Running [N1]: ltl2tgba -G -D '!((F(p3)) R ((p1) W (X(p3))))' > 'lcr-o1-qhsDAn'
+Running [N2]: ltl2tgba -G -D '!((F(p3)) R ((p1) W (X(p3))))' | autfilt --gsa=unique-fin > 'lcr-o2-jhChGR'
+Running [N3]: ltl2tgba -G -D '!((F(p3)) R ((p1) W (X(p3))))' | autfilt --gra=unique-inf > 'lcr-o3-501nFn'
+Running [N4]: ltl2tgba -G -D '!((F(p3)) R ((p1) W (X(p3))))' | autfilt --gsa=share-fin > 'lcr-o4-ftWnBm'
+Running [N5]: ltl2tgba -G -D '!((F(p3)) R ((p1) W (X(p3))))' | autfilt --gra=share-inf > 'lcr-o5-jaGVkU'
+Performing sanity checks and gathering statistics...
+
+-:86: (!(X((0)))) U ((p3) xor (X(p1)))
+Running [P0]: ltl2tgba '(!(X((0)))) U ((p3) xor (X(p1)))' > 'lcr-o0-rXyyH9'
+Running [P1]: ltl2tgba -G -D '(!(X((0)))) U ((p3) xor (X(p1)))' > 'lcr-o1-bLnrtb'
+Running [P2]: ltl2tgba -G -D '(!(X((0)))) U ((p3) xor (X(p1)))' | autfilt --gsa=unique-fin > 'lcr-o2-E16jEf'
+Running [P3]: ltl2tgba -G -D '(!(X((0)))) U ((p3) xor (X(p1)))' | autfilt --gra=unique-inf > 'lcr-o3-H7NTjl'
+Running [P4]: ltl2tgba -G -D '(!(X((0)))) U ((p3) xor (X(p1)))' | autfilt --gsa=share-fin > 'lcr-o4-wbX9Ml'
+Running [P5]: ltl2tgba -G -D '(!(X((0)))) U ((p3) xor (X(p1)))' | autfilt --gra=share-inf > 'lcr-o5-8qRMIr'
+Running [N0]: ltl2tgba '!((!(X((0)))) U ((p3) xor (X(p1))))' > 'lcr-o0-pbgYFR'
+Running [N1]: ltl2tgba -G -D '!((!(X((0)))) U ((p3) xor (X(p1))))' > 'lcr-o1-MkNJZP'
+Running [N2]: ltl2tgba -G -D '!((!(X((0)))) U ((p3) xor (X(p1))))' | autfilt --gsa=unique-fin > 'lcr-o2-ksZYBH'
+Running [N3]: ltl2tgba -G -D '!((!(X((0)))) U ((p3) xor (X(p1))))' | autfilt --gra=unique-inf > 'lcr-o3-a3r2W9'
+Running [N4]: ltl2tgba -G -D '!((!(X((0)))) U ((p3) xor (X(p1))))' | autfilt --gsa=share-fin > 'lcr-o4-ha9vb7'
+Running [N5]: ltl2tgba -G -D '!((!(X((0)))) U ((p3) xor (X(p1))))' | autfilt --gra=share-inf > 'lcr-o5-T6SUOX'
+Performing sanity checks and gathering statistics...
+
+-:87: (F(p1)) | (G(X((0))))
+Running [P0]: ltl2tgba '(F(p1)) | (G(X((0))))' > 'lcr-o0-2hQ0N8'
+Running [P1]: ltl2tgba -G -D '(F(p1)) | (G(X((0))))' > 'lcr-o1-H0TBYv'
+Running [P2]: ltl2tgba -G -D '(F(p1)) | (G(X((0))))' | autfilt --gsa=unique-fin > 'lcr-o2-fPuTd9'
+Running [P3]: ltl2tgba -G -D '(F(p1)) | (G(X((0))))' | autfilt --gra=unique-inf > 'lcr-o3-RbROKY'
+Running [P4]: ltl2tgba -G -D '(F(p1)) | (G(X((0))))' | autfilt --gsa=share-fin > 'lcr-o4-3RXCHQ'
+Running [P5]: ltl2tgba -G -D '(F(p1)) | (G(X((0))))' | autfilt --gra=share-inf > 'lcr-o5-TbfoaT'
+Running [N0]: ltl2tgba '!((F(p1)) | (G(X((0)))))' > 'lcr-o0-2fxYDw'
+Running [N1]: ltl2tgba -G -D '!((F(p1)) | (G(X((0)))))' > 'lcr-o1-LrADiA'
+Running [N2]: ltl2tgba -G -D '!((F(p1)) | (G(X((0)))))' | autfilt --gsa=unique-fin > 'lcr-o2-3Wckus'
+Running [N3]: ltl2tgba -G -D '!((F(p1)) | (G(X((0)))))' | autfilt --gra=unique-inf > 'lcr-o3-NkIDG9'
+Running [N4]: ltl2tgba -G -D '!((F(p1)) | (G(X((0)))))' | autfilt --gsa=share-fin > 'lcr-o4-zcreJk'
+Running [N5]: ltl2tgba -G -D '!((F(p1)) | (G(X((0)))))' | autfilt --gra=share-inf > 'lcr-o5-TCnI0D'
+Performing sanity checks and gathering statistics...
+
+-:88: (!((p1) | (p3))) xor ((p3) xor ((p1) U (p2)))
+Running [P0]: ltl2tgba '(!((p1) | (p3))) xor ((p3) xor ((p1) U (p2)))' > 'lcr-o0-R1oLnS'
+Running [P1]: ltl2tgba -G -D '(!((p1) | (p3))) xor ((p3) xor ((p1) U (p2)))' > 'lcr-o1-iaoEXl'
+Running [P2]: ltl2tgba -G -D '(!((p1) | (p3))) xor ((p3) xor ((p1) U (p2)))' | autfilt --gsa=unique-fin > 'lcr-o2-N0gmm5'
+Running [P3]: ltl2tgba -G -D '(!((p1) | (p3))) xor ((p3) xor ((p1) U (p2)))' | autfilt --gra=unique-inf > 'lcr-o3-m1yOtF'
+Running [P4]: ltl2tgba -G -D '(!((p1) | (p3))) xor ((p3) xor ((p1) U (p2)))' | autfilt --gsa=share-fin > 'lcr-o4-O0B7Kq'
+Running [P5]: ltl2tgba -G -D '(!((p1) | (p3))) xor ((p3) xor ((p1) U (p2)))' | autfilt --gra=share-inf > 'lcr-o5-tckexy'
+Running [N0]: ltl2tgba '!((!((p1) | (p3))) xor ((p3) xor ((p1) U (p2))))' > 'lcr-o0-49XhCa'
+Running [N1]: ltl2tgba -G -D '!((!((p1) | (p3))) xor ((p3) xor ((p1) U (p2))))' > 'lcr-o1-UBL6Pf'
+Running [N2]: ltl2tgba -G -D '!((!((p1) | (p3))) xor ((p3) xor ((p1) U (p2))))' | autfilt --gsa=unique-fin > 'lcr-o2-pyFPVg'
+Running [N3]: ltl2tgba -G -D '!((!((p1) | (p3))) xor ((p3) xor ((p1) U (p2))))' | autfilt --gra=unique-inf > 'lcr-o3-43uO54'
+Running [N4]: ltl2tgba -G -D '!((!((p1) | (p3))) xor ((p3) xor ((p1) U (p2))))' | autfilt --gsa=share-fin > 'lcr-o4-pan7jw'
+Running [N5]: ltl2tgba -G -D '!((!((p1) | (p3))) xor ((p3) xor ((p1) U (p2))))' | autfilt --gra=share-inf > 'lcr-o5-9SDoUy'
+Performing sanity checks and gathering statistics...
+
+-:89: G((p1) & (p2) & (!(F((p2) M (1)))))
+Running [P0]: ltl2tgba 'G((p1) & (p2) & (!(F((p2) M (1)))))' > 'lcr-o0-dosHR0'
+Running [P1]: ltl2tgba -G -D 'G((p1) & (p2) & (!(F((p2) M (1)))))' > 'lcr-o1-H6t5DU'
+Running [P2]: ltl2tgba -G -D 'G((p1) & (p2) & (!(F((p2) M (1)))))' | autfilt --gsa=unique-fin > 'lcr-o2-UoXh2X'
+Running [P3]: ltl2tgba -G -D 'G((p1) & (p2) & (!(F((p2) M (1)))))' | autfilt --gra=unique-inf > 'lcr-o3-yTGtWH'
+Running [P4]: ltl2tgba -G -D 'G((p1) & (p2) & (!(F((p2) M (1)))))' | autfilt --gsa=share-fin > 'lcr-o4-7CPiX1'
+Running [P5]: ltl2tgba -G -D 'G((p1) & (p2) & (!(F((p2) M (1)))))' | autfilt --gra=share-inf > 'lcr-o5-2RTVKt'
+Running [N0]: ltl2tgba '!(G((p1) & (p2) & (!(F((p2) M (1))))))' > 'lcr-o0-12n5Ne'
+Running [N1]: ltl2tgba -G -D '!(G((p1) & (p2) & (!(F((p2) M (1))))))' > 'lcr-o1-sVVdZP'
+Running [N2]: ltl2tgba -G -D '!(G((p1) & (p2) & (!(F((p2) M (1))))))' | autfilt --gsa=unique-fin > 'lcr-o2-dTqsUH'
+Running [N3]: ltl2tgba -G -D '!(G((p1) & (p2) & (!(F((p2) M (1))))))' | autfilt --gra=unique-inf > 'lcr-o3-3I7trN'
+Running [N4]: ltl2tgba -G -D '!(G((p1) & (p2) & (!(F((p2) M (1))))))' | autfilt --gsa=share-fin > 'lcr-o4-q2MBw9'
+Running [N5]: ltl2tgba -G -D '!(G((p1) & (p2) & (!(F((p2) M (1))))))' | autfilt --gra=share-inf > 'lcr-o5-cT8ZGI'
+Performing sanity checks and gathering statistics...
+
+-:90: X(((p1) W (p3)) | (X(X(!((p1) -> (X(p2)))))))
+Running [P0]: ltl2tgba 'X(((p1) W (p3)) | (X(X(!((p1) -> (X(p2)))))))' > 'lcr-o0-PcIR0b'
+Running [P1]: ltl2tgba -G -D 'X(((p1) W (p3)) | (X(X(!((p1) -> (X(p2)))))))' > 'lcr-o1-nsEGKv'
+Running [P2]: ltl2tgba -G -D 'X(((p1) W (p3)) | (X(X(!((p1) -> (X(p2)))))))' | autfilt --gsa=unique-fin > 'lcr-o2-DP2iOh'
+Running [P3]: ltl2tgba -G -D 'X(((p1) W (p3)) | (X(X(!((p1) -> (X(p2)))))))' | autfilt --gra=unique-inf > 'lcr-o3-i881pB'
+Running [P4]: ltl2tgba -G -D 'X(((p1) W (p3)) | (X(X(!((p1) -> (X(p2)))))))' | autfilt --gsa=share-fin > 'lcr-o4-zHo054'
+Running [P5]: ltl2tgba -G -D 'X(((p1) W (p3)) | (X(X(!((p1) -> (X(p2)))))))' | autfilt --gra=share-inf > 'lcr-o5-1F1PT6'
+Running [N0]: ltl2tgba '!(X(((p1) W (p3)) | (X(X(!((p1) -> (X(p2))))))))' > 'lcr-o0-nAOwuS'
+Running [N1]: ltl2tgba -G -D '!(X(((p1) W (p3)) | (X(X(!((p1) -> (X(p2))))))))' > 'lcr-o1-bhluCr'
+Running [N2]: ltl2tgba -G -D '!(X(((p1) W (p3)) | (X(X(!((p1) -> (X(p2))))))))' | autfilt --gsa=unique-fin > 'lcr-o2-6lZOFL'
+Running [N3]: ltl2tgba -G -D '!(X(((p1) W (p3)) | (X(X(!((p1) -> (X(p2))))))))' | autfilt --gra=unique-inf > 'lcr-o3-2Omq9J'
+Running [N4]: ltl2tgba -G -D '!(X(((p1) W (p3)) | (X(X(!((p1) -> (X(p2))))))))' | autfilt --gsa=share-fin > 'lcr-o4-npI9RG'
+Running [N5]: ltl2tgba -G -D '!(X(((p1) W (p3)) | (X(X(!((p1) -> (X(p2))))))))' | autfilt --gra=share-inf > 'lcr-o5-s8wBdO'
+Performing sanity checks and gathering statistics...
+
+-:91: X((p2) M (p3))
+Running [P0]: ltl2tgba 'X((p2) M (p3))' > 'lcr-o0-w85inL'
+Running [P1]: ltl2tgba -G -D 'X((p2) M (p3))' > 'lcr-o1-mNQKXl'
+Running [P2]: ltl2tgba -G -D 'X((p2) M (p3))' | autfilt --gsa=unique-fin > 'lcr-o2-POtvlC'
+Running [P3]: ltl2tgba -G -D 'X((p2) M (p3))' | autfilt --gra=unique-inf > 'lcr-o3-kaB5jt'
+Running [P4]: ltl2tgba -G -D 'X((p2) M (p3))' | autfilt --gsa=share-fin > 'lcr-o4-FoQ7Xj'
+Running [P5]: ltl2tgba -G -D 'X((p2) M (p3))' | autfilt --gra=share-inf > 'lcr-o5-y2IaFk'
+Running [N0]: ltl2tgba '!(X((p2) M (p3)))' > 'lcr-o0-xoSJo5'
+Running [N1]: ltl2tgba -G -D '!(X((p2) M (p3)))' > 'lcr-o1-KyWEcN'
+Running [N2]: ltl2tgba -G -D '!(X((p2) M (p3)))' | autfilt --gsa=unique-fin > 'lcr-o2-7l2wvF'
+Running [N3]: ltl2tgba -G -D '!(X((p2) M (p3)))' | autfilt --gra=unique-inf > 'lcr-o3-kDBjD3'
+Running [N4]: ltl2tgba -G -D '!(X((p2) M (p3)))' | autfilt --gsa=share-fin > 'lcr-o4-AP36zR'
+Running [N5]: ltl2tgba -G -D '!(X((p2) M (p3)))' | autfilt --gra=share-inf > 'lcr-o5-8EHy8D'
+Performing sanity checks and gathering statistics...
+
+-:92: X(!(p3))
+Running [P0]: ltl2tgba 'X(!(p3))' > 'lcr-o0-tPT6Sz'
+Running [P1]: ltl2tgba -G -D 'X(!(p3))' > 'lcr-o1-Qo9muG'
+Running [P2]: ltl2tgba -G -D 'X(!(p3))' | autfilt --gsa=unique-fin > 'lcr-o2-fwxadt'
+Running [P3]: ltl2tgba -G -D 'X(!(p3))' | autfilt --gra=unique-inf > 'lcr-o3-DJ50D3'
+Running [P4]: ltl2tgba -G -D 'X(!(p3))' | autfilt --gsa=share-fin > 'lcr-o4-oTPrRO'
+Running [P5]: ltl2tgba -G -D 'X(!(p3))' | autfilt --gra=share-inf > 'lcr-o5-98ZUye'
+Running [N0]: ltl2tgba '!(X(!(p3)))' > 'lcr-o0-Uo4796'
+Running [N1]: ltl2tgba -G -D '!(X(!(p3)))' > 'lcr-o1-AdxExr'
+Running [N2]: ltl2tgba -G -D '!(X(!(p3)))' | autfilt --gsa=unique-fin > 'lcr-o2-FT7Ctt'
+Running [N3]: ltl2tgba -G -D '!(X(!(p3)))' | autfilt --gra=unique-inf > 'lcr-o3-3ELw6J'
+Running [N4]: ltl2tgba -G -D '!(X(!(p3)))' | autfilt --gsa=share-fin > 'lcr-o4-UsqFsY'
+Running [N5]: ltl2tgba -G -D '!(X(!(p3)))' | autfilt --gra=share-inf > 'lcr-o5-Wa8GlB'
+Performing sanity checks and gathering statistics...
+
+-:93: (((p2) xor (X(p3))) M (!(p1))) U (p2)
+Running [P0]: ltl2tgba '(((p2) xor (X(p3))) M (!(p1))) U (p2)' > 'lcr-o0-aKEWBd'
+Running [P1]: ltl2tgba -G -D '(((p2) xor (X(p3))) M (!(p1))) U (p2)' > 'lcr-o1-EUnZMm'
+Running [P2]: ltl2tgba -G -D '(((p2) xor (X(p3))) M (!(p1))) U (p2)' | autfilt --gsa=unique-fin > 'lcr-o2-gIGOm2'
+Running [P3]: ltl2tgba -G -D '(((p2) xor (X(p3))) M (!(p1))) U (p2)' | autfilt --gra=unique-inf > 'lcr-o3-MahEzn'
+Running [P4]: ltl2tgba -G -D '(((p2) xor (X(p3))) M (!(p1))) U (p2)' | autfilt --gsa=share-fin > 'lcr-o4-DO2GpN'
+Running [P5]: ltl2tgba -G -D '(((p2) xor (X(p3))) M (!(p1))) U (p2)' | autfilt --gra=share-inf > 'lcr-o5-pbM4Ly'
+Running [N0]: ltl2tgba '!((((p2) xor (X(p3))) M (!(p1))) U (p2))' > 'lcr-o0-11vt7L'
+Running [N1]: ltl2tgba -G -D '!((((p2) xor (X(p3))) M (!(p1))) U (p2))' > 'lcr-o1-CGj8hx'
+Running [N2]: ltl2tgba -G -D '!((((p2) xor (X(p3))) M (!(p1))) U (p2))' | autfilt --gsa=unique-fin > 'lcr-o2-D4dafs'
+Running [N3]: ltl2tgba -G -D '!((((p2) xor (X(p3))) M (!(p1))) U (p2))' | autfilt --gra=unique-inf > 'lcr-o3-Lo5OoW'
+Running [N4]: ltl2tgba -G -D '!((((p2) xor (X(p3))) M (!(p1))) U (p2))' | autfilt --gsa=share-fin > 'lcr-o4-nXxKa3'
+Running [N5]: ltl2tgba -G -D '!((((p2) xor (X(p3))) M (!(p1))) U (p2))' | autfilt --gra=share-inf > 'lcr-o5-yb0r9V'
+Performing sanity checks and gathering statistics...
+
+-:94: (X(!(p2))) R (F(p3))
+Running [P0]: ltl2tgba '(X(!(p2))) R (F(p3))' > 'lcr-o0-5jRCDc'
+Running [P1]: ltl2tgba -G -D '(X(!(p2))) R (F(p3))' > 'lcr-o1-u6BoVK'
+Running [P2]: ltl2tgba -G -D '(X(!(p2))) R (F(p3))' | autfilt --gsa=unique-fin > 'lcr-o2-JIMUfQ'
+Running [P3]: ltl2tgba -G -D '(X(!(p2))) R (F(p3))' | autfilt --gra=unique-inf > 'lcr-o3-Htj8Nd'
+Running [P4]: ltl2tgba -G -D '(X(!(p2))) R (F(p3))' | autfilt --gsa=share-fin > 'lcr-o4-LbzdSt'
+Running [P5]: ltl2tgba -G -D '(X(!(p2))) R (F(p3))' | autfilt --gra=share-inf > 'lcr-o5-LANNnQ'
+Running [N0]: ltl2tgba '!((X(!(p2))) R (F(p3)))' > 'lcr-o0-KAoDoO'
+Running [N1]: ltl2tgba -G -D '!((X(!(p2))) R (F(p3)))' > 'lcr-o1-zscRpp'
+Running [N2]: ltl2tgba -G -D '!((X(!(p2))) R (F(p3)))' | autfilt --gsa=unique-fin > 'lcr-o2-MWGEVi'
+Running [N3]: ltl2tgba -G -D '!((X(!(p2))) R (F(p3)))' | autfilt --gra=unique-inf > 'lcr-o3-uRDcHI'
+Running [N4]: ltl2tgba -G -D '!((X(!(p2))) R (F(p3)))' | autfilt --gsa=share-fin > 'lcr-o4-9zUauG'
+Running [N5]: ltl2tgba -G -D '!((X(!(p2))) R (F(p3)))' | autfilt --gra=share-inf > 'lcr-o5-vVLAtI'
+Performing sanity checks and gathering statistics...
+
+-:95: (p3) U (F(p3))
+Running [P0]: ltl2tgba '(p3) U (F(p3))' > 'lcr-o0-MaGIx1'
+Running [P1]: ltl2tgba -G -D '(p3) U (F(p3))' > 'lcr-o1-AJrXVu'
+Running [P2]: ltl2tgba -G -D '(p3) U (F(p3))' | autfilt --gsa=unique-fin > 'lcr-o2-mVxXod'
+Running [P3]: ltl2tgba -G -D '(p3) U (F(p3))' | autfilt --gra=unique-inf > 'lcr-o3-wkRFAX'
+Running [P4]: ltl2tgba -G -D '(p3) U (F(p3))' | autfilt --gsa=share-fin > 'lcr-o4-Vx9f7Z'
+Running [P5]: ltl2tgba -G -D '(p3) U (F(p3))' | autfilt --gra=share-inf > 'lcr-o5-hFsVU9'
+Running [N0]: ltl2tgba '!((p3) U (F(p3)))' > 'lcr-o0-ED5fIy'
+Running [N1]: ltl2tgba -G -D '!((p3) U (F(p3)))' > 'lcr-o1-U3E9cD'
+Running [N2]: ltl2tgba -G -D '!((p3) U (F(p3)))' | autfilt --gsa=unique-fin > 'lcr-o2-iAyPwa'
+Running [N3]: ltl2tgba -G -D '!((p3) U (F(p3)))' | autfilt --gra=unique-inf > 'lcr-o3-XMKd3P'
+Running [N4]: ltl2tgba -G -D '!((p3) U (F(p3)))' | autfilt --gsa=share-fin > 'lcr-o4-be1ugy'
+Running [N5]: ltl2tgba -G -D '!((p3) U (F(p3)))' | autfilt --gra=share-inf > 'lcr-o5-gKI48D'
+Performing sanity checks and gathering statistics...
+
+-:96: !(((p1) | (!(p3))) M (X(((p1) & (X(p2))) M (1))))
+Running [P0]: ltl2tgba '!(((p1) | (!(p3))) M (X(((p1) & (X(p2))) M (1))))' > 'lcr-o0-m9jt8G'
+Running [P1]: ltl2tgba -G -D '!(((p1) | (!(p3))) M (X(((p1) & (X(p2))) M (1))))' > 'lcr-o1-uy0y5c'
+Running [P2]: ltl2tgba -G -D '!(((p1) | (!(p3))) M (X(((p1) & (X(p2))) M (1))))' | autfilt --gsa=unique-fin > 'lcr-o2-2yY8QB'
+Running [P3]: ltl2tgba -G -D '!(((p1) | (!(p3))) M (X(((p1) & (X(p2))) M (1))))' | autfilt --gra=unique-inf > 'lcr-o3-EBVyk0'
+Running [P4]: ltl2tgba -G -D '!(((p1) | (!(p3))) M (X(((p1) & (X(p2))) M (1))))' | autfilt --gsa=share-fin > 'lcr-o4-UCkNdZ'
+Running [P5]: ltl2tgba -G -D '!(((p1) | (!(p3))) M (X(((p1) & (X(p2))) M (1))))' | autfilt --gra=share-inf > 'lcr-o5-sGTcmm'
+Running [N0]: ltl2tgba '((p1) | (!(p3))) M (X(((p1) & (X(p2))) M (1)))' > 'lcr-o0-4IY5ed'
+Running [N1]: ltl2tgba -G -D '((p1) | (!(p3))) M (X(((p1) & (X(p2))) M (1)))' > 'lcr-o1-D0ruqH'
+Running [N2]: ltl2tgba -G -D '((p1) | (!(p3))) M (X(((p1) & (X(p2))) M (1)))' | autfilt --gsa=unique-fin > 'lcr-o2-uuyOpz'
+Running [N3]: ltl2tgba -G -D '((p1) | (!(p3))) M (X(((p1) & (X(p2))) M (1)))' | autfilt --gra=unique-inf > 'lcr-o3-rwNzWh'
+Running [N4]: ltl2tgba -G -D '((p1) | (!(p3))) M (X(((p1) & (X(p2))) M (1)))' | autfilt --gsa=share-fin > 'lcr-o4-HCFbzW'
+Running [N5]: ltl2tgba -G -D '((p1) | (!(p3))) M (X(((p1) & (X(p2))) M (1)))' | autfilt --gra=share-inf > 'lcr-o5-mLbYb0'
+Performing sanity checks and gathering statistics...
+
+-:97: F((p3) R ((p3) | ((p1) xor (F(p1)))))
+Running [P0]: ltl2tgba 'F((p3) R ((p3) | ((p1) xor (F(p1)))))' > 'lcr-o0-0WPfzP'
+Running [P1]: ltl2tgba -G -D 'F((p3) R ((p3) | ((p1) xor (F(p1)))))' > 'lcr-o1-0hJ8aI'
+Running [P2]: ltl2tgba -G -D 'F((p3) R ((p3) | ((p1) xor (F(p1)))))' | autfilt --gsa=unique-fin > 'lcr-o2-2s4SEI'
+Running [P3]: ltl2tgba -G -D 'F((p3) R ((p3) | ((p1) xor (F(p1)))))' | autfilt --gra=unique-inf > 'lcr-o3-17fHTw'
+Running [P4]: ltl2tgba -G -D 'F((p3) R ((p3) | ((p1) xor (F(p1)))))' | autfilt --gsa=share-fin > 'lcr-o4-9ToNAb'
+Running [P5]: ltl2tgba -G -D 'F((p3) R ((p3) | ((p1) xor (F(p1)))))' | autfilt --gra=share-inf > 'lcr-o5-kOWCWs'
+Running [N0]: ltl2tgba '!(F((p3) R ((p3) | ((p1) xor (F(p1))))))' > 'lcr-o0-YmoQXn'
+Running [N1]: ltl2tgba -G -D '!(F((p3) R ((p3) | ((p1) xor (F(p1))))))' > 'lcr-o1-vJaeel'
+Running [N2]: ltl2tgba -G -D '!(F((p3) R ((p3) | ((p1) xor (F(p1))))))' | autfilt --gsa=unique-fin > 'lcr-o2-JizBTV'
+Running [N3]: ltl2tgba -G -D '!(F((p3) R ((p3) | ((p1) xor (F(p1))))))' | autfilt --gra=unique-inf > 'lcr-o3-3sckUx'
+Running [N4]: ltl2tgba -G -D '!(F((p3) R ((p3) | ((p1) xor (F(p1))))))' | autfilt --gsa=share-fin > 'lcr-o4-KDjLdl'
+Running [N5]: ltl2tgba -G -D '!(F((p3) R ((p3) | ((p1) xor (F(p1))))))' | autfilt --gra=share-inf > 'lcr-o5-IpwzXJ'
+Performing sanity checks and gathering statistics...
+
+-:98: (G(p2)) R (F(p1))
+Running [P0]: ltl2tgba '(G(p2)) R (F(p1))' > 'lcr-o0-RMoUy6'
+Running [P1]: ltl2tgba -G -D '(G(p2)) R (F(p1))' > 'lcr-o1-pOqm6n'
+Running [P2]: ltl2tgba -G -D '(G(p2)) R (F(p1))' | autfilt --gsa=unique-fin > 'lcr-o2-y1IAmW'
+Running [P3]: ltl2tgba -G -D '(G(p2)) R (F(p1))' | autfilt --gra=unique-inf > 'lcr-o3-erIvHn'
+Running [P4]: ltl2tgba -G -D '(G(p2)) R (F(p1))' | autfilt --gsa=share-fin > 'lcr-o4-GNci4p'
+Running [P5]: ltl2tgba -G -D '(G(p2)) R (F(p1))' | autfilt --gra=share-inf > 'lcr-o5-p1PG1r'
+Running [N0]: ltl2tgba '!((G(p2)) R (F(p1)))' > 'lcr-o0-fFoicB'
+Running [N1]: ltl2tgba -G -D '!((G(p2)) R (F(p1)))' > 'lcr-o1-i4GymX'
+Running [N2]: ltl2tgba -G -D '!((G(p2)) R (F(p1)))' | autfilt --gsa=unique-fin > 'lcr-o2-oqx23o'
+Running [N3]: ltl2tgba -G -D '!((G(p2)) R (F(p1)))' | autfilt --gra=unique-inf > 'lcr-o3-RM1AfX'
+Running [N4]: ltl2tgba -G -D '!((G(p2)) R (F(p1)))' | autfilt --gsa=share-fin > 'lcr-o4-tNJkuh'
+Running [N5]: ltl2tgba -G -D '!((G(p2)) R (F(p1)))' | autfilt --gra=share-inf > 'lcr-o5-6ASgY1'
+Performing sanity checks and gathering statistics...
+
+-:99: (G(p2)) | ((F(!(X(p3)))) -> (X(p2)))
+Running [P0]: ltl2tgba '(G(p2)) | ((F(!(X(p3)))) -> (X(p2)))' > 'lcr-o0-Ul4qjM'
+Running [P1]: ltl2tgba -G -D '(G(p2)) | ((F(!(X(p3)))) -> (X(p2)))' > 'lcr-o1-sFqjZN'
+Running [P2]: ltl2tgba -G -D '(G(p2)) | ((F(!(X(p3)))) -> (X(p2)))' | autfilt --gsa=unique-fin > 'lcr-o2-whdBzT'
+Running [P3]: ltl2tgba -G -D '(G(p2)) | ((F(!(X(p3)))) -> (X(p2)))' | autfilt --gra=unique-inf > 'lcr-o3-PLnLZH'
+Running [P4]: ltl2tgba -G -D '(G(p2)) | ((F(!(X(p3)))) -> (X(p2)))' | autfilt --gsa=share-fin > 'lcr-o4-QjvdVq'
+Running [P5]: ltl2tgba -G -D '(G(p2)) | ((F(!(X(p3)))) -> (X(p2)))' | autfilt --gra=share-inf > 'lcr-o5-JUz4cn'
+Running [N0]: ltl2tgba '!((G(p2)) | ((F(!(X(p3)))) -> (X(p2))))' > 'lcr-o0-s70f6L'
+Running [N1]: ltl2tgba -G -D '!((G(p2)) | ((F(!(X(p3)))) -> (X(p2))))' > 'lcr-o1-sw58ir'
+Running [N2]: ltl2tgba -G -D '!((G(p2)) | ((F(!(X(p3)))) -> (X(p2))))' | autfilt --gsa=unique-fin > 'lcr-o2-T4TQAr'
+Running [N3]: ltl2tgba -G -D '!((G(p2)) | ((F(!(X(p3)))) -> (X(p2))))' | autfilt --gra=unique-inf > 'lcr-o3-zOMOCj'
+Running [N4]: ltl2tgba -G -D '!((G(p2)) | ((F(!(X(p3)))) -> (X(p2))))' | autfilt --gsa=share-fin > 'lcr-o4-YKjBZX'
+Running [N5]: ltl2tgba -G -D '!((G(p2)) | ((F(!(X(p3)))) -> (X(p2))))' | autfilt --gra=share-inf > 'lcr-o5-HaCrTv'
+Performing sanity checks and gathering statistics...
+
+-:100: F(((p3) -> (p2)) xor (F(p1)))
+Running [P0]: ltl2tgba 'F(((p3) -> (p2)) xor (F(p1)))' > 'lcr-o0-lLK3TG'
+Running [P1]: ltl2tgba -G -D 'F(((p3) -> (p2)) xor (F(p1)))' > 'lcr-o1-INvNPF'
+Running [P2]: ltl2tgba -G -D 'F(((p3) -> (p2)) xor (F(p1)))' | autfilt --gsa=unique-fin > 'lcr-o2-z5T6uC'
+Running [P3]: ltl2tgba -G -D 'F(((p3) -> (p2)) xor (F(p1)))' | autfilt --gra=unique-inf > 'lcr-o3-txFZ1p'
+Running [P4]: ltl2tgba -G -D 'F(((p3) -> (p2)) xor (F(p1)))' | autfilt --gsa=share-fin > 'lcr-o4-lrIqBW'
+Running [P5]: ltl2tgba -G -D 'F(((p3) -> (p2)) xor (F(p1)))' | autfilt --gra=share-inf > 'lcr-o5-YCx9dV'
+Running [N0]: ltl2tgba '!(F(((p3) -> (p2)) xor (F(p1))))' > 'lcr-o0-4LyaeU'
+Running [N1]: ltl2tgba -G -D '!(F(((p3) -> (p2)) xor (F(p1))))' > 'lcr-o1-64BL3q'
+Running [N2]: ltl2tgba -G -D '!(F(((p3) -> (p2)) xor (F(p1))))' | autfilt --gsa=unique-fin > 'lcr-o2-ii9Cur'
+Running [N3]: ltl2tgba -G -D '!(F(((p3) -> (p2)) xor (F(p1))))' | autfilt --gra=unique-inf > 'lcr-o3-hNHXYR'
+Running [N4]: ltl2tgba -G -D '!(F(((p3) -> (p2)) xor (F(p1))))' | autfilt --gsa=share-fin > 'lcr-o4-MtO4oh'
+Running [N5]: ltl2tgba -G -D '!(F(((p3) -> (p2)) xor (F(p1))))' | autfilt --gra=share-inf > 'lcr-o5-Q87kHa'
+Performing sanity checks and gathering statistics...
+
+X(X((F(G(p0))) & ((G(p2)) | (F(p1)))))
+Running [P0]: ltl2tgba 'X(X((F(G(p0))) & ((G(p2)) | (F(p1)))))' > 'lcr-o0-f36uaK'
+Running [P1]: ltl2tgba -G -D 'X(X((F(G(p0))) & ((G(p2)) | (F(p1)))))' > 'lcr-o1-NL8dVY'
+Running [P2]: ltl2tgba -G -D 'X(X((F(G(p0))) & ((G(p2)) | (F(p1)))))' | autfilt --gsa=unique-fin > 'lcr-o2-4bcSj9'
+Running [P3]: ltl2tgba -G -D 'X(X((F(G(p0))) & ((G(p2)) | (F(p1)))))' | autfilt --gra=unique-inf > 'lcr-o3-QfsW9f'
+Running [P4]: ltl2tgba -G -D 'X(X((F(G(p0))) & ((G(p2)) | (F(p1)))))' | autfilt --gsa=share-fin > 'lcr-o4-9j47vR'
+Running [P5]: ltl2tgba -G -D 'X(X((F(G(p0))) & ((G(p2)) | (F(p1)))))' | autfilt --gra=share-inf > 'lcr-o5-oh6MfE'
+Running [N0]: ltl2tgba '!(X(X((F(G(p0))) & ((G(p2)) | (F(p1))))))' > 'lcr-o0-71tHAd'
+Running [N1]: ltl2tgba -G -D '!(X(X((F(G(p0))) & ((G(p2)) | (F(p1))))))' > 'lcr-o1-t9bnHD'
+Running [N2]: ltl2tgba -G -D '!(X(X((F(G(p0))) & ((G(p2)) | (F(p1))))))' | autfilt --gsa=unique-fin > 'lcr-o2-bOcAhO'
+Running [N3]: ltl2tgba -G -D '!(X(X((F(G(p0))) & ((G(p2)) | (F(p1))))))' | autfilt --gra=unique-inf > 'lcr-o3-qFyb63'
+Running [N4]: ltl2tgba -G -D '!(X(X((F(G(p0))) & ((G(p2)) | (F(p1))))))' | autfilt --gsa=share-fin > 'lcr-o4-XyOOik'
+Running [N5]: ltl2tgba -G -D '!(X(X((F(G(p0))) & ((G(p2)) | (F(p1))))))' | autfilt --gra=share-inf > 'lcr-o5-CCV4MF'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
+PASS core/gragsa.test (exit status: 0)

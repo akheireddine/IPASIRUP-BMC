@@ -1,0 +1,14 @@
+HOA: v1.1
+States:3
+Start: 0
+AP: 3 "c" "b" "a"
+Acceptance: 1 Fin(0)
+spot.highlight.edges: 1 1 2 3 3 2
+--BODY--
+State: 0
+[0&1] 1&2
+State: 1
+[1&2] 1&2
+State: 2
+[!0&!1&!2] 1&2
+--END--

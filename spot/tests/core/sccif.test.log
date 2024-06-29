@@ -1,0 +1,48 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test sccif.test
+== Running test sccif.test
++ echo sccif.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=sccif
++ testSubDir=sccif.dir
++ chmod -R a+rwx sccif.dir
++ rm -rf sccif.dir
++ mkdir sccif.dir
++ cd sccif.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ run 0 ../sccif
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../sccif
++ cmd=../sccif
++ shift
++ test -n ../sccif
++ set ../sccif
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../sccif
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff expected stdout
+PASS core/sccif.test (exit status: 0)

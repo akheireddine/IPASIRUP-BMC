@@ -1,0 +1,304 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test sbacc.test
+== Running test sbacc.test
++ echo sbacc.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=sbacc
++ testSubDir=sbacc.dir
++ chmod -R a+rwx sbacc.dir
++ rm -rf sbacc.dir
++ mkdir sbacc.dir
++ cd sbacc.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltl2tgba GFa & GFb -H
++ run 0 autfilt --sbacc -H
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --sbacc -H
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --sbacc -H
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff out.hoa expected
++ cat
++ run 0 autfilt --state-based-acceptance in.hoa -H
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --state-based-acceptance in.hoa -H
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --state-based-acceptance in.hoa -H
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff out.hoa expected
++ autfilt --sbacc -H expected
++ diff out.hoa expected
++ autfilt --strip-acc -H expected -n1
++ cat
++ diff out.hoa expected
++ randltl --weak-fairness -n 20 2
++ ltlcross ltl2tgba -DH %f >%O ltl2tgba -S %f >%O ltl2tgba -H %f | autfilt -H >%O
+-:1: 0
+Running [P0]: ltl2tgba -DH '0' >'lcr-o0-4QfsSR'
+Running [P1]: ltl2tgba -S '0' >'lcr-o1-UEIuE6'
+Running [P2]: ltl2tgba -H '0' | autfilt -H >'lcr-o2-ZiLfGA'
+Running [N0]: ltl2tgba -DH '1' >'lcr-o0-UCEqd6'
+Running [N1]: ltl2tgba -S '1' >'lcr-o1-V8sIYx'
+Running [N2]: ltl2tgba -H '1' | autfilt -H >'lcr-o2-zTIc0w'
+Performing sanity checks and gathering statistics...
+
+-:2: (G(F(p0))) & (G(F(p1)))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1)))' >'lcr-o0-31QeMA'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1)))' >'lcr-o1-MCMeDO'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1)))' | autfilt -H >'lcr-o2-VKaaPd'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))))' >'lcr-o0-Fr11Xn'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))))' >'lcr-o1-E7DiOi'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))))' | autfilt -H >'lcr-o2-4sJHX6'
+Performing sanity checks and gathering statistics...
+
+-:3: (G(F(p0))) & (G(F(p1))) & (!(G((F(p0)) | (G(p0)))))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & (!(G((F(p0)) | (G(p0)))))' >'lcr-o0-IgBo2u'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & (!(G((F(p0)) | (G(p0)))))' >'lcr-o1-TjnpR8'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & (!(G((F(p0)) | (G(p0)))))' | autfilt -H >'lcr-o2-R6V5PS'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & (!(G((F(p0)) | (G(p0))))))' >'lcr-o0-NFRego'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & (!(G((F(p0)) | (G(p0))))))' >'lcr-o1-iAAtmg'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & (!(G((F(p0)) | (G(p0))))))' | autfilt -H >'lcr-o2-T3WTVv'
+Performing sanity checks and gathering statistics...
+
+-:4: (G(F(p0))) & (G(F(p1))) & ((X(p1)) <-> ((p1) <-> (X(p1))))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & ((X(p1)) <-> ((p1) <-> (X(p1))))' >'lcr-o0-fV5WZI'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & ((X(p1)) <-> ((p1) <-> (X(p1))))' >'lcr-o1-4HFUOL'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & ((X(p1)) <-> ((p1) <-> (X(p1))))' | autfilt -H >'lcr-o2-YOYfg6'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & ((X(p1)) <-> ((p1) <-> (X(p1)))))' >'lcr-o0-rmNnb4'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & ((X(p1)) <-> ((p1) <-> (X(p1)))))' >'lcr-o1-C8h2C5'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & ((X(p1)) <-> ((p1) <-> (X(p1)))))' | autfilt -H >'lcr-o2-VPjP8n'
+Performing sanity checks and gathering statistics...
+
+-:5: (G(F(p0))) & (G(F(p1))) & ((((X(p1)) W (0)) -> (p0)) R ((p1) W (0)))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & ((((X(p1)) W (0)) -> (p0)) R ((p1) W (0)))' >'lcr-o0-vI1z2G'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & ((((X(p1)) W (0)) -> (p0)) R ((p1) W (0)))' >'lcr-o1-y1c4rL'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & ((((X(p1)) W (0)) -> (p0)) R ((p1) W (0)))' | autfilt -H >'lcr-o2-VWqMFx'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & ((((X(p1)) W (0)) -> (p0)) R ((p1) W (0))))' >'lcr-o0-vsH3Rp'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & ((((X(p1)) W (0)) -> (p0)) R ((p1) W (0))))' >'lcr-o1-tcvzUu'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & ((((X(p1)) W (0)) -> (p0)) R ((p1) W (0))))' | autfilt -H >'lcr-o2-Vch8l5'
+Performing sanity checks and gathering statistics...
+
+-:6: (G(F(p0))) & (G(F(p1))) & (F((F(p1)) & ((G(p1)) W (p0))))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & (F((F(p1)) & ((G(p1)) W (p0))))' >'lcr-o0-jmHj5N'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & (F((F(p1)) & ((G(p1)) W (p0))))' >'lcr-o1-7CcxDq'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & (F((F(p1)) & ((G(p1)) W (p0))))' | autfilt -H >'lcr-o2-N0gpmc'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & (F((F(p1)) & ((G(p1)) W (p0)))))' >'lcr-o0-G7e3tf'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & (F((F(p1)) & ((G(p1)) W (p0)))))' >'lcr-o1-LeTcvp'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & (F((F(p1)) & ((G(p1)) W (p0)))))' | autfilt -H >'lcr-o2-f3FE0a'
+Performing sanity checks and gathering statistics...
+
+-:7: (G(F(p0))) & (G(F(p1))) & (!(F(X((F(p1)) W (p1)))))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & (!(F(X((F(p1)) W (p1)))))' >'lcr-o0-9jAxcI'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & (!(F(X((F(p1)) W (p1)))))' >'lcr-o1-PDifGG'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & (!(F(X((F(p1)) W (p1)))))' | autfilt -H >'lcr-o2-krFDEi'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & (!(F(X((F(p1)) W (p1))))))' >'lcr-o0-S6ApTn'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & (!(F(X((F(p1)) W (p1))))))' >'lcr-o1-41ydQG'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & (!(F(X((F(p1)) W (p1))))))' | autfilt -H >'lcr-o2-FVuZ0V'
+Performing sanity checks and gathering statistics...
+
+-:8: (G(F(p0))) & (G(F(p1))) & ((F(X(F(p1)))) -> (X((0))))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & ((F(X(F(p1)))) -> (X((0))))' >'lcr-o0-XL2NLn'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & ((F(X(F(p1)))) -> (X((0))))' >'lcr-o1-HrS2Jc'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & ((F(X(F(p1)))) -> (X((0))))' | autfilt -H >'lcr-o2-6Stvoo'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & ((F(X(F(p1)))) -> (X((0)))))' >'lcr-o0-0yEkXI'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & ((F(X(F(p1)))) -> (X((0)))))' >'lcr-o1-CQijtS'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & ((F(X(F(p1)))) -> (X((0)))))' | autfilt -H >'lcr-o2-N0BLpM'
+Performing sanity checks and gathering statistics...
+
+-:9: (G(F(p0))) & (G(F(p1))) & ((p1) xor (((F(p1)) W (X(p0))) -> ((X((p1) W (p0))) U (F(p0)))))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & ((p1) xor (((F(p1)) W (X(p0))) -> ((X((p1) W (p0))) U (F(p0)))))' >'lcr-o0-VOwkxY'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & ((p1) xor (((F(p1)) W (X(p0))) -> ((X((p1) W (p0))) U (F(p0)))))' >'lcr-o1-Xn7CBl'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & ((p1) xor (((F(p1)) W (X(p0))) -> ((X((p1) W (p0))) U (F(p0)))))' | autfilt -H >'lcr-o2-IDa3Ud'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & ((p1) xor (((F(p1)) W (X(p0))) -> ((X((p1) W (p0))) U (F(p0))))))' >'lcr-o0-LyfIZi'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & ((p1) xor (((F(p1)) W (X(p0))) -> ((X((p1) W (p0))) U (F(p0))))))' >'lcr-o1-Lnkqc5'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & ((p1) xor (((F(p1)) W (X(p0))) -> ((X((p1) W (p0))) U (F(p0))))))' | autfilt -H >'lcr-o2-7RIW02'
+Performing sanity checks and gathering statistics...
+
+-:10: (G(F(p0))) & (G(F(p1))) & ((p0) <-> (G(!(p1))))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & ((p0) <-> (G(!(p1))))' >'lcr-o0-5eXIcu'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & ((p0) <-> (G(!(p1))))' >'lcr-o1-qZPORp'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & ((p0) <-> (G(!(p1))))' | autfilt -H >'lcr-o2-wmrqZ8'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & ((p0) <-> (G(!(p1)))))' >'lcr-o0-FIVLVe'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & ((p0) <-> (G(!(p1)))))' >'lcr-o1-wE2BOx'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & ((p0) <-> (G(!(p1)))))' | autfilt -H >'lcr-o2-GT7EOr'
+Performing sanity checks and gathering statistics...
+
+-:11: (G(F(p0))) & (G(F(p1))) & ((!((G(!(p0))) W (p1))) R (X(p1)))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & ((!((G(!(p0))) W (p1))) R (X(p1)))' >'lcr-o0-q0kdTM'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & ((!((G(!(p0))) W (p1))) R (X(p1)))' >'lcr-o1-IMEW0O'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & ((!((G(!(p0))) W (p1))) R (X(p1)))' | autfilt -H >'lcr-o2-9SiPWM'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & ((!((G(!(p0))) W (p1))) R (X(p1))))' >'lcr-o0-wYgKxG'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & ((!((G(!(p0))) W (p1))) R (X(p1))))' >'lcr-o1-6zuZWH'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & ((!((G(!(p0))) W (p1))) R (X(p1))))' | autfilt -H >'lcr-o2-RAjj31'
+Performing sanity checks and gathering statistics...
+
+-:12: (G(F(p0))) & (G(F(p1))) & ((X((0))) xor (X(p0)))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & ((X((0))) xor (X(p0)))' >'lcr-o0-4ruKJ7'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & ((X((0))) xor (X(p0)))' >'lcr-o1-CoV91I'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & ((X((0))) xor (X(p0)))' | autfilt -H >'lcr-o2-K8Z2N2'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & ((X((0))) xor (X(p0))))' >'lcr-o0-L4DR42'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & ((X((0))) xor (X(p0))))' >'lcr-o1-fE3hK1'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & ((X((0))) xor (X(p0))))' | autfilt -H >'lcr-o2-9WF0aC'
+Performing sanity checks and gathering statistics...
+
+-:13: (G(F(p0))) & (G(F(p1))) & (!((X(X(p1))) & (G((p1) W (p0)))))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & (!((X(X(p1))) & (G((p1) W (p0)))))' >'lcr-o0-HCj02h'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & (!((X(X(p1))) & (G((p1) W (p0)))))' >'lcr-o1-YYJSwZ'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & (!((X(X(p1))) & (G((p1) W (p0)))))' | autfilt -H >'lcr-o2-hvmzs0'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & (!((X(X(p1))) & (G((p1) W (p0))))))' >'lcr-o0-T9voIH'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & (!((X(X(p1))) & (G((p1) W (p0))))))' >'lcr-o1-iEqbOX'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & (!((X(X(p1))) & (G((p1) W (p0))))))' | autfilt -H >'lcr-o2-FoxN54'
+Performing sanity checks and gathering statistics...
+
+-:14: (G(F(p0))) & (G(F(p1))) & (X((0)))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & (X((0)))' >'lcr-o0-2rXGJS'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & (X((0)))' >'lcr-o1-ySvG0j'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & (X((0)))' | autfilt -H >'lcr-o2-U1VB4o'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & (X((0))))' >'lcr-o0-EFgUfe'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & (X((0))))' >'lcr-o1-26hfoW'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & (X((0))))' | autfilt -H >'lcr-o2-QcdkAt'
+Performing sanity checks and gathering statistics...
+
+-:15: (G(F(p0))) & (G(F(p1))) & ((p1) W (p0))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & ((p1) W (p0))' >'lcr-o0-49hN1J'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & ((p1) W (p0))' >'lcr-o1-BNLfMj'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & ((p1) W (p0))' | autfilt -H >'lcr-o2-zHJRtG'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & ((p1) W (p0)))' >'lcr-o0-wRC5jP'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & ((p1) W (p0)))' >'lcr-o1-MWFU6u'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & ((p1) W (p0)))' | autfilt -H >'lcr-o2-jtRCq4'
+Performing sanity checks and gathering statistics...
+
+-:16: (G(F(p0))) & (G(F(p1))) & ((F(p0)) <-> (((F(p0)) M (p1)) R (p1)))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & ((F(p0)) <-> (((F(p0)) M (p1)) R (p1)))' >'lcr-o0-S9vOIt'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & ((F(p0)) <-> (((F(p0)) M (p1)) R (p1)))' >'lcr-o1-BCKikf'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & ((F(p0)) <-> (((F(p0)) M (p1)) R (p1)))' | autfilt -H >'lcr-o2-bPvpkd'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & ((F(p0)) <-> (((F(p0)) M (p1)) R (p1))))' >'lcr-o0-hwUDYi'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & ((F(p0)) <-> (((F(p0)) M (p1)) R (p1))))' >'lcr-o1-is6IAE'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & ((F(p0)) <-> (((F(p0)) M (p1)) R (p1))))' | autfilt -H >'lcr-o2-CU7I0L'
+Performing sanity checks and gathering statistics...
+
+-:17: (G(F(p0))) & (G(F(p1))) & (X((!((!(p1)) | (F(X(p0))))) -> (X(X(p0)))))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & (X((!((!(p1)) | (F(X(p0))))) -> (X(X(p0)))))' >'lcr-o0-5bF0YF'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & (X((!((!(p1)) | (F(X(p0))))) -> (X(X(p0)))))' >'lcr-o1-2exQzY'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & (X((!((!(p1)) | (F(X(p0))))) -> (X(X(p0)))))' | autfilt -H >'lcr-o2-xRo6Y4'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & (X((!((!(p1)) | (F(X(p0))))) -> (X(X(p0))))))' >'lcr-o0-tHsgQB'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & (X((!((!(p1)) | (F(X(p0))))) -> (X(X(p0))))))' >'lcr-o1-Cad5dv'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & (X((!((!(p1)) | (F(X(p0))))) -> (X(X(p0))))))' | autfilt -H >'lcr-o2-jyuVQL'
+Performing sanity checks and gathering statistics...
+
+-:18: (G(F(p0))) & (G(F(p1))) & (((G(p0)) M ((!(p1)) xor ((p0) W ((G(p0)) M (1))))) W (F(p0)))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & (((G(p0)) M ((!(p1)) xor ((p0) W ((G(p0)) M (1))))) W (F(p0)))' >'lcr-o0-LgHt0J'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & (((G(p0)) M ((!(p1)) xor ((p0) W ((G(p0)) M (1))))) W (F(p0)))' >'lcr-o1-y7r79r'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & (((G(p0)) M ((!(p1)) xor ((p0) W ((G(p0)) M (1))))) W (F(p0)))' | autfilt -H >'lcr-o2-jFlD0T'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & (((G(p0)) M ((!(p1)) xor ((p0) W ((G(p0)) M (1))))) W (F(p0))))' >'lcr-o0-mNhT8l'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & (((G(p0)) M ((!(p1)) xor ((p0) W ((G(p0)) M (1))))) W (F(p0))))' >'lcr-o1-JFkeOK'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & (((G(p0)) M ((!(p1)) xor ((p0) W ((G(p0)) M (1))))) W (F(p0))))' | autfilt -H >'lcr-o2-hU4vGI'
+Performing sanity checks and gathering statistics...
+
+-:19: (G(F(p0))) & (G(F(p1))) & (F(G((X((0))) M (1))))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & (F(G((X((0))) M (1))))' >'lcr-o0-RSOzR1'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & (F(G((X((0))) M (1))))' >'lcr-o1-AwJU5d'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & (F(G((X((0))) M (1))))' | autfilt -H >'lcr-o2-wW0Dx9'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & (F(G((X((0))) M (1)))))' >'lcr-o0-FHk0j0'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & (F(G((X((0))) M (1)))))' >'lcr-o1-Ay429R'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & (F(G((X((0))) M (1)))))' | autfilt -H >'lcr-o2-4a6khC'
+Performing sanity checks and gathering statistics...
+
+-:20: (G(F(p0))) & (G(F(p1))) & (!((0) R (G(p1))))
+Running [P0]: ltl2tgba -DH '(G(F(p0))) & (G(F(p1))) & (!((0) R (G(p1))))' >'lcr-o0-u8COSA'
+Running [P1]: ltl2tgba -S '(G(F(p0))) & (G(F(p1))) & (!((0) R (G(p1))))' >'lcr-o1-zesiv3'
+Running [P2]: ltl2tgba -H '(G(F(p0))) & (G(F(p1))) & (!((0) R (G(p1))))' | autfilt -H >'lcr-o2-mgLd8D'
+Running [N0]: ltl2tgba -DH '!((G(F(p0))) & (G(F(p1))) & (!((0) R (G(p1)))))' >'lcr-o0-FzRV71'
+Running [N1]: ltl2tgba -S '!((G(F(p0))) & (G(F(p1))) & (!((0) R (G(p1)))))' >'lcr-o1-evG4qx'
+Running [N2]: ltl2tgba -H '!((G(F(p0))) & (G(F(p1))) & (!((0) R (G(p1)))))' | autfilt -H >'lcr-o2-MxXAtl'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
++ ltl2tgba -S F(a & X(!a &Xb)) --any --stats=%s
++ test 4 = 4
++ autcross autfilt --sbacc --language-preserve
+-:1.1-23.7
+Running [A0]: autfilt --sbacc 'lcr-i0-EMHjfC'>'lcr-o0-KPQO5c'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
++ cat
++ cat
++ autfilt --sbacc taut.hoa
++ diff out.hoa expect.hoa
++ cat
++ cat
++ autfilt --sbacc alt.hoa
++ diff out.hoa expect.hoa
++ autfilt -S
++ autfilt --is-complete
+HOA: v1
+States: 1
+Start: 0
+AP: 0
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic
+--BODY--
+State: 0 {0}
+[t] 0
+--END--
++ + autfilt -Sautfilt
+ --is-deterministic
+HOA: v1
+States: 1
+Start: 0
+AP: 1 "a"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc colored
+properties: deterministic
+--BODY--
+State: 0 {0}
+[0] 0
+--END--
++ autfilt -S
++ cat
++ diff out exp
+PASS core/sbacc.test (exit status: 0)

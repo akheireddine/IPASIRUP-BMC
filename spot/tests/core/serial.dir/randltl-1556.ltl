@@ -1,0 +1,1 @@
+p1 xor ((0 R p0) M ((p1 & !p1) xor Xp1))

@@ -1,0 +1,662 @@
+digraph G {
+  subgraph atoms {
+     rank=sink
+    0 [label="ff", shape=box];
+  }
+}
+digraph G {
+  subgraph atoms {
+     rank=sink
+    0 [label="tt", shape=box];
+  }
+}
+digraph G {
+  subgraph atoms {
+     rank=sink
+    0 [label="tt", shape=box];
+  }
+}
+digraph G {
+  subgraph atoms {
+     rank=sink
+    0 [label="ff", shape=box];
+  }
+}
+digraph G {
+  subgraph atoms {
+     rank=sink
+    0 [label="a", shape=box];
+  }
+}
+digraph G {
+  subgraph atoms {
+     rank=sink
+    0 [label="p11011", shape=box];
+  }
+}
+digraph G {
+  subgraph atoms {
+     rank=sink
+    0 [label="p11011", shape=box];
+  }
+}
+digraph G {
+  0 [label="And"];
+  0 -> 1;
+  0 -> 2;
+  subgraph atoms {
+     rank=sink
+    1 [label="a", shape=box];
+    2 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="And"];
+  0 -> 1;
+  0 -> 2;
+  subgraph atoms {
+     rank=sink
+    1 [label="_b12", shape=box];
+    2 [label="a", shape=box];
+  }
+}
+digraph G {
+  0 [label="And"];
+  0 -> 1;
+  0 -> 2;
+  subgraph atoms {
+     rank=sink
+    1 [label=".b.", shape=box];
+    2 [label="a", shape=box];
+  }
+}
+digraph G {
+  0 [label="Or"];
+  0 -> 1;
+  0 -> 2;
+  subgraph atoms {
+     rank=sink
+    1 [label="a", shape=box];
+    2 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="Or"];
+  0 -> 1;
+  0 -> 2;
+  subgraph atoms {
+     rank=sink
+    1 [label="a3214", shape=box];
+    2 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="And"];
+  0 -> 1;
+  0 -> 2;
+  subgraph atoms {
+     rank=sink
+    1 [label="a", shape=box];
+    2 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="Or"];
+  0 -> 1;
+  0 -> 2;
+  subgraph atoms {
+     rank=sink
+    1 [label="a", shape=box];
+    2 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="Or"];
+  0 -> 1;
+  0 -> 2;
+  subgraph atoms {
+     rank=sink
+    1 [label="a", shape=box];
+    2 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="Or"];
+  0 -> 1;
+  0 -> 2;
+  subgraph atoms {
+     rank=sink
+    1 [label="a", shape=box];
+    2 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="U"];
+  0 -> 1 [taillabel="L"];
+  0 -> 2 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    1 [label="_a_", shape=box];
+    2 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="R"];
+  0 -> 1 [taillabel="L"];
+  0 -> 2 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    1 [label="a", shape=box];
+    2 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="Equiv"];
+  0 -> 1 [taillabel="L"];
+  0 -> 2 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    1 [label="a", shape=box];
+    2 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="Equiv"];
+  0 -> 1 [taillabel="L"];
+  0 -> 2 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    1 [label="a", shape=box];
+    2 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="Xor"];
+  0 -> 1 [taillabel="L"];
+  0 -> 2 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    1 [label="a", shape=box];
+    2 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="Xor"];
+  0 -> 1 [taillabel="L"];
+  0 -> 2 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    1 [label="a", shape=box];
+    2 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="Implies"];
+  0 -> 1 [taillabel="L"];
+  0 -> 2 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    1 [label="a", shape=box];
+    2 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="Implies"];
+  0 -> 1 [taillabel="L"];
+  0 -> 2 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    1 [label="a", shape=box];
+    2 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="F"];
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    1 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="G"];
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    1 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="G"];
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    1 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="Not"];
+  1 [label="G"];
+  2 [label="Not"];
+  2 -> 3;
+  1 -> 2;
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    3 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="Not"];
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    1 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="G"];
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    1 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="F"];
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    1 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="X"];
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    1 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="X"];
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    1 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="X"];
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    1 [label="X", shape=box];
+  }
+}
+digraph G {
+  0 [label="X"];
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    1 [label="F", shape=box];
+  }
+}
+digraph G {
+  0 [label="X"];
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    1 [label="G", shape=box];
+  }
+}
+digraph G {
+  0 [label="X"];
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    1 [label="U", shape=box];
+  }
+}
+digraph G {
+  0 [label="X"];
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    1 [label="W", shape=box];
+  }
+}
+digraph G {
+  0 [label="X"];
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    1 [label="R", shape=box];
+  }
+}
+digraph G {
+  0 [label="X"];
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    1 [label="M", shape=box];
+  }
+}
+digraph G {
+  0 [label="U"];
+  0 -> 1 [taillabel="L"];
+  0 -> 2 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    1 [label="long_atomic_proposition_1", shape=box];
+    2 [label="long_atomic_proposition_2", shape=box];
+  }
+}
+digraph G {
+  0 [label="Or"];
+  1 [label="Xor"];
+  1 -> 2 [taillabel="L"];
+  1 -> 3 [taillabel="R"];
+  0 -> 1;
+  4 [label="And"];
+  4 -> 5;
+  4 -> 6;
+  0 -> 4;
+  subgraph atoms {
+     rank=sink
+    2 [label="ad", shape=box];
+    3 [label="af", shape=box];
+    5 [label="ab", shape=box];
+    6 [label="ac", shape=box];
+  }
+}
+digraph G {
+  0 [label="And"];
+  0 -> 1;
+  2 [label="Or"];
+  2 -> 3;
+  4 [label="And"];
+  4 -> 3;
+  4 -> 5;
+  2 -> 4;
+  0 -> 2;
+  subgraph atoms {
+     rank=sink
+    1 [label="d", shape=box];
+    3 [label="a", shape=box];
+    5 [label="b", shape=box];
+  }
+}
+digraph G {
+  0 [label="Equiv"];
+  0 -> 1 [taillabel="L"];
+  2 [label="Or"];
+  2 -> 3;
+  4 [label="And"];
+  4 -> 5;
+  4 -> 6;
+  2 -> 4;
+  0 -> 2 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    1 [label="af", shape=box];
+    3 [label="ad", shape=box];
+    5 [label="ab", shape=box];
+    6 [label="ac", shape=box];
+  }
+}
+digraph G {
+  0 [label="U"];
+  0 -> 1 [taillabel="L"];
+  2 [label="U"];
+  2 -> 3 [taillabel="L"];
+  4 [label="U"];
+  4 -> 5 [taillabel="L"];
+  6 [label="U"];
+  6 -> 7 [taillabel="L"];
+  8 [label="U"];
+  8 -> 9 [taillabel="L"];
+  10 [label="U"];
+  10 -> 11 [taillabel="L"];
+  12 [label="U"];
+  12 -> 13 [taillabel="L"];
+  14 [label="U"];
+  14 -> 15 [taillabel="L"];
+  16 [label="U"];
+  16 -> 17 [taillabel="L"];
+  18 [label="U"];
+  18 -> 19 [taillabel="L"];
+  20 [label="U"];
+  20 -> 21 [taillabel="L"];
+  22 [label="U"];
+  22 -> 23 [taillabel="L"];
+  22 -> 24 [taillabel="R"];
+  20 -> 22 [taillabel="R"];
+  18 -> 20 [taillabel="R"];
+  16 -> 18 [taillabel="R"];
+  14 -> 16 [taillabel="R"];
+  12 -> 14 [taillabel="R"];
+  10 -> 12 [taillabel="R"];
+  8 -> 10 [taillabel="R"];
+  6 -> 8 [taillabel="R"];
+  4 -> 6 [taillabel="R"];
+  2 -> 4 [taillabel="R"];
+  0 -> 2 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    1 [label="a", shape=box];
+    3 [label="b", shape=box];
+    5 [label="c", shape=box];
+    7 [label="d", shape=box];
+    9 [label="e", shape=box];
+    11 [label="f", shape=box];
+    13 [label="g", shape=box];
+    15 [label="h", shape=box];
+    17 [label="i", shape=box];
+    19 [label="j", shape=box];
+    21 [label="k", shape=box];
+    23 [label="l", shape=box];
+    24 [label="m", shape=box];
+  }
+}
+digraph G {
+  0 [label="And"];
+  1 [label="F"];
+  2 [label="G"];
+  2 -> 3;
+  1 -> 2;
+  0 -> 1;
+  4 [label="Or"];
+  5 [label="U"];
+  5 -> 6 [taillabel="L"];
+  5 -> 7 [taillabel="R"];
+  4 -> 5;
+  8 [label="And"];
+  8 -> 7;
+  9 [label="Not"];
+  10 [label="X"];
+  10 -> 6;
+  9 -> 10;
+  8 -> 9;
+  4 -> 8;
+  0 -> 4;
+  11 [label="G"];
+  12 [label="F"];
+  12 -> 13;
+  11 -> 12;
+  0 -> 11;
+  subgraph atoms {
+     rank=sink
+    3 [label="p12", shape=box];
+    6 [label="ad", shape=box];
+    7 [label="ab", shape=box];
+    13 [label="p13", shape=box];
+  }
+}
+digraph G {
+  0 [label="G"];
+  1 [label="F"];
+  2 [label="X"];
+  2 -> 3;
+  1 -> 2;
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    3 [label="p12", shape=box];
+  }
+}
+digraph G {
+  0 [label="R"];
+  0 -> 1 [taillabel="L"];
+  2 [label="R"];
+  2 -> 3 [taillabel="L"];
+  2 -> 4 [taillabel="R"];
+  0 -> 2 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    1 [label="a", shape=box];
+    3 [label="ome", shape=box];
+    4 [label="anille", shape=box];
+  }
+}
+digraph G {
+  0 [label="U"];
+  1 [label="Not"];
+  1 -> 2;
+  0 -> 1 [taillabel="L"];
+  0 -> 3 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    2 [label="p", shape=box];
+    3 [label="q", shape=box];
+  }
+}
+digraph G {
+  0 [label="U"];
+  1 [label="Or"];
+  2 [label="Not"];
+  2 -> 3;
+  1 -> 2;
+  4 [label="R"];
+  4 -> 3 [taillabel="L"];
+  4 -> 5 [taillabel="R"];
+  1 -> 4;
+  0 -> 1 [taillabel="L"];
+  6 [label="X"];
+  7 [label="Not"];
+  7 -> 5;
+  6 -> 7;
+  0 -> 6 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    3 [label="p", shape=box];
+    5 [label="q", shape=box];
+  }
+}
+digraph G {
+  0 [label="U"];
+  1 [label="And"];
+  2 [label="Not"];
+  2 -> 3;
+  1 -> 2;
+  4 [label="R"];
+  4 -> 3 [taillabel="L"];
+  4 -> 5 [taillabel="R"];
+  1 -> 4;
+  0 -> 1 [taillabel="L"];
+  6 [label="X"];
+  7 [label="Not"];
+  7 -> 5;
+  6 -> 7;
+  0 -> 6 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    3 [label="p", shape=box];
+    5 [label="q", shape=box];
+  }
+}
+digraph G {
+  0 [label="U"];
+  1 [label="And"];
+  2 [label="G"];
+  2 -> 3;
+  1 -> 2;
+  4 [label="F"];
+  5 [label="Not"];
+  5 -> 6;
+  4 -> 5;
+  1 -> 4;
+  0 -> 1 [taillabel="L"];
+  7 [label="X"];
+  8 [label="Not"];
+  8 -> 3;
+  7 -> 8;
+  0 -> 7 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    3 [label="q", shape=box];
+    6 [label="p", shape=box];
+  }
+}
+digraph G {
+  0 [label="R"];
+  1 [label="Or"];
+  2 [label="Not"];
+  2 -> 3;
+  1 -> 2;
+  4 [label="W"];
+  5 [label="M"];
+  5 -> 3 [taillabel="L"];
+  5 -> 6 [taillabel="R"];
+  4 -> 5 [taillabel="L"];
+  4 -> 7 [taillabel="R"];
+  1 -> 4;
+  0 -> 1 [taillabel="L"];
+  8 [label="X"];
+  9 [label="Not"];
+  9 -> 6;
+  8 -> 9;
+  0 -> 8 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    3 [label="p", shape=box];
+    6 [label="q", shape=box];
+    7 [label="x", shape=box];
+  }
+}
+digraph G {
+  0 [label="W"];
+  1 [label="Or"];
+  2 [label="Not"];
+  2 -> 3;
+  1 -> 2;
+  4 [label="R"];
+  5 [label="R"];
+  5 -> 3 [taillabel="L"];
+  5 -> 6 [taillabel="R"];
+  4 -> 5 [taillabel="L"];
+  4 -> 7 [taillabel="R"];
+  1 -> 4;
+  0 -> 1 [taillabel="L"];
+  8 [label="X"];
+  9 [label="Not"];
+  9 -> 6;
+  8 -> 9;
+  0 -> 8 [taillabel="R"];
+  subgraph atoms {
+     rank=sink
+    3 [label="p", shape=box];
+    6 [label="q", shape=box];
+    7 [label="x", shape=box];
+  }
+}
+digraph G {
+  0 [label="X"];
+  1 [label="Not"];
+  1 -> 2;
+  0 -> 1;
+  subgraph atoms {
+     rank=sink
+    2 [label="p2", shape=box];
+  }
+}

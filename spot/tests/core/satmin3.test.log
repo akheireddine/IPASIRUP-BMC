@@ -1,0 +1,43 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test satmin3.test
+== Running test satmin3.test
++ echo satmin3.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=satmin3
++ testSubDir=satmin3.dir
++ chmod -R a+rwx satmin3.dir
++ rm -rf satmin3.dir
++ mkdir satmin3.dir
++ cd satmin3.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ SPOT_SATSOLVER=false autfilt --sat-minimize test.hoa --stats=%s
++ grep autfilt: SPOT_SATSOLVER should use %I err
+autfilt: SPOT_SATSOLVER should use %I as input filename.
++ SPOT_SATSOLVER=false %I autfilt --sat-minimize test.hoa --stats=%s
++ grep autfilt: SPOT_SATSOLVER should use %O err
+autfilt: SPOT_SATSOLVER should use %O as output filename.
++ SPOT_SATSOLVER=false %I %O autfilt --sat-minimize test.hoa --stats=%s
++ cat output
++ test 3 = 3
++ SPOT_SATSOLVER=this-does-not-exist %I %O autfilt --sat-minimize test.hoa --stats=%s
++ grep this-does-not-exist.*failed err
+autfilt: this-does-not-exist sat-iz5sNZ.cnf sat-ZCCQG1.out: failed to execute
++ exit 77
+SKIP core/satmin3.test (exit status: 77)

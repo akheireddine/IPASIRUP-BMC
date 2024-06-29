@@ -1,0 +1,274 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test alternating.test
+== Running test alternating.test
++ echo alternating.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=alternating
++ testSubDir=alternating.dir
++ chmod -R a+rwx alternating.dir
++ rm -rf alternating.dir
++ mkdir alternating.dir
++ cd alternating.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ autfilt --stats=%u %[s]u %[e]u alt.hoa
++ test 1 2 4 = 1 2 4
++ autfilt --has-univ-branch --has-exist-branch --dot=bansi alt.hoa
++ aho=arrowhead=onormal
++ b=style=bold,
++ tE=tooltip="\\E
++ cat
++ diff expect.dot alt.dot
++ autfilt --trust=no --check=strength alt.hoa
++ grep properties:
++ cat
++ diff output expected
++ cat
++ autfilt --stats=%s out.hoa
++ test 3 = 3
++ autfilt --tgba --stats=%s out.hoa
++ test 2 = 2
++ autfilt --remove-fin out.hoa
++ cat
++ diff expected res
++ autfilt --remove-fin --trust-hoa=no out.hoa
++ cat
++ diff expected res
++ cat
++ cat
++ cat
++ autfilt --has-exist-branch ex3
++ autfilt -q --equivalent-to=ex1 ex2
++ autfilt -q --included-in=ex1 ex2
++ autfilt -q --equivalent-to=ex1 ex3
++ autfilt -q --intersect=ex1 ex3
++ cat
++ cat
++ cat
++ run 0 autfilt --remove-unreachable-states ex4
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --remove-unreachable-states ex4
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --remove-unreachable-states ex4
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff expect4 out4
++ run 0 autfilt --remove-dead-states ex4
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --remove-dead-states ex4
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --remove-dead-states ex4
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff expect4d out4
++ cat
++ run 0 autfilt --remove-dead-states ex5
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --remove-dead-states ex5
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --remove-dead-states ex5
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff out5 expect
++ cat
++ run 0 autfilt --dot=baryf(Lato) ex6
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --dot=baryf(Lato) ex6
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --dot=baryf(Lato) ex6
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff ex6.dot expect6.dot
++ cat
++ run 0 autfilt --dot=sbarf(Lato) ex7
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --dot=sbarf(Lato) ex7
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --dot=sbarf(Lato) ex7
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ color=<font color="#1F78B4">⓿</font>
++ color1=<font color="#FF4DA0">❶</font>
++ cat
++ diff ex7.dot expect7.dot
++ cat
++ run 0 autfilt --has-exist-branch --dot=sbarf(Lato) ex8
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --has-exist-branch --dot=sbarf(Lato) ex8
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --has-exist-branch --dot=sbarf(Lato) ex8
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff ex8.dot expect8.dot
++ cat
++ run 0 autfilt -v --has-exist-branch --dot=baryf(Lato) ex9
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -v --has-exist-branch --dot=baryf(Lato) ex9
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -v --has-exist-branch --dot=baryf(Lato) ex9
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff ex9.dot expect9.dot
++ cat
++ run 0 autfilt --dot=baryf(Lato) ex10
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --dot=baryf(Lato) ex10
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --dot=baryf(Lato) ex10
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff ex10.dot expect10.dot
++ cat
++ run 2 autfilt --dot=sbarf(Lato) ex11
++ expected_exitcode=2
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --dot=sbarf(Lato) ex11
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --dot=sbarf(Lato) ex11
+ex11:15.13: number is larger than the count of acceptance sets...
+ex11:7.1-13: ... declared here.
++ exitcode=2
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 2 = 2
++ cat
++ diff ex11.dot expect11.dot
++ cat
++ autfilt --tgba in
++ grep autfilt.*weak.*alternating out
+autfilt: remove_alternation() only works with weak alternating automata
++ autfilt --stats=%[Wiw]c %[w]c %[iw]c %[W]c in
++ test 0 2 2 1 = 0 2 2 1
++ cat
++ autfilt --tgba in
++ grep autfilt.*weak.*alternating out
+autfilt: remove_alternation() only works with weak alternating automata
++ autfilt --stats=%[Wiw]c %[w]c %[iw]c %[W]c in
++ test 2 0 2 2 = 2 0 2 2
++ cat
++ autfilt --stats=%[iw]c %[W]c %[c]c %[C]c %[t]c in
++ test 0 1 1 0 0 = 0 1 1 0 0
++ cat
++ autfilt --stats=%[iw]c %[W]c %[c]c %[C]c %[t]c in
++ test 1 1 1 1 0 = 1 1 1 1 0
++ cat
++ stats=%[iw]c_%[W]c_%[c]c_%[C]c_%[t]c_%U_%[e]U_%[s]U
++ autfilt --stats=%[iw]c_%[W]c_%[c]c_%[C]c_%[t]c_%U_%[e]U_%[s]U in
++ test 2_0_1_1_1_1_3_3 = 2_0_1_1_1_1_3_3
++ autfilt --stats=%[x]U in
++ grep %\[x\]U stderr
+autfilt: unknown option 'x' in '%[x]U'
++ cat
++ autfilt -du in
++ cat
++ diff out.dot exp.dot
+PASS core/alternating.test (exit status: 0)

@@ -1,0 +1,1049 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test rabin2parity.test
+== Running test rabin2parity.test
++ echo rabin2parity.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=rabin2parity
++ testSubDir=rabin2parity.dir
++ chmod -R a+rwx rabin2parity.dir
++ rm -rf rabin2parity.dir
++ mkdir rabin2parity.dir
++ cd rabin2parity.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ autcross autfilt --parity autfilt
++ randaut 4 -n100 -u -D --acceptance=Rabin 0..6
+-:1.1-16.7	FXGa
+Running [A0]: autfilt --parity 'lcr-i0-NXeKgu'>'lcr-o0-NY5cOF'
+Running [A1]: autfilt 'lcr-i0-w5MzXX'>'lcr-o1-dSIlr7'
+Performing sanity checks and gathering statistics...
+
+-:17.1-28.7
+Running [A0]: autfilt --parity 'lcr-i1-Yz4Vv8'>'lcr-o0-LUNFuk'
+Running [A1]: autfilt 'lcr-i1-aiDTlj'>'lcr-o1-IlPzl4'
+Performing sanity checks and gathering statistics...
+
+-:29.1-45.7
+Running [A0]: autfilt --parity 'lcr-i2-JYMbD6'>'lcr-o0-RMm9BO'
+Running [A1]: autfilt 'lcr-i2-ViHo17'>'lcr-o1-X42S5D'
+Performing sanity checks and gathering statistics...
+
+-:46.1-96.7
+Running [A0]: autfilt --parity 'lcr-i3-BaW9Jd'>'lcr-o0-8VXnhm'
+Running [A1]: autfilt 'lcr-i3-8T8zEq'>'lcr-o1-aGdFOt'
+Performing sanity checks and gathering statistics...
+
+-:97.1-150.7
+Running [A0]: autfilt --parity 'lcr-i4-MBpYb9'>'lcr-o0-kFuSdr'
+Running [A1]: autfilt 'lcr-i4-Hf0hOG'>'lcr-o1-DIaTEB'
+Performing sanity checks and gathering statistics...
+
+-:151.1-203.7
+Running [A0]: autfilt --parity 'lcr-i5-JBeOBS'>'lcr-o0-QELy6j'
+Running [A1]: autfilt 'lcr-i5-fsavxN'>'lcr-o1-HRKTcf'
+Performing sanity checks and gathering statistics...
+
+-:204.1-250.7
+Running [A0]: autfilt --parity 'lcr-i6-LnEIGn'>'lcr-o0-WgLdp4'
+Running [A1]: autfilt 'lcr-i6-M7tyaV'>'lcr-o1-H6BBEH'
+Performing sanity checks and gathering statistics...
+
+-:251.1-295.7
+Running [A0]: autfilt --parity 'lcr-i7-3qxpVe'>'lcr-o0-ICBwnR'
+Running [A1]: autfilt 'lcr-i7-PPKfIj'>'lcr-o1-IZtdy9'
+Performing sanity checks and gathering statistics...
+
+-:296.1-350.7
+Running [A0]: autfilt --parity 'lcr-i8-18BldZ'>'lcr-o0-bqtQ3d'
+Running [A1]: autfilt 'lcr-i8-9l2vZ4'>'lcr-o1-q1Iyfp'
+Performing sanity checks and gathering statistics...
+
+-:351.1-406.7
+Running [A0]: autfilt --parity 'lcr-i9-Bnp22Q'>'lcr-o0-IhunfS'
+Running [A1]: autfilt 'lcr-i9-ehA3cj'>'lcr-o1-gXfNMg'
+Performing sanity checks and gathering statistics...
+
+-:407.1-452.7
+Running [A0]: autfilt --parity 'lcr-i10-C3LpaR'>'lcr-o0-JXCPfd'
+Running [A1]: autfilt 'lcr-i10-wVUjfb'>'lcr-o1-arm3ak'
+Performing sanity checks and gathering statistics...
+
+-:453.1-505.7
+Running [A0]: autfilt --parity 'lcr-i11-4G70po'>'lcr-o0-ka5JOh'
+Running [A1]: autfilt 'lcr-i11-ACyMSw'>'lcr-o1-P1Agy0'
+Performing sanity checks and gathering statistics...
+
+-:506.1-555.7
+Running [A0]: autfilt --parity 'lcr-i12-JKAJ35'>'lcr-o0-kb5JWp'
+Running [A1]: autfilt 'lcr-i12-40rbwq'>'lcr-o1-CnCr4Z'
+Performing sanity checks and gathering statistics...
+
+-:556.1-602.7
+Running [A0]: autfilt --parity 'lcr-i13-1E0b7Z'>'lcr-o0-sqRdZ8'
++ randaut 4 -n100 -u -D --acceptance=Streett 0..6
+Running [A1]: autfilt 'lcr-i13-5jG8B1'>'lcr-o1-D2rMHF'
+Performing sanity checks and gathering statistics...
+
+-:603.1-650.7
+Running [A0]: autfilt --parity 'lcr-i14-VYIQBW'>'lcr-o0-20yEzp'
+Running [A1]: autfilt 'lcr-i14-mYon49'>'lcr-o1-DqyN4Z'
+Performing sanity checks and gathering statistics...
+
+-:651.1-698.7
+Running [A0]: autfilt --parity 'lcr-i15-tL56VC'>'lcr-o0-uvBeYJ'
+Running [A1]: autfilt 'lcr-i15-mLu7mJ'>'lcr-o1-spxmBW'
+Performing sanity checks and gathering statistics...
+
+-:699.1-749.7
+Running [A0]: autfilt --parity 'lcr-i16-yyvt2X'>'lcr-o0-AOVSKr'
+Running [A1]: autfilt 'lcr-i16-yz15H8'>'lcr-o1-G6Q5tE'
+Performing sanity checks and gathering statistics...
+
+-:750.1-791.7
+Running [A0]: autfilt --parity 'lcr-i17-u8R0Bl'>'lcr-o0-XgeBMt'
+Running [A1]: autfilt 'lcr-i17-EU9vYT'>'lcr-o1-qSkXr8'
+Performing sanity checks and gathering statistics...
+
+-:792.1-841.7
+Running [A0]: autfilt --parity 'lcr-i18-5Fox87'>'lcr-o0-VzmZv2'
+Running [A1]: autfilt 'lcr-i18-ti1Zkv'>'lcr-o1-IUuKQ9'
+Performing sanity checks and gathering statistics...
+
+-:842.1-890.7
+Running [A0]: autfilt --parity 'lcr-i19-LMNO4d'>'lcr-o0-1t1RE5'
+Running [A1]: autfilt 'lcr-i19-45LXmg'>'lcr-o1-PjVkkK'
+Performing sanity checks and gathering statistics...
+
+-:891.1-941.7
+Running [A0]: autfilt --parity 'lcr-i20-PfDszH'>'lcr-o0-UEb8rU'
+Running [A1]: autfilt 'lcr-i20-QQB3y1'>'lcr-o1-fXk4Iq'
+Performing sanity checks and gathering statistics...
+
+-:942.1-988.7
+Running [A0]: autfilt --parity 'lcr-i21-jBDs7F'>'lcr-o0-mP0U1Y'
+Running [A1]: autfilt 'lcr-i21-g86R7m'>'lcr-o1-PXCTx6'
+Performing sanity checks and gathering statistics...
+
+-:989.1-1043.7
+Running [A0]: autfilt --parity 'lcr-i22-9CRPNz'>'lcr-o0-MLUwZ1'
+Running [A1]: autfilt 'lcr-i22-8HJ1Of'>'lcr-o1-kGfGiH'
+Performing sanity checks and gathering statistics...
+
+-:1044.1-1086.7
+Running [A0]: autfilt --parity 'lcr-i23-n2s6y4'>'lcr-o0-8ikbvC'
+Running [A1]: autfilt 'lcr-i23-S9T161'>'lcr-o1-vEzENc'
+Performing sanity checks and gathering statistics...
+
+-:1087.1-1131.7
+Running [A0]: autfilt --parity 'lcr-i24-LwGcA6'>'lcr-o0-5vYF7M'
+Running [A1]: autfilt 'lcr-i24-gcG1g9'>'lcr-o1-m2BcD5'
+Performing sanity checks and gathering statistics...
+
+-:1132.1-1182.7
+Running [A0]: autfilt --parity 'lcr-i25-4UJEzr'>'lcr-o0-ttyFFU'
+Running [A1]: autfilt 'lcr-i25-X1PCNV'>'lcr-o1-ygqTSK'
+Performing sanity checks and gathering statistics...
+
+-:1183.1-1231.7
+Running [A0]: autfilt --parity 'lcr-i26-37LAHo'>'lcr-o0-4IW3Lz'
+Running [A1]: autfilt 'lcr-i26-c9xhEs'>'lcr-o1-3oQobP'
+Performing sanity checks and gathering statistics...
+
+-:1232.1-1286.7
+Running [A0]: autfilt --parity 'lcr-i27-JHPo16'>'lcr-o0-B9seSU'
+Running [A1]: autfilt 'lcr-i27-EM7cHR'>'lcr-o1-90kyIF'
+Performing sanity checks and gathering statistics...
+
+-:1287.1-1332.7
+Running [A0]: autfilt --parity 'lcr-i28-sLVxIG'>'lcr-o0-uR61pm'
+Running [A1]: autfilt 'lcr-i28-79ctjZ'>'lcr-o1-CooLHD'
+Performing sanity checks and gathering statistics...
+
+-:1333.1-1382.7
+Running [A0]: autfilt --parity 'lcr-i29-flIElf'>'lcr-o0-5qvY0W'
+Running [A1]: autfilt 'lcr-i29-xrHN6L'>'lcr-o1-hTU2mz'
+Performing sanity checks and gathering statistics...
+
+-:1383.1-1434.7
+Running [A0]: autfilt --parity 'lcr-i30-JPuBX2'>'lcr-o0-SZwxCt'
+Running [A1]: autfilt 'lcr-i30-kqx4rs'>'lcr-o1-72XfFD'
+Performing sanity checks and gathering statistics...
+
+-:1435.1-1487.7
+Running [A0]: autfilt --parity 'lcr-i31-2VdS5e'>'lcr-o0-rn8UrG'
+Running [A1]: autfilt 'lcr-i31-CEziIJ'>'lcr-o1-SfJjYV'
+Performing sanity checks and gathering statistics...
+
+-:1488.1-1536.7
+Running [A0]: autfilt --parity 'lcr-i32-IeFui3'>'lcr-o0-k3aDPa'
+Running [A1]: autfilt 'lcr-i32-3gv7T6'>'lcr-o1-5VNZVP'
+Performing sanity checks and gathering statistics...
+
+-:1537.1-1584.7
+Running [A0]: autfilt --parity 'lcr-i33-gnhuUo'>'lcr-o0-hj8DUC'
+Running [A1]: autfilt 'lcr-i33-c2H2sM'>'lcr-o1-pbrj3i'
+Performing sanity checks and gathering statistics...
+
+-:1585.1-1636.7
+Running [A0]: autfilt --parity 'lcr-i34-ZddouV'>'lcr-o0-zT7Lnl'
+Running [A1]: autfilt 'lcr-i34-i6jFCi'>'lcr-o1-lPs327'
+Performing sanity checks and gathering statistics...
+
+-:1637.1-1691.7
+Running [A0]: autfilt --parity 'lcr-i35-xIp65n'>'lcr-o0-fy6Ly5'
+Running [A1]: autfilt 'lcr-i35-KjEW4z'>'lcr-o1-Mt9ROY'
+Performing sanity checks and gathering statistics...
+
+-:1692.1-1741.7
+Running [A0]: autfilt --parity 'lcr-i36-XH7MbY'>'lcr-o0-Lcx1XJ'
+Running [A1]: autfilt 'lcr-i36-6KemrY'>'lcr-o1-iMMryK'
+Performing sanity checks and gathering statistics...
+
+-:1742.1-1792.7
+Running [A0]: autfilt --parity 'lcr-i37-EZpsMy'>'lcr-o0-0XNS9u'
+Running [A1]: autfilt 'lcr-i37-lM1yci'>'lcr-o1-sGIuLF'
+Performing sanity checks and gathering statistics...
+
+-:1793.1-1843.7
+Running [A0]: autfilt --parity 'lcr-i38-Ay0Ht5'>'lcr-o0-naB54q'
+Running [A1]: autfilt 'lcr-i38-LMGnIo'>'lcr-o1-dIhKmr'
+Performing sanity checks and gathering statistics...
+
+-:1844.1-1890.7
+Running [A0]: autfilt --parity 'lcr-i39-47TRs3'>'lcr-o0-NNLwLm'
+Running [A1]: autfilt 'lcr-i39-2Q9kUd'>'lcr-o1-lvLTGW'
+Performing sanity checks and gathering statistics...
+
+-:1891.1-1939.7
+Running [A0]: autfilt --parity 'lcr-i40-0PhP8r'>'lcr-o0-WOeR2D'
+Running [A1]: autfilt 'lcr-i40-ibeFUR'>'lcr-o1-KJ0Y82'
+Performing sanity checks and gathering statistics...
+
+-:1940.1-1983.7
+Running [A0]: autfilt --parity 'lcr-i41-ridTaV'>'lcr-o0-uqPRfm'
+Running [A1]: autfilt 'lcr-i41-j7xgKG'>'lcr-o1-Sk7kzD'
+Performing sanity checks and gathering statistics...
+
+-:1984.1-2033.7
+Running [A0]: autfilt --parity 'lcr-i42-d1ndne'>'lcr-o0-zWrZPv'
+Running [A1]: autfilt 'lcr-i42-G0ZaOT'>'lcr-o1-NFhKNy'
+Performing sanity checks and gathering statistics...
+
+-:2034.1-2083.7
+Running [A0]: autfilt --parity 'lcr-i43-7AjGin'>'lcr-o0-nIq1r7'
+Running [A1]: autfilt 'lcr-i43-EIAa0N'>'lcr-o1-BvvwAx'
+Performing sanity checks and gathering statistics...
+
+-:2084.1-2128.7
+Running [A0]: autfilt --parity 'lcr-i44-TTBzQQ'>'lcr-o0-gQsTW4'
+Running [A1]: autfilt 'lcr-i44-01EJ7Z'>'lcr-o1-fQrtYB'
+Performing sanity checks and gathering statistics...
+
+-:2129.1-2171.7
+Running [A0]: autfilt --parity 'lcr-i45-7tg9MJ'>'lcr-o0-4VRqlb'
+Running [A1]: autfilt 'lcr-i45-ogBIyg'>'lcr-o1-99sXbR'
+Performing sanity checks and gathering statistics...
+
+-:2172.1-2214.7
+Running [A0]: autfilt --parity 'lcr-i46-0Tew5I'>'lcr-o0-esAhjT'
+Running [A1]: autfilt 'lcr-i46-VUzcw7'>'lcr-o1-WPpF4e'
+Performing sanity checks and gathering statistics...
+
+-:2215.1-2266.7
+Running [A0]: autfilt --parity 'lcr-i47-IES4Im'>'lcr-o0-o2mdaG'
+Running [A1]: autfilt 'lcr-i47-Y4uIWQ'>'lcr-o1-rDX0Ir'
+Performing sanity checks and gathering statistics...
+
+-:2267.1-2314.7
+Running [A0]: autfilt --parity 'lcr-i48-MCAe9z'>'lcr-o0-GmzFYx'
+Running [A1]: autfilt 'lcr-i48-sXToRm'>'lcr-o1-91Enbd'
+Performing sanity checks and gathering statistics...
+
+-:2315.1-2365.7
+Running [A0]: autfilt --parity 'lcr-i49-NWZNkU'>'lcr-o0-d1qpsE'
+Running [A1]: autfilt 'lcr-i49-JeaX0Y'>'lcr-o1-bRWyXy'
+Performing sanity checks and gathering statistics...
+
+-:2366.1-2408.7
+Running [A0]: autfilt --parity 'lcr-i50-6GzVK6'>'lcr-o0-CX6Kqv'
+Running [A1]: autfilt 'lcr-i50-U2SMlT'>'lcr-o1-1E6zdx'
+Performing sanity checks and gathering statistics...
+
+-:2409.1-2458.7
+Running [A0]: autfilt --parity 'lcr-i51-o1iAes'>'lcr-o0-L3sh7D'
+Running [A1]: autfilt 'lcr-i51-P8C8G7'>'lcr-o1-JKFtaj'
+Performing sanity checks and gathering statistics...
+
+-:2459.1-2504.7
+Running [A0]: autfilt --parity 'lcr-i52-Zp3v0R'>'lcr-o0-KINLqi'
+Running [A1]: autfilt 'lcr-i52-23b3ZP'>'lcr-o1-NaBUSU'
+Performing sanity checks and gathering statistics...
+
+-:2505.1-2559.7
+Running [A0]: autfilt --parity 'lcr-i53-HHN0ZJ'>'lcr-o0-qY1sjW'
+Running [A1]: autfilt 'lcr-i53-gtMqNv'>'lcr-o1-pDRiM9'
+Performing sanity checks and gathering statistics...
+
+-:2560.1-2604.7
+Running [A0]: autfilt --parity 'lcr-i54-mHUtp4'>'lcr-o0-rwY7aH'
+Running [A1]: autfilt 'lcr-i54-RTR4yR'>'lcr-o1-FdfrkT'
+Performing sanity checks and gathering statistics...
+
+-:2605.1-2652.7
+Running [A0]: autfilt --parity 'lcr-i55-UTsyye'>'lcr-o0-stpCY6'
+Running [A1]: autfilt 'lcr-i55-2BIpab'>'lcr-o1-6dchxb'
+Performing sanity checks and gathering statistics...
+
+-:2653.1-2699.7
+Running [A0]: autfilt --parity 'lcr-i56-qVur92'>'lcr-o0-c9Cfcz'
+Running [A1]: autfilt 'lcr-i56-5lvALC'>'lcr-o1-qy9Qia'
+Performing sanity checks and gathering statistics...
+
+-:2700.1-2747.7
+Running [A0]: autfilt --parity 'lcr-i57-Pm6ayi'>'lcr-o0-RJHXUg'
+Running [A1]: autfilt 'lcr-i57-55Gu2w'>'lcr-o1-3xEOWM'
+Performing sanity checks and gathering statistics...
+
+-:2748.1-2791.7
+Running [A0]: autfilt --parity 'lcr-i58-Ehtyws'>'lcr-o0-QM5OTf'
+Running [A1]: autfilt 'lcr-i58-VwGlrM'>'lcr-o1-V3oahU'
+Performing sanity checks and gathering statistics...
+
+-:2792.1-2843.7
+Running [A0]: autfilt --parity 'lcr-i59-iEWIqJ'>'lcr-o0-zvV7W0'
+Running [A1]: autfilt 'lcr-i59-sxoUsl'>'lcr-o1-Ige1t9'
+Performing sanity checks and gathering statistics...
+
+-:2844.1-2889.7
+Running [A0]: autfilt --parity 'lcr-i60-nJNrHO'>'lcr-o0-Zz13MT'
+Running [A1]: autfilt 'lcr-i60-rYsMU5'>'lcr-o1-otsjDL'
+Performing sanity checks and gathering statistics...
+
+-:2890.1-2942.7
+Running [A0]: autfilt --parity 'lcr-i61-9QbZBc'>'lcr-o0-BvYJUt'
+Running [A1]: autfilt 'lcr-i61-3pN6Iy'>'lcr-o1-HSYBIe'
+Performing sanity checks and gathering statistics...
+
+-:2943.1-2990.7
+Running [A0]: autfilt --parity 'lcr-i62-nPF9yA'>'lcr-o0-ZycytI'
+Running [A1]: autfilt 'lcr-i62-I9iWnb'>'lcr-o1-6k5Uad'
+Performing sanity checks and gathering statistics...
+
+-:2991.1-3038.7
+Running [A0]: autfilt --parity 'lcr-i63-Wz8Oas'>'lcr-o0-P0Bbx4'
+Running [A1]: autfilt 'lcr-i63-mDqk5S'>'lcr-o1-J7k51X'
+Performing sanity checks and gathering statistics...
+
+-:3039.1-3082.7
+Running [A0]: autfilt --parity 'lcr-i64-NPPm0r'>'lcr-o0-fEUYDK'
+Running [A1]: autfilt 'lcr-i64-dRMOsX'>'lcr-o1-Zcfums'
+Performing sanity checks and gathering statistics...
+
+-:3083.1-3130.7
+Running [A0]: autfilt --parity 'lcr-i65-bPgqqP'>'lcr-o0-fkNrri'
+Running [A1]: autfilt 'lcr-i65-aQyNeL'>'lcr-o1-pfeHfX'
+Performing sanity checks and gathering statistics...
+
+-:3131.1-3177.7
+Running [A0]: autfilt --parity 'lcr-i66-YjHsqG'>'lcr-o0-bNHRk6'
+Running [A1]: autfilt 'lcr-i66-0tBCqY'>'lcr-o1-yy0VIA'
+Performing sanity checks and gathering statistics...
+
+-:3178.1-3230.7
+Running [A0]: autfilt --parity 'lcr-i67-Mrbw9h'>'lcr-o0-33lUcV'
+Running [A1]: autfilt 'lcr-i67-A2xWsH'>'lcr-o1-LVQ15r'
+Performing sanity checks and gathering statistics...
+
+-:3231.1-3276.7
+Running [A0]: autfilt --parity 'lcr-i68-SX4J5W'>'lcr-o0-U3iUuM'
+Running [A1]: autfilt 'lcr-i68-qNxfHd'>'lcr-o1-P09AwE'
+Performing sanity checks and gathering statistics...
+
+-:3277.1-3330.7
+Running [A0]: autfilt --parity 'lcr-i69-srftwt'>'lcr-o0-HrrJpd'
+Running [A1]: autfilt 'lcr-i69-B1zkq7'>'lcr-o1-bUFckf'
+Performing sanity checks and gathering statistics...
+
+-:3331.1-3378.7
+Running [A0]: autfilt --parity 'lcr-i70-K3xohR'>'lcr-o0-dG6uQ2'
+Running [A1]: autfilt 'lcr-i70-2pgk9b'>'lcr-o1-ni7ot8'
+Performing sanity checks and gathering statistics...
+
+-:3379.1-3426.7
+Running [A0]: autfilt --parity 'lcr-i71-zXvlLr'>'lcr-o0-Yuu6IF'
+Running [A1]: autfilt 'lcr-i71-YCiR1W'>'lcr-o1-aHi8Tn'
+Performing sanity checks and gathering statistics...
+
+-:3427.1-3476.7
+Running [A0]: autfilt --parity 'lcr-i72-HaaSQp'>'lcr-o0-Glr3di'
+Running [A1]: autfilt 'lcr-i72-W7SHBl'>'lcr-o1-xtPjPw'
+Performing sanity checks and gathering statistics...
+
+-:3477.1-3522.7
+Running [A0]: autfilt --parity 'lcr-i73-Z0XB0d'>'lcr-o0-7G0VCJ'
+Running [A1]: autfilt 'lcr-i73-A57Enb'>'lcr-o1-gygOv0'
+Performing sanity checks and gathering statistics...
+
+-:3523.1-3571.7
+Running [A0]: autfilt --parity 'lcr-i74-1GYgWi'>'lcr-o0-DuZSgF'
+Running [A1]: autfilt 'lcr-i74-M7YIdT'>'lcr-o1-M5CDwL'
+Performing sanity checks and gathering statistics...
+
+-:3572.1-3619.7
+Running [A0]: autfilt --parity 'lcr-i75-2L9aDB'>'lcr-o0-HVuP8o'
+Running [A1]: autfilt 'lcr-i75-14Sy2p'>'lcr-o1-siYaMK'
+Performing sanity checks and gathering statistics...
+
+-:3620.1-3665.7
+Running [A0]: autfilt --parity 'lcr-i76-VsbcKh'>'lcr-o0-kDfods'
+Running [A1]: autfilt 'lcr-i76-7oj7lf'>'lcr-o1-QKSbLW'
+Performing sanity checks and gathering statistics...
+
+-:3666.1-3714.7
+Running [A0]: autfilt --parity 'lcr-i77-4qT5AJ'>'lcr-o0-vKWTRE'
+Running [A1]: autfilt 'lcr-i77-F0tgDG'>'lcr-o1-1faSuZ'
+Performing sanity checks and gathering statistics...
+
+-:3715.1-3767.7
+Running [A0]: autfilt --parity 'lcr-i78-PqOaHs'>'lcr-o0-o7r8DC'
+Running [A1]: autfilt 'lcr-i78-jzGxcJ'>'lcr-o1-XF5XIp'
+Performing sanity checks and gathering statistics...
+
+-:3768.1-3819.7
+Running [A0]: autfilt --parity 'lcr-i79-AxFc21'>'lcr-o0-ZFGDxa'
+Running [A1]: autfilt 'lcr-i79-tMBvxx'>'lcr-o1-FgU8xQ'
+Performing sanity checks and gathering statistics...
+
+-:3820.1-3865.7
+Running [A0]: autfilt --parity 'lcr-i80-MPc2cY'>'lcr-o0-CAuiA4'
+Running [A1]: autfilt 'lcr-i80-MGpklv'>'lcr-o1-1vRAx5'
+Performing sanity checks and gathering statistics...
+
+-:3866.1-3915.7
+Running [A0]: autfilt --parity 'lcr-i81-aCiEEK'>'lcr-o0-KBP5HT'
+Running [A1]: autfilt 'lcr-i81-2b211q'>'lcr-o1-BOiiUL'
+Performing sanity checks and gathering statistics...
+
+-:3916.1-3964.7
+Running [A0]: autfilt --parity 'lcr-i82-3WosAK'>'lcr-o0-OMqpE9'
+Running [A1]: autfilt 'lcr-i82-O6BTYs'>'lcr-o1-uOLZ2m'
+Performing sanity checks and gathering statistics...
+
+-:3965.1-4021.7
+Running [A0]: autfilt --parity 'lcr-i83-CDkFdo'>'lcr-o0-BEumth'
+Running [A1]: autfilt 'lcr-i83-wLJOs4'>'lcr-o1-9VRPRW'
+Performing sanity checks and gathering statistics...
+
+-:4022.1-4066.7
+Running [A0]: autfilt --parity 'lcr-i84-yKmnmd'>'lcr-o0-dJqIYT'
+Running [A1]: autfilt 'lcr-i84-yTmgpH'>'lcr-o1-uXlwJG'
+Performing sanity checks and gathering statistics...
+
+-:4067.1-4112.7
+Running [A0]: autfilt --parity 'lcr-i85-5Kizfw'>'lcr-o0-zUKRV4'
+Running [A1]: autfilt 'lcr-i85-rX1Umv'>'lcr-o1-uhaDlY'
+Performing sanity checks and gathering statistics...
+
+-:4113.1-4160.7
+Running [A0]: autfilt --parity 'lcr-i86-NxPGz8'>'lcr-o0-u2iAfP'
+Running [A1]: autfilt 'lcr-i86-BSRBW8'>'lcr-o1-Uh9wus'
+Performing sanity checks and gathering statistics...
+
+-:4161.1-4207.7
+Running [A0]: autfilt --parity 'lcr-i87-hFflpA'>'lcr-o0-TDkDSo'
+Running [A1]: autfilt 'lcr-i87-lMmqqw'>'lcr-o1-f4aFQc'
+Performing sanity checks and gathering statistics...
+
+-:4208.1-4255.7
+Running [A0]: autfilt --parity 'lcr-i88-Y9ftdd'>'lcr-o0-rAog0n'
+Running [A1]: autfilt 'lcr-i88-PlWdcX'>'lcr-o1-ulIMtg'
+Performing sanity checks and gathering statistics...
+
+-:4256.1-4302.7
+Running [A0]: autfilt --parity 'lcr-i89-ejaJNz'>'lcr-o0-vgohMx'
+Running [A1]: autfilt 'lcr-i89-m5GhOF'>'lcr-o1-NDaHUB'
+Performing sanity checks and gathering statistics...
+
+-:4303.1-4350.7
+Running [A0]: autfilt --parity 'lcr-i90-9hQR9o'>'lcr-o0-hukjzL'
+Running [A1]: autfilt 'lcr-i90-LDV8Cj'>'lcr-o1-bcsy54'
+Performing sanity checks and gathering statistics...
+
+-:4351.1-4397.7
+Running [A0]: autfilt --parity 'lcr-i91-wPyKq3'>'lcr-o0-DRzbZQ'
+Running [A1]: autfilt 'lcr-i91-ccJDXt'>'lcr-o1-kpekix'
+Performing sanity checks and gathering statistics...
+
+-:4398.1-4441.7
+Running [A0]: autfilt --parity 'lcr-i92-a5ATON'>'lcr-o0-QHQavn'
+Running [A1]: autfilt 'lcr-i92-WLxDTd'>'lcr-o1-uecMsQ'
+Performing sanity checks and gathering statistics...
+
+-:4442.1-4487.7
+Running [A0]: autfilt --parity 'lcr-i93-ypDeON'>'lcr-o0-L46SOr'
+Running [A1]: autfilt 'lcr-i93-JRPWk5'>'lcr-o1-C7cV8H'
+Performing sanity checks and gathering statistics...
+
+-:4488.1-4536.7
+Running [A0]: autfilt --parity 'lcr-i94-ct64Z7'>'lcr-o0-65LfLm'
+Running [A1]: autfilt 'lcr-i94-Lq4W0z'>'lcr-o1-pv0OY3'
+Performing sanity checks and gathering statistics...
+
+-:4537.1-4589.7
+Running [A0]: autfilt --parity 'lcr-i95-LALshy'>'lcr-o0-nzHdLo'
+Running [A1]: autfilt 'lcr-i95-JAGiba'>'lcr-o1-qxM4qs'
+Performing sanity checks and gathering statistics...
+
+-:4590.1-4639.7
+Running [A0]: autfilt --parity 'lcr-i96-bh8ify'>'lcr-o0-zzMc9r'
+Running [A1]: autfilt 'lcr-i96-LFUofG'>'lcr-o1-SdvwiG'
+Performing sanity checks and gathering statistics...
+
+-:4640.1-4688.7
+Running [A0]: autfilt --parity 'lcr-i97-NUVKo2'>'lcr-o0-dJHk2l'
+Running [A1]: autfilt 'lcr-i97-midPvz'>'lcr-o1-CnhxvO'
+Performing sanity checks and gathering statistics...
+
+-:4689.1-4738.7
+Running [A0]: autfilt --parity 'lcr-i98-CpIWuW'>'lcr-o0-UccToU'
+Running [A1]: autfilt 'lcr-i98-ptm0bb'>'lcr-o1-pbuTSC'
+Performing sanity checks and gathering statistics...
+
+-:4739.1-4790.7
+Running [A0]: autfilt --parity 'lcr-i99-hO0ekt'>'lcr-o0-NT8rFX'
+Running [A1]: autfilt 'lcr-i99-Kdamlf'>'lcr-o1-jOqtRS'
+Performing sanity checks and gathering statistics...
+
+-:4791.1-4833.7
+Running [A0]: autfilt --parity 'lcr-i100-aVpZHm'>'lcr-o0-uLBd3K'
+Running [A1]: autfilt 'lcr-i100-agsIzU'>'lcr-o1-kI8VrC'
+Performing sanity checks and gathering statistics...
+
+-:4834.1-4877.7
+Running [A0]: autfilt --parity 'lcr-i101-l0itmh'>'lcr-o0-aDZoGZ'
+Running [A1]: autfilt 'lcr-i101-fgKx8j'>'lcr-o1-ZiKA9n'
+Performing sanity checks and gathering statistics...
+
+-:4878.1-4920.7
+Running [A0]: autfilt --parity 'lcr-i102-4k7l0q'>'lcr-o0-kSTFbO'
+Running [A1]: autfilt 'lcr-i102-n5DwdF'>'lcr-o1-S4V4Nl'
+Performing sanity checks and gathering statistics...
+
+-:4921.1-4971.7
+Running [A0]: autfilt --parity 'lcr-i103-iX65Og'>'lcr-o0-uwhED8'
+Running [A1]: autfilt 'lcr-i103-N2kcou'>'lcr-o1-lDuHss'
+Performing sanity checks and gathering statistics...
+
+-:4972.1-5025.7
+Running [A0]: autfilt --parity 'lcr-i104-oc0nxD'>'lcr-o0-swyq2z'
+Running [A1]: autfilt 'lcr-i104-eVn6iN'>'lcr-o1-xnH0Rz'
+Performing sanity checks and gathering statistics...
+
+-:5026.1-5078.7
+Running [A0]: autfilt --parity 'lcr-i105-0Buqd9'>'lcr-o0-JJ6wAq'
+Running [A1]: autfilt 'lcr-i105-MAy8gj'>'lcr-o1-Wj1grR'
+Performing sanity checks and gathering statistics...
+
+-:5079.1-5125.7
+Running [A0]: autfilt --parity 'lcr-i106-pVDX0J'>'lcr-o0-zCHiVE'
+Running [A1]: autfilt 'lcr-i106-LFV2AX'>'lcr-o1-THwf77'
+Performing sanity checks and gathering statistics...
+
+-:5126.1-5170.7
+Running [A0]: autfilt --parity 'lcr-i107-uNVasb'>'lcr-o0-X00U7s'
+Running [A1]: autfilt 'lcr-i107-kjvUaM'>'lcr-o1-pEn0Lt'
+Performing sanity checks and gathering statistics...
+
+-:5171.1-5225.7
+Running [A0]: autfilt --parity 'lcr-i108-wbnXaz'>'lcr-o0-v8K9sL'
+Running [A1]: autfilt 'lcr-i108-LqQyRB'>'lcr-o1-vvfp8i'
+Performing sanity checks and gathering statistics...
+
+-:5226.1-5281.7
+Running [A0]: autfilt --parity 'lcr-i109-EHWArd'>'lcr-o0-KFSKg2'
+Running [A1]: autfilt 'lcr-i109-LFkIkc'>'lcr-o1-nUjM7z'
+Performing sanity checks and gathering statistics...
+
+-:5282.1-5327.7
+Running [A0]: autfilt --parity 'lcr-i110-AdZTfM'>'lcr-o0-vHyXGs'
+Running [A1]: autfilt 'lcr-i110-7fmeoE'>'lcr-o1-fgfxhy'
+Performing sanity checks and gathering statistics...
+
+-:5328.1-5380.7
+Running [A0]: autfilt --parity 'lcr-i111-ltY2xz'>'lcr-o0-NUREVZ'
+Running [A1]: autfilt 'lcr-i111-uiNByi'>'lcr-o1-OHD5fN'
+Performing sanity checks and gathering statistics...
+
+-:5381.1-5430.7
+Running [A0]: autfilt --parity 'lcr-i112-s8KQgl'>'lcr-o0-chgXQ2'
+Running [A1]: autfilt 'lcr-i112-TGPygh'>'lcr-o1-sQkLvy'
+Performing sanity checks and gathering statistics...
+
+-:5431.1-5477.7
+Running [A0]: autfilt --parity 'lcr-i113-NWcrPP'>'lcr-o0-SixVoJ'
+Running [A1]: autfilt 'lcr-i113-YvIbYR'>'lcr-o1-QFbgrM'
+Performing sanity checks and gathering statistics...
+
+-:5478.1-5525.7
+Running [A0]: autfilt --parity 'lcr-i114-LlkG1k'>'lcr-o0-7RTY8W'
+Running [A1]: autfilt 'lcr-i114-Kuwo9E'>'lcr-o1-xb4Oj5'
+Performing sanity checks and gathering statistics...
+
+-:5526.1-5573.7
+Running [A0]: autfilt --parity 'lcr-i115-Oae0lK'>'lcr-o0-pgyCmT'
+Running [A1]: autfilt 'lcr-i115-TaRBZa'>'lcr-o1-GotfRy'
+Performing sanity checks and gathering statistics...
+
+-:5574.1-5624.7
+Running [A0]: autfilt --parity 'lcr-i116-6ppc3A'>'lcr-o0-5URbAw'
+Running [A1]: autfilt 'lcr-i116-smUQf0'>'lcr-o1-KJmE1c'
+Performing sanity checks and gathering statistics...
+
+-:5625.1-5666.7
+Running [A0]: autfilt --parity 'lcr-i117-w0UGNi'>'lcr-o0-dWIkQF'
+Running [A1]: autfilt 'lcr-i117-5h69lx'>'lcr-o1-bKIDhk'
+Performing sanity checks and gathering statistics...
+
+-:5667.1-5716.7
+Running [A0]: autfilt --parity 'lcr-i118-wp2o8J'>'lcr-o0-UILIxQ'
+Running [A1]: autfilt 'lcr-i118-iLKivr'>'lcr-o1-Q7kDv6'
+Performing sanity checks and gathering statistics...
+
+-:5717.1-5765.7
+Running [A0]: autfilt --parity 'lcr-i119-FdIYlp'>'lcr-o0-H5TZiZ'
+Running [A1]: autfilt 'lcr-i119-7zjWGH'>'lcr-o1-5XDWly'
+Performing sanity checks and gathering statistics...
+
+-:5766.1-5816.7
+Running [A0]: autfilt --parity 'lcr-i120-w5sAQx'>'lcr-o0-pWSm0B'
+Running [A1]: autfilt 'lcr-i120-X0ao5Z'>'lcr-o1-4Crjbd'
+Performing sanity checks and gathering statistics...
+
+-:5817.1-5863.7
+Running [A0]: autfilt --parity 'lcr-i121-RprhU0'>'lcr-o0-QL1030'
+Running [A1]: autfilt 'lcr-i121-tcIfo0'>'lcr-o1-uOkLR8'
+Performing sanity checks and gathering statistics...
+
+-:5864.1-5918.7
+Running [A0]: autfilt --parity 'lcr-i122-8e2jfI'>'lcr-o0-Fzoq3U'
+Running [A1]: autfilt 'lcr-i122-zOOM9K'>'lcr-o1-NIsSNz'
+Performing sanity checks and gathering statistics...
+
+-:5919.1-5961.7
+Running [A0]: autfilt --parity 'lcr-i123-BEhUD7'>'lcr-o0-oPA1FA'
+Running [A1]: autfilt 'lcr-i123-zCbhlO'>'lcr-o1-uKdDPF'
+Performing sanity checks and gathering statistics...
+
+-:5962.1-6006.7
+Running [A0]: autfilt --parity 'lcr-i124-wzrMV1'>'lcr-o0-t1UQlm'
+Running [A1]: autfilt 'lcr-i124-WRHTzb'>'lcr-o1-ghaeey'
+Performing sanity checks and gathering statistics...
+
+-:6007.1-6057.7
+Running [A0]: autfilt --parity 'lcr-i125-XWqboN'>'lcr-o0-QAN8bG'
+Running [A1]: autfilt 'lcr-i125-1HlL9E'>'lcr-o1-nbhCBw'
+Performing sanity checks and gathering statistics...
+
+-:6058.1-6106.7
+Running [A0]: autfilt --parity 'lcr-i126-utE41b'>'lcr-o0-pwjhgq'
+Running [A1]: autfilt 'lcr-i126-IjVTvS'>'lcr-o1-RMLASL'
+Performing sanity checks and gathering statistics...
+
+-:6107.1-6161.7
+Running [A0]: autfilt --parity 'lcr-i127-BZ4oOF'>'lcr-o0-eaCg1P'
+Running [A1]: autfilt 'lcr-i127-FoEfwB'>'lcr-o1-1juqA6'
+Performing sanity checks and gathering statistics...
+
+-:6162.1-6207.7
+Running [A0]: autfilt --parity 'lcr-i128-5rnhO8'>'lcr-o0-DFtXYR'
+Running [A1]: autfilt 'lcr-i128-vq4cKp'>'lcr-o1-uHbP2a'
+Performing sanity checks and gathering statistics...
+
+-:6208.1-6257.7
+Running [A0]: autfilt --parity 'lcr-i129-mzlhmD'>'lcr-o0-PDREfO'
+Running [A1]: autfilt 'lcr-i129-tyPV2w'>'lcr-o1-7yLXO1'
+Performing sanity checks and gathering statistics...
+
+-:6258.1-6309.7
+Running [A0]: autfilt --parity 'lcr-i130-37Kp0V'>'lcr-o0-XHvKNr'
+Running [A1]: autfilt 'lcr-i130-CXXSkw'>'lcr-o1-qrwSkO'
+Performing sanity checks and gathering statistics...
+
+-:6310.1-6362.7
+Running [A0]: autfilt --parity 'lcr-i131-SAAz0B'>'lcr-o0-p3HzEq'
+Running [A1]: autfilt 'lcr-i131-xinPC6'>'lcr-o1-mbvBHw'
+Performing sanity checks and gathering statistics...
+
+-:6363.1-6411.7
+Running [A0]: autfilt --parity 'lcr-i132-TqsYMR'>'lcr-o0-Nc38kT'
+Running [A1]: autfilt 'lcr-i132-N0QIrk'>'lcr-o1-Zw1JcD'
+Performing sanity checks and gathering statistics...
+
+-:6412.1-6459.7
+Running [A0]: autfilt --parity 'lcr-i133-MaQO68'>'lcr-o0-zSoof5'
+Running [A1]: autfilt 'lcr-i133-Rdho9K'>'lcr-o1-c3KhHH'
+Performing sanity checks and gathering statistics...
+
+-:6460.1-6511.7
+Running [A0]: autfilt --parity 'lcr-i134-8McusQ'>'lcr-o0-FaZwuc'
+Running [A1]: autfilt 'lcr-i134-JaR4RR'>'lcr-o1-gUTY1E'
+Performing sanity checks and gathering statistics...
+
+-:6512.1-6566.7
+Running [A0]: autfilt --parity 'lcr-i135-oM31IV'>'lcr-o0-q0DyQY'
+Running [A1]: autfilt 'lcr-i135-ImdDzT'>'lcr-o1-7FIrBB'
+Performing sanity checks and gathering statistics...
+
+-:6567.1-6616.7
+Running [A0]: autfilt --parity 'lcr-i136-26fXep'>'lcr-o0-APnKOu'
+Running [A1]: autfilt 'lcr-i136-xRI860'>'lcr-o1-b1PBCb'
+Performing sanity checks and gathering statistics...
+
+-:6617.1-6667.7
+Running [A0]: autfilt --parity 'lcr-i137-uQomrM'>'lcr-o0-fLeOIF'
+Running [A1]: autfilt 'lcr-i137-e9oykm'>'lcr-o1-EyCOYK'
+Performing sanity checks and gathering statistics...
+
+-:6668.1-6718.7
+Running [A0]: autfilt --parity 'lcr-i138-2rjeNY'>'lcr-o0-FaJB9m'
+Running [A1]: autfilt 'lcr-i138-mc90Th'>'lcr-o1-BQICKb'
+Performing sanity checks and gathering statistics...
+
+-:6719.1-6765.7
+Running [A0]: autfilt --parity 'lcr-i139-ZWRnZe'>'lcr-o0-owhDg1'
+Running [A1]: autfilt 'lcr-i139-t6Q4b5'>'lcr-o1-AM6QP2'
+Performing sanity checks and gathering statistics...
+
+-:6766.1-6814.7
+Running [A0]: autfilt --parity 'lcr-i140-oXnXNO'>'lcr-o0-2qDbwZ'
+Running [A1]: autfilt 'lcr-i140-uAzVhl'>'lcr-o1-rb7bhO'
+Performing sanity checks and gathering statistics...
+
+-:6815.1-6858.7
+Running [A0]: autfilt --parity 'lcr-i141-yEbgO0'>'lcr-o0-fDmKs4'
+Running [A1]: autfilt 'lcr-i141-RLrWnM'>'lcr-o1-DmQ1u4'
+Performing sanity checks and gathering statistics...
+
+-:6859.1-6908.7
+Running [A0]: autfilt --parity 'lcr-i142-49WBlR'>'lcr-o0-FyK9aO'
+Running [A1]: autfilt 'lcr-i142-VZjeFc'>'lcr-o1-jdyuvF'
+Performing sanity checks and gathering statistics...
+
+-:6909.1-6958.7
+Running [A0]: autfilt --parity 'lcr-i143-TkKKsy'>'lcr-o0-EICSN9'
+Running [A1]: autfilt 'lcr-i143-RP3c64'>'lcr-o1-a6YGWz'
+Performing sanity checks and gathering statistics...
+
+-:6959.1-7003.7
+Running [A0]: autfilt --parity 'lcr-i144-l0vXYY'>'lcr-o0-ngBZkd'
+Running [A1]: autfilt 'lcr-i144-cWPTZA'>'lcr-o1-4NNM2b'
+Performing sanity checks and gathering statistics...
+
+-:7004.1-7046.7
+Running [A0]: autfilt --parity 'lcr-i145-95Qd37'>'lcr-o0-MsTnZF'
+Running [A1]: autfilt 'lcr-i145-WTswNv'>'lcr-o1-r0NeUz'
+Performing sanity checks and gathering statistics...
+
+-:7047.1-7089.7
+Running [A0]: autfilt --parity 'lcr-i146-ZzOrgz'>'lcr-o0-LNsUVb'
+Running [A1]: autfilt 'lcr-i146-Zi3Y17'>'lcr-o1-y6Gg8C'
+Performing sanity checks and gathering statistics...
+
+-:7090.1-7141.7
+Running [A0]: autfilt --parity 'lcr-i147-j89epg'>'lcr-o0-mpoTxo'
+Running [A1]: autfilt 'lcr-i147-FNkUS6'>'lcr-o1-xRAl60'
+Performing sanity checks and gathering statistics...
+
+-:7142.1-7189.7
+Running [A0]: autfilt --parity 'lcr-i148-frZuyi'>'lcr-o0-mXKm5R'
+Running [A1]: autfilt 'lcr-i148-v2EHGA'>'lcr-o1-RVVCPP'
+Performing sanity checks and gathering statistics...
+
+-:7190.1-7240.7
+Running [A0]: autfilt --parity 'lcr-i149-30Ztgw'>'lcr-o0-pQqLgl'
+Running [A1]: autfilt 'lcr-i149-kL192H'>'lcr-o1-Tegsgr'
+Performing sanity checks and gathering statistics...
+
+-:7241.1-7283.7
+Running [A0]: autfilt --parity 'lcr-i150-NXNe28'>'lcr-o0-FwUSzt'
+Running [A1]: autfilt 'lcr-i150-7nAyGN'>'lcr-o1-Ncz53L'
+Performing sanity checks and gathering statistics...
+
+-:7284.1-7333.7
+Running [A0]: autfilt --parity 'lcr-i151-GAh7QD'>'lcr-o0-azOIU7'
+Running [A1]: autfilt 'lcr-i151-cZaNTh'>'lcr-o1-NCRw3B'
+Performing sanity checks and gathering statistics...
+
+-:7334.1-7379.7
+Running [A0]: autfilt --parity 'lcr-i152-yMHbEr'>'lcr-o0-M36NFQ'
+Running [A1]: autfilt 'lcr-i152-J0WJHm'>'lcr-o1-Ga0NEw'
+Performing sanity checks and gathering statistics...
+
+-:7380.1-7434.7
+Running [A0]: autfilt --parity 'lcr-i153-9gTNC1'>'lcr-o0-qGBuFP'
+Running [A1]: autfilt 'lcr-i153-Oe7kTn'>'lcr-o1-NmmTIz'
+Performing sanity checks and gathering statistics...
+
+-:7435.1-7479.7
+Running [A0]: autfilt --parity 'lcr-i154-FqPa6C'>'lcr-o0-uujZKY'
+Running [A1]: autfilt 'lcr-i154-Aq1WWN'>'lcr-o1-U0qXaf'
+Performing sanity checks and gathering statistics...
+
+-:7480.1-7527.7
+Running [A0]: autfilt --parity 'lcr-i155-2YU2N6'>'lcr-o0-UUhSs2'
+Running [A1]: autfilt 'lcr-i155-TFcrqK'>'lcr-o1-seUi17'
+Performing sanity checks and gathering statistics...
+
+-:7528.1-7574.7
+Running [A0]: autfilt --parity 'lcr-i156-ciWzf1'>'lcr-o0-gbIw9c'
+Running [A1]: autfilt 'lcr-i156-PwAm4C'>'lcr-o1-xYRAgh'
+Performing sanity checks and gathering statistics...
+
+-:7575.1-7622.7
+Running [A0]: autfilt --parity 'lcr-i157-4gEu0e'>'lcr-o0-jApwvR'
+Running [A1]: autfilt 'lcr-i157-hh8Rlu'>'lcr-o1-lLAU1o'
+Performing sanity checks and gathering statistics...
+
+-:7623.1-7666.7
+Running [A0]: autfilt --parity 'lcr-i158-a4t7Lt'>'lcr-o0-jWAG5f'
+Running [A1]: autfilt 'lcr-i158-GD6w8v'>'lcr-o1-1DGBIB'
+Performing sanity checks and gathering statistics...
+
+-:7667.1-7718.7
+Running [A0]: autfilt --parity 'lcr-i159-CkWojL'>'lcr-o0-c46IWv'
+Running [A1]: autfilt 'lcr-i159-fKlyyh'>'lcr-o1-YTaAiN'
+Performing sanity checks and gathering statistics...
+
+-:7719.1-7764.7
+Running [A0]: autfilt --parity 'lcr-i160-91bQgM'>'lcr-o0-q8RR6W'
+Running [A1]: autfilt 'lcr-i160-m2VCDo'>'lcr-o1-B3IthG'
+Performing sanity checks and gathering statistics...
+
+-:7765.1-7817.7
+Running [A0]: autfilt --parity 'lcr-i161-PEjk1k'>'lcr-o0-esy8Qa'
+Running [A1]: autfilt 'lcr-i161-Lp0r2K'>'lcr-o1-3BxK5e'
+Performing sanity checks and gathering statistics...
+
+-:7818.1-7865.7
+Running [A0]: autfilt --parity 'lcr-i162-29cupJ'>'lcr-o0-RmTQOI'
+Running [A1]: autfilt 'lcr-i162-WDYZey'>'lcr-o1-Ijk2XJ'
+Performing sanity checks and gathering statistics...
+
+-:7866.1-7913.7
+Running [A0]: autfilt --parity 'lcr-i163-NtIAEw'>'lcr-o0-QZl11q'
+Running [A1]: autfilt 'lcr-i163-v21AW0'>'lcr-o1-mXAZgW'
+Performing sanity checks and gathering statistics...
+
+-:7914.1-7957.7
+Running [A0]: autfilt --parity 'lcr-i164-dvqLqb'>'lcr-o0-Q5FTyq'
+Running [A1]: autfilt 'lcr-i164-POWAsB'>'lcr-o1-erKjFj'
+Performing sanity checks and gathering statistics...
+
+-:7958.1-8005.7
+Running [A0]: autfilt --parity 'lcr-i165-IKZvSv'>'lcr-o0-yMnrpt'
+Running [A1]: autfilt 'lcr-i165-UKzRjd'>'lcr-o1-CCK3mR'
+Performing sanity checks and gathering statistics...
+
+-:8006.1-8052.7
+Running [A0]: autfilt --parity 'lcr-i166-V9Zxd4'>'lcr-o0-AX7XyS'
+Running [A1]: autfilt 'lcr-i166-vMH8Lv'>'lcr-o1-tQhqC6'
+Performing sanity checks and gathering statistics...
+
+-:8053.1-8105.7
+Running [A0]: autfilt --parity 'lcr-i167-W9NMFZ'>'lcr-o0-YkpUq6'
+Running [A1]: autfilt 'lcr-i167-1mAA8B'>'lcr-o1-VNglyh'
+Performing sanity checks and gathering statistics...
+
+-:8106.1-8151.7
+Running [A0]: autfilt --parity 'lcr-i168-lVwdlJ'>'lcr-o0-7tkd9M'
+Running [A1]: autfilt 'lcr-i168-fs1lH1'>'lcr-o1-9Bs3QT'
+Performing sanity checks and gathering statistics...
+
+-:8152.1-8205.7
+Running [A0]: autfilt --parity 'lcr-i169-G9GilL'>'lcr-o0-qNtXcK'
+Running [A1]: autfilt 'lcr-i169-Wqzosz'>'lcr-o1-ADbo20'
+Performing sanity checks and gathering statistics...
+
+-:8206.1-8253.7
+Running [A0]: autfilt --parity 'lcr-i170-qWvZDm'>'lcr-o0-Cb8uBf'
+Running [A1]: autfilt 'lcr-i170-QXJbY4'>'lcr-o1-1eOClX'
+Performing sanity checks and gathering statistics...
+
+-:8254.1-8301.7
+Running [A0]: autfilt --parity 'lcr-i171-0jJP6R'>'lcr-o0-x2PNU7'
+Running [A1]: autfilt 'lcr-i171-iOK7Be'>'lcr-o1-Kc9vXB'
+Performing sanity checks and gathering statistics...
+
+-:8302.1-8351.7
+Running [A0]: autfilt --parity 'lcr-i172-NiZeQy'>'lcr-o0-H63VYw'
+Running [A1]: autfilt 'lcr-i172-d67yaF'>'lcr-o1-dMYpdb'
+Performing sanity checks and gathering statistics...
+
+-:8352.1-8397.7
+Running [A0]: autfilt --parity 'lcr-i173-ONUQ7E'>'lcr-o0-Qjt4Ih'
+Running [A1]: autfilt 'lcr-i173-IOKvWJ'>'lcr-o1-WRhTHV'
+Performing sanity checks and gathering statistics...
+
+-:8398.1-8446.7
+Running [A0]: autfilt --parity 'lcr-i174-gFDixd'>'lcr-o0-a3T6IJ'
+Running [A1]: autfilt 'lcr-i174-0eubhP'>'lcr-o1-IpX3JL'
+Performing sanity checks and gathering statistics...
+
+-:8447.1-8494.7
+Running [A0]: autfilt --parity 'lcr-i175-wVw8wV'>'lcr-o0-nd05lU'
+Running [A1]: autfilt 'lcr-i175-ndbDgQ'>'lcr-o1-ejIc1D'
+Performing sanity checks and gathering statistics...
+
+-:8495.1-8540.7
+Running [A0]: autfilt --parity 'lcr-i176-slaj4J'>'lcr-o0-YuKuiX'
+Running [A1]: autfilt 'lcr-i176-Sbi3Ko'>'lcr-o1-986qG9'
+Performing sanity checks and gathering statistics...
+
+-:8541.1-8589.7
+Running [A0]: autfilt --parity 'lcr-i177-6YVVk3'>'lcr-o0-S54oSs'
+Running [A1]: autfilt 'lcr-i177-3bC2ik'>'lcr-o1-CBroUI'
+Performing sanity checks and gathering statistics...
+
+-:8590.1-8642.7
+Running [A0]: autfilt --parity 'lcr-i178-2QIgep'>'lcr-o0-S771kw'
+Running [A1]: autfilt 'lcr-i178-eE0GPq'>'lcr-o1-6ZFwhp'
+Performing sanity checks and gathering statistics...
+
+-:8643.1-8694.7
+Running [A0]: autfilt --parity 'lcr-i179-5VF0nZ'>'lcr-o0-ddpaaa'
+Running [A1]: autfilt 'lcr-i179-mqOJNz'>'lcr-o1-yppcBV'
+Performing sanity checks and gathering statistics...
+
+-:8695.1-8740.7
+Running [A0]: autfilt --parity 'lcr-i180-CBQIHn'>'lcr-o0-SfyehA'
+Running [A1]: autfilt 'lcr-i180-Q2jZmS'>'lcr-o1-5W1qXg'
+Performing sanity checks and gathering statistics...
+
+-:8741.1-8790.7
+Running [A0]: autfilt --parity 'lcr-i181-BOWWmD'>'lcr-o0-asWeTk'
+Running [A1]: autfilt 'lcr-i181-x1zIfw'>'lcr-o1-2vNE1l'
+Performing sanity checks and gathering statistics...
+
+-:8791.1-8839.7
+Running [A0]: autfilt --parity 'lcr-i182-SEYbEP'>'lcr-o0-EgKAPL'
+Running [A1]: autfilt 'lcr-i182-dt3sxz'>'lcr-o1-ChQnk9'
+Performing sanity checks and gathering statistics...
+
+-:8840.1-8896.7
+Running [A0]: autfilt --parity 'lcr-i183-BV0UPs'>'lcr-o0-8eSWXj'
+Running [A1]: autfilt 'lcr-i183-OMxNem'>'lcr-o1-B7V9Qi'
+Performing sanity checks and gathering statistics...
+
+-:8897.1-8941.7
+Running [A0]: autfilt --parity 'lcr-i184-hqUqEE'>'lcr-o0-snKdvr'
+Running [A1]: autfilt 'lcr-i184-rmFgIP'>'lcr-o1-pXPb7M'
+Performing sanity checks and gathering statistics...
+
+-:8942.1-8987.7
+Running [A0]: autfilt --parity 'lcr-i185-w3y2Hi'>'lcr-o0-gIkHXs'
+Running [A1]: autfilt 'lcr-i185-uxljfy'>'lcr-o1-FwyG3V'
+Performing sanity checks and gathering statistics...
+
+-:8988.1-9035.7
+Running [A0]: autfilt --parity 'lcr-i186-CFGc6l'>'lcr-o0-FWt9Ho'
+Running [A1]: autfilt 'lcr-i186-Eueszc'>'lcr-o1-V3mj2j'
+Performing sanity checks and gathering statistics...
+
+-:9036.1-9082.7
+Running [A0]: autfilt --parity 'lcr-i187-uvqZm2'>'lcr-o0-jc2hau'
+Running [A1]: autfilt 'lcr-i187-ACk7be'>'lcr-o1-ioYyCj'
+Performing sanity checks and gathering statistics...
+
+-:9083.1-9130.7
+Running [A0]: autfilt --parity 'lcr-i188-mZCkFy'>'lcr-o0-F8sXVK'
+Running [A1]: autfilt 'lcr-i188-CgZeUL'>'lcr-o1-nVtmv9'
+Performing sanity checks and gathering statistics...
+
+-:9131.1-9177.7
+Running [A0]: autfilt --parity 'lcr-i189-3vpsXv'>'lcr-o0-3rXfj5'
+Running [A1]: autfilt 'lcr-i189-cP1sZi'>'lcr-o1-fUqTPq'
+Performing sanity checks and gathering statistics...
+
+-:9178.1-9225.7
+Running [A0]: autfilt --parity 'lcr-i190-8dtkmW'>'lcr-o0-QrmHwC'
+Running [A1]: autfilt 'lcr-i190-deo8QF'>'lcr-o1-2E8F6c'
+Performing sanity checks and gathering statistics...
+
+-:9226.1-9272.7
+Running [A0]: autfilt --parity 'lcr-i191-b9tuSN'>'lcr-o0-dvpX9U'
+Running [A1]: autfilt 'lcr-i191-ydVjdw'>'lcr-o1-X4LyBH'
+Performing sanity checks and gathering statistics...
+
+-:9273.1-9316.7
+Running [A0]: autfilt --parity 'lcr-i192-yEqwyk'>'lcr-o0-HNSiDR'
+Running [A1]: autfilt 'lcr-i192-1BHVpH'>'lcr-o1-3WGqA1'
+Performing sanity checks and gathering statistics...
+
+-:9317.1-9362.7
+Running [A0]: autfilt --parity 'lcr-i193-dUDvYP'>'lcr-o0-jO7AXK'
+Running [A1]: autfilt 'lcr-i193-y9ovEN'>'lcr-o1-0Uk2f2'
+Performing sanity checks and gathering statistics...
+
+-:9363.1-9411.7
+Running [A0]: autfilt --parity 'lcr-i194-G1PWLS'>'lcr-o0-1U0Zcu'
+Running [A1]: autfilt 'lcr-i194-Yy5Hqy'>'lcr-o1-ELuFIO'
+Performing sanity checks and gathering statistics...
+
+-:9412.1-9464.7
+Running [A0]: autfilt --parity 'lcr-i195-H7Lcum'>'lcr-o0-B1JmPB'
+Running [A1]: autfilt 'lcr-i195-p4ww0y'>'lcr-o1-TWmbM2'
+Performing sanity checks and gathering statistics...
+
+-:9465.1-9514.7
+Running [A0]: autfilt --parity 'lcr-i196-Xsplcv'>'lcr-o0-ckoCMP'
+Running [A1]: autfilt 'lcr-i196-CcbtFV'>'lcr-o1-oZEC0v'
+Performing sanity checks and gathering statistics...
+
+-:9515.1-9563.7
+Running [A0]: autfilt --parity 'lcr-i197-SPpdsT'>'lcr-o0-Yrsjkp'
+Running [A1]: autfilt 'lcr-i197-BiXrfR'>'lcr-o1-qGpUP7'
+Performing sanity checks and gathering statistics...
+
+-:9564.1-9613.7
+Running [A0]: autfilt --parity 'lcr-i198-8O9OuM'>'lcr-o0-RE8BlQ'
+Running [A1]: autfilt 'lcr-i198-C0rZ2p'>'lcr-o1-4sJT8I'
+Performing sanity checks and gathering statistics...
+
+-:9614.1-9665.7
+Running [A0]: autfilt --parity 'lcr-i199-hBIO62'>'lcr-o0-9fInn4'
+Running [A1]: autfilt 'lcr-i199-dG47LL'>'lcr-o1-kphg9v'
+Performing sanity checks and gathering statistics...
+
+-:9666.1-9708.7
+Running [A0]: autfilt --parity 'lcr-i200-LwLjvp'>'lcr-o0-3qWHl2'
+Running [A1]: autfilt 'lcr-i200-wiNuny'>'lcr-o1-LrBCel'
+Performing sanity checks and gathering statistics...
+
+-:9709.1-9752.7
+Running [A0]: autfilt --parity 'lcr-i201-NpFtX5'>'lcr-o0-jrg51I'
+Running [A1]: autfilt 'lcr-i201-d40E3h'>'lcr-o1-6WdqlV'
+Performing sanity checks and gathering statistics...
+
+-:9753.1-9795.7
+Running [A0]: autfilt --parity 'lcr-i202-hRaKca'>'lcr-o0-R2UqLm'
+Running [A1]: autfilt 'lcr-i202-pVBF8L'>'lcr-o1-OhbmfG'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
+PASS core/rabin2parity.test (exit status: 0)

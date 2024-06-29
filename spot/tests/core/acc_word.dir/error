@@ -1,0 +1,10 @@
+autfilt: failed to parse the argument of --reject-word:
+>>> foobar
+          ^
+A twa_word must contain a cycle
+
+autfilt: failed to parse the argument of --accept-word:
+>>> cycle{foo
+             ^
+Missing ';' or '}' after formula
+

@@ -1,0 +1,168 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test complementation.test
+== Running test complementation.test
++ echo complementation.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=complementation
++ testSubDir=complementation.dir
++ chmod -R a+rwx complementation.dir
++ rm -rf complementation.dir
++ mkdir complementation.dir
++ cd complementation.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ ltlcross -F input ltl2tgba --generic -D --csv=out.csv
+input:1: G(F(a))
+Running [P0]: ltl2tgba --generic -D -H 'G(F(a))'>'lcr-o0-MqsDvx'
+Running [N0]: ltl2tgba --generic -D -H '!(G(F(a)))'>'lcr-o0-H5afbu'
+Performing sanity checks and gathering statistics...
+
+input:2: F(G(a))
+Running [P0]: ltl2tgba --generic -D -H 'F(G(a))'>'lcr-o0-diyuKz'
+Running [N0]: ltl2tgba --generic -D -H '!(F(G(a)))'>'lcr-o0-Kiwmcr'
+Performing sanity checks and gathering statistics...
+
+input:3: (F(p1)) -> (p0)
+Running [P0]: ltl2tgba --generic -D -H '(F(p1)) -> (p0)'>'lcr-o0-7eLmoz'
+Running [N0]: ltl2tgba --generic -D -H '!((F(p1)) -> (p0))'>'lcr-o0-PkAZCo'
+Performing sanity checks and gathering statistics...
+
+input:4: (F(p1)) -> ((p0) U (p1))
+Running [P0]: ltl2tgba --generic -D -H '(F(p1)) -> ((p0) U (p1))'>'lcr-o0-0npCVY'
+Running [N0]: ltl2tgba --generic -D -H '!((F(p1)) -> ((p0) U (p1)))'>'lcr-o0-YDeJY6'
+Performing sanity checks and gathering statistics...
+
+input:5: G((p0) -> (F(p3)))
+Running [P0]: ltl2tgba --generic -D -H 'G((p0) -> (F(p3)))'>'lcr-o0-w3IQyx'
+Running [N0]: ltl2tgba --generic -D -H '!(G((p0) -> (F(p3))))'>'lcr-o0-8MoQ8a'
+Performing sanity checks and gathering statistics...
+
+input:6: (a) U (b)
+Running [P0]: ltl2tgba --generic -D -H '(a) U (b)'>'lcr-o0-oQ4iQO'
+Running [N0]: ltl2tgba --generic -D -H '!((a) U (b))'>'lcr-o0-9weXT2'
+Performing sanity checks and gathering statistics...
+
+input:7: (G(F(a))) & (F(G(a)))
+Running [P0]: ltl2tgba --generic -D -H '(G(F(a))) & (F(G(a)))'>'lcr-o0-3gu3tf'
+Running [N0]: ltl2tgba --generic -D -H '!((G(F(a))) & (F(G(a))))'>'lcr-o0-ER4evF'
+Performing sanity checks and gathering statistics...
+
+input:8: G(((!(p1)) & (p2)) -> ((p0) U ((p1) | (G(p0)))))
+Running [P0]: ltl2tgba --generic -D -H 'G(((!(p1)) & (p2)) -> ((p0) U ((p1) | (G(p0)))))'>'lcr-o0-x6440o'
+Running [N0]: ltl2tgba --generic -D -H '!(G(((!(p1)) & (p2)) -> ((p0) U ((p1) | (G(p0))))))'>'lcr-o0-NWT7Hs'
+Performing sanity checks and gathering statistics...
+
+input:9: G((p2) -> (((!(p0)) & (!(p1))) U ((p1) | (((p0) & (!(p1))) U ((p1) | (((!(p0)) & (!(p1))) U ((p1) | (((p0) & (!(p1))) U ((p1) | (G(p0)) | ((!(p0)) U ((p1) | (G(!(p0))))))))))))))
+Running [P0]: ltl2tgba --generic -D -H 'G((p2) -> (((!(p0)) & (!(p1))) U ((p1) | (((p0) & (!(p1))) U ((p1) | (((!(p0)) & (!(p1))) U ((p1) | (((p0) & (!(p1))) U ((p1) | (G(p0)) | ((!(p0)) U ((p1) | (G(!(p0))))))))))))))'>'lcr-o0-PMD6kU'
+Running [N0]: ltl2tgba --generic -D -H '!(G((p2) -> (((!(p0)) & (!(p1))) U ((p1) | (((p0) & (!(p1))) U ((p1) | (((!(p0)) & (!(p1))) U ((p1) | (((p0) & (!(p1))) U ((p1) | (G(p0)) | ((!(p0)) U ((p1) | (G(!(p0)))))))))))))))'>'lcr-o0-F0072l'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
++ cut -d, -f12
++ cat
++ diff det.csv expected
++ cat
++ run 0 autfilt -D x.hoa
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -D x.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -D x.hoa
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 autfilt -q -v --is-empty x.hoa
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q -v --is-empty x.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q -v --is-empty x.hoa
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 autfilt -q -v --is-empty x2.hoa
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q -v --is-empty x2.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q -v --is-empty x2.hoa
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 autfilt -q -v --is-empty --complement x2.hoa
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q -v --is-empty --complement x2.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q -v --is-empty --complement x2.hoa
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 1 autfilt -q --intersect x2.hoa x3.hoa
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q --intersect x2.hoa x3.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q --intersect x2.hoa x3.hoa
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ :
+PASS core/complementation.test (exit status: 0)

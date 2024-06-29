@@ -1,0 +1,774 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test prodchain.test
+== Running test prodchain.test
++ echo prodchain.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=prodchain
++ testSubDir=prodchain.dir
++ chmod -R a+rwx prodchain.dir
++ rm -rf prodchain.dir
++ mkdir prodchain.dir
++ cd prodchain.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ set x
++ shift
++ ltl2tgba {a[*01]}[]->GFb
++ set x --product 01.hoa
++ shift
++ ltl2tgba {a[*02]}[]->GFb
++ set x --product 01.hoa --product 02.hoa
++ shift
++ ltl2tgba {a[*03]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa
++ shift
++ ltl2tgba {a[*04]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa
++ shift
++ ltl2tgba {a[*05]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa
++ shift
++ ltl2tgba {a[*06]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa
++ shift
++ ltl2tgba {a[*07]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa
++ shift
++ ltl2tgba {a[*08]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa
++ shift
++ ltl2tgba {a[*09]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa
++ shift
++ ltl2tgba {a[*10]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa
++ shift
++ ltl2tgba {a[*11]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa
++ shift
++ ltl2tgba {a[*12]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa
++ shift
++ ltl2tgba {a[*13]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa
++ shift
++ ltl2tgba {a[*14]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa
++ shift
++ ltl2tgba {a[*15]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa
++ shift
++ ltl2tgba {a[*16]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa
++ shift
++ ltl2tgba {a[*17]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa
++ shift
++ ltl2tgba {a[*18]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa
++ shift
++ ltl2tgba {a[*19]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa
++ shift
++ ltl2tgba {a[*20]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa
++ shift
++ ltl2tgba {a[*21]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa
++ shift
++ ltl2tgba {a[*22]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa
++ shift
++ ltl2tgba {a[*23]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa
++ shift
++ ltl2tgba {a[*24]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa
++ shift
++ ltl2tgba {a[*25]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa
++ shift
++ ltl2tgba {a[*26]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa
++ shift
++ ltl2tgba {a[*27]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa
++ shift
++ ltl2tgba {a[*28]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa
++ shift
++ ltl2tgba {a[*29]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa
++ shift
++ ltl2tgba {a[*30]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa
++ shift
++ ltl2tgba {a[*31]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa
++ shift
++ ltl2tgba {a[*32]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa
++ shift
++ ltl2tgba {a[*33]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa
++ shift
++ ltl2tgba {a[*34]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa
++ shift
++ ltl2tgba {a[*35]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa
++ shift
++ ltl2tgba {a[*36]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa --product 36.hoa
++ shift
++ ltl2tgba {a[*37]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa --product 36.hoa --product 37.hoa
++ shift
++ ltl2tgba {a[*38]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa --product 36.hoa --product 37.hoa --product 38.hoa
++ shift
++ ltl2tgba {a[*39]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa --product 36.hoa --product 37.hoa --product 38.hoa --product 39.hoa
++ shift
++ ltl2tgba {a[*40]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa --product 36.hoa --product 37.hoa --product 38.hoa --product 39.hoa --product 40.hoa
++ shift
++ ltl2tgba {a[*41]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa --product 36.hoa --product 37.hoa --product 38.hoa --product 39.hoa --product 40.hoa --product 41.hoa
++ shift
++ ltl2tgba {a[*42]}[]->GFb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa --product 36.hoa --product 37.hoa --product 38.hoa --product 39.hoa --product 40.hoa --product 41.hoa --product 42.hoa
++ shift
++ shift
++ [ 32 -eq 32 ]
++ autfilt 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa --product 36.hoa --product 37.hoa --product 38.hoa --product 39.hoa --product 40.hoa --product 41.hoa --product 42.hoa
++ grep Too many acceptance sets used error
+autfilt: Too many acceptance sets used.  The limit is 32.
++ autfilt -B --low 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa --product 36.hoa --product 37.hoa --product 38.hoa --product 39.hoa --product 40.hoa --product 41.hoa --product 42.hoa
++ autfilt --stats=%s,%e,%t,%a result
++ test 4,7,16,1 = 4,7,16,1
++ set x
++ shift
++ set x --product-or 01.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa --product-or 40.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa --product-or 40.hoa --product-or 41.hoa
++ shift
++ set x --product-or 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa --product-or 40.hoa --product-or 41.hoa --product-or 42.hoa
++ shift
++ shift
++ autfilt -B --low 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa --product-or 40.hoa --product-or 41.hoa --product-or 42.hoa
++ autfilt --stats=%s,%e,%t,%a result
++ test 45,89,180,1 = 45,89,180,1
++ set x
++ shift
++ ltl2tgba -D --cobuchi -S {a[*01]}<>->FGb
++ set x --product 01.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*02]}<>->FGb
++ set x --product 01.hoa --product 02.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*03]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*04]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*05]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*06]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*07]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*08]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*09]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*10]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*11]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*12]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*13]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*14]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*15]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*16]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*17]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*18]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*19]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*20]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*21]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*22]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*23]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*24]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*25]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*26]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*27]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*28]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*29]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*30]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*31]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*32]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*33]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*34]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*35]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*36]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa --product 36.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*37]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa --product 36.hoa --product 37.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*38]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa --product 36.hoa --product 37.hoa --product 38.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*39]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa --product 36.hoa --product 37.hoa --product 38.hoa --product 39.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*40]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa --product 36.hoa --product 37.hoa --product 38.hoa --product 39.hoa --product 40.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*41]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa --product 36.hoa --product 37.hoa --product 38.hoa --product 39.hoa --product 40.hoa --product 41.hoa
++ shift
++ ltl2tgba -D --cobuchi -S {a[*42]}<>->FGb
++ set x --product 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa --product 36.hoa --product 37.hoa --product 38.hoa --product 39.hoa --product 40.hoa --product 41.hoa --product 42.hoa
++ shift
++ shift
++ autfilt --cobuchi --high -D -S 01.hoa --product 02.hoa --product 03.hoa --product 04.hoa --product 05.hoa --product 06.hoa --product 07.hoa --product 08.hoa --product 09.hoa --product 10.hoa --product 11.hoa --product 12.hoa --product 13.hoa --product 14.hoa --product 15.hoa --product 16.hoa --product 17.hoa --product 18.hoa --product 19.hoa --product 20.hoa --product 21.hoa --product 22.hoa --product 23.hoa --product 24.hoa --product 25.hoa --product 26.hoa --product 27.hoa --product 28.hoa --product 29.hoa --product 30.hoa --product 31.hoa --product 32.hoa --product 33.hoa --product 34.hoa --product 35.hoa --product 36.hoa --product 37.hoa --product 38.hoa --product 39.hoa --product 40.hoa --product 41.hoa --product 42.hoa
++ autfilt --stats=%s,%e,%t,%a result
++ test 44,47,92,1 = 44,47,92,1
++ :
++ set x
++ shift
++ ltl2tgba -D --cobuchi {a[*01]}<>->FGb
++ set x --product-or 01.hoa
++ shift
++ test 01 -eq 1
++ shift
++ autfilt --high --small --cobuchi 01.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfiltautfilt --high -S --small --stats=%s,%e,%t,%a --cobuchi
+ 01.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*02]}<>->FGb
++ set x 01.hoa --product-or 02.hoa
++ shift
++ test 02 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa
++ autfilt -S --stats=%s,%e,%t,%a
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*03]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa
++ shift
++ test 03 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or+  03.hoa
+autfilt -S --stats=%s,%e,%t,%a
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*04]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa
++ shift
++ test 04 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --high --smallautfilt --cobuchi -S 01.hoa --stats=%s,%e,%t,%a --product-or
+ 02.hoa --product-or 03.hoa --product-or 04.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*05]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa
++ shift
++ test 05 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt -S --stats=%s,%e,%t,%a
+autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*06]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa
++ shift
++ test 06 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ autfilt --high --small --cobuchi 01.hoa+  --product-or 02.hoa --product-or 03.hoa --product-or 04.hoaautfilt --product-or -S 05.hoa --stats=%s,%e,%t,%a --product-or
+ 06.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*07]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa
++ shift
++ test 07 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ autfilt --high+  --small --cobuchi 01.hoa --product-orautfilt 02.hoa -S --product-or --stats=%s,%e,%t,%a 03.hoa
+ --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*08]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa
++ shift
++ test 08 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --highautfilt --small -S --cobuchi --stats=%s,%e,%t,%a 01.hoa
+ --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*09]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa
++ shift
++ test 09 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ autfilt+  --high --small --cobuchi 01.hoa --product-or 02.hoaautfilt --product-or -S 03.hoa --stats=%s,%e,%t,%a --product-or
+ 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*10]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa
++ shift
++ test 10 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa+  --product-or 05.hoa --product-or 06.hoa --product-orautfilt 07.hoa -S --product-or --stats=%s,%e,%t,%a 08.hoa
+ --product-or 09.hoa --product-or 10.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*11]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa
++ shift
++ test 11 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ autfilt+  --high --small --cobuchi 01.hoaautfilt --product-or -S 02.hoa --stats=%s,%e,%t,%a --product-or
+ 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*12]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa
++ shift
++ test 12 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or+  03.hoa --product-or 04.hoa --product-or 05.hoaautfilt --product-or -S 06.hoa --stats=%s,%e,%t,%a --product-or
+ 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*13]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa
++ shift
++ test 13 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ autfilt --high --small+  --cobuchi 01.hoa --product-or 02.hoaautfilt --product-or -S 03.hoa --stats=%s,%e,%t,%a --product-or
+ 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*14]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa
++ shift
++ test 14 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfiltautfilt -S --high --stats=%s,%e,%t,%a --small
+ --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*15]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa
++ shift
++ test 15 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --high --small --cobuchiautfilt 01.hoa -S --product-or --stats=%s,%e,%t,%a 02.hoa
+ --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*16]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa
++ shift
++ test 16 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --high --small --cobuchiautfilt 01.hoa -S --product-or --stats=%s,%e,%t,%a 02.hoa
+ --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*17]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa
++ shift
++ test 17 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --highautfilt --small -S --cobuchi --stats=%s,%e,%t,%a 01.hoa
+ --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*18]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa
++ shift
++ test 18 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --highautfilt --small -S --cobuchi --stats=%s,%e,%t,%a 01.hoa
+ --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*19]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa
++ shift
++ test 19 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --high --small --cobuchi 01.hoaautfilt --product-or -S 02.hoa --stats=%s,%e,%t,%a --product-or
+ 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*20]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa
++ shift
++ test 20 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ autfilt+  --high --small --cobuchi 01.hoa --product-or 02.hoaautfilt --product-or -S 03.hoa --stats=%s,%e,%t,%a --product-or
+ 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*21]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa
++ shift
++ test 21 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfiltautfilt --high -S --small --stats=%s,%e,%t,%a --cobuchi
+ 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*22]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa
++ shift
++ test 22 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ autfilt --high --small+  --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoaautfilt --product-or -S 04.hoa --stats=%s,%e,%t,%a --product-or
+ 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*23]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa
++ shift
++ test 23 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --high --small --cobuchi 01.hoa --product-orautfilt 02.hoa -S --product-or --stats=%s,%e,%t,%a 03.hoa
+ --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*24]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa
++ shift
++ test 24 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfiltautfilt -S --high --stats=%s,%e,%t,%a --small
+ --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*25]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa
++ shift
++ test 25 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --high --small --cobuchi 01.hoa --product-or 02.hoaautfilt --product-or -S 03.hoa --stats=%s,%e,%t,%a --product-or
+ 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*26]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa
++ shift
++ test 26 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ autfilt+  -S --stats=%s,%e,%t,%a
+autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*27]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa
++ shift
++ test 27 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfiltautfilt -S --high --stats=%s,%e,%t,%a --small
+ --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*28]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa
++ shift
++ test 28 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ autfilt+  --high --small --cobuchi 01.hoa --product-or 02.hoaautfilt --product-or -S 03.hoa --stats=%s,%e,%t,%a --product-or
+ 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*29]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa
++ shift
++ test 29 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --high --small --cobuchi 01.hoa --product-or 02.hoaautfilt --product-or -S 03.hoa --stats=%s,%e,%t,%a --product-or
+ 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*30]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa
++ shift
++ test 30 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --high --small --cobuchiautfilt 01.hoa -S --product-or --stats=%s,%e,%t,%a 02.hoa
+ --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*31]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa
++ shift
++ test 31 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --high --small --cobuchi 01.hoa --product-or 02.hoaautfilt --product-or -S 03.hoa --stats=%s,%e,%t,%a --product-or
+ 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*32]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa
++ shift
++ test 32 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --high --small --cobuchi 01.hoaautfilt --product-or -S 02.hoa --stats=%s,%e,%t,%a --product-or
+ 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*33]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa
++ shift
++ test 33 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ autfilt+  --high --small --cobuchi 01.hoa --product-or 02.hoa --product-orautfilt 03.hoa -S --product-or --stats=%s,%e,%t,%a 04.hoa
+ --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*34]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa
++ shift
++ test 34 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --high --small --cobuchi 01.hoa --product-or 02.hoaautfilt --product-or -S 03.hoa --stats=%s,%e,%t,%a --product-or
+ 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*35]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa
++ shift
++ test 35 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --high --small --cobuchi 01.hoaautfilt --product-or -S 02.hoa --stats=%s,%e,%t,%a --product-or
+ 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*36]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa
++ shift
++ test 36 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or+  17.hoa --product-or 18.hoa --product-orautfilt 19.hoa -S --product-or --stats=%s,%e,%t,%a 20.hoa
+ --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*37]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa
++ shift
++ test 37 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --high --small --cobuchiautfilt 01.hoa -S --product-or --stats=%s,%e,%t,%a 02.hoa
+ --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*38]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa
++ shift
++ test 38 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ autfilt --high --small+  --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoaautfilt --product-or -S 04.hoa --stats=%s,%e,%t,%a --product-or
+ 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*39]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa
++ shift
++ test 39 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --high --smallautfilt --cobuchi -S 01.hoa --stats=%s,%e,%t,%a --product-or
+ 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*40]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa --product-or 40.hoa
++ shift
++ test 40 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa --product-or 40.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt --high --smallautfilt --cobuchi -S 01.hoa --stats=%s,%e,%t,%a --product-or
+ 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa --product-or 40.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*41]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa --product-or 40.hoa --product-or 41.hoa
++ shift
++ test 41 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa --product-or 40.hoa --product-or 41.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfilt -S --stats=%s,%e,%t,%a
+autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa --product-or 40.hoa --product-or 41.hoa
++ test 3,5,10,1 = 3,5,10,1
++ ltl2tgba -D --cobuchi {a[*42]}<>->FGb
++ set x 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa --product-or 40.hoa --product-or 41.hoa --product-or 42.hoa
++ shift
++ test 42 -eq 1
++ autfilt --high --small --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa --product-or 40.hoa --product-or 41.hoa --product-or 42.hoa --stats=%s,%e,%t,%a
++ test 2,3,6,1 = 2,3,6,1
++ + autfiltautfilt -S --high --stats=%s,%e,%t,%a --small
+ --cobuchi 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa --product-or 40.hoa --product-or 41.hoa --product-or 42.hoa
++ test 3,5,10,1 = 3,5,10,1
++ [ 32 -eq 32 ]
++ autfilt 01.hoa --product-or 02.hoa --product-or 03.hoa --product-or 04.hoa --product-or 05.hoa --product-or 06.hoa --product-or 07.hoa --product-or 08.hoa --product-or 09.hoa --product-or 10.hoa --product-or 11.hoa --product-or 12.hoa --product-or 13.hoa --product-or 14.hoa --product-or 15.hoa --product-or 16.hoa --product-or 17.hoa --product-or 18.hoa --product-or 19.hoa --product-or 20.hoa --product-or 21.hoa --product-or 22.hoa --product-or 23.hoa --product-or 24.hoa --product-or 25.hoa --product-or 26.hoa --product-or 27.hoa --product-or 28.hoa --product-or 29.hoa --product-or 30.hoa --product-or 31.hoa --product-or 32.hoa --product-or 33.hoa --product-or 34.hoa --product-or 35.hoa --product-or 36.hoa --product-or 37.hoa --product-or 38.hoa --product-or 39.hoa --product-or 40.hoa --product-or 41.hoa --product-or 42.hoa
++ grep Too many acceptance sets used error
+autfilt: Too many acceptance sets used.  The limit is 32.
++ true
+PASS core/prodchain.test (exit status: 0)

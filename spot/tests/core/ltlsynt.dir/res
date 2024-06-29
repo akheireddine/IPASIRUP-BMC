@@ -1,0 +1,11 @@
+digraph "" {
+  rankdir=LR
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 0 [label="i / o"]
+  0 -> 1 [label="!i / !o"]
+  1 [label="1"]
+  1 -> 1 [label="1 / !o"]
+}

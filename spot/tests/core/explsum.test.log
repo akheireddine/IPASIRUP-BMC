@@ -1,0 +1,296 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test explsum.test
+== Running test explsum.test
++ echo explsum.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=explsum
++ testSubDir=explsum.dir
++ chmod -R a+rwx explsum.dir
++ rm -rf explsum.dir
++ mkdir explsum.dir
++ cd explsum.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ cat
++ cat
++ cat
++ cat
++ cat
++ cat
++ run 0 autfilt input2 --sum input1 input3 input4 --hoaf=t
++ + expected_exitcode=0
++ shift
+tee+  stdoutexitcode=0
+
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt input2 --sum input1 input3 input4 --hoaf=t
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt input2 --sum input1 input3 input4 --hoaf=t
+HOA: v1
+States: 6
+Start: 5
+AP: 3 "a" "b" "c"
+Acceptance: 3 (Inf(0)&Inf(1)) | Inf(2)
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[1] 1 {0}
+State: 1
+[0] 0 {1}
+State: 2
+[0] 3 {2}
+[1] 4 {2}
+State: 3
+State: 4
+[!0] 2 {2}
+[2] 3 {2}
+State: 5
+[0] 3
+[1] 1
+[1] 4
+--END--
+HOA: v1
+States: 6
+Start: 5
+AP: 3 "a" "b" "c"
+acc-name: Streett 1
+Acceptance: 2 Fin(0) | Inf(1)
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[0] 0 {0}
+[1] 1
+State: 1
+[1] 1
+State: 2
+[0] 3 {0 1}
+[1] 4 {0 1}
+State: 3
+State: 4
+[!0] 2 {0 1}
+[2] 3 {0 1}
+State: 5
+[0] 0
+[0] 3
+[1] 1
+[1] 4
+--END--
+HOA: v1
+States: 6
+Start: 5
+AP: 3 "a" "b" "c"
+Acceptance: 2 Inf(0) | Inf(1)
+properties: trans-labels explicit-labels trans-acc univ-branch
+--BODY--
+State: 0
+[0] 0&1
+State: 1
+[1] 0 {0}
+State: 2
+[0] 3 {1}
+[1] 4 {1}
+State: 3
+State: 4
+[!0] 2 {1}
+[2] 3 {1}
+State: 5
+[0] 0&1
+[0] 3
+[1] 4
+--END--
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff stdout expected
++ cat
++ run 0 autfilt false1 --sum false2 --hoaf=t
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n+  valgrind
+tee stdout
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt false1 --sum false2 --hoaf=t
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt false1 --sum false2 --hoaf=t
+HOA: v1
+States: 3
+Start: 2
+AP: 1 "a"
+acc-name: Streett 1
+Acceptance: 2 Fin(0) | Inf(1)
+properties: trans-labels explicit-labels trans-acc complete
+--BODY--
+State: 0
+[t] 0 {0}
+State: 1
+[t] 1 {0}
+State: 2
+[t] 0
+[t] 1
+--END--
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff stdout expected
++ rm stdout
++ cat
++ + run 0 autfilt input1 --sum-and input2tee
+ temp
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt input1 --sum-and input2
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt input1 --sum-and input2
+HOA: v1
+States: 5
+Start: 0&3
+AP: 3 "b" "a" "c"
+Acceptance: 3 Inf(0) | (Inf(1)&Inf(2))
+properties: trans-labels explicit-labels state-acc univ-branch
+--BODY--
+State: 0 {0}
+[1] 1
+[0] 2
+State: 1
+State: 2 {0}
+[!1] 0
+[2] 1
+State: 3 {1}
+[0] 4
+State: 4 {2}
+[1] 3
+--END--
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run+  0 autfilt input3 --sum-andtee temp stdout
+
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt input3 --sum-and temp
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt input3 --sum-and temp
+HOA: v1
+States: 7
+Start: 0&2&5
+AP: 3 "b" "a" "c"
+Acceptance: 4 Fin(0) | Inf(1) | (Inf(2)&Inf(3))
+properties: trans-labels explicit-labels trans-acc univ-branch
+--BODY--
+State: 0
+[1] 0 {0}
+[0] 1
+State: 1
+[0] 1
+State: 2
+[1] 3 {0 1}
+[0] 4 {0 1}
+State: 3
+State: 4
+[!1] 2 {0 1}
+[2] 3 {0 1}
+State: 5
+[0] 6 {0 2}
+State: 6
+[1] 5 {0 3}
+--END--
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff stdout expected
++ rm stdout
++ cat
++ run 0 autfilt input3 --sum temp
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ tee stdout
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt input3 --sum temp
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt input3 --sum temp
+HOA: v1
+States: 8
+Start: 7
+AP: 3 "b" "a" "c"
+Acceptance: 4 Fin(0) | Inf(1) | (Inf(2)&Inf(3))
+properties: trans-labels explicit-labels trans-acc univ-branch
+--BODY--
+State: 0
+[1] 0 {0}
+[0] 1
+State: 1
+[0] 1
+State: 2
+[1] 3 {0 1}
+[0] 4 {0 1}
+State: 3
+State: 4
+[!1] 2 {0 1}
+[2] 3 {0 1}
+State: 5
+[0] 6 {0 2}
+State: 6
+[1] 5 {0 3}
+State: 7
+[0&1] 3&6
+[0] 1
+[0] 4&6
+[1] 0
+--END--
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff stdout expected
++ rm false1 false2 input1 input2 input3 input4 expected stdout temp
+PASS core/explsum.test (exit status: 0)

@@ -1,0 +1,169 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test autcross2.test
+== Running test autcross2.test
++ echo autcross2.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=autcross2
++ testSubDir=autcross2.dir
++ chmod -R a+rwx autcross2.dir
++ rm -rf autcross2.dir
++ mkdir autcross2.dir
++ cd autcross2.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ randaut -n10 -A2..3 2
++ tee input
++ autcross --language-preserve autfilt %L>%O autfilt --complement --save-bogus=bogus.hoa
++ cat stderr
+-:1.1-48.7
+Running [A0]: autfilt 'lcr-i0-TLj9W2'>'lcr-o0-NcwYES'
+Running [A1]: autfilt --complement 'lcr-i0-wScTOc'>'lcr-o1-L6wW2U'
+Performing sanity checks and gathering statistics...
+error: A0*Comp(A1) is nonempty; both automata accept the infinite word:
+       cycle{!p0 & !p1; !p0 & !p1; p0 & !p1; !p0 & !p1; p0 & !p1; p0 & !p1; !p0 & p1; !p0 & p1; !p0 & !p1; !p0 & !p1}
+error: A1*Comp(input) is nonempty; both automata accept the infinite word:
+       cycle{!p0 & !p1; !p0 & !p1; p0 & p1}
+error: A1*Comp(A0) is nonempty; both automata accept the infinite word:
+       cycle{!p0 & !p1; !p0 & !p1; p0 & p1}
+error: input*Comp(A1) is nonempty; both automata accept the infinite word:
+       cycle{!p0 & !p1; !p0 & !p1; p0 & !p1; !p0 & !p1; p0 & !p1; p0 & !p1; !p0 & p1; !p0 & p1; !p0 & !p1; !p0 & !p1}
+
+-:49.1-95.7
+Running [A0]: autfilt 'lcr-i1-wwIFrt'>'lcr-o0-Ce5zt7'
+Running [A1]: autfilt --complement 'lcr-i1-CFe1jW'>'lcr-o1-Unnv1b'
+Performing sanity checks and gathering statistics...
+error: A0*Comp(A1) is nonempty; both automata accept the infinite word:
+       cycle{!p0 & p1; p0 & !p1; !p0 & !p1; !p0 & !p1; p0 & p1}
+error: A1*Comp(input) is nonempty; both automata accept the infinite word:
+       !p0 & p1; !p0 & p1; !p0 & p1; cycle{!p0 & !p1}
+error: A1*Comp(A0) is nonempty; both automata accept the infinite word:
+       !p0 & p1; !p0 & p1; !p0 & p1; cycle{!p0 & !p1}
+error: input*Comp(A1) is nonempty; both automata accept the infinite word:
+       cycle{!p0 & p1; p0 & !p1; !p0 & !p1; !p0 & !p1; p0 & p1}
+
+-:96.1-147.7
+Running [A0]: autfilt 'lcr-i2-Y4jdqj'>'lcr-o0-VMIBML'
+Running [A1]: autfilt --complement 'lcr-i2-SX2bzU'>'lcr-o1-bzFHyV'
+Performing sanity checks and gathering statistics...
+error: A0*Comp(A1) is nonempty; both automata accept the infinite word:
+       cycle{!p0 & !p1; !p0 & !p1; p0 & !p1; !p0 & p1; p0 & !p1; !p0 & !p1; !p0 & !p1; !p0 & !p1; p0 & !p1; p0 & !p1; !p0 & p1; !p0 & p1}
+error: A1*Comp(input) is nonempty; both automata accept the infinite word:
+       !p0 & !p1; cycle{!p0 & p1}
+error: A1*Comp(A0) is nonempty; both automata accept the infinite word:
+       !p0 & !p1; cycle{!p0 & p1}
+error: input*Comp(A1) is nonempty; both automata accept the infinite word:
+       cycle{!p0 & !p1; !p0 & !p1; p0 & !p1; !p0 & p1; p0 & !p1; !p0 & !p1; !p0 & !p1; !p0 & !p1; p0 & !p1; p0 & !p1; !p0 & p1; !p0 & p1}
+
+-:148.1-202.7
+Running [A0]: autfilt 'lcr-i3-qkuHQy'>'lcr-o0-4jAV0d'
+Running [A1]: autfilt --complement 'lcr-i3-8ArUYN'>'lcr-o1-94EvQ5'
+Performing sanity checks and gathering statistics...
+error: A0*Comp(A1) is nonempty; both automata accept the infinite word:
+       p0 & p1; !p0 & !p1; cycle{p0 & p1; !p0 & p1; !p0 & p1; p0 & p1; p0 & p1; p0 & !p1; !p0 & !p1; !p0 & !p1; p0 & p1; !p0 & !p1; !p0 & p1; p0 & p1; !p0 & !p1; !p0 & p1}
+error: A1*Comp(input) is nonempty; both automata accept the infinite word:
+       !p0 & p1; !p0 & p1; !p0 & p1; cycle{!p0 & !p1}
+error: A1*Comp(A0) is nonempty; both automata accept the infinite word:
+       p0 & p1; cycle{!p0 & !p1}
+error: input*Comp(A1) is nonempty; both automata accept the infinite word:
+       p0 & p1; !p0 & !p1; cycle{p0 & p1; !p0 & p1; !p0 & p1; p0 & p1; p0 & p1; p0 & !p1; !p0 & !p1; !p0 & !p1; p0 & p1; !p0 & !p1; !p0 & p1; p0 & p1; !p0 & !p1; !p0 & p1}
+
+-:203.1-255.7
+Running [A0]: autfilt 'lcr-i4-yw9Apd'>'lcr-o0-J5jkPm'
+Running [A1]: autfilt --complement 'lcr-i4-3Dr1us'>'lcr-o1-0hSmG1'
+Performing sanity checks and gathering statistics...
+error: A0*Comp(A1) is nonempty; both automata accept the infinite word:
+       !p0 & !p1; !p0 & p1; cycle{p0 & p1; p0 & p1; p0 & p1; p0 & p1; p0 & p1; p0 & p1; !p0 & !p1; p0 & !p1; p0 & p1; p0 & p1; p0 & !p1; p0 & !p1}
+error: A1*Comp(input) is nonempty; both automata accept the infinite word:
+       cycle{p0 & !p1}
+error: A1*Comp(A0) is nonempty; both automata accept the infinite word:
+       cycle{p0 & !p1}
+error: input*Comp(A1) is nonempty; both automata accept the infinite word:
+       !p0 & !p1; !p0 & p1; cycle{p0 & p1; p0 & p1; p0 & p1; p0 & p1; p0 & p1; p0 & p1; !p0 & !p1; p0 & !p1; p0 & p1; p0 & p1; p0 & !p1; p0 & !p1}
+
+-:256.1-300.7
+Running [A0]: autfilt 'lcr-i5-fqwCUA'>'lcr-o0-DkGNJx'
+Running [A1]: autfilt --complement 'lcr-i5-Ttke9K'>'lcr-o1-N66slS'
+Performing sanity checks and gathering statistics...
+error: A0*Comp(A1) is nonempty; both automata accept the infinite word:
+       cycle{!p0 & p1; !p0 & p1; !p0 & !p1; p0 & p1; !p0 & p1; !p0 & !p1}
+error: A1*Comp(input) is nonempty; both automata accept the infinite word:
+       !p0 & p1; !p0 & !p1; cycle{!p0 & !p1; !p0 & p1}
+error: A1*Comp(A0) is nonempty; both automata accept the infinite word:
+       !p0 & p1; !p0 & !p1; cycle{!p0 & !p1; !p0 & p1}
+error: input*Comp(A1) is nonempty; both automata accept the infinite word:
+       cycle{!p0 & p1; !p0 & p1; !p0 & !p1; p0 & p1; !p0 & p1; !p0 & !p1}
+
+-:301.1-344.7
+Running [A0]: autfilt 'lcr-i6-f2bIpQ'>'lcr-o0-Ye9YIp'
+Running [A1]: autfilt --complement 'lcr-i6-9opOEI'>'lcr-o1-7Am5hx'
+Performing sanity checks and gathering statistics...
+error: A0*Comp(A1) is nonempty; both automata accept the infinite word:
+       p0 & !p1; cycle{!p0 & !p1; p0 & p1; !p0 & p1; p0 & !p1; !p0 & !p1; p0 & !p1; p0 & !p1; p0 & !p1; p0 & !p1; p0 & !p1; !p0 & !p1; p0 & p1; p0 & !p1; !p0 & !p1}
+error: A1*Comp(input) is nonempty; both automata accept the infinite word:
+       p0 & !p1; !p0 & !p1; p0 & p1; !p0 & p1; cycle{p0 & p1}
+error: A1*Comp(A0) is nonempty; both automata accept the infinite word:
+       p0 & !p1; !p0 & !p1; p0 & p1; !p0 & p1; cycle{p0 & p1}
+error: input*Comp(A1) is nonempty; both automata accept the infinite word:
+       p0 & !p1; cycle{!p0 & !p1; p0 & p1; !p0 & p1; p0 & !p1; !p0 & !p1; p0 & !p1; p0 & !p1; p0 & !p1; p0 & !p1; p0 & !p1; !p0 & !p1; p0 & p1; p0 & !p1; !p0 & !p1}
+
+-:345.1-392.7
+Running [A0]: autfilt 'lcr-i7-CetbXN'>'lcr-o0-ITN0Ul'
+Running [A1]: autfilt --complement 'lcr-i7-TRMLw1'>'lcr-o1-kFttOO'
+Performing sanity checks and gathering statistics...
+error: A0*Comp(A1) is nonempty; both automata accept the infinite word:
+       !p0 & p1; cycle{!p0 & p1; !p0 & !p1}
+error: A1*Comp(input) is nonempty; both automata accept the infinite word:
+       !p0 & p1; !p0 & p1; !p0 & !p1; cycle{p0 & p1; p0 & !p1; p0 & p1; p0 & p1}
+error: A1*Comp(A0) is nonempty; both automata accept the infinite word:
+       !p0 & p1; !p0 & p1; !p0 & !p1; cycle{p0 & p1; p0 & !p1; p0 & p1; p0 & p1}
+error: input*Comp(A1) is nonempty; both automata accept the infinite word:
+       !p0 & p1; cycle{!p0 & p1; !p0 & !p1}
+
+-:393.1-438.7
+Running [A0]: autfilt 'lcr-i8-QQYM9V'>'lcr-o0-PZE5hA'
+Running [A1]: autfilt --complement 'lcr-i8-S1xw30'>'lcr-o1-X9lc5S'
+Performing sanity checks and gathering statistics...
+error: A0*Comp(A1) is nonempty; both automata accept the infinite word:
+       !p0 & p1; p0 & !p1; !p0 & p1; cycle{!p0 & !p1; p0 & p1; p0 & p1; p0 & p1; p0 & !p1}
+error: A1*Comp(input) is nonempty; both automata accept the infinite word:
+       !p0 & p1; p0 & !p1; cycle{p0 & p1}
+error: A1*Comp(A0) is nonempty; both automata accept the infinite word:
+       !p0 & p1; p0 & !p1; cycle{p0 & p1}
+error: input*Comp(A1) is nonempty; both automata accept the infinite word:
+       !p0 & p1; p0 & !p1; !p0 & p1; cycle{!p0 & !p1; p0 & p1; p0 & p1; p0 & p1; p0 & !p1}
+
+-:439.1-480.7
+Running [A0]: autfilt 'lcr-i9-CYnL4G'>'lcr-o0-jqQmqa'
+Running [A1]: autfilt --complement 'lcr-i9-569OLH'>'lcr-o1-CSFY0F'
+Performing sanity checks and gathering statistics...
+error: A0*Comp(A1) is nonempty; both automata accept the infinite word:
+       !p0 & p1; !p0 & p1; cycle{!p0 & p1; p0 & p1; !p0 & !p1; p0 & p1}
+error: A1*Comp(input) is nonempty; both automata accept the infinite word:
+       cycle{!p0 & p1; p0 & p1}
+error: A1*Comp(A0) is nonempty; both automata accept the infinite word:
+       cycle{!p0 & p1; p0 & p1}
+error: input*Comp(A1) is nonempty; both automata accept the infinite word:
+       !p0 & p1; !p0 & p1; cycle{!p0 & p1; p0 & p1; !p0 & !p1; p0 & p1}
+
+error: some error was detected during the above runs.
+       Check file bogus.hoa for problematic automata.
++ + grep both automata accept the infinite word: stderr
+wc -l
++ test 40 = 40
++ diff input bogus.hoa
+PASS core/autcross2.test (exit status: 0)

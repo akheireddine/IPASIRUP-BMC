@@ -1,0 +1,5 @@
+2024-05-16  Alexandre Duret-Lutz  <adl@lrde.epita.fr>
+
+	Release spot 2.12
+
+	* NEWS, configure.ac, doc/org/setup.org: Bump version to 2.12.

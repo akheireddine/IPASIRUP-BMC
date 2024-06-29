@@ -1,0 +1,8 @@
+digraph "a U b" {
+  rankdir=LR
+  node [shape="box",style="rounded",width="0.5"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0 (1)"]
+  0 -> 0 [label="a"]
+}

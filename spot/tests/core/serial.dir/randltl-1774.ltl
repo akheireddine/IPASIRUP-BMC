@@ -1,0 +1,1 @@
+Xp1 xor ((p1 xor X(0)) R X(!p0 U p0))

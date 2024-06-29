@@ -1,0 +1,18 @@
+HOA: v1.1
+name: "XGa R (!a & Fa)"
+States: 2
+Start: 1
+AP: 1 "a"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc !complete
+properties: !deterministic exist-branch very-weak
+spot.highlight.states: 1 5
+spot.highlight.edges: 2 5 3 5
+--BODY--
+State: 0 {0}
+[0] 0
+State: 1
+[!0] 1
+[!0] 0
+--END--

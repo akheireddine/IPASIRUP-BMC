@@ -1,0 +1,101 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test genaut.test
+== Running test genaut.test
++ echo genaut.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=genaut
++ testSubDir=genaut.dir
++ chmod -R a+rwx genaut.dir
++ rm -rf genaut.dir
++ mkdir genaut.dir
++ cd genaut.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ genaut --help
++ sed -n /=RANGE/{
+s/^ *//
+s/[=[].*/=1/p
+}
++ opts=--cycle-log-nba=1
+--cycle-onehot-nba=1
+--cyclist-proof-dba=1
+--cyclist-trace-nba=1
+--ks-nca=1
+--l-dsa=1
+--l-nba=1
+--m-nba=1
++ genaut --cycle-log-nba=1 --cycle-onehot-nba=1 --cyclist-proof-dba=1 --cyclist-trace-nba=1 --ks-nca=1 --l-dsa=1 --l-nba=1 --m-nba=1 --stats=--%F=%L
++ res=--cycle-log-nba=1
+--cycle-onehot-nba=1
+--cyclist-proof-dba=1
+--cyclist-trace-nba=1
+--ks-nca=1
+--l-dsa=1
+--l-nba=1
+--m-nba=1
++ test --cycle-log-nba=1
+--cycle-onehot-nba=1
+--cyclist-proof-dba=1
+--cyclist-trace-nba=1
+--ks-nca=1
+--l-dsa=1
+--l-nba=1
+--m-nba=1 = --cycle-log-nba=1
+--cycle-onehot-nba=1
+--cyclist-proof-dba=1
+--cyclist-trace-nba=1
+--ks-nca=1
+--l-dsa=1
+--l-nba=1
+--m-nba=1
++ genaut --ks-nca=..3 --l-nba=..3 --l-dsa=..3 --m-nba=..3 --cycle-log-nba=..3 --cycle-onehot-nba=..3 --stats=%s,%e,%t,%c,%g
++ cat
++ diff out expected
++ genaut --ks-nca=1
++ grep complete
+properties: trans-labels explicit-labels state-acc complete
++ genaut --ks-nca=0
++ grep positive err
+genaut: ks-nca expects a positive argument
++ genaut --l-nba=0
++ grep positive err
+genaut: l-nba expects a positive argument
++ genaut --l-nba=
++ grep invalid empty range err
+genaut: invalid empty range
++ genaut --l-nba=1..3?
++ grep invalid range.*trailing garbage err
+genaut: invalid range '1..3?' (trailing garbage?)
++ genaut --l-nba=1..
++ grep invalid range.*missing end err
+genaut: invalid range '1..' (missing end?)
++ genaut --l-nba=9999999999999999999999999..
++ grep start.*too large err
+genaut: start of range '9999999999999999999999999..' is too large for an int.
++ genaut --l-nba=1..9999999999999999999999999
++ grep end.*too large err
+genaut: end of range '1..9999999999999999999999999' is too large for an int.
++ genaut --ks-nca=1..5
++ autfilt -N 2..4
++ genaut --ks-nca=2..4
++ diff range1.hoa range2.hoa
++ genaut --ks-nca=1..5
++ autfilt -v --nth 3..5
++ genaut --ks-nca=1..2
++ diff range1.hoa range2.hoa
+PASS core/genaut.test (exit status: 0)

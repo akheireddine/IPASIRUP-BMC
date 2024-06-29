@@ -1,0 +1,124 @@
+HOA: v1
+States: 10
+Start: 0
+AP: 0
+acc-name: parity max odd 15
+Acceptance: 15 Fin(14) & (Inf(13) | (Fin(12) & (Inf(11) | (Fin(10) & (Inf(9) | (Fin(8) & (Inf(7) | (Fin(6) & (Inf(5) | (Fin(4) & (Inf(3) | (Fin(2) & (Inf(1) | Fin(0))))))))))))))
+properties: trans-labels explicit-labels state-acc colored complete
+spot-state-player: 1 1 0 0 0 1 1 1 0 1
+--BODY--
+State: 0 {0}
+[t] 4
+[t] 9
+State: 1 {2}
+[t] 5
+[t] 2
+State: 2 {4}
+[t] 6
+[t] 1
+State: 3 {5}
+[t] 0
+[t] 2
+State: 4 {6}
+[t] 6
+[t] 3
+State: 5 {8}
+[t] 7
+[t] 8
+State: 6 {10}
+[t] 0
+[t] 8
+State: 7 {11}
+[t] 5
+[t] 1
+State: 8 {13}
+[t] 1
+[t] 3
+State: 9 {14}
+[t] 5
+[t] 6
+--END--
+HOA: v1
+States: 20
+Start: 0
+AP: 0
+acc-name: parity max odd 31
+Acceptance: 31 Fin(30) & (Inf(29) | (Fin(28) & (Inf(27) | (Fin(26) & (Inf(25) | (Fin(24) & (Inf(23) | (Fin(22) & (Inf(21) | (Fin(20) & (Inf(19) | (Fin(18) & (Inf(17) | (Fin(16) & (Inf(15) | (Fin(14) & (Inf(13) | (Fin(12) & (Inf(11) | (Fin(10) & (Inf(9) | (Fin(8) & (Inf(7) | (Fin(6) & (Inf(5) | (Fin(4) & (Inf(3) | (Fin(2) & (Inf(1) | Fin(0))))))))))))))))))))))))))))))
+properties: trans-labels explicit-labels state-acc colored complete
+spot-state-player: 0 1 0 0 0 0 0 1 1 0 1 1 1 0 1 1 1 1 1 1
+--BODY--
+State: 0 {0}
+[t] 6
+[t] 5
+State: 1 {2}
+[t] 13
+[t] 0
+State: 2 {4}
+[t] 7
+[t] 18
+State: 3 {5}
+[t] 8
+[t] 4
+State: 4 {6}
+[t] 0
+[t] 19
+State: 5 {8}
+[t] 12
+[t] 18
+State: 6 {9}
+[t] 16
+[t] 17
+State: 7 {11}
+[t] 14
+[t] 2
+State: 8 {13}
+[t] 15
+[t] 1
+State: 9 {15}
+[t] 11
+[t] 10
+State: 10 {16}
+[t] 14
+[t] 9
+State: 11 {17}
+[t] 16
+[t] 14
+State: 12 {19}
+[t] 9
+[t] 1
+State: 13 {21}
+[t] 11
+[t] 17
+State: 14 {22}
+[t] 12
+[t] 8
+State: 15 {24}
+[t] 5
+[t] 1
+State: 16 {26}
+[t] 13
+[t] 7
+State: 17 {28}
+[t] 10
+[t] 1
+State: 18 {29}
+[t] 12
+[t] 6
+State: 19 {30}
+[t] 13
+[t] 10
+--END--
+HOA: v1
+States: 2
+Start: 0
+AP: 0
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc colored
+properties: deterministic
+--BODY--
+State: 0 {0}
+[f] 1
+State: 1 {0}
+[t] 1
+--END--

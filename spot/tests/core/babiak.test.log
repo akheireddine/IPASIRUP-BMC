@@ -1,0 +1,99 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test babiak.test
+== Running test babiak.test
++ echo babiak.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=babiak
++ testSubDir=babiak.dir
++ chmod -R a+rwx babiak.dir
++ rm -rf babiak.dir
++ mkdir babiak.dir
++ cd babiak.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ ltl2tgba=../ikwiad
++ ltlcross ../ikwiad -t %f >%T ../ikwiad -N -r4 -R3f %f >%N ../ikwiad -N -r7 -R3 -x -Rm %f >%N ../ikwiad -t -r7 -R3 -f -x -DS -Rm %f >%T
+-:1: (p6) R (X(G(F((X(X(F(X(F((G(X(F(p1)))) | ((F(p5)) U (p1)))))))) U ((F(p4)) & ((!(p2)) | (G(p0))))))))
+Running [P0]: ../ikwiad -t '(p6) R (X(G(F((X(X(F(X(F((G(X(F(p1)))) | ((F(p5)) U (p1)))))))) U ((F(p4)) & ((!(p2)) | (G(p0))))))))' >'lcr-o0-IezduV'
+Running [P1]: ../ikwiad -N -r4 -R3f '(p6) R (X(G(F((X(X(F(X(F((G(X(F(p1)))) | ((F(p5)) U (p1)))))))) U ((F(p4)) & ((!(p2)) | (G(p0))))))))' >'lcr-o1-k5bdMq'
+Running [P2]: ../ikwiad -N -r7 -R3 -x -Rm '(p6) R (X(G(F((X(X(F(X(F((G(X(F(p1)))) | ((F(p5)) U (p1)))))))) U ((F(p4)) & ((!(p2)) | (G(p0))))))))' >'lcr-o2-GW2XIB'
+Running [P3]: ../ikwiad -t -r7 -R3 -f -x -DS -Rm '(p6) R (X(G(F((X(X(F(X(F((G(X(F(p1)))) | ((F(p5)) U (p1)))))))) U ((F(p4)) & ((!(p2)) | (G(p0))))))))' >'lcr-o3-2dS2WT'
+Running [N0]: ../ikwiad -t '!((p6) R (X(G(F((X(X(F(X(F((G(X(F(p1)))) | ((F(p5)) U (p1)))))))) U ((F(p4)) & ((!(p2)) | (G(p0)))))))))' >'lcr-o0-eiVJFJ'
+Running [N1]: ../ikwiad -N -r4 -R3f '!((p6) R (X(G(F((X(X(F(X(F((G(X(F(p1)))) | ((F(p5)) U (p1)))))))) U ((F(p4)) & ((!(p2)) | (G(p0)))))))))' >'lcr-o1-s82Xr7'
+Running [N2]: ../ikwiad -N -r7 -R3 -x -Rm '!((p6) R (X(G(F((X(X(F(X(F((G(X(F(p1)))) | ((F(p5)) U (p1)))))))) U ((F(p4)) & ((!(p2)) | (G(p0)))))))))' >'lcr-o2-32haEf'
+Running [N3]: ../ikwiad -t -r7 -R3 -f -x -DS -Rm '!((p6) R (X(G(F((X(X(F(X(F((G(X(F(p1)))) | ((F(p5)) U (p1)))))))) U ((F(p4)) & ((!(p2)) | (G(p0)))))))))' >'lcr-o3-qJHk8A'
+Performing sanity checks and gathering statistics...
+
+-:2: (F((!(p6)) R (X(!(p2))))) R ((F((G(X((!(p1)) R (!(p3))))) R (F(!(p2))))) U ((X((G(p3)) U ((p6) U (p7)))) R (X(p5))))
+Running [P0]: ../ikwiad -t '(F((!(p6)) R (X(!(p2))))) R ((F((G(X((!(p1)) R (!(p3))))) R (F(!(p2))))) U ((X((G(p3)) U ((p6) U (p7)))) R (X(p5))))' >'lcr-o0-qEvS48'
+Running [P1]: ../ikwiad -N -r4 -R3f '(F((!(p6)) R (X(!(p2))))) R ((F((G(X((!(p1)) R (!(p3))))) R (F(!(p2))))) U ((X((G(p3)) U ((p6) U (p7)))) R (X(p5))))' >'lcr-o1-aoIr2E'
+Running [P2]: ../ikwiad -N -r7 -R3 -x -Rm '(F((!(p6)) R (X(!(p2))))) R ((F((G(X((!(p1)) R (!(p3))))) R (F(!(p2))))) U ((X((G(p3)) U ((p6) U (p7)))) R (X(p5))))' >'lcr-o2-KqRvYX'
+Running [P3]: ../ikwiad -t -r7 -R3 -f -x -DS -Rm '(F((!(p6)) R (X(!(p2))))) R ((F((G(X((!(p1)) R (!(p3))))) R (F(!(p2))))) U ((X((G(p3)) U ((p6) U (p7)))) R (X(p5))))' >'lcr-o3-4Ni4Vj'
+Running [N0]: ../ikwiad -t '!((F((!(p6)) R (X(!(p2))))) R ((F((G(X((!(p1)) R (!(p3))))) R (F(!(p2))))) U ((X((G(p3)) U ((p6) U (p7)))) R (X(p5)))))' >'lcr-o0-dFmysl'
+Running [N1]: ../ikwiad -N -r4 -R3f '!((F((!(p6)) R (X(!(p2))))) R ((F((G(X((!(p1)) R (!(p3))))) R (F(!(p2))))) U ((X((G(p3)) U ((p6) U (p7)))) R (X(p5)))))' >'lcr-o1-ShI5XM'
+Running [N2]: ../ikwiad -N -r7 -R3 -x -Rm '!((F((!(p6)) R (X(!(p2))))) R ((F((G(X((!(p1)) R (!(p3))))) R (F(!(p2))))) U ((X((G(p3)) U ((p6) U (p7)))) R (X(p5)))))' >'lcr-o2-1O0w7l'
+Running [N3]: ../ikwiad -t -r7 -R3 -f -x -DS -Rm '!((F((!(p6)) R (X(!(p2))))) R ((F((G(X((!(p1)) R (!(p3))))) R (F(!(p2))))) U ((X((G(p3)) U ((p6) U (p7)))) R (X(p5)))))' >'lcr-o3-w4nsZb'
+Performing sanity checks and gathering statistics...
+
+-:3: ((F(p0)) R ((!(p4)) & (F(p3)))) R (((((!(p0)) | (!(p5))) R (X(!(p5)))) R (p6)) U ((p5) | ((!(p3)) U (G((p1) U (p2))))))
+Running [P0]: ../ikwiad -t '((F(p0)) R ((!(p4)) & (F(p3)))) R (((((!(p0)) | (!(p5))) R (X(!(p5)))) R (p6)) U ((p5) | ((!(p3)) U (G((p1) U (p2))))))' >'lcr-o0-Bp5EfS'
+Running [P1]: ../ikwiad -N -r4 -R3f '((F(p0)) R ((!(p4)) & (F(p3)))) R (((((!(p0)) | (!(p5))) R (X(!(p5)))) R (p6)) U ((p5) | ((!(p3)) U (G((p1) U (p2))))))' >'lcr-o1-ufyCR5'
+Running [P2]: ../ikwiad -N -r7 -R3 -x -Rm '((F(p0)) R ((!(p4)) & (F(p3)))) R (((((!(p0)) | (!(p5))) R (X(!(p5)))) R (p6)) U ((p5) | ((!(p3)) U (G((p1) U (p2))))))' >'lcr-o2-vkRn8o'
+Running [P3]: ../ikwiad -t -r7 -R3 -f -x -DS -Rm '((F(p0)) R ((!(p4)) & (F(p3)))) R (((((!(p0)) | (!(p5))) R (X(!(p5)))) R (p6)) U ((p5) | ((!(p3)) U (G((p1) U (p2))))))' >'lcr-o3-stiBgA'
+Running [N0]: ../ikwiad -t '!(((F(p0)) R ((!(p4)) & (F(p3)))) R (((((!(p0)) | (!(p5))) R (X(!(p5)))) R (p6)) U ((p5) | ((!(p3)) U (G((p1) U (p2)))))))' >'lcr-o0-jytz47'
+Running [N1]: ../ikwiad -N -r4 -R3f '!(((F(p0)) R ((!(p4)) & (F(p3)))) R (((((!(p0)) | (!(p5))) R (X(!(p5)))) R (p6)) U ((p5) | ((!(p3)) U (G((p1) U (p2)))))))' >'lcr-o1-7L3gS9'
+Running [N2]: ../ikwiad -N -r7 -R3 -x -Rm '!(((F(p0)) R ((!(p4)) & (F(p3)))) R (((((!(p0)) | (!(p5))) R (X(!(p5)))) R (p6)) U ((p5) | ((!(p3)) U (G((p1) U (p2)))))))' >'lcr-o2-cKOzV6'
+Running [N3]: ../ikwiad -t -r7 -R3 -f -x -DS -Rm '!(((F(p0)) R ((!(p4)) & (F(p3)))) R (((((!(p0)) | (!(p5))) R (X(!(p5)))) R (p6)) U ((p5) | ((!(p3)) U (G((p1) U (p2)))))))' >'lcr-o3-RSyKQh'
+Performing sanity checks and gathering statistics...
+
+-:4: G(((F(((p3) & (!(p3))) | (G((G(!(p2))) R (!(p5)))))) | ((p1) R (!(p4)))) U ((!(p7)) | ((X(G((F(!(p0))) U (!(p6))))) U (X(!(p2))))))
+Running [P0]: ../ikwiad -t 'G(((F(((p3) & (!(p3))) | (G((G(!(p2))) R (!(p5)))))) | ((p1) R (!(p4)))) U ((!(p7)) | ((X(G((F(!(p0))) U (!(p6))))) U (X(!(p2))))))' >'lcr-o0-yhFcQe'
+Running [P1]: ../ikwiad -N -r4 -R3f 'G(((F(((p3) & (!(p3))) | (G((G(!(p2))) R (!(p5)))))) | ((p1) R (!(p4)))) U ((!(p7)) | ((X(G((F(!(p0))) U (!(p6))))) U (X(!(p2))))))' >'lcr-o1-DhvhFj'
+Running [P2]: ../ikwiad -N -r7 -R3 -x -Rm 'G(((F(((p3) & (!(p3))) | (G((G(!(p2))) R (!(p5)))))) | ((p1) R (!(p4)))) U ((!(p7)) | ((X(G((F(!(p0))) U (!(p6))))) U (X(!(p2))))))' >'lcr-o2-thtndJ'
+Running [P3]: ../ikwiad -t -r7 -R3 -f -x -DS -Rm 'G(((F(((p3) & (!(p3))) | (G((G(!(p2))) R (!(p5)))))) | ((p1) R (!(p4)))) U ((!(p7)) | ((X(G((F(!(p0))) U (!(p6))))) U (X(!(p2))))))' >'lcr-o3-j5937n'
+Running [N0]: ../ikwiad -t '!(G(((F(((p3) & (!(p3))) | (G((G(!(p2))) R (!(p5)))))) | ((p1) R (!(p4)))) U ((!(p7)) | ((X(G((F(!(p0))) U (!(p6))))) U (X(!(p2)))))))' >'lcr-o0-0SZQvO'
+Running [N1]: ../ikwiad -N -r4 -R3f '!(G(((F(((p3) & (!(p3))) | (G((G(!(p2))) R (!(p5)))))) | ((p1) R (!(p4)))) U ((!(p7)) | ((X(G((F(!(p0))) U (!(p6))))) U (X(!(p2)))))))' >'lcr-o1-41MeVh'
+Running [N2]: ../ikwiad -N -r7 -R3 -x -Rm '!(G(((F(((p3) & (!(p3))) | (G((G(!(p2))) R (!(p5)))))) | ((p1) R (!(p4)))) U ((!(p7)) | ((X(G((F(!(p0))) U (!(p6))))) U (X(!(p2)))))))' >'lcr-o2-M72qat'
+Running [N3]: ../ikwiad -t -r7 -R3 -f -x -DS -Rm '!(G(((F(((p3) & (!(p3))) | (G((G(!(p2))) R (!(p5)))))) | ((p1) R (!(p4)))) U ((!(p7)) | ((X(G((F(!(p0))) U (!(p6))))) U (X(!(p2)))))))' >'lcr-o3-cz6YTN'
+Performing sanity checks and gathering statistics...
+
+-:5: (X(((X((!(p1)) R (F(!(p6))))) R (F(!(p4)))) U (p2))) & (F(G((F(p6)) U (((p1) U (G((p4) U (F(p0))))) U (X(p7))))))
+Running [P0]: ../ikwiad -t '(X(((X((!(p1)) R (F(!(p6))))) R (F(!(p4)))) U (p2))) & (F(G((F(p6)) U (((p1) U (G((p4) U (F(p0))))) U (X(p7))))))' >'lcr-o0-S7fZBB'
+Running [P1]: ../ikwiad -N -r4 -R3f '(X(((X((!(p1)) R (F(!(p6))))) R (F(!(p4)))) U (p2))) & (F(G((F(p6)) U (((p1) U (G((p4) U (F(p0))))) U (X(p7))))))' >'lcr-o1-1XYq3p'
+Running [P2]: ../ikwiad -N -r7 -R3 -x -Rm '(X(((X((!(p1)) R (F(!(p6))))) R (F(!(p4)))) U (p2))) & (F(G((F(p6)) U (((p1) U (G((p4) U (F(p0))))) U (X(p7))))))' >'lcr-o2-tx4OdI'
+Running [P3]: ../ikwiad -t -r7 -R3 -f -x -DS -Rm '(X(((X((!(p1)) R (F(!(p6))))) R (F(!(p4)))) U (p2))) & (F(G((F(p6)) U (((p1) U (G((p4) U (F(p0))))) U (X(p7))))))' >'lcr-o3-iWTb9D'
+Running [N0]: ../ikwiad -t '!((X(((X((!(p1)) R (F(!(p6))))) R (F(!(p4)))) U (p2))) & (F(G((F(p6)) U (((p1) U (G((p4) U (F(p0))))) U (X(p7)))))))' >'lcr-o0-lZml8a'
+Running [N1]: ../ikwiad -N -r4 -R3f '!((X(((X((!(p1)) R (F(!(p6))))) R (F(!(p4)))) U (p2))) & (F(G((F(p6)) U (((p1) U (G((p4) U (F(p0))))) U (X(p7)))))))' >'lcr-o1-jy5l44'
+Running [N2]: ../ikwiad -N -r7 -R3 -x -Rm '!((X(((X((!(p1)) R (F(!(p6))))) R (F(!(p4)))) U (p2))) & (F(G((F(p6)) U (((p1) U (G((p4) U (F(p0))))) U (X(p7)))))))' >'lcr-o2-KCDYLR'
+Running [N3]: ../ikwiad -t -r7 -R3 -f -x -DS -Rm '!((X(((X((!(p1)) R (F(!(p6))))) R (F(!(p4)))) U (p2))) & (F(G((F(p6)) U (((p1) U (G((p4) U (F(p0))))) U (X(p7)))))))' >'lcr-o3-f8Bywp'
+Performing sanity checks and gathering statistics...
+
+-:6: G(((F(p5)) U ((!(p2)) | ((F(!(p1))) R ((p2) & (!(p4)))) | (((X(!(p7))) U (!(p4))) R (F((p5) & (G(p2))))))) U (p6))
+Running [P0]: ../ikwiad -t 'G(((F(p5)) U ((!(p2)) | ((F(!(p1))) R ((p2) & (!(p4)))) | (((X(!(p7))) U (!(p4))) R (F((p5) & (G(p2))))))) U (p6))' >'lcr-o0-xVjBiD'
+Running [P1]: ../ikwiad -N -r4 -R3f 'G(((F(p5)) U ((!(p2)) | ((F(!(p1))) R ((p2) & (!(p4)))) | (((X(!(p7))) U (!(p4))) R (F((p5) & (G(p2))))))) U (p6))' >'lcr-o1-LdheK0'
+Running [P2]: ../ikwiad -N -r7 -R3 -x -Rm 'G(((F(p5)) U ((!(p2)) | ((F(!(p1))) R ((p2) & (!(p4)))) | (((X(!(p7))) U (!(p4))) R (F((p5) & (G(p2))))))) U (p6))' >'lcr-o2-MPAH7R'
+Running [P3]: ../ikwiad -t -r7 -R3 -f -x -DS -Rm 'G(((F(p5)) U ((!(p2)) | ((F(!(p1))) R ((p2) & (!(p4)))) | (((X(!(p7))) U (!(p4))) R (F((p5) & (G(p2))))))) U (p6))' >'lcr-o3-uzNunk'
+Running [N0]: ../ikwiad -t '!(G(((F(p5)) U ((!(p2)) | ((F(!(p1))) R ((p2) & (!(p4)))) | (((X(!(p7))) U (!(p4))) R (F((p5) & (G(p2))))))) U (p6)))' >'lcr-o0-H707wT'
+Running [N1]: ../ikwiad -N -r4 -R3f '!(G(((F(p5)) U ((!(p2)) | ((F(!(p1))) R ((p2) & (!(p4)))) | (((X(!(p7))) U (!(p4))) R (F((p5) & (G(p2))))))) U (p6)))' >'lcr-o1-DHlzVw'
+Running [N2]: ../ikwiad -N -r7 -R3 -x -Rm '!(G(((F(p5)) U ((!(p2)) | ((F(!(p1))) R ((p2) & (!(p4)))) | (((X(!(p7))) U (!(p4))) R (F((p5) & (G(p2))))))) U (p6)))' >'lcr-o2-8K0CZR'
+Running [N3]: ../ikwiad -t -r7 -R3 -f -x -DS -Rm '!(G(((F(p5)) U ((!(p2)) | ((F(!(p1))) R ((p2) & (!(p4)))) | (((X(!(p7))) U (!(p4))) R (F((p5) & (G(p2))))))) U (p6)))' >'lcr-o3-UEgx10'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
+PASS core/babiak.test (exit status: 0)

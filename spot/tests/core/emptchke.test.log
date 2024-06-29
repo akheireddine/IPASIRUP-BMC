@@ -1,0 +1,1177 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test emptchke.test
+== Running test emptchke.test
++ echo emptchke.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=emptchke
++ testSubDir=emptchke.dir
++ chmod -R a+rwx emptchke.dir
++ rm -rf emptchke.dir
++ mkdir emptchke.dir
++ cd emptchke.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ expect_ce input
++ run 0 ../ikwiad -CR -e -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -XH input
+3 unique states visited
+1 strongly connected components in search stack
+3 transitions explored
+3 items max in DFS search stack
+state 1 in cycle: 0
+transition with label=a & !b and acc={0,1}
+all acceptance marks ({0,1}) have been seen
+state 2 in cycle: 1
+transition with label=a and acc={0}
+state 3 in cycle: 2
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DT -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DT -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DT -XH input
+3 unique states visited
+1 strongly connected components in search stack
+3 transitions explored
+3 items max in DFS search stack
+state 1 in cycle: 0
+transition with label=a & !b and acc={0}
+all acceptance marks ({0}) have been seen
+state 2 in cycle: 1
+transition with label=a and acc={}
+state 3 in cycle: 2
+transition with label=1 and acc={0}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eCou99(shy) -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eCou99(shy) -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eCou99(shy) -XH input
+3 unique states visited
+1 strongly connected components in search stack
+3 transitions explored
+4 items max in DFS search stack
+state 1 in cycle: 0
+transition with label=a & !b and acc={0,1}
+all acceptance marks ({0,1}) have been seen
+state 2 in cycle: 1
+transition with label=a and acc={0}
+state 3 in cycle: 2
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eCou99(shy) -DT -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eCou99(shy) -DT -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eCou99(shy) -DT -XH input
+3 unique states visited
+1 strongly connected components in search stack
+3 transitions explored
+4 items max in DFS search stack
+state 1 in cycle: 0
+transition with label=a & !b and acc={0}
+all acceptance marks ({0}) have been seen
+state 2 in cycle: 1
+transition with label=a and acc={}
+state 3 in cycle: 2
+transition with label=1 and acc={0}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eCVWY90 -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eCVWY90 -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eCVWY90 -XH input
+3 distinct nodes visited
+5 transitions explored
+6 nodes for the maximal stack depth
+5 nodes for the counter example
+state 1 in cycle: 0
+transition with label=a & !b and acc={0}
+all acceptance marks ({0}) have been seen
+state 2 in cycle: 1
+transition with label=a and acc={}
+state 3 in cycle: 2
+transition with label=1 and acc={0}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eGV04 -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eGV04 -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eGV04 -XH input
+3 unique states visited
+3 transitions explored
+3 items max on stack
+state 1 in cycle: 0
+transition with label=a & !b and acc={0}
+all acceptance marks ({0}) have been seen
+state 2 in cycle: 1
+transition with label=a and acc={}
+state 3 in cycle: 2
+transition with label=1 and acc={0}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eSE05 -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eSE05 -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eSE05 -XH input
+3 distinct nodes visited
+3 transitions explored
+4 nodes for the maximal stack depth
+3 nodes for the counter example
+state 1 in cycle: 0
+transition with label=a & !b and acc={0}
+all acceptance marks ({0}) have been seen
+state 2 in cycle: 1
+transition with label=a and acc={}
+state 3 in cycle: 2
+transition with label=1 and acc={0}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eTau03 -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eTau03 -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eTau03 -XH input
+3 distinct nodes visited
+12 transitions explored
+5 nodes for the maximal stack depth
+state 1 in cycle: 0
+transition with label=a & !b and acc={0,1}
+all acceptance marks ({0,1}) have been seen
+state 2 in cycle: 1
+transition with label=a and acc={0}
+state 3 in cycle: 2
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ expect_ce input
++ run 0 ../ikwiad -CR -e -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -XH input
+9 unique states visited
+3 strongly connected components in search stack
+11 transitions explored
+9 items max in DFS search stack
+state 1 in prefix: 0
+transition with label=1 and acc={}
+state 2 in cycle: 6
+transition with label=1 and acc={}
+state 3 in cycle: 7
+transition with label=1 and acc={}
+state 4 in cycle: 8
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DT -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DT -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DT -XH input
+9 unique states visited
+3 strongly connected components in search stack
+11 transitions explored
+9 items max in DFS search stack
+state 1 in prefix: 0
+transition with label=1 and acc={}
+state 2 in cycle: 6
+transition with label=1 and acc={}
+state 3 in cycle: 7
+transition with label=1 and acc={}
+state 4 in cycle: 8
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eCou99(shy) -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eCou99(shy) -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eCou99(shy) -XH input
+4 unique states visited
+2 strongly connected components in search stack
+6 transitions explored
+7 items max in DFS search stack
+state 1 in prefix: 0
+transition with label=1 and acc={}
+state 2 in cycle: 6
+transition with label=1 and acc={}
+state 3 in cycle: 7
+transition with label=1 and acc={}
+state 4 in cycle: 8
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eCou99(shy) -DT -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eCou99(shy) -DT -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eCou99(shy) -DT -XH input
+4 unique states visited
+2 strongly connected components in search stack
+6 transitions explored
+7 items max in DFS search stack
+state 1 in prefix: 0
+transition with label=1 and acc={}
+state 2 in cycle: 6
+transition with label=1 and acc={}
+state 3 in cycle: 7
+transition with label=1 and acc={}
+state 4 in cycle: 8
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eCVWY90 -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eCVWY90 -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eCVWY90 -XH input
+9 distinct nodes visited
+13 transitions explored
+8 nodes for the maximal stack depth
+7 nodes for the counter example
+state 1 in prefix: 0
+transition with label=1 and acc={}
+state 2 in cycle: 6
+transition with label=1 and acc={}
+state 3 in cycle: 7
+transition with label=1 and acc={}
+state 4 in cycle: 8
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eGV04 -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eGV04 -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eGV04 -XH input
+9 unique states visited
+11 transitions explored
+9 items max on stack
+state 1 in prefix: 0
+transition with label=1 and acc={}
+state 2 in prefix: 3
+transition with label=1 and acc={}
+state 3 in cycle: 6
+transition with label=1 and acc={}
+state 4 in cycle: 7
+transition with label=1 and acc={}
+state 5 in cycle: 8
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eSE05 -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eSE05 -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eSE05 -XH input
+9 distinct nodes visited
+11 transitions explored
+6 nodes for the maximal stack depth
+5 nodes for the counter example
+state 1 in prefix: 0
+transition with label=1 and acc={}
+state 2 in cycle: 6
+transition with label=1 and acc={}
+state 3 in cycle: 7
+transition with label=1 and acc={}
+state 4 in cycle: 8
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eTau03 -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eTau03 -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eTau03 -XH input
+9 distinct nodes visited
+19 transitions explored
+8 nodes for the maximal stack depth
+state 1 in prefix: 0
+transition with label=1 and acc={}
+state 2 in cycle: 6
+transition with label=1 and acc={}
+state 3 in cycle: 7
+transition with label=1 and acc={}
+state 4 in cycle: 8
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ expect_ce input
++ run 0 ../ikwiad -CR -e -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -XH input
+5 unique states visited
+1 strongly connected components in search stack
+6 transitions explored
+5 items max in DFS search stack
+state 1 in cycle: 0
+transition with label=1 and acc={}
+state 2 in cycle: 1
+transition with label=1 and acc={0}
+state 3 in cycle: 4
+transition with label=1 and acc={1}
+all acceptance marks ({0,1}) have been seen
+state 4 in cycle: 2
+transition with label=1 and acc={}
+state 5 in cycle: 3
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DT -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DT -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DT -XH input
+5 unique states visited
+1 strongly connected components in search stack
+5 transitions explored
+5 items max in DFS search stack
+state 1 in cycle: 5
+transition with label=1 and acc={}
+state 2 in cycle: 4
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
+state 3 in cycle: 0
+transition with label=1 and acc={}
+state 4 in cycle: 1
+transition with label=1 and acc={}
+state 5 in cycle: 3
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eCou99(shy) -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eCou99(shy) -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eCou99(shy) -XH input
+4 unique states visited
+2 strongly connected components in search stack
+6 transitions explored
+7 items max in DFS search stack
+state 1 in prefix: 0
+transition with label=1 and acc={}
+state 2 in cycle: 1
+transition with label=1 and acc={0}
+state 3 in cycle: 4
+transition with label=1 and acc={}
+state 4 in cycle: 5
+transition with label=1 and acc={1}
+all acceptance marks ({0,1}) have been seen
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eCou99(shy) -DT -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eCou99(shy) -DT -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eCou99(shy) -DT -XH input
+5 unique states visited
+1 strongly connected components in search stack
+7 transitions explored
+7 items max in DFS search stack
+state 1 in cycle: 5
+transition with label=1 and acc={}
+state 2 in cycle: 4
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
+state 3 in cycle: 0
+transition with label=1 and acc={}
+state 4 in cycle: 1
+transition with label=1 and acc={}
+state 5 in cycle: 3
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eCVWY90 -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eCVWY90 -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eCVWY90 -XH input
+6 distinct nodes visited
+11 transitions explored
+7 nodes for the maximal stack depth
+6 nodes for the counter example
+state 1 in prefix: 5
+transition with label=1 and acc={}
+state 2 in cycle: 4
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
+state 3 in cycle: 0
+transition with label=1 and acc={}
+state 4 in cycle: 2
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eGV04 -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eGV04 -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eGV04 -XH input
+5 unique states visited
+5 transitions explored
+5 items max on stack
+state 1 in cycle: 5
+transition with label=1 and acc={}
+state 2 in cycle: 4
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
+state 3 in cycle: 0
+transition with label=1 and acc={}
+state 4 in cycle: 1
+transition with label=1 and acc={}
+state 5 in cycle: 3
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eSE05 -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eSE05 -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eSE05 -XH input
+6 distinct nodes visited
+10 transitions explored
+6 nodes for the maximal stack depth
+5 nodes for the counter example
+state 1 in prefix: 5
+transition with label=1 and acc={}
+state 2 in cycle: 4
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
+state 3 in cycle: 0
+transition with label=1 and acc={}
+state 4 in cycle: 2
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eTau03 -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eTau03 -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eTau03 -XH input
+6 distinct nodes visited
+31 transitions explored
+8 nodes for the maximal stack depth
+state 1 in cycle: 0
+transition with label=1 and acc={}
+state 2 in cycle: 1
+transition with label=1 and acc={0}
+state 3 in cycle: 4
+transition with label=1 and acc={1}
+all acceptance marks ({0,1}) have been seen
+state 4 in cycle: 2
+transition with label=1 and acc={}
+state 5 in cycle: 3
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ expect_ce input
++ run 0 ../ikwiad -CR -e -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -XH input
+20 unique states visited
+3 strongly connected components in search stack
+24 transitions explored
+18 items max in DFS search stack
+state 1 in prefix: 0
+transition with label=1 and acc={}
+state 2 in prefix: 1
+transition with label=1 and acc={}
+state 3 in cycle: 2
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
+state 4 in cycle: 5
+transition with label=1 and acc={}
+state 5 in cycle: 9
+transition with label=1 and acc={}
+state 6 in cycle: 13
+transition with label=1 and acc={}
+state 7 in cycle: 16
+transition with label=1 and acc={}
+state 8 in cycle: 17
+transition with label=1 and acc={}
+state 9 in cycle: 18
+transition with label=1 and acc={}
+state 10 in cycle: 10
+transition with label=1 and acc={}
+state 11 in cycle: 15
+transition with label=1 and acc={}
+state 12 in cycle: 4
+transition with label=1 and acc={}
+state 13 in cycle: 8
+transition with label=1 and acc={}
+state 14 in cycle: 12
+transition with label=1 and acc={}
+state 15 in cycle: 3
+transition with label=1 and acc={}
+state 16 in cycle: 6
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DT -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DT -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DT -XH input
+20 unique states visited
+3 strongly connected components in search stack
+24 transitions explored
+18 items max in DFS search stack
+state 1 in prefix: 0
+transition with label=1 and acc={}
+state 2 in prefix: 1
+transition with label=1 and acc={}
+state 3 in cycle: 2
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
+state 4 in cycle: 5
+transition with label=1 and acc={}
+state 5 in cycle: 9
+transition with label=1 and acc={}
+state 6 in cycle: 13
+transition with label=1 and acc={}
+state 7 in cycle: 16
+transition with label=1 and acc={}
+state 8 in cycle: 17
+transition with label=1 and acc={}
+state 9 in cycle: 18
+transition with label=1 and acc={}
+state 10 in cycle: 10
+transition with label=1 and acc={}
+state 11 in cycle: 15
+transition with label=1 and acc={}
+state 12 in cycle: 4
+transition with label=1 and acc={}
+state 13 in cycle: 8
+transition with label=1 and acc={}
+state 14 in cycle: 12
+transition with label=1 and acc={}
+state 15 in cycle: 3
+transition with label=1 and acc={}
+state 16 in cycle: 6
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eCou99(shy) -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eCou99(shy) -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eCou99(shy) -XH input
+19 unique states visited
+3 strongly connected components in search stack
+26 transitions explored
+24 items max in DFS search stack
+state 1 in prefix: 0
+transition with label=1 and acc={}
+state 2 in prefix: 1
+transition with label=1 and acc={}
+state 3 in cycle: 2
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
+state 4 in cycle: 5
+transition with label=1 and acc={}
+state 5 in cycle: 9
+transition with label=1 and acc={}
+state 6 in cycle: 13
+transition with label=1 and acc={}
+state 7 in cycle: 16
+transition with label=1 and acc={}
+state 8 in cycle: 17
+transition with label=1 and acc={}
+state 9 in cycle: 18
+transition with label=1 and acc={}
+state 10 in cycle: 10
+transition with label=1 and acc={}
+state 11 in cycle: 15
+transition with label=1 and acc={}
+state 12 in cycle: 4
+transition with label=1 and acc={}
+state 13 in cycle: 8
+transition with label=1 and acc={}
+state 14 in cycle: 12
+transition with label=1 and acc={}
+state 15 in cycle: 3
+transition with label=1 and acc={}
+state 16 in cycle: 6
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eCou99(shy) -DT -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eCou99(shy) -DT -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eCou99(shy) -DT -XH input
+19 unique states visited
+3 strongly connected components in search stack
+26 transitions explored
+24 items max in DFS search stack
+state 1 in prefix: 0
+transition with label=1 and acc={}
+state 2 in prefix: 1
+transition with label=1 and acc={}
+state 3 in cycle: 2
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
+state 4 in cycle: 5
+transition with label=1 and acc={}
+state 5 in cycle: 9
+transition with label=1 and acc={}
+state 6 in cycle: 13
+transition with label=1 and acc={}
+state 7 in cycle: 16
+transition with label=1 and acc={}
+state 8 in cycle: 17
+transition with label=1 and acc={}
+state 9 in cycle: 18
+transition with label=1 and acc={}
+state 10 in cycle: 10
+transition with label=1 and acc={}
+state 11 in cycle: 15
+transition with label=1 and acc={}
+state 12 in cycle: 4
+transition with label=1 and acc={}
+state 13 in cycle: 8
+transition with label=1 and acc={}
+state 14 in cycle: 12
+transition with label=1 and acc={}
+state 15 in cycle: 3
+transition with label=1 and acc={}
+state 16 in cycle: 6
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eCVWY90 -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eCVWY90 -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eCVWY90 -XH input
+20 distinct nodes visited
+39 transitions explored
+17 nodes for the maximal stack depth
+16 nodes for the counter example
+state 1 in prefix: 0
+transition with label=1 and acc={}
+state 2 in prefix: 1
+transition with label=1 and acc={}
+state 3 in cycle: 2
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
+state 4 in cycle: 5
+transition with label=1 and acc={}
+state 5 in cycle: 9
+transition with label=1 and acc={}
+state 6 in cycle: 13
+transition with label=1 and acc={}
+state 7 in cycle: 16
+transition with label=1 and acc={}
+state 8 in cycle: 17
+transition with label=1 and acc={}
+state 9 in cycle: 18
+transition with label=1 and acc={}
+state 10 in cycle: 10
+transition with label=1 and acc={}
+state 11 in cycle: 15
+transition with label=1 and acc={}
+state 12 in cycle: 4
+transition with label=1 and acc={}
+state 13 in cycle: 8
+transition with label=1 and acc={}
+state 14 in cycle: 12
+transition with label=1 and acc={}
+state 15 in cycle: 3
+transition with label=1 and acc={}
+state 16 in cycle: 6
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eGV04 -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eGV04 -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eGV04 -XH input
+20 unique states visited
+24 transitions explored
+18 items max on stack
+state 1 in prefix: 0
+transition with label=1 and acc={}
+state 2 in prefix: 1
+transition with label=1 and acc={}
+state 3 in cycle: 2
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
+state 4 in cycle: 5
+transition with label=1 and acc={}
+state 5 in cycle: 9
+transition with label=1 and acc={}
+state 6 in cycle: 13
+transition with label=1 and acc={}
+state 7 in cycle: 16
+transition with label=1 and acc={}
+state 8 in cycle: 17
+transition with label=1 and acc={}
+state 9 in cycle: 18
+transition with label=1 and acc={}
+state 10 in cycle: 10
+transition with label=1 and acc={}
+state 11 in cycle: 15
+transition with label=1 and acc={}
+state 12 in cycle: 4
+transition with label=1 and acc={}
+state 13 in cycle: 8
+transition with label=1 and acc={}
+state 14 in cycle: 12
+transition with label=1 and acc={}
+state 15 in cycle: 3
+transition with label=1 and acc={}
+state 16 in cycle: 6
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eSE05 -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eSE05 -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eSE05 -XH input
+20 distinct nodes visited
+39 transitions explored
+17 nodes for the maximal stack depth
+16 nodes for the counter example
+state 1 in prefix: 0
+transition with label=1 and acc={}
+state 2 in prefix: 1
+transition with label=1 and acc={}
+state 3 in cycle: 2
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
+state 4 in cycle: 5
+transition with label=1 and acc={}
+state 5 in cycle: 9
+transition with label=1 and acc={}
+state 6 in cycle: 13
+transition with label=1 and acc={}
+state 7 in cycle: 16
+transition with label=1 and acc={}
+state 8 in cycle: 17
+transition with label=1 and acc={}
+state 9 in cycle: 18
+transition with label=1 and acc={}
+state 10 in cycle: 10
+transition with label=1 and acc={}
+state 11 in cycle: 15
+transition with label=1 and acc={}
+state 12 in cycle: 4
+transition with label=1 and acc={}
+state 13 in cycle: 8
+transition with label=1 and acc={}
+state 14 in cycle: 12
+transition with label=1 and acc={}
+state 15 in cycle: 3
+transition with label=1 and acc={}
+state 16 in cycle: 6
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -eTau03 -XH input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -eTau03 -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -eTau03 -XH input
+20 distinct nodes visited
+71 transitions explored
+17 nodes for the maximal stack depth
+state 1 in prefix: 0
+transition with label=1 and acc={}
+state 2 in prefix: 1
+transition with label=1 and acc={}
+state 3 in cycle: 2
+transition with label=1 and acc={0}
+all acceptance marks ({0}) have been seen
+state 4 in cycle: 5
+transition with label=1 and acc={}
+state 5 in cycle: 9
+transition with label=1 and acc={}
+state 6 in cycle: 13
+transition with label=1 and acc={}
+state 7 in cycle: 16
+transition with label=1 and acc={}
+state 8 in cycle: 17
+transition with label=1 and acc={}
+state 9 in cycle: 18
+transition with label=1 and acc={}
+state 10 in cycle: 10
+transition with label=1 and acc={}
+state 11 in cycle: 15
+transition with label=1 and acc={}
+state 12 in cycle: 4
+transition with label=1 and acc={}
+state 13 in cycle: 8
+transition with label=1 and acc={}
+state 14 in cycle: 12
+transition with label=1 and acc={}
+state 15 in cycle: 3
+transition with label=1 and acc={}
+state 16 in cycle: 6
+transition with label=1 and acc={}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
+PASS core/emptchke.test (exit status: 0)

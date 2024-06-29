@@ -1,0 +1,26 @@
+GFa | FGb /* comment to ignore */
+F(GFa | /* tricky /* comment */)*/ Gb)
+
+F(b W GFa)
+GFa | Gb
+b W GFa
+!{a;b*;c}!
+!{a:b[*/*ignore me*/]:c/*ignore this comment*/}
+a U Fb
+G(a & Xb)
+Xa
+F(a & !Xa & Xb)
+{a & {b|c} }
+((a && b) U (! (X 1)))
+((a && b) U (! (X[!] 1)))
+
+{a[=2:3]}|->b
+{a[->2:3]}|->b
+{a[->1];a*}|->b  /* becomes {(!a)*;a[+]}|->b */
+{a*;(!a)*;a*}|->b
+{a*;(!a)[+];a*}|->b
+{a[+];(!a)*;a*}|->b
+{a*;(!a)*;a[+]}|->b
+{a*;(!a)[+];a[+]}|->b
+{a*;(!c)[+];a[+]}|->b
+{a* ##0 b*}|->c

@@ -1,0 +1,170 @@
+stat-time.lo: stat-time.c /usr/x86_64-linux-gnu/include/stdc-predef.h \
+ ../config.h stat-time.h intprops.h limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+ /usr/x86_64-linux-gnu/include/limits.h \
+ /usr/x86_64-linux-gnu/include/bits/libc-header-start.h \
+ /usr/x86_64-linux-gnu/include/features.h \
+ /usr/x86_64-linux-gnu/include/features-time64.h \
+ /usr/x86_64-linux-gnu/include/bits/wordsize.h \
+ /usr/x86_64-linux-gnu/include/bits/timesize.h \
+ /usr/x86_64-linux-gnu/include/sys/cdefs.h \
+ /usr/x86_64-linux-gnu/include/bits/long-double.h \
+ /usr/x86_64-linux-gnu/include/gnu/stubs.h \
+ /usr/x86_64-linux-gnu/include/gnu/stubs-64.h \
+ /usr/x86_64-linux-gnu/include/bits/posix1_lim.h \
+ /usr/x86_64-linux-gnu/include/bits/local_lim.h \
+ /usr/x86_64-linux-gnu/include/linux/limits.h \
+ /usr/x86_64-linux-gnu/include/bits/pthread_stack_min-dynamic.h \
+ /usr/x86_64-linux-gnu/include/bits/posix2_lim.h \
+ /usr/x86_64-linux-gnu/include/bits/xopen_lim.h \
+ /usr/x86_64-linux-gnu/include/bits/uio_lim.h \
+ /usr/x86_64-linux-gnu/include/errno.h \
+ /usr/x86_64-linux-gnu/include/bits/errno.h \
+ /usr/x86_64-linux-gnu/include/linux/errno.h \
+ /usr/x86_64-linux-gnu/include/asm/errno.h \
+ /usr/x86_64-linux-gnu/include/asm-generic/errno.h \
+ /usr/x86_64-linux-gnu/include/asm-generic/errno-base.h \
+ /usr/x86_64-linux-gnu/include/bits/types/error_t.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h sys/stat.h sys/types.h \
+ /usr/x86_64-linux-gnu/include/sys/types.h \
+ /usr/x86_64-linux-gnu/include/bits/types.h \
+ /usr/x86_64-linux-gnu/include/bits/typesizes.h \
+ /usr/x86_64-linux-gnu/include/bits/time64.h \
+ /usr/x86_64-linux-gnu/include/bits/types/clock_t.h \
+ /usr/x86_64-linux-gnu/include/bits/types/clockid_t.h \
+ /usr/x86_64-linux-gnu/include/bits/types/time_t.h \
+ /usr/x86_64-linux-gnu/include/bits/types/timer_t.h \
+ /usr/x86_64-linux-gnu/include/bits/stdint-intn.h \
+ /usr/x86_64-linux-gnu/include/endian.h \
+ /usr/x86_64-linux-gnu/include/bits/endian.h \
+ /usr/x86_64-linux-gnu/include/bits/endianness.h \
+ /usr/x86_64-linux-gnu/include/bits/byteswap.h \
+ /usr/x86_64-linux-gnu/include/bits/uintn-identity.h \
+ /usr/x86_64-linux-gnu/include/sys/select.h \
+ /usr/x86_64-linux-gnu/include/bits/select.h \
+ /usr/x86_64-linux-gnu/include/bits/types/sigset_t.h \
+ /usr/x86_64-linux-gnu/include/bits/types/__sigset_t.h \
+ /usr/x86_64-linux-gnu/include/bits/types/struct_timeval.h \
+ /usr/x86_64-linux-gnu/include/bits/types/struct_timespec.h \
+ /usr/x86_64-linux-gnu/include/bits/select2.h \
+ /usr/x86_64-linux-gnu/include/bits/pthreadtypes.h \
+ /usr/x86_64-linux-gnu/include/bits/thread-shared-types.h \
+ /usr/x86_64-linux-gnu/include/bits/pthreadtypes-arch.h \
+ /usr/x86_64-linux-gnu/include/bits/atomic_wide_counter.h \
+ /usr/x86_64-linux-gnu/include/bits/struct_mutex.h \
+ /usr/x86_64-linux-gnu/include/bits/struct_rwlock.h time.h \
+ /usr/x86_64-linux-gnu/include/time.h \
+ /usr/x86_64-linux-gnu/include/bits/time.h \
+ /usr/x86_64-linux-gnu/include/bits/timex.h \
+ /usr/x86_64-linux-gnu/include/bits/types/struct_tm.h \
+ /usr/x86_64-linux-gnu/include/bits/types/struct_itimerspec.h \
+ /usr/x86_64-linux-gnu/include/bits/types/locale_t.h \
+ /usr/x86_64-linux-gnu/include/bits/types/__locale_t.h \
+ /usr/x86_64-linux-gnu/include/sys/stat.h \
+ /usr/x86_64-linux-gnu/include/bits/stat.h \
+ /usr/x86_64-linux-gnu/include/bits/struct_stat.h \
+ /usr/x86_64-linux-gnu/include/bits/statx.h \
+ /usr/x86_64-linux-gnu/include/linux/stat.h \
+ /usr/x86_64-linux-gnu/include/linux/types.h \
+ /usr/x86_64-linux-gnu/include/asm/types.h \
+ /usr/x86_64-linux-gnu/include/asm-generic/types.h \
+ /usr/x86_64-linux-gnu/include/asm-generic/int-ll64.h \
+ /usr/x86_64-linux-gnu/include/asm/bitsperlong.h \
+ /usr/x86_64-linux-gnu/include/asm-generic/bitsperlong.h \
+ /usr/x86_64-linux-gnu/include/linux/posix_types.h \
+ /usr/x86_64-linux-gnu/include/linux/stddef.h \
+ /usr/x86_64-linux-gnu/include/asm/posix_types.h \
+ /usr/x86_64-linux-gnu/include/asm/posix_types_64.h \
+ /usr/x86_64-linux-gnu/include/asm-generic/posix_types.h \
+ /usr/x86_64-linux-gnu/include/bits/statx-generic.h \
+ /usr/x86_64-linux-gnu/include/bits/types/struct_statx_timestamp.h \
+ /usr/x86_64-linux-gnu/include/bits/types/struct_statx.h
+/usr/x86_64-linux-gnu/include/stdc-predef.h:
+../config.h:
+stat-time.h:
+intprops.h:
+limits.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
+/usr/x86_64-linux-gnu/include/limits.h:
+/usr/x86_64-linux-gnu/include/bits/libc-header-start.h:
+/usr/x86_64-linux-gnu/include/features.h:
+/usr/x86_64-linux-gnu/include/features-time64.h:
+/usr/x86_64-linux-gnu/include/bits/wordsize.h:
+/usr/x86_64-linux-gnu/include/bits/timesize.h:
+/usr/x86_64-linux-gnu/include/sys/cdefs.h:
+/usr/x86_64-linux-gnu/include/bits/long-double.h:
+/usr/x86_64-linux-gnu/include/gnu/stubs.h:
+/usr/x86_64-linux-gnu/include/gnu/stubs-64.h:
+/usr/x86_64-linux-gnu/include/bits/posix1_lim.h:
+/usr/x86_64-linux-gnu/include/bits/local_lim.h:
+/usr/x86_64-linux-gnu/include/linux/limits.h:
+/usr/x86_64-linux-gnu/include/bits/pthread_stack_min-dynamic.h:
+/usr/x86_64-linux-gnu/include/bits/posix2_lim.h:
+/usr/x86_64-linux-gnu/include/bits/xopen_lim.h:
+/usr/x86_64-linux-gnu/include/bits/uio_lim.h:
+/usr/x86_64-linux-gnu/include/errno.h:
+/usr/x86_64-linux-gnu/include/bits/errno.h:
+/usr/x86_64-linux-gnu/include/linux/errno.h:
+/usr/x86_64-linux-gnu/include/asm/errno.h:
+/usr/x86_64-linux-gnu/include/asm-generic/errno.h:
+/usr/x86_64-linux-gnu/include/asm-generic/errno-base.h:
+/usr/x86_64-linux-gnu/include/bits/types/error_t.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
+sys/stat.h:
+sys/types.h:
+/usr/x86_64-linux-gnu/include/sys/types.h:
+/usr/x86_64-linux-gnu/include/bits/types.h:
+/usr/x86_64-linux-gnu/include/bits/typesizes.h:
+/usr/x86_64-linux-gnu/include/bits/time64.h:
+/usr/x86_64-linux-gnu/include/bits/types/clock_t.h:
+/usr/x86_64-linux-gnu/include/bits/types/clockid_t.h:
+/usr/x86_64-linux-gnu/include/bits/types/time_t.h:
+/usr/x86_64-linux-gnu/include/bits/types/timer_t.h:
+/usr/x86_64-linux-gnu/include/bits/stdint-intn.h:
+/usr/x86_64-linux-gnu/include/endian.h:
+/usr/x86_64-linux-gnu/include/bits/endian.h:
+/usr/x86_64-linux-gnu/include/bits/endianness.h:
+/usr/x86_64-linux-gnu/include/bits/byteswap.h:
+/usr/x86_64-linux-gnu/include/bits/uintn-identity.h:
+/usr/x86_64-linux-gnu/include/sys/select.h:
+/usr/x86_64-linux-gnu/include/bits/select.h:
+/usr/x86_64-linux-gnu/include/bits/types/sigset_t.h:
+/usr/x86_64-linux-gnu/include/bits/types/__sigset_t.h:
+/usr/x86_64-linux-gnu/include/bits/types/struct_timeval.h:
+/usr/x86_64-linux-gnu/include/bits/types/struct_timespec.h:
+/usr/x86_64-linux-gnu/include/bits/select2.h:
+/usr/x86_64-linux-gnu/include/bits/pthreadtypes.h:
+/usr/x86_64-linux-gnu/include/bits/thread-shared-types.h:
+/usr/x86_64-linux-gnu/include/bits/pthreadtypes-arch.h:
+/usr/x86_64-linux-gnu/include/bits/atomic_wide_counter.h:
+/usr/x86_64-linux-gnu/include/bits/struct_mutex.h:
+/usr/x86_64-linux-gnu/include/bits/struct_rwlock.h:
+time.h:
+/usr/x86_64-linux-gnu/include/time.h:
+/usr/x86_64-linux-gnu/include/bits/time.h:
+/usr/x86_64-linux-gnu/include/bits/timex.h:
+/usr/x86_64-linux-gnu/include/bits/types/struct_tm.h:
+/usr/x86_64-linux-gnu/include/bits/types/struct_itimerspec.h:
+/usr/x86_64-linux-gnu/include/bits/types/locale_t.h:
+/usr/x86_64-linux-gnu/include/bits/types/__locale_t.h:
+/usr/x86_64-linux-gnu/include/sys/stat.h:
+/usr/x86_64-linux-gnu/include/bits/stat.h:
+/usr/x86_64-linux-gnu/include/bits/struct_stat.h:
+/usr/x86_64-linux-gnu/include/bits/statx.h:
+/usr/x86_64-linux-gnu/include/linux/stat.h:
+/usr/x86_64-linux-gnu/include/linux/types.h:
+/usr/x86_64-linux-gnu/include/asm/types.h:
+/usr/x86_64-linux-gnu/include/asm-generic/types.h:
+/usr/x86_64-linux-gnu/include/asm-generic/int-ll64.h:
+/usr/x86_64-linux-gnu/include/asm/bitsperlong.h:
+/usr/x86_64-linux-gnu/include/asm-generic/bitsperlong.h:
+/usr/x86_64-linux-gnu/include/linux/posix_types.h:
+/usr/x86_64-linux-gnu/include/linux/stddef.h:
+/usr/x86_64-linux-gnu/include/asm/posix_types.h:
+/usr/x86_64-linux-gnu/include/asm/posix_types_64.h:
+/usr/x86_64-linux-gnu/include/asm-generic/posix_types.h:
+/usr/x86_64-linux-gnu/include/bits/statx-generic.h:
+/usr/x86_64-linux-gnu/include/bits/types/struct_statx_timestamp.h:
+/usr/x86_64-linux-gnu/include/bits/types/struct_statx.h:

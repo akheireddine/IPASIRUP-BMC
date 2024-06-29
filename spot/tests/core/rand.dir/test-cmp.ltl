@@ -1,0 +1,5 @@
+0
+!(F!p1 M 1)
+(Gp0 | (GX(0) xor Fp1)) M 1
+F!(!p1 <-> FGp1)
+Gp1 U (p1 U GFp1)

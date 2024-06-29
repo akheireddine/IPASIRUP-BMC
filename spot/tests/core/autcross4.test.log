@@ -1,0 +1,168 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test autcross4.test
+== Running test autcross4.test
++ echo autcross4.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=autcross4
++ testSubDir=autcross4.dir
++ chmod -R a+rwx autcross4.dir
++ rm -rf autcross4.dir
++ mkdir autcross4.dir
++ cd autcross4.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ + ltl2tgbaautcross -f autfilt FGa ltl2tgba -B %M >%O "a = b"U!c --csv=out.csv
+
+-:1.1-16.7	FGa
+Running [A0]: autfilt 'lcr-i0-9CXQQZ'>'lcr-o0-XeBCmb'
+Running [A1]: ltl2tgba -B 'FGa' >'lcr-o1-4sA4ti'
+Performing sanity checks and gathering statistics...
+
+-:17.1-32.7	"a = b" U !c
+Running [A0]: autfilt 'lcr-i1-l6Zxo0'>'lcr-o0-Z3Q1W8'
+Running [A1]: ltl2tgba -B '"a = b" U !c' >'lcr-o1-cZ0bqf'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
++ grep -c "FGa" out.csv
++ test 2 = 2
++ grep -c """a = b"" U !c" out.csv
++ test 2 = 2
++ ltl2tgba -f FGa "a = b"U!c
++ autcross -q autfilt ltl2tgba -B %M >%O
++ wc -l
++ test 0 -eq 0
++ cat
++ autcross --verbose -Fin ltl2tgba %[no]M>%O ltl2tgba %M>%O --csv=out.csv
+in:1.1-9.7	yes
+info: input	(1 st.,0 ed.,0 sets) deterministic
+Running [A0]: ltl2tgba 'yes'>'lcr-o0-GHFfkP'
+Running [A1]: ltl2tgba 'yes'>'lcr-o1-RRjMmU'
+info: collected automata:
+info:   A0	(2 st.,2 ed.,0 sets) deterministic
+info:   A1	(2 st.,2 ed.,0 sets) deterministic
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(2 st.,2 ed.,0 sets) -> (3 st.,4 ed.,1 sets)	Comp(A0)
+info:         A1	(2 st.,2 ed.,0 sets) -> (3 st.,4 ed.,1 sets)	Comp(A1)
+info: check_empty A0*Comp(A1)
+info: check_empty A1*Comp(A0)
+
+in:10.1-17.7
+info: input	(1 st.,0 ed.,0 sets) deterministic
+Running [A0]: ltl2tgba 'no'>'lcr-o0-P9SkEA'
+Running [A1]: ltl2tgba ''>'lcr-o1-Tk7ewL'
+>>> 
+    ^
+empty input
+
+error: execution returned exit code 2.
+info: collected automata:
+info:   A0	(2 st.,2 ed.,0 sets) deterministic
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(2 st.,2 ed.,0 sets) -> (3 st.,4 ed.,1 sets)	Comp(A0)
+
+error: some error was detected during the above runs,
+       please search for 'error:' messages in the above trace.
+info: writing CSV to out.csv
++ grep -c "ok" out.csv
++ test 3 = 3
++ sed s/AP: 0/AP: 0 "a"/g in
++ autcross --language-preserved autfilt
++ grep autcross: failed to read automaton from - err
+autcross: failed to read automaton from -
++ autcross -T3 --verbose --language-preserved --ignore-execution-failures --csv=out.csv --omit-missing --low --medium --high --stop-on-error sleep 10; autfilt %H>%O false %H %O -Fin
++ cat err
+in:1.1-9.7	yes
+info: input	(1 st.,0 ed.,0 sets) deterministic
+Running [A0]: sleep 10; autfilt 'lcr-i0-M75H3i'>'lcr-o0-YbnYa9'
+warning: timeout during execution of command
+Running [A1]: false 'lcr-i0-2XTkBR' 'lcr-o1-LJ3Qnk'
+warning: execution returned exit code 1.
+info: collected automata:
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:      input	(1 st.,0 ed.,0 sets) -> (1 st.,1 ed.,0 sets)	Comp(input)
+
+in:10.1-17.7
+info: input	(1 st.,0 ed.,0 sets) deterministic
+Running [A0]: sleep 10; autfilt 'lcr-i1-PuTJxQ'>'lcr-o0-puyWcH'
+warning: timeout during execution of command
+Running [A1]: false 'lcr-i1-N44xJF' 'lcr-o1-Np17j8'
+warning: execution returned exit code 1.
+info: collected automata:
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:      input	(1 st.,0 ed.,0 sets) -> (1 st.,1 ed.,0 sets)	Comp(input)
+
+No major problem detected.
+However, 
+  - 2 timeouts occurred
+  - 2 non-zero exit statuses were ignored
+info: writing CSV to out.csv
++ grep some error was detected err
++ grep No major problem err
+No major problem detected.
++ grep 2 timeouts occurred err
+  - 2 timeouts occurred
++ grep 2 non-zero exit statuses were ignored err
+  - 2 non-zero exit statuses were ignored
++ wc -l
++ test 1 = 1
++ autcross -T3 --verbose --language-preserved --ignore-execution-failures --csv=out.csv --omit-missing --low --medium --high --stop-on-error --fail-on-timeout sleep 10; autfilt %H>%O false %H %O -Fin
++ cat err
+in:1.1-9.7	yes
+info: input	(1 st.,0 ed.,0 sets) deterministic
+Running [A0]: sleep 10; autfilt 'lcr-i0-puRhsU'>'lcr-o0-1wvdk0'
+error: timeout during execution of command
+Running [A1]: false 'lcr-i0-gqgwf1' 'lcr-o1-t4VJZR'
+warning: execution returned exit code 1.
+info: collected automata:
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:      input	(1 st.,0 ed.,0 sets) -> (1 st.,1 ed.,0 sets)	Comp(input)
+
+error: some error was detected during the above runs,
+       please search for 'error:' messages in the above trace.
+Additionally, 1 non-zero exit status was ignored.
+info: writing CSV to out.csv
++ grep No major problem err
++ grep some error was detected  err
+error: some error was detected during the above runs,
++ grep 1 non-zero exit status was ignored err
+Additionally, 1 non-zero exit status was ignored.
++ wc -l
++ test 1 = 1
++ autcross -T3 -q --language-preserved --ignore-execution-failures --csv=out.csv --omit-missing --low --medium --high --stop-on-error --fail-on-timeout sleep 10; autfilt %H>%O false %H %O -Fin
++ cat err
+Running [A0]: sleep 10; autfilt 'lcr-i0-paDtkN'>'lcr-o0-XD17bL'
+error: timeout during execution of command
+input automaton was in:1.1-9.7	yes
+
++ grep -v Terminated err
++ wc -l
++ test 4 = 4
++ wc -l
++ test 1 = 1
++ autcross -
++ cat err
+autcross: No tool to run?  Run 'autcross --help' for usage.
++ grep autcross: No tool to run err
+autcross: No tool to run?  Run 'autcross --help' for usage.
+PASS core/autcross4.test (exit status: 0)

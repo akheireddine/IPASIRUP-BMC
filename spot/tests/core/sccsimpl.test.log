@@ -1,0 +1,318 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test sccsimpl.test
+== Running test sccsimpl.test
++ echo sccsimpl.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=sccsimpl
++ testSubDir=sccsimpl.dir
++ chmod -R a+rwx sccsimpl.dir
++ rm -rf sccsimpl.dir
++ mkdir sccsimpl.dir
++ cd sccsimpl.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 ../ikwiad -XH -R3 -H aut.txt
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -XH -R3 -H aut.txt
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -XH -R3 -H aut.txt
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep ^Acceptance: 1 Inf(0) out.txt
+Acceptance: 1 Inf(0)
++ cat
++ run 0 ../ikwiad -XH -R3 -H aut2.txt
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -XH -R3 -H aut2.txt
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -XH -R3 -H aut2.txt
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep ^Acceptance: 2  out2.txt
+Acceptance: 2 Inf(0)&Inf(1)
++ grep -c \[.*\] out2.txt
++ test 3 = 3
++ cat
++ run 0 ../ikwiad -XH -R3 -H aut3.txt
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -XH -R3 -H aut3.txt
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -XH -R3 -H aut3.txt
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep ^Acceptance: 2  out3.txt
+Acceptance: 2 Inf(0)&Inf(1)
++ grep -c \[.*\] out3.txt
++ test 3 = 3
++ cat
++ run 0 ../ikwiad -XH -R3 -H aut4.txt
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -XH -R3 -H aut4.txt
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -XH -R3 -H aut4.txt
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep ^Acceptance: 4  out4.txt
+Acceptance: 4 Inf(0)&Inf(1)&Inf(2)&Inf(3)
++ grep -c \[.*\] out4.txt
++ test 5 = 5
++ cat
++ run 0 ../ikwiad -XH -R3 -H aut5.txt
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -XH -R3 -H aut5.txt
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -XH -R3 -H aut5.txt
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep ^Acceptance: 0 t out5.txt
+Acceptance: 0 t
++ grep -c \[.*\] out5.txt
++ test 1 = 1
++ cat
++ run 0 ../ikwiad -XH -R3 -H aut6.txt
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -XH -R3 -H aut6.txt
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -XH -R3 -H aut6.txt
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep ^Acceptance: 2  out6.txt
+Acceptance: 2 Inf(0)&Inf(1)
++ grep -c \[.*\] out6.txt
++ test 2 = 2
++ cat
++ run 0 ../ikwiad -XH -R3 -H aut7.txt
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -XH -R3 -H aut7.txt
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -XH -R3 -H aut7.txt
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep ^Acceptance: 2  out7.txt
+Acceptance: 2 Inf(0)&Inf(1)
++ run 0 ../ikwiad -R3 -H (GFa&GFb) | (GFc&GFd)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -R3 -H (GFa&GFb) | (GFc&GFd)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -R3 -H (GFa&GFb) | (GFc&GFd)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep Acceptance: 2  out8.txt
+Acceptance: 2 Inf(0)&Inf(1)
++ run 0 ../ikwiad -R3 -RDS -ks (G(!((b) R (a)))) R (((c) R (!(d))) U (G((a) | (!(G(e))))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -R3 -RDS -ks (G(!((b) R (a)))) R (((c) R (!(d))) U (G((a) | (!(G(e))))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -R3 -RDS -ks (G(!((b) R (a)))) R (((c) R (!(d))) U (G((a) | (!(G(e))))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep states: 6$ out9.txt
+states: 6
++ cat
++ run 0 autfilt -H --any --medium -x scc-filter=2 input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H --any --medium -x scc-filter=2 input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H --any --medium -x scc-filter=2 input
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ cat output
+HOA: v1
+States: 2
+Start: 1
+AP: 1 "p0"
+acc-name: co-Buchi
+Acceptance: 1 Fin(0)
+properties: trans-labels explicit-labels trans-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[t] 0
+State: 1
+[0] 0
+[!0] 1 {0}
+--END--
+HOA: v1
+States: 2
+Start: 1
+AP: 1 "p0"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic
+--BODY--
+State: 0 {0}
+[t] 0
+State: 1
+[0] 0
+[!0] 1
+--END--
++ diff output expected
++ run 0 autfilt -C -H --det --high input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -C -H --det --high input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -C -H --det --high input
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ cat output
+HOA: v1
+States: 2
+Start: 1
+AP: 1 "p0"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic terminal very-weak
+--BODY--
+State: 0 {0}
+[t] 0
+State: 1
+[0] 0
+[!0] 1
+--END--
+HOA: v1
+States: 2
+Start: 1
+AP: 1 "p0"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic terminal very-weak
+--BODY--
+State: 0 {0}
+[t] 0
+State: 1
+[0] 0
+[!0] 1
+--END--
++ diff output expected
+PASS core/sccsimpl.test (exit status: 0)

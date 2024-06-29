@@ -1,0 +1,1 @@
+p1 xor (p1 W (Gp0 xor X(Gp1 W !p1)))

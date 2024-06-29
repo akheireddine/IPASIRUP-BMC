@@ -1,0 +1,73 @@
+formula:1: G(p0)
+Running [P0]: ltl2tgba -s 'G(p0)' >'lcr-o0-i4frZ8'
+info: getting statistics
+Running [P1]: ltl2tgba --lenient -s '[](p0)' >'lcr-o1-26aE28'
+info: getting statistics
+Running [N0]: ltl2tgba -s '!(G(p0))' >'lcr-o0-LHPdsf'
+info: getting statistics
+Running [N1]: ltl2tgba --lenient -s '!([](p0))' >'lcr-o1-apldGj'
+info: getting statistics
+info: collected automata:
+info:   P0	(1 st.,1 ed.,1 sets) deterministic
+info:   N0	(2 st.,3 ed.,1 sets) deterministic complete
+info:   P1	(1 st.,1 ed.,1 sets) deterministic
+info:   N1	(2 st.,3 ed.,1 sets) deterministic complete
+Performing sanity checks and gathering statistics...
+info: removing unused sets...
+info:        P0 	1 sets -> 0 sets
+info:        P1 	1 sets -> 0 sets
+info: P0 and N0 assumed correct and used as references
+info: running cross_checks and consistency_checksjust for statistics
+info: building state-space #1/1 of 200 states with seed 0
+info: state-space has 4136 edges
+info: building product between state-space and P0 (1 st., 1 ed.)
+info:   product has 200 st., 2081 ed.
+info:               1 SCCs
+info: building product between state-space and P1 (1 st., 1 ed.)
+info:   product has 200 st., 2081 ed.
+info:               1 SCCs
+info: building product between state-space and N0 (2 st., 3 ed.)
+info:   product has 400 st., 8272 ed.
+info:               2 SCCs
+info: building product between state-space and N1 (2 st., 3 ed.)
+info:   product has 400 st., 8272 ed.
+info:               2 SCCs
+info: cross_check {P0,P1}, state-space #0/1
+info: cross_check {N0,N1}, state-space #0/1
+
+formula:2: (F(G(a))) & (G(F(b)))
+Running [P0]: ltl2tgba -s '(F(G(a))) & (G(F(b)))' >'lcr-o0-wFFbm9'
+info: getting statistics
+Running [P1]: ltl2tgba --lenient -s '(<>([](a))) && ([](<>(b)))' >'lcr-o1-Z0I4zV'
+info: getting statistics
+Running [N0]: ltl2tgba -s '!((F(G(a))) & (G(F(b))))' >'lcr-o0-1rZIBu'
+info: getting statistics
+Running [N1]: ltl2tgba --lenient -s '!((<>([](a))) && ([](<>(b))))' >'lcr-o1-6prOfM'
+info: getting statistics
+info: collected automata:
+info:   P0	(3 st.,6 ed.,1 sets)
+info:   N0	(4 st.,8 ed.,1 sets)
+info:   P1	(3 st.,6 ed.,1 sets)
+info:   N1	(4 st.,8 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: P0 and N0 assumed correct and used as references
+info: running cross_checks and consistency_checksjust for statistics
+info: building state-space #1/1 of 200 states with seed 1
+info: state-space has 4144 edges
+info: building product between state-space and P0 (3 st., 6 ed.)
+info:   product has 595 st., 9085 ed.
+info:               2 SCCs
+info: building product between state-space and P1 (3 st., 6 ed.)
+info:   product has 595 st., 9085 ed.
+info:               2 SCCs
+info: building product between state-space and N0 (4 st., 8 ed.)
+info:   product has 800 st., 18750 ed.
+info:               3 SCCs
+info: building product between state-space and N1 (4 st., 8 ed.)
+info:   product has 800 st., 18750 ed.
+info:               3 SCCs
+info: cross_check {P0,P1}, state-space #0/1
+info: cross_check {N0,N1}, state-space #0/1
+
+No problem detected.
+info: writing CSV to out.csv

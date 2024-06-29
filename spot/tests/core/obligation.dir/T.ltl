@@ -1,0 +1,2 @@
+G(q -> ((p -> (!r U (!r & s & X(!r U t)))) U (r | G(p -> (s & XFt)))))
+G(q -> ((p -> (!r U (!r & s & !z & X((!r & !z) U t)))) U (r | G(p -> (s & !z & X(!z U t))))))

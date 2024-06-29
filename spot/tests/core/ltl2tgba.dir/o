@@ -1,0 +1,18 @@
+HOA: v1
+name: "X(Fp1 | ((p1 | Fp0) U G(p2 M p1)))"
+States: 3
+Start: 0
+AP: 3 "p1" "p0" "p2"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[t] 1
+State: 1
+[!0] 1
+[0] 2 {0}
+State: 2
+[t] 2 {0}
+--END--

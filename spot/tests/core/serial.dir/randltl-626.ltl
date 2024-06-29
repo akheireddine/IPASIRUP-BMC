@@ -1,0 +1,1 @@
+X(p0 | p1) xor (Xp0 & F(p1 & !XGp0))

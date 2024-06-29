@@ -1,0 +1,103 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test reduc.test
+== Running test reduc.test
++ echo reduc.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=reduc
++ testSubDir=reduc.dir
++ chmod -R a+rwx reduc.dir
++ rm -rf reduc.dir
++ mkdir reduc.dir
++ cd reduc.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ run 0 randltl --seed 0 --tree-size 10 a b c -n 100
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v randltl
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl --seed 0 --tree-size 10 a b c -n 100
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/randltl --seed 0 --tree-size 10 a b c -n 100
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ randltl --seed 100 --tree-size 10 a b c d e f -n 100
++ randltl --seed 0 --tree-size 12 a b c -n 100
++ randltl --seed 100 --tree-size 12 a b c d e f -n 100
++ randltl --seed 0 --tree-size 14 a b c -n 100
++ randltl --seed 100 --tree-size 14 a b c d e f -n 100
++ randltl --seed 0 --tree-size 16 a b c -n 100
++ randltl --seed 100 --tree-size 16 a b c d e f -n 100
++ randltl --seed 0 --tree-size 18 a b c -n 100
++ randltl --seed 100 --tree-size 18 a b c d e f -n 100
++ randltl --seed 0 --tree-size 20 a b c -n 100
++ randltl --seed 100 --tree-size 20 a b c d e f -n 100
++ ../reduc -f -h 0 formulas
+gain: 9.21217%
++ ../reduc -f -h 1 formulas
+gain: 16.1317%
++ ../reduc -f -h 2 formulas
+gain: 8.85786%
++ run 0 ../reduc -f -h 3 formulas
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../reduc
++ cmd=../reduc
++ shift
++ test -n ../reduc
++ set ../reduc -f -h 3 formulas
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../reduc -f -h 3 formulas
+gain: 22.624%
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../reduc -f -h 7 formulas
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../reduc
++ cmd=../reduc
++ shift
++ test -n ../reduc
++ set ../reduc -f -h 7 formulas
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../reduc -f -h 7 formulas
+gain: 16.5329%
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ ../reduc -f -h 8 formulas
+gain: 18.737%
++ ../reduc -f -h 9 formulas
+gain: 23.3118%
+PASS core/reduc.test (exit status: 0)

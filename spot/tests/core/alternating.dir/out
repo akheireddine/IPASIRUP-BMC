@@ -1,0 +1,1 @@
+autfilt: remove_alternation() only works with weak alternating automata

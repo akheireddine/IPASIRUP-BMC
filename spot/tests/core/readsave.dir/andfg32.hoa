@@ -1,0 +1,17 @@
+HOA: v1
+States: 2
+Start: 0
+AP: 32 "a" "ab" "b" "bb" "c" "cb" "d" "db" "e" "eb" "f" "fb" "g" "h"
+"i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc
+--BODY--
+State: 0
+[t] 0
+[0&1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16&17
+&18&19&20&21&22&23&24&25&26&27&28&29&30&31] 1
+State: 1 {0}
+[0&1&2&3&4&5&6&7&8&9&10&11&12&13&14&15&16&17
+&18&19&20&21&22&23&24&25&26&27&28&29&30&31] 1
+--END--

@@ -1,0 +1,9 @@
+p0 U p1
+p0 U (p1 U p2)
+!(p0 U (p1 U p2))
+GFp0 -> GFp1
+Fp0 U Gp1
+Gp0 U p1
+!(Fp0 <-> Fp1)
+!(GFp0 -> GFp1)
+!(GFp0 <-> GFp1)

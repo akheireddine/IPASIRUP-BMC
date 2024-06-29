@@ -1,0 +1,2 @@
+ltlsynt: since 'c' does not start with 'i' or 'o', it is unclear if it is an input or an output;
+    use --ins or --outs

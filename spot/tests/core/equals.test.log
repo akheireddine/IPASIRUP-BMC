@@ -1,0 +1,278 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test equals.test
+== Running test equals.test
++ echo equals.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=equals
++ testSubDir=equals.dir
++ chmod -R a+rwx equals.dir
++ rm -rf equals.dir
++ mkdir equals.dir
++ cd equals.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ cat
++ run 0 ../equals equal.txt
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../equals
++ cmd=../equals
++ shift
++ test -n ../equals
++ set ../equals equal.txt
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../equals equal.txt
+1: # A few things which are equal
+2: a, a
+3: ~a, !a
+4: 1, 1
+5: 0, 0
+6: a => b, a --> b
+7: a <-> b, a <--> b
+8: G a ,  G a
+9: a U b, a U b
+10: a & b, a & b
+11: a & b, b & a
+12: a & b & c, c & a && b
+13: a & b & c, b & c & a
+14: a && b & a, b & a & b
+15: a & b, b & a & b
+16: a & b, b & a & a
+17: a & b & (c |(f U g)|| e), b & a & a & (c | e |(f U g)| e | c) & b
+18: a & a, a
+19: a & a & true, a
+20: a & false & a, false
+21: a | false | a, a
+22: true | a | a, true
+23: Ga=1*Gb=0, (G(a)) & (G(!b))
+24: FFx, Fx
+25: FFFFFx, Fx
+26: GGx, Gx
+27: GGGGGx, Gx
+28: !!x, x
+29: !!!!!x, !x
+30: {[*0];x}<>->1, {x}<>->1
+31: {x;[*0]}<>->1, {x}<>-> 1
+32: {[*]}[]->0, 0
+33: {[*]}<>->1, 1
+34: {[*0];x;[*0];[*0]}<>->1, {x}<>->1
+35: {[*0];x;[*0];x;[*0]}<>->1, {x;x}<>->1
+36: {x;x;x;[*0];x;x}<>->1, {x;x;x;x;x}<>->1
+37: {x;0;x;x;x}<>->1, 0
+38: {x;0;x;x;x}[]->1, 1
+39: {0*;1}<>->x, x
+40: {[*0]*;1}<>->x, x
+41: {x;x}<>->FF(0), 0
+42: {x;x}<>->GX(1), {x;x}<>->1
+43: {x;x}[]->GX(1), 1
+44: {x;x}[]->FF(0), {x;x}[]->0
+45: {x;x}[]->y, {x;x}|->y
+46: {x;x}[]->y, {x;x}(y)
+47: {a*}!, {a*}<>->1
+48: {a -> b} (c), !(a->b)|c
+49: {a & !b}!, a & !b
+50: {a;[*0]}|->!Xb, !a | !Xb
+51: {{a;b}:b:c:d*:e:f}!, {{a;b}:{b && c }:d[*]:{e && f}}!
+52: {a:b:c}|->!Xb, !(a&&b&&c) | !Xb
+53: {a:b:c*}|->!Xb, {(a&&b):c*}|-> !Xb
+54: {a&b&c*}|->!Xb, {(a&&b)&c*}|-> !Xb
+55: {[*]&&a&&[*]}!, a
+56: {[*]||a||[*]}!, {[*]}!
+57: {0&{f;g*}}!, 0
+58: {1&{f;g*}}!, {f;g*}!
+59: # Precedence
+60: a & b ^ c | d, d | c ^ b & a
+61: 
+62: # Corner cases parsing
+63: FFG__GFF, F(F(G("__GFF")))
+64: 
+65: # Trivial simplifications
+66: {0*}<>->a, {[*0]}<>->a
+67: {[*0]*}<>->a, {[*0]}<>->a
+68: {Exp**}<>->a, {Exp*}<>->a
+69: FF(Exp), F(Exp)
+70: GG(Exp), G(Exp)
+71: F(0), 0
+72: G(0), 0
+73: F(1), 1
+74: G(1), 1
+75: F({[*0]}<>->1), F({[*0]}<>->1)
+76: G({[*0]}<>->1), G({[*0]}<>->1)
+77: F({1}<>->1), 1
+78: G({1}<>->1), 1
+79: !1, 0
+80: !0, 1
+81: !!Exp, Exp
+82: 
+83: (1 => Exp), Exp
+84: (0 => Exp), 1
+85: (Exp => 1), 1
+86: (Exp => 0), !Exp
+87: (Exp => Exp), 1
+88: (1 ^ Exp), !Exp
+89: (0 ^ Exp), Exp
+90: (Exp ^ Exp), 0
+91: (0 <=> Exp), !Exp
+92: (1 <=> Exp), Exp
+93: (Exp <=> Exp), 1
+94: (Exp U 1), 1
+95: (Exp U 0), 0
+96: (0 U Exp), Exp
+97: (Exp U Exp), Exp
+98: (Exp R 1), 1
+99: (Exp R 0), 0
+100: (Exp R Exp), Exp
+101: (1 R Exp), Exp
+102: (Exp W 1), 1
+103: (0 W Exp), Exp
+104: (1 W Exp), 1
+105: (Exp W Exp), Exp
+106: (Exp M 0), 0
+107: (1 M Exp), Exp
+108: (0 M Exp), 0
+109: (Exp M Exp), Exp
+110: 
+111: {1:{a;b}:1:c*}!, {{a;b}:c*}!
+112: {c*:1:{a;b}:1}!, {c*:{a;b}}!
+113: 
+114: {z;a*;b*;*;c;d;*;b*;e;a*;*;b*}, {z;[*];c;d;[*];e;[*]}
+115: {((a;b)|[*0]);[*];c}!, {[*];c}!
+116: {a;a;a*;a;b;b[*];c[*2:3];c[*4:5]}, {a[*3..];b[+];c[*6..8]}
+117: {a;a[*200];a[*..60];a;b[*..100][*..2]}, {a[*201];a[*1..61];b[*..200]}
+118: 
+119: {a[*0]}, {[*0]}
+120: {a[*..]}, {a[*]}
+121: {a[*2..3][*4..5]}, {a[*8..15]}
+122: {a[*4..5][*2..3]}, {a[*4..5][*2..3]}
+123: {a[*2:3][*]}, {a[*2 to 3][*]}
+124: {a[*1..3][*]}, {a[*]}
+125: {a[*][*2..3]}, {a[*]}
+126: {a[*..3][*2]}, {a[*..6]}
+127: {a[*..3][*to2]}, {a[*:6]}
+128: {a[*..3][*2..$]}, {a[*]}
+129: {a[*..3][*2:]}, {a[*:inf]}
+130: {a[*1..]}, {a[+]}
+131: {a[*1]}, {a}
+132: {a[+][*1..3]}, {a[+]}
+133: {a[*1..3][+]}, {a[+]}
+134: {[*2][+]}, {[*2][+]}
+135: {[+][*2]}, {[*2..inf]}
+136: 
+137: {0[=2]}, 0
+138: {0[=2..]}, 0
+139: {0[=1..10]}, 0
+140: {0[=0]}, {[*]}
+141: {0[=0..10]}, {*}
+142: {0[=0..]}, {*}
+143: {1[=0]}, {[*0]}
+144: {1[=1..2]}, {[*1\,2]}
+145: {1[=..4]}, {1[*..4]}
+146: {b[=0]}, {(!b)[*]}
+147: {b[=0to$]}, {*}
+148: 
+149: {0[->10..100];b}, 0
+150: {0[->1..];b}, 0
+151: {0[->0\,100];b}, b
+152: {0[->0..$];b}, b
+153: !{1[->0];b}, !b
+154: {1[->10\,20];b}, {[*10..20];b}
+155: {1[->..];b}, {[*1..];b}
+156: {{a&!c}[->0];b}, b
+157: 
+158: {(a|c)[:*0..3];d}, {1;d}
+159: {(a|c)[:*1..3];d}, {(a|c);d}
+160: {0[:*0..3];d}, {1;d}
+161: {0[:*1..3];d}, 0
+162: {1[:*0..3];d}, {1;d}
+163: {1[:*1..3];d}, {1;d}
+164: {[*0][:*0..3];d}, {1;d}
+165: {[*0][:*1..3];d}, 0
+166: {(a*;b|c)[:*1to3][:*2:4]}, {(a*;b|c)[:*2..12]}
+167: {(a*;b|c)[:*][:+]}, {(a*;b|c)[:*]}
+168: {(a*;b|c)[:*0]}, 1
+169: {(a*;b|c)[:*1]}, {(a*;b|c)}
+170: {(a;b):(a;b):(a;b)[:*2]:(a;b):b*:b*:(c;d)[:*1]}, {(a;b)[:*5]:b*[:*2]:(c;d)}
+171: {((a;b)|[+]|(c;d[*]));a}, {[+];a}
+172: {((a;b)|[+]|(d[*]));a}, {[*];a}
+173: {((a;b)&&[+]&&(d[*]));a}, {((a;b)&&(d[*]));a}
+174: {((a;b|[*0])&&[+]&&(d[*]));a}, {((a;b|[*0])&&[+]&&(d[*]));a}
+175: {(a;c):b[*3..5]:b[*10]:(a;c)}, {(a;c):b[*12..14]:(a;c)}
+176: {(a;c):b:b[*3..5]:b:b[*0..4]:(a;c)}, {(a;c):b[*3..8]:(a;c)}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../nequals nequal.txt
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../nequals
++ cmd=../nequals
++ shift
++ test -n ../nequals
++ set ../nequals nequal.txt
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../nequals nequal.txt
+1: # other formulae which are not
+2: a, b
+Source and destination formulae are not equivalent!
+3: 1, 0
+Source and destination formulae are not equivalent!
+4: a => b, b => a
+Source and destination formulae are not equivalent!
+5: a => b, a <=> b
+Source and destination formulae are not equivalent!
+6: a => b, a U b
+Source and destination formulae are not equivalent!
+7: a R b, a U b
+Source and destination formulae are not equivalent!
+8: a & b & c, c & a
+Source and destination formulae are not equivalent!
+9: b & c, c & a & b
+Source and destination formulae are not equivalent!
+10: a & b & (c |(f U g)| e), b & a & a & (c | e |(g U g)| e | c) & b
+Source and destination formulae are not equivalent!
+11: {a*}, {a*}<>->1
+12: !{a*}, {a*}<>->1
+Source and destination formulae are not equivalent!
+13: {a*}, {a*}!
+14: !{a*}, {a*}!
+Source and destination formulae are not equivalent!
+15: 
+16: # 1 should not be removed in the following two formulae
+17: {1&{g*}}!, {g*}!
+Source and destination formulae are not equivalent!
+18: {1|{b;c}}<>->a, {b;c}<>->a
+Source and destination formulae are not equivalent!
+19: # make sure twin arguments are not reduced in Fusion.
+20: {(a;!a)*:(a;!a)*:b}!, {(a;!a)*:b}!
+Source and destination formulae are not equivalent!
+21: # make sure 1:a* is not reduced to a*.
+22: {(1:a*);b}!, {a*;b}!
+Source and destination formulae are not equivalent!
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
+PASS core/equals.test (exit status: 0)

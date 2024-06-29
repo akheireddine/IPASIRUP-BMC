@@ -1,0 +1,48 @@
+hard-locale.lo: hard-locale.c /usr/x86_64-linux-gnu/include/stdc-predef.h \
+ ../config.h hard-locale.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h locale.h \
+ /usr/x86_64-linux-gnu/include/locale.h \
+ /usr/x86_64-linux-gnu/include/features.h \
+ /usr/x86_64-linux-gnu/include/features-time64.h \
+ /usr/x86_64-linux-gnu/include/bits/wordsize.h \
+ /usr/x86_64-linux-gnu/include/bits/timesize.h \
+ /usr/x86_64-linux-gnu/include/sys/cdefs.h \
+ /usr/x86_64-linux-gnu/include/bits/long-double.h \
+ /usr/x86_64-linux-gnu/include/gnu/stubs.h \
+ /usr/x86_64-linux-gnu/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
+ /usr/x86_64-linux-gnu/include/bits/locale.h \
+ /usr/x86_64-linux-gnu/include/bits/types/locale_t.h \
+ /usr/x86_64-linux-gnu/include/bits/types/__locale_t.h setlocale_null.h \
+ arg-nonnull.h string.h /usr/x86_64-linux-gnu/include/string.h \
+ /usr/x86_64-linux-gnu/include/bits/libc-header-start.h strings.h \
+ /usr/x86_64-linux-gnu/include/strings.h \
+ /usr/x86_64-linux-gnu/include/bits/strings_fortified.h \
+ /usr/x86_64-linux-gnu/include/bits/string_fortified.h
+/usr/x86_64-linux-gnu/include/stdc-predef.h:
+../config.h:
+hard-locale.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h:
+locale.h:
+/usr/x86_64-linux-gnu/include/locale.h:
+/usr/x86_64-linux-gnu/include/features.h:
+/usr/x86_64-linux-gnu/include/features-time64.h:
+/usr/x86_64-linux-gnu/include/bits/wordsize.h:
+/usr/x86_64-linux-gnu/include/bits/timesize.h:
+/usr/x86_64-linux-gnu/include/sys/cdefs.h:
+/usr/x86_64-linux-gnu/include/bits/long-double.h:
+/usr/x86_64-linux-gnu/include/gnu/stubs.h:
+/usr/x86_64-linux-gnu/include/gnu/stubs-64.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
+/usr/x86_64-linux-gnu/include/bits/locale.h:
+/usr/x86_64-linux-gnu/include/bits/types/locale_t.h:
+/usr/x86_64-linux-gnu/include/bits/types/__locale_t.h:
+setlocale_null.h:
+arg-nonnull.h:
+string.h:
+/usr/x86_64-linux-gnu/include/string.h:
+/usr/x86_64-linux-gnu/include/bits/libc-header-start.h:
+strings.h:
+/usr/x86_64-linux-gnu/include/strings.h:
+/usr/x86_64-linux-gnu/include/bits/strings_fortified.h:
+/usr/x86_64-linux-gnu/include/bits/string_fortified.h:

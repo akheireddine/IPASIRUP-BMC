@@ -1,0 +1,16 @@
+digraph "G(Fa & Fb)" {
+  rankdir=LR
+  label=<Inf(<font color="#1F78B4">⓿</font>)&amp;Inf(<font color="#FF4DA0">❶</font>)<br/>[gen. Büchi 2]>
+  labelloc="t"
+  node [shape="ellipse",width="0.5",height="0.5"]
+  fontname="Lato"
+  node [fontname="Lato"]
+  edge [fontname="Lato"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label=<0>]
+  0 -> 0 [label=<!a &amp; !b>]
+  0 -> 0 [label=<a &amp; !b<br/><font color="#1F78B4">⓿</font>>]
+  0 -> 0 [label=<!a &amp; b<br/><font color="#FF4DA0">❶</font>>]
+  0 -> 0 [label=<a &amp; b<br/><font color="#1F78B4">⓿</font><font color="#FF4DA0">❶</font>>]
+}

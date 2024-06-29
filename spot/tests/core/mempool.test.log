@@ -1,0 +1,35 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test mempool.test
+== Running test mempool.test
++ echo mempool.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=mempool
++ testSubDir=mempool.dir
++ chmod -R a+rwx mempool.dir
++ rm -rf mempool.dir
++ mkdir mempool.dir
++ cd mempool.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ test -n valgrind
++ /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes ../mempool
++ grep ERROR SUMMARY err
++ sed s/^==[0-9]*==\s*//
++ diff exp out
+PASS core/mempool.test (exit status: 0)

@@ -1,0 +1,6321 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test emptchk.test
+== Running test emptchk.test
++ echo emptchk.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=emptchk
++ testSubDir=emptchk.dir
++ chmod -R a+rwx emptchk.dir
++ rm -rf emptchk.dir
++ mkdir emptchk.dir
++ cd emptchk.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 ../emptchk emptchk.txt
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../emptchk
++ cmd=../emptchk
++ shift
++ test -n ../emptchk
++ set ../emptchk emptchk.txt
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../emptchk emptchk.txt
+========================================================
+1: 1, a
+** Testing aut[0] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[1] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[3] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[1] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[3] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[1] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[3] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[1] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[3] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+No more counterexample found.
+
+** Testing aut[1] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+No more counterexample found.
+
+** Testing aut[3] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[1] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[3] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[1] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[3] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+No more counterexample found.
+
+** Testing aut[1] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+No more counterexample found.
+
+** Testing aut[3] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[1] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[3] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[1] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[3] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+========================================================
+2: 1, a U b
+** Testing aut[0] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[1] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[3] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[1] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[3] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[1] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[3] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[1] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[3] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[1] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[3] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[1] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[3] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[1] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[3] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[1] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[3] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[1] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[3] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[1] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[3] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+========================================================
+3: 1, X a
+** Testing aut[0] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+** Testing aut[1] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+** Testing aut[3] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[0] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+** Testing aut[1] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+** Testing aut[3] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+** Testing aut[1] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[2] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+** Testing aut[3] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+** Testing aut[1] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[2] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+** Testing aut[3] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+No more counterexample found.
+
+** Testing aut[1] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+No more counterexample found.
+
+** Testing aut[3] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+** Testing aut[1] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[2] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+** Testing aut[3] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[0] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+** Testing aut[1] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[2] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+** Testing aut[3] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[0] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+No more counterexample found.
+
+** Testing aut[1] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+No more counterexample found.
+
+** Testing aut[3] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+** Testing aut[1] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+** Testing aut[3] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[0] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+** Testing aut[1] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[2] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1"]
+}
+
+** Testing aut[3] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+========================================================
+4: 1, a & b & c
+** Testing aut[0] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[1] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[3] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[1] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[3] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[1] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[3] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[1] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[3] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+No more counterexample found.
+
+** Testing aut[1] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+No more counterexample found.
+
+** Testing aut[3] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[1] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[3] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[1] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[3] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+No more counterexample found.
+
+** Testing aut[1] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+No more counterexample found.
+
+** Testing aut[3] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[1] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[3] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[1] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="t\n[all]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+}
+
+** Testing aut[3] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & b & c\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+========================================================
+5: 1, a | b | (c U (d & (g U (h ^ i))))
+** Testing aut[0] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0,1}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0,1}"]
+}
+
+** Testing aut[1] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[3] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0,1}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0,1}"]
+}
+
+** Testing aut[1] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[3] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90
+Skipping because automaton has 2 acceptance sets, and CVWY90 accepts at most 1.
+** Testing aut[1] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[3] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(bsh=10M)
+Skipping because automaton has 2 acceptance sets, and CVWY90(bsh=10M) accepts at most 1.
+** Testing aut[1] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[3] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(repeated)
+Skipping because automaton has 2 acceptance sets, and CVWY90(repeated) accepts at most 1.
+** Testing aut[1] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[3] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using SE05
+Skipping because automaton has 2 acceptance sets, and SE05 accepts at most 1.
+** Testing aut[1] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[3] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using SE05(bsh=10M)
+Skipping because automaton has 2 acceptance sets, and SE05(bsh=10M) accepts at most 1.
+** Testing aut[1] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[3] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using SE05(repeated)
+Skipping because automaton has 2 acceptance sets, and SE05(repeated) accepts at most 1.
+** Testing aut[1] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[3] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0,1}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0,1}"]
+}
+
+** Testing aut[1] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[3] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[0] using GV04
+Skipping because automaton has 2 acceptance sets, and GV04 accepts at most 1.
+** Testing aut[1] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[2] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+** Testing aut[3] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a | b | (d & !h & i) | (d & h & !i)"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
+
+========================================================
+6: 1, Xa & (b U !a) & (b U !a)
+** Testing aut[0] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[1] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[3] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[0] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a & b"]
+  2 [label="2"]
+  2 -> 3 [label="!a\n{0}"]
+  3 [label="3"]
+  3 -> 3 [label="1\n{0}"]
+}
+
+** Testing aut[1] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a & b"]
+  2 [label="2"]
+  2 -> 3 [label="!a\n{0}"]
+  3 [label="3"]
+  3 -> 3 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b"]
+  1 [label="1"]
+  1 -> 2 [label="a & b"]
+  2 [label="2"]
+  2 -> 3 [label="!a\n{0}"]
+  3 [label="3"]
+  3 -> 3 [label="1\n{0}"]
+}
+
+** Testing aut[3] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b"]
+  1 [label="1"]
+  1 -> 2 [label="a & b"]
+  2 [label="2"]
+  2 -> 3 [label="!a"]
+  3 [label="3"]
+  3 -> 3 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[1] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[2] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[3] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[1] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[2] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[3] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[1] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[3] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[1] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[2] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[3] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[0] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[1] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[2] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[3] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[0] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[1] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[3] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[1] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[2] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[3] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[0] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[1] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[2] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a\n{0}"]
+  1 [label="1"]
+  1 -> 2 [label="a\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+** Testing aut[3] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a"]
+  1 [label="1"]
+  1 -> 2 [label="a"]
+  2 [label="2"]
+  2 -> 2 [label="1\n{0}"]
+}
+
+========================================================
+7: 1, Fa & Xb & GFc & Gd
+** Testing aut[0] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c & d\n{0,1}"]
+  1 [label="1"]
+  1 -> 2 [label="b & d\n{0,1}"]
+  2 [label="2"]
+  2 -> 3 [label="d\n{0}"]
+  3 [label="3"]
+  3 -> 2 [label="c & d\n{0,1}"]
+}
+
+** Testing aut[1] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+** Testing aut[2] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c & d\n{0,1}"]
+  1 [label="1"]
+  1 -> 2 [label="b & c & d\n{0,1}"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0,1}"]
+}
+
+** Testing aut[3] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+** Testing aut[0] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="d\n{0,1}"]
+  1 [label="1"]
+  1 -> 2 [label="a & b & c & d\n{0,1}"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0,1}"]
+}
+
+** Testing aut[1] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="d"]
+  1 [label="1"]
+  1 -> 2 [label="a & b & c & d"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+** Testing aut[2] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c & d\n{1}"]
+  1 [label="1"]
+  1 -> 2 [label="a & b & c & d\n{0,1}"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0,1}"]
+}
+
+** Testing aut[3] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="d"]
+  1 [label="1"]
+  1 -> 2 [label="a & b & d"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+** Testing aut[0] using CVWY90
+Skipping because automaton has 2 acceptance sets, and CVWY90 accepts at most 1.
+** Testing aut[1] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+** Testing aut[2] using CVWY90
+Skipping because automaton has 2 acceptance sets, and CVWY90 accepts at most 1.
+** Testing aut[3] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(bsh=10M)
+Skipping because automaton has 2 acceptance sets, and CVWY90(bsh=10M) accepts at most 1.
+** Testing aut[1] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+** Testing aut[2] using CVWY90(bsh=10M)
+Skipping because automaton has 2 acceptance sets, and CVWY90(bsh=10M) accepts at most 1.
+** Testing aut[3] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(repeated)
+Skipping because automaton has 2 acceptance sets, and CVWY90(repeated) accepts at most 1.
+** Testing aut[1] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+2 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & c & d\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using CVWY90(repeated)
+Skipping because automaton has 2 acceptance sets, and CVWY90(repeated) accepts at most 1.
+** Testing aut[3] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using SE05
+Skipping because automaton has 2 acceptance sets, and SE05 accepts at most 1.
+** Testing aut[1] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+** Testing aut[2] using SE05
+Skipping because automaton has 2 acceptance sets, and SE05 accepts at most 1.
+** Testing aut[3] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+** Testing aut[0] using SE05(bsh=10M)
+Skipping because automaton has 2 acceptance sets, and SE05(bsh=10M) accepts at most 1.
+** Testing aut[1] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+** Testing aut[2] using SE05(bsh=10M)
+Skipping because automaton has 2 acceptance sets, and SE05(bsh=10M) accepts at most 1.
+** Testing aut[3] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+** Testing aut[0] using SE05(repeated)
+Skipping because automaton has 2 acceptance sets, and SE05(repeated) accepts at most 1.
+** Testing aut[1] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+2 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & c & d\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using SE05(repeated)
+Skipping because automaton has 2 acceptance sets, and SE05(repeated) accepts at most 1.
+** Testing aut[3] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c & d\n{0,1}"]
+  1 [label="1"]
+  1 -> 2 [label="b & d\n{0,1}"]
+  2 [label="2"]
+  2 -> 3 [label="c & d\n{0,1}"]
+  3 [label="3"]
+  3 -> 2 [label="d\n{0}"]
+}
+
+** Testing aut[1] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+** Testing aut[2] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c & d\n{0,1}"]
+  1 [label="1"]
+  1 -> 2 [label="b & c & d\n{0,1}"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0,1}"]
+}
+
+** Testing aut[3] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+** Testing aut[0] using GV04
+Skipping because automaton has 2 acceptance sets, and GV04 accepts at most 1.
+** Testing aut[1] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+** Testing aut[2] using GV04
+Skipping because automaton has 2 acceptance sets, and GV04 accepts at most 1.
+** Testing aut[3] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & d"]
+  1 [label="1"]
+  1 -> 2 [label="b & d"]
+  2 [label="2"]
+  2 -> 2 [label="c & d\n{0}"]
+}
+
+========================================================
+8: 2, Fa & Xa & GFc & Gc
+** Testing aut[0] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c\n{0,1}"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0,1}"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0,1}"]
+}
+
+** Testing aut[1] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+** Testing aut[2] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c\n{0,1}"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0,1}"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0,1}"]
+}
+
+** Testing aut[3] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+** Testing aut[0] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c\n{0,1}"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0,1}"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0,1}"]
+}
+
+** Testing aut[1] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+** Testing aut[2] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c\n{0,1}"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0,1}"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0,1}"]
+}
+
+** Testing aut[3] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+** Testing aut[0] using CVWY90
+Skipping because automaton has 2 acceptance sets, and CVWY90 accepts at most 1.
+** Testing aut[1] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+** Testing aut[2] using CVWY90
+Skipping because automaton has 2 acceptance sets, and CVWY90 accepts at most 1.
+** Testing aut[3] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(bsh=10M)
+Skipping because automaton has 2 acceptance sets, and CVWY90(bsh=10M) accepts at most 1.
+** Testing aut[1] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+** Testing aut[2] using CVWY90(bsh=10M)
+Skipping because automaton has 2 acceptance sets, and CVWY90(bsh=10M) accepts at most 1.
+** Testing aut[3] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(repeated)
+Skipping because automaton has 2 acceptance sets, and CVWY90(repeated) accepts at most 1.
+** Testing aut[1] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+2 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using CVWY90(repeated)
+Skipping because automaton has 2 acceptance sets, and CVWY90(repeated) accepts at most 1.
+** Testing aut[3] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using SE05
+Skipping because automaton has 2 acceptance sets, and SE05 accepts at most 1.
+** Testing aut[1] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+** Testing aut[2] using SE05
+Skipping because automaton has 2 acceptance sets, and SE05 accepts at most 1.
+** Testing aut[3] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+** Testing aut[0] using SE05(bsh=10M)
+Skipping because automaton has 2 acceptance sets, and SE05(bsh=10M) accepts at most 1.
+** Testing aut[1] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+** Testing aut[2] using SE05(bsh=10M)
+Skipping because automaton has 2 acceptance sets, and SE05(bsh=10M) accepts at most 1.
+** Testing aut[3] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+** Testing aut[0] using SE05(repeated)
+Skipping because automaton has 2 acceptance sets, and SE05(repeated) accepts at most 1.
+** Testing aut[1] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+2 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using SE05(repeated)
+Skipping because automaton has 2 acceptance sets, and SE05(repeated) accepts at most 1.
+** Testing aut[3] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c\n{0,1}"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0,1}"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0,1}"]
+}
+
+** Testing aut[1] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+** Testing aut[2] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c\n{0,1}"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0,1}"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0,1}"]
+}
+
+** Testing aut[3] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+** Testing aut[0] using GV04
+Skipping because automaton has 2 acceptance sets, and GV04 accepts at most 1.
+** Testing aut[1] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+** Testing aut[2] using GV04
+Skipping because automaton has 2 acceptance sets, and GV04 accepts at most 1.
+** Testing aut[3] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="c\n{0}"]
+}
+
+========================================================
+9: 1, Fc & X(a | Xb) & GF(a | Xb) & Gc
+** Testing aut[0] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c\n{0,1}"]
+  1 [label="1"]
+  1 -> 2 [label="a & b & c\n{0,1}"]
+  2 [label="2"]
+  2 -> 3 [label="c\n{0}"]
+  3 [label="3"]
+  3 -> 4 [label="c\n{0,1}"]
+  4 [label="4"]
+  4 -> 2 [label="b & c\n{0}"]
+}
+
+** Testing aut[1] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & b & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+** Testing aut[2] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c\n{0,1}"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0,1}"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0,1}"]
+}
+
+** Testing aut[3] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+** Testing aut[0] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c\n{0,1}"]
+  1 [label="1"]
+  1 -> 2 [label="c\n{0,1}"]
+  2 [label="2"]
+  2 -> 2 [label="b & c\n{0,1}"]
+}
+
+** Testing aut[1] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="c"]
+  2 [label="2"]
+  2 -> 2 [label="b & c\n{0}"]
+}
+
+** Testing aut[2] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c\n{0,1}"]
+  1 [label="1"]
+  1 -> 2 [label="b & c\n{0,1}"]
+  2 [label="2"]
+  2 -> 2 [label="b & c\n{0,1}"]
+}
+
+** Testing aut[3] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="b & c"]
+  2 [label="2"]
+  2 -> 2 [label="b & c\n{0}"]
+}
+
+** Testing aut[0] using CVWY90
+Skipping because automaton has 2 acceptance sets, and CVWY90 accepts at most 1.
+** Testing aut[1] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & b & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+** Testing aut[2] using CVWY90
+Skipping because automaton has 2 acceptance sets, and CVWY90 accepts at most 1.
+** Testing aut[3] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(bsh=10M)
+Skipping because automaton has 2 acceptance sets, and CVWY90(bsh=10M) accepts at most 1.
+** Testing aut[1] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & b & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+** Testing aut[2] using CVWY90(bsh=10M)
+Skipping because automaton has 2 acceptance sets, and CVWY90(bsh=10M) accepts at most 1.
+** Testing aut[3] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(repeated)
+Skipping because automaton has 2 acceptance sets, and CVWY90(repeated) accepts at most 1.
+** Testing aut[1] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & b & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+2 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="b & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="b & c\n{0}"]
+}
+
+3 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & b & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+4 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="b & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="b & c\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using CVWY90(repeated)
+Skipping because automaton has 2 acceptance sets, and CVWY90(repeated) accepts at most 1.
+** Testing aut[3] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+2 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="c"]
+  2 [label="2"]
+  2 -> 2 [label="b & c\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using SE05
+Skipping because automaton has 2 acceptance sets, and SE05 accepts at most 1.
+** Testing aut[1] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & b & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+** Testing aut[2] using SE05
+Skipping because automaton has 2 acceptance sets, and SE05 accepts at most 1.
+** Testing aut[3] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+** Testing aut[0] using SE05(bsh=10M)
+Skipping because automaton has 2 acceptance sets, and SE05(bsh=10M) accepts at most 1.
+** Testing aut[1] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & b & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+** Testing aut[2] using SE05(bsh=10M)
+Skipping because automaton has 2 acceptance sets, and SE05(bsh=10M) accepts at most 1.
+** Testing aut[3] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+** Testing aut[0] using SE05(repeated)
+Skipping because automaton has 2 acceptance sets, and SE05(repeated) accepts at most 1.
+** Testing aut[1] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & b & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+2 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="b & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="b & c\n{0}"]
+}
+
+3 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & b & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+4 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="b & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="b & c\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using SE05(repeated)
+Skipping because automaton has 2 acceptance sets, and SE05(repeated) accepts at most 1.
+** Testing aut[3] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+2 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="c"]
+  2 [label="2"]
+  2 -> 2 [label="b & c\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c\n{0,1}"]
+  1 [label="1"]
+  1 -> 2 [label="a & b & c\n{0,1}"]
+  2 [label="2"]
+  2 -> 3 [label="a & c\n{0,1}"]
+  3 [label="3"]
+  3 -> 2 [label="c\n{0}"]
+}
+
+** Testing aut[1] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & b & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+** Testing aut[2] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & c\n{0,1}"]
+  1 [label="1"]
+  1 -> 2 [label="a & c\n{0,1}"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0,1}"]
+}
+
+** Testing aut[3] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+** Testing aut[0] using GV04
+Skipping because automaton has 2 acceptance sets, and GV04 accepts at most 1.
+** Testing aut[1] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & b & c\n{0}"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+** Testing aut[2] using GV04
+Skipping because automaton has 2 acceptance sets, and GV04 accepts at most 1.
+** Testing aut[3] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="c"]
+  1 [label="1"]
+  1 -> 2 [label="a & c"]
+  2 [label="2"]
+  2 -> 2 [label="a & c\n{0}"]
+}
+
+========================================================
+10: 2, !((FF a) <=> (F x))
+** Testing aut[0] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & !x\n{0,1}"]
+  1 [label="1"]
+  1 -> 1 [label="!x\n{0,1}"]
+}
+
+** Testing aut[1] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & !x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!x\n{0}"]
+}
+
+** Testing aut[2] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+** Testing aut[3] using Cou99
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+** Testing aut[0] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x\n{0,1}"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0,1}"]
+}
+
+** Testing aut[1] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+** Testing aut[2] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+** Testing aut[3] using Cou99(shy)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+** Testing aut[0] using CVWY90
+Skipping because automaton has 2 acceptance sets, and CVWY90 accepts at most 1.
+** Testing aut[1] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & !x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!x\n{0}"]
+}
+
+** Testing aut[2] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+** Testing aut[3] using CVWY90
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(bsh=10M)
+Skipping because automaton has 2 acceptance sets, and CVWY90(bsh=10M) accepts at most 1.
+** Testing aut[1] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & !x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!x\n{0}"]
+}
+
+** Testing aut[2] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+** Testing aut[3] using CVWY90(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+** Testing aut[0] using CVWY90(repeated)
+Skipping because automaton has 2 acceptance sets, and CVWY90(repeated) accepts at most 1.
+** Testing aut[1] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & !x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!x\n{0}"]
+}
+
+2 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+2 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & !x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!x\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[3] using CVWY90(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+2 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & !x"]
+  1 [label="1"]
+  1 -> 1 [label="!x\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using SE05
+Skipping because automaton has 2 acceptance sets, and SE05 accepts at most 1.
+** Testing aut[1] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & !x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!x\n{0}"]
+}
+
+** Testing aut[2] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+** Testing aut[3] using SE05
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+** Testing aut[0] using SE05(bsh=10M)
+Skipping because automaton has 2 acceptance sets, and SE05(bsh=10M) accepts at most 1.
+** Testing aut[1] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & !x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!x\n{0}"]
+}
+
+** Testing aut[2] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+** Testing aut[3] using SE05(bsh=10M)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+** Testing aut[0] using SE05(repeated)
+Skipping because automaton has 2 acceptance sets, and SE05(repeated) accepts at most 1.
+** Testing aut[1] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & !x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!x\n{0}"]
+}
+
+2 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[2] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+2 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & !x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!x\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[3] using SE05(repeated)
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+2 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & !x"]
+  1 [label="1"]
+  1 -> 1 [label="!x\n{0}"]
+}
+
+No more counterexample found.
+
+** Testing aut[0] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)&Inf(1)\n[gen. Büchi 2]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & !x\n{0,1}"]
+  1 [label="1"]
+  1 -> 1 [label="!x\n{0,1}"]
+}
+
+** Testing aut[1] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & !x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!x\n{0}"]
+}
+
+** Testing aut[2] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+** Testing aut[3] using Tau03_opt
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+** Testing aut[0] using GV04
+Skipping because automaton has 2 acceptance sets, and GV04 accepts at most 1.
+** Testing aut[1] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="a & !x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!x\n{0}"]
+}
+
+** Testing aut[2] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x\n{0}"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+** Testing aut[3] using GV04
+1 counterexample found
+digraph "" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & x"]
+  1 [label="1"]
+  1 -> 1 [label="!a\n{0}"]
+}
+
+========================================================
+11: 0, Xa && (!a U b) && !b && X!b
+** Testing aut[0] using Cou99
+No counterexample found.
+
+** Testing aut[1] using Cou99
+No counterexample found.
+
+** Testing aut[2] using Cou99
+No counterexample found.
+
+** Testing aut[3] using Cou99
+No counterexample found.
+
+** Testing aut[0] using Cou99(shy)
+No counterexample found.
+
+** Testing aut[1] using Cou99(shy)
+No counterexample found.
+
+** Testing aut[2] using Cou99(shy)
+No counterexample found.
+
+** Testing aut[3] using Cou99(shy)
+No counterexample found.
+
+** Testing aut[0] using CVWY90
+No counterexample found.
+
+** Testing aut[1] using CVWY90
+No counterexample found.
+
+** Testing aut[2] using CVWY90
+No counterexample found.
+
+** Testing aut[3] using CVWY90
+No counterexample found.
+
+** Testing aut[0] using CVWY90(bsh=10M)
+No counterexample found.
+
+** Testing aut[1] using CVWY90(bsh=10M)
+No counterexample found.
+
+** Testing aut[2] using CVWY90(bsh=10M)
+No counterexample found.
+
+** Testing aut[3] using CVWY90(bsh=10M)
+No counterexample found.
+
+** Testing aut[0] using CVWY90(repeated)
+No counterexample found.
+
+** Testing aut[1] using CVWY90(repeated)
+No counterexample found.
+
+** Testing aut[2] using CVWY90(repeated)
+No counterexample found.
+
+** Testing aut[3] using CVWY90(repeated)
+No counterexample found.
+
+** Testing aut[0] using SE05
+No counterexample found.
+
+** Testing aut[1] using SE05
+No counterexample found.
+
+** Testing aut[2] using SE05
+No counterexample found.
+
+** Testing aut[3] using SE05
+No counterexample found.
+
+** Testing aut[0] using SE05(bsh=10M)
+No counterexample found.
+
+** Testing aut[1] using SE05(bsh=10M)
+No counterexample found.
+
+** Testing aut[2] using SE05(bsh=10M)
+No counterexample found.
+
+** Testing aut[3] using SE05(bsh=10M)
+No counterexample found.
+
+** Testing aut[0] using SE05(repeated)
+No counterexample found.
+
+** Testing aut[1] using SE05(repeated)
+No counterexample found.
+
+** Testing aut[2] using SE05(repeated)
+No counterexample found.
+
+** Testing aut[3] using SE05(repeated)
+No counterexample found.
+
+** Testing aut[0] using Tau03_opt
+No counterexample found.
+
+** Testing aut[1] using Tau03_opt
+No counterexample found.
+
+** Testing aut[2] using Tau03_opt
+No counterexample found.
+
+** Testing aut[3] using Tau03_opt
+No counterexample found.
+
+** Testing aut[0] using GV04
+No counterexample found.
+
+** Testing aut[1] using GV04
+No counterexample found.
+
+** Testing aut[2] using GV04
+No counterexample found.
+
+** Testing aut[3] using GV04
+No counterexample found.
+
+========================================================
+12: 0, (a U !b) && Gb
+** Testing aut[0] using Cou99
+No counterexample found.
+
+** Testing aut[1] using Cou99
+No counterexample found.
+
+** Testing aut[2] using Cou99
+No counterexample found.
+
+** Testing aut[3] using Cou99
+No counterexample found.
+
+** Testing aut[0] using Cou99(shy)
+No counterexample found.
+
+** Testing aut[1] using Cou99(shy)
+No counterexample found.
+
+** Testing aut[2] using Cou99(shy)
+No counterexample found.
+
+** Testing aut[3] using Cou99(shy)
+No counterexample found.
+
+** Testing aut[0] using CVWY90
+No counterexample found.
+
+** Testing aut[1] using CVWY90
+No counterexample found.
+
+** Testing aut[2] using CVWY90
+No counterexample found.
+
+** Testing aut[3] using CVWY90
+No counterexample found.
+
+** Testing aut[0] using CVWY90(bsh=10M)
+No counterexample found.
+
+** Testing aut[1] using CVWY90(bsh=10M)
+No counterexample found.
+
+** Testing aut[2] using CVWY90(bsh=10M)
+No counterexample found.
+
+** Testing aut[3] using CVWY90(bsh=10M)
+No counterexample found.
+
+** Testing aut[0] using CVWY90(repeated)
+No counterexample found.
+
+** Testing aut[1] using CVWY90(repeated)
+No counterexample found.
+
+** Testing aut[2] using CVWY90(repeated)
+No counterexample found.
+
+** Testing aut[3] using CVWY90(repeated)
+No counterexample found.
+
+** Testing aut[0] using SE05
+No counterexample found.
+
+** Testing aut[1] using SE05
+No counterexample found.
+
+** Testing aut[2] using SE05
+No counterexample found.
+
+** Testing aut[3] using SE05
+No counterexample found.
+
+** Testing aut[0] using SE05(bsh=10M)
+No counterexample found.
+
+** Testing aut[1] using SE05(bsh=10M)
+No counterexample found.
+
+** Testing aut[2] using SE05(bsh=10M)
+No counterexample found.
+
+** Testing aut[3] using SE05(bsh=10M)
+No counterexample found.
+
+** Testing aut[0] using SE05(repeated)
+No counterexample found.
+
+** Testing aut[1] using SE05(repeated)
+No counterexample found.
+
+** Testing aut[2] using SE05(repeated)
+No counterexample found.
+
+** Testing aut[3] using SE05(repeated)
+No counterexample found.
+
+** Testing aut[0] using Tau03_opt
+No counterexample found.
+
+** Testing aut[1] using Tau03_opt
+No counterexample found.
+
+** Testing aut[2] using Tau03_opt
+No counterexample found.
+
+** Testing aut[3] using Tau03_opt
+No counterexample found.
+
+** Testing aut[0] using GV04
+No counterexample found.
+
+** Testing aut[1] using GV04
+No counterexample found.
+
+** Testing aut[2] using GV04
+No counterexample found.
+
+** Testing aut[3] using GV04
+No counterexample found.
+
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
+PASS core/emptchk.test (exit status: 0)

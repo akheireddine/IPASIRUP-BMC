@@ -1,0 +1,30 @@
+HOA: v1
+name: "(GFa & GFb) | (GFc & GFd)"
+States: 3
+Start: 0
+AP: 4 "a" "b" "c" "d"
+acc-name: generalized-Buchi 2
+Acceptance: 2 Inf(0)&Inf(1)
+properties: trans-labels explicit-labels trans-acc complete
+properties: stutter-invariant
+--BODY--
+State: 0
+[t] 1
+[0] 1 {0}
+[1] 1 {1}
+[0&1] 1 {0 1}
+[t] 2
+[2] 2 {0}
+[3] 2 {1}
+[2&3] 2 {0 1}
+State: 1
+[t] 1
+[0] 1 {0}
+[1] 1 {1}
+[0&1] 1 {0 1}
+State: 2
+[t] 2
+[2] 2 {0}
+[3] 2 {1}
+[2&3] 2 {0 1}
+--END--

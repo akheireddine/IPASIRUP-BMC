@@ -1,0 +1,175 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test obligation.test
+== Running test obligation.test
++ echo+  obligation.test
+sed -e s,.*[\/],,;s/\.test$//
++ me=obligation
++ testSubDir=obligation.dir
++ chmod -R a+rwx obligation.dir
++ rm -rf obligation.dir
++ mkdir obligation.dir
++ cd obligation.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set +x
+SA   G(!p)
+GU !(G(!p))
+SA   Fr->(!p U r)
+GU !(Fr->(!p U r))
+SA   G(q->G(!p))
+GU !(G(q->G(!p)))
+SA   G((q&!r&Fr)->(!p U r))
+GU !(G((q&!r&Fr)->(!p U r)))
+SA   G(q&!r->((!p U r)|G!p ))
+GU !(G(q&!r->((!p U r)|G!p )))
+SA   (!r U (p&!r))|(G!r)
+GU !((!r U (p&!r))|(G!r))
+SA   G(q&!r->((!r U (p&!r))|G!r))
+GU !(G(q&!r->((!r U (p&!r))|G!r)))
+SA   (!p U ((p U ((!p U ((p U G!p)|Gp))|G!p))|Gp))|G!p
+GU !((!p U ((p U ((!p U ((p U G!p)|Gp))|G!p))|Gp))|G!p)
+SA   Fr->((!p&!r)U(r|((p&!r)U(r|((!p&!r)U(r|((p&!r)U(r|(!p U r)))))))))
+GU !(Fr->((!p&!r)U(r|((p&!r)U(r|((!p&!r)U(r|((p&!r)U(r|(!p U r))))))))))
+SA   Fq->(!q U (q&((!p U ((p U ((!p U ((p U G!p)|Gp))|G!p))|Gp))|G!p)))
+GU !(Fq->(!q U (q&((!p U ((p U ((!p U ((p U G!p)|Gp))|G!p))|Gp))|G!p))))
+SA   G((q&Fr)->((!p&!r)U(r|((p&!r)U(r|((!p&!r)U(r|((p&!r)U(r|(!p U r))))))))))
+GU !(G((q&Fr)->((!p&!r)U(r|((p&!r)U(r|((!p&!r)U(r|((p&!r)U(r|(!p U r)))))))))))
+SA   G(q->((!p&!r)U(r|((p&!r)U(r|((!p&!r)U(r|((p&!r)U(r|((!p U r)|G!p)|Gp)))))))))
+GU !(G(q->((!p&!r)U(r|((p&!r)U(r|((!p&!r)U(r|((p&!r)U(r|((!p U r)|G!p)|Gp))))))))))
+SA   G(p)
+GU !(G(p))
+SA   Fr->(p U r)
+GU !(Fr->(p U r))
+SA   G(q->G(p))
+GU !(G(q->G(p)))
+SA   G((p&!r&Fr)->(p U r))
+GU !(G((p&!r&Fr)->(p U r)))
+SA   G(q&!r->((p U r)|Gp))
+GU !(G(q&!r->((p U r)|Gp)))
+SA   Fr->(!p U (s|r))
+GU !(Fr->(!p U (s|r)))
+SA   G((q&!r&Fr)->(!p U (s|r)))
+GU !(G((q&!r&Fr)->(!p U (s|r))))
+SA   G(q&!r->((!p U (s|r))|G!p))
+GU !(G(q&!r->((!p U (s|r))|G!p)))
+SA   Fr->(p->(!r U (s&!r))) U r
+GU !(Fr->(p->(!r U (s&!r))) U r)
+SA   G((q&!r&Fr)->(p->(!r U (s&!r))) U r)
+GU !(G((q&!r&Fr)->(p->(!r U (s&!r))) U r))
+SA   Fp->(!p U (s&!p&X(!p U t)))
+GU !(Fp->(!p U (s&!p&X(!p U t))))
+SA   Fr->(!p U (r|(s&!p&X(!p U t))))
+GU !(Fr->(!p U (r|(s&!p&X(!p U t)))))
+SA   (G!q)|(!q U (q&Fp->(!p U (s&!p&X(!p U t)))))
+GU !((G!q)|(!q U (q&Fp->(!p U (s&!p&X(!p U t))))))
+SA   G((q&Fr)->(!p U (r|(s&!p&X(!p U t)))))
+GU !(G((q&Fr)->(!p U (r|(s&!p&X(!p U t))))))
+SA   G(q->(Fp->(!p U (r|(s&!p&X(!p U t))))))
+GU !(G(q->(Fp->(!p U (r|(s&!p&X(!p U t)))))))
+SA   (F(s&XFt))->((!s) U p)
+GU !((F(s&XFt))->((!s) U p))
+SA   Fr->((!(s&(!r)&X(!r U (t&!r))))U(r|p))
+GU !(Fr->((!(s&(!r)&X(!r U (t&!r))))U(r|p)))
+SA   (G!q)|((!q)U(q&((F(s&XFt))->((!s) U p))))
+GU !((G!q)|((!q)U(q&((F(s&XFt))->((!s) U p)))))
+SA   G((q&Fr)->((!(s&(!r)&X(!r U (t&!r))))U(r|p)))
+GU !(G((q&Fr)->((!(s&(!r)&X(!r U (t&!r))))U(r|p))))
+SA   Fr->(p->(!r U (s&!r&X(!r U t)))) U r
+GU !(Fr->(p->(!r U (s&!r&X(!r U t)))) U r)
+SA   G((q&Fr)->(p->(!r U (s&!r&X(!r U t)))) U r)
+GU !(G((q&Fr)->(p->(!r U (s&!r&X(!r U t)))) U r))
+SA   Fr->(p->(!r U (s&!r&!z&X((!r&!z) U t)))) U r
+GU !(Fr->(p->(!r U (s&!r&!z&X((!r&!z) U t)))) U r)
+SA   G((q&Fr)->(p->(!r U (s&!r&!z&X((!r&!z) U t)))) U r)
+GU !(G((q&Fr)->(p->(!r U (s&!r&!z&X((!r&!z) U t)))) U r))
+GU   Fp
+SA !(Fp)
+OB   G(!q)|F(q&Fp)
+OB !(G(!q)|F(q&Fp))
+OB   (!p U s)|Gp
+OB !((!p U s)|Gp)
+SA   G(q->(!(s&(!r)&X(!r U (t&!r)))U(r|p)|G(!(s&XFt))))
+GU !(G(q->(!(s&(!r)&X(!r U (t&!r)))U(r|p)|G(!(s&XFt)))))
+OB   Fr->(s&X(!r U t)->X(!r U (t&Fp))) U r
+OB !(Fr->(s&X(!r U t)->X(!r U (t&Fp))) U r)
+NO   G(q&!r->(!r U (p&!r)))
+NO !(G(q&!r->(!r U (p&!r))))
+NO   G!q|F(q&((!p U s)|G!p))
+NO !(G!q|F(q&((!p U s)|G!p)))
+NO   G(p->Fs)
+NO !(G(p->Fs))
+NO   G(q->G(p->Fs))
+NO !(G(q->G(p->Fs)))
+NO   G(q&!r->(((p->(!r U (s&!r))) U r)|G(p->(!r U (s&!r)))))
+NO !(G(q&!r->(((p->(!r U (s&!r))) U r)|G(p->(!r U (s&!r))))))
+NO   G(s&XFt->X(F(t&Fp)))
+NO !(G(s&XFt->X(F(t&Fp))))
+NO   G(q->G(s&XFt->X(!t U (t&Fp))))
+NO !(G(q->G(s&XFt->X(!t U (t&Fp)))))
+NO   G((q&Fr)->(s&X(!r U t)->X(!r U (t&Fp))) U r)
+NO !(G((q&Fr)->(s&X(!r U t)->X(!r U (t&Fp))) U r))
+NO   G(q->(s&X(!r U t)->X(!r U (t&Fp)))U(r|G(s&X(!r U t)->X(!r U (t&Fp)))))
+NO !(G(q->(s&X(!r U t)->X(!r U (t&Fp)))U(r|G(s&X(!r U t)->X(!r U (t&Fp))))))
+NO   G(p->F(s&XFt))
+NO !(G(p->F(s&XFt)))
+NO   G(q->G(p->(s&XFt)))
+NO !(G(q->G(p->(s&XFt))))
+NO   G(q->(p->(!r U (s&!r&X(!r U t))))U(r|G(p->(s&XFt))))
+NO !(G(q->(p->(!r U (s&!r&X(!r U t))))U(r|G(p->(s&XFt)))))
+NO   G(p->F(s&!z&X(!z U t)))
+NO !(G(p->F(s&!z&X(!z U t))))
+NO   G(q->G(p->(s&!z&X(!z U t))))
+NO !(G(q->G(p->(s&!z&X(!z U t)))))
+NO   G(q->(p->(!r U (s&!r&!z&X((!r&!z) U t))))U(r|G(p->(s&!z&X(!z U t)))))
+NO !(G(q->(p->(!r U (s&!r&!z&X((!r&!z) U t))))U(r|G(p->(s&!z&X(!z U t))))))
+GS   p
+GS !(p)
+GS   q&Xp
+GS !(q&Xp)
+GS   G(Ga&F!a)
+GS !(G(Ga&F!a))
++ cut -c 4- formulas.txt
++ ltlfilt --obligation
++ cut -c 4- formulas.txt
++ SPOT_O_CHECK=1 ltlfilt --obligation
++ cut -c 4- formulas.txt
++ SPOT_O_CHECK=2 ltlfilt --obligation
++ cut -c 4- formulas.txt
++ SPOT_O_CHECK=3 ltlfilt --obligation
++ cut -c 4- formulas.txt
++ SPOT_O_CHECK=x ltlfilt --obligation
+G!p
+Fr -> (!p U r)
+G(q -> G!p)
++ cut -c 4- formulas.txt
++ SPOT_O_CHECK=9 ltlfilt --obligation
+G!p
+Fr -> (!p U r)
+G(q -> G!p)
++ grep SPOT_O_CHECK err
+ltlfilt:-:4: invalid value for SPOT_O_CHECK (should be 1, 2, or 3)
++ diff o0 o2
++ diff o1 o2
++ diff o2 o3
++ cut -c 4- formulas.txt
++ ltlfilt -o %h.ltl
++ cat O.ltl G.ltl S.ltl B.ltl
++ sort
++ sort o3
++ diff o4 ogsb.ltl
++ exit 0
+PASS core/obligation.test (exit status: 0)

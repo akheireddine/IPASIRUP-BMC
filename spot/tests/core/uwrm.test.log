@@ -1,0 +1,115 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test uwrm.test
+== Running test uwrm.test
++ echo uwrm.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=uwrm
++ testSubDir=uwrm.dir
++ chmod -R a+rwx uwrm.dir
++ rm -rf uwrm.dir
++ mkdir uwrm.dir
++ cd uwrm.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 ../reduccmp input.txt
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../reduccmp
++ cmd=../reduccmp
++ shift
++ test -n ../reduccmp
++ set ../reduccmp input.txt
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../reduccmp input.txt
+1: # Equivalences with U
+2: 1 U f, Ff
+F(@4 #6 [ap(@3 #7 "f")])
+3: !F!f, !(1 U!f), Gf
+G(@11 #6 [ap(@10 #9 "f")])
+G(@11 #6 [ap(@10 #10 "f")])
+4: (f U g)|(G f), (f U g) | !(1 U ! f), f U (g | G f), f U (g | !(1 U !f)), f W g
+W(@32 #7 [ap(@30 #13 "f"), ap(@31 #12 "g")])
+W(@32 #7 [ap(@30 #16 "f"), ap(@31 #12 "g")])
+W(@32 #7 [ap(@30 #13 "f"), ap(@31 #13 "g")])
+W(@32 #7 [ap(@30 #17 "f"), ap(@31 #17 "g")])
+5: g U (f & g), f M g
+M(@193 #6 [ap(@191 #9 "f"), ap(@192 #11 "g")])
+6: g W (f & g), (g U (f & g)) | !(1 U ! g), g U ((f & g) | !(1 U ! g)), f R g
+R(@208 #6 [ap(@206 #9 "f"), ap(@207 #11 "g")])
+R(@208 #7 [ap(@206 #14 "f"), ap(@207 #20 "g")])
+R(@208 #8 [ap(@206 #11 "f"), ap(@207 #21 "g")])
+7: 
+8: # Equivalences with W
+9: !G!f, !((! f) W 0), Ff
+F(@337 #6 [ap(@336 #9 "f")])
+F(@337 #6 [ap(@336 #10 "f")])
+10: 0 R f, f W 0, Gf
+G(@358 #6 [ap(@357 #7 "f")])
+G(@358 #6 [ap(@357 #8 "f")])
+11: (f W g) & (F g), (f W g) & !((! g) W 0), f U g
+U(@370 #6 [ap(@368 #10 "f"), ap(@369 #11 "g")])
+U(@370 #6 [ap(@368 #10 "f"), ap(@369 #14 "g")])
+12: (g W (f & g)) & (F f), (g W (f & g)) & !((!f) W 0), f M g
+M(@424 #6 [ap(@422 #13 "f"), ap(@423 #14 "g")])
+M(@424 #6 [ap(@422 #16 "f"), ap(@423 #14 "g")])
+13: g W (f & g), f R g
+R(@496 #6 [ap(@494 #9 "f"), ap(@495 #11 "g")])
+14: 
+15: # Equivalences with R
+16: !G!f, !(0 R !f), Ff
+F(@510 #6 [ap(@509 #9 "f")])
+F(@510 #6 [ap(@509 #10 "f")])
+17: 0 R f, Gf
+G(@531 #6 [ap(@530 #7 "f")])
+18: # (((X g) R f) & F g) | g, (((X g) R f ) & (!(0 R ! g))) | g, f U g
+19: ((X g) R f) | g, g R (f | g), f W g
+W(@538 #8 [ap(@536 #16 "f"), ap(@537 #15 "g")])
+W(@538 #6 [ap(@536 #9 "f"), ap(@537 #11 "g")])
+20: (f R g) & F f, (f R g) & !(0 R !f), f R (g & F f), f R (g & !(0 R !f)), f M g
+M(@606 #6 [ap(@604 #11 "f"), ap(@605 #10 "g")])
+M(@606 #6 [ap(@604 #14 "f"), ap(@605 #10 "g")])
+M(@606 #6 [ap(@604 #11 "f"), ap(@605 #11 "g")])
+M(@606 #6 [ap(@604 #15 "f"), ap(@605 #15 "g")])
+21: 
+22: # Equivalences with M
+23: f M 1, Ff
+F(@708 #6 [ap(@707 #8 "f")])
+24: !F!f, !((!f) M 1), Gf
+G(@715 #6 [ap(@714 #9 "f")])
+G(@715 #6 [ap(@714 #10 "f")])
+25: ((X g) M f) | g, g M (f | g), f U g
+U(@737 #8 [ap(@735 #16 "f"), ap(@736 #15 "g")])
+U(@737 #6 [ap(@735 #9 "f"), ap(@736 #11 "g")])
+26: (f U g) | G f, ((X g) M f) | g | !((! f ) M 1), f W g
+W(@805 #7 [ap(@803 #13 "f"), ap(@804 #12 "g")])
+W(@805 #7 [ap(@803 #29 "f"), ap(@804 #26 "g")])
+27: (f M g) | G g, (f M g) | !((! g) M 1), f R g
+R(@932 #7 [ap(@930 #12 "f"), ap(@931 #13 "g")])
+R(@932 #7 [ap(@930 #12 "f"), ap(@931 #16 "g")])
+28: 
+29: # Example from tl.tex
+30: #(((f U (Xg & f))|!(1 U !f))&(1 U Xg)) | g, f U g
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
+PASS core/uwrm.test (exit status: 0)

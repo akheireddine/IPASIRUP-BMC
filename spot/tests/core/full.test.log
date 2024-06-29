@@ -1,0 +1,130 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test full.test
+== Running test full.test
++ echo full.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=full
++ testSubDir=full.dir
++ chmod -R a+rwx full.dir
++ rm -rf full.dir
++ mkdir full.dir
++ cd full.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ test -w /dev/full
++ genltl --dac
+genltl: error writing to standard output
++ genltl --dac
++ ltlfilt
+ltlfilt: error writing to standard output
++ genltl+  --dac
+ltlfilt -c
+ltlfilt: error writing to standard output
++ genltl --eh
++ ltl2tgba --stats=%s
+ltl2tgba: error writing to standard output
++ genltl --eh
++ ltl2tgba
+ltl2tgba: error writing to standard output
++ randltl -n5 2
+randltl: error writing to standard output
++ randaut 2
+randaut: error writing to standard output
++ randaut 2 --stats=%s
+randaut: error writing to standard output
++ randaut 2
++ autfilt
+autfilt: error writing to standard output
++ randaut 2
++ autfilt -c
+autfilt: error writing to standard output
++ randaut 2
++ autfilt --stats=%s
+autfilt: error writing to standard output
++ randaut 2
++ autfilt --output=/dev/full
+autfilt: error writing to /dev/full
++ randaut 2
++ autfilt --output=-
+autfilt: error writing to standard output
++ randaut 2
++ dstar2tgba
+dstar2tgba: error writing to standard output
++ randaut 2
++ dstar2tgba --stats=%s
+dstar2tgba: error writing to standard output
++ ltlgrind -f GFa
+ltlgrind: error writing to standard output
++ ltlcross -f GFa ltl2tgba --csv=/dev/full
+G(F(a))
+Running [P0]: ltl2tgba -H 'G(F(a))'>'lcr-o0-1OPaK1'
+Running [N0]: ltl2tgba -H '!(G(F(a)))'>'lcr-o0-3srx3Q'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
+ltlcross: error writing to /dev/full
++ ltlcross -f GFa ltl2tgba --csv
+G(F(a))
+Running [P0]: ltl2tgba -H 'G(F(a))'>'lcr-o0-PYi1bz'
+Running [N0]: ltl2tgba -H '!(G(F(a)))'>'lcr-o0-nTqEG6'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
+ltlcross: error writing to standard output
++ ltlcross -f GFa ltl2tgba --json=/dev/full
+G(F(a))
+Running [P0]: ltl2tgba -H 'G(F(a))'>'lcr-o0-H5m2Jr'
+Running [N0]: ltl2tgba -H '!(G(F(a)))'>'lcr-o0-i6pPDg'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
+ltlcross: error writing to /dev/full
++ ltlcross -f GFa ltl2tgba --json
+G(F(a))
+Running [P0]: ltl2tgba -H 'G(F(a))'>'lcr-o0-L91OIl'
+Running [N0]: ltl2tgba -H '!(G(F(a)))'>'lcr-o0-LGUw6Z'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
+ltlcross: error writing to standard output
++ ltlcross -f GFa ltl2tgba --save-inclusion-products=/dev/full
+G(F(a))
+Running [P0]: ltl2tgba -H 'G(F(a))'>'lcr-o0-NEx5c5'
+Running [N0]: ltl2tgba -H '!(G(F(a)))'>'lcr-o0-6QJjQc'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
+ltlcross: error writing to /dev/full
++ ltlcross -f GFa ltl2tgba --save-inclusion-products=-
+G(F(a))
+Running [P0]: ltl2tgba -H 'G(F(a))'>'lcr-o0-kHk6yE'
+Running [N0]: ltl2tgba -H '!(G(F(a)))'>'lcr-o0-hea28S'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
+ltlcross: error writing to standard output
++ ltldo ltl2tgba -f GFa
+ltldo: error writing to standard output
++ ltldo ltl2tgba -f GFa --output=-
+ltldo: error writing to standard output
++ ltldo ltl2tgba -f GFa --output=/dev/full
+ltldo: error writing to /dev/full
++ ltldo ltl2tgba -f GFa --stats=%s
+ltldo: error writing to standard output
++ :
+PASS core/full.test (exit status: 0)

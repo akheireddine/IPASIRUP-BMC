@@ -1,0 +1,5 @@
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","complete_aut"
+"G(F(a))","ltl2tgba","ok",0,0.0203547,1,2,2,1,1,0,0,1
+"!(G(F(a)))","ltl2tgba","ok",0,0.0198741,2,3,4,1,2,1,1,0
+"F(G(a))","ltl2tgba","ok",0,0.0200188,2,3,4,1,2,1,1,0
+"!(F(G(a)))","ltl2tgba","ok",0,0.02158,1,2,2,1,1,0,0,1

@@ -1,0 +1,6 @@
+F(a & X(!a & b))
+F(a & X(!a & Xb))
+F(a & X!a & Xb)
+F(a & X(a & Xb))
+F(a & Xb)
+Xa

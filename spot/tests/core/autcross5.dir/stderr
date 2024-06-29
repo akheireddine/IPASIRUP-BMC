@@ -1,0 +1,9 @@
+a7.hoa:1.1-82.20
+Running [A0]: autfilt 'lcr-i0-GwIrVI'>'lcr-o0-vFIbXZ'
+Running [A1]: : 'lcr-i0-rjaMu3' && cat _a7.hoa > 'lcr-o1-Ux5vGw'
+Performing sanity checks and gathering statistics...
+error: A1*Comp(A0) is nonempty; both automata accept the infinite word:
+       !a & !b & c & !d & !e; !b & !c & !e; !a & !b & c & d & !e; !a & !b & c & d & !e; cycle{a & !b & c & !d & !e}
+
+error: some error was detected during the above runs,
+       please search for 'error:' messages in the above trace.

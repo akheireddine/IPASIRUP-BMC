@@ -1,0 +1,49 @@
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "p1" "p2"
+acc-name: generalized-Buchi 2
+Acceptance: 2 Inf(0)&Inf(1)
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[f] 0
+[0] 1
+[1] 2 {1}
+State: 1
+[0&1] 2 {0}
+State: 2
+[0 | 1] 0 {0 1}
+[!0 | 1] 1
+[t] 2 {0 1}
+--END--
+** default
+SCC#0
+  states: 0 1 2
+  edges: 0->0 0->1 0->2 1->2 2->0 2->1 2->2
+  succs:
+
+** ignore edges to 2
+SCC#0
+  states: 1
+  edges:
+  succs:
+SCC#1
+  states: 0
+  edges: 0->0
+  succs: 0
+
+** cut edges to 2
+SCC#0
+  states: 1
+  edges:
+  succs:
+SCC#1
+  states: 0
+  edges: 0->0
+  succs: 0
+SCC#2
+  states: 2
+  edges:
+  succs: 0 1
+

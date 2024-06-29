@@ -1,0 +1,17 @@
+a & Xb & c
+a & b & GF(a | c) & FG(a | c)
+b & GF(a | c) & FG(a | c)
+G(d & e) | FG(Xf| !c) | h | i
+b & !Xc & e & (f | g)
+b & GF(a | c) & !GF!(a | c)
+F(a <-> b) -> (c xor d)
+(a & b & c) U (c & d & e)
+(a & b & c) U !(a & b & c)
+(a & b & c) U (!c & d & e)
+((a | b) & c & d) U (!d & e & f)
+((a | b) & d) U (!d & e & f)
+(a & !a) | (b & !b) | (c & !c)
+((a & !a) | (b & !b) | (c & !c)) U d
+((a & !a) | (b & !b) | (c & e)) U d
+((a & !b) | (!a & b)) U c
+((a & !b) | (a->b)) U c

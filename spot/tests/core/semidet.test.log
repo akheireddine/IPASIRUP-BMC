@@ -1,0 +1,96 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test semidet.test
+== Running test semidet.test
++ echo semidet.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=semidet
++ testSubDir=semidet.dir
++ chmod -R a+rwx semidet.dir
++ rm -rf semidet.dir
++ mkdir semidet.dir
++ cd semidet.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ ltl2tgba -F formulas --check=semi-det -Hl
++ sed s/deterministic.*/deterministic/g;s/.* //g
++ cat out
+deterministic
+deterministic
+semi-deterministic
+deterministic
+deterministic
+semi-deterministic
+deterministic
+semi-deterministic
+--END--
+deterministic
+deterministic
+semi-deterministic
++ cat
++ diff out expected
++ ltl2tgba -F formulas
++ autfilt --is-semi-det --stats=%M
++ cat out
+0
+Gp1
+F(p1 | Gp0)
+F((!p1 & GF!p1) | (p1 & FGp1))
+GFp1
+Fp1 U X(p0 | Fp1)
+F(p1 | (Fp0 R (p1 W p0)))
+F(!p1 & G(!p1 | G!p0))
+F((p0 & !p1) | (!p0 & p1))
+GFp0
+FGp0
++ cat
++ diff out expected
++ ltl2tgba -F formulas
++ autfilt -v --is-semi-det --stats=%M
++ cat out
+X(!p0 W Xp1)
++ cat
++ diff out expected
++ cat
++ autfilt -H1.1 ex -v --is-semi-det
++ autfilt -H1.1 --small out
++ autfilt --trust=no -H1.1 --is-semi-det out2
+HOA: v1.1
+States: 5
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc !complete
+properties: !deterministic exist-branch semi-deterministic
+--BODY--
+State: 0
+[!0] 0
+[0] 1
+[1] 4
+State: 1 {0}
+[0] 1
+State: 2
+[t] 3
+State: 3 {0}
+[!0] 3
+State: 4 {0}
+[1] 2
+[!1] 4
+--END--
+PASS core/semidet.test (exit status: 0)

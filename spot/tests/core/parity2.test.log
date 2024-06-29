@@ -1,0 +1,157 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test parity2.test
+== Running test parity2.test
++ echo parity2.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=parity2
++ testSubDir=parity2.dir
++ chmod -R a+rwx parity2.dir
++ rm -rf parity2.dir
++ mkdir parity2.dir
++ cd parity2.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltl2tgba -P FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ ltl2tgba+  FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
+autfilt --name=%M --high -P
++ ltl2tgba -D -P FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ ltl2tgba FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ autfilt -D --name=%M --high -P
++ ltl2tgba -Pmin odd FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ ltl2tgba FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ autfilt --name=%M --high -Pmin odd
++ ltl2tgba -D -Pmin odd FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ ltl2tgba FGa GFa & GFb+  (p0 W XXGp0) & GFp1 & FGp2
+autfilt -D --name=%M --high -Pmin odd
++ ltl2tgba -Pmax even FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ ltl2tgba FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ autfilt --name=%M --high -Pmax even
++ ltl2tgba -D -Pmax even FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ ltl2tgba FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ autfilt -D --name=%M --high -Pmax even
++ ltl2tgba -p FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ ltl2tgba FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ autfilt --name=%M --high -p
++ ltl2tgba -D -p FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ ltl2tgba FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ autfilt -D --name=%M --high -p
++ ltl2tgba -pmin odd FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ ltl2tgba FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ autfilt --name=%M --high -pmin odd
++ ltl2tgba -D -pmin odd FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ ltl2tgba FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ autfilt -D --name=%M --high -pmin odd
++ ltl2tgba -pmax even FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ ltl2tgba FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2+ 
+autfilt --name=%M --high -pmax even
++ ltl2tgba -D -pmax even FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ ltl2tgba FGa GFa & GFb (p0 W XXGp0) & GFp1 & FGp2
++ autfilt -D --name=%M --high -pmax even
++ cat
++ diff expected res
++ cat
++ diff expected2 res2
++ cat
++ diff expected3 res3
++ cat
++ diff expected4 res4
++ ltlcross ltl2tgba -P ltl2tgba -P"odd max" ltl2tgba -P"even min" ltl2tgba -p ltl2tgba -p"odd max" ltl2tgba -p"even min" -f FGa -f GFa&GFb -f GF(a <-> XXXb) -f (p0 W XXGp0) & GFp1 & FGp2
+F(G(a))
+Running [P0]: ltl2tgba -P -H 'F(G(a))'>'lcr-o0-qALE3X'
+Running [P1]: ltl2tgba -P"odd max" -H 'F(G(a))'>'lcr-o1-rvQL61'
+Running [P2]: ltl2tgba -P"even min" -H 'F(G(a))'>'lcr-o2-KtSRuj'
+Running [P3]: ltl2tgba -p -H 'F(G(a))'>'lcr-o3-KbAi2O'
+Running [P4]: ltl2tgba -p"odd max" -H 'F(G(a))'>'lcr-o4-H5aXQr'
+Running [P5]: ltl2tgba -p"even min" -H 'F(G(a))'>'lcr-o5-F7hB9f'
+Running [N0]: ltl2tgba -P -H '!(F(G(a)))'>'lcr-o0-SUJQM6'
+Running [N1]: ltl2tgba -P"odd max" -H '!(F(G(a)))'>'lcr-o1-oe6Sv6'
+Running [N2]: ltl2tgba -P"even min" -H '!(F(G(a)))'>'lcr-o2-XS2fXs'
+Running [N3]: ltl2tgba -p -H '!(F(G(a)))'>'lcr-o3-YkLVgC'
+Running [N4]: ltl2tgba -p"odd max" -H '!(F(G(a)))'>'lcr-o4-kcp7NY'
+Running [N5]: ltl2tgba -p"even min" -H '!(F(G(a)))'>'lcr-o5-fvfimn'
+Performing sanity checks and gathering statistics...
+
+(G(F(a))) & (G(F(b)))
+Running [P0]: ltl2tgba -P -H '(G(F(a))) & (G(F(b)))'>'lcr-o0-eew1O6'
+Running [P1]: ltl2tgba -P"odd max" -H '(G(F(a))) & (G(F(b)))'>'lcr-o1-ffiZVt'
+Running [P2]: ltl2tgba -P"even min" -H '(G(F(a))) & (G(F(b)))'>'lcr-o2-Avb5zu'
+Running [P3]: ltl2tgba -p -H '(G(F(a))) & (G(F(b)))'>'lcr-o3-QMgN8h'
+Running [P4]: ltl2tgba -p"odd max" -H '(G(F(a))) & (G(F(b)))'>'lcr-o4-CXsWAP'
+Running [P5]: ltl2tgba -p"even min" -H '(G(F(a))) & (G(F(b)))'>'lcr-o5-bDHCMd'
+Running [N0]: ltl2tgba -P -H '!((G(F(a))) & (G(F(b))))'>'lcr-o0-6CIsp7'
+Running [N1]: ltl2tgba -P"odd max" -H '!((G(F(a))) & (G(F(b))))'>'lcr-o1-QIYcYv'
+Running [N2]: ltl2tgba -P"even min" -H '!((G(F(a))) & (G(F(b))))'>'lcr-o2-CIbgWf'
+Running [N3]: ltl2tgba -p -H '!((G(F(a))) & (G(F(b))))'>'lcr-o3-xqASwl'
+Running [N4]: ltl2tgba -p"odd max" -H '!((G(F(a))) & (G(F(b))))'>'lcr-o4-nxrSEV'
+Running [N5]: ltl2tgba -p"even min" -H '!((G(F(a))) & (G(F(b))))'>'lcr-o5-3cIuuF'
+Performing sanity checks and gathering statistics...
+
+G(F((a) <-> (X(X(X(b))))))
+Running [P0]: ltl2tgba -P -H 'G(F((a) <-> (X(X(X(b))))))'>'lcr-o0-0ORvwS'
+Running [P1]: ltl2tgba -P"odd max" -H 'G(F((a) <-> (X(X(X(b))))))'>'lcr-o1-fE3QFc'
+Running [P2]: ltl2tgba -P"even min" -H 'G(F((a) <-> (X(X(X(b))))))'>'lcr-o2-0mL3qj'
+Running [P3]: ltl2tgba -p -H 'G(F((a) <-> (X(X(X(b))))))'>'lcr-o3-GJI7DN'
+Running [P4]: ltl2tgba -p"odd max" -H 'G(F((a) <-> (X(X(X(b))))))'>'lcr-o4-2DJzp5'
+Running [P5]: ltl2tgba -p"even min" -H 'G(F((a) <-> (X(X(X(b))))))'>'lcr-o5-1O3Yy3'
+Running [N0]: ltl2tgba -P -H '!(G(F((a) <-> (X(X(X(b)))))))'>'lcr-o0-x7oDbA'
+Running [N1]: ltl2tgba -P"odd max" -H '!(G(F((a) <-> (X(X(X(b)))))))'>'lcr-o1-HESkKa'
+Running [N2]: ltl2tgba -P"even min" -H '!(G(F((a) <-> (X(X(X(b)))))))'>'lcr-o2-uo87Lv'
+Running [N3]: ltl2tgba -p -H '!(G(F((a) <-> (X(X(X(b)))))))'>'lcr-o3-ndeJpz'
+Running [N4]: ltl2tgba -p"odd max" -H '!(G(F((a) <-> (X(X(X(b)))))))'>'lcr-o4-M3FwKJ'
+Running [N5]: ltl2tgba -p"even min" -H '!(G(F((a) <-> (X(X(X(b)))))))'>'lcr-o5-U0ZbCR'
+Performing sanity checks and gathering statistics...
+
+((p0) W (X(X(G(p0))))) & (G(F(p1))) & (F(G(p2)))
+Running [P0]: ltl2tgba -P -H '((p0) W (X(X(G(p0))))) & (G(F(p1))) & (F(G(p2)))'>'lcr-o0-dyPvfv'
+Running [P1]: ltl2tgba -P"odd max" -H '((p0) W (X(X(G(p0))))) & (G(F(p1))) & (F(G(p2)))'>'lcr-o1-cseveT'
+Running [P2]: ltl2tgba -P"even min" -H '((p0) W (X(X(G(p0))))) & (G(F(p1))) & (F(G(p2)))'>'lcr-o2-mPdIAo'
+Running [P3]: ltl2tgba -p -H '((p0) W (X(X(G(p0))))) & (G(F(p1))) & (F(G(p2)))'>'lcr-o3-PaH0Li'
+Running [P4]: ltl2tgba -p"odd max" -H '((p0) W (X(X(G(p0))))) & (G(F(p1))) & (F(G(p2)))'>'lcr-o4-Cj6LJh'
+Running [P5]: ltl2tgba -p"even min" -H '((p0) W (X(X(G(p0))))) & (G(F(p1))) & (F(G(p2)))'>'lcr-o5-i412zo'
+Running [N0]: ltl2tgba -P -H '!(((p0) W (X(X(G(p0))))) & (G(F(p1))) & (F(G(p2))))'>'lcr-o0-C2VcLG'
+Running [N1]: ltl2tgba -P"odd max" -H '!(((p0) W (X(X(G(p0))))) & (G(F(p1))) & (F(G(p2))))'>'lcr-o1-Mdl7PK'
+Running [N2]: ltl2tgba -P"even min" -H '!(((p0) W (X(X(G(p0))))) & (G(F(p1))) & (F(G(p2))))'>'lcr-o2-dCDGir'
+Running [N3]: ltl2tgba -p -H '!(((p0) W (X(X(G(p0))))) & (G(F(p1))) & (F(G(p2))))'>'lcr-o3-AdIfwb'
+Running [N4]: ltl2tgba -p"odd max" -H '!(((p0) W (X(X(G(p0))))) & (G(F(p1))) & (F(G(p2))))'>'lcr-o4-iYQj9Z'
+Running [N5]: ltl2tgba -p"even min" -H '!(((p0) W (X(X(G(p0))))) & (G(F(p1))) & (F(G(p2))))'>'lcr-o5-OAiIoh'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
++ genaut --m-nba=1..4
++ autcross --language-preserved autfilt -D --csv=out.csv
+-:1.1-14.7
+Running [A0]: autfilt -D 'lcr-i0-AtRXHk'>'lcr-o0-7R6PSw'
+Performing sanity checks and gathering statistics...
+
+-:15.1-32.7
+Running [A0]: autfilt -D 'lcr-i1-NZmgba'>'lcr-o0-akEsI5'
+Performing sanity checks and gathering statistics...
+
+-:33.1-54.7
+Running [A0]: autfilt -D 'lcr-i2-dkmjcb'>'lcr-o0-6qfDaS'
+Performing sanity checks and gathering statistics...
+
+-:55.1-80.7
+Running [A0]: autfilt -D 'lcr-i3-LzBk6i'>'lcr-o0-Bb0zNI'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
++ cut -d, -f4,17 out.csv
++ cat
++ diff sizes.csv expected
+PASS core/parity2.test (exit status: 0)

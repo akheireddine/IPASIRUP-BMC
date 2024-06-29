@@ -1,0 +1,32 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltl3dra.test
+== Running test ltl3dra.test
++ echo ltl3dra.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltl3dra
++ testSubDir=ltl3dra.dir
++ chmod -R a+rwx ltl3dra.dir
++ rm -rf ltl3dra.dir
++ mkdir ltl3dra.dir
++ cd ltl3dra.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltl3dra -v
+ltl3dra.test: 28: ltl3dra: not found
++ exit 77
+SKIP core/ltl3dra.test (exit status: 77)

@@ -1,0 +1,4 @@
+G(i1 <-> Xo1)
+F(i1 xor i2) <-> F(o1)
+i1 <-> F(o1 xor o2)
+F(i1) <-> G(o2)

@@ -1,0 +1,23 @@
+#!/bin/sh
+case $1 in
+"G((p0) & (X(F((p1) & (X(F((p2) & (X(F(p3))))))))))")
+
+# genltl --eh=9 | ltldo modella  -Hl | fmt
+cat <<\END
+HOA: v1 States: 1 Start: 0 AP: 0 acc-name: Buchi Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc deterministic --BODY--
+State: 0 --END--
+END
+;;
+"!(G((p0) & (X(F((p1) & (X(F((p2) & (X(F(p3)))))))))))")
+# genltl --neg --eh=9 | ltldo modella  -Hl | fmt
+cat <<\END
+HOA: v1 States: 10 Start: 0 AP: 4 "p0" "p1" "p2" "p3" acc-name: Buchi
+Acceptance: 1 Inf(0) properties: trans-labels explicit-labels state-acc
+--BODY-- State: 0 [!0] 1 [0] 2 [0] 3 State: 1 [t] 4 State: 2 [!0] 1 [0]
+2 [0] 3 State: 3 [!1] 5 [1] 6 State: 4 {0} [t] 4 State: 5 {0} [!1] 5 [1]
+6 State: 6 [!2] 7 [2] 8 State: 7 {0} [!2] 7 [2] 8 State: 8 [!3] 9 State:
+9 {0} [!3] 9 --END--
+END
+;;
+esac

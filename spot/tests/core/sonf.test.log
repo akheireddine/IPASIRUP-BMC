@@ -1,0 +1,42 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test sonf.test
+== Running test sonf.test
++ echo sonf.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=sonf
++ testSubDir=sonf.dir
++ chmod -R a+rwx sonf.dir
++ rm -rf sonf.dir
++ mkdir sonf.dir
++ cd sonf.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ cat
++ cat
++ ltlfilt -F input --sonf=s --sonf-aps=stdout-aps
++ sed s/ \([|&]\) /\1/g
++ diff expected stdout
++ diff expected-aps stdout-aps
++ ltlfilt -F expected --sonf=s --sonf-aps=stdout-aps
++ sed s/ \([|&]\) /\1/g
++ diff expected stdout
++ + wc -l -m stdout-apsawk
+ {print $1 " " $2}
++ test 14 14 = 14 14
+PASS core/sonf.test (exit status: 0)

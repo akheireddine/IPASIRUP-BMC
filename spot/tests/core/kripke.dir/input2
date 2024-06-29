@@ -1,0 +1,41 @@
+HOA: v1
+States: 4
+Start: 0
+AP: 0
+Acceptance: 0 t
+properties: state-labels
+--BODY--
+State: [t] 0
+1 2 3
+--END--
+HOA: v1
+States: 2
+Start: 0
+AP: 0
+Acceptance: 1 Fin(0)
+properties: state-labels
+--BODY--
+State: [t] 0
+0 1 {0}
+State: 1
+[t] 0 [f] 1
+--END--
+DRA v2 explicit
+Comment: "Safra[NBA=2]"
+States: 3
+Acceptance-Pairs: 1
+Start: 0
+AP: 1 "a"
+---
+State: 0
+Acc-Sig:
+1
+2
+State: 1
+Acc-Sig: -0
+1
+1
+State: 2
+Acc-Sig: +0
+2
+2

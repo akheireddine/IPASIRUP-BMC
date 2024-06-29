@@ -1,0 +1,96 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltlcrossgrind.test
+== Running test ltlcrossgrind.test
++ echo ltlcrossgrind.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltlcrossgrind
++ testSubDir=ltlcrossgrind.dir
++ chmod -R a+rwx ltlcrossgrind.dir
++ rm -rf ltlcrossgrind.dir
++ mkdir ltlcrossgrind.dir
++ cd ltlcrossgrind.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ chmod +x fake
++ run 1 ltlcross -f p0 U p1 ./fake %f >%N ltl2tgba -s -f %f >%N --grind=bogus.grind
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlcross
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross -f p0 U p1 ./fake %f >%N ltl2tgba -s -f %f >%N --grind=bogus.grind
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross -f p0 U p1 ./fake %f >%N ltl2tgba -s -f %f >%N --grind=bogus.grind
+(p0) U (p1)
+Running [P0]: ./fake '(p0) U (p1)' >'lcr-o0-PycHq4'
+Running [P1]: ltl2tgba -s -f '(p0) U (p1)' >'lcr-o1-HCH7fz'
+Running [N0]: ./fake '!((p0) U (p1))' >'lcr-o0-cJeeF4'
+Running [N1]: ltl2tgba -s -f '!((p0) U (p1))' >'lcr-o1-MRK6UK'
+Performing sanity checks and gathering statistics...
+error: P1*N0 is nonempty; both automata accept the infinite word:
+       p0 & !p1; cycle{p1}
+
+Trying to find a bogus mutation of p0 U p1...
+Mutation 1/6: 0
+Running [P0]: ./fake '0' >'lcr-o0-5Lc8PB'
+Running [P1]: ltl2tgba -s -f '0' >'lcr-o1-tEhUr1'
+Running [N0]: ./fake '1' >'lcr-o0-edM6iK'
+Running [N1]: ltl2tgba -s -f '1' >'lcr-o1-HaT2qN'
+Performing sanity checks and gathering statistics...
+
+Mutation 2/6: 1
+warning: This formula or its negation has already been checked.
+         Use --allow-dups if it should not be ignored.
+
+Mutation 3/6: p0
+Running [P0]: ./fake 'p0' >'lcr-o0-bKepbx'
+Running [P1]: ltl2tgba -s -f 'p0' >'lcr-o1-yCEhAa'
+Running [N0]: ./fake '!(p0)' >'lcr-o0-Kd2xBL'
+Running [N1]: ltl2tgba -s -f '!(p0)' >'lcr-o1-c9ELGO'
+Performing sanity checks and gathering statistics...
+error: P0*N1 is nonempty; both automata accept the infinite word:
+       cycle{!p0 & p1}
+error: P1*N0 is nonempty; both automata accept the infinite word:
+       cycle{p0 & !p1}
+
+Trying to find a bogus mutation of p0...
+Mutation 1/2: 0
+warning: This formula or its negation has already been checked.
+         Use --allow-dups if it should not be ignored.
+
+Mutation 2/2: 1
+warning: This formula or its negation has already been checked.
+         Use --allow-dups if it should not be ignored.
+
+Smallest bogus mutation found for p0 U p1 is p0.
+
+error: some error was detected during the above runs,
+       please search for 'error:' messages in the above trace.
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ echo p0
++ diff bogus.grind exp
+PASS core/ltlcrossgrind.test (exit status: 0)

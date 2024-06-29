@@ -1,0 +1,319 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test safra.test
+== Running test safra.test
++ echo safra.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=safra
++ testSubDir=safra.dir
++ chmod -R a+rwx safra.dir
++ rm -rf safra.dir
++ mkdir safra.dir
++ cd safra.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ cat
++ run 0 ../safra --hoa double_a.hoa -H
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../safra
++ cmd=../safra
++ shift
++ test -n ../safra
++ set ../safra --hoa double_a.hoa -H
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../safra --hoa double_a.hoa -H
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff out.hoa out.exp
++ cat
++ cat
++ run 0 ../safra --hoa double_b.hoa -H
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../safra
++ cmd=../safra
++ shift
++ test -n ../safra
++ set ../safra --hoa double_b.hoa -H
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../safra --hoa double_b.hoa -H
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff out.hoa out.exp
++ cat
++ cat
++ run 0 ../safra --hoa in.hoa --scc_opt -p -H
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../safra
++ cmd=../safra
++ shift
++ test -n ../safra
++ set ../safra --hoa in.hoa --scc_opt -p -H
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../safra --hoa in.hoa --scc_opt -p -H
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff out.hoa out.exp
++ cat
++ run 0 ../safra --hoa double_b.hoa -H
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../safra
++ cmd=../safra
++ shift
++ test -n ../safra
++ set ../safra --hoa double_b.hoa -H
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../safra --hoa double_b.hoa -H
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ ltlcross -F formulae ../safra -f %f -H > %O ../safra --scc_opt -f %f -H > %O ../safra --bisim_opt -f %f -H > %O ../safra --stutter -f %f -H > %O ../safra --scc_opt --bisim_opt --stutter -f %f -H > %O ltl2tgba
+formulae:1: X(((a) M (F(((!(b)) & (!(c))) | ((b) & (c))))) W ((G(!(c))) U (b)))
+Running [P0]: ../safra -f 'X(((a) M (F(((!(b)) & (!(c))) | ((b) & (c))))) W ((G(!(c))) U (b)))' -H > 'lcr-o0-fqymoj'
+Running [P1]: ../safra --scc_opt -f 'X(((a) M (F(((!(b)) & (!(c))) | ((b) & (c))))) W ((G(!(c))) U (b)))' -H > 'lcr-o1-knXGeZ'
+Running [P2]: ../safra --bisim_opt -f 'X(((a) M (F(((!(b)) & (!(c))) | ((b) & (c))))) W ((G(!(c))) U (b)))' -H > 'lcr-o2-SYIFYi'
+Running [P3]: ../safra --stutter -f 'X(((a) M (F(((!(b)) & (!(c))) | ((b) & (c))))) W ((G(!(c))) U (b)))' -H > 'lcr-o3-MVZjth'
+Running [P4]: ../safra --scc_opt --bisim_opt --stutter -f 'X(((a) M (F(((!(b)) & (!(c))) | ((b) & (c))))) W ((G(!(c))) U (b)))' -H > 'lcr-o4-PW3xo1'
+Running [P5]: ltl2tgba -H 'X(((a) M (F(((!(b)) & (!(c))) | ((b) & (c))))) W ((G(!(c))) U (b)))'>'lcr-o5-Hxoxqr'
+Running [N0]: ../safra -f '!(X(((a) M (F(((!(b)) & (!(c))) | ((b) & (c))))) W ((G(!(c))) U (b))))' -H > 'lcr-o0-t7iDCc'
+Running [N1]: ../safra --scc_opt -f '!(X(((a) M (F(((!(b)) & (!(c))) | ((b) & (c))))) W ((G(!(c))) U (b))))' -H > 'lcr-o1-w65uGh'
+Running [N2]: ../safra --bisim_opt -f '!(X(((a) M (F(((!(b)) & (!(c))) | ((b) & (c))))) W ((G(!(c))) U (b))))' -H > 'lcr-o2-jp2CTN'
+Running [N3]: ../safra --stutter -f '!(X(((a) M (F(((!(b)) & (!(c))) | ((b) & (c))))) W ((G(!(c))) U (b))))' -H > 'lcr-o3-eyd8YY'
+Running [N4]: ../safra --scc_opt --bisim_opt --stutter -f '!(X(((a) M (F(((!(b)) & (!(c))) | ((b) & (c))))) W ((G(!(c))) U (b))))' -H > 'lcr-o4-9YcLhE'
+Running [N5]: ltl2tgba -H '!(X(((a) M (F(((!(b)) & (!(c))) | ((b) & (c))))) W ((G(!(c))) U (b))))'>'lcr-o5-ExNa8l'
+Performing sanity checks and gathering statistics...
+
+formulae:2: X((((a) & (b)) R ((!(a)) U (!(c)))) R (b))
+Running [P0]: ../safra -f 'X((((a) & (b)) R ((!(a)) U (!(c)))) R (b))' -H > 'lcr-o0-LBNk2u'
+Running [P1]: ../safra --scc_opt -f 'X((((a) & (b)) R ((!(a)) U (!(c)))) R (b))' -H > 'lcr-o1-tKV9iw'
+Running [P2]: ../safra --bisim_opt -f 'X((((a) & (b)) R ((!(a)) U (!(c)))) R (b))' -H > 'lcr-o2-PVLF21'
+Running [P3]: ../safra --stutter -f 'X((((a) & (b)) R ((!(a)) U (!(c)))) R (b))' -H > 'lcr-o3-6IOOiq'
+Running [P4]: ../safra --scc_opt --bisim_opt --stutter -f 'X((((a) & (b)) R ((!(a)) U (!(c)))) R (b))' -H > 'lcr-o4-hTJ3AS'
+Running [P5]: ltl2tgba -H 'X((((a) & (b)) R ((!(a)) U (!(c)))) R (b))'>'lcr-o5-PtssXP'
+Running [N0]: ../safra -f '!(X((((a) & (b)) R ((!(a)) U (!(c)))) R (b)))' -H > 'lcr-o0-rMjKw2'
+Running [N1]: ../safra --scc_opt -f '!(X((((a) & (b)) R ((!(a)) U (!(c)))) R (b)))' -H > 'lcr-o1-ZIrxvh'
+Running [N2]: ../safra --bisim_opt -f '!(X((((a) & (b)) R ((!(a)) U (!(c)))) R (b)))' -H > 'lcr-o2-tPX6pc'
+Running [N3]: ../safra --stutter -f '!(X((((a) & (b)) R ((!(a)) U (!(c)))) R (b)))' -H > 'lcr-o3-uobotg'
+Running [N4]: ../safra --scc_opt --bisim_opt --stutter -f '!(X((((a) & (b)) R ((!(a)) U (!(c)))) R (b)))' -H > 'lcr-o4-DXZ85f'
+Running [N5]: ltl2tgba -H '!(X((((a) & (b)) R ((!(a)) U (!(c)))) R (b)))'>'lcr-o5-WRN4U5'
+Performing sanity checks and gathering statistics...
+
+formulae:3: X(X(G((F(a)) U (X(b)))))
+Running [P0]: ../safra -f 'X(X(G((F(a)) U (X(b)))))' -H > 'lcr-o0-ZfUlBA'
+Running [P1]: ../safra --scc_opt -f 'X(X(G((F(a)) U (X(b)))))' -H > 'lcr-o1-kyfxVs'
+Running [P2]: ../safra --bisim_opt -f 'X(X(G((F(a)) U (X(b)))))' -H > 'lcr-o2-Cin6Kf'
+Running [P3]: ../safra --stutter -f 'X(X(G((F(a)) U (X(b)))))' -H > 'lcr-o3-Xi83ta'
+Running [P4]: ../safra --scc_opt --bisim_opt --stutter -f 'X(X(G((F(a)) U (X(b)))))' -H > 'lcr-o4-xzz0w7'
+Running [P5]: ltl2tgba -H 'X(X(G((F(a)) U (X(b)))))'>'lcr-o5-c1jm9m'
+Running [N0]: ../safra -f '!(X(X(G((F(a)) U (X(b))))))' -H > 'lcr-o0-cUPiZA'
+Running [N1]: ../safra --scc_opt -f '!(X(X(G((F(a)) U (X(b))))))' -H > 'lcr-o1-OS7HdB'
+Running [N2]: ../safra --bisim_opt -f '!(X(X(G((F(a)) U (X(b))))))' -H > 'lcr-o2-ouXdDc'
+Running [N3]: ../safra --stutter -f '!(X(X(G((F(a)) U (X(b))))))' -H > 'lcr-o3-AHYOwQ'
+Running [N4]: ../safra --scc_opt --bisim_opt --stutter -f '!(X(X(G((F(a)) U (X(b))))))' -H > 'lcr-o4-Prbjx3'
+Running [N5]: ltl2tgba -H '!(X(X(G((F(a)) U (X(b))))))'>'lcr-o5-LCZFdZ'
+Performing sanity checks and gathering statistics...
+
+formulae:4: ((!(a)) M (!(b))) W (F(!(c)))
+Running [P0]: ../safra -f '((!(a)) M (!(b))) W (F(!(c)))' -H > 'lcr-o0-PHLZ9w'
+Running [P1]: ../safra --scc_opt -f '((!(a)) M (!(b))) W (F(!(c)))' -H > 'lcr-o1-y7A4WL'
+Running [P2]: ../safra --bisim_opt -f '((!(a)) M (!(b))) W (F(!(c)))' -H > 'lcr-o2-hVe3uC'
+Running [P3]: ../safra --stutter -f '((!(a)) M (!(b))) W (F(!(c)))' -H > 'lcr-o3-ExYWW1'
+Running [P4]: ../safra --scc_opt --bisim_opt --stutter -f '((!(a)) M (!(b))) W (F(!(c)))' -H > 'lcr-o4-3A170b'
+Running [P5]: ltl2tgba -H '((!(a)) M (!(b))) W (F(!(c)))'>'lcr-o5-fxtb48'
+Running [N0]: ../safra -f '!(((!(a)) M (!(b))) W (F(!(c))))' -H > 'lcr-o0-4FHDe2'
+Running [N1]: ../safra --scc_opt -f '!(((!(a)) M (!(b))) W (F(!(c))))' -H > 'lcr-o1-tqt9JA'
+Running [N2]: ../safra --bisim_opt -f '!(((!(a)) M (!(b))) W (F(!(c))))' -H > 'lcr-o2-hhhprs'
+Running [N3]: ../safra --stutter -f '!(((!(a)) M (!(b))) W (F(!(c))))' -H > 'lcr-o3-90GWvH'
+Running [N4]: ../safra --scc_opt --bisim_opt --stutter -f '!(((!(a)) M (!(b))) W (F(!(c))))' -H > 'lcr-o4-oEC0an'
+Running [N5]: ltl2tgba -H '!(((!(a)) M (!(b))) W (F(!(c))))'>'lcr-o5-1bKMXV'
+Performing sanity checks and gathering statistics...
+
+formulae:5: ((b) & (F(a)) & (G(F(c)))) R (a)
+Running [P0]: ../safra -f '((b) & (F(a)) & (G(F(c)))) R (a)' -H > 'lcr-o0-jAg0vE'
+Running [P1]: ../safra --scc_opt -f '((b) & (F(a)) & (G(F(c)))) R (a)' -H > 'lcr-o1-Bc89Bk'
+Running [P2]: ../safra --bisim_opt -f '((b) & (F(a)) & (G(F(c)))) R (a)' -H > 'lcr-o2-NnOprI'
+Running [P3]: ../safra --stutter -f '((b) & (F(a)) & (G(F(c)))) R (a)' -H > 'lcr-o3-GYV0Fu'
+Running [P4]: ../safra --scc_opt --bisim_opt --stutter -f '((b) & (F(a)) & (G(F(c)))) R (a)' -H > 'lcr-o4-gCxE6U'
+Running [P5]: ltl2tgba -H '((b) & (F(a)) & (G(F(c)))) R (a)'>'lcr-o5-ugRWWN'
+Running [N0]: ../safra -f '!(((b) & (F(a)) & (G(F(c)))) R (a))' -H > 'lcr-o0-Z3BoJj'
+Running [N1]: ../safra --scc_opt -f '!(((b) & (F(a)) & (G(F(c)))) R (a))' -H > 'lcr-o1-8TqSg0'
+Running [N2]: ../safra --bisim_opt -f '!(((b) & (F(a)) & (G(F(c)))) R (a))' -H > 'lcr-o2-P0t15d'
+Running [N3]: ../safra --stutter -f '!(((b) & (F(a)) & (G(F(c)))) R (a))' -H > 'lcr-o3-C9esZH'
+Running [N4]: ../safra --scc_opt --bisim_opt --stutter -f '!(((b) & (F(a)) & (G(F(c)))) R (a))' -H > 'lcr-o4-NyidNf'
+Running [N5]: ltl2tgba -H '!(((b) & (F(a)) & (G(F(c)))) R (a))'>'lcr-o5-f9Bsdn'
+Performing sanity checks and gathering statistics...
+
+formulae:6: ((a) R ((b) W (a))) W (G((!(a)) M ((b) | (c))))
+Running [P0]: ../safra -f '((a) R ((b) W (a))) W (G((!(a)) M ((b) | (c))))' -H > 'lcr-o0-noz5Oh'
+Running [P1]: ../safra --scc_opt -f '((a) R ((b) W (a))) W (G((!(a)) M ((b) | (c))))' -H > 'lcr-o1-7sUR48'
+Running [P2]: ../safra --bisim_opt -f '((a) R ((b) W (a))) W (G((!(a)) M ((b) | (c))))' -H > 'lcr-o2-r8MjpK'
+Running [P3]: ../safra --stutter -f '((a) R ((b) W (a))) W (G((!(a)) M ((b) | (c))))' -H > 'lcr-o3-i5DbQg'
+Running [P4]: ../safra --scc_opt --bisim_opt --stutter -f '((a) R ((b) W (a))) W (G((!(a)) M ((b) | (c))))' -H > 'lcr-o4-zReHd0'
+Running [P5]: ltl2tgba -H '((a) R ((b) W (a))) W (G((!(a)) M ((b) | (c))))'>'lcr-o5-GHxv2x'
+Running [N0]: ../safra -f '!(((a) R ((b) W (a))) W (G((!(a)) M ((b) | (c)))))' -H > 'lcr-o0-WNH1MA'
+Running [N1]: ../safra --scc_opt -f '!(((a) R ((b) W (a))) W (G((!(a)) M ((b) | (c)))))' -H > 'lcr-o1-xUHIS1'
+Running [N2]: ../safra --bisim_opt -f '!(((a) R ((b) W (a))) W (G((!(a)) M ((b) | (c)))))' -H > 'lcr-o2-YngW3Q'
+Running [N3]: ../safra --stutter -f '!(((a) R ((b) W (a))) W (G((!(a)) M ((b) | (c)))))' -H > 'lcr-o3-xSfxdI'
+Running [N4]: ../safra --scc_opt --bisim_opt --stutter -f '!(((a) R ((b) W (a))) W (G((!(a)) M ((b) | (c)))))' -H > 'lcr-o4-C8fdLR'
+Running [N5]: ltl2tgba -H '!(((a) R ((b) W (a))) W (G((!(a)) M ((b) | (c)))))'>'lcr-o5-CCzrZz'
+Performing sanity checks and gathering statistics...
+
+formulae:7: ((F(a)) W (b)) R ((!(a)) | (F(c)))
+Running [P0]: ../safra -f '((F(a)) W (b)) R ((!(a)) | (F(c)))' -H > 'lcr-o0-csP9xt'
+Running [P1]: ../safra --scc_opt -f '((F(a)) W (b)) R ((!(a)) | (F(c)))' -H > 'lcr-o1-S0G8sC'
+Running [P2]: ../safra --bisim_opt -f '((F(a)) W (b)) R ((!(a)) | (F(c)))' -H > 'lcr-o2-cgOPdL'
+Running [P3]: ../safra --stutter -f '((F(a)) W (b)) R ((!(a)) | (F(c)))' -H > 'lcr-o3-4WnXwU'
+Running [P4]: ../safra --scc_opt --bisim_opt --stutter -f '((F(a)) W (b)) R ((!(a)) | (F(c)))' -H > 'lcr-o4-amN7KZ'
+Running [P5]: ltl2tgba -H '((F(a)) W (b)) R ((!(a)) | (F(c)))'>'lcr-o5-YAvst4'
+Running [N0]: ../safra -f '!(((F(a)) W (b)) R ((!(a)) | (F(c))))' -H > 'lcr-o0-wc32J6'
+Running [N1]: ../safra --scc_opt -f '!(((F(a)) W (b)) R ((!(a)) | (F(c))))' -H > 'lcr-o1-Am9KKi'
+Running [N2]: ../safra --bisim_opt -f '!(((F(a)) W (b)) R ((!(a)) | (F(c))))' -H > 'lcr-o2-9trz6M'
+Running [N3]: ../safra --stutter -f '!(((F(a)) W (b)) R ((!(a)) | (F(c))))' -H > 'lcr-o3-6e9iUV'
+Running [N4]: ../safra --scc_opt --bisim_opt --stutter -f '!(((F(a)) W (b)) R ((!(a)) | (F(c))))' -H > 'lcr-o4-GZCv91'
+Running [N5]: ltl2tgba -H '!(((F(a)) W (b)) R ((!(a)) | (F(c))))'>'lcr-o5-3Wsc0k'
+Performing sanity checks and gathering statistics...
+
+formulae:8: X((G((!(a)) M (!(b)))) | (G((a) | (G(!(a))))))
+Running [P0]: ../safra -f 'X((G((!(a)) M (!(b)))) | (G((a) | (G(!(a))))))' -H > 'lcr-o0-uoNXLH'
+Running [P1]: ../safra --scc_opt -f 'X((G((!(a)) M (!(b)))) | (G((a) | (G(!(a))))))' -H > 'lcr-o1-mso8OZ'
+Running [P2]: ../safra --bisim_opt -f 'X((G((!(a)) M (!(b)))) | (G((a) | (G(!(a))))))' -H > 'lcr-o2-dPZ8mK'
+Running [P3]: ../safra --stutter -f 'X((G((!(a)) M (!(b)))) | (G((a) | (G(!(a))))))' -H > 'lcr-o3-fs8Yf0'
+Running [P4]: ../safra --scc_opt --bisim_opt --stutter -f 'X((G((!(a)) M (!(b)))) | (G((a) | (G(!(a))))))' -H > 'lcr-o4-WnZD6p'
+Running [P5]: ltl2tgba -H 'X((G((!(a)) M (!(b)))) | (G((a) | (G(!(a))))))'>'lcr-o5-JObHEw'
+Running [N0]: ../safra -f '!(X((G((!(a)) M (!(b)))) | (G((a) | (G(!(a)))))))' -H > 'lcr-o0-BNkLIw'
+Running [N1]: ../safra --scc_opt -f '!(X((G((!(a)) M (!(b)))) | (G((a) | (G(!(a)))))))' -H > 'lcr-o1-kPJTl6'
+Running [N2]: ../safra --bisim_opt -f '!(X((G((!(a)) M (!(b)))) | (G((a) | (G(!(a)))))))' -H > 'lcr-o2-2O9Omi'
+Running [N3]: ../safra --stutter -f '!(X((G((!(a)) M (!(b)))) | (G((a) | (G(!(a)))))))' -H > 'lcr-o3-SQfBBT'
+Running [N4]: ../safra --scc_opt --bisim_opt --stutter -f '!(X((G((!(a)) M (!(b)))) | (G((a) | (G(!(a)))))))' -H > 'lcr-o4-vGlS9m'
+Running [N5]: ltl2tgba -H '!(X((G((!(a)) M (!(b)))) | (G((a) | (G(!(a)))))))'>'lcr-o5-fbpywd'
+Performing sanity checks and gathering statistics...
+
+formulae:9: (F(a)) W (G(b))
+Running [P0]: ../safra -f '(F(a)) W (G(b))' -H > 'lcr-o0-6IaWlT'
+Running [P1]: ../safra --scc_opt -f '(F(a)) W (G(b))' -H > 'lcr-o1-mikbeT'
+Running [P2]: ../safra --bisim_opt -f '(F(a)) W (G(b))' -H > 'lcr-o2-8CwC52'
+Running [P3]: ../safra --stutter -f '(F(a)) W (G(b))' -H > 'lcr-o3-npFABO'
+Running [P4]: ../safra --scc_opt --bisim_opt --stutter -f '(F(a)) W (G(b))' -H > 'lcr-o4-8lWKu0'
+Running [P5]: ltl2tgba -H '(F(a)) W (G(b))'>'lcr-o5-fEAYve'
+Running [N0]: ../safra -f '!((F(a)) W (G(b)))' -H > 'lcr-o0-Ahq4T8'
+Running [N1]: ../safra --scc_opt -f '!((F(a)) W (G(b)))' -H > 'lcr-o1-E0ZapI'
+Running [N2]: ../safra --bisim_opt -f '!((F(a)) W (G(b)))' -H > 'lcr-o2-iv4Efb'
+Running [N3]: ../safra --stutter -f '!((F(a)) W (G(b)))' -H > 'lcr-o3-D6ZFMX'
+Running [N4]: ../safra --scc_opt --bisim_opt --stutter -f '!((F(a)) W (G(b)))' -H > 'lcr-o4-b5GBuq'
+Running [N5]: ltl2tgba -H '!((F(a)) W (G(b)))'>'lcr-o5-f5GddP'
+Performing sanity checks and gathering statistics...
+
+formulae:10: (G(a)) | (G(F(b)))
+Running [P0]: ../safra -f '(G(a)) | (G(F(b)))' -H > 'lcr-o0-upVtif'
+Running [P1]: ../safra --scc_opt -f '(G(a)) | (G(F(b)))' -H > 'lcr-o1-4z5QuO'
+Running [P2]: ../safra --bisim_opt -f '(G(a)) | (G(F(b)))' -H > 'lcr-o2-9ralQw'
+Running [P3]: ../safra --stutter -f '(G(a)) | (G(F(b)))' -H > 'lcr-o3-A7T9aO'
+Running [P4]: ../safra --scc_opt --bisim_opt --stutter -f '(G(a)) | (G(F(b)))' -H > 'lcr-o4-3fpn7J'
+Running [P5]: ltl2tgba -H '(G(a)) | (G(F(b)))'>'lcr-o5-kX8kV8'
+Running [N0]: ../safra -f '!((G(a)) | (G(F(b))))' -H > 'lcr-o0-te4xVh'
+Running [N1]: ../safra --scc_opt -f '!((G(a)) | (G(F(b))))' -H > 'lcr-o1-sQQCor'
+Running [N2]: ../safra --bisim_opt -f '!((G(a)) | (G(F(b))))' -H > 'lcr-o2-taIpSb'
+Running [N3]: ../safra --stutter -f '!((G(a)) | (G(F(b))))' -H > 'lcr-o3-Js9yRh'
+Running [N4]: ../safra --scc_opt --bisim_opt --stutter -f '!((G(a)) | (G(F(b))))' -H > 'lcr-o4-asOXde'
+Running [N5]: ltl2tgba -H '!((G(a)) | (G(F(b))))'>'lcr-o5-zkBi4L'
+Performing sanity checks and gathering statistics...
+
+formulae:11: (a) M (G((F(!(b))) | (X(!(a)))))
+Running [P0]: ../safra -f '(a) M (G((F(!(b))) | (X(!(a)))))' -H > 'lcr-o0-oOVEgx'
+Running [P1]: ../safra --scc_opt -f '(a) M (G((F(!(b))) | (X(!(a)))))' -H > 'lcr-o1-Brm1md'
+Running [P2]: ../safra --bisim_opt -f '(a) M (G((F(!(b))) | (X(!(a)))))' -H > 'lcr-o2-ieTh8c'
+Running [P3]: ../safra --stutter -f '(a) M (G((F(!(b))) | (X(!(a)))))' -H > 'lcr-o3-JJ4WjF'
+Running [P4]: ../safra --scc_opt --bisim_opt --stutter -f '(a) M (G((F(!(b))) | (X(!(a)))))' -H > 'lcr-o4-vjKj1m'
+Running [P5]: ltl2tgba -H '(a) M (G((F(!(b))) | (X(!(a)))))'>'lcr-o5-vd08qL'
+Running [N0]: ../safra -f '!((a) M (G((F(!(b))) | (X(!(a))))))' -H > 'lcr-o0-1IiiLa'
+Running [N1]: ../safra --scc_opt -f '!((a) M (G((F(!(b))) | (X(!(a))))))' -H > 'lcr-o1-9K6dDd'
+Running [N2]: ../safra --bisim_opt -f '!((a) M (G((F(!(b))) | (X(!(a))))))' -H > 'lcr-o2-aI8evR'
+Running [N3]: ../safra --stutter -f '!((a) M (G((F(!(b))) | (X(!(a))))))' -H > 'lcr-o3-mrqSAZ'
+Running [N4]: ../safra --scc_opt --bisim_opt --stutter -f '!((a) M (G((F(!(b))) | (X(!(a))))))' -H > 'lcr-o4-K4VurZ'
+Running [N5]: ltl2tgba -H '!((a) M (G((F(!(b))) | (X(!(a))))))'>'lcr-o5-9oPvEO'
+Performing sanity checks and gathering statistics...
+
+formulae:12: (G(!(a))) R (X(F(b)))
+Running [P0]: ../safra -f '(G(!(a))) R (X(F(b)))' -H > 'lcr-o0-ogjE0v'
+Running [P1]: ../safra --scc_opt -f '(G(!(a))) R (X(F(b)))' -H > 'lcr-o1-nWYr1H'
+Running [P2]: ../safra --bisim_opt -f '(G(!(a))) R (X(F(b)))' -H > 'lcr-o2-6DXP7d'
+Running [P3]: ../safra --stutter -f '(G(!(a))) R (X(F(b)))' -H > 'lcr-o3-WPl5gg'
+Running [P4]: ../safra --scc_opt --bisim_opt --stutter -f '(G(!(a))) R (X(F(b)))' -H > 'lcr-o4-hR8EQx'
+Running [P5]: ltl2tgba -H '(G(!(a))) R (X(F(b)))'>'lcr-o5-byNW6q'
+Running [N0]: ../safra -f '!((G(!(a))) R (X(F(b))))' -H > 'lcr-o0-olBusf'
+Running [N1]: ../safra --scc_opt -f '!((G(!(a))) R (X(F(b))))' -H > 'lcr-o1-uzzjhK'
+Running [N2]: ../safra --bisim_opt -f '!((G(!(a))) R (X(F(b))))' -H > 'lcr-o2-7BVByG'
+Running [N3]: ../safra --stutter -f '!((G(!(a))) R (X(F(b))))' -H > 'lcr-o3-tqzIXg'
+Running [N4]: ../safra --scc_opt --bisim_opt --stutter -f '!((G(!(a))) R (X(F(b))))' -H > 'lcr-o4-zD20kL'
+Running [N5]: ltl2tgba -H '!((G(!(a))) R (X(F(b))))'>'lcr-o5-JPn01V'
+Performing sanity checks and gathering statistics...
+
+formulae:13: F(G((a) | (F(b))))
+Running [P0]: ../safra -f 'F(G((a) | (F(b))))' -H > 'lcr-o0-9C8ix6'
+Running [P1]: ../safra --scc_opt -f 'F(G((a) | (F(b))))' -H > 'lcr-o1-T9CHLf'
+Running [P2]: ../safra --bisim_opt -f 'F(G((a) | (F(b))))' -H > 'lcr-o2-E70Rff'
+Running [P3]: ../safra --stutter -f 'F(G((a) | (F(b))))' -H > 'lcr-o3-3bMHwA'
+Running [P4]: ../safra --scc_opt --bisim_opt --stutter -f 'F(G((a) | (F(b))))' -H > 'lcr-o4-mZn227'
+Running [P5]: ltl2tgba -H 'F(G((a) | (F(b))))'>'lcr-o5-oZOUwx'
+Running [N0]: ../safra -f '!(F(G((a) | (F(b)))))' -H > 'lcr-o0-4w9eLN'
+Running [N1]: ../safra --scc_opt -f '!(F(G((a) | (F(b)))))' -H > 'lcr-o1-CvDlcS'
+Running [N2]: ../safra --bisim_opt -f '!(F(G((a) | (F(b)))))' -H > 'lcr-o2-GvdR5j'
+Running [N3]: ../safra --stutter -f '!(F(G((a) | (F(b)))))' -H > 'lcr-o3-EbNM1v'
+Running [N4]: ../safra --scc_opt --bisim_opt --stutter -f '!(F(G((a) | (F(b)))))' -H > 'lcr-o4-wTe0WQ'
+Running [N5]: ltl2tgba -H '!(F(G((a) | (F(b)))))'>'lcr-o5-tl8ekf'
+Performing sanity checks and gathering statistics...
+
+formulae:14: F(G((!(p1)) | ((p1) M (X(X(!(p1)))))))
+Running [P0]: ../safra -f 'F(G((!(p1)) | ((p1) M (X(X(!(p1)))))))' -H > 'lcr-o0-Lwq7t4'
+Running [P1]: ../safra --scc_opt -f 'F(G((!(p1)) | ((p1) M (X(X(!(p1)))))))' -H > 'lcr-o1-sxpO4T'
+Running [P2]: ../safra --bisim_opt -f 'F(G((!(p1)) | ((p1) M (X(X(!(p1)))))))' -H > 'lcr-o2-y7ZljS'
+Running [P3]: ../safra --stutter -f 'F(G((!(p1)) | ((p1) M (X(X(!(p1)))))))' -H > 'lcr-o3-Kpjk8r'
+Running [P4]: ../safra --scc_opt --bisim_opt --stutter -f 'F(G((!(p1)) | ((p1) M (X(X(!(p1)))))))' -H > 'lcr-o4-6IvzZC'
+Running [P5]: ltl2tgba -H 'F(G((!(p1)) | ((p1) M (X(X(!(p1)))))))'>'lcr-o5-hfhezK'
+Running [N0]: ../safra -f '!(F(G((!(p1)) | ((p1) M (X(X(!(p1))))))))' -H > 'lcr-o0-wQdhrX'
+Running [N1]: ../safra --scc_opt -f '!(F(G((!(p1)) | ((p1) M (X(X(!(p1))))))))' -H > 'lcr-o1-mvOT7D'
+Running [N2]: ../safra --bisim_opt -f '!(F(G((!(p1)) | ((p1) M (X(X(!(p1))))))))' -H > 'lcr-o2-TOQENw'
+Running [N3]: ../safra --stutter -f '!(F(G((!(p1)) | ((p1) M (X(X(!(p1))))))))' -H > 'lcr-o3-58KNQt'
+Running [N4]: ../safra --scc_opt --bisim_opt --stutter -f '!(F(G((!(p1)) | ((p1) M (X(X(!(p1))))))))' -H > 'lcr-o4-McJnXw'
+Running [N5]: ltl2tgba -H '!(F(G((!(p1)) | ((p1) M (X(X(!(p1))))))))'>'lcr-o5-WVoucC'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
+PASS core/safra.test (exit status: 0)

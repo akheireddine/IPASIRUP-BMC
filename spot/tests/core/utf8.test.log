@@ -1,0 +1,61 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test utf8.test
+== Running test utf8.test
++ echo utf8.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=utf8
++ testSubDir=utf8.dir
++ chmod -R a+rwx utf8.dir
++ rm -rf utf8.dir
++ mkdir utf8.dir
++ cd utf8.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 1 ../ltl2text input
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ltl2text
++ cmd=../ltl2text
++ shift
++ test -n ../ltl2text
++ set ../ltl2text input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ltl2text input
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ cat
++ diff expected output
++ randltl --psl -8 --seed 0 --tree-size 16 a b c -n 100
++ ../reduc -f -h 0 formulae
+gain: 14.1942%
++ echo Ⓧa
++ ltlfilt -8 -f X[!]a
++ diff in out
++ ltlfilt -8 -F in
++ diff in out
++ randltl --sere -8 --seed 0 --tree-size 8 a b c -n 10
++ cat
++ diff formulae expected
+PASS core/utf8.test (exit status: 0)

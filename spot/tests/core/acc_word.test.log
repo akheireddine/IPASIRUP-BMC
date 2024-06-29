@@ -1,0 +1,142 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test acc_word.test
+== Running test acc_word.test
++ echo acc_word.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=acc_word
++ testSubDir=acc_word.dir
++ chmod -R a+rwx acc_word.dir
++ rm -rf acc_word.dir
++ mkdir acc_word.dir
++ cd acc_word.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltl2tgba G!a
++ autfilt --accept-word b; cycle{!a} -q
++ ltl2tgba+  a U b
+autfilt --accept-word a; a; cycle{b} -q
++ ltl2tgba F(!a&b)+ 
+autfilt --accept-word b; cycle{b; !a&b} --accept-word cycle{b} -q
++ + ltl2tgbaautfilt -f --accept-word=cycle{!a} a U b --accept-word=a;cycle{b}
+ -q
++ ltl2tgba -f+  a U b
+autfilt --accept-word=cycle{!b} -q
++ randltl -n -1 a b
++ ltl2tgba
++ autfilt --accept-word=a&!b;cycle{!a&!b} --accept-word=!a&!b;cycle{a&b} --reject-word=cycle{b} --stats=%M -n 3
++ ltlfilt --simplify --uniq
++ cat
++ diff out expect
++ randltl -n -1 a b
++ ltlfilt --simplify --uniq --accept-word=a&!b;cycle{!a&!b} --accept-word=!a&!b;cycle{a&b} --reject-word=cycle{b} -n 3
++ diff out expect
++ autfilt --reject-w=foobar
++ autfilt --accept-w=cycle{foo
++ cat error
+autfilt: failed to parse the argument of --reject-word:
+>>> foobar
+          ^
+A twa_word must contain a cycle
+
+autfilt: failed to parse the argument of --accept-word:
+>>> cycle{foo
+             ^
+Missing ';' or '}' after formula
+
++ cat
++ diff expect error
++ + ltl2tgba a U b
+autfilt -H1.1 --highlight-word=cycle{b}
++ cat
++ diff expected out
++ ltl2tgba -G (GF(a & X!a) -> GF(b & XXb)) & GFc
++ word=!a&!c;cycle{!a&b&!c;!a&c;!a&b&c}
++ autfilt -H1.1 aut.hoa --highlight-word=!a&!c;cycle{!a&b&!c;!a&c;!a&b&c}
++ grep spot.highlight.edges out.hoa
++ cat
++ diff out.edges expected
++ autfilt -H1.1 --highlight-word=2,!a&!b;cycle{!a&b;a&b} --highlight-word=3,!a&!b;cycle{a&!b;a&b}
++ ltl2tgba Fa & Fb
++ cat
++ diff expected out
++ autfilt --highlight-word=,!a&!b;cycle{!a&b;a&b}
++ test 2 -eq 2
++ cat stderr
+autfilt: failed to parse the argument of --highlight-word:
+>>> ,!a&!b;cycle{!a&b;a&b}
+    ^
+syntax error, unexpected invalid token
+
+>>> ,!a&!b;cycle{!a&b;a&b}
+    ^^^^^^
+ignoring trailing garbage
+
+
++ grep failed to parse the argument of --highlight-word stderr
+autfilt: failed to parse the argument of --highlight-word:
++ autfilt --highlight-word=-1,cycle{a}
++ test 2 -eq 2
++ cat stderr
+autfilt: failed to parse the argument of --highlight-word: -1 is not positive
++ grep failed to parse the argument of --highlight-word stderr
+autfilt: failed to parse the argument of --highlight-word: -1 is not positive
++ autfilt --highlight-word=1 cycle{a}
++ test 2 -eq 2
++ cat stderr
+autfilt: failed to parse the argument of --highlight-word: 1 should be followed by a comma and WORD
++ grep failed to parse the argument of --highlight-word stderr
+autfilt: failed to parse the argument of --highlight-word: 1 should be followed by a comma and WORD
++ autfilt --highlight-word=cycle{a}
++ ltl2tgba -G -D FGa
+HOA: v1
+name: "FGa"
+States: 1
+Start: 0
+AP: 1 "a"
+acc-name: co-Buchi
+Acceptance: 1 Fin(0)
+properties: trans-labels explicit-labels trans-acc complete
+properties: deterministic stutter-invariant
+--BODY--
+State: 0
+[!0] 0 {0}
+[0] 0
+--END--
++ ltlfilt -f GFa --accept-word cycle{!a}
++ ltlfilt -f GF!a --accept-word cycle{!a}
+GF!a
++ cat
++ ltlfilt -c input --accept-word a;!b&!c;!b&!c;b&c;cycle{1}
++ test 2 = 2
++ ltlfilt -c input --accept-word a;!b&!c;b&c;cycle{1}
++ test 2 = 2
++ ltlfilt -c input --accept-word a;!b;b&!c;b&c;cycle{1}
++ test 0 = 0
++ ltlfilt -c input --accept-word a;!b;b&c;b&c;cycle{1}
++ test 2 = 2
++ ltlfilt -c input --accept-word a;!b;b&c;b&!c;cycle{1}
++ test 1 = 1
++ L=ltlfilt -c input --accept-word
++ cat
++ ltlfilt -c input --accept-word a;!b&!c;!b&!c;b&c;b&c&d&e;cycle{1}
++ test 2 = 2
++ ltlfilt -c input --accept-word a;!b&!c;!b&!c;b&c;b&c&d&e;b&c&d&!e;cycle{1}
++ test 1 = 1
++ ltlfilt -c input --accept-word a;!b&!c;b&c;b&c&d&e;b&c&d&!e;cycle{1}
++ test 1 = 1
+PASS core/acc_word.test (exit status: 0)

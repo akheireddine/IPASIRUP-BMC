@@ -1,0 +1,690 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test unambig2.test
+== Running test unambig2.test
++ echo unambig2.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=unambig2
++ testSubDir=unambig2.dir
++ chmod -R a+rwx unambig2.dir
++ rm -rf unambig2.dir
++ mkdir unambig2.dir
++ cd unambig2.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ ltlcross --lbt-input -F errors ltl2tgba -U -B --low ltl2tgba
+errors:1: (G(!("2"))) | (F((X("1")) & (F("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '(G(!("2"))) | (F((X("1")) & (F("2"))))'>'lcr-o0-Q5BJTe'
+Running [P1]: ltl2tgba -H '(G(!("2"))) | (F((X("1")) & (F("2"))))'>'lcr-o1-0DCPCf'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(!("2"))) | (F((X("1")) & (F("2")))))'>'lcr-o0-x7KRWR'
+Running [N1]: ltl2tgba -H '!((G(!("2"))) | (F((X("1")) & (F("2")))))'>'lcr-o1-G8uqhq'
+Performing sanity checks and gathering statistics...
+
+errors:2: ((X("2")) R ("2")) | (F(("2") W (0)))
+Running [P0]: ltl2tgba -U -B --low -H '((X("2")) R ("2")) | (F(("2") W (0)))'>'lcr-o0-RKWOjc'
+Running [P1]: ltl2tgba -H '((X("2")) R ("2")) | (F(("2") W (0)))'>'lcr-o1-kXVhZU'
+Running [N0]: ltl2tgba -U -B --low -H '!(((X("2")) R ("2")) | (F(("2") W (0))))'>'lcr-o0-lhvV4R'
+Running [N1]: ltl2tgba -H '!(((X("2")) R ("2")) | (F(("2") W (0))))'>'lcr-o1-UY1tqx'
+Performing sanity checks and gathering statistics...
+
+errors:3: (F(G("2"))) | (("2") & (G("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(F(G("2"))) | (("2") & (G("1")))'>'lcr-o0-wLezSg'
+Running [P1]: ltl2tgba -H '(F(G("2"))) | (("2") & (G("1")))'>'lcr-o1-8cuHFl'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(G("2"))) | (("2") & (G("1"))))'>'lcr-o0-TtNAtL'
+Running [N1]: ltl2tgba -H '!((F(G("2"))) | (("2") & (G("1"))))'>'lcr-o1-8wT9kN'
+Performing sanity checks and gathering statistics...
+
+errors:4: ((1) U ("2")) -> ((F("2")) U ("1"))
+Running [P0]: ltl2tgba -U -B --low -H '((1) U ("2")) -> ((F("2")) U ("1"))'>'lcr-o0-rXmR2O'
+Running [P1]: ltl2tgba -H '((1) U ("2")) -> ((F("2")) U ("1"))'>'lcr-o1-KB5XXZ'
+Running [N0]: ltl2tgba -U -B --low -H '!(((1) U ("2")) -> ((F("2")) U ("1")))'>'lcr-o0-dwzreW'
+Running [N1]: ltl2tgba -H '!(((1) U ("2")) -> ((F("2")) U ("1")))'>'lcr-o1-OWhCmS'
+Performing sanity checks and gathering statistics...
+
+errors:5: (G(F("1"))) & (("1") -> (F("2")))
+Running [P0]: ltl2tgba -U -B --low -H '(G(F("1"))) & (("1") -> (F("2")))'>'lcr-o0-Vpenut'
+Running [P1]: ltl2tgba -H '(G(F("1"))) & (("1") -> (F("2")))'>'lcr-o1-0NQrMb'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(F("1"))) & (("1") -> (F("2"))))'>'lcr-o0-94I5jg'
+Running [N1]: ltl2tgba -H '!((G(F("1"))) & (("1") -> (F("2"))))'>'lcr-o1-R72lZ9'
+Performing sanity checks and gathering statistics...
+
+errors:6: (G(F("2"))) & (("2") xor (X(G("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '(G(F("2"))) & (("2") xor (X(G("2"))))'>'lcr-o0-SMZ7j0'
+Running [P1]: ltl2tgba -H '(G(F("2"))) & (("2") xor (X(G("2"))))'>'lcr-o1-BvvPXX'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(F("2"))) & (("2") xor (X(G("2")))))'>'lcr-o0-ZF68AQ'
+Running [N1]: ltl2tgba -H '!((G(F("2"))) & (("2") xor (X(G("2")))))'>'lcr-o1-eYFM3M'
+Performing sanity checks and gathering statistics...
+
+errors:7: (F(G("1"))) | (("1") & (X("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(F(G("1"))) | (("1") & (X("1")))'>'lcr-o0-fSGyBI'
+Running [P1]: ltl2tgba -H '(F(G("1"))) | (("1") & (X("1")))'>'lcr-o1-EKMXKZ'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(G("1"))) | (("1") & (X("1"))))'>'lcr-o0-axMY8Q'
+Running [N1]: ltl2tgba -H '!((F(G("1"))) | (("1") & (X("1"))))'>'lcr-o1-aSc9cB'
+Performing sanity checks and gathering statistics...
+
+errors:8: (("2") W (G("1"))) -> (G("1"))
+Running [P0]: ltl2tgba -U -B --low -H '(("2") W (G("1"))) -> (G("1"))'>'lcr-o0-EWISlH'
+Running [P1]: ltl2tgba -H '(("2") W (G("1"))) -> (G("1"))'>'lcr-o1-Kqga8P'
+Running [N0]: ltl2tgba -U -B --low -H '!((("2") W (G("1"))) -> (G("1")))'>'lcr-o0-h9FvdB'
+Running [N1]: ltl2tgba -H '!((("2") W (G("1"))) -> (G("1")))'>'lcr-o1-RVfFNF'
+Performing sanity checks and gathering statistics...
+
+errors:9: !(("2") | (G("1")) | (F(G("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '!(("2") | (G("1")) | (F(G("2"))))'>'lcr-o0-EFAHFH'
+Running [P1]: ltl2tgba -H '!(("2") | (G("1")) | (F(G("2"))))'>'lcr-o1-skGGyE'
+Running [N0]: ltl2tgba -U -B --low -H '("2") | (G("1")) | (F(G("2")))'>'lcr-o0-i5WBBn'
+Running [N1]: ltl2tgba -H '("2") | (G("1")) | (F(G("2")))'>'lcr-o1-J0cj9n'
+Performing sanity checks and gathering statistics...
+
+errors:10: ((G("1")) | (("2") W ("1"))) -> (F(G("2")))
+Running [P0]: ltl2tgba -U -B --low -H '((G("1")) | (("2") W ("1"))) -> (F(G("2")))'>'lcr-o0-aPBYRQ'
+Running [P1]: ltl2tgba -H '((G("1")) | (("2") W ("1"))) -> (F(G("2")))'>'lcr-o1-a8jR3g'
+Running [N0]: ltl2tgba -U -B --low -H '!(((G("1")) | (("2") W ("1"))) -> (F(G("2"))))'>'lcr-o0-dpNLv0'
+Running [N1]: ltl2tgba -H '!(((G("1")) | (("2") W ("1"))) -> (F(G("2"))))'>'lcr-o1-Awno2e'
+Performing sanity checks and gathering statistics...
+
+errors:11: (("2") xor (G(X("2")))) -> (F(G("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(("2") xor (G(X("2")))) -> (F(G("1")))'>'lcr-o0-LhqPSL'
+Running [P1]: ltl2tgba -H '(("2") xor (G(X("2")))) -> (F(G("1")))'>'lcr-o1-BHhtbb'
+Running [N0]: ltl2tgba -U -B --low -H '!((("2") xor (G(X("2")))) -> (F(G("1"))))'>'lcr-o0-Thr5dq'
+Running [N1]: ltl2tgba -H '!((("2") xor (G(X("2")))) -> (F(G("1"))))'>'lcr-o1-8kPNgX'
+Performing sanity checks and gathering statistics...
+
+errors:12: ("2") & (G(F("1"))) & ((1) U ("1"))
+Running [P0]: ltl2tgba -U -B --low -H '("2") & (G(F("1"))) & ((1) U ("1"))'>'lcr-o0-l8oFGB'
+Running [P1]: ltl2tgba -H '("2") & (G(F("1"))) & ((1) U ("1"))'>'lcr-o1-fqsfJy'
+Running [N0]: ltl2tgba -U -B --low -H '!(("2") & (G(F("1"))) & ((1) U ("1")))'>'lcr-o0-1GWWat'
+Running [N1]: ltl2tgba -H '!(("2") & (G(F("1"))) & ((1) U ("1")))'>'lcr-o1-mBNhYX'
+Performing sanity checks and gathering statistics...
+
+errors:13: (F(G("1"))) | ((F("1")) -> ("2"))
+Running [P0]: ltl2tgba -U -B --low -H '(F(G("1"))) | ((F("1")) -> ("2"))'>'lcr-o0-gZVB7T'
+Running [P1]: ltl2tgba -H '(F(G("1"))) | ((F("1")) -> ("2"))'>'lcr-o1-yNJRbZ'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(G("1"))) | ((F("1")) -> ("2")))'>'lcr-o0-qlLPZW'
+Running [N1]: ltl2tgba -H '!((F(G("1"))) | ((F("1")) -> ("2")))'>'lcr-o1-flV1Tw'
+Performing sanity checks and gathering statistics...
+
+errors:14: (("1") U (X(!("1")))) | (F(G(!("1"))))
+Running [P0]: ltl2tgba -U -B --low -H '(("1") U (X(!("1")))) | (F(G(!("1"))))'>'lcr-o0-U2PvIP'
+Running [P1]: ltl2tgba -H '(("1") U (X(!("1")))) | (F(G(!("1"))))'>'lcr-o1-14joQZ'
+Running [N0]: ltl2tgba -U -B --low -H '!((("1") U (X(!("1")))) | (F(G(!("1")))))'>'lcr-o0-6FoeuB'
+Running [N1]: ltl2tgba -H '!((("1") U (X(!("1")))) | (F(G(!("1")))))'>'lcr-o1-AcgBGb'
+Performing sanity checks and gathering statistics...
+
+errors:15: !((!(F(G("1")))) & ((G("1")) -> ("2")))
+Running [P0]: ltl2tgba -U -B --low -H '!((!(F(G("1")))) & ((G("1")) -> ("2")))'>'lcr-o0-WcIZWB'
+Running [P1]: ltl2tgba -H '!((!(F(G("1")))) & ((G("1")) -> ("2")))'>'lcr-o1-oxSv8R'
+Running [N0]: ltl2tgba -U -B --low -H '(!(F(G("1")))) & ((G("1")) -> ("2"))'>'lcr-o0-MK7RDa'
+Running [N1]: ltl2tgba -H '(!(F(G("1")))) & ((G("1")) -> ("2"))'>'lcr-o1-Lk3yfq'
+Performing sanity checks and gathering statistics...
+
+errors:16: (!(F(G("2")))) -> (((1) U ("2")) -> ("1"))
+Running [P0]: ltl2tgba -U -B --low -H '(!(F(G("2")))) -> (((1) U ("2")) -> ("1"))'>'lcr-o0-hMQRhN'
+Running [P1]: ltl2tgba -H '(!(F(G("2")))) -> (((1) U ("2")) -> ("1"))'>'lcr-o1-TkgLwv'
+Running [N0]: ltl2tgba -U -B --low -H '!((!(F(G("2")))) -> (((1) U ("2")) -> ("1")))'>'lcr-o0-QMc6QH'
+Running [N1]: ltl2tgba -H '!((!(F(G("2")))) -> (((1) U ("2")) -> ("1")))'>'lcr-o1-42JcEE'
+Performing sanity checks and gathering statistics...
+
+errors:17: (("2") & (G("1"))) | (!(G(F("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '(("2") & (G("1"))) | (!(G(F("2"))))'>'lcr-o0-yEAyVf'
+Running [P1]: ltl2tgba -H '(("2") & (G("1"))) | (!(G(F("2"))))'>'lcr-o1-6XVSJl'
+Running [N0]: ltl2tgba -U -B --low -H '!((("2") & (G("1"))) | (!(G(F("2")))))'>'lcr-o0-levN7K'
+Running [N1]: ltl2tgba -H '!((("2") & (G("1"))) | (!(G(F("2")))))'>'lcr-o1-1Jz7Wh'
+Performing sanity checks and gathering statistics...
+
+errors:18: (F(!(F("2")))) | (("1") & (!((1) U ("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '(F(!(F("2")))) | (("1") & (!((1) U ("2"))))'>'lcr-o0-zCVUii'
+Running [P1]: ltl2tgba -H '(F(!(F("2")))) | (("1") & (!((1) U ("2"))))'>'lcr-o1-0YPaxX'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(!(F("2")))) | (("1") & (!((1) U ("2")))))'>'lcr-o0-9tovDc'
+Running [N1]: ltl2tgba -H '!((F(!(F("2")))) | (("1") & (!((1) U ("2")))))'>'lcr-o1-hkyYpG'
+Performing sanity checks and gathering statistics...
+
+errors:19: (G(!(G("1")))) & (("1") | (X("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(G(!(G("1")))) & (("1") | (X("1")))'>'lcr-o0-huDRWq'
+Running [P1]: ltl2tgba -H '(G(!(G("1")))) & (("1") | (X("1")))'>'lcr-o1-otOwyi'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(!(G("1")))) & (("1") | (X("1"))))'>'lcr-o0-ZuWTlF'
+Running [N1]: ltl2tgba -H '!((G(!(G("1")))) & (("1") | (X("1"))))'>'lcr-o1-HY7p0s'
+Performing sanity checks and gathering statistics...
+
+errors:20: (G(!(G("2")))) & (("1") | (F("2")))
+Running [P0]: ltl2tgba -U -B --low -H '(G(!(G("2")))) & (("1") | (F("2")))'>'lcr-o0-QvJjo6'
+Running [P1]: ltl2tgba -H '(G(!(G("2")))) & (("1") | (F("2")))'>'lcr-o1-lPmKVr'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(!(G("2")))) & (("1") | (F("2"))))'>'lcr-o0-sHdOVG'
+Running [N1]: ltl2tgba -H '!((G(!(G("2")))) & (("1") | (F("2"))))'>'lcr-o1-BQY55R'
+Performing sanity checks and gathering statistics...
+
+errors:21: (G(F("2"))) -> (("2") & (X("2")))
+Running [P0]: ltl2tgba -U -B --low -H '(G(F("2"))) -> (("2") & (X("2")))'>'lcr-o0-1xDW7U'
+Running [P1]: ltl2tgba -H '(G(F("2"))) -> (("2") & (X("2")))'>'lcr-o1-ENYGkg'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(F("2"))) -> (("2") & (X("2"))))'>'lcr-o0-jZYqqp'
+Running [N1]: ltl2tgba -H '!((G(F("2"))) -> (("2") & (X("2"))))'>'lcr-o1-jHnfUk'
+Performing sanity checks and gathering statistics...
+
+errors:22: (("2") W (G("1"))) & (!(G("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(("2") W (G("1"))) & (!(G("1")))'>'lcr-o0-mxf1ds'
+Running [P1]: ltl2tgba -H '(("2") W (G("1"))) & (!(G("1")))'>'lcr-o1-IWbGU2'
+Running [N0]: ltl2tgba -U -B --low -H '!((("2") W (G("1"))) & (!(G("1"))))'>'lcr-o0-36yHpM'
+Running [N1]: ltl2tgba -H '!((("2") W (G("1"))) & (!(G("1"))))'>'lcr-o1-BPvK5j'
+Performing sanity checks and gathering statistics...
+
+errors:23: (G(F("2"))) & (("2") | (F("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(G(F("2"))) & (("2") | (F("1")))'>'lcr-o0-4nrntX'
+Running [P1]: ltl2tgba -H '(G(F("2"))) & (("2") | (F("1")))'>'lcr-o1-fK9Z8w'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(F("2"))) & (("2") | (F("1"))))'>'lcr-o0-CLS5KG'
+Running [N1]: ltl2tgba -H '!((G(F("2"))) & (("2") | (F("1"))))'>'lcr-o1-FjOGA0'
+Performing sanity checks and gathering statistics...
+
+errors:24: (F(G("1"))) | (("1") & (("2") W (0)))
+Running [P0]: ltl2tgba -U -B --low -H '(F(G("1"))) | (("1") & (("2") W (0)))'>'lcr-o0-uhpNXD'
+Running [P1]: ltl2tgba -H '(F(G("1"))) | (("1") & (("2") W (0)))'>'lcr-o1-VzgkXh'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(G("1"))) | (("1") & (("2") W (0))))'>'lcr-o0-GItltY'
+Running [N1]: ltl2tgba -H '!((F(G("1"))) | (("1") & (("2") W (0))))'>'lcr-o1-cLH8aU'
+Performing sanity checks and gathering statistics...
+
+errors:25: (F("2")) & (("1") W (!(F("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '(F("2")) & (("1") W (!(F("2"))))'>'lcr-o0-ZvzoXv'
+Running [P1]: ltl2tgba -H '(F("2")) & (("1") W (!(F("2"))))'>'lcr-o1-ZvoMGm'
+Running [N0]: ltl2tgba -U -B --low -H '!((F("2")) & (("1") W (!(F("2")))))'>'lcr-o0-T0f6Xq'
+Running [N1]: ltl2tgba -H '!((F("2")) & (("1") W (!(F("2")))))'>'lcr-o1-Zah7AN'
+Performing sanity checks and gathering statistics...
+
+errors:26: (G((X("1")) | (G("2")))) | (F(!(F("1"))))
+Running [P0]: ltl2tgba -U -B --low -H '(G((X("1")) | (G("2")))) | (F(!(F("1"))))'>'lcr-o0-uWvkwB'
+Running [P1]: ltl2tgba -H '(G((X("1")) | (G("2")))) | (F(!(F("1"))))'>'lcr-o1-8AIhAu'
+Running [N0]: ltl2tgba -U -B --low -H '!((G((X("1")) | (G("2")))) | (F(!(F("1")))))'>'lcr-o0-z4u7ey'
+Running [N1]: ltl2tgba -H '!((G((X("1")) | (G("2")))) | (F(!(F("1")))))'>'lcr-o1-7jQGAJ'
+Performing sanity checks and gathering statistics...
+
+errors:27: (F(("2") W (0))) | ((F("2")) -> ("1"))
+Running [P0]: ltl2tgba -U -B --low -H '(F(("2") W (0))) | ((F("2")) -> ("1"))'>'lcr-o0-pMBEYc'
+Running [P1]: ltl2tgba -H '(F(("2") W (0))) | ((F("2")) -> ("1"))'>'lcr-o1-GXdVKO'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(("2") W (0))) | ((F("2")) -> ("1")))'>'lcr-o0-UWDwsq'
+Running [N1]: ltl2tgba -H '!((F(("2") W (0))) | ((F("2")) -> ("1")))'>'lcr-o1-9f4MRE'
+Performing sanity checks and gathering statistics...
+
+errors:28: ((G("1")) -> ("2")) & ((F("2")) W (0))
+Running [P0]: ltl2tgba -U -B --low -H '((G("1")) -> ("2")) & ((F("2")) W (0))'>'lcr-o0-zXM7Z0'
+Running [P1]: ltl2tgba -H '((G("1")) -> ("2")) & ((F("2")) W (0))'>'lcr-o1-70AhVQ'
+Running [N0]: ltl2tgba -U -B --low -H '!(((G("1")) -> ("2")) & ((F("2")) W (0)))'>'lcr-o0-1Sj8dT'
+Running [N1]: ltl2tgba -H '!(((G("1")) -> ("2")) & ((F("2")) W (0)))'>'lcr-o1-UHmaTR'
+Performing sanity checks and gathering statistics...
+
+errors:29: ((F("2")) U ("1")) | (!(F("2")))
+Running [P0]: ltl2tgba -U -B --low -H '((F("2")) U ("1")) | (!(F("2")))'>'lcr-o0-1a2LJO'
+Running [P1]: ltl2tgba -H '((F("2")) U ("1")) | (!(F("2")))'>'lcr-o1-IXQYVC'
+Running [N0]: ltl2tgba -U -B --low -H '!(((F("2")) U ("1")) | (!(F("2"))))'>'lcr-o0-djzpkK'
+Running [N1]: ltl2tgba -H '!(((F("2")) U ("1")) | (!(F("2"))))'>'lcr-o1-jUOyjb'
+Performing sanity checks and gathering statistics...
+
+errors:30: (G(F("2"))) & (!(("2") & (G("1"))))
+Running [P0]: ltl2tgba -U -B --low -H '(G(F("2"))) & (!(("2") & (G("1"))))'>'lcr-o0-uQNezn'
+Running [P1]: ltl2tgba -H '(G(F("2"))) & (!(("2") & (G("1"))))'>'lcr-o1-GuU3kr'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(F("2"))) & (!(("2") & (G("1")))))'>'lcr-o0-xyZ6YG'
+Running [N1]: ltl2tgba -H '!((G(F("2"))) & (!(("2") & (G("1")))))'>'lcr-o1-8i53hX'
+Performing sanity checks and gathering statistics...
+
+errors:31: ("1") | (F(G("1"))) | (!(F("2")))
+Running [P0]: ltl2tgba -U -B --low -H '("1") | (F(G("1"))) | (!(F("2")))'>'lcr-o0-bNKepP'
+Running [P1]: ltl2tgba -H '("1") | (F(G("1"))) | (!(F("2")))'>'lcr-o1-2yk8XE'
+Running [N0]: ltl2tgba -U -B --low -H '!(("1") | (F(G("1"))) | (!(F("2"))))'>'lcr-o0-WCbraG'
+Running [N1]: ltl2tgba -H '!(("1") | (F(G("1"))) | (!(F("2"))))'>'lcr-o1-5Zt0xa'
+Performing sanity checks and gathering statistics...
+
+errors:32: ("2") & ((1) U ("1")) & (G((1) U ("2")))
+Running [P0]: ltl2tgba -U -B --low -H '("2") & ((1) U ("1")) & (G((1) U ("2")))'>'lcr-o0-fxwW4b'
+Running [P1]: ltl2tgba -H '("2") & ((1) U ("1")) & (G((1) U ("2")))'>'lcr-o1-x7e7mO'
+Running [N0]: ltl2tgba -U -B --low -H '!(("2") & ((1) U ("1")) & (G((1) U ("2"))))'>'lcr-o0-fwdopd'
+Running [N1]: ltl2tgba -H '!(("2") & ((1) U ("1")) & (G((1) U ("2"))))'>'lcr-o1-f0EGUl'
+Performing sanity checks and gathering statistics...
+
+errors:33: (G((1) U ("2"))) -> (("1") & (!(F("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '(G((1) U ("2"))) -> (("1") & (!(F("2"))))'>'lcr-o0-r3mMYF'
+Running [P1]: ltl2tgba -H '(G((1) U ("2"))) -> (("1") & (!(F("2"))))'>'lcr-o1-vHnKzK'
+Running [N0]: ltl2tgba -U -B --low -H '!((G((1) U ("2"))) -> (("1") & (!(F("2")))))'>'lcr-o0-L2tBh0'
+Running [N1]: ltl2tgba -H '!((G((1) U ("2"))) -> (("1") & (!(F("2")))))'>'lcr-o1-22LM8T'
+Performing sanity checks and gathering statistics...
+
+errors:34: (G(!(G("1")))) & ((X("1")) W ("1"))
+Running [P0]: ltl2tgba -U -B --low -H '(G(!(G("1")))) & ((X("1")) W ("1"))'>'lcr-o0-AoWtsv'
+Running [P1]: ltl2tgba -H '(G(!(G("1")))) & ((X("1")) W ("1"))'>'lcr-o1-cKgkqf'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(!(G("1")))) & ((X("1")) W ("1")))'>'lcr-o0-JfzgG9'
+Running [N1]: ltl2tgba -H '!((G(!(G("1")))) & ((X("1")) W ("1")))'>'lcr-o1-CU2pJb'
+Performing sanity checks and gathering statistics...
+
+errors:35: (F(G("1"))) | (("2") & (X("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(F(G("1"))) | (("2") & (X("1")))'>'lcr-o0-O6N4J4'
+Running [P1]: ltl2tgba -H '(F(G("1"))) | (("2") & (X("1")))'>'lcr-o1-q8stSo'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(G("1"))) | (("2") & (X("1"))))'>'lcr-o0-P1gAGF'
+Running [N1]: ltl2tgba -H '!((F(G("1"))) | (("2") & (X("1"))))'>'lcr-o1-v0De6i'
+Performing sanity checks and gathering statistics...
+
+errors:36: (G(F("2"))) -> (("2") & (G("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(G(F("2"))) -> (("2") & (G("1")))'>'lcr-o0-u5t0tM'
+Running [P1]: ltl2tgba -H '(G(F("2"))) -> (("2") & (G("1")))'>'lcr-o1-nPZ9Cz'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(F("2"))) -> (("2") & (G("1"))))'>'lcr-o0-T9QQIX'
+Running [N1]: ltl2tgba -H '!((G(F("2"))) -> (("2") & (G("1"))))'>'lcr-o1-iLURRQ'
+Performing sanity checks and gathering statistics...
+
+errors:37: !(("2") & (F("1")) & (G(F("1"))))
+Running [P0]: ltl2tgba -U -B --low -H '!(("2") & (F("1")) & (G(F("1"))))'>'lcr-o0-SNkytq'
+Running [P1]: ltl2tgba -H '!(("2") & (F("1")) & (G(F("1"))))'>'lcr-o1-TawB0z'
+Running [N0]: ltl2tgba -U -B --low -H '("2") & (F("1")) & (G(F("1")))'>'lcr-o0-VlHWxL'
+Running [N1]: ltl2tgba -H '("2") & (F("1")) & (G(F("1")))'>'lcr-o1-KXRrFu'
+Performing sanity checks and gathering statistics...
+
+errors:38: ("1") & (F("2")) & (!(F(G("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '("1") & (F("2")) & (!(F(G("2"))))'>'lcr-o0-5zgaSV'
+Running [P1]: ltl2tgba -H '("1") & (F("2")) & (!(F(G("2"))))'>'lcr-o1-ow8tuy'
+Running [N0]: ltl2tgba -U -B --low -H '!(("1") & (F("2")) & (!(F(G("2")))))'>'lcr-o0-MXuHMN'
+Running [N1]: ltl2tgba -H '!(("1") & (F("2")) & (!(F(G("2")))))'>'lcr-o1-XTyF2t'
+Performing sanity checks and gathering statistics...
+
+errors:39: (F(("2") W (0))) | (("2") & (X("2")))
+Running [P0]: ltl2tgba -U -B --low -H '(F(("2") W (0))) | (("2") & (X("2")))'>'lcr-o0-DOn6rX'
+Running [P1]: ltl2tgba -H '(F(("2") W (0))) | (("2") & (X("2")))'>'lcr-o1-8dnXru'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(("2") W (0))) | (("2") & (X("2"))))'>'lcr-o0-OBW3p2'
+Running [N1]: ltl2tgba -H '!((F(("2") W (0))) | (("2") & (X("2"))))'>'lcr-o1-J6WnBm'
+Performing sanity checks and gathering statistics...
+
+errors:40: (X(("1") W (G("2")))) -> (G("2"))
+Running [P0]: ltl2tgba -U -B --low -H '(X(("1") W (G("2")))) -> (G("2"))'>'lcr-o0-1ENdfc'
+Running [P1]: ltl2tgba -H '(X(("1") W (G("2")))) -> (G("2"))'>'lcr-o1-imK8Wz'
+Running [N0]: ltl2tgba -U -B --low -H '!((X(("1") W (G("2")))) -> (G("2")))'>'lcr-o0-zpXqet'
+Running [N1]: ltl2tgba -H '!((X(("1") W (G("2")))) -> (G("2")))'>'lcr-o1-FjS1lD'
+Performing sanity checks and gathering statistics...
+
+errors:41: (X(G("2"))) -> (!(("1") W (G("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '(X(G("2"))) -> (!(("1") W (G("2"))))'>'lcr-o0-D7jXWl'
+Running [P1]: ltl2tgba -H '(X(G("2"))) -> (!(("1") W (G("2"))))'>'lcr-o1-vx4idC'
+Running [N0]: ltl2tgba -U -B --low -H '!((X(G("2"))) -> (!(("1") W (G("2")))))'>'lcr-o0-X0t5vk'
+Running [N1]: ltl2tgba -H '!((X(G("2"))) -> (!(("1") W (G("2")))))'>'lcr-o1-xoV7i1'
+Performing sanity checks and gathering statistics...
+
+errors:42: !((("2") -> (X("2"))) -> (F(G("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '!((("2") -> (X("2"))) -> (F(G("2"))))'>'lcr-o0-qIf1wB'
+Running [P1]: ltl2tgba -H '!((("2") -> (X("2"))) -> (F(G("2"))))'>'lcr-o1-pI1KUu'
+Running [N0]: ltl2tgba -U -B --low -H '(("2") -> (X("2"))) -> (F(G("2")))'>'lcr-o0-R3gHBX'
+Running [N1]: ltl2tgba -H '(("2") -> (X("2"))) -> (F(G("2")))'>'lcr-o1-5J2ueH'
+Performing sanity checks and gathering statistics...
+
+errors:43: ((G("1")) -> ("2")) & (G((1) U ("2")))
+Running [P0]: ltl2tgba -U -B --low -H '((G("1")) -> ("2")) & (G((1) U ("2")))'>'lcr-o0-WulzZg'
+Running [P1]: ltl2tgba -H '((G("1")) -> ("2")) & (G((1) U ("2")))'>'lcr-o1-FexI8I'
+Running [N0]: ltl2tgba -U -B --low -H '!(((G("1")) -> ("2")) & (G((1) U ("2"))))'>'lcr-o0-MeUgue'
+Running [N1]: ltl2tgba -H '!(((G("1")) -> ("2")) & (G((1) U ("2"))))'>'lcr-o1-25Bwap'
+Performing sanity checks and gathering statistics...
+
+errors:44: (G(F("1"))) -> ((X("1")) & (F("2")))
+Running [P0]: ltl2tgba -U -B --low -H '(G(F("1"))) -> ((X("1")) & (F("2")))'>'lcr-o0-gMXCHt'
+Running [P1]: ltl2tgba -H '(G(F("1"))) -> ((X("1")) & (F("2")))'>'lcr-o1-IApEqp'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(F("1"))) -> ((X("1")) & (F("2"))))'>'lcr-o0-6Sh3wF'
+Running [N1]: ltl2tgba -H '!((G(F("1"))) -> ((X("1")) & (F("2"))))'>'lcr-o1-9aK7Aw'
+Performing sanity checks and gathering statistics...
+
+errors:45: (F(G("2"))) | (("1") & (X("2")))
+Running [P0]: ltl2tgba -U -B --low -H '(F(G("2"))) | (("1") & (X("2")))'>'lcr-o0-0TmN6t'
+Running [P1]: ltl2tgba -H '(F(G("2"))) | (("1") & (X("2")))'>'lcr-o1-hdsX9y'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(G("2"))) | (("1") & (X("2"))))'>'lcr-o0-1bbZlo'
+Running [N1]: ltl2tgba -H '!((F(G("2"))) | (("1") & (X("2"))))'>'lcr-o1-XKRB81'
+Performing sanity checks and gathering statistics...
+
+errors:46: (G(F("2"))) -> ((!("2")) & (G("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(G(F("2"))) -> ((!("2")) & (G("1")))'>'lcr-o0-QeubOE'
+Running [P1]: ltl2tgba -H '(G(F("2"))) -> ((!("2")) & (G("1")))'>'lcr-o1-A4FSHD'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(F("2"))) -> ((!("2")) & (G("1"))))'>'lcr-o0-reuHkU'
+Running [N1]: ltl2tgba -H '!((G(F("2"))) -> ((!("2")) & (G("1"))))'>'lcr-o1-Dg8OmQ'
+Performing sanity checks and gathering statistics...
+
+errors:47: (G(!("2"))) | (((1) U ("2")) U ("1"))
+Running [P0]: ltl2tgba -U -B --low -H '(G(!("2"))) | (((1) U ("2")) U ("1"))'>'lcr-o0-f5v0Tp'
+Running [P1]: ltl2tgba -H '(G(!("2"))) | (((1) U ("2")) U ("1"))'>'lcr-o1-iFN6jp'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(!("2"))) | (((1) U ("2")) U ("1")))'>'lcr-o0-p0Mm9M'
+Running [N1]: ltl2tgba -H '!((G(!("2"))) | (((1) U ("2")) U ("1")))'>'lcr-o1-mgYWC1'
+Performing sanity checks and gathering statistics...
+
+errors:48: ((F("2")) W (0)) -> (!(("2") R (X("1"))))
+Running [P0]: ltl2tgba -U -B --low -H '((F("2")) W (0)) -> (!(("2") R (X("1"))))'>'lcr-o0-lgz08G'
+Running [P1]: ltl2tgba -H '((F("2")) W (0)) -> (!(("2") R (X("1"))))'>'lcr-o1-XIwCsQ'
+Running [N0]: ltl2tgba -U -B --low -H '!(((F("2")) W (0)) -> (!(("2") R (X("1")))))'>'lcr-o0-EkhvDX'
+Running [N1]: ltl2tgba -H '!(((F("2")) W (0)) -> (!(("2") R (X("1")))))'>'lcr-o1-YnvKIq'
+Performing sanity checks and gathering statistics...
+
+errors:49: (("2") & (X("2"))) | (F((0) R ("2")))
+Running [P0]: ltl2tgba -U -B --low -H '(("2") & (X("2"))) | (F((0) R ("2")))'>'lcr-o0-sQ4hCh'
+Running [P1]: ltl2tgba -H '(("2") & (X("2"))) | (F((0) R ("2")))'>'lcr-o1-cNSUcw'
+Running [N0]: ltl2tgba -U -B --low -H '!((("2") & (X("2"))) | (F((0) R ("2"))))'>'lcr-o0-ZVYGVb'
+Running [N1]: ltl2tgba -H '!((("2") & (X("2"))) | (F((0) R ("2"))))'>'lcr-o1-QVX1J1'
+Performing sanity checks and gathering statistics...
+
+errors:50: (G(F("1"))) & (("2") | (F("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(G(F("1"))) & (("2") | (F("1")))'>'lcr-o0-DuHsss'
+Running [P1]: ltl2tgba -H '(G(F("1"))) & (("2") | (F("1")))'>'lcr-o1-M5xfCE'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(F("1"))) & (("2") | (F("1"))))'>'lcr-o0-Dx2wpL'
+Running [N1]: ltl2tgba -H '!((G(F("1"))) & (("2") | (F("1"))))'>'lcr-o1-FrHjLc'
+Performing sanity checks and gathering statistics...
+
+errors:51: (F("2")) & (!((F("2")) U ("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(F("2")) & (!((F("2")) U ("1")))'>'lcr-o0-XeqlGU'
+Running [P1]: ltl2tgba -H '(F("2")) & (!((F("2")) U ("1")))'>'lcr-o1-E7sMQq'
+Running [N0]: ltl2tgba -U -B --low -H '!((F("2")) & (!((F("2")) U ("1"))))'>'lcr-o0-pfCAGL'
+Running [N1]: ltl2tgba -H '!((F("2")) & (!((F("2")) U ("1"))))'>'lcr-o1-rKXiqA'
+Performing sanity checks and gathering statistics...
+
+errors:52: (G(!(G("1")))) & (("2") | (X("2")))
+Running [P0]: ltl2tgba -U -B --low -H '(G(!(G("1")))) & (("2") | (X("2")))'>'lcr-o0-U3FV7M'
+Running [P1]: ltl2tgba -H '(G(!(G("1")))) & (("2") | (X("2")))'>'lcr-o1-HnZYJT'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(!(G("1")))) & (("2") | (X("2"))))'>'lcr-o0-RZxikF'
+Running [N1]: ltl2tgba -H '!((G(!(G("1")))) & (("2") | (X("2"))))'>'lcr-o1-XS7w39'
+Performing sanity checks and gathering statistics...
+
+errors:53: G((!(G("2"))) xor (F(("1") xor (G(!(G("2")))))))
+Running [P0]: ltl2tgba -U -B --low -H 'G((!(G("2"))) xor (F(("1") xor (G(!(G("2")))))))'>'lcr-o0-lqsEi0'
+Running [P1]: ltl2tgba -H 'G((!(G("2"))) xor (F(("1") xor (G(!(G("2")))))))'>'lcr-o1-huAgE2'
+Running [N0]: ltl2tgba -U -B --low -H '!(G((!(G("2"))) xor (F(("1") xor (G(!(G("2"))))))))'>'lcr-o0-vQKQOK'
+Running [N1]: ltl2tgba -H '!(G((!(G("2"))) xor (F(("1") xor (G(!(G("2"))))))))'>'lcr-o1-YGYL93'
+Performing sanity checks and gathering statistics...
+
+errors:54: (!(F(G("2")))) -> (("1") -> (!(F("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '(!(F(G("2")))) -> (("1") -> (!(F("2"))))'>'lcr-o0-RyPOun'
+Running [P1]: ltl2tgba -H '(!(F(G("2")))) -> (("1") -> (!(F("2"))))'>'lcr-o1-avEX1s'
+Running [N0]: ltl2tgba -U -B --low -H '!((!(F(G("2")))) -> (("1") -> (!(F("2")))))'>'lcr-o0-CzyQfq'
+Running [N1]: ltl2tgba -H '!((!(F(G("2")))) -> (("1") -> (!(F("2")))))'>'lcr-o1-jfmjjV'
+Performing sanity checks and gathering statistics...
+
+errors:55: (G(F("2"))) & ((("2") W (0)) -> ("1"))
+Running [P0]: ltl2tgba -U -B --low -H '(G(F("2"))) & ((("2") W (0)) -> ("1"))'>'lcr-o0-uNy9xp'
+Running [P1]: ltl2tgba -H '(G(F("2"))) & ((("2") W (0)) -> ("1"))'>'lcr-o1-JYFTOK'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(F("2"))) & ((("2") W (0)) -> ("1")))'>'lcr-o0-BMi2Bj'
+Running [N1]: ltl2tgba -H '!((G(F("2"))) & ((("2") W (0)) -> ("1")))'>'lcr-o1-RzSudO'
+Performing sanity checks and gathering statistics...
+
+errors:56: (F("2")) & (!((F("2")) U (!("1"))))
+Running [P0]: ltl2tgba -U -B --low -H '(F("2")) & (!((F("2")) U (!("1"))))'>'lcr-o0-6ndiB7'
+Running [P1]: ltl2tgba -H '(F("2")) & (!((F("2")) U (!("1"))))'>'lcr-o1-AR0yAa'
+Running [N0]: ltl2tgba -U -B --low -H '!((F("2")) & (!((F("2")) U (!("1")))))'>'lcr-o0-ADXAF4'
+Running [N1]: ltl2tgba -H '!((F("2")) & (!((F("2")) U (!("1")))))'>'lcr-o1-RHuq8M'
+Performing sanity checks and gathering statistics...
+
+errors:57: (G(F("1"))) & ((G("1")) -> ("2"))
+Running [P0]: ltl2tgba -U -B --low -H '(G(F("1"))) & ((G("1")) -> ("2"))'>'lcr-o0-qYHyda'
+Running [P1]: ltl2tgba -H '(G(F("1"))) & ((G("1")) -> ("2"))'>'lcr-o1-TPhGWD'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(F("1"))) & ((G("1")) -> ("2")))'>'lcr-o0-B4Ft46'
+Running [N1]: ltl2tgba -H '!((G(F("1"))) & ((G("1")) -> ("2")))'>'lcr-o1-XZEpJv'
+Performing sanity checks and gathering statistics...
+
+errors:58: (G(F("2"))) -> (("1") & (X("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(G(F("2"))) -> (("1") & (X("1")))'>'lcr-o0-koGP2A'
+Running [P1]: ltl2tgba -H '(G(F("2"))) -> (("1") & (X("1")))'>'lcr-o1-CERCQw'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(F("2"))) -> (("1") & (X("1"))))'>'lcr-o0-I6RdEw'
+Running [N1]: ltl2tgba -H '!((G(F("2"))) -> (("1") & (X("1"))))'>'lcr-o1-IibLdP'
+Performing sanity checks and gathering statistics...
+
+errors:59: !(((!(G("2"))) W (0)) -> ((X("2")) R ("2")))
+Running [P0]: ltl2tgba -U -B --low -H '!(((!(G("2"))) W (0)) -> ((X("2")) R ("2")))'>'lcr-o0-RhoCDE'
+Running [P1]: ltl2tgba -H '!(((!(G("2"))) W (0)) -> ((X("2")) R ("2")))'>'lcr-o1-tGNyrK'
+Running [N0]: ltl2tgba -U -B --low -H '((!(G("2"))) W (0)) -> ((X("2")) R ("2"))'>'lcr-o0-rnDryP'
+Running [N1]: ltl2tgba -H '((!(G("2"))) W (0)) -> ((X("2")) R ("2"))'>'lcr-o1-1TmM5s'
+Performing sanity checks and gathering statistics...
+
+errors:60: (G(("1") -> (X("2")))) | ((G(F("2"))) -> (G("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(G(("1") -> (X("2")))) | ((G(F("2"))) -> (G("1")))'>'lcr-o0-OKwmH5'
+Running [P1]: ltl2tgba -H '(G(("1") -> (X("2")))) | ((G(F("2"))) -> (G("1")))'>'lcr-o1-U6riXL'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(("1") -> (X("2")))) | ((G(F("2"))) -> (G("1"))))'>'lcr-o0-wxTK6L'
+Running [N1]: ltl2tgba -H '!((G(("1") -> (X("2")))) | ((G(F("2"))) -> (G("1"))))'>'lcr-o1-gxUK5S'
+Performing sanity checks and gathering statistics...
+
+errors:61: (F("2")) & (("1") W ((!("2")) W (0)))
+Running [P0]: ltl2tgba -U -B --low -H '(F("2")) & (("1") W ((!("2")) W (0)))'>'lcr-o0-eQUgjv'
+Running [P1]: ltl2tgba -H '(F("2")) & (("1") W ((!("2")) W (0)))'>'lcr-o1-W6dXcS'
+Running [N0]: ltl2tgba -U -B --low -H '!((F("2")) & (("1") W ((!("2")) W (0))))'>'lcr-o0-laN4l1'
+Running [N1]: ltl2tgba -H '!((F("2")) & (("1") W ((!("2")) W (0))))'>'lcr-o1-Fj8AiQ'
+Performing sanity checks and gathering statistics...
+
+errors:62: (("2") & (X("2"))) | (F(G(!("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '(("2") & (X("2"))) | (F(G(!("2"))))'>'lcr-o0-uColNX'
+Running [P1]: ltl2tgba -H '(("2") & (X("2"))) | (F(G(!("2"))))'>'lcr-o1-SOUP0I'
+Running [N0]: ltl2tgba -U -B --low -H '!((("2") & (X("2"))) | (F(G(!("2")))))'>'lcr-o0-xnK9t9'
+Running [N1]: ltl2tgba -H '!((("2") & (X("2"))) | (F(G(!("2")))))'>'lcr-o1-i6qvGA'
+Performing sanity checks and gathering statistics...
+
+errors:63: !((("2") -> (F("1"))) & (!((1) U (G("2")))))
+Running [P0]: ltl2tgba -U -B --low -H '!((("2") -> (F("1"))) & (!((1) U (G("2")))))'>'lcr-o0-aXARgY'
+Running [P1]: ltl2tgba -H '!((("2") -> (F("1"))) & (!((1) U (G("2")))))'>'lcr-o1-l3XUFS'
+Running [N0]: ltl2tgba -U -B --low -H '(("2") -> (F("1"))) & (!((1) U (G("2"))))'>'lcr-o0-t1B3Oc'
+Running [N1]: ltl2tgba -H '(("2") -> (F("1"))) & (!((1) U (G("2"))))'>'lcr-o1-JvCaCg'
+Performing sanity checks and gathering statistics...
+
+errors:64: (F(G("2"))) | (("1") & (!(F("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '(F(G("2"))) | (("1") & (!(F("2"))))'>'lcr-o0-itlCW1'
+Running [P1]: ltl2tgba -H '(F(G("2"))) | (("1") & (!(F("2"))))'>'lcr-o1-VNnSdT'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(G("2"))) | (("1") & (!(F("2")))))'>'lcr-o0-1xS9Rl'
+Running [N1]: ltl2tgba -H '!((F(G("2"))) | (("1") & (!(F("2")))))'>'lcr-o1-SgEi9b'
+Performing sanity checks and gathering statistics...
+
+errors:65: !(((1) U ("1")) & (!((F("1")) U ("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '!(((1) U ("1")) & (!((F("1")) U ("2"))))'>'lcr-o0-dpCVMt'
+Running [P1]: ltl2tgba -H '!(((1) U ("1")) & (!((F("1")) U ("2"))))'>'lcr-o1-ShsVz7'
+Running [N0]: ltl2tgba -U -B --low -H '((1) U ("1")) & (!((F("1")) U ("2")))'>'lcr-o0-MABkfS'
+Running [N1]: ltl2tgba -H '((1) U ("1")) & (!((F("1")) U ("2")))'>'lcr-o1-rRbX5N'
+Performing sanity checks and gathering statistics...
+
+errors:66: !(("2") | (G("1")) | (!(G(!(G("2"))))))
+Running [P0]: ltl2tgba -U -B --low -H '!(("2") | (G("1")) | (!(G(!(G("2"))))))'>'lcr-o0-UEN8qM'
+Running [P1]: ltl2tgba -H '!(("2") | (G("1")) | (!(G(!(G("2"))))))'>'lcr-o1-ZbyumD'
+Running [N0]: ltl2tgba -U -B --low -H '("2") | (G("1")) | (!(G(!(G("2")))))'>'lcr-o0-lOOVm3'
+Running [N1]: ltl2tgba -H '("2") | (G("1")) | (!(G(!(G("2")))))'>'lcr-o1-L9hOGg'
+Performing sanity checks and gathering statistics...
+
+errors:67: (F(G("1"))) | ((F("2")) -> ("1"))
+Running [P0]: ltl2tgba -U -B --low -H '(F(G("1"))) | ((F("2")) -> ("1"))'>'lcr-o0-h1Lb1I'
+Running [P1]: ltl2tgba -H '(F(G("1"))) | ((F("2")) -> ("1"))'>'lcr-o1-PIPaDV'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(G("1"))) | ((F("2")) -> ("1")))'>'lcr-o0-7y1Ndy'
+Running [N1]: ltl2tgba -H '!((F(G("1"))) | ((F("2")) -> ("1")))'>'lcr-o1-OBZZrz'
+Performing sanity checks and gathering statistics...
+
+errors:68: (F(G("1"))) | ((!("1")) & (G("2")))
+Running [P0]: ltl2tgba -U -B --low -H '(F(G("1"))) | ((!("1")) & (G("2")))'>'lcr-o0-DraSkS'
+Running [P1]: ltl2tgba -H '(F(G("1"))) | ((!("1")) & (G("2")))'>'lcr-o1-hSooLY'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(G("1"))) | ((!("1")) & (G("2"))))'>'lcr-o0-RSdGG1'
+Running [N1]: ltl2tgba -H '!((F(G("1"))) | ((!("1")) & (G("2"))))'>'lcr-o1-qEleQe'
+Performing sanity checks and gathering statistics...
+
+errors:69: (G(F("1"))) & (("1") | (X("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(G(F("1"))) & (("1") | (X("1")))'>'lcr-o0-ZPnimV'
+Running [P1]: ltl2tgba -H '(G(F("1"))) & (("1") | (X("1")))'>'lcr-o1-N77uDR'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(F("1"))) & (("1") | (X("1"))))'>'lcr-o0-KwtL61'
+Running [N1]: ltl2tgba -H '!((G(F("1"))) & (("1") | (X("1"))))'>'lcr-o1-g4Ir0S'
+Performing sanity checks and gathering statistics...
+
+errors:70: (G(F("1"))) & (("2") -> (F("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(G(F("1"))) & (("2") -> (F("1")))'>'lcr-o0-WEOJ36'
+Running [P1]: ltl2tgba -H '(G(F("1"))) & (("2") -> (F("1")))'>'lcr-o1-wSvvYE'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(F("1"))) & (("2") -> (F("1"))))'>'lcr-o0-jzwnxv'
+Running [N1]: ltl2tgba -H '!((G(F("1"))) & (("2") -> (F("1"))))'>'lcr-o1-gr14NH'
+Performing sanity checks and gathering statistics...
+
+errors:71: ("1") & (F("2")) & (G(F("1")))
+Running [P0]: ltl2tgba -U -B --low -H '("1") & (F("2")) & (G(F("1")))'>'lcr-o0-UUMchW'
+Running [P1]: ltl2tgba -H '("1") & (F("2")) & (G(F("1")))'>'lcr-o1-5Cpzur'
+Running [N0]: ltl2tgba -U -B --low -H '!(("1") & (F("2")) & (G(F("1"))))'>'lcr-o0-lG8QhY'
+Running [N1]: ltl2tgba -H '!(("1") & (F("2")) & (G(F("1"))))'>'lcr-o1-1xs8i1'
+Performing sanity checks and gathering statistics...
+
+errors:72: !((F("1")) & (!(X((F("1")) U ("2")))))
+Running [P0]: ltl2tgba -U -B --low -H '!((F("1")) & (!(X((F("1")) U ("2")))))'>'lcr-o0-du6cDR'
+Running [P1]: ltl2tgba -H '!((F("1")) & (!(X((F("1")) U ("2")))))'>'lcr-o1-Z5Vcfx'
+Running [N0]: ltl2tgba -U -B --low -H '(F("1")) & (!(X((F("1")) U ("2"))))'>'lcr-o0-TJw6Of'
+Running [N1]: ltl2tgba -H '(F("1")) & (!(X((F("1")) U ("2"))))'>'lcr-o1-rvTu98'
+Performing sanity checks and gathering statistics...
+
+errors:73: (!(F(G("2")))) -> ((F("2")) R ("1"))
+Running [P0]: ltl2tgba -U -B --low -H '(!(F(G("2")))) -> ((F("2")) R ("1"))'>'lcr-o0-olyj6a'
+Running [P1]: ltl2tgba -H '(!(F(G("2")))) -> ((F("2")) R ("1"))'>'lcr-o1-kgIkPZ'
+Running [N0]: ltl2tgba -U -B --low -H '!((!(F(G("2")))) -> ((F("2")) R ("1")))'>'lcr-o0-tbDITd'
+Running [N1]: ltl2tgba -H '!((!(F(G("2")))) -> ((F("2")) R ("1")))'>'lcr-o1-i4CoVA'
+Performing sanity checks and gathering statistics...
+
+errors:74: (!((!(G("1"))) U ("2"))) -> (G("1"))
+Running [P0]: ltl2tgba -U -B --low -H '(!((!(G("1"))) U ("2"))) -> (G("1"))'>'lcr-o0-on5Yrl'
+Running [P1]: ltl2tgba -H '(!((!(G("1"))) U ("2"))) -> (G("1"))'>'lcr-o1-kPXVdR'
+Running [N0]: ltl2tgba -U -B --low -H '!((!((!(G("1"))) U ("2"))) -> (G("1")))'>'lcr-o0-eRAwJH'
+Running [N1]: ltl2tgba -H '!((!((!(G("1"))) U ("2"))) -> (G("1")))'>'lcr-o1-63dkxp'
+Performing sanity checks and gathering statistics...
+
+errors:75: (("1") -> (F("2"))) -> (F(!(F("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '(("1") -> (F("2"))) -> (F(!(F("2"))))'>'lcr-o0-Zmsl2Y'
+Running [P1]: ltl2tgba -H '(("1") -> (F("2"))) -> (F(!(F("2"))))'>'lcr-o1-CdzoIm'
+Running [N0]: ltl2tgba -U -B --low -H '!((("1") -> (F("2"))) -> (F(!(F("2")))))'>'lcr-o0-UreIfn'
+Running [N1]: ltl2tgba -H '!((("1") -> (F("2"))) -> (F(!(F("2")))))'>'lcr-o1-1Chrj3'
+Performing sanity checks and gathering statistics...
+
+errors:76: (F("1")) -> (("2") | (F(G("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '(F("1")) -> (("2") | (F(G("2"))))'>'lcr-o0-cNK0TL'
+Running [P1]: ltl2tgba -H '(F("1")) -> (("2") | (F(G("2"))))'>'lcr-o1-WDRVv9'
+Running [N0]: ltl2tgba -U -B --low -H '!((F("1")) -> (("2") | (F(G("2")))))'>'lcr-o0-KkV5AI'
+Running [N1]: ltl2tgba -H '!((F("1")) -> (("2") | (F(G("2")))))'>'lcr-o1-G6ixii'
+Performing sanity checks and gathering statistics...
+
+errors:77: ((1) U ("2")) & (("1") W (!(F("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '((1) U ("2")) & (("1") W (!(F("2"))))'>'lcr-o0-RAWawZ'
+Running [P1]: ltl2tgba -H '((1) U ("2")) & (("1") W (!(F("2"))))'>'lcr-o1-hSVSIq'
+Running [N0]: ltl2tgba -U -B --low -H '!(((1) U ("2")) & (("1") W (!(F("2")))))'>'lcr-o0-3tbx5P'
+Running [N1]: ltl2tgba -H '!(((1) U ("2")) & (("1") W (!(F("2")))))'>'lcr-o1-dEk1kk'
+Performing sanity checks and gathering statistics...
+
+errors:78: (G((G("2")) | (("1") W ("2")))) -> (G("2"))
+Running [P0]: ltl2tgba -U -B --low -H '(G((G("2")) | (("1") W ("2")))) -> (G("2"))'>'lcr-o0-QyJgU2'
+Running [P1]: ltl2tgba -H '(G((G("2")) | (("1") W ("2")))) -> (G("2"))'>'lcr-o1-ROj8lk'
+Running [N0]: ltl2tgba -U -B --low -H '!((G((G("2")) | (("1") W ("2")))) -> (G("2")))'>'lcr-o0-iXnZxP'
+Running [N1]: ltl2tgba -H '!((G((G("2")) | (("1") W ("2")))) -> (G("2")))'>'lcr-o1-qWyDKa'
+Performing sanity checks and gathering statistics...
+
+errors:79: !((!(F(G("2")))) & ((F("2")) | (!(F("2")))))
+Running [P0]: ltl2tgba -U -B --low -H '!((!(F(G("2")))) & ((F("2")) | (!(F("2")))))'>'lcr-o0-tLFyyt'
+Running [P1]: ltl2tgba -H '!((!(F(G("2")))) & ((F("2")) | (!(F("2")))))'>'lcr-o1-WUIdQP'
+Running [N0]: ltl2tgba -U -B --low -H '(!(F(G("2")))) & ((F("2")) | (!(F("2"))))'>'lcr-o0-VSZs3e'
+Running [N1]: ltl2tgba -H '(!(F(G("2")))) & ((F("2")) | (!(F("2"))))'>'lcr-o1-lYILZu'
+Performing sanity checks and gathering statistics...
+
+errors:80: (F(("1") W (0))) | (("2") & (!(F("1"))))
+Running [P0]: ltl2tgba -U -B --low -H '(F(("1") W (0))) | (("2") & (!(F("1"))))'>'lcr-o0-pCof8B'
+Running [P1]: ltl2tgba -H '(F(("1") W (0))) | (("2") & (!(F("1"))))'>'lcr-o1-7cbmvr'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(("1") W (0))) | (("2") & (!(F("1")))))'>'lcr-o0-WUxNNC'
+Running [N1]: ltl2tgba -H '!((F(("1") W (0))) | (("2") & (!(F("1")))))'>'lcr-o1-6ya7e5'
+Performing sanity checks and gathering statistics...
+
+errors:81: (F(G("1"))) | ((!("1")) U (X("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(F(G("1"))) | ((!("1")) U (X("1")))'>'lcr-o0-kXDmCT'
+Running [P1]: ltl2tgba -H '(F(G("1"))) | ((!("1")) U (X("1")))'>'lcr-o1-LFpsvd'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(G("1"))) | ((!("1")) U (X("1"))))'>'lcr-o0-PWTc1E'
+Running [N1]: ltl2tgba -H '!((F(G("1"))) | ((!("1")) U (X("1"))))'>'lcr-o1-kZjfSp'
+Performing sanity checks and gathering statistics...
+
+errors:82: (!(F(G("2")))) & ((X("2")) -> ("2"))
+Running [P0]: ltl2tgba -U -B --low -H '(!(F(G("2")))) & ((X("2")) -> ("2"))'>'lcr-o0-gujMDJ'
+Running [P1]: ltl2tgba -H '(!(F(G("2")))) & ((X("2")) -> ("2"))'>'lcr-o1-nFxycz'
+Running [N0]: ltl2tgba -U -B --low -H '!((!(F(G("2")))) & ((X("2")) -> ("2")))'>'lcr-o0-4pyeOi'
+Running [N1]: ltl2tgba -H '!((!(F(G("2")))) & ((X("2")) -> ("2")))'>'lcr-o1-gUfpLk'
+Performing sanity checks and gathering statistics...
+
+errors:83: (("1") | (X("1"))) & (!(F(("1") W (0))))
+Running [P0]: ltl2tgba -U -B --low -H '(("1") | (X("1"))) & (!(F(("1") W (0))))'>'lcr-o0-teInio'
+Running [P1]: ltl2tgba -H '(("1") | (X("1"))) & (!(F(("1") W (0))))'>'lcr-o1-33BZpO'
+Running [N0]: ltl2tgba -U -B --low -H '!((("1") | (X("1"))) & (!(F(("1") W (0)))))'>'lcr-o0-l6MQGT'
+Running [N1]: ltl2tgba -H '!((("1") | (X("1"))) & (!(F(("1") W (0)))))'>'lcr-o1-MDAAUK'
+Performing sanity checks and gathering statistics...
+
+errors:84: (!(G("2"))) & (!((!(G("2"))) U ("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(!(G("2"))) & (!((!(G("2"))) U ("1")))'>'lcr-o0-qwB99d'
+Running [P1]: ltl2tgba -H '(!(G("2"))) & (!((!(G("2"))) U ("1")))'>'lcr-o1-CG1fBO'
+Running [N0]: ltl2tgba -U -B --low -H '!((!(G("2"))) & (!((!(G("2"))) U ("1"))))'>'lcr-o0-AipN7G'
+Running [N1]: ltl2tgba -H '!((!(G("2"))) & (!((!(G("2"))) U ("1"))))'>'lcr-o1-hnEgLX'
+Performing sanity checks and gathering statistics...
+
+errors:85: (F(G("2"))) | (("1") & (("2") W (0)))
+Running [P0]: ltl2tgba -U -B --low -H '(F(G("2"))) | (("1") & (("2") W (0)))'>'lcr-o0-v8IgiL'
+Running [P1]: ltl2tgba -H '(F(G("2"))) | (("1") & (("2") W (0)))'>'lcr-o1-ZdYXHR'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(G("2"))) | (("1") & (("2") W (0))))'>'lcr-o0-LWTaHv'
+Running [N1]: ltl2tgba -H '!((F(G("2"))) | (("1") & (("2") W (0))))'>'lcr-o1-TmQfxJ'
+Performing sanity checks and gathering statistics...
+
+errors:86: (G(!(G("1")))) & ((!((1) U ("1"))) -> ("2"))
+Running [P0]: ltl2tgba -U -B --low -H '(G(!(G("1")))) & ((!((1) U ("1"))) -> ("2"))'>'lcr-o0-TMN2ds'
+Running [P1]: ltl2tgba -H '(G(!(G("1")))) & ((!((1) U ("1"))) -> ("2"))'>'lcr-o1-QoM9dV'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(!(G("1")))) & ((!((1) U ("1"))) -> ("2")))'>'lcr-o0-c19Up3'
+Running [N1]: ltl2tgba -H '!((G(!(G("1")))) & ((!((1) U ("1"))) -> ("2")))'>'lcr-o1-ZDPYbd'
+Performing sanity checks and gathering statistics...
+
+errors:87: (G(F("1"))) & (("2") R (X("1")))
+Running [P0]: ltl2tgba -U -B --low -H '(G(F("1"))) & (("2") R (X("1")))'>'lcr-o0-eKmq4E'
+Running [P1]: ltl2tgba -H '(G(F("1"))) & (("2") R (X("1")))'>'lcr-o1-Fdlz4A'
+Running [N0]: ltl2tgba -U -B --low -H '!((G(F("1"))) & (("2") R (X("1"))))'>'lcr-o0-Esrd8o'
+Running [N1]: ltl2tgba -H '!((G(F("1"))) & (("2") R (X("1"))))'>'lcr-o1-BlbSH9'
+Performing sanity checks and gathering statistics...
+
+errors:88: (F(G("2"))) | ((!("2")) & (("1") W (0)))
+Running [P0]: ltl2tgba -U -B --low -H '(F(G("2"))) | ((!("2")) & (("1") W (0)))'>'lcr-o0-cDb4pK'
+Running [P1]: ltl2tgba -H '(F(G("2"))) | ((!("2")) & (("1") W (0)))'>'lcr-o1-dpn5e2'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(G("2"))) | ((!("2")) & (("1") W (0))))'>'lcr-o0-EJK00X'
+Running [N1]: ltl2tgba -H '!((F(G("2"))) | ((!("2")) & (("1") W (0))))'>'lcr-o1-Ntp2O9'
+Performing sanity checks and gathering statistics...
+
+errors:89: !((("2") W (F("1"))) -> (F(G("2"))))
+Running [P0]: ltl2tgba -U -B --low -H '!((("2") W (F("1"))) -> (F(G("2"))))'>'lcr-o0-PKaQSK'
+Running [P1]: ltl2tgba -H '!((("2") W (F("1"))) -> (F(G("2"))))'>'lcr-o1-AljLNa'
+Running [N0]: ltl2tgba -U -B --low -H '(("2") W (F("1"))) -> (F(G("2")))'>'lcr-o0-PvYucZ'
+Running [N1]: ltl2tgba -H '(("2") W (F("1"))) -> (F(G("2")))'>'lcr-o1-udMyG5'
+Performing sanity checks and gathering statistics...
+
+errors:90: ("2") & (G(F("2"))) & (!(G("1")))
+Running [P0]: ltl2tgba -U -B --low -H '("2") & (G(F("2"))) & (!(G("1")))'>'lcr-o0-hLA9w9'
+Running [P1]: ltl2tgba -H '("2") & (G(F("2"))) & (!(G("1")))'>'lcr-o1-JIV3jn'
+Running [N0]: ltl2tgba -U -B --low -H '!(("2") & (G(F("2"))) & (!(G("1"))))'>'lcr-o0-32pUBU'
+Running [N1]: ltl2tgba -H '!(("2") & (G(F("2"))) & (!(G("1"))))'>'lcr-o1-HKTC9u'
+Performing sanity checks and gathering statistics...
+
+errors:91: (!(F("1"))) | (F((X("2")) & (F("1"))))
+Running [P0]: ltl2tgba -U -B --low -H '(!(F("1"))) | (F((X("2")) & (F("1"))))'>'lcr-o0-exyGkN'
+Running [P1]: ltl2tgba -H '(!(F("1"))) | (F((X("2")) & (F("1"))))'>'lcr-o1-01yY9m'
+Running [N0]: ltl2tgba -U -B --low -H '!((!(F("1"))) | (F((X("2")) & (F("1")))))'>'lcr-o0-VNuM60'
+Running [N1]: ltl2tgba -H '!((!(F("1"))) | (F((X("2")) & (F("1")))))'>'lcr-o1-TUZX8x'
+Performing sanity checks and gathering statistics...
+
+errors:92: (F(G("2"))) | ((!("2")) & (X("2")))
+Running [P0]: ltl2tgba -U -B --low -H '(F(G("2"))) | ((!("2")) & (X("2")))'>'lcr-o0-Skt53v'
+Running [P1]: ltl2tgba -H '(F(G("2"))) | ((!("2")) & (X("2")))'>'lcr-o1-XWPl9c'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(G("2"))) | ((!("2")) & (X("2"))))'>'lcr-o0-lAZHWT'
+Running [N1]: ltl2tgba -H '!((F(G("2"))) | ((!("2")) & (X("2"))))'>'lcr-o1-9htNUo'
+Performing sanity checks and gathering statistics...
+
+errors:93: (F(G("2"))) | ((F("2")) -> (("1") & ("2")))
+Running [P0]: ltl2tgba -U -B --low -H '(F(G("2"))) | ((F("2")) -> (("1") & ("2")))'>'lcr-o0-Rh16g0'
+Running [P1]: ltl2tgba -H '(F(G("2"))) | ((F("2")) -> (("1") & ("2")))'>'lcr-o1-ag1PIT'
+Running [N0]: ltl2tgba -U -B --low -H '!((F(G("2"))) | ((F("2")) -> (("1") & ("2"))))'>'lcr-o0-5G5N19'
+Running [N1]: ltl2tgba -H '!((F(G("2"))) | ((F("2")) -> (("1") & ("2"))))'>'lcr-o1-ua98mT'
+Performing sanity checks and gathering statistics...
+
+errors:94: ((X("2")) -> ("2")) -> (F(G("2")))
+Running [P0]: ltl2tgba -U -B --low -H '((X("2")) -> ("2")) -> (F(G("2")))'>'lcr-o0-2G9TaG'
+Running [P1]: ltl2tgba -H '((X("2")) -> ("2")) -> (F(G("2")))'>'lcr-o1-idMVNu'
+Running [N0]: ltl2tgba -U -B --low -H '!(((X("2")) -> ("2")) -> (F(G("2"))))'>'lcr-o0-T7Mt7t'
+Running [N1]: ltl2tgba -H '!(((X("2")) -> ("2")) -> (F(G("2"))))'>'lcr-o1-Pefaeb'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
+PASS core/unambig2.test (exit status: 0)

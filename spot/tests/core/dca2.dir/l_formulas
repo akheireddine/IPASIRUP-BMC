@@ -1,0 +1,15 @@
+FG!b
+FGc
+F(a | Gb)
+XF(b & Ga)
+a | c | FG(!b & !c)
+!a | FGb
+F((!a & ((c & F!b) | (!c & Gb))) | (a & ((c & Gb) | (!c & F!b))))
+F((c & F!b) | (!c & Gb))
+F((!c R a) W G!b)
+FG(((!b | (c M b)) & X(c & Xa)) | (b & (!c W !b) & X(!c | X!a)))
+(Ga M c) M ((!b & Fb) M F(a | !b))
+(Gb | X(!b M X!b)) M ((b & c) | (!b & !c))
+F(c R (X!c W Fb))
+XF!c & F(Fb R a)
+(!c M F(b & Ga)) W (b U a)

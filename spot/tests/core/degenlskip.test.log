@@ -1,0 +1,121 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test degenlskip.test
+== Running test degenlskip.test
++ echo degenlskip.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=degenlskip
++ testSubDir=degenlskip.dir
++ chmod -R a+rwx degenlskip.dir
++ rm -rf degenlskip.dir
++ mkdir degenlskip.dir
++ cd degenlskip.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltl2tgba -B GFa & GFb --hoa
++ ltl2tgba -B -x degen-lskip=1 GFa & GFb --hoa
++ ltl2tgba -B -x degen-lskip=0 GFa & GFb --hoa
++ ltl2tgba -B -x degen-lskip=1,degen-lowinit=1 GFa & GFb --hoa
++ ltl2tgba -B -x degen-lskip=0,degen-lowinit=1 GFa & GFb --hoa
++ diff out1 out2
++ cmp out2 out3
+out2 out3 sont différents: octet 225, ligne 12
++ cat
++ cat
++ cat
++ cat
++ run 0 autfilt -q -F out2 --isomorph expected2
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q -F out2 --isomorph expected2
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q -F out2 --isomorph expected2
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 autfilt -q -F out3 --isomorph expected3
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q -F out3 --isomorph expected3
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -q -F out3 --isomorph expected3
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out4 out5
+HOA: v1
+name: "G(Fa & Fb)"
+States: 3
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic stutter-invariant
+--BODY--
+State: 0
+[!1] 0
+[!0&1] 1
+[0&1] 2
+State: 1
+[!0] 1
+[0] 2
+State: 2 {0}
+[!1] 0
+[!0&1] 1
+[0&1] 2
+--END--
+HOA: v1
+name: "G(Fa & Fb)"
+States: 3
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic stutter-invariant
+--BODY--
+State: 0
+[!1] 0
+[1] 1
+State: 1
+[!0] 1
+[0] 2
+State: 2 {0}
+[t] 0
+--END--
++ autfilt -q out4 --isomorph expected2
++ autfilt -q out5 --isomorph expected3
++ autfilt -q out4 --isomorph expected4
++ autfilt -q out5 --isomorph expected5
+PASS core/degenlskip.test (exit status: 0)

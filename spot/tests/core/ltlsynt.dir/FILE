@@ -1,0 +1,6 @@
+"formula","algo","tot_time","trans_time","split_time","todpa_time","solve_time","realizable","dpa_num_states","dpa_num_states_env","strat_num_states","strat_num_edges"
+"GFa <-> GFb","ds",0.000130888,0,0,0,0,0,0,0,0,0
+"FGa <-> GF(b & XXb)","sd",0.00591435,0.00205841,7.3978e-05,0.00352469,4.9965e-05,0,44,22,0,0
+"FGa <-> GF(b & XXb)","ps",0.00186058,0.00152779,6.2143e-05,1.2229e-05,3.277e-05,0,22,8,0,0
+"FGc <-> GF(!b & XXb)","lar",0.000807231,0.000453445,3.7169e-05,0.000143701,2.2864e-05,0,24,8,0,0
+"FGa <-> GF(a & c)","lar.old",0.000591273,0.000341965,3.7559e-05,3.606e-05,1.3638e-05,0,8,2,0,0

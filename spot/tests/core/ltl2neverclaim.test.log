@@ -1,0 +1,1126 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltl2neverclaim.test
+== Running test ltl2neverclaim.test
++ echo ltl2neverclaim.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltl2neverclaim
++ testSubDir=ltl2neverclaim.dir
++ chmod -R a+rwx ltl2neverclaim.dir
++ rm -rf ltl2neverclaim.dir
++ mkdir ltl2neverclaim.dir
++ cd ltl2neverclaim.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltl2tgba=../ikwiad
++ randltl -n 100 p1 p2 p3 p4 p5 p6 --tree-size 5..15
++ ltlcross ../ikwiad -t %f > %T ../ikwiad -t -r4 -R3f %f > %T ../ikwiad -N %f > %N ../ikwiad -N -r4 -R3f %f > %N
+-:1: 0
+Running [P0]: ../ikwiad -t '0' > 'lcr-o0-twkZJw'
+Running [P1]: ../ikwiad -t -r4 -R3f '0' > 'lcr-o1-1ZGPvW'
+Running [P2]: ../ikwiad -N '0' > 'lcr-o2-DK7JDU'
+Running [P3]: ../ikwiad -N -r4 -R3f '0' > 'lcr-o3-7swOqV'
+Running [N0]: ../ikwiad -t '1' > 'lcr-o0-CEFWzc'
+Running [N1]: ../ikwiad -t -r4 -R3f '1' > 'lcr-o1-5TZCc4'
+Running [N2]: ../ikwiad -N '1' > 'lcr-o2-uw5Cyd'
+Running [N3]: ../ikwiad -N -r4 -R3f '1' > 'lcr-o3-IYWJ8D'
+Performing sanity checks and gathering statistics...
+
+-:2: (!(G(p3))) M (G(p4))
+Running [P0]: ../ikwiad -t '(!(G(p3))) M (G(p4))' > 'lcr-o0-RFlXB7'
+Running [P1]: ../ikwiad -t -r4 -R3f '(!(G(p3))) M (G(p4))' > 'lcr-o1-42Nobu'
+Running [P2]: ../ikwiad -N '(!(G(p3))) M (G(p4))' > 'lcr-o2-1NtPfN'
+Running [P3]: ../ikwiad -N -r4 -R3f '(!(G(p3))) M (G(p4))' > 'lcr-o3-WWwHNq'
+Running [N0]: ../ikwiad -t '!((!(G(p3))) M (G(p4)))' > 'lcr-o0-U0n1MW'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((!(G(p3))) M (G(p4)))' > 'lcr-o1-BW3WL1'
+Running [N2]: ../ikwiad -N '!((!(G(p3))) M (G(p4)))' > 'lcr-o2-KpOa34'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((!(G(p3))) M (G(p4)))' > 'lcr-o3-J59ikF'
+Performing sanity checks and gathering statistics...
+
+-:3: (F(p2)) M ((X(p5)) & ((F(p1)) M ((p1) xor (G(p4)))))
+Running [P0]: ../ikwiad -t '(F(p2)) M ((X(p5)) & ((F(p1)) M ((p1) xor (G(p4)))))' > 'lcr-o0-XIU8Kt'
+Running [P1]: ../ikwiad -t -r4 -R3f '(F(p2)) M ((X(p5)) & ((F(p1)) M ((p1) xor (G(p4)))))' > 'lcr-o1-FV7oVc'
+Running [P2]: ../ikwiad -N '(F(p2)) M ((X(p5)) & ((F(p1)) M ((p1) xor (G(p4)))))' > 'lcr-o2-0NRYne'
+Running [P3]: ../ikwiad -N -r4 -R3f '(F(p2)) M ((X(p5)) & ((F(p1)) M ((p1) xor (G(p4)))))' > 'lcr-o3-407tt2'
+Running [N0]: ../ikwiad -t '!((F(p2)) M ((X(p5)) & ((F(p1)) M ((p1) xor (G(p4))))))' > 'lcr-o0-CzCuLB'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((F(p2)) M ((X(p5)) & ((F(p1)) M ((p1) xor (G(p4))))))' > 'lcr-o1-mPoiBj'
+Running [N2]: ../ikwiad -N '!((F(p2)) M ((X(p5)) & ((F(p1)) M ((p1) xor (G(p4))))))' > 'lcr-o2-bzXAcd'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((F(p2)) M ((X(p5)) & ((F(p1)) M ((p1) xor (G(p4))))))' > 'lcr-o3-SjhdHT'
+Performing sanity checks and gathering statistics...
+
+-:4: (F(!(F(p1)))) M (F(p4))
+Running [P0]: ../ikwiad -t '(F(!(F(p1)))) M (F(p4))' > 'lcr-o0-dOgN2h'
+Running [P1]: ../ikwiad -t -r4 -R3f '(F(!(F(p1)))) M (F(p4))' > 'lcr-o1-hOF97i'
+Running [P2]: ../ikwiad -N '(F(!(F(p1)))) M (F(p4))' > 'lcr-o2-mLhZo6'
+Running [P3]: ../ikwiad -N -r4 -R3f '(F(!(F(p1)))) M (F(p4))' > 'lcr-o3-AfBuvx'
+Running [N0]: ../ikwiad -t '!((F(!(F(p1)))) M (F(p4)))' > 'lcr-o0-DWwYSj'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((F(!(F(p1)))) M (F(p4)))' > 'lcr-o1-W23ybR'
+Running [N2]: ../ikwiad -N '!((F(!(F(p1)))) M (F(p4)))' > 'lcr-o2-SdkiBu'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((F(!(F(p1)))) M (F(p4)))' > 'lcr-o3-1MNVZN'
+Performing sanity checks and gathering statistics...
+
+-:5: G((!((p2) | (p5))) U ((p3) | ((p1) <-> (p6))))
+Running [P0]: ../ikwiad -t 'G((!((p2) | (p5))) U ((p3) | ((p1) <-> (p6))))' > 'lcr-o0-I2RgB4'
+Running [P1]: ../ikwiad -t -r4 -R3f 'G((!((p2) | (p5))) U ((p3) | ((p1) <-> (p6))))' > 'lcr-o1-zYUbTy'
+Running [P2]: ../ikwiad -N 'G((!((p2) | (p5))) U ((p3) | ((p1) <-> (p6))))' > 'lcr-o2-DSMaa7'
+Running [P3]: ../ikwiad -N -r4 -R3f 'G((!((p2) | (p5))) U ((p3) | ((p1) <-> (p6))))' > 'lcr-o3-kHnP5f'
+Running [N0]: ../ikwiad -t '!(G((!((p2) | (p5))) U ((p3) | ((p1) <-> (p6)))))' > 'lcr-o0-Q8xbBJ'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(G((!((p2) | (p5))) U ((p3) | ((p1) <-> (p6)))))' > 'lcr-o1-VvykeL'
+Running [N2]: ../ikwiad -N '!(G((!((p2) | (p5))) U ((p3) | ((p1) <-> (p6)))))' > 'lcr-o2-DZvtpT'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(G((!((p2) | (p5))) U ((p3) | ((p1) <-> (p6)))))' > 'lcr-o3-sNujQL'
+Performing sanity checks and gathering statistics...
+
+-:6: 1
+warning: This formula or its negation has already been checked.
+         Use --allow-dups if it should not be ignored.
+
+-:7: (p3) U ((p3) U (X(p4)))
+Running [P0]: ../ikwiad -t '(p3) U ((p3) U (X(p4)))' > 'lcr-o0-F81kWx'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p3) U ((p3) U (X(p4)))' > 'lcr-o1-4O5prN'
+Running [P2]: ../ikwiad -N '(p3) U ((p3) U (X(p4)))' > 'lcr-o2-TjLPAZ'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p3) U ((p3) U (X(p4)))' > 'lcr-o3-qPjOOV'
+Running [N0]: ../ikwiad -t '!((p3) U ((p3) U (X(p4))))' > 'lcr-o0-1eDYV9'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p3) U ((p3) U (X(p4))))' > 'lcr-o1-njSmEB'
+Running [N2]: ../ikwiad -N '!((p3) U ((p3) U (X(p4))))' > 'lcr-o2-UrOgXo'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p3) U ((p3) U (X(p4))))' > 'lcr-o3-8eLHCc'
+Performing sanity checks and gathering statistics...
+
+-:8: (p4) U ((p1) <-> (p6))
+Running [P0]: ../ikwiad -t '(p4) U ((p1) <-> (p6))' > 'lcr-o0-5vHqBa'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p4) U ((p1) <-> (p6))' > 'lcr-o1-7JMGd6'
+Running [P2]: ../ikwiad -N '(p4) U ((p1) <-> (p6))' > 'lcr-o2-u2p9mD'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p4) U ((p1) <-> (p6))' > 'lcr-o3-zj2iST'
+Running [N0]: ../ikwiad -t '!((p4) U ((p1) <-> (p6)))' > 'lcr-o0-25wXUn'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p4) U ((p1) <-> (p6)))' > 'lcr-o1-gY7EG1'
+Running [N2]: ../ikwiad -N '!((p4) U ((p1) <-> (p6)))' > 'lcr-o2-oBj9au'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p4) U ((p1) <-> (p6)))' > 'lcr-o3-CXFjNe'
+Performing sanity checks and gathering statistics...
+
+-:9: !(F(((p3) | (p4) | ((F(p6)) R (G(p1)))) U (G(p6))))
+Running [P0]: ../ikwiad -t '!(F(((p3) | (p4) | ((F(p6)) R (G(p1)))) U (G(p6))))' > 'lcr-o0-Ml3fbc'
+Running [P1]: ../ikwiad -t -r4 -R3f '!(F(((p3) | (p4) | ((F(p6)) R (G(p1)))) U (G(p6))))' > 'lcr-o1-Tc1a87'
+Running [P2]: ../ikwiad -N '!(F(((p3) | (p4) | ((F(p6)) R (G(p1)))) U (G(p6))))' > 'lcr-o2-34S9eo'
+Running [P3]: ../ikwiad -N -r4 -R3f '!(F(((p3) | (p4) | ((F(p6)) R (G(p1)))) U (G(p6))))' > 'lcr-o3-1JF81u'
+Running [N0]: ../ikwiad -t 'F(((p3) | (p4) | ((F(p6)) R (G(p1)))) U (G(p6)))' > 'lcr-o0-Z5ctGH'
+Running [N1]: ../ikwiad -t -r4 -R3f 'F(((p3) | (p4) | ((F(p6)) R (G(p1)))) U (G(p6)))' > 'lcr-o1-J1D8Ec'
+Running [N2]: ../ikwiad -N 'F(((p3) | (p4) | ((F(p6)) R (G(p1)))) U (G(p6)))' > 'lcr-o2-dJ6skj'
+Running [N3]: ../ikwiad -N -r4 -R3f 'F(((p3) | (p4) | ((F(p6)) R (G(p1)))) U (G(p6)))' > 'lcr-o3-dcOFfs'
+Performing sanity checks and gathering statistics...
+
+-:10: (G(p4)) U (p2)
+Running [P0]: ../ikwiad -t '(G(p4)) U (p2)' > 'lcr-o0-FfvL7G'
+Running [P1]: ../ikwiad -t -r4 -R3f '(G(p4)) U (p2)' > 'lcr-o1-7An8Kb'
+Running [P2]: ../ikwiad -N '(G(p4)) U (p2)' > 'lcr-o2-zHDMbf'
+Running [P3]: ../ikwiad -N -r4 -R3f '(G(p4)) U (p2)' > 'lcr-o3-gKDbeO'
+Running [N0]: ../ikwiad -t '!((G(p4)) U (p2))' > 'lcr-o0-GLO2Po'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((G(p4)) U (p2))' > 'lcr-o1-JrKMto'
+Running [N2]: ../ikwiad -N '!((G(p4)) U (p2))' > 'lcr-o2-FYntxp'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((G(p4)) U (p2))' > 'lcr-o3-tH0lrT'
+Performing sanity checks and gathering statistics...
+
+-:11: (p1) xor ((p1) | (p6))
+Running [P0]: ../ikwiad -t '(p1) xor ((p1) | (p6))' > 'lcr-o0-eI8WjY'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p1) xor ((p1) | (p6))' > 'lcr-o1-jBIuCG'
+Running [P2]: ../ikwiad -N '(p1) xor ((p1) | (p6))' > 'lcr-o2-dzW7zT'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p1) xor ((p1) | (p6))' > 'lcr-o3-n1gyGM'
+Running [N0]: ../ikwiad -t '!((p1) xor ((p1) | (p6)))' > 'lcr-o0-SVVTkh'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p1) xor ((p1) | (p6)))' > 'lcr-o1-orMYOx'
+Running [N2]: ../ikwiad -N '!((p1) xor ((p1) | (p6)))' > 'lcr-o2-CUsiqN'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p1) xor ((p1) | (p6)))' > 'lcr-o3-GRQugo'
+Performing sanity checks and gathering statistics...
+
+-:12: (G(F(p4))) U (X(p2))
+Running [P0]: ../ikwiad -t '(G(F(p4))) U (X(p2))' > 'lcr-o0-B0UkA8'
+Running [P1]: ../ikwiad -t -r4 -R3f '(G(F(p4))) U (X(p2))' > 'lcr-o1-fUqxX8'
+Running [P2]: ../ikwiad -N '(G(F(p4))) U (X(p2))' > 'lcr-o2-07aO8a'
+Running [P3]: ../ikwiad -N -r4 -R3f '(G(F(p4))) U (X(p2))' > 'lcr-o3-bai9F2'
+Running [N0]: ../ikwiad -t '!((G(F(p4))) U (X(p2)))' > 'lcr-o0-jhMw1P'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((G(F(p4))) U (X(p2)))' > 'lcr-o1-uuQCop'
+Running [N2]: ../ikwiad -N '!((G(F(p4))) U (X(p2)))' > 'lcr-o2-UMhctp'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((G(F(p4))) U (X(p2)))' > 'lcr-o3-8BxbS0'
+Performing sanity checks and gathering statistics...
+
+-:13: G((p2) M (!(p5)))
+Running [P0]: ../ikwiad -t 'G((p2) M (!(p5)))' > 'lcr-o0-hwQpy8'
+Running [P1]: ../ikwiad -t -r4 -R3f 'G((p2) M (!(p5)))' > 'lcr-o1-H76dqw'
+Running [P2]: ../ikwiad -N 'G((p2) M (!(p5)))' > 'lcr-o2-iz94E3'
+Running [P3]: ../ikwiad -N -r4 -R3f 'G((p2) M (!(p5)))' > 'lcr-o3-Ep00Dl'
+Running [N0]: ../ikwiad -t '!(G((p2) M (!(p5))))' > 'lcr-o0-YHtzRp'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(G((p2) M (!(p5))))' > 'lcr-o1-YP7uXe'
+Running [N2]: ../ikwiad -N '!(G((p2) M (!(p5))))' > 'lcr-o2-0ih634'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(G((p2) M (!(p5))))' > 'lcr-o3-qydl78'
+Performing sanity checks and gathering statistics...
+
+-:14: F(X((G(p4)) W (F(p5))))
+Running [P0]: ../ikwiad -t 'F(X((G(p4)) W (F(p5))))' > 'lcr-o0-dZ1wjx'
+Running [P1]: ../ikwiad -t -r4 -R3f 'F(X((G(p4)) W (F(p5))))' > 'lcr-o1-RbtUIV'
+Running [P2]: ../ikwiad -N 'F(X((G(p4)) W (F(p5))))' > 'lcr-o2-Q240xr'
+Running [P3]: ../ikwiad -N -r4 -R3f 'F(X((G(p4)) W (F(p5))))' > 'lcr-o3-yMlcY3'
+Running [N0]: ../ikwiad -t '!(F(X((G(p4)) W (F(p5)))))' > 'lcr-o0-RviwPa'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(F(X((G(p4)) W (F(p5)))))' > 'lcr-o1-VIe9PG'
+Running [N2]: ../ikwiad -N '!(F(X((G(p4)) W (F(p5)))))' > 'lcr-o2-Xv8LmV'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(F(X((G(p4)) W (F(p5)))))' > 'lcr-o3-S3Jxnr'
+Performing sanity checks and gathering statistics...
+
+-:15: (F(p4)) | ((G(p2)) U ((!(p2)) -> (p3)))
+Running [P0]: ../ikwiad -t '(F(p4)) | ((G(p2)) U ((!(p2)) -> (p3)))' > 'lcr-o0-MiK6Rl'
+Running [P1]: ../ikwiad -t -r4 -R3f '(F(p4)) | ((G(p2)) U ((!(p2)) -> (p3)))' > 'lcr-o1-0N2L0j'
+Running [P2]: ../ikwiad -N '(F(p4)) | ((G(p2)) U ((!(p2)) -> (p3)))' > 'lcr-o2-jNeRR1'
+Running [P3]: ../ikwiad -N -r4 -R3f '(F(p4)) | ((G(p2)) U ((!(p2)) -> (p3)))' > 'lcr-o3-Me5Fs1'
+Running [N0]: ../ikwiad -t '!((F(p4)) | ((G(p2)) U ((!(p2)) -> (p3))))' > 'lcr-o0-NQfTPj'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((F(p4)) | ((G(p2)) U ((!(p2)) -> (p3))))' > 'lcr-o1-czDtwU'
+Running [N2]: ../ikwiad -N '!((F(p4)) | ((G(p2)) U ((!(p2)) -> (p3))))' > 'lcr-o2-DCs423'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((F(p4)) | ((G(p2)) U ((!(p2)) -> (p3))))' > 'lcr-o3-LpuG70'
+Performing sanity checks and gathering statistics...
+
+-:16: (F((X(p2)) R (G(p4)))) -> (!(p2))
+Running [P0]: ../ikwiad -t '(F((X(p2)) R (G(p4)))) -> (!(p2))' > 'lcr-o0-DZbqhu'
+Running [P1]: ../ikwiad -t -r4 -R3f '(F((X(p2)) R (G(p4)))) -> (!(p2))' > 'lcr-o1-RE8RLc'
+Running [P2]: ../ikwiad -N '(F((X(p2)) R (G(p4)))) -> (!(p2))' > 'lcr-o2-7FEG9B'
+Running [P3]: ../ikwiad -N -r4 -R3f '(F((X(p2)) R (G(p4)))) -> (!(p2))' > 'lcr-o3-uXkuWG'
+Running [N0]: ../ikwiad -t '!((F((X(p2)) R (G(p4)))) -> (!(p2)))' > 'lcr-o0-jaqo5A'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((F((X(p2)) R (G(p4)))) -> (!(p2)))' > 'lcr-o1-U9hEXB'
+Running [N2]: ../ikwiad -N '!((F((X(p2)) R (G(p4)))) -> (!(p2)))' > 'lcr-o2-lrXS2S'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((F((X(p2)) R (G(p4)))) -> (!(p2)))' > 'lcr-o3-pFc0IE'
+Performing sanity checks and gathering statistics...
+
+-:17: !((p1) & (G(!(p5))))
+Running [P0]: ../ikwiad -t '!((p1) & (G(!(p5))))' > 'lcr-o0-21Kfrt'
+Running [P1]: ../ikwiad -t -r4 -R3f '!((p1) & (G(!(p5))))' > 'lcr-o1-mX1rAv'
+Running [P2]: ../ikwiad -N '!((p1) & (G(!(p5))))' > 'lcr-o2-iTGcYC'
+Running [P3]: ../ikwiad -N -r4 -R3f '!((p1) & (G(!(p5))))' > 'lcr-o3-DLwSam'
+Running [N0]: ../ikwiad -t '(p1) & (G(!(p5)))' > 'lcr-o0-G8eqY2'
+Running [N1]: ../ikwiad -t -r4 -R3f '(p1) & (G(!(p5)))' > 'lcr-o1-JC8B2T'
+Running [N2]: ../ikwiad -N '(p1) & (G(!(p5)))' > 'lcr-o2-SO39kn'
+Running [N3]: ../ikwiad -N -r4 -R3f '(p1) & (G(!(p5)))' > 'lcr-o3-fbqfs4'
+Performing sanity checks and gathering statistics...
+
+-:18: (p5) & (!(X(p6)))
+Running [P0]: ../ikwiad -t '(p5) & (!(X(p6)))' > 'lcr-o0-Bud1XW'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p5) & (!(X(p6)))' > 'lcr-o1-mlpFo0'
+Running [P2]: ../ikwiad -N '(p5) & (!(X(p6)))' > 'lcr-o2-8Xafm2'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p5) & (!(X(p6)))' > 'lcr-o3-NMw74g'
+Running [N0]: ../ikwiad -t '!((p5) & (!(X(p6))))' > 'lcr-o0-otb7RM'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p5) & (!(X(p6))))' > 'lcr-o1-3DsnSd'
+Running [N2]: ../ikwiad -N '!((p5) & (!(X(p6))))' > 'lcr-o2-OW5G4W'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p5) & (!(X(p6))))' > 'lcr-o3-tGgSn1'
+Performing sanity checks and gathering statistics...
+
+-:19: (F(p3)) <-> (G(!(p2)))
+Running [P0]: ../ikwiad -t '(F(p3)) <-> (G(!(p2)))' > 'lcr-o0-0t138l'
+Running [P1]: ../ikwiad -t -r4 -R3f '(F(p3)) <-> (G(!(p2)))' > 'lcr-o1-LrAxg4'
+Running [P2]: ../ikwiad -N '(F(p3)) <-> (G(!(p2)))' > 'lcr-o2-0EEMWR'
+Running [P3]: ../ikwiad -N -r4 -R3f '(F(p3)) <-> (G(!(p2)))' > 'lcr-o3-YqPW2m'
+Running [N0]: ../ikwiad -t '!((F(p3)) <-> (G(!(p2))))' > 'lcr-o0-v5byZM'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((F(p3)) <-> (G(!(p2))))' > 'lcr-o1-7u8tfA'
+Running [N2]: ../ikwiad -N '!((F(p3)) <-> (G(!(p2))))' > 'lcr-o2-BAXvto'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((F(p3)) <-> (G(!(p2))))' > 'lcr-o3-nThjzQ'
+Performing sanity checks and gathering statistics...
+
+-:20: ((p5) | (p6)) xor ((p5) & ((p6) U (p5)))
+Running [P0]: ../ikwiad -t '((p5) | (p6)) xor ((p5) & ((p6) U (p5)))' > 'lcr-o0-SjMJKu'
+Running [P1]: ../ikwiad -t -r4 -R3f '((p5) | (p6)) xor ((p5) & ((p6) U (p5)))' > 'lcr-o1-mfSrDg'
+Running [P2]: ../ikwiad -N '((p5) | (p6)) xor ((p5) & ((p6) U (p5)))' > 'lcr-o2-YqKWqs'
+Running [P3]: ../ikwiad -N -r4 -R3f '((p5) | (p6)) xor ((p5) & ((p6) U (p5)))' > 'lcr-o3-eQwyq3'
+Running [N0]: ../ikwiad -t '!(((p5) | (p6)) xor ((p5) & ((p6) U (p5))))' > 'lcr-o0-KVQ0sN'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(((p5) | (p6)) xor ((p5) & ((p6) U (p5))))' > 'lcr-o1-Ul6GzD'
+Running [N2]: ../ikwiad -N '!(((p5) | (p6)) xor ((p5) & ((p6) U (p5))))' > 'lcr-o2-CRJtjh'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(((p5) | (p6)) xor ((p5) & ((p6) U (p5))))' > 'lcr-o3-d747ek'
+Performing sanity checks and gathering statistics...
+
+-:21: (1) U (F(p3))
+Running [P0]: ../ikwiad -t '(1) U (F(p3))' > 'lcr-o0-QrzaIZ'
+Running [P1]: ../ikwiad -t -r4 -R3f '(1) U (F(p3))' > 'lcr-o1-9L0UWu'
+Running [P2]: ../ikwiad -N '(1) U (F(p3))' > 'lcr-o2-jWjWgn'
+Running [P3]: ../ikwiad -N -r4 -R3f '(1) U (F(p3))' > 'lcr-o3-OsOQKI'
+Running [N0]: ../ikwiad -t '!((1) U (F(p3)))' > 'lcr-o0-PaMu9m'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((1) U (F(p3)))' > 'lcr-o1-YLZd68'
+Running [N2]: ../ikwiad -N '!((1) U (F(p3)))' > 'lcr-o2-0KhXRn'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((1) U (F(p3)))' > 'lcr-o3-3tWqmh'
+Performing sanity checks and gathering statistics...
+
+-:22: ((p6) U ((p4) R ((p3) & (p5)))) | ((F(p6)) W (p2))
+Running [P0]: ../ikwiad -t '((p6) U ((p4) R ((p3) & (p5)))) | ((F(p6)) W (p2))' > 'lcr-o0-swVmZk'
+Running [P1]: ../ikwiad -t -r4 -R3f '((p6) U ((p4) R ((p3) & (p5)))) | ((F(p6)) W (p2))' > 'lcr-o1-daJ43e'
+Running [P2]: ../ikwiad -N '((p6) U ((p4) R ((p3) & (p5)))) | ((F(p6)) W (p2))' > 'lcr-o2-aiDKbN'
+Running [P3]: ../ikwiad -N -r4 -R3f '((p6) U ((p4) R ((p3) & (p5)))) | ((F(p6)) W (p2))' > 'lcr-o3-bkqBCA'
+Running [N0]: ../ikwiad -t '!(((p6) U ((p4) R ((p3) & (p5)))) | ((F(p6)) W (p2)))' > 'lcr-o0-U6XKIz'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(((p6) U ((p4) R ((p3) & (p5)))) | ((F(p6)) W (p2)))' > 'lcr-o1-GT3fiz'
+Running [N2]: ../ikwiad -N '!(((p6) U ((p4) R ((p3) & (p5)))) | ((F(p6)) W (p2)))' > 'lcr-o2-B4CVj8'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(((p6) U ((p4) R ((p3) & (p5)))) | ((F(p6)) W (p2)))' > 'lcr-o3-twsnVf'
+Performing sanity checks and gathering statistics...
+
+-:23: F(!(G((F(p4)) W (p6))))
+Running [P0]: ../ikwiad -t 'F(!(G((F(p4)) W (p6))))' > 'lcr-o0-bhU81W'
+Running [P1]: ../ikwiad -t -r4 -R3f 'F(!(G((F(p4)) W (p6))))' > 'lcr-o1-OLAqsa'
+Running [P2]: ../ikwiad -N 'F(!(G((F(p4)) W (p6))))' > 'lcr-o2-AjddZI'
+Running [P3]: ../ikwiad -N -r4 -R3f 'F(!(G((F(p4)) W (p6))))' > 'lcr-o3-5jj2s7'
+Running [N0]: ../ikwiad -t '!(F(!(G((F(p4)) W (p6)))))' > 'lcr-o0-v6NrFv'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(F(!(G((F(p4)) W (p6)))))' > 'lcr-o1-94fwOK'
+Running [N2]: ../ikwiad -N '!(F(!(G((F(p4)) W (p6)))))' > 'lcr-o2-42549g'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(F(!(G((F(p4)) W (p6)))))' > 'lcr-o3-4bzDcu'
+Performing sanity checks and gathering statistics...
+
+-:24: (G((p1) | (p2))) U (G((X(p2)) M (p5)))
+Running [P0]: ../ikwiad -t '(G((p1) | (p2))) U (G((X(p2)) M (p5)))' > 'lcr-o0-U4AoY6'
+Running [P1]: ../ikwiad -t -r4 -R3f '(G((p1) | (p2))) U (G((X(p2)) M (p5)))' > 'lcr-o1-Ly9uQy'
+Running [P2]: ../ikwiad -N '(G((p1) | (p2))) U (G((X(p2)) M (p5)))' > 'lcr-o2-XfEhQt'
+Running [P3]: ../ikwiad -N -r4 -R3f '(G((p1) | (p2))) U (G((X(p2)) M (p5)))' > 'lcr-o3-XGljN4'
+Running [N0]: ../ikwiad -t '!((G((p1) | (p2))) U (G((X(p2)) M (p5))))' > 'lcr-o0-7dSknJ'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((G((p1) | (p2))) U (G((X(p2)) M (p5))))' > 'lcr-o1-u7jzJp'
+Running [N2]: ../ikwiad -N '!((G((p1) | (p2))) U (G((X(p2)) M (p5))))' > 'lcr-o2-pcru5o'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((G((p1) | (p2))) U (G((X(p2)) M (p5))))' > 'lcr-o3-9biZbP'
+Performing sanity checks and gathering statistics...
+
+-:25: (G(F(p4))) -> (F(p3))
+Running [P0]: ../ikwiad -t '(G(F(p4))) -> (F(p3))' > 'lcr-o0-g46NgM'
+Running [P1]: ../ikwiad -t -r4 -R3f '(G(F(p4))) -> (F(p3))' > 'lcr-o1-ezbCU6'
+Running [P2]: ../ikwiad -N '(G(F(p4))) -> (F(p3))' > 'lcr-o2-y5FILH'
+Running [P3]: ../ikwiad -N -r4 -R3f '(G(F(p4))) -> (F(p3))' > 'lcr-o3-NmahA5'
+Running [N0]: ../ikwiad -t '!((G(F(p4))) -> (F(p3)))' > 'lcr-o0-5yZqBr'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((G(F(p4))) -> (F(p3)))' > 'lcr-o1-8vubXd'
+Running [N2]: ../ikwiad -N '!((G(F(p4))) -> (F(p3)))' > 'lcr-o2-zbltp5'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((G(F(p4))) -> (F(p3)))' > 'lcr-o3-bc4VNt'
+Performing sanity checks and gathering statistics...
+
+-:26: (F(G(p2))) & (F(G(((p1) M (!(p1))) W (F(p4)))))
+Running [P0]: ../ikwiad -t '(F(G(p2))) & (F(G(((p1) M (!(p1))) W (F(p4)))))' > 'lcr-o0-6ilCVv'
+Running [P1]: ../ikwiad -t -r4 -R3f '(F(G(p2))) & (F(G(((p1) M (!(p1))) W (F(p4)))))' > 'lcr-o1-2FTann'
+Running [P2]: ../ikwiad -N '(F(G(p2))) & (F(G(((p1) M (!(p1))) W (F(p4)))))' > 'lcr-o2-YUEvhG'
+Running [P3]: ../ikwiad -N -r4 -R3f '(F(G(p2))) & (F(G(((p1) M (!(p1))) W (F(p4)))))' > 'lcr-o3-JAcb6v'
+Running [N0]: ../ikwiad -t '!((F(G(p2))) & (F(G(((p1) M (!(p1))) W (F(p4))))))' > 'lcr-o0-fsq5nl'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((F(G(p2))) & (F(G(((p1) M (!(p1))) W (F(p4))))))' > 'lcr-o1-shJEx1'
+Running [N2]: ../ikwiad -N '!((F(G(p2))) & (F(G(((p1) M (!(p1))) W (F(p4))))))' > 'lcr-o2-xtCAos'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((F(G(p2))) & (F(G(((p1) M (!(p1))) W (F(p4))))))' > 'lcr-o3-NkMtUu'
+Performing sanity checks and gathering statistics...
+
+-:27: ((G(!(p4))) W (0)) W (p5)
+Running [P0]: ../ikwiad -t '((G(!(p4))) W (0)) W (p5)' > 'lcr-o0-QfCUxZ'
+Running [P1]: ../ikwiad -t -r4 -R3f '((G(!(p4))) W (0)) W (p5)' > 'lcr-o1-46zMoI'
+Running [P2]: ../ikwiad -N '((G(!(p4))) W (0)) W (p5)' > 'lcr-o2-lhm97O'
+Running [P3]: ../ikwiad -N -r4 -R3f '((G(!(p4))) W (0)) W (p5)' > 'lcr-o3-ZO7HfZ'
+Running [N0]: ../ikwiad -t '!(((G(!(p4))) W (0)) W (p5))' > 'lcr-o0-5x7HPm'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(((G(!(p4))) W (0)) W (p5))' > 'lcr-o1-QArc92'
+Running [N2]: ../ikwiad -N '!(((G(!(p4))) W (0)) W (p5))' > 'lcr-o2-Gks8vD'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(((G(!(p4))) W (0)) W (p5))' > 'lcr-o3-0YWNe5'
+Performing sanity checks and gathering statistics...
+
+-:28: (X(X(X((p5) U (p6))))) | (X((0)))
+Running [P0]: ../ikwiad -t '(X(X(X((p5) U (p6))))) | (X((0)))' > 'lcr-o0-ASQFmH'
+Running [P1]: ../ikwiad -t -r4 -R3f '(X(X(X((p5) U (p6))))) | (X((0)))' > 'lcr-o1-RJqvlg'
+Running [P2]: ../ikwiad -N '(X(X(X((p5) U (p6))))) | (X((0)))' > 'lcr-o2-dXkqBU'
+Running [P3]: ../ikwiad -N -r4 -R3f '(X(X(X((p5) U (p6))))) | (X((0)))' > 'lcr-o3-XkYCAH'
+Running [N0]: ../ikwiad -t '!((X(X(X((p5) U (p6))))) | (X((0))))' > 'lcr-o0-ngRShn'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((X(X(X((p5) U (p6))))) | (X((0))))' > 'lcr-o1-5lnh5C'
+Running [N2]: ../ikwiad -N '!((X(X(X((p5) U (p6))))) | (X((0))))' > 'lcr-o2-hgRztQ'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((X(X(X((p5) U (p6))))) | (X((0))))' > 'lcr-o3-zSo9GW'
+Performing sanity checks and gathering statistics...
+
+-:29: G(!(p3))
+Running [P0]: ../ikwiad -t 'G(!(p3))' > 'lcr-o0-loVhQ2'
+Running [P1]: ../ikwiad -t -r4 -R3f 'G(!(p3))' > 'lcr-o1-rBruC5'
+Running [P2]: ../ikwiad -N 'G(!(p3))' > 'lcr-o2-pFBfnk'
+Running [P3]: ../ikwiad -N -r4 -R3f 'G(!(p3))' > 'lcr-o3-uhpDgM'
+Running [N0]: ../ikwiad -t '!(G(!(p3)))' > 'lcr-o0-G5NB7w'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(G(!(p3)))' > 'lcr-o1-3WqM5S'
+Running [N2]: ../ikwiad -N '!(G(!(p3)))' > 'lcr-o2-BmG1gu'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(G(!(p3)))' > 'lcr-o3-F2UKvN'
+Performing sanity checks and gathering statistics...
+
+-:30: !((G(p2)) U (!(F(p3))))
+Running [P0]: ../ikwiad -t '!((G(p2)) U (!(F(p3))))' > 'lcr-o0-paSc4O'
+Running [P1]: ../ikwiad -t -r4 -R3f '!((G(p2)) U (!(F(p3))))' > 'lcr-o1-GXGt6i'
+Running [P2]: ../ikwiad -N '!((G(p2)) U (!(F(p3))))' > 'lcr-o2-G5ggcI'
+Running [P3]: ../ikwiad -N -r4 -R3f '!((G(p2)) U (!(F(p3))))' > 'lcr-o3-Oa0uxv'
+Running [N0]: ../ikwiad -t '(G(p2)) U (!(F(p3)))' > 'lcr-o0-Bps6iY'
+Running [N1]: ../ikwiad -t -r4 -R3f '(G(p2)) U (!(F(p3)))' > 'lcr-o1-PV6SpA'
+Running [N2]: ../ikwiad -N '(G(p2)) U (!(F(p3)))' > 'lcr-o2-Z2sT5N'
+Running [N3]: ../ikwiad -N -r4 -R3f '(G(p2)) U (!(F(p3)))' > 'lcr-o3-tbWR4W'
+Performing sanity checks and gathering statistics...
+
+-:31: (p1) | (!(p1))
+Running [P0]: ../ikwiad -t '(p1) | (!(p1))' > 'lcr-o0-GcVeG1'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p1) | (!(p1))' > 'lcr-o1-jvzOEZ'
+Running [P2]: ../ikwiad -N '(p1) | (!(p1))' > 'lcr-o2-Jltw5u'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p1) | (!(p1))' > 'lcr-o3-9ouxn9'
+Running [N0]: ../ikwiad -t '!((p1) | (!(p1)))' > 'lcr-o0-lVjUQY'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p1) | (!(p1)))' > 'lcr-o1-SOusBT'
+Running [N2]: ../ikwiad -N '!((p1) | (!(p1)))' > 'lcr-o2-bUhg1q'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p1) | (!(p1)))' > 'lcr-o3-b3uu4F'
+Performing sanity checks and gathering statistics...
+
+-:32: X((0))
+Running [P0]: ../ikwiad -t 'X((0))' > 'lcr-o0-7TrXH5'
+Running [P1]: ../ikwiad -t -r4 -R3f 'X((0))' > 'lcr-o1-6IUS6Y'
+Running [P2]: ../ikwiad -N 'X((0))' > 'lcr-o2-lftzP7'
+Running [P3]: ../ikwiad -N -r4 -R3f 'X((0))' > 'lcr-o3-3m9ZwB'
+Running [N0]: ../ikwiad -t '!(X((0)))' > 'lcr-o0-spATvI'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(X((0)))' > 'lcr-o1-OqyOK8'
+Running [N2]: ../ikwiad -N '!(X((0)))' > 'lcr-o2-LVzzvP'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(X((0)))' > 'lcr-o3-RqxqzM'
+Performing sanity checks and gathering statistics...
+
+-:33: (F(p2)) W ((!(p2)) M (p5))
+Running [P0]: ../ikwiad -t '(F(p2)) W ((!(p2)) M (p5))' > 'lcr-o0-klcs7T'
+Running [P1]: ../ikwiad -t -r4 -R3f '(F(p2)) W ((!(p2)) M (p5))' > 'lcr-o1-C75EhH'
+Running [P2]: ../ikwiad -N '(F(p2)) W ((!(p2)) M (p5))' > 'lcr-o2-SrCy8e'
+Running [P3]: ../ikwiad -N -r4 -R3f '(F(p2)) W ((!(p2)) M (p5))' > 'lcr-o3-vkkB5H'
+Running [N0]: ../ikwiad -t '!((F(p2)) W ((!(p2)) M (p5)))' > 'lcr-o0-ROizyj'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((F(p2)) W ((!(p2)) M (p5)))' > 'lcr-o1-7YHXFn'
+Running [N2]: ../ikwiad -N '!((F(p2)) W ((!(p2)) M (p5)))' > 'lcr-o2-YXd7eS'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((F(p2)) W ((!(p2)) M (p5)))' > 'lcr-o3-O9MKzg'
+Performing sanity checks and gathering statistics...
+
+-:34: !((p4) <-> ((p2) M (p4)))
+Running [P0]: ../ikwiad -t '!((p4) <-> ((p2) M (p4)))' > 'lcr-o0-DrRdkz'
+Running [P1]: ../ikwiad -t -r4 -R3f '!((p4) <-> ((p2) M (p4)))' > 'lcr-o1-fejALH'
+Running [P2]: ../ikwiad -N '!((p4) <-> ((p2) M (p4)))' > 'lcr-o2-bAWoyS'
+Running [P3]: ../ikwiad -N -r4 -R3f '!((p4) <-> ((p2) M (p4)))' > 'lcr-o3-iVq6Ev'
+Running [N0]: ../ikwiad -t '(p4) <-> ((p2) M (p4))' > 'lcr-o0-Z2eqPR'
+Running [N1]: ../ikwiad -t -r4 -R3f '(p4) <-> ((p2) M (p4))' > 'lcr-o1-LFQ4oP'
+Running [N2]: ../ikwiad -N '(p4) <-> ((p2) M (p4))' > 'lcr-o2-Aw3LbT'
+Running [N3]: ../ikwiad -N -r4 -R3f '(p4) <-> ((p2) M (p4))' > 'lcr-o3-nFRZHv'
+Performing sanity checks and gathering statistics...
+
+-:35: ((p4) U (p3)) & (!(X((!(p5)) & (F(G(X(p6)))))))
+Running [P0]: ../ikwiad -t '((p4) U (p3)) & (!(X((!(p5)) & (F(G(X(p6)))))))' > 'lcr-o0-JXlgFn'
+Running [P1]: ../ikwiad -t -r4 -R3f '((p4) U (p3)) & (!(X((!(p5)) & (F(G(X(p6)))))))' > 'lcr-o1-GeBzv0'
+Running [P2]: ../ikwiad -N '((p4) U (p3)) & (!(X((!(p5)) & (F(G(X(p6)))))))' > 'lcr-o2-8cUugF'
+Running [P3]: ../ikwiad -N -r4 -R3f '((p4) U (p3)) & (!(X((!(p5)) & (F(G(X(p6)))))))' > 'lcr-o3-ryKr68'
+Running [N0]: ../ikwiad -t '!(((p4) U (p3)) & (!(X((!(p5)) & (F(G(X(p6))))))))' > 'lcr-o0-dKp9FV'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(((p4) U (p3)) & (!(X((!(p5)) & (F(G(X(p6))))))))' > 'lcr-o1-ekSMAD'
+Running [N2]: ../ikwiad -N '!(((p4) U (p3)) & (!(X((!(p5)) & (F(G(X(p6))))))))' > 'lcr-o2-yHsQSZ'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(((p4) U (p3)) & (!(X((!(p5)) & (F(G(X(p6))))))))' > 'lcr-o3-9EGrRd'
+Performing sanity checks and gathering statistics...
+
+-:36: F((F(p3)) xor (G((p4) U (p5))))
+Running [P0]: ../ikwiad -t 'F((F(p3)) xor (G((p4) U (p5))))' > 'lcr-o0-QwpmEP'
+Running [P1]: ../ikwiad -t -r4 -R3f 'F((F(p3)) xor (G((p4) U (p5))))' > 'lcr-o1-fH2wVz'
+Running [P2]: ../ikwiad -N 'F((F(p3)) xor (G((p4) U (p5))))' > 'lcr-o2-k0rB5W'
+Running [P3]: ../ikwiad -N -r4 -R3f 'F((F(p3)) xor (G((p4) U (p5))))' > 'lcr-o3-4yZxKw'
+Running [N0]: ../ikwiad -t '!(F((F(p3)) xor (G((p4) U (p5)))))' > 'lcr-o0-ImssEu'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(F((F(p3)) xor (G((p4) U (p5)))))' > 'lcr-o1-7S5k7j'
+Running [N2]: ../ikwiad -N '!(F((F(p3)) xor (G((p4) U (p5)))))' > 'lcr-o2-od1gA2'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(F((F(p3)) xor (G((p4) U (p5)))))' > 'lcr-o3-Mvgwt9'
+Performing sanity checks and gathering statistics...
+
+-:37: G(((p2) <-> (p6)) U (F(p1)))
+Running [P0]: ../ikwiad -t 'G(((p2) <-> (p6)) U (F(p1)))' > 'lcr-o0-OQLeDM'
+Running [P1]: ../ikwiad -t -r4 -R3f 'G(((p2) <-> (p6)) U (F(p1)))' > 'lcr-o1-K9U7mV'
+Running [P2]: ../ikwiad -N 'G(((p2) <-> (p6)) U (F(p1)))' > 'lcr-o2-wjXvgo'
+Running [P3]: ../ikwiad -N -r4 -R3f 'G(((p2) <-> (p6)) U (F(p1)))' > 'lcr-o3-2nhd5e'
+Running [N0]: ../ikwiad -t '!(G(((p2) <-> (p6)) U (F(p1))))' > 'lcr-o0-hCUWxY'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(G(((p2) <-> (p6)) U (F(p1))))' > 'lcr-o1-jv7EAy'
+Running [N2]: ../ikwiad -N '!(G(((p2) <-> (p6)) U (F(p1))))' > 'lcr-o2-rJA7Zk'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(G(((p2) <-> (p6)) U (F(p1))))' > 'lcr-o3-GAOxhQ'
+Performing sanity checks and gathering statistics...
+
+-:38: (p6) W (((X(p3)) M ((p4) | (p6))) U (X(X(p1))))
+Running [P0]: ../ikwiad -t '(p6) W (((X(p3)) M ((p4) | (p6))) U (X(X(p1))))' > 'lcr-o0-AhiKiz'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p6) W (((X(p3)) M ((p4) | (p6))) U (X(X(p1))))' > 'lcr-o1-DukBzo'
+Running [P2]: ../ikwiad -N '(p6) W (((X(p3)) M ((p4) | (p6))) U (X(X(p1))))' > 'lcr-o2-8nfLWp'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p6) W (((X(p3)) M ((p4) | (p6))) U (X(X(p1))))' > 'lcr-o3-v7MPBT'
+Running [N0]: ../ikwiad -t '!((p6) W (((X(p3)) M ((p4) | (p6))) U (X(X(p1)))))' > 'lcr-o0-lXiAij'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p6) W (((X(p3)) M ((p4) | (p6))) U (X(X(p1)))))' > 'lcr-o1-bQo4yY'
+Running [N2]: ../ikwiad -N '!((p6) W (((X(p3)) M ((p4) | (p6))) U (X(X(p1)))))' > 'lcr-o2-9rVcmI'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p6) W (((X(p3)) M ((p4) | (p6))) U (X(X(p1)))))' > 'lcr-o3-lqdtB7'
+Performing sanity checks and gathering statistics...
+
+-:39: X(p6)
+Running [P0]: ../ikwiad -t 'X(p6)' > 'lcr-o0-qB9dtR'
+Running [P1]: ../ikwiad -t -r4 -R3f 'X(p6)' > 'lcr-o1-XDorqN'
+Running [P2]: ../ikwiad -N 'X(p6)' > 'lcr-o2-RNf3kA'
+Running [P3]: ../ikwiad -N -r4 -R3f 'X(p6)' > 'lcr-o3-glaNvz'
+Running [N0]: ../ikwiad -t '!(X(p6))' > 'lcr-o0-hwrrel'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(X(p6))' > 'lcr-o1-hO4Nuq'
+Running [N2]: ../ikwiad -N '!(X(p6))' > 'lcr-o2-Bagwar'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(X(p6))' > 'lcr-o3-vhKjLP'
+Performing sanity checks and gathering statistics...
+
+-:40: (!(p2)) -> ((X(p3)) W (p1))
+Running [P0]: ../ikwiad -t '(!(p2)) -> ((X(p3)) W (p1))' > 'lcr-o0-fGOBrx'
+Running [P1]: ../ikwiad -t -r4 -R3f '(!(p2)) -> ((X(p3)) W (p1))' > 'lcr-o1-ma35n9'
+Running [P2]: ../ikwiad -N '(!(p2)) -> ((X(p3)) W (p1))' > 'lcr-o2-UnEVja'
+Running [P3]: ../ikwiad -N -r4 -R3f '(!(p2)) -> ((X(p3)) W (p1))' > 'lcr-o3-6jxA3S'
+Running [N0]: ../ikwiad -t '!((!(p2)) -> ((X(p3)) W (p1)))' > 'lcr-o0-ConPfZ'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((!(p2)) -> ((X(p3)) W (p1)))' > 'lcr-o1-Ii9PiB'
+Running [N2]: ../ikwiad -N '!((!(p2)) -> ((X(p3)) W (p1)))' > 'lcr-o2-j1gSf1'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((!(p2)) -> ((X(p3)) W (p1)))' > 'lcr-o3-c6lItz'
+Performing sanity checks and gathering statistics...
+
+-:41: (!((p4) <-> (X(X((0)))))) -> ((!(p6)) | (F(X(p3))))
+Running [P0]: ../ikwiad -t '(!((p4) <-> (X(X((0)))))) -> ((!(p6)) | (F(X(p3))))' > 'lcr-o0-MgR9GK'
+Running [P1]: ../ikwiad -t -r4 -R3f '(!((p4) <-> (X(X((0)))))) -> ((!(p6)) | (F(X(p3))))' > 'lcr-o1-C0Lbxx'
+Running [P2]: ../ikwiad -N '(!((p4) <-> (X(X((0)))))) -> ((!(p6)) | (F(X(p3))))' > 'lcr-o2-A6OJl4'
+Running [P3]: ../ikwiad -N -r4 -R3f '(!((p4) <-> (X(X((0)))))) -> ((!(p6)) | (F(X(p3))))' > 'lcr-o3-9gy5Nv'
+Running [N0]: ../ikwiad -t '!((!((p4) <-> (X(X((0)))))) -> ((!(p6)) | (F(X(p3)))))' > 'lcr-o0-4OaoiX'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((!((p4) <-> (X(X((0)))))) -> ((!(p6)) | (F(X(p3)))))' > 'lcr-o1-HXGpxE'
+Running [N2]: ../ikwiad -N '!((!((p4) <-> (X(X((0)))))) -> ((!(p6)) | (F(X(p3)))))' > 'lcr-o2-iV6YAs'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((!((p4) <-> (X(X((0)))))) -> ((!(p6)) | (F(X(p3)))))' > 'lcr-o3-RJsVGp'
+Performing sanity checks and gathering statistics...
+
+-:42: (G(p4)) xor (F(p2))
+Running [P0]: ../ikwiad -t '(G(p4)) xor (F(p2))' > 'lcr-o0-2RC9p2'
+Running [P1]: ../ikwiad -t -r4 -R3f '(G(p4)) xor (F(p2))' > 'lcr-o1-gNEkNV'
+Running [P2]: ../ikwiad -N '(G(p4)) xor (F(p2))' > 'lcr-o2-UfSp38'
+Running [P3]: ../ikwiad -N -r4 -R3f '(G(p4)) xor (F(p2))' > 'lcr-o3-aqW9xo'
+Running [N0]: ../ikwiad -t '!((G(p4)) xor (F(p2)))' > 'lcr-o0-jl6Rre'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((G(p4)) xor (F(p2)))' > 'lcr-o1-ffDxIX'
+Running [N2]: ../ikwiad -N '!((G(p4)) xor (F(p2)))' > 'lcr-o2-seyYAb'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((G(p4)) xor (F(p2)))' > 'lcr-o3-EqSudC'
+Performing sanity checks and gathering statistics...
+
+-:43: X((X(p5)) M ((p1) <-> ((p3) xor (p6))))
+Running [P0]: ../ikwiad -t 'X((X(p5)) M ((p1) <-> ((p3) xor (p6))))' > 'lcr-o0-IFeagz'
+Running [P1]: ../ikwiad -t -r4 -R3f 'X((X(p5)) M ((p1) <-> ((p3) xor (p6))))' > 'lcr-o1-19BgdD'
+Running [P2]: ../ikwiad -N 'X((X(p5)) M ((p1) <-> ((p3) xor (p6))))' > 'lcr-o2-UnuWv8'
+Running [P3]: ../ikwiad -N -r4 -R3f 'X((X(p5)) M ((p1) <-> ((p3) xor (p6))))' > 'lcr-o3-EwNdYj'
+Running [N0]: ../ikwiad -t '!(X((X(p5)) M ((p1) <-> ((p3) xor (p6)))))' > 'lcr-o0-0PDSO3'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(X((X(p5)) M ((p1) <-> ((p3) xor (p6)))))' > 'lcr-o1-xcb2x4'
+Running [N2]: ../ikwiad -N '!(X((X(p5)) M ((p1) <-> ((p3) xor (p6)))))' > 'lcr-o2-4L9f2L'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(X((X(p5)) M ((p1) <-> ((p3) xor (p6)))))' > 'lcr-o3-hbr889'
+Performing sanity checks and gathering statistics...
+
+-:44: ((X(p1)) <-> (X((G(p6)) U (p2)))) U (p1)
+Running [P0]: ../ikwiad -t '((X(p1)) <-> (X((G(p6)) U (p2)))) U (p1)' > 'lcr-o0-GPrfiV'
+Running [P1]: ../ikwiad -t -r4 -R3f '((X(p1)) <-> (X((G(p6)) U (p2)))) U (p1)' > 'lcr-o1-CLAJAn'
+Running [P2]: ../ikwiad -N '((X(p1)) <-> (X((G(p6)) U (p2)))) U (p1)' > 'lcr-o2-praSFr'
+Running [P3]: ../ikwiad -N -r4 -R3f '((X(p1)) <-> (X((G(p6)) U (p2)))) U (p1)' > 'lcr-o3-ONLnUi'
+Running [N0]: ../ikwiad -t '!(((X(p1)) <-> (X((G(p6)) U (p2)))) U (p1))' > 'lcr-o0-nxLz2E'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(((X(p1)) <-> (X((G(p6)) U (p2)))) U (p1))' > 'lcr-o1-R6OABW'
+Running [N2]: ../ikwiad -N '!(((X(p1)) <-> (X((G(p6)) U (p2)))) U (p1))' > 'lcr-o2-xKAU08'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(((X(p1)) <-> (X((G(p6)) U (p2)))) U (p1))' > 'lcr-o3-dxon6D'
+Performing sanity checks and gathering statistics...
+
+-:45: ((G(p3)) xor (F(p5))) & ((p6) -> (X((0))))
+Running [P0]: ../ikwiad -t '((G(p3)) xor (F(p5))) & ((p6) -> (X((0))))' > 'lcr-o0-fYwrBO'
+Running [P1]: ../ikwiad -t -r4 -R3f '((G(p3)) xor (F(p5))) & ((p6) -> (X((0))))' > 'lcr-o1-gHHhme'
+Running [P2]: ../ikwiad -N '((G(p3)) xor (F(p5))) & ((p6) -> (X((0))))' > 'lcr-o2-jLHpY0'
+Running [P3]: ../ikwiad -N -r4 -R3f '((G(p3)) xor (F(p5))) & ((p6) -> (X((0))))' > 'lcr-o3-0sBbQC'
+Running [N0]: ../ikwiad -t '!(((G(p3)) xor (F(p5))) & ((p6) -> (X((0)))))' > 'lcr-o0-eeYACb'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(((G(p3)) xor (F(p5))) & ((p6) -> (X((0)))))' > 'lcr-o1-8CivAx'
+Running [N2]: ../ikwiad -N '!(((G(p3)) xor (F(p5))) & ((p6) -> (X((0)))))' > 'lcr-o2-jvbuE6'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(((G(p3)) xor (F(p5))) & ((p6) -> (X((0)))))' > 'lcr-o3-trKXOI'
+Performing sanity checks and gathering statistics...
+
+-:46: (F(p6)) & (X(X(G(F(!(X(F(p3))))))))
+Running [P0]: ../ikwiad -t '(F(p6)) & (X(X(G(F(!(X(F(p3))))))))' > 'lcr-o0-7tVnyH'
+Running [P1]: ../ikwiad -t -r4 -R3f '(F(p6)) & (X(X(G(F(!(X(F(p3))))))))' > 'lcr-o1-3moiQV'
+Running [P2]: ../ikwiad -N '(F(p6)) & (X(X(G(F(!(X(F(p3))))))))' > 'lcr-o2-HO0TjV'
+Running [P3]: ../ikwiad -N -r4 -R3f '(F(p6)) & (X(X(G(F(!(X(F(p3))))))))' > 'lcr-o3-vjFjSU'
+Running [N0]: ../ikwiad -t '!((F(p6)) & (X(X(G(F(!(X(F(p3)))))))))' > 'lcr-o0-dlklX2'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((F(p6)) & (X(X(G(F(!(X(F(p3)))))))))' > 'lcr-o1-EPs9AF'
+Running [N2]: ../ikwiad -N '!((F(p6)) & (X(X(G(F(!(X(F(p3)))))))))' > 'lcr-o2-ZBsjsZ'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((F(p6)) & (X(X(G(F(!(X(F(p3)))))))))' > 'lcr-o3-Ag9FQd'
+Performing sanity checks and gathering statistics...
+
+-:47: (p3) & (p6)
+Running [P0]: ../ikwiad -t '(p3) & (p6)' > 'lcr-o0-zzCyWP'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p3) & (p6)' > 'lcr-o1-xWZF2z'
+Running [P2]: ../ikwiad -N '(p3) & (p6)' > 'lcr-o2-T8DjYv'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p3) & (p6)' > 'lcr-o3-BaJrCO'
+Running [N0]: ../ikwiad -t '!((p3) & (p6))' > 'lcr-o0-Zy5JFq'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p3) & (p6))' > 'lcr-o1-6edL42'
+Running [N2]: ../ikwiad -N '!((p3) & (p6))' > 'lcr-o2-wGSS1Y'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p3) & (p6))' > 'lcr-o3-ogPlmH'
+Performing sanity checks and gathering statistics...
+
+-:48: X((p6) R (p4))
+Running [P0]: ../ikwiad -t 'X((p6) R (p4))' > 'lcr-o0-fauDHN'
+Running [P1]: ../ikwiad -t -r4 -R3f 'X((p6) R (p4))' > 'lcr-o1-RtU1fY'
+Running [P2]: ../ikwiad -N 'X((p6) R (p4))' > 'lcr-o2-6LNf1s'
+Running [P3]: ../ikwiad -N -r4 -R3f 'X((p6) R (p4))' > 'lcr-o3-UE0ncN'
+Running [N0]: ../ikwiad -t '!(X((p6) R (p4)))' > 'lcr-o0-BUkp70'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(X((p6) R (p4)))' > 'lcr-o1-06pbwb'
+Running [N2]: ../ikwiad -N '!(X((p6) R (p4)))' > 'lcr-o2-P81eMQ'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(X((p6) R (p4)))' > 'lcr-o3-Khlmql'
+Performing sanity checks and gathering statistics...
+
+-:49: (p1) | (!(p2)) | (p5)
+Running [P0]: ../ikwiad -t '(p1) | (!(p2)) | (p5)' > 'lcr-o0-ONASul'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p1) | (!(p2)) | (p5)' > 'lcr-o1-T4aEob'
+Running [P2]: ../ikwiad -N '(p1) | (!(p2)) | (p5)' > 'lcr-o2-33RNrH'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p1) | (!(p2)) | (p5)' > 'lcr-o3-DjX1wN'
+Running [N0]: ../ikwiad -t '!((p1) | (!(p2)) | (p5))' > 'lcr-o0-hs224P'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p1) | (!(p2)) | (p5))' > 'lcr-o1-EaNpi1'
+Running [N2]: ../ikwiad -N '!((p1) | (!(p2)) | (p5))' > 'lcr-o2-kJQbZl'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p1) | (!(p2)) | (p5))' > 'lcr-o3-i8iCdl'
+Performing sanity checks and gathering statistics...
+
+-:50: (!(X(p4))) -> (F(p1))
+Running [P0]: ../ikwiad -t '(!(X(p4))) -> (F(p1))' > 'lcr-o0-QC4GS1'
+Running [P1]: ../ikwiad -t -r4 -R3f '(!(X(p4))) -> (F(p1))' > 'lcr-o1-S3vb88'
+Running [P2]: ../ikwiad -N '(!(X(p4))) -> (F(p1))' > 'lcr-o2-jI0EpS'
+Running [P3]: ../ikwiad -N -r4 -R3f '(!(X(p4))) -> (F(p1))' > 'lcr-o3-7s8gGc'
+Running [N0]: ../ikwiad -t '!((!(X(p4))) -> (F(p1)))' > 'lcr-o0-AQNIoZ'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((!(X(p4))) -> (F(p1)))' > 'lcr-o1-a1DQrr'
+Running [N2]: ../ikwiad -N '!((!(X(p4))) -> (F(p1)))' > 'lcr-o2-sGYIZE'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((!(X(p4))) -> (F(p1)))' > 'lcr-o3-UyJP0r'
+Performing sanity checks and gathering statistics...
+
+-:51: X(F(((p2) & (p3)) R (F(p2))))
+Running [P0]: ../ikwiad -t 'X(F(((p2) & (p3)) R (F(p2))))' > 'lcr-o0-9EOWVH'
+Running [P1]: ../ikwiad -t -r4 -R3f 'X(F(((p2) & (p3)) R (F(p2))))' > 'lcr-o1-1jZnUZ'
+Running [P2]: ../ikwiad -N 'X(F(((p2) & (p3)) R (F(p2))))' > 'lcr-o2-h4eduA'
+Running [P3]: ../ikwiad -N -r4 -R3f 'X(F(((p2) & (p3)) R (F(p2))))' > 'lcr-o3-ZxScjn'
+Running [N0]: ../ikwiad -t '!(X(F(((p2) & (p3)) R (F(p2)))))' > 'lcr-o0-bY3YIr'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(X(F(((p2) & (p3)) R (F(p2)))))' > 'lcr-o1-x4I0Rb'
+Running [N2]: ../ikwiad -N '!(X(F(((p2) & (p3)) R (F(p2)))))' > 'lcr-o2-FWBqTh'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(X(F(((p2) & (p3)) R (F(p2)))))' > 'lcr-o3-LNK5SH'
+Performing sanity checks and gathering statistics...
+
+-:52: (p3) xor ((G(!(p4))) W (0))
+Running [P0]: ../ikwiad -t '(p3) xor ((G(!(p4))) W (0))' > 'lcr-o0-skjNNt'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p3) xor ((G(!(p4))) W (0))' > 'lcr-o1-jNbCcb'
+Running [P2]: ../ikwiad -N '(p3) xor ((G(!(p4))) W (0))' > 'lcr-o2-DWwDir'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p3) xor ((G(!(p4))) W (0))' > 'lcr-o3-FcYZkQ'
+Running [N0]: ../ikwiad -t '!((p3) xor ((G(!(p4))) W (0)))' > 'lcr-o0-o1BbFX'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p3) xor ((G(!(p4))) W (0)))' > 'lcr-o1-MHJMVm'
+Running [N2]: ../ikwiad -N '!((p3) xor ((G(!(p4))) W (0)))' > 'lcr-o2-jte2XS'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p3) xor ((G(!(p4))) W (0)))' > 'lcr-o3-5crPjh'
+Performing sanity checks and gathering statistics...
+
+-:53: X(!((!(F(p6))) -> (!((G(p1)) xor (X(p1))))))
+Running [P0]: ../ikwiad -t 'X(!((!(F(p6))) -> (!((G(p1)) xor (X(p1))))))' > 'lcr-o0-PNFDaD'
+Running [P1]: ../ikwiad -t -r4 -R3f 'X(!((!(F(p6))) -> (!((G(p1)) xor (X(p1))))))' > 'lcr-o1-A9Bk1u'
+Running [P2]: ../ikwiad -N 'X(!((!(F(p6))) -> (!((G(p1)) xor (X(p1))))))' > 'lcr-o2-bNnIug'
+Running [P3]: ../ikwiad -N -r4 -R3f 'X(!((!(F(p6))) -> (!((G(p1)) xor (X(p1))))))' > 'lcr-o3-a2OcPJ'
+Running [N0]: ../ikwiad -t '!(X(!((!(F(p6))) -> (!((G(p1)) xor (X(p1)))))))' > 'lcr-o0-z1Z0jH'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(X(!((!(F(p6))) -> (!((G(p1)) xor (X(p1)))))))' > 'lcr-o1-An9yZ3'
+Running [N2]: ../ikwiad -N '!(X(!((!(F(p6))) -> (!((G(p1)) xor (X(p1)))))))' > 'lcr-o2-i8Yf5m'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(X(!((!(F(p6))) -> (!((G(p1)) xor (X(p1)))))))' > 'lcr-o3-zaaD3o'
+Performing sanity checks and gathering statistics...
+
+-:54: !(X((F(p2)) | ((1) U (F((p5) R (p4))))))
+Running [P0]: ../ikwiad -t '!(X((F(p2)) | ((1) U (F((p5) R (p4))))))' > 'lcr-o0-hp2ShQ'
+Running [P1]: ../ikwiad -t -r4 -R3f '!(X((F(p2)) | ((1) U (F((p5) R (p4))))))' > 'lcr-o1-7ek977'
+Running [P2]: ../ikwiad -N '!(X((F(p2)) | ((1) U (F((p5) R (p4))))))' > 'lcr-o2-ftNrQu'
+Running [P3]: ../ikwiad -N -r4 -R3f '!(X((F(p2)) | ((1) U (F((p5) R (p4))))))' > 'lcr-o3-NgDYOh'
+Running [N0]: ../ikwiad -t 'X((F(p2)) | ((1) U (F((p5) R (p4)))))' > 'lcr-o0-MSDJ9h'
+Running [N1]: ../ikwiad -t -r4 -R3f 'X((F(p2)) | ((1) U (F((p5) R (p4)))))' > 'lcr-o1-JEaebj'
+Running [N2]: ../ikwiad -N 'X((F(p2)) | ((1) U (F((p5) R (p4)))))' > 'lcr-o2-XH06YY'
+Running [N3]: ../ikwiad -N -r4 -R3f 'X((F(p2)) | ((1) U (F((p5) R (p4)))))' > 'lcr-o3-vCerYX'
+Performing sanity checks and gathering statistics...
+
+-:55: F((!(p3)) | (G(X(p4))))
+Running [P0]: ../ikwiad -t 'F((!(p3)) | (G(X(p4))))' > 'lcr-o0-RyDW2E'
+Running [P1]: ../ikwiad -t -r4 -R3f 'F((!(p3)) | (G(X(p4))))' > 'lcr-o1-xdKUMC'
+Running [P2]: ../ikwiad -N 'F((!(p3)) | (G(X(p4))))' > 'lcr-o2-zdhZJc'
+Running [P3]: ../ikwiad -N -r4 -R3f 'F((!(p3)) | (G(X(p4))))' > 'lcr-o3-ot3sxb'
+Running [N0]: ../ikwiad -t '!(F((!(p3)) | (G(X(p4)))))' > 'lcr-o0-XQyzN0'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(F((!(p3)) | (G(X(p4)))))' > 'lcr-o1-v9Pjfy'
+Running [N2]: ../ikwiad -N '!(F((!(p3)) | (G(X(p4)))))' > 'lcr-o2-ioAgS9'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(F((!(p3)) | (G(X(p4)))))' > 'lcr-o3-HPuZyg'
+Performing sanity checks and gathering statistics...
+
+-:56: ((p6) xor (X(p4))) & ((!(X(p1))) U (p6))
+Running [P0]: ../ikwiad -t '((p6) xor (X(p4))) & ((!(X(p1))) U (p6))' > 'lcr-o0-oPIvER'
+Running [P1]: ../ikwiad -t -r4 -R3f '((p6) xor (X(p4))) & ((!(X(p1))) U (p6))' > 'lcr-o1-g5g3Uj'
+Running [P2]: ../ikwiad -N '((p6) xor (X(p4))) & ((!(X(p1))) U (p6))' > 'lcr-o2-bgqwL6'
+Running [P3]: ../ikwiad -N -r4 -R3f '((p6) xor (X(p4))) & ((!(X(p1))) U (p6))' > 'lcr-o3-psuP2P'
+Running [N0]: ../ikwiad -t '!(((p6) xor (X(p4))) & ((!(X(p1))) U (p6)))' > 'lcr-o0-Ltq7ja'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(((p6) xor (X(p4))) & ((!(X(p1))) U (p6)))' > 'lcr-o1-1pk5wi'
+Running [N2]: ../ikwiad -N '!(((p6) xor (X(p4))) & ((!(X(p1))) U (p6)))' > 'lcr-o2-T3d1Bj'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(((p6) xor (X(p4))) & ((!(X(p1))) U (p6)))' > 'lcr-o3-Ut9Gtc'
+Performing sanity checks and gathering statistics...
+
+-:57: G(!(G(p6)))
+Running [P0]: ../ikwiad -t 'G(!(G(p6)))' > 'lcr-o0-LBaV17'
+Running [P1]: ../ikwiad -t -r4 -R3f 'G(!(G(p6)))' > 'lcr-o1-rgbjXa'
+Running [P2]: ../ikwiad -N 'G(!(G(p6)))' > 'lcr-o2-e7YuBR'
+Running [P3]: ../ikwiad -N -r4 -R3f 'G(!(G(p6)))' > 'lcr-o3-PQo7Yi'
+Running [N0]: ../ikwiad -t '!(G(!(G(p6))))' > 'lcr-o0-94HYfT'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(G(!(G(p6))))' > 'lcr-o1-XFXI4v'
+Running [N2]: ../ikwiad -N '!(G(!(G(p6))))' > 'lcr-o2-04VW3N'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(G(!(G(p6))))' > 'lcr-o3-9lIgX5'
+Performing sanity checks and gathering statistics...
+
+-:58: (X((p1) & (p3))) R (p3)
+Running [P0]: ../ikwiad -t '(X((p1) & (p3))) R (p3)' > 'lcr-o0-GMw48X'
+Running [P1]: ../ikwiad -t -r4 -R3f '(X((p1) & (p3))) R (p3)' > 'lcr-o1-wF3Xls'
+Running [P2]: ../ikwiad -N '(X((p1) & (p3))) R (p3)' > 'lcr-o2-gFwDMx'
+Running [P3]: ../ikwiad -N -r4 -R3f '(X((p1) & (p3))) R (p3)' > 'lcr-o3-kxJt58'
+Running [N0]: ../ikwiad -t '!((X((p1) & (p3))) R (p3))' > 'lcr-o0-kDaozw'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((X((p1) & (p3))) R (p3))' > 'lcr-o1-nruVJe'
+Running [N2]: ../ikwiad -N '!((X((p1) & (p3))) R (p3))' > 'lcr-o2-8MfchR'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((X((p1) & (p3))) R (p3))' > 'lcr-o3-MEvdMk'
+Performing sanity checks and gathering statistics...
+
+-:59: (p5) U ((!((p6) -> (p1))) <-> (X(p6)))
+Running [P0]: ../ikwiad -t '(p5) U ((!((p6) -> (p1))) <-> (X(p6)))' > 'lcr-o0-fdTCSx'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p5) U ((!((p6) -> (p1))) <-> (X(p6)))' > 'lcr-o1-IGVSz9'
+Running [P2]: ../ikwiad -N '(p5) U ((!((p6) -> (p1))) <-> (X(p6)))' > 'lcr-o2-fp9baq'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p5) U ((!((p6) -> (p1))) <-> (X(p6)))' > 'lcr-o3-JUEvRO'
+Running [N0]: ../ikwiad -t '!((p5) U ((!((p6) -> (p1))) <-> (X(p6))))' > 'lcr-o0-PVrJvA'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p5) U ((!((p6) -> (p1))) <-> (X(p6))))' > 'lcr-o1-oodSNh'
+Running [N2]: ../ikwiad -N '!((p5) U ((!((p6) -> (p1))) <-> (X(p6))))' > 'lcr-o2-yzSVGL'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p5) U ((!((p6) -> (p1))) <-> (X(p6))))' > 'lcr-o3-sT10jQ'
+Performing sanity checks and gathering statistics...
+
+-:60: (G(p1)) & ((1) U (G(p2)))
+Running [P0]: ../ikwiad -t '(G(p1)) & ((1) U (G(p2)))' > 'lcr-o0-Wd5UEt'
+Running [P1]: ../ikwiad -t -r4 -R3f '(G(p1)) & ((1) U (G(p2)))' > 'lcr-o1-mORfcy'
+Running [P2]: ../ikwiad -N '(G(p1)) & ((1) U (G(p2)))' > 'lcr-o2-oMkaaB'
+Running [P3]: ../ikwiad -N -r4 -R3f '(G(p1)) & ((1) U (G(p2)))' > 'lcr-o3-6nPUOy'
+Running [N0]: ../ikwiad -t '!((G(p1)) & ((1) U (G(p2))))' > 'lcr-o0-Eu0Nqj'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((G(p1)) & ((1) U (G(p2))))' > 'lcr-o1-UqXBK6'
+Running [N2]: ../ikwiad -N '!((G(p1)) & ((1) U (G(p2))))' > 'lcr-o2-upWOGS'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((G(p1)) & ((1) U (G(p2))))' > 'lcr-o3-QGBXQ1'
+Performing sanity checks and gathering statistics...
+
+-:61: (p3) | ((p3) U (X((p2) U (!((p2) | (p3))))))
+Running [P0]: ../ikwiad -t '(p3) | ((p3) U (X((p2) U (!((p2) | (p3))))))' > 'lcr-o0-SgcVZG'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p3) | ((p3) U (X((p2) U (!((p2) | (p3))))))' > 'lcr-o1-MPUT3D'
+Running [P2]: ../ikwiad -N '(p3) | ((p3) U (X((p2) U (!((p2) | (p3))))))' > 'lcr-o2-KOdIas'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p3) | ((p3) U (X((p2) U (!((p2) | (p3))))))' > 'lcr-o3-wyQ3Rc'
+Running [N0]: ../ikwiad -t '!((p3) | ((p3) U (X((p2) U (!((p2) | (p3)))))))' > 'lcr-o0-f4Zu1T'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p3) | ((p3) U (X((p2) U (!((p2) | (p3)))))))' > 'lcr-o1-hWIumY'
+Running [N2]: ../ikwiad -N '!((p3) | ((p3) U (X((p2) U (!((p2) | (p3)))))))' > 'lcr-o2-GNKtjk'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p3) | ((p3) U (X((p2) U (!((p2) | (p3)))))))' > 'lcr-o3-bPkENZ'
+Performing sanity checks and gathering statistics...
+
+-:62: F(!(p3))
+Running [P0]: ../ikwiad -t 'F(!(p3))' > 'lcr-o0-oYVKAR'
+Running [P1]: ../ikwiad -t -r4 -R3f 'F(!(p3))' > 'lcr-o1-V43JUM'
+Running [P2]: ../ikwiad -N 'F(!(p3))' > 'lcr-o2-W8z1hM'
+Running [P3]: ../ikwiad -N -r4 -R3f 'F(!(p3))' > 'lcr-o3-ITfWoi'
+Running [N0]: ../ikwiad -t '!(F(!(p3)))' > 'lcr-o0-3AXk7p'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(F(!(p3)))' > 'lcr-o1-G8oCO9'
+Running [N2]: ../ikwiad -N '!(F(!(p3)))' > 'lcr-o2-bp6DT5'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(F(!(p3)))' > 'lcr-o3-SjDtYp'
+Performing sanity checks and gathering statistics...
+
+-:63: (p1) | (!(p2)) | ((1) U (p6))
+Running [P0]: ../ikwiad -t '(p1) | (!(p2)) | ((1) U (p6))' > 'lcr-o0-PIWKhq'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p1) | (!(p2)) | ((1) U (p6))' > 'lcr-o1-dEK5a2'
+Running [P2]: ../ikwiad -N '(p1) | (!(p2)) | ((1) U (p6))' > 'lcr-o2-bhX6fz'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p1) | (!(p2)) | ((1) U (p6))' > 'lcr-o3-YR3dkI'
+Running [N0]: ../ikwiad -t '!((p1) | (!(p2)) | ((1) U (p6)))' > 'lcr-o0-9mlCxi'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p1) | (!(p2)) | ((1) U (p6)))' > 'lcr-o1-uR0Vxg'
+Running [N2]: ../ikwiad -N '!((p1) | (!(p2)) | ((1) U (p6)))' > 'lcr-o2-5xqcGx'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p1) | (!(p2)) | ((1) U (p6)))' > 'lcr-o3-XWNTAB'
+Performing sanity checks and gathering statistics...
+
+-:64: F((F(p2)) -> (p6))
+Running [P0]: ../ikwiad -t 'F((F(p2)) -> (p6))' > 'lcr-o0-1HSS3g'
+Running [P1]: ../ikwiad -t -r4 -R3f 'F((F(p2)) -> (p6))' > 'lcr-o1-dNuPGj'
+Running [P2]: ../ikwiad -N 'F((F(p2)) -> (p6))' > 'lcr-o2-leLQFZ'
+Running [P3]: ../ikwiad -N -r4 -R3f 'F((F(p2)) -> (p6))' > 'lcr-o3-tZtAgY'
+Running [N0]: ../ikwiad -t '!(F((F(p2)) -> (p6)))' > 'lcr-o0-fmXUZV'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(F((F(p2)) -> (p6)))' > 'lcr-o1-ecx7cE'
+Running [N2]: ../ikwiad -N '!(F((F(p2)) -> (p6)))' > 'lcr-o2-Dc6csT'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(F((F(p2)) -> (p6)))' > 'lcr-o3-VPxtYW'
+Performing sanity checks and gathering statistics...
+
+-:65: (p6) R (X(p6))
+Running [P0]: ../ikwiad -t '(p6) R (X(p6))' > 'lcr-o0-IknRfz'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p6) R (X(p6))' > 'lcr-o1-cQ9cf2'
+Running [P2]: ../ikwiad -N '(p6) R (X(p6))' > 'lcr-o2-Wzme7Q'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p6) R (X(p6))' > 'lcr-o3-3YnI1r'
+Running [N0]: ../ikwiad -t '!((p6) R (X(p6)))' > 'lcr-o0-UJwfOJ'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p6) R (X(p6)))' > 'lcr-o1-vhvtta'
+Running [N2]: ../ikwiad -N '!((p6) R (X(p6)))' > 'lcr-o2-tAQCPu'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p6) R (X(p6)))' > 'lcr-o3-PQ0kK3'
+Performing sanity checks and gathering statistics...
+
+-:66: (p1) & (X((p2) -> (p3)))
+Running [P0]: ../ikwiad -t '(p1) & (X((p2) -> (p3)))' > 'lcr-o0-URH10y'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p1) & (X((p2) -> (p3)))' > 'lcr-o1-FPdGOo'
+Running [P2]: ../ikwiad -N '(p1) & (X((p2) -> (p3)))' > 'lcr-o2-jRvl8d'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p1) & (X((p2) -> (p3)))' > 'lcr-o3-wSu14V'
+Running [N0]: ../ikwiad -t '!((p1) & (X((p2) -> (p3))))' > 'lcr-o0-l1IfUV'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p1) & (X((p2) -> (p3))))' > 'lcr-o1-wMbybP'
+Running [N2]: ../ikwiad -N '!((p1) & (X((p2) -> (p3))))' > 'lcr-o2-fdUul0'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p1) & (X((p2) -> (p3))))' > 'lcr-o3-jmXS46'
+Performing sanity checks and gathering statistics...
+
+-:67: F((G(p4)) <-> (!((p2) M (p5))))
+Running [P0]: ../ikwiad -t 'F((G(p4)) <-> (!((p2) M (p5))))' > 'lcr-o0-CBMy7f'
+Running [P1]: ../ikwiad -t -r4 -R3f 'F((G(p4)) <-> (!((p2) M (p5))))' > 'lcr-o1-VDFWBI'
+Running [P2]: ../ikwiad -N 'F((G(p4)) <-> (!((p2) M (p5))))' > 'lcr-o2-Sheyqg'
+Running [P3]: ../ikwiad -N -r4 -R3f 'F((G(p4)) <-> (!((p2) M (p5))))' > 'lcr-o3-0vUjyv'
+Running [N0]: ../ikwiad -t '!(F((G(p4)) <-> (!((p2) M (p5)))))' > 'lcr-o0-b63S4j'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(F((G(p4)) <-> (!((p2) M (p5)))))' > 'lcr-o1-LaoLF7'
+Running [N2]: ../ikwiad -N '!(F((G(p4)) <-> (!((p2) M (p5)))))' > 'lcr-o2-lPrHlI'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(F((G(p4)) <-> (!((p2) M (p5)))))' > 'lcr-o3-w2bPAP'
+Performing sanity checks and gathering statistics...
+
+-:68: (p4) <-> (((p1) W (p4)) M ((p4) M (F(p5))))
+Running [P0]: ../ikwiad -t '(p4) <-> (((p1) W (p4)) M ((p4) M (F(p5))))' > 'lcr-o0-0pK5aA'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p4) <-> (((p1) W (p4)) M ((p4) M (F(p5))))' > 'lcr-o1-fKvQud'
+Running [P2]: ../ikwiad -N '(p4) <-> (((p1) W (p4)) M ((p4) M (F(p5))))' > 'lcr-o2-c8BI5U'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p4) <-> (((p1) W (p4)) M ((p4) M (F(p5))))' > 'lcr-o3-2Kz8hT'
+Running [N0]: ../ikwiad -t '!((p4) <-> (((p1) W (p4)) M ((p4) M (F(p5)))))' > 'lcr-o0-QNyh2w'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p4) <-> (((p1) W (p4)) M ((p4) M (F(p5)))))' > 'lcr-o1-Zg3gQQ'
+Running [N2]: ../ikwiad -N '!((p4) <-> (((p1) W (p4)) M ((p4) M (F(p5)))))' > 'lcr-o2-VMoFy6'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p4) <-> (((p1) W (p4)) M ((p4) M (F(p5)))))' > 'lcr-o3-nFhZim'
+Performing sanity checks and gathering statistics...
+
+-:69: !((p5) | ((p1) & ((p6) xor ((!(p1)) xor (p6)))))
+Running [P0]: ../ikwiad -t '!((p5) | ((p1) & ((p6) xor ((!(p1)) xor (p6)))))' > 'lcr-o0-PK2I2e'
+Running [P1]: ../ikwiad -t -r4 -R3f '!((p5) | ((p1) & ((p6) xor ((!(p1)) xor (p6)))))' > 'lcr-o1-mt6ByS'
+Running [P2]: ../ikwiad -N '!((p5) | ((p1) & ((p6) xor ((!(p1)) xor (p6)))))' > 'lcr-o2-Xkg3GH'
+Running [P3]: ../ikwiad -N -r4 -R3f '!((p5) | ((p1) & ((p6) xor ((!(p1)) xor (p6)))))' > 'lcr-o3-eScQRi'
+Running [N0]: ../ikwiad -t '(p5) | ((p1) & ((p6) xor ((!(p1)) xor (p6))))' > 'lcr-o0-O6RcvD'
+Running [N1]: ../ikwiad -t -r4 -R3f '(p5) | ((p1) & ((p6) xor ((!(p1)) xor (p6))))' > 'lcr-o1-kSw3eM'
+Running [N2]: ../ikwiad -N '(p5) | ((p1) & ((p6) xor ((!(p1)) xor (p6))))' > 'lcr-o2-RQo468'
+Running [N3]: ../ikwiad -N -r4 -R3f '(p5) | ((p1) & ((p6) xor ((!(p1)) xor (p6))))' > 'lcr-o3-aD3Y6n'
+Performing sanity checks and gathering statistics...
+
+-:70: ((p2) M (p4)) xor (F((p1) xor (X(G(!(F(!(F(p1)))))))))
+Running [P0]: ../ikwiad -t '((p2) M (p4)) xor (F((p1) xor (X(G(!(F(!(F(p1)))))))))' > 'lcr-o0-B2t92F'
+Running [P1]: ../ikwiad -t -r4 -R3f '((p2) M (p4)) xor (F((p1) xor (X(G(!(F(!(F(p1)))))))))' > 'lcr-o1-2Qk058'
+Running [P2]: ../ikwiad -N '((p2) M (p4)) xor (F((p1) xor (X(G(!(F(!(F(p1)))))))))' > 'lcr-o2-doVh4Q'
+Running [P3]: ../ikwiad -N -r4 -R3f '((p2) M (p4)) xor (F((p1) xor (X(G(!(F(!(F(p1)))))))))' > 'lcr-o3-ljv2KV'
+Running [N0]: ../ikwiad -t '!(((p2) M (p4)) xor (F((p1) xor (X(G(!(F(!(F(p1))))))))))' > 'lcr-o0-BZFNOK'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(((p2) M (p4)) xor (F((p1) xor (X(G(!(F(!(F(p1))))))))))' > 'lcr-o1-9tjcW9'
+Running [N2]: ../ikwiad -N '!(((p2) M (p4)) xor (F((p1) xor (X(G(!(F(!(F(p1))))))))))' > 'lcr-o2-Z5iL30'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(((p2) M (p4)) xor (F((p1) xor (X(G(!(F(!(F(p1))))))))))' > 'lcr-o3-Aa88k1'
+Performing sanity checks and gathering statistics...
+
+-:71: (p5) <-> ((F(p5)) W (F(p2)))
+Running [P0]: ../ikwiad -t '(p5) <-> ((F(p5)) W (F(p2)))' > 'lcr-o0-MNH7lW'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p5) <-> ((F(p5)) W (F(p2)))' > 'lcr-o1-0xYCJ4'
+Running [P2]: ../ikwiad -N '(p5) <-> ((F(p5)) W (F(p2)))' > 'lcr-o2-zhvEhn'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p5) <-> ((F(p5)) W (F(p2)))' > 'lcr-o3-iUz1UL'
+Running [N0]: ../ikwiad -t '!((p5) <-> ((F(p5)) W (F(p2))))' > 'lcr-o0-GViHcl'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p5) <-> ((F(p5)) W (F(p2))))' > 'lcr-o1-MNmJcL'
+Running [N2]: ../ikwiad -N '!((p5) <-> ((F(p5)) W (F(p2))))' > 'lcr-o2-BAkBGI'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p5) <-> ((F(p5)) W (F(p2))))' > 'lcr-o3-c3AiLh'
+Performing sanity checks and gathering statistics...
+
+-:72: !((p3) <-> ((p5) & (p6)))
+Running [P0]: ../ikwiad -t '!((p3) <-> ((p5) & (p6)))' > 'lcr-o0-mCD3Sl'
+Running [P1]: ../ikwiad -t -r4 -R3f '!((p3) <-> ((p5) & (p6)))' > 'lcr-o1-c8mNSx'
+Running [P2]: ../ikwiad -N '!((p3) <-> ((p5) & (p6)))' > 'lcr-o2-mf1GBH'
+Running [P3]: ../ikwiad -N -r4 -R3f '!((p3) <-> ((p5) & (p6)))' > 'lcr-o3-pegTMn'
+Running [N0]: ../ikwiad -t '(p3) <-> ((p5) & (p6))' > 'lcr-o0-koDxLw'
+Running [N1]: ../ikwiad -t -r4 -R3f '(p3) <-> ((p5) & (p6))' > 'lcr-o1-Uvb9t2'
+Running [N2]: ../ikwiad -N '(p3) <-> ((p5) & (p6))' > 'lcr-o2-8udLCI'
+Running [N3]: ../ikwiad -N -r4 -R3f '(p3) <-> ((p5) & (p6))' > 'lcr-o3-uCHK9N'
+Performing sanity checks and gathering statistics...
+
+-:73: (G((F(p2)) U (X(!(p6))))) W (((p2) xor (p4)) <-> (F(p3)))
+Running [P0]: ../ikwiad -t '(G((F(p2)) U (X(!(p6))))) W (((p2) xor (p4)) <-> (F(p3)))' > 'lcr-o0-apksC7'
+Running [P1]: ../ikwiad -t -r4 -R3f '(G((F(p2)) U (X(!(p6))))) W (((p2) xor (p4)) <-> (F(p3)))' > 'lcr-o1-aSJ0Jo'
+Running [P2]: ../ikwiad -N '(G((F(p2)) U (X(!(p6))))) W (((p2) xor (p4)) <-> (F(p3)))' > 'lcr-o2-nG8xnO'
+Running [P3]: ../ikwiad -N -r4 -R3f '(G((F(p2)) U (X(!(p6))))) W (((p2) xor (p4)) <-> (F(p3)))' > 'lcr-o3-4Xu7ps'
+Running [N0]: ../ikwiad -t '!((G((F(p2)) U (X(!(p6))))) W (((p2) xor (p4)) <-> (F(p3))))' > 'lcr-o0-pL1m30'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((G((F(p2)) U (X(!(p6))))) W (((p2) xor (p4)) <-> (F(p3))))' > 'lcr-o1-PAqbqQ'
+Running [N2]: ../ikwiad -N '!((G((F(p2)) U (X(!(p6))))) W (((p2) xor (p4)) <-> (F(p3))))' > 'lcr-o2-RVb07X'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((G((F(p2)) U (X(!(p6))))) W (((p2) xor (p4)) <-> (F(p3))))' > 'lcr-o3-X0mudR'
+Performing sanity checks and gathering statistics...
+
+-:74: ((p1) R (p4)) R (p1)
+Running [P0]: ../ikwiad -t '((p1) R (p4)) R (p1)' > 'lcr-o0-yR8nDe'
+Running [P1]: ../ikwiad -t -r4 -R3f '((p1) R (p4)) R (p1)' > 'lcr-o1-DsZswv'
+Running [P2]: ../ikwiad -N '((p1) R (p4)) R (p1)' > 'lcr-o2-hNUdDD'
+Running [P3]: ../ikwiad -N -r4 -R3f '((p1) R (p4)) R (p1)' > 'lcr-o3-wXeGjP'
+Running [N0]: ../ikwiad -t '!(((p1) R (p4)) R (p1))' > 'lcr-o0-jzgwjj'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(((p1) R (p4)) R (p1))' > 'lcr-o1-t33RlQ'
+Running [N2]: ../ikwiad -N '!(((p1) R (p4)) R (p1))' > 'lcr-o2-QDWPQE'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(((p1) R (p4)) R (p1))' > 'lcr-o3-Xpv8iM'
+Performing sanity checks and gathering statistics...
+
+-:75: p4
+Running [P0]: ../ikwiad -t 'p4' > 'lcr-o0-rWvmFx'
+Running [P1]: ../ikwiad -t -r4 -R3f 'p4' > 'lcr-o1-B3KW3n'
+Running [P2]: ../ikwiad -N 'p4' > 'lcr-o2-eNk0mD'
+Running [P3]: ../ikwiad -N -r4 -R3f 'p4' > 'lcr-o3-LIsZoe'
+Running [N0]: ../ikwiad -t '!(p4)' > 'lcr-o0-y64ppI'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(p4)' > 'lcr-o1-gv1wIz'
+Running [N2]: ../ikwiad -N '!(p4)' > 'lcr-o2-vM3Wx9'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(p4)' > 'lcr-o3-Y8Mhvp'
+Performing sanity checks and gathering statistics...
+
+-:76: (!(p2)) <-> (X(p4))
+Running [P0]: ../ikwiad -t '(!(p2)) <-> (X(p4))' > 'lcr-o0-rs3cwa'
+Running [P1]: ../ikwiad -t -r4 -R3f '(!(p2)) <-> (X(p4))' > 'lcr-o1-v2XLy9'
+Running [P2]: ../ikwiad -N '(!(p2)) <-> (X(p4))' > 'lcr-o2-PA1v4R'
+Running [P3]: ../ikwiad -N -r4 -R3f '(!(p2)) <-> (X(p4))' > 'lcr-o3-dIF6rF'
+Running [N0]: ../ikwiad -t '!((!(p2)) <-> (X(p4)))' > 'lcr-o0-frRCrv'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((!(p2)) <-> (X(p4)))' > 'lcr-o1-ow3uF4'
+Running [N2]: ../ikwiad -N '!((!(p2)) <-> (X(p4)))' > 'lcr-o2-WlcLPV'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((!(p2)) <-> (X(p4)))' > 'lcr-o3-HlBbT8'
+Performing sanity checks and gathering statistics...
+
+-:77: ((p5) & ((G(p5)) U (p2))) U (p6)
+Running [P0]: ../ikwiad -t '((p5) & ((G(p5)) U (p2))) U (p6)' > 'lcr-o0-Dcru1D'
+Running [P1]: ../ikwiad -t -r4 -R3f '((p5) & ((G(p5)) U (p2))) U (p6)' > 'lcr-o1-fFh5Gz'
+Running [P2]: ../ikwiad -N '((p5) & ((G(p5)) U (p2))) U (p6)' > 'lcr-o2-CQQ4uE'
+Running [P3]: ../ikwiad -N -r4 -R3f '((p5) & ((G(p5)) U (p2))) U (p6)' > 'lcr-o3-TuA4h1'
+Running [N0]: ../ikwiad -t '!(((p5) & ((G(p5)) U (p2))) U (p6))' > 'lcr-o0-4dEtoC'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(((p5) & ((G(p5)) U (p2))) U (p6))' > 'lcr-o1-8y3aLp'
+Running [N2]: ../ikwiad -N '!(((p5) & ((G(p5)) U (p2))) U (p6))' > 'lcr-o2-4klazs'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(((p5) & ((G(p5)) U (p2))) U (p6))' > 'lcr-o3-8IQKCI'
+Performing sanity checks and gathering statistics...
+
+-:78: (!(p2)) W (p2)
+Running [P0]: ../ikwiad -t '(!(p2)) W (p2)' > 'lcr-o0-42uNsA'
+Running [P1]: ../ikwiad -t -r4 -R3f '(!(p2)) W (p2)' > 'lcr-o1-5LRFPl'
+Running [P2]: ../ikwiad -N '(!(p2)) W (p2)' > 'lcr-o2-g64VoY'
+Running [P3]: ../ikwiad -N -r4 -R3f '(!(p2)) W (p2)' > 'lcr-o3-ICQUv1'
+Running [N0]: ../ikwiad -t '!((!(p2)) W (p2))' > 'lcr-o0-dBUEkZ'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((!(p2)) W (p2))' > 'lcr-o1-lk2HC9'
+Running [N2]: ../ikwiad -N '!((!(p2)) W (p2))' > 'lcr-o2-EtlvNd'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((!(p2)) W (p2))' > 'lcr-o3-685MSR'
+Performing sanity checks and gathering statistics...
+
+-:79: ((p2) W (X(p5))) M (F(p5))
+Running [P0]: ../ikwiad -t '((p2) W (X(p5))) M (F(p5))' > 'lcr-o0-YLL4t0'
+Running [P1]: ../ikwiad -t -r4 -R3f '((p2) W (X(p5))) M (F(p5))' > 'lcr-o1-I8dUiz'
+Running [P2]: ../ikwiad -N '((p2) W (X(p5))) M (F(p5))' > 'lcr-o2-cxe6dD'
+Running [P3]: ../ikwiad -N -r4 -R3f '((p2) W (X(p5))) M (F(p5))' > 'lcr-o3-zSBmCD'
+Running [N0]: ../ikwiad -t '!(((p2) W (X(p5))) M (F(p5)))' > 'lcr-o0-3y9E0i'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(((p2) W (X(p5))) M (F(p5)))' > 'lcr-o1-jdwMWn'
+Running [N2]: ../ikwiad -N '!(((p2) W (X(p5))) M (F(p5)))' > 'lcr-o2-Y9n0al'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(((p2) W (X(p5))) M (F(p5)))' > 'lcr-o3-4xWqTs'
+Performing sanity checks and gathering statistics...
+
+-:80: p3
+Running [P0]: ../ikwiad -t 'p3' > 'lcr-o0-YAFLzN'
+Running [P1]: ../ikwiad -t -r4 -R3f 'p3' > 'lcr-o1-JOmDFl'
+Running [P2]: ../ikwiad -N 'p3' > 'lcr-o2-HfrWg8'
+Running [P3]: ../ikwiad -N -r4 -R3f 'p3' > 'lcr-o3-vtyLrJ'
+Running [N0]: ../ikwiad -t '!(p3)' > 'lcr-o0-rDzzAk'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(p3)' > 'lcr-o1-G0ca6x'
+Running [N2]: ../ikwiad -N '!(p3)' > 'lcr-o2-11y596'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(p3)' > 'lcr-o3-cN90jE'
+Performing sanity checks and gathering statistics...
+
+-:81: X(p5)
+Running [P0]: ../ikwiad -t 'X(p5)' > 'lcr-o0-YhLed8'
+Running [P1]: ../ikwiad -t -r4 -R3f 'X(p5)' > 'lcr-o1-wOcwmt'
+Running [P2]: ../ikwiad -N 'X(p5)' > 'lcr-o2-nPJhi8'
+Running [P3]: ../ikwiad -N -r4 -R3f 'X(p5)' > 'lcr-o3-yQabSz'
+Running [N0]: ../ikwiad -t '!(X(p5))' > 'lcr-o0-0xQY0l'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(X(p5))' > 'lcr-o1-vCbLUV'
+Running [N2]: ../ikwiad -N '!(X(p5))' > 'lcr-o2-zfQDQU'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(X(p5))' > 'lcr-o3-iBy8Zq'
+Performing sanity checks and gathering statistics...
+
+-:82: (F(p3)) U (G((p1) xor (p6)))
+Running [P0]: ../ikwiad -t '(F(p3)) U (G((p1) xor (p6)))' > 'lcr-o0-e7mn4l'
+Running [P1]: ../ikwiad -t -r4 -R3f '(F(p3)) U (G((p1) xor (p6)))' > 'lcr-o1-93nycN'
+Running [P2]: ../ikwiad -N '(F(p3)) U (G((p1) xor (p6)))' > 'lcr-o2-DlDoxr'
+Running [P3]: ../ikwiad -N -r4 -R3f '(F(p3)) U (G((p1) xor (p6)))' > 'lcr-o3-wkXpn2'
+Running [N0]: ../ikwiad -t '!((F(p3)) U (G((p1) xor (p6))))' > 'lcr-o0-wCwedv'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((F(p3)) U (G((p1) xor (p6))))' > 'lcr-o1-Jhub9I'
+Running [N2]: ../ikwiad -N '!((F(p3)) U (G((p1) xor (p6))))' > 'lcr-o2-D8hUle'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((F(p3)) U (G((p1) xor (p6))))' > 'lcr-o3-zrN8DC'
+Performing sanity checks and gathering statistics...
+
+-:83: (((1) U (p2)) U (p3)) M (1)
+Running [P0]: ../ikwiad -t '(((1) U (p2)) U (p3)) M (1)' > 'lcr-o0-6ToXAp'
+Running [P1]: ../ikwiad -t -r4 -R3f '(((1) U (p2)) U (p3)) M (1)' > 'lcr-o1-YMRLcb'
+Running [P2]: ../ikwiad -N '(((1) U (p2)) U (p3)) M (1)' > 'lcr-o2-kNUnTw'
+Running [P3]: ../ikwiad -N -r4 -R3f '(((1) U (p2)) U (p3)) M (1)' > 'lcr-o3-pFuG9D'
+Running [N0]: ../ikwiad -t '!((((1) U (p2)) U (p3)) M (1))' > 'lcr-o0-VivH9M'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((((1) U (p2)) U (p3)) M (1))' > 'lcr-o1-pUQC9L'
+Running [N2]: ../ikwiad -N '!((((1) U (p2)) U (p3)) M (1))' > 'lcr-o2-LkSaOh'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((((1) U (p2)) U (p3)) M (1))' > 'lcr-o3-nye3nh'
+Performing sanity checks and gathering statistics...
+
+-:84: F(G((p5) <-> (G(p3))))
+Running [P0]: ../ikwiad -t 'F(G((p5) <-> (G(p3))))' > 'lcr-o0-k1Z8G3'
+Running [P1]: ../ikwiad -t -r4 -R3f 'F(G((p5) <-> (G(p3))))' > 'lcr-o1-jfzTnh'
+Running [P2]: ../ikwiad -N 'F(G((p5) <-> (G(p3))))' > 'lcr-o2-PSeL9Q'
+Running [P3]: ../ikwiad -N -r4 -R3f 'F(G((p5) <-> (G(p3))))' > 'lcr-o3-BXHOnC'
+Running [N0]: ../ikwiad -t '!(F(G((p5) <-> (G(p3)))))' > 'lcr-o0-vhbUCV'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(F(G((p5) <-> (G(p3)))))' > 'lcr-o1-O5ZbNs'
+Running [N2]: ../ikwiad -N '!(F(G((p5) <-> (G(p3)))))' > 'lcr-o2-wPRgrD'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(F(G((p5) <-> (G(p3)))))' > 'lcr-o3-p04rmm'
+Performing sanity checks and gathering statistics...
+
+-:85: (1) U (F(!(G(F(p1)))))
+Running [P0]: ../ikwiad -t '(1) U (F(!(G(F(p1)))))' > 'lcr-o0-5W2xVj'
+Running [P1]: ../ikwiad -t -r4 -R3f '(1) U (F(!(G(F(p1)))))' > 'lcr-o1-SVywOI'
+Running [P2]: ../ikwiad -N '(1) U (F(!(G(F(p1)))))' > 'lcr-o2-yAlb6M'
+Running [P3]: ../ikwiad -N -r4 -R3f '(1) U (F(!(G(F(p1)))))' > 'lcr-o3-ZQBh41'
+Running [N0]: ../ikwiad -t '!((1) U (F(!(G(F(p1))))))' > 'lcr-o0-0DYsV5'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((1) U (F(!(G(F(p1))))))' > 'lcr-o1-5Zuy5h'
+Running [N2]: ../ikwiad -N '!((1) U (F(!(G(F(p1))))))' > 'lcr-o2-J9nB4g'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((1) U (F(!(G(F(p1))))))' > 'lcr-o3-FtcNtn'
+Performing sanity checks and gathering statistics...
+
+-:86: G((!(p3)) R (p5))
+Running [P0]: ../ikwiad -t 'G((!(p3)) R (p5))' > 'lcr-o0-nDQKWH'
+Running [P1]: ../ikwiad -t -r4 -R3f 'G((!(p3)) R (p5))' > 'lcr-o1-vYAUlZ'
+Running [P2]: ../ikwiad -N 'G((!(p3)) R (p5))' > 'lcr-o2-eNSV7A'
+Running [P3]: ../ikwiad -N -r4 -R3f 'G((!(p3)) R (p5))' > 'lcr-o3-SgjMiC'
+Running [N0]: ../ikwiad -t '!(G((!(p3)) R (p5)))' > 'lcr-o0-LxRU7f'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(G((!(p3)) R (p5)))' > 'lcr-o1-BwUnpI'
+Running [N2]: ../ikwiad -N '!(G((!(p3)) R (p5)))' > 'lcr-o2-vSvCZC'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(G((!(p3)) R (p5)))' > 'lcr-o3-zUI9eU'
+Performing sanity checks and gathering statistics...
+
+-:87: (X(p1)) W (((p2) M (!(p1))) U (X(p4)))
+Running [P0]: ../ikwiad -t '(X(p1)) W (((p2) M (!(p1))) U (X(p4)))' > 'lcr-o0-yFYS3x'
+Running [P1]: ../ikwiad -t -r4 -R3f '(X(p1)) W (((p2) M (!(p1))) U (X(p4)))' > 'lcr-o1-b9HbIY'
+Running [P2]: ../ikwiad -N '(X(p1)) W (((p2) M (!(p1))) U (X(p4)))' > 'lcr-o2-ZMqF8q'
+Running [P3]: ../ikwiad -N -r4 -R3f '(X(p1)) W (((p2) M (!(p1))) U (X(p4)))' > 'lcr-o3-LcX4HJ'
+Running [N0]: ../ikwiad -t '!((X(p1)) W (((p2) M (!(p1))) U (X(p4))))' > 'lcr-o0-389ist'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((X(p1)) W (((p2) M (!(p1))) U (X(p4))))' > 'lcr-o1-EYICV5'
+Running [N2]: ../ikwiad -N '!((X(p1)) W (((p2) M (!(p1))) U (X(p4))))' > 'lcr-o2-3qHnuD'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((X(p1)) W (((p2) M (!(p1))) U (X(p4))))' > 'lcr-o3-uOAYl1'
+Performing sanity checks and gathering statistics...
+
+-:88: (G(p3)) -> ((1) U (p3))
+Running [P0]: ../ikwiad -t '(G(p3)) -> ((1) U (p3))' > 'lcr-o0-dPTUdo'
+Running [P1]: ../ikwiad -t -r4 -R3f '(G(p3)) -> ((1) U (p3))' > 'lcr-o1-BGtcOc'
+Running [P2]: ../ikwiad -N '(G(p3)) -> ((1) U (p3))' > 'lcr-o2-qKrY1J'
+Running [P3]: ../ikwiad -N -r4 -R3f '(G(p3)) -> ((1) U (p3))' > 'lcr-o3-HB8C4Y'
+Running [N0]: ../ikwiad -t '!((G(p3)) -> ((1) U (p3)))' > 'lcr-o0-FkNIWC'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((G(p3)) -> ((1) U (p3)))' > 'lcr-o1-AAtXUM'
+Running [N2]: ../ikwiad -N '!((G(p3)) -> ((1) U (p3)))' > 'lcr-o2-TOjLkx'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((G(p3)) -> ((1) U (p3)))' > 'lcr-o3-FFGSKL'
+Performing sanity checks and gathering statistics...
+
+-:89: G(((G(p2)) W (F(G(p6)))) M ((p2) xor (F(p6))))
+Running [P0]: ../ikwiad -t 'G(((G(p2)) W (F(G(p6)))) M ((p2) xor (F(p6))))' > 'lcr-o0-t5zB2T'
+Running [P1]: ../ikwiad -t -r4 -R3f 'G(((G(p2)) W (F(G(p6)))) M ((p2) xor (F(p6))))' > 'lcr-o1-RD76rL'
+Running [P2]: ../ikwiad -N 'G(((G(p2)) W (F(G(p6)))) M ((p2) xor (F(p6))))' > 'lcr-o2-6lwyK8'
+Running [P3]: ../ikwiad -N -r4 -R3f 'G(((G(p2)) W (F(G(p6)))) M ((p2) xor (F(p6))))' > 'lcr-o3-xLDVkd'
+Running [N0]: ../ikwiad -t '!(G(((G(p2)) W (F(G(p6)))) M ((p2) xor (F(p6)))))' > 'lcr-o0-CClNM9'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(G(((G(p2)) W (F(G(p6)))) M ((p2) xor (F(p6)))))' > 'lcr-o1-x2rwTj'
+Running [N2]: ../ikwiad -N '!(G(((G(p2)) W (F(G(p6)))) M ((p2) xor (F(p6)))))' > 'lcr-o2-Ke7tVa'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(G(((G(p2)) W (F(G(p6)))) M ((p2) xor (F(p6)))))' > 'lcr-o3-EeoC4W'
+Performing sanity checks and gathering statistics...
+
+-:90: (X(p1)) M (G((F(p6)) -> (p2)))
+Running [P0]: ../ikwiad -t '(X(p1)) M (G((F(p6)) -> (p2)))' > 'lcr-o0-y3fKZg'
+Running [P1]: ../ikwiad -t -r4 -R3f '(X(p1)) M (G((F(p6)) -> (p2)))' > 'lcr-o1-0jjplk'
+Running [P2]: ../ikwiad -N '(X(p1)) M (G((F(p6)) -> (p2)))' > 'lcr-o2-vqvUM0'
+Running [P3]: ../ikwiad -N -r4 -R3f '(X(p1)) M (G((F(p6)) -> (p2)))' > 'lcr-o3-VQ8tzZ'
+Running [N0]: ../ikwiad -t '!((X(p1)) M (G((F(p6)) -> (p2))))' > 'lcr-o0-GWYyzm'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((X(p1)) M (G((F(p6)) -> (p2))))' > 'lcr-o1-Phtfra'
+Running [N2]: ../ikwiad -N '!((X(p1)) M (G((F(p6)) -> (p2))))' > 'lcr-o2-mEbwWB'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((X(p1)) M (G((F(p6)) -> (p2))))' > 'lcr-o3-FUjG7X'
+Performing sanity checks and gathering statistics...
+
+-:91: G(X(((p5) <-> (G(p5))) xor ((F(p3)) M (p6))))
+Running [P0]: ../ikwiad -t 'G(X(((p5) <-> (G(p5))) xor ((F(p3)) M (p6))))' > 'lcr-o0-ZoGtTe'
+Running [P1]: ../ikwiad -t -r4 -R3f 'G(X(((p5) <-> (G(p5))) xor ((F(p3)) M (p6))))' > 'lcr-o1-2H7oiT'
+Running [P2]: ../ikwiad -N 'G(X(((p5) <-> (G(p5))) xor ((F(p3)) M (p6))))' > 'lcr-o2-9pxyPB'
+Running [P3]: ../ikwiad -N -r4 -R3f 'G(X(((p5) <-> (G(p5))) xor ((F(p3)) M (p6))))' > 'lcr-o3-K2OuEt'
+Running [N0]: ../ikwiad -t '!(G(X(((p5) <-> (G(p5))) xor ((F(p3)) M (p6)))))' > 'lcr-o0-7Lw0BB'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(G(X(((p5) <-> (G(p5))) xor ((F(p3)) M (p6)))))' > 'lcr-o1-dwqpG1'
+Running [N2]: ../ikwiad -N '!(G(X(((p5) <-> (G(p5))) xor ((F(p3)) M (p6)))))' > 'lcr-o2-FkIVpT'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(G(X(((p5) <-> (G(p5))) xor ((F(p3)) M (p6)))))' > 'lcr-o3-LaVeth'
+Performing sanity checks and gathering statistics...
+
+-:92: (p2) -> ((p6) R (G(p3)))
+Running [P0]: ../ikwiad -t '(p2) -> ((p6) R (G(p3)))' > 'lcr-o0-RswabK'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p2) -> ((p6) R (G(p3)))' > 'lcr-o1-S4rQJC'
+Running [P2]: ../ikwiad -N '(p2) -> ((p6) R (G(p3)))' > 'lcr-o2-kHfm1L'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p2) -> ((p6) R (G(p3)))' > 'lcr-o3-K39tRU'
+Running [N0]: ../ikwiad -t '!((p2) -> ((p6) R (G(p3))))' > 'lcr-o0-wHgTP0'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p2) -> ((p6) R (G(p3))))' > 'lcr-o1-p1OIkR'
+Running [N2]: ../ikwiad -N '!((p2) -> ((p6) R (G(p3))))' > 'lcr-o2-iRMTXh'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p2) -> ((p6) R (G(p3))))' > 'lcr-o3-lMQlvd'
+Performing sanity checks and gathering statistics...
+
+-:93: (G(p3)) & (G(X(!((p1) R (p6)))))
+Running [P0]: ../ikwiad -t '(G(p3)) & (G(X(!((p1) R (p6)))))' > 'lcr-o0-dWccEB'
+Running [P1]: ../ikwiad -t -r4 -R3f '(G(p3)) & (G(X(!((p1) R (p6)))))' > 'lcr-o1-SMIjcz'
+Running [P2]: ../ikwiad -N '(G(p3)) & (G(X(!((p1) R (p6)))))' > 'lcr-o2-vfPxmG'
+Running [P3]: ../ikwiad -N -r4 -R3f '(G(p3)) & (G(X(!((p1) R (p6)))))' > 'lcr-o3-slsFd4'
+Running [N0]: ../ikwiad -t '!((G(p3)) & (G(X(!((p1) R (p6))))))' > 'lcr-o0-ZTrQV3'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((G(p3)) & (G(X(!((p1) R (p6))))))' > 'lcr-o1-Gn2AuK'
+Running [N2]: ../ikwiad -N '!((G(p3)) & (G(X(!((p1) R (p6))))))' > 'lcr-o2-DOnXLc'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((G(p3)) & (G(X(!((p1) R (p6))))))' > 'lcr-o3-HIDYvc'
+Performing sanity checks and gathering statistics...
+
+-:94: (G((p1) W (0))) <-> ((p1) xor (((X(p2)) R (F(p6))) -> (p4)))
+Running [P0]: ../ikwiad -t '(G((p1) W (0))) <-> ((p1) xor (((X(p2)) R (F(p6))) -> (p4)))' > 'lcr-o0-iGDKd5'
+Running [P1]: ../ikwiad -t -r4 -R3f '(G((p1) W (0))) <-> ((p1) xor (((X(p2)) R (F(p6))) -> (p4)))' > 'lcr-o1-anjs13'
+Running [P2]: ../ikwiad -N '(G((p1) W (0))) <-> ((p1) xor (((X(p2)) R (F(p6))) -> (p4)))' > 'lcr-o2-bPmqSh'
+Running [P3]: ../ikwiad -N -r4 -R3f '(G((p1) W (0))) <-> ((p1) xor (((X(p2)) R (F(p6))) -> (p4)))' > 'lcr-o3-XLrm1b'
+Running [N0]: ../ikwiad -t '!((G((p1) W (0))) <-> ((p1) xor (((X(p2)) R (F(p6))) -> (p4))))' > 'lcr-o0-Y7nQiK'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((G((p1) W (0))) <-> ((p1) xor (((X(p2)) R (F(p6))) -> (p4))))' > 'lcr-o1-NyakR0'
+Running [N2]: ../ikwiad -N '!((G((p1) W (0))) <-> ((p1) xor (((X(p2)) R (F(p6))) -> (p4))))' > 'lcr-o2-7qYpnT'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((G((p1) W (0))) <-> ((p1) xor (((X(p2)) R (F(p6))) -> (p4))))' > 'lcr-o3-nM09F4'
+Performing sanity checks and gathering statistics...
+
+-:95: ((((p3) & (p5)) M (p2)) W (!(p6))) U ((F(p6)) xor (F(G(p5))))
+Running [P0]: ../ikwiad -t '((((p3) & (p5)) M (p2)) W (!(p6))) U ((F(p6)) xor (F(G(p5))))' > 'lcr-o0-Jr5uHM'
+Running [P1]: ../ikwiad -t -r4 -R3f '((((p3) & (p5)) M (p2)) W (!(p6))) U ((F(p6)) xor (F(G(p5))))' > 'lcr-o1-MCeYYp'
+Running [P2]: ../ikwiad -N '((((p3) & (p5)) M (p2)) W (!(p6))) U ((F(p6)) xor (F(G(p5))))' > 'lcr-o2-nhFY4p'
+Running [P3]: ../ikwiad -N -r4 -R3f '((((p3) & (p5)) M (p2)) W (!(p6))) U ((F(p6)) xor (F(G(p5))))' > 'lcr-o3-L5XxPx'
+Running [N0]: ../ikwiad -t '!(((((p3) & (p5)) M (p2)) W (!(p6))) U ((F(p6)) xor (F(G(p5)))))' > 'lcr-o0-Xx3Prd'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(((((p3) & (p5)) M (p2)) W (!(p6))) U ((F(p6)) xor (F(G(p5)))))' > 'lcr-o1-G3h2Vr'
+Running [N2]: ../ikwiad -N '!(((((p3) & (p5)) M (p2)) W (!(p6))) U ((F(p6)) xor (F(G(p5)))))' > 'lcr-o2-mvuoJP'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(((((p3) & (p5)) M (p2)) W (!(p6))) U ((F(p6)) xor (F(G(p5)))))' > 'lcr-o3-YdhNBK'
+Performing sanity checks and gathering statistics...
+
+-:96: G((p5) M (F(X(p3))))
+Running [P0]: ../ikwiad -t 'G((p5) M (F(X(p3))))' > 'lcr-o0-TJUVJy'
+Running [P1]: ../ikwiad -t -r4 -R3f 'G((p5) M (F(X(p3))))' > 'lcr-o1-v4z9yy'
+Running [P2]: ../ikwiad -N 'G((p5) M (F(X(p3))))' > 'lcr-o2-IsYDj8'
+Running [P3]: ../ikwiad -N -r4 -R3f 'G((p5) M (F(X(p3))))' > 'lcr-o3-Xszazm'
+Running [N0]: ../ikwiad -t '!(G((p5) M (F(X(p3)))))' > 'lcr-o0-8b5H20'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(G((p5) M (F(X(p3)))))' > 'lcr-o1-YxvaRe'
+Running [N2]: ../ikwiad -N '!(G((p5) M (F(X(p3)))))' > 'lcr-o2-AfY5EU'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(G((p5) M (F(X(p3)))))' > 'lcr-o3-dmtMRj'
+Performing sanity checks and gathering statistics...
+
+-:97: (p3) & (G(p5))
+Running [P0]: ../ikwiad -t '(p3) & (G(p5))' > 'lcr-o0-DaDZnt'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p3) & (G(p5))' > 'lcr-o1-ONjc1K'
+Running [P2]: ../ikwiad -N '(p3) & (G(p5))' > 'lcr-o2-zYg5Xf'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p3) & (G(p5))' > 'lcr-o3-c1Cql1'
+Running [N0]: ../ikwiad -t '!((p3) & (G(p5)))' > 'lcr-o0-8cFGrG'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p3) & (G(p5)))' > 'lcr-o1-BbdU8H'
+Running [N2]: ../ikwiad -N '!((p3) & (G(p5)))' > 'lcr-o2-S5C2Th'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p3) & (G(p5)))' > 'lcr-o3-c7pOr6'
+Performing sanity checks and gathering statistics...
+
+-:98: ((F((p3) <-> (G(p1)))) U (!(p3))) R (F(p1))
+Running [P0]: ../ikwiad -t '((F((p3) <-> (G(p1)))) U (!(p3))) R (F(p1))' > 'lcr-o0-ZA0on4'
+Running [P1]: ../ikwiad -t -r4 -R3f '((F((p3) <-> (G(p1)))) U (!(p3))) R (F(p1))' > 'lcr-o1-GmhFNE'
+Running [P2]: ../ikwiad -N '((F((p3) <-> (G(p1)))) U (!(p3))) R (F(p1))' > 'lcr-o2-pH6K3H'
+Running [P3]: ../ikwiad -N -r4 -R3f '((F((p3) <-> (G(p1)))) U (!(p3))) R (F(p1))' > 'lcr-o3-OpCzid'
+Running [N0]: ../ikwiad -t '!(((F((p3) <-> (G(p1)))) U (!(p3))) R (F(p1)))' > 'lcr-o0-Y2axju'
+Running [N1]: ../ikwiad -t -r4 -R3f '!(((F((p3) <-> (G(p1)))) U (!(p3))) R (F(p1)))' > 'lcr-o1-tRG79M'
+Running [N2]: ../ikwiad -N '!(((F((p3) <-> (G(p1)))) U (!(p3))) R (F(p1)))' > 'lcr-o2-qGWqGI'
+Running [N3]: ../ikwiad -N -r4 -R3f '!(((F((p3) <-> (G(p1)))) U (!(p3))) R (F(p1)))' > 'lcr-o3-CjM5oZ'
+Performing sanity checks and gathering statistics...
+
+-:99: (X(X(p4))) W (G((p4) | (!(G(F(p1))))))
+Running [P0]: ../ikwiad -t '(X(X(p4))) W (G((p4) | (!(G(F(p1))))))' > 'lcr-o0-3VDOXp'
+Running [P1]: ../ikwiad -t -r4 -R3f '(X(X(p4))) W (G((p4) | (!(G(F(p1))))))' > 'lcr-o1-TTehs1'
+Running [P2]: ../ikwiad -N '(X(X(p4))) W (G((p4) | (!(G(F(p1))))))' > 'lcr-o2-HhhaLd'
+Running [P3]: ../ikwiad -N -r4 -R3f '(X(X(p4))) W (G((p4) | (!(G(F(p1))))))' > 'lcr-o3-zForQe'
+Running [N0]: ../ikwiad -t '!((X(X(p4))) W (G((p4) | (!(G(F(p1)))))))' > 'lcr-o0-LlKGtq'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((X(X(p4))) W (G((p4) | (!(G(F(p1)))))))' > 'lcr-o1-cJ9CuT'
+Running [N2]: ../ikwiad -N '!((X(X(p4))) W (G((p4) | (!(G(F(p1)))))))' > 'lcr-o2-5Fe71O'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((X(X(p4))) W (G((p4) | (!(G(F(p1)))))))' > 'lcr-o3-OKsxOc'
+Performing sanity checks and gathering statistics...
+
+-:100: (p3) M (1)
+Running [P0]: ../ikwiad -t '(p3) M (1)' > 'lcr-o0-3lWUJ1'
+Running [P1]: ../ikwiad -t -r4 -R3f '(p3) M (1)' > 'lcr-o1-iROO92'
+Running [P2]: ../ikwiad -N '(p3) M (1)' > 'lcr-o2-JIJ2C4'
+Running [P3]: ../ikwiad -N -r4 -R3f '(p3) M (1)' > 'lcr-o3-3EkbfI'
+Running [N0]: ../ikwiad -t '!((p3) M (1))' > 'lcr-o0-BT97s1'
+Running [N1]: ../ikwiad -t -r4 -R3f '!((p3) M (1))' > 'lcr-o1-UN8oAe'
+Running [N2]: ../ikwiad -N '!((p3) M (1))' > 'lcr-o2-Uh8ruo'
+Running [N3]: ../ikwiad -N -r4 -R3f '!((p3) M (1))' > 'lcr-o3-qOgqpJ'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
+PASS core/ltl2neverclaim.test (exit status: 0)

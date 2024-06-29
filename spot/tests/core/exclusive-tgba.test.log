@@ -1,0 +1,189 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test exclusive-tgba.test
+== Running test exclusive-tgba.test
++ echo exclusive-tgba.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=exclusive-tgba
++ testSubDir=exclusive-tgba.dir
++ chmod -R a+rwx exclusive-tgba.dir
++ rm -rf exclusive-tgba.dir
++ mkdir exclusive-tgba.dir
++ cd exclusive-tgba.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ cat
++ cat
++ run 0 autfilt -H --exclusive-ap=a,b,c --exclusive-ap=d,e automaton
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H --exclusive-ap=a,b,c --exclusive-ap=d,e automaton
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H --exclusive-ap=a,b,c --exclusive-ap=d,e automaton
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
+HOA: v1
+States: 3
+Start: 0
+AP: 3 "a" "b" "c"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc deterministic
+--BODY--
+State: 0
+[0&!1&!2] 1
+State: 1
+[!0&1&!2] 2
+[!0&!1&2] 2
+State: 2 {0}
+[!0&1&!2] 2
+--END--
++ diff out expected
++ run 0 autfilt -H --exclusive-ap=a,b,c --exclusive-ap=d,e --simplify-exclusive-ap automaton
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H --exclusive-ap=a,b,c --exclusive-ap=d,e --simplify-exclusive-ap automaton
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H --exclusive-ap=a,b,c --exclusive-ap=d,e --simplify-exclusive-ap automaton
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out2
+HOA: v1
+States: 3
+Start: 0
+AP: 3 "a" "b" "c"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc deterministic
+--BODY--
+State: 0
+[0] 1
+State: 1
+[1 | 2] 2
+State: 2 {0}
+[1] 2
+--END--
++ diff out2 expected-simpl
++ cat
++ cat
++ cat
++ run 0 autfilt -H --exclusive-ap=a,b,c --exclusive-ap=d,e automaton
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H --exclusive-ap=a,b,c --exclusive-ap=d,e automaton
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H --exclusive-ap=a,b,c --exclusive-ap=d,e automaton
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc deterministic
+--BODY--
+State: 0
+[0&!1] 1
+State: 1
+[!0&1] 2
+[0&!1] 2
+State: 2 {0}
+[!0&1] 2
+--END--
++ diff out expected
++ run 0 autfilt -H --exclusive-ap=a,b,c --exclusive-ap=d,e --simplify-exclusive-ap automaton
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H --exclusive-ap=a,b,c --exclusive-ap=d,e --simplify-exclusive-ap automaton
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H --exclusive-ap=a,b,c --exclusive-ap=d,e --simplify-exclusive-ap automaton
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out2
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc deterministic
+--BODY--
+State: 0
+[0] 1
+State: 1
+[0 | 1] 2
+State: 2 {0}
+[1] 2
+--END--
++ diff out2 expected-simpl
++ ltl2tgba -B -f F(Ga | (GFb <-> GFc)) --stats=%s,%t,%e
++ test 6,50,14 = 6,50,14
++ ltl2tgba -B -f F(Ga | (GFb <-> GFc))
++ autfilt --exclusive-ap=a,b,c --stats=%s,%t,%e
++ test 6,24,12 = 6,24,12
++ ltl2tgba -B -f F(Ga | (GFb <-> GFc))
++ autfilt --small --exclusive-ap=a,b,c --stats=%s,%t,%e --ap=3
++ test 4,18,8 = 4,18,8
++ ltl2tgba -B -f F(Ga | (GFb <-> GFc))
++ autfilt --small --exclusive-ap=a,b,c --simplify-ex --ap=3
++ autfilt out --stats=%s,%t,%e --ap=2
++ test 4,17,8 = 4,17,8
++ ltl2tgba a U b
++ autfilt --exclusive-ap=a,b,c --simplify-exclusive-ap
++ autfilt out --stats=%s,%t,%e --ap=2
++ test 2,8,3 = 2,8,3
+PASS core/exclusive-tgba.test (exit status: 0)

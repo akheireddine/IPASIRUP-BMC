@@ -1,0 +1,77 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test autcross3.test
+== Running test autcross3.test
++ echo autcross3.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=autcross3
++ testSubDir=autcross3.dir
++ chmod -R a+rwx autcross3.dir
++ rm -rf autcross3.dir
++ mkdir autcross3.dir
++ cd autcross3.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ + randaut -Q4 2
+autcross --language-preserve autfilt sleep 5; autfilt %H > %O --timeout=2 --csv=out.csv
++ cat stderr
+-:1.1-21.7
+Running [A0]: autfilt 'lcr-i0-uEBNkm'>'lcr-o0-6XMTMo'
+Running [A1]: sleep 5; autfilt 'lcr-i0-7dsSa1' > 'lcr-o1-e16qXT'
+warning: timeout during execution of command
+Performing sanity checks and gathering statistics...
+
+No major problem detected.
+However, 1 timeout occurred.
++ + grep warning:.*timeoutwc stderr -l
+
++ test 1 -eq 1
++ wc -l
++ test 3 -eq 3
++ check_csv out.csv
++ sed s/[^,]//g
++ read first
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,,
++ read l
++ randaut -Q4 2
++ autcross --language-preserve autfilt sleep 5; autfilt %H > %O --timeout=2 --fail-on-timeout --csv=out.csv
++ cat stderr
+-:1.1-21.7
+Running [A0]: autfilt 'lcr-i0-Ft5Rk8'>'lcr-o0-LNqEMb'
+Running [A1]: sleep 5; autfilt 'lcr-i0-HLnQxW' > 'lcr-o1-ULFuzV'
+error: timeout during execution of command
+Performing sanity checks and gathering statistics...
+
+error: some error was detected during the above runs,
+       please search for 'error:' messages in the above trace.
++ grep error:.*timeout stderr
++ wc -l
++ test 1 -eq 1
++ wc -l
++ test 3 -eq 3
++ check_csv out.csv
++ sed s/[^,]//g
++ read first
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,,
++ read l
+PASS core/autcross3.test (exit status: 0)

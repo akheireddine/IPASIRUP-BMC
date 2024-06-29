@@ -1,0 +1,48 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ngraph.test
+== Running test ngraph.test
++ echo ngraph.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ngraph
++ testSubDir=ngraph.dir
++ chmod -R a+rwx ngraph.dir
++ rm -rf ngraph.dir
++ mkdir ngraph.dir
++ cd ngraph.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ run 0 ../ngraph
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ngraph
++ cmd=../ngraph
++ shift
++ test -n ../ngraph
++ set ../ngraph
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ngraph
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff stdout expected
+PASS core/ngraph.test (exit status: 0)

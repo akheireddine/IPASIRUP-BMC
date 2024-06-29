@@ -1,0 +1,96 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test parseerr.test
+== Running test parseerr.test
++ echo parseerr.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=parseerr
++ testSubDir=parseerr.dir
++ chmod -R a+rwx parseerr.dir
++ rm -rf parseerr.dir
++ mkdir parseerr.dir
++ cd parseerr.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 1 ../ltl2text input
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ sed s/[$]undefined/invalid token/g;s/ap([^"]*\("[^"]*"\))/\1/g
++ command -v ../ltl2text
++ cmd=../ltl2text
++ shift
++ test -n ../ltl2text
++ set ../ltl2text input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ltl2text input
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ sed s/$$//
++ diff output expected
++ cat
++ run 0 ../equals -E recover.txt
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../equals
++ cmd=../equals
++ shift
++ test -n ../equals
++ set ../equals -E recover.txt
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../equals -E recover.txt
+1: # leading and trailing garbage are skipped
+2: a U b c, a U b
+3: # (check multop merging while we are at it)
+4: a & b & c & d e, a & b & c & d
+5: a & (b | c) & d should work, a & (b | c) & d
+6: # Binop recovery
+7: a U, a
+8: a U b V c R, a U b V c
+9: a &&& b, a & b
+10: a &&| b, a | b
+11: 
+12: # Recovery inside parentheses
+13: a U (b c) U e R (f g <=> h), a U b U e R f
+14: a U ((c) U e) R (<=> f g), a U ((c) U e) R (0)
+15: 
+16: # Missing parentheses
+17: a & (a + b, a & (a + b)
+18: a & (a + b c, a & (a + b)
+19: a & (+, a & 0
+20: a & (, a & 0
+21: 
+22: # Invalid ranges
+23: {a[*8..1];b}, {a[*1..8];b}
+24: {a[=8..1];b}, {a[=1..8];b}
+25: {a[->8..1];b}, {a[->1..8];b}
+26: {a[->..0];b}, {a[->0..1];b}
+27: {a[->2..300];b}, {a[->2..254];b}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
+PASS core/parseerr.test (exit status: 0)

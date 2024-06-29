@@ -1,0 +1,52 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test lenient.test
+== Running test lenient.test
++ echo lenient.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=lenient
++ testSubDir=lenient.dir
++ chmod -R a+rwx lenient.dir
++ rm -rf lenient.dir
++ mkdir lenient.dir
++ cd lenient.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ cat
++ run 0 ltlfilt --lenient input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt --lenient input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt --lenient input
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cmp output expected
++ run 2 ltlfilt --lenient -f F( )
++ grep unexpected empty block stderr
+unexpected empty block
+PASS core/lenient.test (exit status: 0)

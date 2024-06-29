@@ -1,0 +1,1668 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test dstar.test
+== Running test dstar.test
++ + sed -e s,.*[\/],,;s/\.test$//
+echo dstar.test
++ me=dstar
++ testSubDir=dstar.dir
++ chmod -R a+rwx dstar.dir
++ rm -rf dstar.dir
++ mkdir dstar.dir
++ cd dstar.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 ../ikwiad -d -XD dra.dstar
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ + teecommand stdout -v
+ ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -d -XD dra.dstar
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -d -XD dra.dstar
+Starting parse
+Entering state 0
+Stack now 0
+Reading a token
+Next token is token DRA (1.1-3: )
+Shifting token DRA (1.1-3: )
+Entering state 5
+Stack now 0 5
+Reducing stack by rule 130 (line 1799):
+   $1 = token DRA (1.1-3: )
+-> $$ = nterm dstar_type (1.1-3: )
+Entering state 16
+Stack now 0 16
+Reading a token
+Next token is token v2 (1.5-6: )
+Shifting token v2 (1.5-6: )
+Entering state 33
+Stack now 0 16 33
+Reading a token
+Next token is token explicit (1.8-15: )
+Shifting token explicit (1.8-15: )
+Entering state 68
+Stack now 0 16 33 68
+Reducing stack by rule 133 (line 1848):
+-> $$ = nterm dstar_sizes (1.16-15: )
+Entering state 104
+Stack now 0 16 33 68 104
+Reading a token
+Next token is token States: (3.1-7: )
+Shifting token States: (3.1-7: )
+Entering state 155
+Stack now 0 16 33 68 104 155
+Reading a token
+Next token is token integer (3.9: 3)
+Shifting token integer (3.9: 3)
+Entering state 206
+Stack now 0 16 33 68 104 155 206
+Reducing stack by rule 136 (line 1868):
+   $1 = nterm dstar_sizes (1.16-15: )
+   $2 = token States: (3.1-7: )
+   $3 = token integer (3.9: 3)
+-> $$ = nterm dstar_sizes (1.16-3.9: )
+Entering state 104
+Stack now 0 16 33 68 104
+Reading a token
+Next token is token Acceptance-Pairs: (4.1-17: )
+Shifting token Acceptance-Pairs: (4.1-17: )
+Entering state 157
+Stack now 0 16 33 68 104 157
+Reading a token
+Next token is token integer (4.19: 1)
+Shifting token integer (4.19: 1)
+Entering state 208
+Stack now 0 16 33 68 104 157 208
+Reducing stack by rule 135 (line 1850):
+   $1 = nterm dstar_sizes (1.16-3.9: )
+   $2 = token Acceptance-Pairs: (4.1-17: )
+   $3 = token integer (4.19: 1)
+-> $$ = nterm dstar_sizes (1.16-4.19: )
+Entering state 104
+Stack now 0 16 33 68 104
+Reading a token
+Next token is token Start: (5.1-6: )
+Shifting token Start: (5.1-6: )
+Entering state 156
+Stack now 0 16 33 68 104 156
+Reading a token
+Next token is token integer (5.8: 0)
+Shifting token integer (5.8: 0)
+Entering state 207
+Stack now 0 16 33 68 104 156 207
+Reducing stack by rule 137 (line 1881):
+   $1 = nterm dstar_sizes (1.16-4.19: )
+   $2 = token Start: (5.1-6: )
+   $3 = token integer (5.8: 0)
+-> $$ = nterm dstar_sizes (1.16-5.8: )
+Entering state 104
+Stack now 0 16 33 68 104
+Reading a token
+Next token is token AP: (6.1-3: )
+Shifting token AP: (6.1-3: )
+Entering state 53
+Stack now 0 16 33 68 104 53
+Reading a token
+Next token is token integer (6.5: 2)
+Shifting token integer (6.5: 2)
+Entering state 91
+Stack now 0 16 33 68 104 53 91
+Reducing stack by rule 24 (line 762):
+-> $$ = nterm $@3 (6.6-5: )
+Entering state 135
+Stack now 0 16 33 68 104 53 91 135
+Reducing stack by rule 49 (line 939):
+-> $$ = nterm ap-names (6.6-5: )
+Entering state 191
+Stack now 0 16 33 68 104 53 91 135 191
+Reading a token
+Next token is token string (6.7-9: a)
+Shifting token string (6.7-9: a)
+Entering state 232
+Stack now 0 16 33 68 104 53 91 135 191 232
+Reducing stack by rule 51 (line 941):
+   $1 = token string (6.7-9: a)
+-> $$ = nterm ap-name (6.7-9: )
+Entering state 233
+Stack now 0 16 33 68 104 53 91 135 191 233
+Reducing stack by rule 50 (line 940):
+   $1 = nterm ap-names (6.6-5: )
+   $2 = nterm ap-name (6.7-9: )
+-> $$ = nterm ap-names (6.6-9: )
+Entering state 191
+Stack now 0 16 33 68 104 53 91 135 191
+Reading a token
+Next token is token string (6.11-13: b)
+Shifting token string (6.11-13: b)
+Entering state 232
+Stack now 0 16 33 68 104 53 91 135 191 232
+Reducing stack by rule 51 (line 941):
+   $1 = token string (6.11-13: b)
+-> $$ = nterm ap-name (6.11-13: )
+Entering state 233
+Stack now 0 16 33 68 104 53 91 135 191 233
+Reducing stack by rule 50 (line 940):
+   $1 = nterm ap-names (6.6-9: )
+   $2 = nterm ap-name (6.11-13: )
+-> $$ = nterm ap-names (6.6-13: )
+Entering state 191
+Stack now 0 16 33 68 104 53 91 135 191
+Reading a token
+Next token is token --- (7.1-3: )
+Reducing stack by rule 25 (line 761):
+   $1 = token AP: (6.1-3: )
+   $2 = token integer (6.5: 2)
+   $3 = nterm $@3 (6.6-5: )
+   $4 = nterm ap-names (6.6-13: )
+-> $$ = nterm aps (6.1-13: )
+Entering state 158
+Stack now 0 16 33 68 104 158
+Reducing stack by rule 138 (line 1885):
+   $1 = nterm dstar_sizes (1.16-5.8: )
+   $2 = nterm aps (6.1-13: )
+-> $$ = nterm dstar_sizes (1.16-6.13: )
+Entering state 104
+Stack now 0 16 33 68 104
+Next token is token --- (7.1-3: )
+Reducing stack by rule 132 (line 1824):
+   $1 = nterm dstar_sizes (1.16-6.13: )
+-> $$ = nterm dstar_header (1.16-6.13: )
+Entering state 103
+Stack now 0 16 33 68 103
+Next token is token --- (7.1-3: )
+Shifting token --- (7.1-3: )
+Entering state 153
+Stack now 0 16 33 68 103 153
+Reducing stack by rule 147 (line 1972):
+-> $$ = nterm dstar_states (7.4-3: )
+Entering state 205
+Stack now 0 16 33 68 103 153 205
+Reading a token
+Next token is token State: (8.1-6: )
+Shifting token State: (8.1-6: )
+Entering state 241
+Stack now 0 16 33 68 103 153 205 241
+Reading a token
+Next token is token integer (8.8: 0)
+Shifting token integer (8.8: 0)
+Entering state 262
+Stack now 0 16 33 68 103 153 205 241 262
+Reading a token
+Next token is token Acc-Sig: (9.1-8: )
+Reducing stack by rule 14 (line 394):
+-> $$ = nterm string_opt (8.9-8: "")
+Entering state 274
+Stack now 0 16 33 68 103 153 205 241 262 274
+Reducing stack by rule 139 (line 1887):
+   $1 = token State: (8.1-6: )
+   $2 = token integer (8.8: 0)
+   $3 = nterm string_opt (8.9-8: "")
+-> $$ = nterm dstar_state_id (8.1-8: )
+Entering state 243
+Stack now 0 16 33 68 103 153 205 243
+Next token is token Acc-Sig: (9.1-8: )
+Shifting token Acc-Sig: (9.1-8: )
+Entering state 263
+Stack now 0 16 33 68 103 153 205 243 263
+Reducing stack by rule 142 (line 1931):
+-> $$ = nterm dstar_accsigs (9.9-8: )
+Entering state 275
+Stack now 0 16 33 68 103 153 205 243 263 275
+Reading a token
+Next token is token integer (10.1: 1)
+Reducing stack by rule 144 (line 1960):
+   $1 = token Acc-Sig: (9.1-8: )
+   $2 = nterm dstar_accsigs (9.9-8: )
+-> $$ = nterm dstar_state_accsig (9.1-8: )
+Entering state 264
+Stack now 0 16 33 68 103 153 205 243 264
+Reducing stack by rule 145 (line 1962):
+-> $$ = nterm dstar_transitions (9.9-8: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Next token is token integer (10.1: 1)
+Shifting token integer (10.1: 1)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (9.9-8: )
+   $2 = token integer (10.1: 1)
+-> $$ = nterm dstar_transitions (9.9-10.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (11.1: 0)
+Shifting token integer (11.1: 0)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (9.9-10.1: )
+   $2 = token integer (11.1: 0)
+-> $$ = nterm dstar_transitions (9.9-11.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (12.1: 2)
+Shifting token integer (12.1: 2)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (9.9-11.1: )
+   $2 = token integer (12.1: 2)
+-> $$ = nterm dstar_transitions (9.9-12.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (13.1: 2)
+Shifting token integer (13.1: 2)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (9.9-12.1: )
+   $2 = token integer (13.1: 2)
+-> $$ = nterm dstar_transitions (9.9-13.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token State: (14.1-6: )
+Reducing stack by rule 149 (line 1974):
+   $1 = nterm dstar_states (7.4-3: )
+   $2 = nterm dstar_state_id (8.1-8: )
+   $3 = nterm dstar_state_accsig (9.1-8: )
+   $4 = nterm dstar_transitions (9.9-13.1: )
+-> $$ = nterm dstar_states (7.4-13.1: )
+Entering state 205
+Stack now 0 16 33 68 103 153 205
+Next token is token State: (14.1-6: )
+Shifting token State: (14.1-6: )
+Entering state 241
+Stack now 0 16 33 68 103 153 205 241
+Reading a token
+Next token is token integer (14.8: 1)
+Shifting token integer (14.8: 1)
+Entering state 262
+Stack now 0 16 33 68 103 153 205 241 262
+Reading a token
+Next token is token Acc-Sig: (15.1-8: )
+Reducing stack by rule 14 (line 394):
+-> $$ = nterm string_opt (14.9-8: "")
+Entering state 274
+Stack now 0 16 33 68 103 153 205 241 262 274
+Reducing stack by rule 139 (line 1887):
+   $1 = token State: (14.1-6: )
+   $2 = token integer (14.8: 1)
+   $3 = nterm string_opt (14.9-8: "")
+-> $$ = nterm dstar_state_id (14.1-8: )
+Entering state 243
+Stack now 0 16 33 68 103 153 205 243
+Next token is token Acc-Sig: (15.1-8: )
+Shifting token Acc-Sig: (15.1-8: )
+Entering state 263
+Stack now 0 16 33 68 103 153 205 243 263
+Reducing stack by rule 142 (line 1931):
+-> $$ = nterm dstar_accsigs (15.9-8: )
+Entering state 275
+Stack now 0 16 33 68 103 153 205 243 263 275
+Reading a token
+Next token is token '-' (15.10: )
+Shifting token '-' (15.10: )
+Entering state 282
+Stack now 0 16 33 68 103 153 205 243 263 275 282
+Reducing stack by rule 141 (line 1928):
+   $1 = token '-' (15.10: )
+-> $$ = nterm sign (15.10: 0)
+Entering state 283
+Stack now 0 16 33 68 103 153 205 243 263 275 283
+Reading a token
+Next token is token integer (15.11: 0)
+Shifting token integer (15.11: 0)
+Entering state 288
+Stack now 0 16 33 68 103 153 205 243 263 275 283 288
+Reducing stack by rule 143 (line 1935):
+   $1 = nterm dstar_accsigs (15.9-8: )
+   $2 = nterm sign (15.10: 0)
+   $3 = token integer (15.11: 0)
+-> $$ = nterm dstar_accsigs (15.9-11: )
+Entering state 275
+Stack now 0 16 33 68 103 153 205 243 263 275
+Reading a token
+Next token is token integer (16.1: 1)
+Reducing stack by rule 144 (line 1960):
+   $1 = token Acc-Sig: (15.1-8: )
+   $2 = nterm dstar_accsigs (15.9-11: )
+-> $$ = nterm dstar_state_accsig (15.1-11: )
+Entering state 264
+Stack now 0 16 33 68 103 153 205 243 264
+Reducing stack by rule 145 (line 1962):
+-> $$ = nterm dstar_transitions (15.12-11: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Next token is token integer (16.1: 1)
+Shifting token integer (16.1: 1)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (15.12-11: )
+   $2 = token integer (16.1: 1)
+-> $$ = nterm dstar_transitions (15.12-16.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (17.1: 1)
+Shifting token integer (17.1: 1)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (15.12-16.1: )
+   $2 = token integer (17.1: 1)
+-> $$ = nterm dstar_transitions (15.12-17.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (18.1: 1)
+Shifting token integer (18.1: 1)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (15.12-17.1: )
+   $2 = token integer (18.1: 1)
+-> $$ = nterm dstar_transitions (15.12-18.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (19.1: 1)
+Shifting token integer (19.1: 1)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (15.12-18.1: )
+   $2 = token integer (19.1: 1)
+-> $$ = nterm dstar_transitions (15.12-19.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token State: (20.1-6: )
+Reducing stack by rule 149 (line 1974):
+   $1 = nterm dstar_states (7.4-13.1: )
+   $2 = nterm dstar_state_id (14.1-8: )
+   $3 = nterm dstar_state_accsig (15.1-11: )
+   $4 = nterm dstar_transitions (15.12-19.1: )
+-> $$ = nterm dstar_states (7.4-19.1: )
+Entering state 205
+Stack now 0 16 33 68 103 153 205
+Next token is token State: (20.1-6: )
+Shifting token State: (20.1-6: )
+Entering state 241
+Stack now 0 16 33 68 103 153 205 241
+Reading a token
+Next token is token integer (20.8: 2)
+Shifting token integer (20.8: 2)
+Entering state 262
+Stack now 0 16 33 68 103 153 205 241 262
+Reading a token
+Next token is token Acc-Sig: (21.1-8: )
+Reducing stack by rule 14 (line 394):
+-> $$ = nterm string_opt (20.9-8: "")
+Entering state 274
+Stack now 0 16 33 68 103 153 205 241 262 274
+Reducing stack by rule 139 (line 1887):
+   $1 = token State: (20.1-6: )
+   $2 = token integer (20.8: 2)
+   $3 = nterm string_opt (20.9-8: "")
+-> $$ = nterm dstar_state_id (20.1-8: )
+Entering state 243
+Stack now 0 16 33 68 103 153 205 243
+Next token is token Acc-Sig: (21.1-8: )
+Shifting token Acc-Sig: (21.1-8: )
+Entering state 263
+Stack now 0 16 33 68 103 153 205 243 263
+Reducing stack by rule 142 (line 1931):
+-> $$ = nterm dstar_accsigs (21.9-8: )
+Entering state 275
+Stack now 0 16 33 68 103 153 205 243 263 275
+Reading a token
+Next token is token '+' (21.10: )
+Shifting token '+' (21.10: )
+Entering state 281
+Stack now 0 16 33 68 103 153 205 243 263 275 281
+Reducing stack by rule 140 (line 1927):
+   $1 = token '+' (21.10: )
+-> $$ = nterm sign (21.10: 1)
+Entering state 283
+Stack now 0 16 33 68 103 153 205 243 263 275 283
+Reading a token
+Next token is token integer (21.11: 0)
+Shifting token integer (21.11: 0)
+Entering state 288
+Stack now 0 16 33 68 103 153 205 243 263 275 283 288
+Reducing stack by rule 143 (line 1935):
+   $1 = nterm dstar_accsigs (21.9-8: )
+   $2 = nterm sign (21.10: 1)
+   $3 = token integer (21.11: 0)
+-> $$ = nterm dstar_accsigs (21.9-11: )
+Entering state 275
+Stack now 0 16 33 68 103 153 205 243 263 275
+Reading a token
+Next token is token integer (22.1: 2)
+Reducing stack by rule 144 (line 1960):
+   $1 = token Acc-Sig: (21.1-8: )
+   $2 = nterm dstar_accsigs (21.9-11: )
+-> $$ = nterm dstar_state_accsig (21.1-11: )
+Entering state 264
+Stack now 0 16 33 68 103 153 205 243 264
+Reducing stack by rule 145 (line 1962):
+-> $$ = nterm dstar_transitions (21.12-11: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Next token is token integer (22.1: 2)
+Shifting token integer (22.1: 2)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (21.12-11: )
+   $2 = token integer (22.1: 2)
+-> $$ = nterm dstar_transitions (21.12-22.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (23.1: 2)
+Shifting token integer (23.1: 2)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (21.12-22.1: )
+   $2 = token integer (23.1: 2)
+-> $$ = nterm dstar_transitions (21.12-23.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (24.1: 2)
+Shifting token integer (24.1: 2)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (21.12-23.1: )
+   $2 = token integer (24.1: 2)
+-> $$ = nterm dstar_transitions (21.12-24.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (25.1: 2)
+Shifting token integer (25.1: 2)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (21.12-24.1: )
+   $2 = token integer (25.1: 2)
+-> $$ = nterm dstar_transitions (21.12-25.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token end of DSTAR automaton (26.1: )
+Reducing stack by rule 149 (line 1974):
+   $1 = nterm dstar_states (7.4-19.1: )
+   $2 = nterm dstar_state_id (20.1-8: )
+   $3 = nterm dstar_state_accsig (21.1-11: )
+   $4 = nterm dstar_transitions (21.12-25.1: )
+-> $$ = nterm dstar_states (7.4-25.1: )
+Entering state 205
+Stack now 0 16 33 68 103 153 205
+Next token is token end of DSTAR automaton (26.1: )
+Shifting token end of DSTAR automaton (26.1: )
+Entering state 242
+Stack now 0 16 33 68 103 153 205 242
+Reducing stack by rule 128 (line 1793):
+   $1 = nterm dstar_type (1.1-3: )
+   $2 = token v2 (1.5-6: )
+   $3 = token explicit (1.8-15: )
+   $4 = nterm dstar_header (1.16-6.13: )
+   $5 = token --- (7.1-3: )
+   $6 = nterm dstar_states (7.4-25.1: )
+   $7 = token end of DSTAR automaton (26.1: )
+-> $$ = nterm dstar (1.1-26.1: )
+Entering state 15
+Stack now 0 15
+Reducing stack by rule 10 (line 384):
+   $1 = nterm dstar (1.1-26.1: )
+-> $$ = nterm aut-1 (1.1-26.1: )
+Entering state 11
+Stack now 0 11
+Reducing stack by rule 1 (line 367):
+   $1 = nterm aut-1 (1.1-26.1: )
+Stack now 0
+digraph "" {
+  rankdir=LR
+  label="Fin(0) & Inf(1)\n[Rabin 1]"
+  labelloc="t"
+  node [shape="box",style="rounded",width="0.5"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 0 [label="a & !b"]
+  0 -> 1 [label="!a & !b"]
+  0 -> 2 [label="b"]
+  1 [label="1\n{0}"]
+  1 -> 1 [label="1"]
+  2 [label="2\n{1}"]
+  2 -> 2 [label="1"]
+}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff expected stdout
++ run 0 ../ikwiad -d -XDB+  -R3 dra.dstar
+tee+  stdout
+expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -d -XDB -R3 dra.dstar
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -d -XDB -R3 dra.dstar
+Starting parse
+Entering state 0
+Stack now 0
+Reading a token
+Next token is token DRA (1.1-3: )
+Shifting token DRA (1.1-3: )
+Entering state 5
+Stack now 0 5
+Reducing stack by rule 130 (line 1799):
+   $1 = token DRA (1.1-3: )
+-> $$ = nterm dstar_type (1.1-3: )
+Entering state 16
+Stack now 0 16
+Reading a token
+Next token is token v2 (1.5-6: )
+Shifting token v2 (1.5-6: )
+Entering state 33
+Stack now 0 16 33
+Reading a token
+Next token is token explicit (1.8-15: )
+Shifting token explicit (1.8-15: )
+Entering state 68
+Stack now 0 16 33 68
+Reducing stack by rule 133 (line 1848):
+-> $$ = nterm dstar_sizes (1.16-15: )
+Entering state 104
+Stack now 0 16 33 68 104
+Reading a token
+Next token is token States: (3.1-7: )
+Shifting token States: (3.1-7: )
+Entering state 155
+Stack now 0 16 33 68 104 155
+Reading a token
+Next token is token integer (3.9: 3)
+Shifting token integer (3.9: 3)
+Entering state 206
+Stack now 0 16 33 68 104 155 206
+Reducing stack by rule 136 (line 1868):
+   $1 = nterm dstar_sizes (1.16-15: )
+   $2 = token States: (3.1-7: )
+   $3 = token integer (3.9: 3)
+-> $$ = nterm dstar_sizes (1.16-3.9: )
+Entering state 104
+Stack now 0 16 33 68 104
+Reading a token
+Next token is token Acceptance-Pairs: (4.1-17: )
+Shifting token Acceptance-Pairs: (4.1-17: )
+Entering state 157
+Stack now 0 16 33 68 104 157
+Reading a token
+Next token is token integer (4.19: 1)
+Shifting token integer (4.19: 1)
+Entering state 208
+Stack now 0 16 33 68 104 157 208
+Reducing stack by rule 135 (line 1850):
+   $1 = nterm dstar_sizes (1.16-3.9: )
+   $2 = token Acceptance-Pairs: (4.1-17: )
+   $3 = token integer (4.19: 1)
+-> $$ = nterm dstar_sizes (1.16-4.19: )
+Entering state 104
+Stack now 0 16 33 68 104
+Reading a token
+Next token is token Start: (5.1-6: )
+Shifting token Start: (5.1-6: )
+Entering state 156
+Stack now 0 16 33 68 104 156
+Reading a token
+Next token is token integer (5.8: 0)
+Shifting token integer (5.8: 0)
+Entering state 207
+Stack now 0 16 33 68 104 156 207
+Reducing stack by rule 137 (line 1881):
+   $1 = nterm dstar_sizes (1.16-4.19: )
+   $2 = token Start: (5.1-6: )
+   $3 = token integer (5.8: 0)
+-> $$ = nterm dstar_sizes (1.16-5.8: )
+Entering state 104
+Stack now 0 16 33 68 104
+Reading a token
+Next token is token AP: (6.1-3: )
+Shifting token AP: (6.1-3: )
+Entering state 53
+Stack now 0 16 33 68 104 53
+Reading a token
+Next token is token integer (6.5: 2)
+Shifting token integer (6.5: 2)
+Entering state 91
+Stack now 0 16 33 68 104 53 91
+Reducing stack by rule 24 (line 762):
+-> $$ = nterm $@3 (6.6-5: )
+Entering state 135
+Stack now 0 16 33 68 104 53 91 135
+Reducing stack by rule 49 (line 939):
+-> $$ = nterm ap-names (6.6-5: )
+Entering state 191
+Stack now 0 16 33 68 104 53 91 135 191
+Reading a token
+Next token is token string (6.7-9: a)
+Shifting token string (6.7-9: a)
+Entering state 232
+Stack now 0 16 33 68 104 53 91 135 191 232
+Reducing stack by rule 51 (line 941):
+   $1 = token string (6.7-9: a)
+-> $$ = nterm ap-name (6.7-9: )
+Entering state 233
+Stack now 0 16 33 68 104 53 91 135 191 233
+Reducing stack by rule 50 (line 940):
+   $1 = nterm ap-names (6.6-5: )
+   $2 = nterm ap-name (6.7-9: )
+-> $$ = nterm ap-names (6.6-9: )
+Entering state 191
+Stack now 0 16 33 68 104 53 91 135 191
+Reading a token
+Next token is token string (6.11-13: b)
+Shifting token string (6.11-13: b)
+Entering state 232
+Stack now 0 16 33 68 104 53 91 135 191 232
+Reducing stack by rule 51 (line 941):
+   $1 = token string (6.11-13: b)
+-> $$ = nterm ap-name (6.11-13: )
+Entering state 233
+Stack now 0 16 33 68 104 53 91 135 191 233
+Reducing stack by rule 50 (line 940):
+   $1 = nterm ap-names (6.6-9: )
+   $2 = nterm ap-name (6.11-13: )
+-> $$ = nterm ap-names (6.6-13: )
+Entering state 191
+Stack now 0 16 33 68 104 53 91 135 191
+Reading a token
+Next token is token --- (7.1-3: )
+Reducing stack by rule 25 (line 761):
+   $1 = token AP: (6.1-3: )
+   $2 = token integer (6.5: 2)
+   $3 = nterm $@3 (6.6-5: )
+   $4 = nterm ap-names (6.6-13: )
+-> $$ = nterm aps (6.1-13: )
+Entering state 158
+Stack now 0 16 33 68 104 158
+Reducing stack by rule 138 (line 1885):
+   $1 = nterm dstar_sizes (1.16-5.8: )
+   $2 = nterm aps (6.1-13: )
+-> $$ = nterm dstar_sizes (1.16-6.13: )
+Entering state 104
+Stack now 0 16 33 68 104
+Next token is token --- (7.1-3: )
+Reducing stack by rule 132 (line 1824):
+   $1 = nterm dstar_sizes (1.16-6.13: )
+-> $$ = nterm dstar_header (1.16-6.13: )
+Entering state 103
+Stack now 0 16 33 68 103
+Next token is token --- (7.1-3: )
+Shifting token --- (7.1-3: )
+Entering state 153
+Stack now 0 16 33 68 103 153
+Reducing stack by rule 147 (line 1972):
+-> $$ = nterm dstar_states (7.4-3: )
+Entering state 205
+Stack now 0 16 33 68 103 153 205
+Reading a token
+Next token is token State: (8.1-6: )
+Shifting token State: (8.1-6: )
+Entering state 241
+Stack now 0 16 33 68 103 153 205 241
+Reading a token
+Next token is token integer (8.8: 0)
+Shifting token integer (8.8: 0)
+Entering state 262
+Stack now 0 16 33 68 103 153 205 241 262
+Reading a token
+Next token is token Acc-Sig: (9.1-8: )
+Reducing stack by rule 14 (line 394):
+-> $$ = nterm string_opt (8.9-8: "")
+Entering state 274
+Stack now 0 16 33 68 103 153 205 241 262 274
+Reducing stack by rule 139 (line 1887):
+   $1 = token State: (8.1-6: )
+   $2 = token integer (8.8: 0)
+   $3 = nterm string_opt (8.9-8: "")
+-> $$ = nterm dstar_state_id (8.1-8: )
+Entering state 243
+Stack now 0 16 33 68 103 153 205 243
+Next token is token Acc-Sig: (9.1-8: )
+Shifting token Acc-Sig: (9.1-8: )
+Entering state 263
+Stack now 0 16 33 68 103 153 205 243 263
+Reducing stack by rule 142 (line 1931):
+-> $$ = nterm dstar_accsigs (9.9-8: )
+Entering state 275
+Stack now 0 16 33 68 103 153 205 243 263 275
+Reading a token
+Next token is token integer (10.1: 1)
+Reducing stack by rule 144 (line 1960):
+   $1 = token Acc-Sig: (9.1-8: )
+   $2 = nterm dstar_accsigs (9.9-8: )
+-> $$ = nterm dstar_state_accsig (9.1-8: )
+Entering state 264
+Stack now 0 16 33 68 103 153 205 243 264
+Reducing stack by rule 145 (line 1962):
+-> $$ = nterm dstar_transitions (9.9-8: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Next token is token integer (10.1: 1)
+Shifting token integer (10.1: 1)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (9.9-8: )
+   $2 = token integer (10.1: 1)
+-> $$ = nterm dstar_transitions (9.9-10.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (11.1: 0)
+Shifting token integer (11.1: 0)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (9.9-10.1: )
+   $2 = token integer (11.1: 0)
+-> $$ = nterm dstar_transitions (9.9-11.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (12.1: 2)
+Shifting token integer (12.1: 2)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (9.9-11.1: )
+   $2 = token integer (12.1: 2)
+-> $$ = nterm dstar_transitions (9.9-12.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (13.1: 2)
+Shifting token integer (13.1: 2)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (9.9-12.1: )
+   $2 = token integer (13.1: 2)
+-> $$ = nterm dstar_transitions (9.9-13.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token State: (14.1-6: )
+Reducing stack by rule 149 (line 1974):
+   $1 = nterm dstar_states (7.4-3: )
+   $2 = nterm dstar_state_id (8.1-8: )
+   $3 = nterm dstar_state_accsig (9.1-8: )
+   $4 = nterm dstar_transitions (9.9-13.1: )
+-> $$ = nterm dstar_states (7.4-13.1: )
+Entering state 205
+Stack now 0 16 33 68 103 153 205
+Next token is token State: (14.1-6: )
+Shifting token State: (14.1-6: )
+Entering state 241
+Stack now 0 16 33 68 103 153 205 241
+Reading a token
+Next token is token integer (14.8: 1)
+Shifting token integer (14.8: 1)
+Entering state 262
+Stack now 0 16 33 68 103 153 205 241 262
+Reading a token
+Next token is token Acc-Sig: (15.1-8: )
+Reducing stack by rule 14 (line 394):
+-> $$ = nterm string_opt (14.9-8: "")
+Entering state 274
+Stack now 0 16 33 68 103 153 205 241 262 274
+Reducing stack by rule 139 (line 1887):
+   $1 = token State: (14.1-6: )
+   $2 = token integer (14.8: 1)
+   $3 = nterm string_opt (14.9-8: "")
+-> $$ = nterm dstar_state_id (14.1-8: )
+Entering state 243
+Stack now 0 16 33 68 103 153 205 243
+Next token is token Acc-Sig: (15.1-8: )
+Shifting token Acc-Sig: (15.1-8: )
+Entering state 263
+Stack now 0 16 33 68 103 153 205 243 263
+Reducing stack by rule 142 (line 1931):
+-> $$ = nterm dstar_accsigs (15.9-8: )
+Entering state 275
+Stack now 0 16 33 68 103 153 205 243 263 275
+Reading a token
+Next token is token '-' (15.10: )
+Shifting token '-' (15.10: )
+Entering state 282
+Stack now 0 16 33 68 103 153 205 243 263 275 282
+Reducing stack by rule 141 (line 1928):
+   $1 = token '-' (15.10: )
+-> $$ = nterm sign (15.10: 0)
+Entering state 283
+Stack now 0 16 33 68 103 153 205 243 263 275 283
+Reading a token
+Next token is token integer (15.11: 0)
+Shifting token integer (15.11: 0)
+Entering state 288
+Stack now 0 16 33 68 103 153 205 243 263 275 283 288
+Reducing stack by rule 143 (line 1935):
+   $1 = nterm dstar_accsigs (15.9-8: )
+   $2 = nterm sign (15.10: 0)
+   $3 = token integer (15.11: 0)
+-> $$ = nterm dstar_accsigs (15.9-11: )
+Entering state 275
+Stack now 0 16 33 68 103 153 205 243 263 275
+Reading a token
+Next token is token integer (16.1: 1)
+Reducing stack by rule 144 (line 1960):
+   $1 = token Acc-Sig: (15.1-8: )
+   $2 = nterm dstar_accsigs (15.9-11: )
+-> $$ = nterm dstar_state_accsig (15.1-11: )
+Entering state 264
+Stack now 0 16 33 68 103 153 205 243 264
+Reducing stack by rule 145 (line 1962):
+-> $$ = nterm dstar_transitions (15.12-11: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Next token is token integer (16.1: 1)
+Shifting token integer (16.1: 1)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (15.12-11: )
+   $2 = token integer (16.1: 1)
+-> $$ = nterm dstar_transitions (15.12-16.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (17.1: 1)
+Shifting token integer (17.1: 1)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (15.12-16.1: )
+   $2 = token integer (17.1: 1)
+-> $$ = nterm dstar_transitions (15.12-17.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (18.1: 1)
+Shifting token integer (18.1: 1)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (15.12-17.1: )
+   $2 = token integer (18.1: 1)
+-> $$ = nterm dstar_transitions (15.12-18.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (19.1: 1)
+Shifting token integer (19.1: 1)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (15.12-18.1: )
+   $2 = token integer (19.1: 1)
+-> $$ = nterm dstar_transitions (15.12-19.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token State: (20.1-6: )
+Reducing stack by rule 149 (line 1974):
+   $1 = nterm dstar_states (7.4-13.1: )
+   $2 = nterm dstar_state_id (14.1-8: )
+   $3 = nterm dstar_state_accsig (15.1-11: )
+   $4 = nterm dstar_transitions (15.12-19.1: )
+-> $$ = nterm dstar_states (7.4-19.1: )
+Entering state 205
+Stack now 0 16 33 68 103 153 205
+Next token is token State: (20.1-6: )
+Shifting token State: (20.1-6: )
+Entering state 241
+Stack now 0 16 33 68 103 153 205 241
+Reading a token
+Next token is token integer (20.8: 2)
+Shifting token integer (20.8: 2)
+Entering state 262
+Stack now 0 16 33 68 103 153 205 241 262
+Reading a token
+Next token is token Acc-Sig: (21.1-8: )
+Reducing stack by rule 14 (line 394):
+-> $$ = nterm string_opt (20.9-8: "")
+Entering state 274
+Stack now 0 16 33 68 103 153 205 241 262 274
+Reducing stack by rule 139 (line 1887):
+   $1 = token State: (20.1-6: )
+   $2 = token integer (20.8: 2)
+   $3 = nterm string_opt (20.9-8: "")
+-> $$ = nterm dstar_state_id (20.1-8: )
+Entering state 243
+Stack now 0 16 33 68 103 153 205 243
+Next token is token Acc-Sig: (21.1-8: )
+Shifting token Acc-Sig: (21.1-8: )
+Entering state 263
+Stack now 0 16 33 68 103 153 205 243 263
+Reducing stack by rule 142 (line 1931):
+-> $$ = nterm dstar_accsigs (21.9-8: )
+Entering state 275
+Stack now 0 16 33 68 103 153 205 243 263 275
+Reading a token
+Next token is token '+' (21.10: )
+Shifting token '+' (21.10: )
+Entering state 281
+Stack now 0 16 33 68 103 153 205 243 263 275 281
+Reducing stack by rule 140 (line 1927):
+   $1 = token '+' (21.10: )
+-> $$ = nterm sign (21.10: 1)
+Entering state 283
+Stack now 0 16 33 68 103 153 205 243 263 275 283
+Reading a token
+Next token is token integer (21.11: 0)
+Shifting token integer (21.11: 0)
+Entering state 288
+Stack now 0 16 33 68 103 153 205 243 263 275 283 288
+Reducing stack by rule 143 (line 1935):
+   $1 = nterm dstar_accsigs (21.9-8: )
+   $2 = nterm sign (21.10: 1)
+   $3 = token integer (21.11: 0)
+-> $$ = nterm dstar_accsigs (21.9-11: )
+Entering state 275
+Stack now 0 16 33 68 103 153 205 243 263 275
+Reading a token
+Next token is token integer (22.1: 2)
+Reducing stack by rule 144 (line 1960):
+   $1 = token Acc-Sig: (21.1-8: )
+   $2 = nterm dstar_accsigs (21.9-11: )
+-> $$ = nterm dstar_state_accsig (21.1-11: )
+Entering state 264
+Stack now 0 16 33 68 103 153 205 243 264
+Reducing stack by rule 145 (line 1962):
+-> $$ = nterm dstar_transitions (21.12-11: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Next token is token integer (22.1: 2)
+Shifting token integer (22.1: 2)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (21.12-11: )
+   $2 = token integer (22.1: 2)
+-> $$ = nterm dstar_transitions (21.12-22.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (23.1: 2)
+Shifting token integer (23.1: 2)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (21.12-22.1: )
+   $2 = token integer (23.1: 2)
+-> $$ = nterm dstar_transitions (21.12-23.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (24.1: 2)
+Shifting token integer (24.1: 2)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (21.12-23.1: )
+   $2 = token integer (24.1: 2)
+-> $$ = nterm dstar_transitions (21.12-24.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (25.1: 2)
+Shifting token integer (25.1: 2)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (21.12-24.1: )
+   $2 = token integer (25.1: 2)
+-> $$ = nterm dstar_transitions (21.12-25.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token end of DSTAR automaton (26.1: )
+Reducing stack by rule 149 (line 1974):
+   $1 = nterm dstar_states (7.4-19.1: )
+   $2 = nterm dstar_state_id (20.1-8: )
+   $3 = nterm dstar_state_accsig (21.1-11: )
+   $4 = nterm dstar_transitions (21.12-25.1: )
+-> $$ = nterm dstar_states (7.4-25.1: )
+Entering state 205
+Stack now 0 16 33 68 103 153 205
+Next token is token end of DSTAR automaton (26.1: )
+Shifting token end of DSTAR automaton (26.1: )
+Entering state 242
+Stack now 0 16 33 68 103 153 205 242
+Reducing stack by rule 128 (line 1793):
+   $1 = nterm dstar_type (1.1-3: )
+   $2 = token v2 (1.5-6: )
+   $3 = token explicit (1.8-15: )
+   $4 = nterm dstar_header (1.16-6.13: )
+   $5 = token --- (7.1-3: )
+   $6 = nterm dstar_states (7.4-25.1: )
+   $7 = token end of DSTAR automaton (26.1: )
+-> $$ = nterm dstar (1.1-26.1: )
+Entering state 15
+Stack now 0 15
+Reducing stack by rule 10 (line 384):
+   $1 = nterm dstar (1.1-26.1: )
+-> $$ = nterm aut-1 (1.1-26.1: )
+Entering state 11
+Stack now 0 11
+Reducing stack by rule 1 (line 367):
+   $1 = nterm aut-1 (1.1-26.1: )
+Stack now 0
+digraph "" {
+  rankdir=LR
+  label="[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 0 [label="a & !b"]
+  0 -> 1 [label="b"]
+  1 [label="1", peripheries=2]
+  1 -> 1 [label="1"]
+}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff expected stdout
++ cat
++ run 0+  ../ikwiad -d -XDB dsa.dstar
+tee stdout
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -d -XDB dsa.dstar
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -d -XDB dsa.dstar
+Starting parse
+Entering state 0
+Stack now 0
+Reading a token
+Next token is token DSA (1.1-3: )
+Shifting token DSA (1.1-3: )
+Entering state 6
+Stack now 0 6
+Reducing stack by rule 131 (line 1811):
+   $1 = token DSA (1.1-3: )
+-> $$ = nterm dstar_type (1.1-3: )
+Entering state 16
+Stack now 0 16
+Reading a token
+Next token is token v2 (1.5-6: )
+Shifting token v2 (1.5-6: )
+Entering state 33
+Stack now 0 16 33
+Reading a token
+Next token is token explicit (1.8-15: )
+Shifting token explicit (1.8-15: )
+Entering state 68
+Stack now 0 16 33 68
+Reducing stack by rule 133 (line 1848):
+-> $$ = nterm dstar_sizes (1.16-15: )
+Entering state 104
+Stack now 0 16 33 68 104
+Reading a token
+Next token is token States: (3.1-7: )
+Shifting token States: (3.1-7: )
+Entering state 155
+Stack now 0 16 33 68 104 155
+Reading a token
+Next token is token integer (3.9: 3)
+Shifting token integer (3.9: 3)
+Entering state 206
+Stack now 0 16 33 68 104 155 206
+Reducing stack by rule 136 (line 1868):
+   $1 = nterm dstar_sizes (1.16-15: )
+   $2 = token States: (3.1-7: )
+   $3 = token integer (3.9: 3)
+-> $$ = nterm dstar_sizes (1.16-3.9: )
+Entering state 104
+Stack now 0 16 33 68 104
+Reading a token
+Next token is token Acceptance-Pairs: (4.1-17: )
+Shifting token Acceptance-Pairs: (4.1-17: )
+Entering state 157
+Stack now 0 16 33 68 104 157
+Reading a token
+Next token is token integer (4.19: 1)
+Shifting token integer (4.19: 1)
+Entering state 208
+Stack now 0 16 33 68 104 157 208
+Reducing stack by rule 135 (line 1850):
+   $1 = nterm dstar_sizes (1.16-3.9: )
+   $2 = token Acceptance-Pairs: (4.1-17: )
+   $3 = token integer (4.19: 1)
+-> $$ = nterm dstar_sizes (1.16-4.19: )
+Entering state 104
+Stack now 0 16 33 68 104
+Reading a token
+Next token is token Start: (5.1-6: )
+Shifting token Start: (5.1-6: )
+Entering state 156
+Stack now 0 16 33 68 104 156
+Reading a token
+Next token is token integer (5.8: 1)
+Shifting token integer (5.8: 1)
+Entering state 207
+Stack now 0 16 33 68 104 156 207
+Reducing stack by rule 137 (line 1881):
+   $1 = nterm dstar_sizes (1.16-4.19: )
+   $2 = token Start: (5.1-6: )
+   $3 = token integer (5.8: 1)
+-> $$ = nterm dstar_sizes (1.16-5.8: )
+Entering state 104
+Stack now 0 16 33 68 104
+Reading a token
+Next token is token AP: (6.1-3: )
+Shifting token AP: (6.1-3: )
+Entering state 53
+Stack now 0 16 33 68 104 53
+Reading a token
+Next token is token integer (6.5: 1)
+Shifting token integer (6.5: 1)
+Entering state 91
+Stack now 0 16 33 68 104 53 91
+Reducing stack by rule 24 (line 762):
+-> $$ = nterm $@3 (6.6-5: )
+Entering state 135
+Stack now 0 16 33 68 104 53 91 135
+Reducing stack by rule 49 (line 939):
+-> $$ = nterm ap-names (6.6-5: )
+Entering state 191
+Stack now 0 16 33 68 104 53 91 135 191
+Reading a token
+Next token is token string (6.7-9: a)
+Shifting token string (6.7-9: a)
+Entering state 232
+Stack now 0 16 33 68 104 53 91 135 191 232
+Reducing stack by rule 51 (line 941):
+   $1 = token string (6.7-9: a)
+-> $$ = nterm ap-name (6.7-9: )
+Entering state 233
+Stack now 0 16 33 68 104 53 91 135 191 233
+Reducing stack by rule 50 (line 940):
+   $1 = nterm ap-names (6.6-5: )
+   $2 = nterm ap-name (6.7-9: )
+-> $$ = nterm ap-names (6.6-9: )
+Entering state 191
+Stack now 0 16 33 68 104 53 91 135 191
+Reading a token
+Next token is token --- (7.1-3: )
+Reducing stack by rule 25 (line 761):
+   $1 = token AP: (6.1-3: )
+   $2 = token integer (6.5: 1)
+   $3 = nterm $@3 (6.6-5: )
+   $4 = nterm ap-names (6.6-9: )
+-> $$ = nterm aps (6.1-9: )
+Entering state 158
+Stack now 0 16 33 68 104 158
+Reducing stack by rule 138 (line 1885):
+   $1 = nterm dstar_sizes (1.16-5.8: )
+   $2 = nterm aps (6.1-9: )
+-> $$ = nterm dstar_sizes (1.16-6.9: )
+Entering state 104
+Stack now 0 16 33 68 104
+Next token is token --- (7.1-3: )
+Reducing stack by rule 132 (line 1824):
+   $1 = nterm dstar_sizes (1.16-6.9: )
+-> $$ = nterm dstar_header (1.16-6.9: )
+Entering state 103
+Stack now 0 16 33 68 103
+Next token is token --- (7.1-3: )
+Shifting token --- (7.1-3: )
+Entering state 153
+Stack now 0 16 33 68 103 153
+Reducing stack by rule 147 (line 1972):
+-> $$ = nterm dstar_states (7.4-3: )
+Entering state 205
+Stack now 0 16 33 68 103 153 205
+Reading a token
+Next token is token State: (8.1-6: )
+Shifting token State: (8.1-6: )
+Entering state 241
+Stack now 0 16 33 68 103 153 205 241
+Reading a token
+Next token is token integer (8.8: 0)
+Shifting token integer (8.8: 0)
+Entering state 262
+Stack now 0 16 33 68 103 153 205 241 262
+Reading a token
+Next token is token Acc-Sig: (9.1-8: )
+Reducing stack by rule 14 (line 394):
+-> $$ = nterm string_opt (8.9-8: "")
+Entering state 274
+Stack now 0 16 33 68 103 153 205 241 262 274
+Reducing stack by rule 139 (line 1887):
+   $1 = token State: (8.1-6: )
+   $2 = token integer (8.8: 0)
+   $3 = nterm string_opt (8.9-8: "")
+-> $$ = nterm dstar_state_id (8.1-8: )
+Entering state 243
+Stack now 0 16 33 68 103 153 205 243
+Next token is token Acc-Sig: (9.1-8: )
+Shifting token Acc-Sig: (9.1-8: )
+Entering state 263
+Stack now 0 16 33 68 103 153 205 243 263
+Reducing stack by rule 142 (line 1931):
+-> $$ = nterm dstar_accsigs (9.9-8: )
+Entering state 275
+Stack now 0 16 33 68 103 153 205 243 263 275
+Reading a token
+Next token is token '+' (9.10: )
+Shifting token '+' (9.10: )
+Entering state 281
+Stack now 0 16 33 68 103 153 205 243 263 275 281
+Reducing stack by rule 140 (line 1927):
+   $1 = token '+' (9.10: )
+-> $$ = nterm sign (9.10: 0)
+Entering state 283
+Stack now 0 16 33 68 103 153 205 243 263 275 283
+Reading a token
+Next token is token integer (9.11: 0)
+Shifting token integer (9.11: 0)
+Entering state 288
+Stack now 0 16 33 68 103 153 205 243 263 275 283 288
+Reducing stack by rule 143 (line 1935):
+   $1 = nterm dstar_accsigs (9.9-8: )
+   $2 = nterm sign (9.10: 0)
+   $3 = token integer (9.11: 0)
+-> $$ = nterm dstar_accsigs (9.9-11: )
+Entering state 275
+Stack now 0 16 33 68 103 153 205 243 263 275
+Reading a token
+Next token is token integer (10.1: 0)
+Reducing stack by rule 144 (line 1960):
+   $1 = token Acc-Sig: (9.1-8: )
+   $2 = nterm dstar_accsigs (9.9-11: )
+-> $$ = nterm dstar_state_accsig (9.1-11: )
+Entering state 264
+Stack now 0 16 33 68 103 153 205 243 264
+Reducing stack by rule 145 (line 1962):
+-> $$ = nterm dstar_transitions (9.12-11: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Next token is token integer (10.1: 0)
+Shifting token integer (10.1: 0)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (9.12-11: )
+   $2 = token integer (10.1: 0)
+-> $$ = nterm dstar_transitions (9.12-10.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (11.1: 2)
+Shifting token integer (11.1: 2)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (9.12-10.1: )
+   $2 = token integer (11.1: 2)
+-> $$ = nterm dstar_transitions (9.12-11.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token State: (12.1-6: )
+Reducing stack by rule 149 (line 1974):
+   $1 = nterm dstar_states (7.4-3: )
+   $2 = nterm dstar_state_id (8.1-8: )
+   $3 = nterm dstar_state_accsig (9.1-11: )
+   $4 = nterm dstar_transitions (9.12-11.1: )
+-> $$ = nterm dstar_states (7.4-11.1: )
+Entering state 205
+Stack now 0 16 33 68 103 153 205
+Next token is token State: (12.1-6: )
+Shifting token State: (12.1-6: )
+Entering state 241
+Stack now 0 16 33 68 103 153 205 241
+Reading a token
+Next token is token integer (12.8: 1)
+Shifting token integer (12.8: 1)
+Entering state 262
+Stack now 0 16 33 68 103 153 205 241 262
+Reading a token
+Next token is token Acc-Sig: (13.1-8: )
+Reducing stack by rule 14 (line 394):
+-> $$ = nterm string_opt (12.9-8: "")
+Entering state 274
+Stack now 0 16 33 68 103 153 205 241 262 274
+Reducing stack by rule 139 (line 1887):
+   $1 = token State: (12.1-6: )
+   $2 = token integer (12.8: 1)
+   $3 = nterm string_opt (12.9-8: "")
+-> $$ = nterm dstar_state_id (12.1-8: )
+Entering state 243
+Stack now 0 16 33 68 103 153 205 243
+Next token is token Acc-Sig: (13.1-8: )
+Shifting token Acc-Sig: (13.1-8: )
+Entering state 263
+Stack now 0 16 33 68 103 153 205 243 263
+Reducing stack by rule 142 (line 1931):
+-> $$ = nterm dstar_accsigs (13.9-8: )
+Entering state 275
+Stack now 0 16 33 68 103 153 205 243 263 275
+Reading a token
+Next token is token integer (14.1: 0)
+Reducing stack by rule 144 (line 1960):
+   $1 = token Acc-Sig: (13.1-8: )
+   $2 = nterm dstar_accsigs (13.9-8: )
+-> $$ = nterm dstar_state_accsig (13.1-8: )
+Entering state 264
+Stack now 0 16 33 68 103 153 205 243 264
+Reducing stack by rule 145 (line 1962):
+-> $$ = nterm dstar_transitions (13.9-8: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Next token is token integer (14.1: 0)
+Shifting token integer (14.1: 0)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (13.9-8: )
+   $2 = token integer (14.1: 0)
+-> $$ = nterm dstar_transitions (13.9-14.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (15.1: 0)
+Shifting token integer (15.1: 0)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (13.9-14.1: )
+   $2 = token integer (15.1: 0)
+-> $$ = nterm dstar_transitions (13.9-15.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token State: (16.1-6: )
+Reducing stack by rule 149 (line 1974):
+   $1 = nterm dstar_states (7.4-11.1: )
+   $2 = nterm dstar_state_id (12.1-8: )
+   $3 = nterm dstar_state_accsig (13.1-8: )
+   $4 = nterm dstar_transitions (13.9-15.1: )
+-> $$ = nterm dstar_states (7.4-15.1: )
+Entering state 205
+Stack now 0 16 33 68 103 153 205
+Next token is token State: (16.1-6: )
+Shifting token State: (16.1-6: )
+Entering state 241
+Stack now 0 16 33 68 103 153 205 241
+Reading a token
+Next token is token integer (16.8: 2)
+Shifting token integer (16.8: 2)
+Entering state 262
+Stack now 0 16 33 68 103 153 205 241 262
+Reading a token
+Next token is token Acc-Sig: (17.1-8: )
+Reducing stack by rule 14 (line 394):
+-> $$ = nterm string_opt (16.9-8: "")
+Entering state 274
+Stack now 0 16 33 68 103 153 205 241 262 274
+Reducing stack by rule 139 (line 1887):
+   $1 = token State: (16.1-6: )
+   $2 = token integer (16.8: 2)
+   $3 = nterm string_opt (16.9-8: "")
+-> $$ = nterm dstar_state_id (16.1-8: )
+Entering state 243
+Stack now 0 16 33 68 103 153 205 243
+Next token is token Acc-Sig: (17.1-8: )
+Shifting token Acc-Sig: (17.1-8: )
+Entering state 263
+Stack now 0 16 33 68 103 153 205 243 263
+Reducing stack by rule 142 (line 1931):
+-> $$ = nterm dstar_accsigs (17.9-8: )
+Entering state 275
+Stack now 0 16 33 68 103 153 205 243 263 275
+Reading a token
+Next token is token integer (18.1: 0)
+Reducing stack by rule 144 (line 1960):
+   $1 = token Acc-Sig: (17.1-8: )
+   $2 = nterm dstar_accsigs (17.9-8: )
+-> $$ = nterm dstar_state_accsig (17.1-8: )
+Entering state 264
+Stack now 0 16 33 68 103 153 205 243 264
+Reducing stack by rule 145 (line 1962):
+-> $$ = nterm dstar_transitions (17.9-8: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Next token is token integer (18.1: 0)
+Shifting token integer (18.1: 0)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (17.9-8: )
+   $2 = token integer (18.1: 0)
+-> $$ = nterm dstar_transitions (17.9-18.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token integer (19.1: 2)
+Shifting token integer (19.1: 2)
+Entering state 284
+Stack now 0 16 33 68 103 153 205 243 264 276 284
+Reducing stack by rule 146 (line 1963):
+   $1 = nterm dstar_transitions (17.9-18.1: )
+   $2 = token integer (19.1: 2)
+-> $$ = nterm dstar_transitions (17.9-19.1: )
+Entering state 276
+Stack now 0 16 33 68 103 153 205 243 264 276
+Reading a token
+Next token is token end of DSTAR automaton (20.1: )
+Reducing stack by rule 149 (line 1974):
+   $1 = nterm dstar_states (7.4-15.1: )
+   $2 = nterm dstar_state_id (16.1-8: )
+   $3 = nterm dstar_state_accsig (17.1-8: )
+   $4 = nterm dstar_transitions (17.9-19.1: )
+-> $$ = nterm dstar_states (7.4-19.1: )
+Entering state 205
+Stack now 0 16 33 68 103 153 205
+Next token is token end of DSTAR automaton (20.1: )
+Shifting token end of DSTAR automaton (20.1: )
+Entering state 242
+Stack now 0 16 33 68 103 153 205 242
+Reducing stack by rule 128 (line 1793):
+   $1 = nterm dstar_type (1.1-3: )
+   $2 = token v2 (1.5-6: )
+   $3 = token explicit (1.8-15: )
+   $4 = nterm dstar_header (1.16-6.9: )
+   $5 = token --- (7.1-3: )
+   $6 = nterm dstar_states (7.4-19.1: )
+   $7 = token end of DSTAR automaton (20.1: )
+-> $$ = nterm dstar (1.1-20.1: )
+Entering state 15
+Stack now 0 15
+Reducing stack by rule 10 (line 384):
+   $1 = nterm dstar (1.1-20.1: )
+-> $$ = nterm aut-1 (1.1-20.1: )
+Entering state 11
+Stack now 0 11
+Reducing stack by rule 1 (line 367):
+   $1 = nterm aut-1 (1.1-20.1: )
+Stack now 0
+digraph "" {
+  rankdir=LR
+  label="[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 1
+  0 [label="0"]
+  0 -> 0 [label="!a"]
+  0 -> 2 [label="a"]
+  1 [label="1"]
+  1 -> 0 [label="1"]
+  2 [label="2"]
+  2 -> 0 [label="!a"]
+  2 -> 2 [label="a"]
+  2 -> 3 [label="a"]
+  3 [label="3", peripheries=2]
+  3 -> 3 [label="a"]
+}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff expected stdout
++ dstar2tgba -D dsa.dstar --stats %s %t %p %d
++ test 4 8 0 0 = 4 8 0 0
++ dstar2tgba -DC dsa.dstar --stats %s %t %p %d
++ test 5 11 1 0 = 5 11 1 0
++ cat
++ run 0 autfilt -dA -B dra.dstar
++ + expected_exitcode=0
++ shift
++ exitcode=0
++ teetest stdout -n
+ valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -dA -B dra.dstar
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -dA -B dra.dstar
+digraph "" {
+  rankdir=LR
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & !b"]
+  0 -> 2 [label="a & !b"]
+  0 -> 3 [label="!a & b"]
+  0 -> 4 [label="a & b"]
+  1 [label="1"]
+  1 -> 1 [label="!b"]
+  1 -> 3 [label="b"]
+  2 [label="2", peripheries=2]
+  2 -> 1 [label="!a & !b"]
+  2 -> 2 [label="a & !b"]
+  2 -> 3 [label="!a & b"]
+  2 -> 4 [label="a & b"]
+  3 [label="3", peripheries=2]
+  3 -> 3 [label="1"]
+  4 [label="4", peripheries=2]
+  4 -> 3 [label="!a"]
+  4 -> 4 [label="a"]
+}
+digraph "" {
+  rankdir=LR
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="!a & !b"]
+  0 -> 2 [label="a & !b"]
+  1 [label="1", peripheries=2]
+  1 -> 1 [label="!b"]
+  2 [label="2"]
+  2 -> 1 [label="!a & !b"]
+  2 -> 2 [label="a & !b"]
+}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff expected stdout
++ cat
++ dstar2tgba --name=%F:%L -D dra.dstar --stats %s %t %p %d %m
++ cat out
+3 12 1 1 dra.dstar:1.1-42.70
+2 4 0 1 dra.dstar:43.1-54.1
++ diff expected out
++ cat
++ run 0 dstar2tgba --name=%F --dot=Ant aut.dsa
++ expected_exitcode=0
++ + shift
++ exitcode=0tee
+ stdout+ 
+test -n valgrind
++ command -v dstar2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/dstar2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/dstar2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/dstar2tgba --name=%F --dot=Ant aut.dsa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/dstar2tgba --name=%F --dot=Ant aut.dsa
+digraph "aut.dsa" {
+  rankdir=LR
+  label="aut.dsa"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 0 [label="1"]
+}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff expected stdout
+PASS core/dstar.test (exit status: 0)

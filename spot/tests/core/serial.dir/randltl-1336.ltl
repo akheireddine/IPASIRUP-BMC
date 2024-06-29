@@ -1,0 +1,1 @@
+p0 -> F(p0 xor !(Fp0 <-> (p1 xor Fp1)))

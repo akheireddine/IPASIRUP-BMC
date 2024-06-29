@@ -1,0 +1,2 @@
+#!/bin/sh
+ltl2tgba -s -f "$1" | sed 's/p0/p1/g'

@@ -1,0 +1,450 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltlgrind.test
+== Running test ltlgrind.test
++ echo ltlgrind.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltlgrind
++ testSubDir=ltlgrind.dir
++ chmod -R a+rwx ltlgrind.dir
++ rm -rf ltlgrind.dir
++ mkdir ltlgrind.dir
++ cd ltlgrind.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ checkopt -f Xp1 U (p4 | (p3 xor (p4 W p0)))
++ checkopt_noparse -f Xp1 U (p4 | (p3 xor (p4 W p0)))
++ cat
++ run 0 ltlgrind --sort -f Xp1 U (p4 | (p3 xor (p4 W p0)))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlgrind
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f Xp1 U (p4 | (p3 xor (p4 W p0)))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f Xp1 U (p4 | (p3 xor (p4 W p0)))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff exp out
++ ltlfilt out
+1
+Xp1
+Xp1 U p4
+Xp1 U (p3 | p4)
+p4 | (p3 xor (p4 W p0))
+Xp1 U (!p3 | p4)
+Xp1 U (p3 xor (p4 W p0))
+Xp1 U (p4 | (p4 W p0))
+Xp1 U (p4 | (p3 xor p4))
+Xp1 U (p4 | (p0 xor p3))
+Xp1 U (p0 | (p0 xor p3))
+p1 U (p4 | (p3 xor (p4 W p0)))
+1 U (p4 | (p3 xor (p4 W p0)))
+Xp1 U (p4 | !(p4 W p0))
+Xp1 W (p4 | (p3 xor (p4 W p0)))
+X(0) U (p4 | (p3 xor (p4 W p0)))
+Xp1 U (p4 | (p3 xor (p4 W 0)))
+Xp4 U (p4 | (p3 xor (p4 W p0)))
+Xp3 U (p4 | (p3 xor (p4 W p0)))
+Xp0 U (p4 | (p3 xor (p4 W p0)))
+Xp1 U (p1 | (p3 xor (p1 W p0)))
+Xp1 U (p3 | (p3 xor (p3 W p0)))
+Xp1 U (p4 | (p1 xor (p4 W p0)))
+Xp1 U (p4 | (p4 xor (p4 W p0)))
+Xp1 U (p4 | (p0 xor (p4 W p0)))
+Xp1 U (p4 | (p3 xor (p4 W p1)))
+Xp1 U (p4 | (p3 xor (p4 W p3)))
+Xp1 U (p4 | (p3 & !(p4 W p0)))
+Xp1 U (p4 | (!p3 & (p4 W p0)))
++ checkopt -f (Xp4 R p3) W !p0
++ checkopt_noparse -f (Xp4 R p3) W !p0
++ cat
++ run 0 ltlgrind --sort -f (Xp4 R p3) W !p0
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlgrind
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f (Xp4 R p3) W !p0
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f (Xp4 R p3) W !p0
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff exp out
++ ltlfilt out
+1
+!p0
+Xp4 R p3
+p3 W !p0
+Xp4 W !p0
+(p4 R p3) W !p0
+(Xp4 R p3) W p0
+(Xp4 R p3) W 0
+(p3 W Xp4) W !p0
+(X(0) R p3) W !p0
+(Xp3 R p3) W !p0
+(Xp0 R p3) W !p0
+(Xp4 R p4) W !p0
+(Xp4 R p0) W !p0
+(Xp4 R p3) W !p4
+(Xp4 R p3) W !p3
++ checkopt -f F(!p2 & p3) | Fp0 -n 4
++ checkopt_noparse -f F(!p2 & p3) | Fp0 -n 4
++ cat
++ run 0 ltlgrind --sort -f F(!p2 & p3) | Fp0 -n 4
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlgrind
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f F(!p2 & p3) | Fp0 -n 4
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f F(!p2 & p3) | Fp0 -n 4
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff exp out
++ ltlfilt out
+Fp0
+F(!p2 & p3)
+Fp0 | Fp3
+(!p2 & p3) | Fp0
++ checkopt -f {(a | b)[*4] & ((a | b)*; c)} <>-> G(d <-> e) xor f --split-ops
++ checkopt_noparse -f {(a | b)[*4] & ((a | b)*; c)} <>-> G(d <-> e) xor f --split-ops
++ cat
++ run 0 ltlgrind --sort -f {(a | b)[*4] & ((a | b)*; c)} <>-> G(d <-> e) xor f --split-ops
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlgrind
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f {(a | b)[*4] & ((a | b)*; c)} <>-> G(d <-> e) xor f --split-ops
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f {(a | b)[*4] & ((a | b)*; c)} <>-> G(d <-> e) xor f --split-ops
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff exp out
++ ltlfilt out
+{{a | b}[*4] & {{a | b}[*];c}}<>-> (f xor G(d -> e))
+{{a | b}[*4] & {{a | b}[*];c}}<>-> (f xor G(e -> d))
+{{a | b}[*4] & {{a | b}[*];c}}<>-> (f xor G(d & e))
+{{a | b}[*4] & {{a | b}[*];c}}<>-> (f & !G(d <-> e))
+{{a | b}[*4] & {{a | b}[*];c}}<>-> (!f & G(d <-> e))
+{{a | b}[*4] & {{a | b}[*];c}}<>-> (f xor G(!d & !e))
+{{{a | b}[*];c} && {{a | b}[*4];[*]}}<>-> (f xor G(d <-> e))
+{{a | b}[*4] && {{a | b}[*];c;[*]}}<>-> (f xor G(d <-> e))
++ checkopt -f !(!XXp1 M X(p4 U p2)) --rewrite-ops
++ checkopt_noparse -f !(!XXp1 M X(p4 U p2)) --rewrite-ops
++ cat
++ run 0 ltlgrind --sort -f !(!XXp1 M X(p4 U p2)) --rewrite-ops
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlgrind
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f !(!XXp1 M X(p4 U p2)) --rewrite-ops
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f !(!XXp1 M X(p4 U p2)) --rewrite-ops
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff exp out
++ ltlfilt out
+!(!XXp1 R X(p4 U p2))
+!(X(p4 U p2) U !XXp1)
+!(!XXp1 M X(p4 W p2))
++ checkopt -f !(p0 & !p2 & (p1 W 0)) --remove-multop-operands
++ checkopt_noparse -f !(p0 & !p2 & (p1 W 0)) --remove-multop-operands
++ cat
++ run 0 ltlgrind --sort -f !(p0 & !p2 & (p1 W 0)) --remove-multop-operands
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlgrind
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f !(p0 & !p2 & (p1 W 0)) --remove-multop-operands
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f !(p0 & !p2 & (p1 W 0)) --remove-multop-operands
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff exp out
++ ltlfilt out
+!(p0 & !p2)
+!(p0 & (p1 W 0))
+!(!p2 & (p1 W 0))
++ checkopt -f {p1[*..2] | p2[*3..5] | p3[*6..]}[]-> 0 --simplify-bounds
++ checkopt_noparse -f {p1[*..2] | p2[*3..5] | p3[*6..]}[]-> 0 --simplify-bounds
++ cat
++ run 0 ltlgrind --sort -f {p1[*..2] | p2[*3..5] | p3[*6..]}[]-> 0 --simplify-bounds
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlgrind
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f {p1[*..2] | p2[*3..5] | p3[*6..]}[]-> 0 --simplify-bounds
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f {p1[*..2] | p2[*3..5] | p3[*6..]}[]-> 0 --simplify-bounds
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff exp out
++ ltlfilt out
+{p2[*3..5] | p3[*6..] | p1[*0..1]}[]-> 0
+{p2[*3..5] | p3[*6..] | p1[*]}[]-> 0
+{p1[*0..2] | p3[*6..] | p2[*2..5]}[]-> 0
+{p1[*0..2] | p3[*6..] | p2[*0..5]}[]-> 0
+{p1[*0..2] | p3[*6..] | p2[*3..4]}[]-> 0
+{p1[*0..2] | p3[*6..] | p2[*3..]}[]-> 0
+{p1[*0..2] | p2[*3..5] | p3[*5..]}[]-> 0
+{p1[*0..2] | p2[*3..5] | p3[*]}[]-> 0
++ checkopt -f !F(!X(Xp1 R p2) -> p4) --remove-one-ap
++ checkopt_noparse -f !F(!X(Xp1 R p2) -> p4) --remove-one-ap
++ cat
++ run 0 ltlgrind --sort -f !F(!X(Xp1 R p2) -> p4) --remove-one-ap
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlgrind
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f !F(!X(Xp1 R p2) -> p4) --remove-one-ap
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f !F(!X(Xp1 R p2) -> p4) --remove-one-ap
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff exp out
++ ltlfilt out
+!F(!X(Xp2 R p2) -> p4)
+!F(!X(Xp4 R p2) -> p4)
+!F(!X(Xp1 R p1) -> p4)
+!F(!X(Xp1 R p4) -> p4)
+!F(!X(Xp1 R p2) -> p1)
+!F(!X(Xp1 R p2) -> p2)
++ checkopt -f !p4 & (p2 | {{!p1}[*]}) --ap-to-const
++ checkopt_noparse -f !p4 & (p2 | {{!p1}[*]}) --ap-to-const
++ cat
++ run 0 ltlgrind --sort -f !p4 & (p2 | {{!p1}[*]}) --ap-to-const
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlgrind
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f !p4 & (p2 | {{!p1}[*]}) --ap-to-const
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f !p4 & (p2 | {{!p1}[*]}) --ap-to-const
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff exp out
++ ltlfilt out
+0
+!p4
+p2 & !p4
+p2 | {{!p1}[*]}
+!p4 & {{!p1}[*]}
+!p4 & (p2 | {[*]})
++ checkopt -f F(XXp0 | (p4 & Gp0)) --remove-ops
++ checkopt_noparse -f F(XXp0 | (p4 & Gp0)) --remove-ops
++ cat
++ run 0 ltlgrind --sort -f F(XXp0 | (p4 & Gp0)) --remove-ops
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlgrind
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f F(XXp0 | (p4 & Gp0)) --remove-ops
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f F(XXp0 | (p4 & Gp0)) --remove-ops
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff exp out
++ ltlfilt out
+XXp0 | (p4 & Gp0)
+F(Xp0 | (p4 & Gp0))
+F((p0 & p4) | XXp0)
++ checkopt -f 1 U (p3 <-> p4) -m 2
++ checkopt_noparse -f 1 U (p3 <-> p4) -m 2
++ cat
++ run 0 ltlgrind --sort -f 1 U (p3 <-> p4) -m 2
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlgrind
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f 1 U (p3 <-> p4) -m 2
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f 1 U (p3 <-> p4) -m 2
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff exp out
++ ltlfilt out
+0
+1
+p3
+p4
+!p4
+!p3
+p3 -> p4
+p4 -> p3
+p3 & p4
+1 U p3
+1 U p4
+1 U !p3
+1 U !p4
+!p3 & !p4
+1 U (p3 & !p4)
+1 U (!p3 & p4)
++ checkopt -f F({{p2;p0}[:*]}[]-> Xp0)
++ checkopt_noparse -f F({{p2;p0}[:*]}[]-> Xp0)
++ cat
++ run 0 ltlgrind --sort -f F({{p2;p0}[:*]}[]-> Xp0)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlgrind
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f F({{p2;p0}[:*]}[]-> Xp0)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -f F({{p2;p0}[:*]}[]-> Xp0)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff exp out
++ ltlfilt out
+1
+FXp0
+F!{{p2;p0}[:*]}
+{{p2;p0}[:*]}[]-> Xp0
+F({p2;p0}[]-> Xp0)
+F({{p2;p0}[:*]}[]-> p0)
+F({p0[*2][:*]}[]-> Xp0)
+F({p2[*2][:*]}[]-> Xp2)
+F({{1;p0}[:*]}[]-> Xp0)
+F({{p2;1}[:*]}[]-> Xp0)
+F({{p2;p0}[:*]}[]-> X(0))
++ echo 1,a,3
++ checkopt_noparse input/2
++ cat
++ run 0 ltlgrind --sort input/2
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlgrind
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort input/2
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort input/2
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff exp out
++ checkopt_noparse -F input/2 --format %<,%f,%>,%F,%L
++ cat
++ run 0 ltlgrind --sort -F input/2 --format %<,%f,%>,%F,%L
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlgrind
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -F input/2 --format %<,%f,%>,%F,%L
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlgrind --sort -F input/2 --format %<,%f,%>,%F,%L
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff exp out
++ ltlgrind -f a U b -m 999999999999999999999999999
++ grep too large err
+ltlgrind: value '999999999999999999999999999' is too large for a unsigned int (in argument of -m/--mutations).
+PASS core/ltlgrind.test (exit status: 0)

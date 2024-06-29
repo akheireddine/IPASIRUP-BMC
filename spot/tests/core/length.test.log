@@ -1,0 +1,325 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test length.test
+== Running test length.test
++ echo length.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=length
++ testSubDir=length.dir
++ chmod -R a+rwx length.dir
++ rm -rf length.dir
++ mkdir length.dir
++ cd length.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ len a U Xc 4 4
++ run 0 ../length a U Xc
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../length
++ cmd=../length
++ shift
++ test -n ../length
++ set ../length a U Xc
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../length a U Xc
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ test 4 = 4
++ run 0 ../length -b a U Xc
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../length
++ cmd=../length
++ shift
++ test -n ../length
++ set ../length -b a U Xc
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../length -b a U Xc
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ test 4 = 4
++ len a&b&c 5 1
++ run 0 ../length a&b&c
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../length
++ cmd=../length
++ shift
++ test -n ../length
++ set ../length a&b&c
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../length a&b&c
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ test 5 = 5
++ run 0 ../length -b a&b&c
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../length
++ cmd=../length
++ shift
++ test -n ../length
++ set ../length -b a&b&c
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../length -b a&b&c
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ test 1 = 1
++ len a|b|c 5 1
++ run 0 ../length a|b|c
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../length
++ cmd=../length
++ shift
++ test -n ../length
++ set ../length a|b|c
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../length a|b|c
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ test 5 = 5
++ run 0 ../length -b a|b|c
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../length
++ cmd=../length
++ shift
++ test -n ../length
++ set ../length -b a|b|c
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../length -b a|b|c
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ test 1 = 1
++ len !a|b|!c 7 1
++ run 0 ../length !a|b|!c
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../length
++ cmd=../length
++ shift
++ test -n ../length
++ set ../length !a|b|!c
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../length !a|b|!c
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ test 7 = 7
++ run 0 ../length -b !a|b|!c
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../length
++ cmd=../length
++ shift
++ test -n ../length
++ set ../length -b !a|b|!c
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../length -b !a|b|!c
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ test 1 = 1
++ len !(!a|b|!c) 8 1
++ run 0 ../length !(!a|b|!c)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../length
++ cmd=../length
++ shift
++ test -n ../length
++ set ../length !(!a|b|!c)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../length !(!a|b|!c)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ test 8 = 8
++ run 0 ../length -b !(!a|b|!c)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../length
++ cmd=../length
++ shift
++ test -n ../length
++ set ../length -b !(!a|b|!c)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../length -b !(!a|b|!c)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ test 1 = 1
++ len !X(!a|b|!c) 9 3
++ run 0 ../length !X(!a|b|!c)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../length
++ cmd=../length
++ shift
++ test -n ../length
++ set ../length !X(!a|b|!c)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../length !X(!a|b|!c)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ test 9 = 9
++ run 0 ../length -b !X(!a|b|!c)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../length
++ cmd=../length
++ shift
++ test -n ../length
++ set ../length -b !X(!a|b|!c)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../length -b !X(!a|b|!c)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ test 3 = 3
++ len Xa|(b|c) 6 4
++ run 0 ../length Xa|(b|c)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../length
++ cmd=../length
++ shift
++ test -n ../length
++ set ../length Xa|(b|c)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../length Xa|(b|c)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ test 6 = 6
++ run 0 ../length -b Xa|(b|c)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../length
++ cmd=../length
++ shift
++ test -n ../length
++ set ../length -b Xa|(b|c)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../length -b Xa|(b|c)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ test 4 = 4
++ len Xa&(b|c) 6 4
++ run 0 ../length Xa&(b|c)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../length
++ cmd=../length
++ shift
++ test -n ../length
++ set ../length Xa&(b|c)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../length Xa&(b|c)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ test 6 = 6
++ run 0 ../length -b Xa&(b|c)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../length
++ cmd=../length
++ shift
++ test -n ../length
++ set ../length -b Xa&(b|c)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../length -b Xa&(b|c)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ test 4 = 4
+PASS core/length.test (exit status: 0)

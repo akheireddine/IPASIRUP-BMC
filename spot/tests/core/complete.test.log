@@ -1,0 +1,207 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test complete.test
+== Running test complete.test
++ echo complete.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=complete
++ testSubDir=complete.dir
++ chmod -R a+rwx complete.dir
++ rm -rf complete.dir
++ mkdir complete.dir
++ cd complete.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ cat
++ run 0 autfilt -CH automaton
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -CH automaton
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -CH automaton
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
+HOA: v1
+States: 1
+Start: 0
+AP: 1 "a"
+acc-name: co-Buchi
+Acceptance: 1 Fin(0)
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic
+--BODY--
+State: 0 {0}
+[t] 0
+--END--
+HOA: v1
+States: 3
+Start: 0
+AP: 1 "a"
+acc-name: co-Buchi
+Acceptance: 1 Fin(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[0] 1
+[!0] 2
+State: 1
+[0] 1
+[!0] 2
+State: 2 {0}
+[t] 2
+--END--
+HOA: v1
+States: 3
+Start: 0
+AP: 1 "a"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic weak
+--BODY--
+State: 0 {0}
+[0] 1
+[!0] 2
+State: 1 {0}
+[0] 1
+[!0] 2
+State: 2
+[t] 2
+--END--
+HOA: v1
+States: 2
+Start: 0
+AP: 1 "a"
+acc-name: none
+Acceptance: 0 f
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic weak
+--BODY--
+State: 0
+[t] 1
+State: 1
+[t] 1
+--END--
+HOA: v1
+States: 3
+Start: 0
+AP: 1 "a"
+acc-name: Rabin 1
+Acceptance: 2 Fin(0) & Inf(1)
+properties: trans-labels explicit-labels trans-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[0] 1
+[!0] 2
+State: 1
+[0] 1 {0}
+[!0] 1 {1}
+State: 2
+[t] 2
+--END--
+HOA: v1
+States: 2
+Start: 0
+AP: 1 "a"
+acc-name: Rabin 1
+Acceptance: 2 Fin(0) & Inf(1)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic
+--BODY--
+State: 0
+[t] 1
+State: 1 {0}
+[0] 1
+[!0] 1
+--END--
+HOA: v1
+States: 2
+Start: 0
+AP: 2 "a" "b"
+acc-name: co-Buchi
+Acceptance: 1 Fin(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic univ-branch very-weak
+--BODY--
+State: 0
+[!0 | 1] 0
+[0&!1] 0&1
+State: 1 {0}
+[t] 1
+--END--
+HOA: v1
+States: 2
+Start: 0&1
+AP: 0
+acc-name: co-Buchi
+Acceptance: 1 Fin(0)
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic univ-branch
+--BODY--
+State: 0 {0}
+[t] 0
+State: 1 {0}
+[f] 1
+[t] 0
+--END--
++ diff out expected
++ autfilt --is-alternating automaton
++ cat out
+HOA: v1
+States: 2
+Start: 0
+AP: 2 "a" "b"
+acc-name: co-Buchi
+Acceptance: 1 Fin(0)
+properties: trans-labels explicit-labels state-acc deterministic
+properties: univ-branch very-weak
+--BODY--
+State: 0
+[!0 | 1] 0
+[0&!1] 0&1
+State: 1 {0}
+[0&!1] 1
+--END--
+HOA: v1
+States: 2
+Start: 0&1
+AP: 0
+acc-name: co-Buchi
+Acceptance: 1 Fin(0)
+properties: trans-labels explicit-labels state-acc deterministic
+properties: univ-branch
+--BODY--
+State: 0
+State: 1 {0}
+[f] 1
+--END--
++ cat
++ diff out expected
+PASS core/complete.test (exit status: 0)

@@ -1,0 +1,18 @@
++ expected_exitcode=2
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlsynt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlsynt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlsynt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlsynt --realizability --from-pgame aut7b.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlsynt --realizability --from-pgame aut7b.hoa
+aut7b.hoa:1.1-22.7: controllable-AP is not specified
++ exitcode=2
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 2 = 2

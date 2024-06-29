@@ -1,0 +1,94 @@
+# No reduction
+a U b, a U b
+a R b, a R b
+a & b, a & b
+a | b, a | b
+a & (a U b), a & (a U b)
+a | (a U b), a | (a U b)
+
+# Syntactic reduction
+a & (!b R !a), false
+(!b R !a) & a, false
+a & (!b R !a) & c, false
+c & (!b R !a) & a, false
+
+a & (!b M !a), false
+(!b M !a) & a, false
+a & (!b M !a) & c, false
+c & (!b M !a) & a, false
+
+a & (b U a), a
+(b U a) & a, a
+a | (b U a), (b U a)
+(b U a) | a, (b U a)
+a U (b U a), (b U a)
+
+a & (b W a), a
+(b W a) & a, a
+a | (b W a), (b W a)
+(b W a) | a, (b W a)
+a W (b W a), (b W a)
+
+a & (b U a) & a, a
+a & (b U a) & a, a
+a | (b U a) | a, (b U a)
+a | (b U a) | a, (b U a)
+a U (b U a), (b U a)
+
+a & c & (b W a), a & c
+a & d & c & e & f & g & b & (x W (g & f)), a&b&c&d&e&f&g
+(F!a & X(!b R a)) | (Ga & X(b U !a)), F!a & X(!b R a)
+d & ((!a & d) | (a & d)), (!a & d) | (a & d)
+
+a <-> !a, 0
+a <-> a, 1
+a ^ a, 0
+a ^ !a, 1
+
+GFa | FGa, GFa
+XXGa | GFa, GFa
+GFa & FGa, FGa
+XXGa & GFa, XXGa
+
+# Basic reductions
+X(true), true
+X(false), false
+F(true), true
+F(false), false
+
+XGF(f), GF(f)
+
+# not reduced
+a R (b W G(c)), a R (b W G(c))
+# not reduced.
+a M ((a&b) R c), a M ((a&b) R c)
+# not reduced.
+(a&b) W (a U c), (a&b) W (a U c)
+
+# Eventuality and universality class reductions
+FFa, Fa
+FGFa, GFa
+b U Fa, Fa
+b U GFa, GFa
+Ga, Ga
+
+a U XXXFb, XXXFb
+
+# issue 93
+GFa U Ga, FGa
+FGa U Ga, FGa
+GFa U a, GFa U a
+Fa U a, Fa
+GFa R Fa, GFa
+FGa R Fa, GFa
+FGa R a, FGa R a
+Ga R a, Ga
+
+# issue 293
+F(G!p1 | p1) W Fp1, 1
+F(p1 | G!p1) W Fp1, 1
+F(Fp1 -> p1) W Fp1, 1
+G(Fp0 | (p0 M (Fp0 W p0))), GFp0
+G((p0 M (Fp0 W p0)) | Fp0), GFp0
+G((Fp0) W ((p0 M (Fp0 W p0)))), GFp0
+!G((Fp0) W ((p0 M (Fp0 W p0)))), FG!p0

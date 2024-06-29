@@ -1,0 +1,1 @@
+Gp0 xor ((p0 M 1) -> (!p0 xor GXp1))

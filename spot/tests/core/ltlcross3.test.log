@@ -1,0 +1,615 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltlcross3.test
+== Running test ltlcross3.test
++ echo ltlcross3.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltlcross3
++ testSubDir=ltlcross3.dir
++ chmod -R a+rwx ltlcross3.dir
++ rm -rf ltlcross3.dir
++ mkdir ltlcross3.dir
++ cd ltlcross3.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 ltlcross -F formula --csv=out.csv ltl2tgba -s %f >%N ltl2tgba --lenient -s %s >%N --verbose
++ cat
++ grep info: check_empty error
++ diff -u ce ceplan
++ ltlcross -F formula --csv=out.csv --ref ltl2tgba -s %f >%N ltl2tgba --lenient -s %s >%N --determinize-max-states=0 --verbose
++ cat
++ grep info: check_empty error
++ diff -u ce ceplan
++ ltlcross -F formula --csv=out.csv -D ltl2tgba -s %f >%N ltl2tgba --lenient -s %s >%N --verbose
++ cat
++ grep info: check_empty error
++ diff -u ce ceplan
++ ltlcross -F formula --csv=out.csv -D --ref ltl2tgba -s %f >%N ltl2tgba --lenient -s %s >%N --verbose
++ cat
++ grep info: check_empty error
++ diff -u ce ceplan
++ ltlcross -F formula --csv=out.csv --ref ltl2tgba -s %f >%N --ref ltl2tgba --lenient -s %s >%N --verbose
++ grep info: check_empty error
++ run 2 ltlcross ltl2tgba -s %f >%N foo bar -f a
++ grep ltlcross.*no input.*in.*foo bar stderr
+ltlcross: no input %-sequence in 'foo bar'.
++ run 1 ltlcross ltl2tgba -s %f >%N false %f >%N -f a --csv=out.csv
++ grep "exit_status" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep "exit_code" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep error:.*returned exit code 1 stderr
++ wc -l
++ test 2 -eq 2
++ grep "exit code",1 out.csv
++ wc -l
++ test 2 -eq 2
++ check_csv out.csv
++ sed+  s/[^,]//g
+read first
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ run 1 ltlcross ltl2tgba -s %f >%N false %f >%N -f a --csv=out.csv --omit-missing
++ grep "exit_status" out.csv
++ grep "exit_code" out.csv
++ grep error:.*returned exit code 1 stderr
++ wc -l
++ test 2 -eq 2
++ grep "exit code",1 out.csv
++ wc -l
++ test 0 -eq 0
++ check_csv out.csv
++ sed s/[^,]//g
++ read first
++ read l
++ test x,,,,,,,,,,,,, = x,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,, = x,,,,,,,,,,,,,
++ read l
++ run 1 ltlcross ltl2tgba -s %f >%N false %f >%N -f a --csv=out.csv --strength
++ grep "exit_status" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nonacc_scc","terminal_scc","weak_scc","strong_scc","nondet_states","nondet_aut","terminal_aut","weak_aut","strong_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep "exit_code" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nonacc_scc","terminal_scc","weak_scc","strong_scc","nondet_states","nondet_aut","terminal_aut","weak_aut","strong_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep "nonacc_scc","terminal_scc","weak_scc","strong_scc" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nonacc_scc","terminal_scc","weak_scc","strong_scc","nondet_states","nondet_aut","terminal_aut","weak_aut","strong_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep "terminal_aut","weak_aut","strong_aut" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nonacc_scc","terminal_scc","weak_scc","strong_scc","nondet_states","nondet_aut","terminal_aut","weak_aut","strong_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep -v "ambiguous_aut" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nonacc_scc","terminal_scc","weak_scc","strong_scc","nondet_states","nondet_aut","terminal_aut","weak_aut","strong_aut","complete_aut","product_states","product_transitions","product_scc"
+"a","ltl2tgba -s %f >%N","ok",0,0.0637198,2,2,3,1,2,1,1,0,0,0,0,1,0,0,0,201,4144,2
+"a","false %f >%N","exit code",1,0.0247551,,,,,,,,,,,,,,,,,,
+"!(a)","ltl2tgba -s %f >%N","ok",0,0.047321,2,2,3,1,2,1,1,0,0,0,0,1,0,0,0,201,4149,2
+"!(a)","false %f >%N","exit code",1,0.0223565,,,,,,,,,,,,,,,,,,
++ grep error:.*returned exit code 1 stderr
++ wc -l
++ test 2 -eq 2
++ grep "exit code",1 out.csv
++ wc -l
++ test 2 -eq 2
++ check_csv out.csv
++ sed s/[^,]//g
++ read first
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,
++ read l
++ run 1 ltlcross ltl2tgba -s %f >%N false %f >%N -f a --csv=out.csv --ambiguous
++ grep "exit_status" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","ambiguous_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep "exit_code" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","ambiguous_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep "ambiguous_aut" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","ambiguous_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep -v "terminal_aut" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","ambiguous_aut","complete_aut","product_states","product_transitions","product_scc"
+"a","ltl2tgba -s %f >%N","ok",0,0.0593922,2,2,3,1,2,0,0,0,0,201,4144,2
+"a","false %f >%N","exit code",1,0.0202177,,,,,,,,,,,,
+"!(a)","ltl2tgba -s %f >%N","ok",0,0.039548,2,2,3,1,2,0,0,0,0,201,4149,2
+"!(a)","false %f >%N","exit code",1,0.0170855,,,,,,,,,,,,
++ grep error:.*returned exit code 1 stderr
++ wc -l
++ test 2 -eq 2
++ grep "exit code",1 out.csv
++ wc -l
++ test 2 -eq 2
++ check_csv out.csv
++ sed s/[^,]//g
++ read first
++ read l
++ test x,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,
++ read l
++ run 1 ltlcross ltl2tgba -s %f >%N false %f >%N -f a --csv=out.csv --ambiguous --strength
++ grep "exit_status" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nonacc_scc","terminal_scc","weak_scc","strong_scc","nondet_states","nondet_aut","terminal_aut","weak_aut","strong_aut","ambiguous_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep "exit_code" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nonacc_scc","terminal_scc","weak_scc","strong_scc","nondet_states","nondet_aut","terminal_aut","weak_aut","strong_aut","ambiguous_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep "nonacc_scc","terminal_scc","weak_scc","strong_scc" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nonacc_scc","terminal_scc","weak_scc","strong_scc","nondet_states","nondet_aut","terminal_aut","weak_aut","strong_aut","ambiguous_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep "terminal_aut","weak_aut","strong_aut" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nonacc_scc","terminal_scc","weak_scc","strong_scc","nondet_states","nondet_aut","terminal_aut","weak_aut","strong_aut","ambiguous_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep "ambiguous_aut" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nonacc_scc","terminal_scc","weak_scc","strong_scc","nondet_states","nondet_aut","terminal_aut","weak_aut","strong_aut","ambiguous_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep error:.*returned exit code 1 stderr
++ wc -l
++ test 2 -eq 2
++ grep "exit code",1 out.csv
++ wc -l
++ test 2 -eq 2
++ check_csv out.csv
++ sed s/[^,]//g
++ read first
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,,
++ read l
++ echo foo
++ run 0 ltlcross sleep 5; false %f >%N false %f >%N --timeout 2 -f a --csv=out.csv --ignore-execution-failures --save-bogus=bug
++ grep "exit_status" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep "exit_code" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","complete_aut","product_states","product_transitions","product_scc"
++ wc -l
++ grep warning:.*timeout stderr
++ test 2 -eq 2
++ grep warning:.*exit code 1 stderr
++ wc -l
++ test 2 -eq 2
++ grep "timeout",-1 out.csv
++ wc -l
++ test 2 -eq 2
++ grep "exit code",1 out.csv
++ wc -l
++ test 2 -eq 2
++ grep No major problem detected stderr
+No major problem detected.
++ grep 2 timeouts occurred stderr
+  - 2 timeouts occurred
++ grep 2 non-zero exit statuses were ignored stderr
+  - 2 non-zero exit statuses were ignored
++ check_csv out.csv
++ sed s/[^,]//g
++ read first
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ test -f bug
++ test -s bug
++ run 0 ltlcross sleep 5; false %f >%N --timeout 2 --omit-missing -f a --csv=out.csv
++ grep "exit_status" out.csv
++ grep "exit_code" out.csv
++ + grep warning:.*timeout stderr
+wc -l
++ test 2 -eq 2
++ wc -l
++ test 1 -eq 1
++ check_csv out.csv
++ sed s/[^,]//g+ 
+read first
++ read l
++ run 1 ltlcross sleep 5; false %f >%N --fail-on-timeout --timeout 2 -f a --csv=out.csv
++ grep error:.*timeout stderr
++ wc -l
++ test 2 -eq 2
++ wc -l
++ test 3 -eq 3
++ check_csv out.csv
++ sed s/[^,]//g+ 
+read first
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ run 1 ltlcross sleep 5; false %f >%N --fail-on-timeout --stop-on-error --timeout 2 -f a -f b --csv=out.csv --save-bogus=bogous
++ grep error:.*timeout stderr
++ wc -l
++ test 2 -eq 2
++ wc -l
++ test 3 -eq 3
++ wc -l
++ test 1 -eq 1
++ check_csv out.csv
++ sed s/[^,]//g
++ read first
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ run 1 ltlcross ltl2tgba -s %f >%N false %f >%N -f a --csv=out.csv --products=5 --automata
++ sed s/[^,]//g;q out.csv
++ wc -c
++ p=17
++ grep "exit_status" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","complete_aut","product_states","product_transitions","product_scc","automaton"
++ grep "exit_code" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","complete_aut","product_states","product_transitions","product_scc","automaton"
++ grep error:.*returned exit code 1 stderr
++ wc -l
++ test 2 -eq 2
++ grep "exit code",1 out.csv
++ wc -l
++ test 2 -eq 2
++ grep "HOA:.*--BODY--.*--END--" out.csv
++ wc -l
++ test 2 -eq 2
++ check_csv out.csv
++ sed s/[^,]//g
++ read first
++ read l
++ test x,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,
++ read l
++ run 1 ltlcross ltl2tgba -s %f >%N false %f >%N -f a --csv=out.csv --omit-missing --products=5
++ grep "exit_status" out.csv
++ grep "exit_code" out.csv
++ grep error:.*returned exit code 1 stderr
++ wc -l
++ test 2 -eq 2
++ grep "exit code",1 out.csv
++ wc -l
++ test 0 -eq 0
++ check_csv out.csv
++ sed s/[^,]//g
++ read first
++ read l
++ test x,,,,,,,,,,,,, = x,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,, = x,,,,,,,,,,,,,
++ read l
++ run 1 ltlcross ltl2tgba -s %f >%N false %f >%N -f a --csv=out.csv --products=+5 --automata
++ sed s/[^,]//g;q out.csv
++ wc -c
++ q=29
++ grep "exit_status" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","complete_aut","product_states","product_transitions","product_scc","product_states","product_transitions","product_scc","product_states","product_transitions","product_scc","product_states","product_transitions","product_scc","product_states","product_transitions","product_scc","automaton"
++ grep "exit_code" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","complete_aut","product_states","product_transitions","product_scc","product_states","product_transitions","product_scc","product_states","product_transitions","product_scc","product_states","product_transitions","product_scc","product_states","product_transitions","product_scc","automaton"
++ grep+  error:.*returned exit code 1 stderr
+wc -l
++ test 2 -eq 2
++ grep "exit code",1 out.csv
++ wc -l
++ test 2 -eq 2
++ grep "HOA:.*--BODY--.*--END--" out.csv
++ wc -l
++ test 2 -eq 2
++ check_csv out.csv
++ + sed s/[^,]//g
+read first
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,,,,,,,
++ read l
++ run 1 ltlcross ltl2tgba -s %f >%N false %f >%N -f a --csv=out.csv --omit-missing --products=+5
++ grep "exit_status" out.csv
++ grep "exit_code" out.csv
++ grep error:.*returned exit code 1 stderr+ 
+wc -l
++ test 2 -eq 2
++ grep "exit code",1 out.csv
++ wc -l
++ test 0 -eq 0
++ check_csv out.csv
++ + sed s/[^,]//g
+read first
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,,,,,,,,,,,
++ read l
++ expr 17 + 12
++ test 29 -eq 29
++ first=should not be erased
++ echo should not be erased
++ run 1 ltlcross ltl2tgba -s %f >%N false %f >%D -f X  a --csv=out.csv --save-bogus=>>bug.txt
++ sed s/[^,]//g;q out.csv
++ wc -c
++ q=16
++ expr 17 - 1
++ test 16 -eq 16
++ grep "exit_status" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep "exit_code" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep error:.*returned exit code 1 stderr
++ wc -l
++ test 2 -eq 2
++ grep "exit code",1 out.csv
++ wc -l
++ test 2 -eq 2
++ check_csv out.csv
++ sed+  s/[^,]//g
+read first
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ grep X  a bug.txt
+X  a
++ head -n 1 bug.txt
++ test should not be erased = should not be erased
++ run 1 ltlcross echo HOA: --ABORT-- %f > %H -f a --csv=out.csv
++ grep "exit_status" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep "exit_code" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep : echo HOA stderr
++ wc -l
++ test 2 -eq 2
++ grep -q -i performing stderr
++ grep error:.*aborted stderr
++ wc -l
++ test 2 -eq 2
++ grep "aborted",-1 out.csv
++ wc -l
++ test 2 -eq 2
++ wc -l
++ test 3 = 3
++ check_csv out.csv
++ + sed s/[^,]//g
+read first
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ run 1 ltlcross -q echo HOA: --ABORT-- %f > %H -f a --csv=out.csv
++ grep "exit_status" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep "exit_code" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep : echo HOA stderr
++ wc -l
++ test 2 -eq 2
++ grep -q -i performing stderr
++ grep error:.*aborted stderr
++ wc -l
++ test 2 -eq 2
++ grep "aborted",-1 out.csv
++ wc -l
++ test 2 -eq 2
++ wc -l
++ test 3 = 3
++ check_csv out.csv
++ sed s/[^,]//g
++ read first
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ run 1 ltlcross echo HOA: --ABORT-- %f > %H -f a --csv=>>out.csv
++ grep "exit_status" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep "exit_code" out.csv
+"formula","tool","exit_status","exit_code","time","states","edges","transitions","acc","scc","nondet_states","nondet_aut","complete_aut","product_states","product_transitions","product_scc"
++ grep error:.*aborted stderr
++ wc -l
++ test 2 -eq 2
++ grep "aborted",-1 out.csv
++ wc -l
++ test 4 -eq 4
++ wc -l
++ test 5 = 5
++ check_csv out.csv
++ sed s/[^,]//g+ 
+read first
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,,,,, = x,,,,,,,,,,,,,,,
++ read l
++ ltlcross --density 2.01 ltl2tgba
++ grep not between 0 and 1 stderr
+ltlcross: 2.010000 is not between 0 and 1 (in argument of ---density).
++ run 1 ltlcross --density 0.01 : %f >%O; echo %%>foo -f a
++ grep -c :.*empty input stderr
++ test 2 = 2
++ cat foo
+%
++ cat
++ diff foo expected
++ run 0 ltlcross --verbose --no-checks -f FGa ltl2tgba
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlcross
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross --verbose --no-checks -f FGa ltl2tgba
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross --verbose --no-checks -f FGa ltl2tgba
+F(G(a))
+Running [P0]: ltl2tgba -H 'F(G(a))'>'lcr-o0-dd4uub'
+info: collected automata:
+info:   P0	(2 st.,3 ed.,1 sets)
+Gathering statistics...
+info: complements not computed for some automata
+info: continuing with cross_checks and consistency_checks
+info: building state-space #1/1 of 200 states with seed 0
+info: state-space has 4136 edges
+info: building product between state-space and P0 (2 st., 3 ed.)
+info:   product has 400 st., 8298 ed.
+info:               2 SCCs
+
+No problem detected.
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ ltlcross --csv=/dev/null ltl2tgba ltl2tgba -D -G --states=5 -f (G(F(((a) & (X(X(a)))) | ((!(a)) & (X(X(!(a))))))))
+G(F(((a) & (X(X(a)))) | ((!(a)) & (X(X(!(a)))))))
+Running [P0]: ltl2tgba -H 'G(F(((a) & (X(X(a)))) | ((!(a)) & (X(X(!(a)))))))'>'lcr-o0-1dLKQ3'
+Running [P1]: ltl2tgba -D -G -H 'G(F(((a) & (X(X(a)))) | ((!(a)) & (X(X(!(a)))))))'>'lcr-o1-aCnx02'
+Running [N0]: ltl2tgba -H '!(G(F(((a) & (X(X(a)))) | ((!(a)) & (X(X(!(a))))))))'>'lcr-o0-vnfB5W'
+Running [N1]: ltl2tgba -D -G -H '!(G(F(((a) & (X(X(a)))) | ((!(a)) & (X(X(!(a))))))))'>'lcr-o1-33hyl5'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
++ ltlcross --csv=/dev/null ltl2tgba ltl2tgba -P -D --states=45 -f F(G((X(X(b))) | ((c) U (X(X(d))))))
+F(G((X(X(b))) | ((c) U (X(X(d))))))
+Running [P0]: ltl2tgba -H 'F(G((X(X(b))) | ((c) U (X(X(d))))))'>'lcr-o0-4WuQjh'
+Running [P1]: ltl2tgba -P -D -H 'F(G((X(X(b))) | ((c) U (X(X(d))))))'>'lcr-o1-1H0Cmx'
+Running [N0]: ltl2tgba -H '!(F(G((X(X(b))) | ((c) U (X(X(d)))))))'>'lcr-o0-7jyCkJ'
+Running [N1]: ltl2tgba -P -D -H '!(F(G((X(X(b))) | ((c) U (X(X(d)))))))'>'lcr-o1-YOwIR7'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
++ ltlcross --color --products=0 ltl2tgba -f GFa -f FGa --csv=out.csv
+[1mG(F(a))[m
+Running [P0]: ltl2tgba -H 'G(F(a))'>'lcr-o0-j7EiDL'
+Running [N0]: ltl2tgba -H '!(G(F(a)))'>'lcr-o0-q22NbO'
+Performing sanity checks and gathering statistics...
+
+[1mF(G(a))[m
+Running [P0]: ltl2tgba -H 'F(G(a))'>'lcr-o0-bkXJ7n'
+Running [N0]: ltl2tgba -H '!(F(G(a)))'>'lcr-o0-egSR7Z'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
++ grep product out.csv
++ check_csv out.csv
++ sed s/[^,]//g
++ read first
++ read l
++ test x,,,,,,,,,,,, = x,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,, = x,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,, = x,,,,,,,,,,,,
++ read l
++ test x,,,,,,,,,,,, = x,,,,,,,,,,,,
++ read l
++ ltlcross -f a ltl2tgba --determinize --determinize-max-states=10
++ grep max-states.*incompatible stderr
+ltlcross: Options --determinize-max-states and --determinize are incompatible.
++ ltlcross -f a ltl2tgba --determinize-max-states=10 --determinize
++ grep max-states.*incompatible stderr
+ltlcross: Options --determinize-max-states and --determinize are incompatible.
++ ltlcross -f a ltl2tgba --determinize-max-edges=10 --determinize
++ grep max-edges.*incompatible stderr
+ltlcross: Options --determinize-max-edges and --determinize are incompatible.
++ ltlcross -f a ltl2tgba --determinize-max-edges=10 --determinize
++ grep max-edges.*incompatible stderr
+ltlcross: Options --determinize-max-edges and --determinize are incompatible.
++ ltlcross ltl2tgba ltl2tgba -D -f GFa -f FGa --verbose --save-inclusion-products=prod.hoa
+G(F(a))
+Running [P0]: ltl2tgba -H 'G(F(a))'>'lcr-o0-6TTvYS'
+Running [P1]: ltl2tgba -D -H 'G(F(a))'>'lcr-o1-SQfbhU'
+Running [N0]: ltl2tgba -H '!(G(F(a)))'>'lcr-o0-Ul8Oi0'
+Running [N1]: ltl2tgba -D -H '!(G(F(a)))'>'lcr-o1-UwUaWV'
+info: collected automata:
+info:   P0	(1 st.,2 ed.,1 sets) deterministic complete
+info:   N0	(2 st.,3 ed.,1 sets)
+info:   P1	(1 st.,2 ed.,1 sets) deterministic complete
+info:   N1	(2 st.,3 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:   P0	(1 st.,2 ed.,1 sets) -> (1 st.,2 ed.,1 sets)	Comp(P0)
+info:   N0	(2 st.,3 ed.,1 sets) -> (2 st.,4 ed.,1 sets)	Comp(N0)
+info:   P1	(1 st.,2 ed.,1 sets) -> (1 st.,2 ed.,1 sets)	Comp(P1)
+info:   N1	(2 st.,3 ed.,1 sets) -> (2 st.,4 ed.,1 sets)	Comp(N1)
+info: check_empty P0*N0
+info: check_empty Comp(N0)*Comp(P0)
+info: check_empty P0*N1
+info: check_empty P1*N0
+info: check_empty P1*N1
+info: check_empty Comp(N1)*Comp(P1)
+info: cross_checks and consistency_checks unnecessary
+
+F(G(a))
+Running [P0]: ltl2tgba -H 'F(G(a))'>'lcr-o0-55IUmE'
+Running [P1]: ltl2tgba -D -H 'F(G(a))'>'lcr-o1-vjwNEI'
+Running [N0]: ltl2tgba -H '!(F(G(a)))'>'lcr-o0-llH8vc'
+Running [N1]: ltl2tgba -D -H '!(F(G(a)))'>'lcr-o1-l3RwWK'
+info: collected automata:
+info:   P0	(2 st.,3 ed.,1 sets)
+info:   N0	(1 st.,2 ed.,1 sets) deterministic complete
+info:   P1	(2 st.,3 ed.,1 sets)
+info:   N1	(1 st.,2 ed.,1 sets) deterministic complete
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:   P0	(2 st.,3 ed.,1 sets) -> (2 st.,4 ed.,1 sets)	Comp(P0)
+info:   N0	(1 st.,2 ed.,1 sets) -> (1 st.,2 ed.,1 sets)	Comp(N0)
+info:   P1	(2 st.,3 ed.,1 sets) -> (2 st.,4 ed.,1 sets)	Comp(P1)
+info:   N1	(1 st.,2 ed.,1 sets) -> (1 st.,2 ed.,1 sets)	Comp(N1)
+info: check_empty P0*N0
+info: check_empty Comp(N0)*Comp(P0)
+info: check_empty P0*N1
+info: check_empty P1*N0
+info: check_empty P1*N1
+info: check_empty Comp(N1)*Comp(P1)
+info: cross_checks and consistency_checks unnecessary
+
+No problem detected.
++ autfilt -c prod.hoa
++ test 12 = 12
+PASS core/ltlcross3.test (exit status: 0)

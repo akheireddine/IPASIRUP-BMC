@@ -1,0 +1,2 @@
+ltldo: no input %-sequence in '{name} foo/bar/owl-21.00 non-existant'.
+       Use one of %f,%s,%l,%w,%F,%S,%L,%W to indicate how to pass the formula.

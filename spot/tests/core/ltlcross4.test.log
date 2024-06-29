@@ -1,0 +1,31 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltlcross4.test
+== Running test ltlcross4.test
++ + echo ltlcross4.testsed
+ -e s,.*[\/],,;s/\.test$//
++ me=ltlcross4
++ testSubDir=ltlcross4.dir
++ chmod -R a+rwx ltlcross4.dir
++ rm -rf ltlcross4.dir
++ mkdir ltlcross4.dir
++ cd ltlcross4.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ test -z 
++ exit 77
+SKIP core/ltlcross4.test (exit status: 77)

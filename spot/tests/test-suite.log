@@ -1,0 +1,889 @@
+=====================================
+   spot 2.12: tests/test-suite.log
+=====================================
+
+# TOTAL: 202
+# PASS:  179
+# SKIP:  23
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+
+.. contents:: :depth: 2
+
+SKIP: core/dot2tex.test
+=======================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test dot2tex.test
+== Running test dot2tex.test
++ echo dot2tex.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=dot2tex
++ testSubDir=dot2tex.dir
++ chmod -R a+rwx dot2tex.dir
++ rm -rf dot2tex.dir
++ mkdir dot2tex.dir
++ cd dot2tex.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ latexmk --version
+
+Latexmk, John Collins, 20 November 2021. Version 4.76
++ pdflatex --version
+pdfTeX 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian)
+kpathsea version 6.3.4/dev
+Copyright 2021 Han The Thanh (pdfTeX) et al.
+There is NO warranty.  Redistribution of this software is
+covered by the terms of both the pdfTeX copyright and
+the Lesser GNU General Public License.
+For more information about these matters, see the file
+named COPYING and the pdfTeX source.
+Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.
+Compiled with libpng 1.6.37; using libpng 1.6.37
+Compiled with zlib 1.2.11; using zlib 1.2.11
+Compiled with xpdf version 4.03
++ dot2tex --version
+dot2tex.test: 28: dot2tex: not found
++ exit 77
+SKIP core/dot2tex.test (exit status: 77)
+
+SKIP: core/ltldo2.test
+======================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltldo2.test
+== Running test ltldo2.test
++ echo ltldo2.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltldo2
++ testSubDir=ltldo2.dir
++ chmod -R a+rwx ltldo2.dir
++ rm -rf ltldo2.dir
++ mkdir ltldo2.dir
++ cd ltldo2.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ test -n 
++ exit 77
+SKIP core/ltldo2.test (exit status: 77)
+
+SKIP: core/ltl2neverclaim-lbtt.test
+===================================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltl2neverclaim-lbtt.test
+== Running test ltl2neverclaim-lbtt.test
++ echo ltl2neverclaim-lbtt.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltl2neverclaim-lbtt
++ testSubDir=ltl2neverclaim-lbtt.dir
++ chmod -R a+rwx ltl2neverclaim-lbtt.dir
++ rm -rf ltl2neverclaim-lbtt.dir
++ mkdir ltl2neverclaim-lbtt.dir
++ cd ltl2neverclaim-lbtt.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ need_lbtt
++  --version
+ltl2neverclaim-lbtt.test: 73: : Permission denied
++ exit 77
+SKIP core/ltl2neverclaim-lbtt.test (exit status: 77)
+
+SKIP: core/ltlcross4.test
+=========================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltlcross4.test
+== Running test ltlcross4.test
++ + echo ltlcross4.testsed
+ -e s,.*[\/],,;s/\.test$//
++ me=ltlcross4
++ testSubDir=ltlcross4.dir
++ chmod -R a+rwx ltlcross4.dir
++ rm -rf ltlcross4.dir
++ mkdir ltlcross4.dir
++ cd ltlcross4.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ test -z 
++ exit 77
+SKIP core/ltlcross4.test (exit status: 77)
+
+SKIP: core/ltl3ba.test
+======================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltl3ba.test
+== Running test ltl3ba.test
++ echo ltl3ba.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltl3ba
++ testSubDir=ltl3ba.dir
++ chmod -R a+rwx ltl3ba.dir
++ rm -rf ltl3ba.dir
++ mkdir ltl3ba.dir
++ cd ltl3ba.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltl3ba -v
+ltl3ba.test: 28: ltl3ba: not found
++ exit 77
+SKIP core/ltl3ba.test (exit status: 77)
+
+SKIP: core/ltl3dra.test
+=======================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltl3dra.test
+== Running test ltl3dra.test
++ echo ltl3dra.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltl3dra
++ testSubDir=ltl3dra.dir
++ chmod -R a+rwx ltl3dra.dir
++ rm -rf ltl3dra.dir
++ mkdir ltl3dra.dir
++ cd ltl3dra.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltl3dra -v
+ltl3dra.test: 28: ltl3dra: not found
++ exit 77
+SKIP core/ltl3dra.test (exit status: 77)
+
+SKIP: core/ltl2dstar.test
+=========================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltl2dstar.test
+== Running test ltl2dstar.test
++ echo ltl2dstar.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltl2dstar
++ testSubDir=ltl2dstar.dir
++ chmod -R a+rwx ltl2dstar.dir
++ rm -rf ltl2dstar.dir
++ mkdir ltl2dstar.dir
++ cd ltl2dstar.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltl2dstar --version
+ltl2dstar.test: 28: ltl2dstar: not found
++ exit 77
+SKIP core/ltl2dstar.test (exit status: 77)
+
+SKIP: core/ltl2dstar2.test
+==========================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltl2dstar2.test
+== Running test ltl2dstar2.test
++ echo ltl2dstar2.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltl2dstar2
++ testSubDir=ltl2dstar2.dir
++ chmod -R a+rwx ltl2dstar2.dir
++ rm -rf ltl2dstar2.dir
++ mkdir ltl2dstar2.dir
++ cd ltl2dstar2.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltl2dstar --version
+ltl2dstar2.test: 28: ltl2dstar: not found
++ exit 77
+SKIP core/ltl2dstar2.test (exit status: 77)
+
+SKIP: core/ltl2dstar3.test
+==========================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltl2dstar3.test
+== Running test ltl2dstar3.test
++ echo ltl2dstar3.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltl2dstar3
++ testSubDir=ltl2dstar3.dir
++ chmod -R a+rwx ltl2dstar3.dir
++ rm -rf ltl2dstar3.dir
++ mkdir ltl2dstar3.dir
++ cd ltl2dstar3.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltl2dstar --version
+ltl2dstar3.test: 26: ltl2dstar: not found
++ exit 77
+SKIP core/ltl2dstar3.test (exit status: 77)
+
+SKIP: core/ltl2dstar4.test
+==========================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltl2dstar4.test
+== Running test ltl2dstar4.test
++ echo ltl2dstar4.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltl2dstar4
++ testSubDir=ltl2dstar4.dir
++ chmod -R a+rwx ltl2dstar4.dir
++ rm -rf ltl2dstar4.dir
++ mkdir ltl2dstar4.dir
++ cd ltl2dstar4.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltl2dstar --version
+ltl2dstar4.test: 28: ltl2dstar: not found
++ exit 77
+SKIP core/ltl2dstar4.test (exit status: 77)
+
+SKIP: core/satmin3.test
+=======================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test satmin3.test
+== Running test satmin3.test
++ echo satmin3.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=satmin3
++ testSubDir=satmin3.dir
++ chmod -R a+rwx satmin3.dir
++ rm -rf satmin3.dir
++ mkdir satmin3.dir
++ cd satmin3.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ SPOT_SATSOLVER=false autfilt --sat-minimize test.hoa --stats=%s
++ grep autfilt: SPOT_SATSOLVER should use %I err
+autfilt: SPOT_SATSOLVER should use %I as input filename.
++ SPOT_SATSOLVER=false %I autfilt --sat-minimize test.hoa --stats=%s
++ grep autfilt: SPOT_SATSOLVER should use %O err
+autfilt: SPOT_SATSOLVER should use %O as output filename.
++ SPOT_SATSOLVER=false %I %O autfilt --sat-minimize test.hoa --stats=%s
++ cat output
++ test 3 = 3
++ SPOT_SATSOLVER=this-does-not-exist %I %O autfilt --sat-minimize test.hoa --stats=%s
++ grep this-does-not-exist.*failed err
+autfilt: this-does-not-exist sat-iz5sNZ.cnf sat-ZCCQG1.out: failed to execute
++ exit 77
+SKIP core/satmin3.test (exit status: 77)
+
+SKIP: core/spotlbtt.test
+========================
+
++ echo This test can take as long as 15 minutes on a 2GHz Pentium 4.
+This test can take as long as 15 minutes on a 2GHz Pentium 4.
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test spotlbtt.test
+== Running test spotlbtt.test
++ echo spotlbtt.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=spotlbtt
++ testSubDir=spotlbtt.dir
++ chmod -R a+rwx spotlbtt.dir
++ rm -rf spotlbtt.dir
++ mkdir spotlbtt.dir
++ cd spotlbtt.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ need_lbtt
++  --version
+spotlbtt.test: 73: : Permission denied
++ exit 77
+SKIP core/spotlbtt.test (exit status: 77)
+
+SKIP: core/autcross.test
+========================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test autcross.test
+== Running test autcross.test
++ echo autcross.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=autcross
++ testSubDir=autcross.dir
++ chmod -R a+rwx autcross.dir
++ rm -rf autcross.dir
++ mkdir autcross.dir
++ cd autcross.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltl2dstar --version
+autcross.test: 24: ltl2dstar: not found
++ exit 77
+SKIP core/autcross.test (exit status: 77)
+
+SKIP: core/ltlsynt2.test
+========================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltlsynt2.test
+== Running test ltlsynt2.test
++ echo ltlsynt2.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltlsynt2
++ testSubDir=ltlsynt2.dir
++ chmod -R a+rwx ltlsynt2.dir
++ rm -rf ltlsynt2.dir
++ mkdir ltlsynt2.dir
++ cd ltlsynt2.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ ltlsynt --ins=i1,i2 -F formulas.ltl -f o1 & F(i1 <-> o2) -q --csv=out.csv
+REALIZABLE
+REALIZABLE
+REALIZABLE
+UNREALIZABLE
+REALIZABLE
++ test 1 -eq 1
++ test -z 
++ exit 77
+SKIP core/ltlsynt2.test (exit status: 77)
+
+SKIP: core/syfco.test
+=====================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test syfco.test
+== Running test syfco.test
++ echo syfco.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=syfco
++ testSubDir=syfco.dir
++ chmod -R a+rwx syfco.dir
++ rm -rf syfco.dir
++ mkdir syfco.dir
++ cd syfco.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ syfco --version
+syfco.test: 26: syfco: not found
++ exit 77
+SKIP core/syfco.test (exit status: 77)
+
+SKIP: ltsmin/check.test
+=======================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test check.test
+== Running test check.test
++ echo check.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=check
++ testSubDir=check.dir
++ chmod -R a+rwx check.dir
++ rm -rf check.dir
++ mkdir check.dir
++ cd check.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ divine compile
++ set -e
++ command -v spins
++ test -x 
++ echo spins not installed.
+spins not installed.
++ grep -i -- --ltsmin output
++ echo divine not installed, or no ltsmin interface
+divine not installed, or no ltsmin interface
++ exit 77
+SKIP ltsmin/check.test (exit status: 77)
+
+SKIP: ltsmin/check2.test
+========================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test check2.test
+== Running test check2.test
++ echo check2.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=check2
++ testSubDir=check2.dir
++ chmod -R a+rwx check2.dir
++ rm -rf check2.dir
++ mkdir check2.dir
++ cd check2.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ command -v spins
++ test -x 
++ echo spins not installed.
+spins not installed.
++ exit 77
+SKIP ltsmin/check2.test (exit status: 77)
+
+SKIP: ltsmin/check3.test
+========================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test check3.test
+== Running test check3.test
++ echo check3.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=check3
++ testSubDir=check3.dir
++ chmod -R a+rwx check3.dir
++ rm -rf check3.dir
++ mkdir check3.dir
++ cd check3.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ command -v gal2c
++ test -x 
++ echo gal2c not installed.
+gal2c not installed.
++ exit 77
+SKIP ltsmin/check3.test (exit status: 77)
+
+SKIP: ltsmin/finite.test
+========================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test finite.test
+== Running test finite.test
++ echo finite.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=finite
++ testSubDir=finite.dir
++ chmod -R a+rwx finite.dir
++ rm -rf finite.dir
++ mkdir finite.dir
++ cd finite.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ divine compile
++ grep -i ltsmin  output
++ echo divine not installed, or no ltsmin interface
+divine not installed, or no ltsmin interface
++ exit 77
+SKIP ltsmin/finite.test (exit status: 77)
+
+SKIP: ltsmin/finite2.test
+=========================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test finite2.test
+== Running test finite2.test
++ echo finite2.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=finite2
++ testSubDir=finite2.dir
++ chmod -R a+rwx finite2.dir
++ rm -rf finite2.dir
++ mkdir finite2.dir
++ cd finite2.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ spins .././finite.pm
+finite2.test: 25: spins: not found
++ echo spins not functionnal.
+spins not functionnal.
++ exit 77
+SKIP ltsmin/finite2.test (exit status: 77)
+
+SKIP: ltsmin/finite3.test
+=========================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test finite3.test
+== Running test finite3.test
++ echo finite3.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=finite3
++ testSubDir=finite3.dir
++ chmod -R a+rwx finite3.dir
++ rm -rf finite3.dir
++ mkdir finite3.dir
++ cd finite3.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ gal2c .././finite.gal
+finite3.test: 24: gal2c: not found
++ echo gal2c not functionnal.
+gal2c not functionnal.
++ exit 77
+SKIP ltsmin/finite3.test (exit status: 77)
+
+SKIP: ltsmin/kripke.test
+========================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test kripke.test
+== Running test kripke.test
++ echo kripke.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=kripke
++ testSubDir=kripke.dir
++ chmod -R a+rwx kripke.dir
++ rm -rf kripke.dir
++ mkdir kripke.dir
++ cd kripke.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ divine compile
++ grep -i ltsmin  output
++ echo divine not installed, or no ltsmin interface
+divine not installed, or no ltsmin interface
++ exit 77
+SKIP ltsmin/kripke.test (exit status: 77)
+
+SKIP: ltsmin/testconvert.test
+=============================
+
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test testconvert.test
+== Running test testconvert.test
++ + echo testconvert.test
+sed -e s,.*[\/],,;s/\.test$//
++ me=testconvert
++ testSubDir=testconvert.dir
++ chmod -R a+rwx testconvert.dir
++ rm -rf testconvert.dir
++ mkdir testconvert.dir
++ cd testconvert.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ divine compile
++ grep -i ltsmin  output
++ echo divine not installed, or no ltsmin interface
+divine not installed, or no ltsmin interface
++ exit 77
+SKIP ltsmin/testconvert.test (exit status: 77)
+

@@ -1,0 +1,28 @@
+HOA: v1
+Start: 0
+AP: 1 "a"
+Acceptance: 2 Fin(0)|Inf(1)
+--BODY--
+State: 0
+[0] 1
+State: 1 {0}
+[0] 2
+State: 2
+[0] 0 {1}
+--END--
+/* The following example used to be converted into a
+   3-state automaton instead of just 2 states, due to
+   a typo in the code. */
+HOA: v1
+States: 2
+Start: 1
+AP: 2 "a" "b"
+Acceptance: 2 Fin(0) & Inf(1)
+--BODY--
+State: 0
+[t] 0 {0}
+State: 1
+[1] 0
+[0&!1] 1 {1}
+--END--
+

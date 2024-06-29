@@ -1,0 +1,644 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltlcounter.test
+== Running test ltlcounter.test
++ + echosed ltlcounter.test -e
+ s,.*[\/],,;s/\.test$//
++ me=ltlcounter
++ testSubDir=ltlcounter.dir
++ chmod -R a+rwx ltlcounter.dir
++ rm -rf ltlcounter.dir
++ mkdir ltlcounter.dir
++ cd ltlcounter.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ pwd
+/home/nissa/Documents/WORKS/cadical-user-propagation/spot/tests/core/ltlcounter.dir
++ lc=genltl
++ run=run 0
++ check_range 1..2
++ + genltl --rv-counter 1..2 --rv-counter-linear 1..2 --rv-counter-carryread 1..2 line --rv-counter-carry-linear
+ 1..2
++ check_formula !b & m & G(m -> Xm) & G((!b & m) -> (Xb & X((!m & (b <-> Xb)) U m))) & G((b & m) -> (X!b & X((b & !m & X!b) U (m | (!b & !m & Xb & X((!m & (b <-> Xb)) U m))))))
++ run 0 ../ikwiad -CR -e -x -f !b & m & G(m -> Xm) & G((!b & m) -> (Xb & X((!m & (b <-> Xb)) U m))) & G((b & m) -> (X!b & X((b & !m & X!b) U (m | (!b & !m & Xb & X((!m & (b <-> Xb)) U m))))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -x -f !b & m & G(m -> Xm) & G((!b & m) -> (Xb & X((!m & (b <-> Xb)) U m))) & G((b & m) -> (X!b & X((b & !m & X!b) U (m | (!b & !m & Xb & X((!m & (b <-> Xb)) U m))))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -x -f !b & m & G(m -> Xm) & G((!b & m) -> (Xb & X((!m & (b <-> Xb)) U m))) & G((b & m) -> (X!b & X((b & !m & X!b) U (m | (!b & !m & Xb & X((!m & (b <-> Xb)) U m))))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DT -x -f !b & m & G(m -> Xm) & G((!b & m) -> (Xb & X((!m & (b <-> Xb)) U m))) & G((b & m) -> (X!b & X((b & !m & X!b) U (m | (!b & !m & Xb & X((!m & (b <-> Xb)) U m))))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DT -x -f !b & m & G(m -> Xm) & G((!b & m) -> (Xb & X((!m & (b <-> Xb)) U m))) & G((b & m) -> (X!b & X((b & !m & X!b) U (m | (!b & !m & Xb & X((!m & (b <-> Xb)) U m))))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DT -x -f !b & m & G(m -> Xm) & G((!b & m) -> (Xb & X((!m & (b <-> Xb)) U m))) & G((b & m) -> (X!b & X((b & !m & X!b) U (m | (!b & !m & Xb & X((!m & (b <-> Xb)) U m))))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DS -x -f !b & m & G(m -> Xm) & G((!b & m) -> (Xb & X((!m & (b <-> Xb)) U m))) & G((b & m) -> (X!b & X((b & !m & X!b) U (m | (!b & !m & Xb & X((!m & (b <-> Xb)) U m))))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DS -x -f !b & m & G(m -> Xm) & G((!b & m) -> (Xb & X((!m & (b <-> Xb)) U m))) & G((b & m) -> (X!b & X((b & !m & X!b) U (m | (!b & !m & Xb & X((!m & (b <-> Xb)) U m))))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DS -x -f !b & m & G(m -> Xm) & G((!b & m) -> (Xb & X((!m & (b <-> Xb)) U m))) & G((b & m) -> (X!b & X((b & !m & X!b) U (m | (!b & !m & Xb & X((!m & (b <-> Xb)) U m))))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ read line
++ check_formula !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (XXb & X((!m & (b <-> XXb)) U m))) & G((b & m) -> (XX!b & X((b & !m & XX!b) U (m | (!b & !m & XXb & X((!m & (b <-> XXb)) U m))))))
++ run 0 ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (XXb & X((!m & (b <-> XXb)) U m))) & G((b & m) -> (XX!b & X((b & !m & XX!b) U (m | (!b & !m & XXb & X((!m & (b <-> XXb)) U m))))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (XXb & X((!m & (b <-> XXb)) U m))) & G((b & m) -> (XX!b & X((b & !m & XX!b) U (m | (!b & !m & XXb & X((!m & (b <-> XXb)) U m))))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (XXb & X((!m & (b <-> XXb)) U m))) & G((b & m) -> (XX!b & X((b & !m & XX!b) U (m | (!b & !m & XXb & X((!m & (b <-> XXb)) U m))))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (XXb & X((!m & (b <-> XXb)) U m))) & G((b & m) -> (XX!b & X((b & !m & XX!b) U (m | (!b & !m & XXb & X((!m & (b <-> XXb)) U m))))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (XXb & X((!m & (b <-> XXb)) U m))) & G((b & m) -> (XX!b & X((b & !m & XX!b) U (m | (!b & !m & XXb & X((!m & (b <-> XXb)) U m))))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (XXb & X((!m & (b <-> XXb)) U m))) & G((b & m) -> (XX!b & X((b & !m & XX!b) U (m | (!b & !m & XXb & X((!m & (b <-> XXb)) U m))))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (XXb & X((!m & (b <-> XXb)) U m))) & G((b & m) -> (XX!b & X((b & !m & XX!b) U (m | (!b & !m & XXb & X((!m & (b <-> XXb)) U m))))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (XXb & X((!m & (b <-> XXb)) U m))) & G((b & m) -> (XX!b & X((b & !m & XX!b) U (m | (!b & !m & XXb & X((!m & (b <-> XXb)) U m))))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (XXb & X((!m & (b <-> XXb)) U m))) & G((b & m) -> (XX!b & X((b & !m & XX!b) U (m | (!b & !m & XXb & X((!m & (b <-> XXb)) U m))))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ read line
++ check_formula !b & m & G(m -> Xm) & G((!b & m) -> X(b & ((!m & (b <-> Xb)) U m))) & G((b & m) -> X(!b & ((b & !m & X!b) U (m | (!b & !m & X(b & ((!m & (b <-> Xb)) U m)))))))
++ run 0 ../ikwiad -CR -e -x -f !b & m & G(m -> Xm) & G((!b & m) -> X(b & ((!m & (b <-> Xb)) U m))) & G((b & m) -> X(!b & ((b & !m & X!b) U (m | (!b & !m & X(b & ((!m & (b <-> Xb)) U m)))))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -x -f !b & m & G(m -> Xm) & G((!b & m) -> X(b & ((!m & (b <-> Xb)) U m))) & G((b & m) -> X(!b & ((b & !m & X!b) U (m | (!b & !m & X(b & ((!m & (b <-> Xb)) U m)))))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -x -f !b & m & G(m -> Xm) & G((!b & m) -> X(b & ((!m & (b <-> Xb)) U m))) & G((b & m) -> X(!b & ((b & !m & X!b) U (m | (!b & !m & X(b & ((!m & (b <-> Xb)) U m)))))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DT -x -f !b & m & G(m -> Xm) & G((!b & m) -> X(b & ((!m & (b <-> Xb)) U m))) & G((b & m) -> X(!b & ((b & !m & X!b) U (m | (!b & !m & X(b & ((!m & (b <-> Xb)) U m)))))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DT -x -f !b & m & G(m -> Xm) & G((!b & m) -> X(b & ((!m & (b <-> Xb)) U m))) & G((b & m) -> X(!b & ((b & !m & X!b) U (m | (!b & !m & X(b & ((!m & (b <-> Xb)) U m)))))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DT -x -f !b & m & G(m -> Xm) & G((!b & m) -> X(b & ((!m & (b <-> Xb)) U m))) & G((b & m) -> X(!b & ((b & !m & X!b) U (m | (!b & !m & X(b & ((!m & (b <-> Xb)) U m)))))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DS -x -f !b & m & G(m -> Xm) & G((!b & m) -> X(b & ((!m & (b <-> Xb)) U m))) & G((b & m) -> X(!b & ((b & !m & X!b) U (m | (!b & !m & X(b & ((!m & (b <-> Xb)) U m)))))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DS -x -f !b & m & G(m -> Xm) & G((!b & m) -> X(b & ((!m & (b <-> Xb)) U m))) & G((b & m) -> X(!b & ((b & !m & X!b) U (m | (!b & !m & X(b & ((!m & (b <-> Xb)) U m)))))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DS -x -f !b & m & G(m -> Xm) & G((!b & m) -> X(b & ((!m & (b <-> Xb)) U m))) & G((b & m) -> X(!b & ((b & !m & X!b) U (m | (!b & !m & X(b & ((!m & (b <-> Xb)) U m)))))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ read line
++ check_formula !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> X(Xb & ((!m & (b <-> XXb)) U m))) & G((b & m) -> X(X!b & ((b & !m & XX!b) U (m | (!b & !m & X(Xb & ((!m & (b <-> XXb)) U m)))))))
++ run 0 ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> X(Xb & ((!m & (b <-> XXb)) U m))) & G((b & m) -> X(X!b & ((b & !m & XX!b) U (m | (!b & !m & X(Xb & ((!m & (b <-> XXb)) U m)))))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> X(Xb & ((!m & (b <-> XXb)) U m))) & G((b & m) -> X(X!b & ((b & !m & XX!b) U (m | (!b & !m & X(Xb & ((!m & (b <-> XXb)) U m)))))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> X(Xb & ((!m & (b <-> XXb)) U m))) & G((b & m) -> X(X!b & ((b & !m & XX!b) U (m | (!b & !m & X(Xb & ((!m & (b <-> XXb)) U m)))))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> X(Xb & ((!m & (b <-> XXb)) U m))) & G((b & m) -> X(X!b & ((b & !m & XX!b) U (m | (!b & !m & X(Xb & ((!m & (b <-> XXb)) U m)))))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> X(Xb & ((!m & (b <-> XXb)) U m))) & G((b & m) -> X(X!b & ((b & !m & XX!b) U (m | (!b & !m & X(Xb & ((!m & (b <-> XXb)) U m)))))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> X(Xb & ((!m & (b <-> XXb)) U m))) & G((b & m) -> X(X!b & ((b & !m & XX!b) U (m | (!b & !m & X(Xb & ((!m & (b <-> XXb)) U m)))))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> X(Xb & ((!m & (b <-> XXb)) U m))) & G((b & m) -> X(X!b & ((b & !m & XX!b) U (m | (!b & !m & X(Xb & ((!m & (b <-> XXb)) U m)))))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> X(Xb & ((!m & (b <-> XXb)) U m))) & G((b & m) -> X(X!b & ((b & !m & XX!b) U (m | (!b & !m & X(Xb & ((!m & (b <-> XXb)) U m)))))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> X(Xb & ((!m & (b <-> XXb)) U m))) & G((b & m) -> X(X!b & ((b & !m & XX!b) U (m | (!b & !m & X(Xb & ((!m & (b <-> XXb)) U m)))))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ read line
++ check_formula !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXb))) & G(c -> ((X!b -> (X!c & XXb)) & (Xb -> (Xc & XX!b))))
++ run 0 ../ikwiad -CR -e -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXb))) & G(c -> ((X!b -> (X!c & XXb)) & (Xb -> (Xc & XX!b))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXb))) & G(c -> ((X!b -> (X!c & XXb)) & (Xb -> (Xc & XX!b))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXb))) & G(c -> ((X!b -> (X!c & XXb)) & (Xb -> (Xc & XX!b))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DT -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXb))) & G(c -> ((X!b -> (X!c & XXb)) & (Xb -> (Xc & XX!b))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DT -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXb))) & G(c -> ((X!b -> (X!c & XXb)) & (Xb -> (Xc & XX!b))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DT -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXb))) & G(c -> ((X!b -> (X!c & XXb)) & (Xb -> (Xc & XX!b))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DS -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXb))) & G(c -> ((X!b -> (X!c & XXb)) & (Xb -> (Xc & XX!b))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DS -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXb))) & G(c -> ((X!b -> (X!c & XXb)) & (Xb -> (Xc & XX!b))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DS -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXb))) & G(c -> ((X!b -> (X!c & XXb)) & (Xb -> (Xc & XX!b))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ read line
++ check_formula !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXb))) & G(c -> ((X!b -> (X!c & XXXb)) & (Xb -> (Xc & XXX!b))))
++ run 0 ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXb))) & G(c -> ((X!b -> (X!c & XXXb)) & (Xb -> (Xc & XXX!b))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXb))) & G(c -> ((X!b -> (X!c & XXXb)) & (Xb -> (Xc & XXX!b))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXb))) & G(c -> ((X!b -> (X!c & XXXb)) & (Xb -> (Xc & XXX!b))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXb))) & G(c -> ((X!b -> (X!c & XXXb)) & (Xb -> (Xc & XXX!b))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXb))) & G(c -> ((X!b -> (X!c & XXXb)) & (Xb -> (Xc & XXX!b))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXb))) & G(c -> ((X!b -> (X!c & XXXb)) & (Xb -> (Xc & XXX!b))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXb))) & G(c -> ((X!b -> (X!c & XXXb)) & (Xb -> (Xc & XXX!b))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXb))) & G(c -> ((X!b -> (X!c & XXXb)) & (Xb -> (Xc & XXX!b))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XXm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXb))) & G(c -> ((X!b -> (X!c & XXXb)) & (Xb -> (Xc & XXX!b))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ read line
++ check_formula !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> X(!c & (b <-> Xb))) & G(c -> X((!b -> (!c & Xb)) & (b -> (c & X!b))))
++ run 0 ../ikwiad -CR -e -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> X(!c & (b <-> Xb))) & G(c -> X((!b -> (!c & Xb)) & (b -> (c & X!b))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> X(!c & (b <-> Xb))) & G(c -> X((!b -> (!c & Xb)) & (b -> (c & X!b))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> X(!c & (b <-> Xb))) & G(c -> X((!b -> (!c & Xb)) & (b -> (c & X!b))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DT -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> X(!c & (b <-> Xb))) & G(c -> X((!b -> (!c & Xb)) & (b -> (c & X!b))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DT -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> X(!c & (b <-> Xb))) & G(c -> X((!b -> (!c & Xb)) & (b -> (c & X!b))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DT -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> X(!c & (b <-> Xb))) & G(c -> X((!b -> (!c & Xb)) & (b -> (c & X!b))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DS -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> X(!c & (b <-> Xb))) & G(c -> X((!b -> (!c & Xb)) & (b -> (c & X!b))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DS -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> X(!c & (b <-> Xb))) & G(c -> X((!b -> (!c & Xb)) & (b -> (c & X!b))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DS -x -f !b & m & G(m -> Xm) & G((!b & m) -> (!c & Xb)) & G((b & m) -> (c & X!b)) & G((!c & X!m) -> X(!c & (b <-> Xb))) & G(c -> X((!b -> (!c & Xb)) & (b -> (c & X!b))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ read line
++ check_formula !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> X(!c & (b <-> XXb))) & G(c -> X((!b -> (!c & XXb)) & (b -> (c & XX!b))))
++ run 0 ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> X(!c & (b <-> XXb))) & G(c -> X((!b -> (!c & XXb)) & (b -> (c & XX!b))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> X(!c & (b <-> XXb))) & G(c -> X((!b -> (!c & XXb)) & (b -> (c & XX!b))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> X(!c & (b <-> XXb))) & G(c -> X((!b -> (!c & XXb)) & (b -> (c & XX!b))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> X(!c & (b <-> XXb))) & G(c -> X((!b -> (!c & XXb)) & (b -> (c & XX!b))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> X(!c & (b <-> XXb))) & G(c -> X((!b -> (!c & XXb)) & (b -> (c & XX!b))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> X(!c & (b <-> XXb))) & G(c -> X((!b -> (!c & XXb)) & (b -> (c & XX!b))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> X(!c & (b <-> XXb))) & G(c -> X((!b -> (!c & XXb)) & (b -> (c & XX!b))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> X(!c & (b <-> XXb))) & G(c -> X((!b -> (!c & XXb)) & (b -> (c & XX!b))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & Xm)) & X!b & G((!b & m) -> (!c & XXb)) & G((b & m) -> (c & XX!b)) & G((!c & X!m) -> X(!c & (b <-> XXb))) & G(c -> X((!b -> (!c & XXb)) & (b -> (c & XX!b))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ read line
++ run=
++ check_range 3..11
++ genltl --rv-counter 3..11 --rv-counter-linear 3..11 --rv-counter-carry 3..11 --rv-counter-carry-linear 3..11
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXXm)) & X!b & XX!b & G((!b & m) -> (XXXb & X((!m & (b <-> XXXb)) U m))) & G((b & m) -> (XXX!b & X((b & !m & XXX!b) U (m | (!b & !m & XXXb & X((!m & (b <-> XXXb)) U m))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXXm)) & X!b & XX!b & G((!b & m) -> (XXXb & X((!m & (b <-> XXXb)) U m))) & G((b & m) -> (XXX!b & X((b & !m & XXX!b) U (m | (!b & !m & XXXb & X((!m & (b <-> XXXb)) U m))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXXm)) & X!b & XX!b & G((!b & m) -> (XXXb & X((!m & (b <-> XXXb)) U m))) & G((b & m) -> (XXX!b & X((b & !m & XXX!b) U (m | (!b & !m & XXXb & X((!m & (b <-> XXXb)) U m))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXXm)) & X!b & XX!b & G((!b & m) -> (XXXb & X((!m & (b <-> XXXb)) U m))) & G((b & m) -> (XXX!b & X((b & !m & XXX!b) U (m | (!b & !m & XXXb & X((!m & (b <-> XXXb)) U m))))))
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXX!m & XXXXm)) & X!b & XX!b & XXX!b & G((!b & m) -> (XXXXb & X((!m & (b <-> XXXXb)) U m))) & G((b & m) -> (XXXX!b & X((b & !m & XXXX!b) U (m | (!b & !m & XXXXb & X((!m & (b <-> XXXXb)) U m))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXXm)) & X!b & XX!b & XXX!b & G((!b & m) -> (XXXXb & X((!m & (b <-> XXXXb)) U m))) & G((b & m) -> (XXXX!b & X((b & !m & XXXX!b) U (m | (!b & !m & XXXXb & X((!m & (b <-> XXXXb)) U m))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXXm)) & X!b & XX!b & XXX!b & G((!b & m) -> (XXXXb & X((!m & (b <-> XXXXb)) U m))) & G((b & m) -> (XXXX!b & X((b & !m & XXXX!b) U (m | (!b & !m & XXXXb & X((!m & (b <-> XXXXb)) U m))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXXm)) & X!b & XX!b & XXX!b & G((!b & m) -> (XXXXb & X((!m & (b <-> XXXXb)) U m))) & G((b & m) -> (XXXX!b & X((b & !m & XXXX!b) U (m | (!b & !m & XXXXb & X((!m & (b <-> XXXXb)) U m))))))
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & G((!b & m) -> (XXXXXb & X((!m & (b <-> XXXXXb)) U m))) & G((b & m) -> (XXXXX!b & X((b & !m & XXXXX!b) U (m | (!b & !m & XXXXXb & X((!m & (b <-> XXXXXb)) U m))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & G((!b & m) -> (XXXXXb & X((!m & (b <-> XXXXXb)) U m))) & G((b & m) -> (XXXXX!b & X((b & !m & XXXXX!b) U (m | (!b & !m & XXXXXb & X((!m & (b <-> XXXXXb)) U m))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & G((!b & m) -> (XXXXXb & X((!m & (b <-> XXXXXb)) U m))) & G((b & m) -> (XXXXX!b & X((b & !m & XXXXX!b) U (m | (!b & !m & XXXXXb & X((!m & (b <-> XXXXXb)) U m))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & G((!b & m) -> (XXXXXb & X((!m & (b <-> XXXXXb)) U m))) & G((b & m) -> (XXXXX!b & X((b & !m & XXXXX!b) U (m | (!b & !m & XXXXXb & X((!m & (b <-> XXXXXb)) U m))))))
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & G((!b & m) -> (XXXXXXb & X((!m & (b <-> XXXXXXb)) U m))) & G((b & m) -> (XXXXXX!b & X((b & !m & XXXXXX!b) U (m | (!b & !m & XXXXXXb & X((!m & (b <-> XXXXXXb)) U m))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & G((!b & m) -> (XXXXXXb & X((!m & (b <-> XXXXXXb)) U m))) & G((b & m) -> (XXXXXX!b & X((b & !m & XXXXXX!b) U (m | (!b & !m & XXXXXXb & X((!m & (b <-> XXXXXXb)) U m))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & G((!b & m) -> (XXXXXXb & X((!m & (b <-> XXXXXXb)) U m))) & G((b & m) -> (XXXXXX!b & X((b & !m & XXXXXX!b) U (m | (!b & !m & XXXXXXb & X((!m & (b <-> XXXXXXb)) U m))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & G((!b & m) -> (XXXXXXb & X((!m & (b <-> XXXXXXb)) U m))) & G((b & m) -> (XXXXXX!b & X((b & !m & XXXXXX!b) U (m | (!b & !m & XXXXXXb & X((!m & (b <-> XXXXXXb)) U m))))))
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & G((!b & m) -> (XXXXXXXb & X((!m & (b <-> XXXXXXXb)) U m))) & G((b & m) -> (XXXXXXX!b & X((b & !m & XXXXXXX!b) U (m | (!b & !m & XXXXXXXb & X((!m & (b <-> XXXXXXXb)) U m))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & G((!b & m) -> (XXXXXXXb & X((!m & (b <-> XXXXXXXb)) U m))) & G((b & m) -> (XXXXXXX!b & X((b & !m & XXXXXXX!b) U (m | (!b & !m & XXXXXXXb & X((!m & (b <-> XXXXXXXb)) U m))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & G((!b & m) -> (XXXXXXXb & X((!m & (b <-> XXXXXXXb)) U m))) & G((b & m) -> (XXXXXXX!b & X((b & !m & XXXXXXX!b) U (m | (!b & !m & XXXXXXXb & X((!m & (b <-> XXXXXXXb)) U m))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & G((!b & m) -> (XXXXXXXb & X((!m & (b <-> XXXXXXXb)) U m))) & G((b & m) -> (XXXXXXX!b & X((b & !m & XXXXXXX!b) U (m | (!b & !m & XXXXXXXb & X((!m & (b <-> XXXXXXXb)) U m))))))
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & G((!b & m) -> (XXXXXXXXb & X((!m & (b <-> XXXXXXXXb)) U m))) & G((b & m) -> (XXXXXXXX!b & X((b & !m & XXXXXXXX!b) U (m | (!b & !m & XXXXXXXXb & X((!m & (b <-> XXXXXXXXb)) U m))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & G((!b & m) -> (XXXXXXXXb & X((!m & (b <-> XXXXXXXXb)) U m))) & G((b & m) -> (XXXXXXXX!b & X((b & !m & XXXXXXXX!b) U (m | (!b & !m & XXXXXXXXb & X((!m & (b <-> XXXXXXXXb)) U m))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & G((!b & m) -> (XXXXXXXXb & X((!m & (b <-> XXXXXXXXb)) U m))) & G((b & m) -> (XXXXXXXX!b & X((b & !m & XXXXXXXX!b) U (m | (!b & !m & XXXXXXXXb & X((!m & (b <-> XXXXXXXXb)) U m))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & G((!b & m) -> (XXXXXXXXb & X((!m & (b <-> XXXXXXXXb)) U m))) & G((b & m) -> (XXXXXXXX!b & X((b & !m & XXXXXXXX!b) U (m | (!b & !m & XXXXXXXXb & X((!m & (b <-> XXXXXXXXb)) U m))))))
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & G((!b & m) -> (XXXXXXXXXb & X((!m & (b <-> XXXXXXXXXb)) U m))) & G((b & m) -> (XXXXXXXXX!b & X((b & !m & XXXXXXXXX!b) U (m | (!b & !m & XXXXXXXXXb & X((!m & (b <-> XXXXXXXXXb)) U m))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & G((!b & m) -> (XXXXXXXXXb & X((!m & (b <-> XXXXXXXXXb)) U m))) & G((b & m) -> (XXXXXXXXX!b & X((b & !m & XXXXXXXXX!b) U (m | (!b & !m & XXXXXXXXXb & X((!m & (b <-> XXXXXXXXXb)) U m))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & G((!b & m) -> (XXXXXXXXXb & X((!m & (b <-> XXXXXXXXXb)) U m))) & G((b & m) -> (XXXXXXXXX!b & X((b & !m & XXXXXXXXX!b) U (m | (!b & !m & XXXXXXXXXb & X((!m & (b <-> XXXXXXXXXb)) U m))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & G((!b & m) -> (XXXXXXXXXb & X((!m & (b <-> XXXXXXXXXb)) U m))) & G((b & m) -> (XXXXXXXXX!b & X((b & !m & XXXXXXXXX!b) U (m | (!b & !m & XXXXXXXXXb & X((!m & (b <-> XXXXXXXXXb)) U m))))))
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXX!m & XXXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & XXXXXXXXX!b & G((!b & m) -> (XXXXXXXXXXb & X((!m & (b <-> XXXXXXXXXXb)) U m))) & G((b & m) -> (XXXXXXXXXX!b & X((b & !m & XXXXXXXXXX!b) U (m | (!b & !m & XXXXXXXXXXb & X((!m & (b <-> XXXXXXXXXXb)) U m))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXX!m & XXXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & XXXXXXXXX!b & G((!b & m) -> (XXXXXXXXXXb & X((!m & (b <-> XXXXXXXXXXb)) U m))) & G((b & m) -> (XXXXXXXXXX!b & X((b & !m & XXXXXXXXXX!b) U (m | (!b & !m & XXXXXXXXXXb & X((!m & (b <-> XXXXXXXXXXb)) U m))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXX!m & XXXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & XXXXXXXXX!b & G((!b & m) -> (XXXXXXXXXXb & X((!m & (b <-> XXXXXXXXXXb)) U m))) & G((b & m) -> (XXXXXXXXXX!b & X((b & !m & XXXXXXXXXX!b) U (m | (!b & !m & XXXXXXXXXXb & X((!m & (b <-> XXXXXXXXXXb)) U m))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXX!m & XXXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & XXXXXXXXX!b & G((!b & m) -> (XXXXXXXXXXb & X((!m & (b <-> XXXXXXXXXXb)) U m))) & G((b & m) -> (XXXXXXXXXX!b & X((b & !m & XXXXXXXXXX!b) U (m | (!b & !m & XXXXXXXXXXb & X((!m & (b <-> XXXXXXXXXXb)) U m))))))
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXX!m & XXXXXXXXXX!m & XXXXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & XXXXXXXXX!b & XXXXXXXXXX!b & G((!b & m) -> (XXXXXXXXXXXb & X((!m & (b <-> XXXXXXXXXXXb)) U m))) & G((b & m) -> (XXXXXXXXXXX!b & X((b & !m & XXXXXXXXXXX!b) U (m | (!b & !m & XXXXXXXXXXXb & X((!m & (b <-> XXXXXXXXXXXb)) U m))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXX!m & XXXXXXXXXX!m & XXXXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & XXXXXXXXX!b & XXXXXXXXXX!b & G((!b & m) -> (XXXXXXXXXXXb & X((!m & (b <-> XXXXXXXXXXXb)) U m))) & G((b & m) -> (XXXXXXXXXXX!b & X((b & !m & XXXXXXXXXXX!b) U (m | (!b & !m & XXXXXXXXXXXb & X((!m & (b <-> XXXXXXXXXXXb)) U m))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXX!m & XXXXXXXXXX!m & XXXXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & XXXXXXXXX!b & XXXXXXXXXX!b & G((!b & m) -> (XXXXXXXXXXXb & X((!m & (b <-> XXXXXXXXXXXb)) U m))) & G((b & m) -> (XXXXXXXXXXX!b & X((b & !m & XXXXXXXXXXX!b) U (m | (!b & !m & XXXXXXXXXXXb & X((!m & (b <-> XXXXXXXXXXXb)) U m))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXX!m & XXXXXXXXXX!m & XXXXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & XXXXXXXXX!b & XXXXXXXXXX!b & G((!b & m) -> (XXXXXXXXXXXb & X((!m & (b <-> XXXXXXXXXXXb)) U m))) & G((b & m) -> (XXXXXXXXXXX!b & X((b & !m & XXXXXXXXXXX!b) U (m | (!b & !m & XXXXXXXXXXXb & X((!m & (b <-> XXXXXXXXXXXb)) U m))))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & Xm))) & X(!b & X!b) & G((!b & m) -> X(XXb & ((!m & (b <-> XXXb)) U m))) & G((b & m) -> X(XX!b & ((b & !m & XXX!b) U (m | (!b & !m & X(XXb & ((!m & (b <-> XXXb)) U m)))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & Xm))) & X(!b & X!b) & G((!b & m) -> X(XXb & ((!m & (b <-> XXXb)) U m))) & G((b & m) -> X(XX!b & ((b & !m & XXX!b) U (m | (!b & !m & X(XXb & ((!m & (b <-> XXXb)) U m)))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & Xm))) & X(!b & X!b) & G((!b & m) -> X(XXb & ((!m & (b <-> XXXb)) U m))) & G((b & m) -> X(XX!b & ((b & !m & XXX!b) U (m | (!b & !m & X(XXb & ((!m & (b <-> XXXb)) U m)))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & Xm))) & X(!b & X!b) & G((!b & m) -> X(XXb & ((!m & (b <-> XXXb)) U m))) & G((b & m) -> X(XX!b & ((b & !m & XXX!b) U (m | (!b & !m & X(XXb & ((!m & (b <-> XXXb)) U m)))))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & X(!m & Xm)))) & X(!b & X(!b & X!b)) & G((!b & m) -> X(XXXb & ((!m & (b <-> XXXXb)) U m))) & G((b & m) -> X(XXX!b & ((b & !m & XXXX!b) U (m | (!b & !m & X(XXXb & ((!m & (b <-> XXXXb)) U m)))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & X(!m & Xm)))) & X(!b & X(!b & X!b)) & G((!b & m) -> X(XXXb & ((!m & (b <-> XXXXb)) U m))) & G((b & m) -> X(XXX!b & ((b & !m & XXXX!b) U (m | (!b & !m & X(XXXb & ((!m & (b <-> XXXXb)) U m)))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & X(!m & Xm)))) & X(!b & X(!b & X!b)) & G((!b & m) -> X(XXXb & ((!m & (b <-> XXXXb)) U m))) & G((b & m) -> X(XXX!b & ((b & !m & XXXX!b) U (m | (!b & !m & X(XXXb & ((!m & (b <-> XXXXb)) U m)))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & X(!m & Xm)))) & X(!b & X(!b & X!b)) & G((!b & m) -> X(XXXb & ((!m & (b <-> XXXXb)) U m))) & G((b & m) -> X(XXX!b & ((b & !m & XXXX!b) U (m | (!b & !m & X(XXXb & ((!m & (b <-> XXXXb)) U m)))))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & Xm))))) & X(!b & X(!b & X(!b & X!b))) & G((!b & m) -> X(XXXXb & ((!m & (b <-> XXXXXb)) U m))) & G((b & m) -> X(XXXX!b & ((b & !m & XXXXX!b) U (m | (!b & !m & X(XXXXb & ((!m & (b <-> XXXXXb)) U m)))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & Xm))))) & X(!b & X(!b & X(!b & X!b))) & G((!b & m) -> X(XXXXb & ((!m & (b <-> XXXXXb)) U m))) & G((b & m) -> X(XXXX!b & ((b & !m & XXXXX!b) U (m | (!b & !m & X(XXXXb & ((!m & (b <-> XXXXXb)) U m)))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & Xm))))) & X(!b & X(!b & X(!b & X!b))) & G((!b & m) -> X(XXXXb & ((!m & (b <-> XXXXXb)) U m))) & G((b & m) -> X(XXXX!b & ((b & !m & XXXXX!b) U (m | (!b & !m & X(XXXXb & ((!m & (b <-> XXXXXb)) U m)))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & Xm))))) & X(!b & X(!b & X(!b & X!b))) & G((!b & m) -> X(XXXXb & ((!m & (b <-> XXXXXb)) U m))) & G((b & m) -> X(XXXX!b & ((b & !m & XXXXX!b) U (m | (!b & !m & X(XXXXb & ((!m & (b <-> XXXXXb)) U m)))))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))) & X(!b & X(!b & X(!b & X(!b & X!b)))) & G((!b & m) -> X(XXXXXb & ((!m & (b <-> XXXXXXb)) U m))) & G((b & m) -> X(XXXXX!b & ((b & !m & XXXXXX!b) U (m | (!b & !m & X(XXXXXb & ((!m & (b <-> XXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))) & X(!b & X(!b & X(!b & X(!b & X!b)))) & G((!b & m) -> X(XXXXXb & ((!m & (b <-> XXXXXXb)) U m))) & G((b & m) -> X(XXXXX!b & ((b & !m & XXXXXX!b) U (m | (!b & !m & X(XXXXXb & ((!m & (b <-> XXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))) & X(!b & X(!b & X(!b & X(!b & X!b)))) & G((!b & m) -> X(XXXXXb & ((!m & (b <-> XXXXXXb)) U m))) & G((b & m) -> X(XXXXX!b & ((b & !m & XXXXXX!b) U (m | (!b & !m & X(XXXXXb & ((!m & (b <-> XXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))) & X(!b & X(!b & X(!b & X(!b & X!b)))) & G((!b & m) -> X(XXXXXb & ((!m & (b <-> XXXXXXb)) U m))) & G((b & m) -> X(XXXXX!b & ((b & !m & XXXXXX!b) U (m | (!b & !m & X(XXXXXb & ((!m & (b <-> XXXXXXb)) U m)))))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))) & G((!b & m) -> X(XXXXXXb & ((!m & (b <-> XXXXXXXb)) U m))) & G((b & m) -> X(XXXXXX!b & ((b & !m & XXXXXXX!b) U (m | (!b & !m & X(XXXXXXb & ((!m & (b <-> XXXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))) & G((!b & m) -> X(XXXXXXb & ((!m & (b <-> XXXXXXXb)) U m))) & G((b & m) -> X(XXXXXX!b & ((b & !m & XXXXXXX!b) U (m | (!b & !m & X(XXXXXXb & ((!m & (b <-> XXXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))) & G((!b & m) -> X(XXXXXXb & ((!m & (b <-> XXXXXXXb)) U m))) & G((b & m) -> X(XXXXXX!b & ((b & !m & XXXXXXX!b) U (m | (!b & !m & X(XXXXXXb & ((!m & (b <-> XXXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))) & G((!b & m) -> X(XXXXXXb & ((!m & (b <-> XXXXXXXb)) U m))) & G((b & m) -> X(XXXXXX!b & ((b & !m & XXXXXXX!b) U (m | (!b & !m & X(XXXXXXb & ((!m & (b <-> XXXXXXXb)) U m)))))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b)))))) & G((!b & m) -> X(XXXXXXXb & ((!m & (b <-> XXXXXXXXb)) U m))) & G((b & m) -> X(XXXXXXX!b & ((b & !m & XXXXXXXX!b) U (m | (!b & !m & X(XXXXXXXb & ((!m & (b <-> XXXXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b)))))) & G((!b & m) -> X(XXXXXXXb & ((!m & (b <-> XXXXXXXXb)) U m))) & G((b & m) -> X(XXXXXXX!b & ((b & !m & XXXXXXXX!b) U (m | (!b & !m & X(XXXXXXXb & ((!m & (b <-> XXXXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b)))))) & G((!b & m) -> X(XXXXXXXb & ((!m & (b <-> XXXXXXXXb)) U m))) & G((b & m) -> X(XXXXXXX!b & ((b & !m & XXXXXXXX!b) U (m | (!b & !m & X(XXXXXXXb & ((!m & (b <-> XXXXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b)))))) & G((!b & m) -> X(XXXXXXXb & ((!m & (b <-> XXXXXXXXb)) U m))) & G((b & m) -> X(XXXXXXX!b & ((b & !m & XXXXXXXX!b) U (m | (!b & !m & X(XXXXXXXb & ((!m & (b <-> XXXXXXXXb)) U m)))))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))))) & G((!b & m) -> X(XXXXXXXXb & ((!m & (b <-> XXXXXXXXXb)) U m))) & G((b & m) -> X(XXXXXXXX!b & ((b & !m & XXXXXXXXX!b) U (m | (!b & !m & X(XXXXXXXXb & ((!m & (b <-> XXXXXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))))) & G((!b & m) -> X(XXXXXXXXb & ((!m & (b <-> XXXXXXXXXb)) U m))) & G((b & m) -> X(XXXXXXXX!b & ((b & !m & XXXXXXXXX!b) U (m | (!b & !m & X(XXXXXXXXb & ((!m & (b <-> XXXXXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))))) & G((!b & m) -> X(XXXXXXXXb & ((!m & (b <-> XXXXXXXXXb)) U m))) & G((b & m) -> X(XXXXXXXX!b & ((b & !m & XXXXXXXXX!b) U (m | (!b & !m & X(XXXXXXXXb & ((!m & (b <-> XXXXXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))))) & G((!b & m) -> X(XXXXXXXXb & ((!m & (b <-> XXXXXXXXXb)) U m))) & G((b & m) -> X(XXXXXXXX!b & ((b & !m & XXXXXXXXX!b) U (m | (!b & !m & X(XXXXXXXXb & ((!m & (b <-> XXXXXXXXXb)) U m)))))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b)))))))) & G((!b & m) -> X(XXXXXXXXXb & ((!m & (b <-> XXXXXXXXXXb)) U m))) & G((b & m) -> X(XXXXXXXXX!b & ((b & !m & XXXXXXXXXX!b) U (m | (!b & !m & X(XXXXXXXXXb & ((!m & (b <-> XXXXXXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b)))))))) & G((!b & m) -> X(XXXXXXXXXb & ((!m & (b <-> XXXXXXXXXXb)) U m))) & G((b & m) -> X(XXXXXXXXX!b & ((b & !m & XXXXXXXXXX!b) U (m | (!b & !m & X(XXXXXXXXXb & ((!m & (b <-> XXXXXXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b)))))))) & G((!b & m) -> X(XXXXXXXXXb & ((!m & (b <-> XXXXXXXXXXb)) U m))) & G((b & m) -> X(XXXXXXXXX!b & ((b & !m & XXXXXXXXXX!b) U (m | (!b & !m & X(XXXXXXXXXb & ((!m & (b <-> XXXXXXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b)))))))) & G((!b & m) -> X(XXXXXXXXXb & ((!m & (b <-> XXXXXXXXXXb)) U m))) & G((b & m) -> X(XXXXXXXXX!b & ((b & !m & XXXXXXXXXX!b) U (m | (!b & !m & X(XXXXXXXXXb & ((!m & (b <-> XXXXXXXXXXb)) U m)))))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))))))) & G((!b & m) -> X(XXXXXXXXXXb & ((!m & (b <-> XXXXXXXXXXXb)) U m))) & G((b & m) -> X(XXXXXXXXXX!b & ((b & !m & XXXXXXXXXXX!b) U (m | (!b & !m & X(XXXXXXXXXXb & ((!m & (b <-> XXXXXXXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))))))) & G((!b & m) -> X(XXXXXXXXXXb & ((!m & (b <-> XXXXXXXXXXXb)) U m))) & G((b & m) -> X(XXXXXXXXXX!b & ((b & !m & XXXXXXXXXXX!b) U (m | (!b & !m & X(XXXXXXXXXXb & ((!m & (b <-> XXXXXXXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))))))) & G((!b & m) -> X(XXXXXXXXXXb & ((!m & (b <-> XXXXXXXXXXXb)) U m))) & G((b & m) -> X(XXXXXXXXXX!b & ((b & !m & XXXXXXXXXXX!b) U (m | (!b & !m & X(XXXXXXXXXXb & ((!m & (b <-> XXXXXXXXXXXb)) U m)))))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))))))) & G((!b & m) -> X(XXXXXXXXXXb & ((!m & (b <-> XXXXXXXXXXXb)) U m))) & G((b & m) -> X(XXXXXXXXXX!b & ((b & !m & XXXXXXXXXXX!b) U (m | (!b & !m & X(XXXXXXXXXXb & ((!m & (b <-> XXXXXXXXXXXb)) U m)))))))
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXXm)) & X!b & XX!b & G((!b & m) -> (!c & XXXb)) & G((b & m) -> (c & XXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXb))) & G(c -> ((X!b -> (X!c & XXXXb)) & (Xb -> (Xc & XXXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXXm)) & X!b & XX!b & G((!b & m) -> (!c & XXXb)) & G((b & m) -> (c & XXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXb))) & G(c -> ((X!b -> (X!c & XXXXb)) & (Xb -> (Xc & XXXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXXm)) & X!b & XX!b & G((!b & m) -> (!c & XXXb)) & G((b & m) -> (c & XXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXb))) & G(c -> ((X!b -> (X!c & XXXXb)) & (Xb -> (Xc & XXXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXXm)) & X!b & XX!b & G((!b & m) -> (!c & XXXb)) & G((b & m) -> (c & XXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXb))) & G(c -> ((X!b -> (X!c & XXXXb)) & (Xb -> (Xc & XXXX!b))))
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXX!m & XXXXm)) & X!b & XX!b & XXX!b & G((!b & m) -> (!c & XXXXb)) & G((b & m) -> (c & XXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXb)) & (Xb -> (Xc & XXXXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXXm)) & X!b & XX!b & XXX!b & G((!b & m) -> (!c & XXXXb)) & G((b & m) -> (c & XXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXb)) & (Xb -> (Xc & XXXXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXXm)) & X!b & XX!b & XXX!b & G((!b & m) -> (!c & XXXXb)) & G((b & m) -> (c & XXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXb)) & (Xb -> (Xc & XXXXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXXm)) & X!b & XX!b & XXX!b & G((!b & m) -> (!c & XXXXb)) & G((b & m) -> (c & XXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXb)) & (Xb -> (Xc & XXXXX!b))))
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & G((!b & m) -> (!c & XXXXXb)) & G((b & m) -> (c & XXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXb)) & (Xb -> (Xc & XXXXXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & G((!b & m) -> (!c & XXXXXb)) & G((b & m) -> (c & XXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXb)) & (Xb -> (Xc & XXXXXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & G((!b & m) -> (!c & XXXXXb)) & G((b & m) -> (c & XXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXb)) & (Xb -> (Xc & XXXXXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & G((!b & m) -> (!c & XXXXXb)) & G((b & m) -> (c & XXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXb)) & (Xb -> (Xc & XXXXXX!b))))
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & G((!b & m) -> (!c & XXXXXXb)) & G((b & m) -> (c & XXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXb)) & (Xb -> (Xc & XXXXXXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & G((!b & m) -> (!c & XXXXXXb)) & G((b & m) -> (c & XXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXb)) & (Xb -> (Xc & XXXXXXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & G((!b & m) -> (!c & XXXXXXb)) & G((b & m) -> (c & XXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXb)) & (Xb -> (Xc & XXXXXXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & G((!b & m) -> (!c & XXXXXXb)) & G((b & m) -> (c & XXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXb)) & (Xb -> (Xc & XXXXXXX!b))))
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & G((!b & m) -> (!c & XXXXXXXb)) & G((b & m) -> (c & XXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXb)) & (Xb -> (Xc & XXXXXXXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & G((!b & m) -> (!c & XXXXXXXb)) & G((b & m) -> (c & XXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXb)) & (Xb -> (Xc & XXXXXXXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & G((!b & m) -> (!c & XXXXXXXb)) & G((b & m) -> (c & XXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXb)) & (Xb -> (Xc & XXXXXXXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & G((!b & m) -> (!c & XXXXXXXb)) & G((b & m) -> (c & XXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXb)) & (Xb -> (Xc & XXXXXXXX!b))))
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & G((!b & m) -> (!c & XXXXXXXXb)) & G((b & m) -> (c & XXXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXXb)) & (Xb -> (Xc & XXXXXXXXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & G((!b & m) -> (!c & XXXXXXXXb)) & G((b & m) -> (c & XXXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXXb)) & (Xb -> (Xc & XXXXXXXXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & G((!b & m) -> (!c & XXXXXXXXb)) & G((b & m) -> (c & XXXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXXb)) & (Xb -> (Xc & XXXXXXXXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & G((!b & m) -> (!c & XXXXXXXXb)) & G((b & m) -> (c & XXXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXXb)) & (Xb -> (Xc & XXXXXXXXX!b))))
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & G((!b & m) -> (!c & XXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXXXb)) & (Xb -> (Xc & XXXXXXXXXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & G((!b & m) -> (!c & XXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXXXb)) & (Xb -> (Xc & XXXXXXXXXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & G((!b & m) -> (!c & XXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXXXb)) & (Xb -> (Xc & XXXXXXXXXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & G((!b & m) -> (!c & XXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXXXb)) & (Xb -> (Xc & XXXXXXXXXX!b))))
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXX!m & XXXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & XXXXXXXXX!b & G((!b & m) -> (!c & XXXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXXXXb)) & (Xb -> (Xc & XXXXXXXXXXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXX!m & XXXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & XXXXXXXXX!b & G((!b & m) -> (!c & XXXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXXXXb)) & (Xb -> (Xc & XXXXXXXXXXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXX!m & XXXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & XXXXXXXXX!b & G((!b & m) -> (!c & XXXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXXXXb)) & (Xb -> (Xc & XXXXXXXXXXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXX!m & XXXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & XXXXXXXXX!b & G((!b & m) -> (!c & XXXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXXXXb)) & (Xb -> (Xc & XXXXXXXXXXX!b))))
++ read line
++ check_formula !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXX!m & XXXXXXXXXX!m & XXXXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & XXXXXXXXX!b & XXXXXXXXXX!b & G((!b & m) -> (!c & XXXXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXXXXXb)) & (Xb -> (Xc & XXXXXXXXXXXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXX!m & XXXXXXXXXX!m & XXXXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & XXXXXXXXX!b & XXXXXXXXXX!b & G((!b & m) -> (!c & XXXXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXXXXXb)) & (Xb -> (Xc & XXXXXXXXXXXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXX!m & XXXXXXXXXX!m & XXXXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & XXXXXXXXX!b & XXXXXXXXXX!b & G((!b & m) -> (!c & XXXXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXXXXXb)) & (Xb -> (Xc & XXXXXXXXXXXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> (X!m & XX!m & XXX!m & XXXX!m & XXXXX!m & XXXXXX!m & XXXXXXX!m & XXXXXXXX!m & XXXXXXXXX!m & XXXXXXXXXX!m & XXXXXXXXXXXm)) & X!b & XX!b & XXX!b & XXXX!b & XXXXX!b & XXXXXX!b & XXXXXXX!b & XXXXXXXX!b & XXXXXXXXX!b & XXXXXXXXXX!b & G((!b & m) -> (!c & XXXXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXXXX!b)) & G((!c & X!m) -> (X!c & (Xb <-> XXXXXXXXXXXXb))) & G(c -> ((X!b -> (X!c & XXXXXXXXXXXXb)) & (Xb -> (Xc & XXXXXXXXXXXX!b))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & Xm))) & X(!b & X!b) & G((!b & m) -> (!c & XXXb)) & G((b & m) -> (c & XXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXb))) & G(c -> X((!b -> (!c & XXXb)) & (b -> (c & XXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & Xm))) & X(!b & X!b) & G((!b & m) -> (!c & XXXb)) & G((b & m) -> (c & XXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXb))) & G(c -> X((!b -> (!c & XXXb)) & (b -> (c & XXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & Xm))) & X(!b & X!b) & G((!b & m) -> (!c & XXXb)) & G((b & m) -> (c & XXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXb))) & G(c -> X((!b -> (!c & XXXb)) & (b -> (c & XXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & Xm))) & X(!b & X!b) & G((!b & m) -> (!c & XXXb)) & G((b & m) -> (c & XXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXb))) & G(c -> X((!b -> (!c & XXXb)) & (b -> (c & XXX!b))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & X(!m & Xm)))) & X(!b & X(!b & X!b)) & G((!b & m) -> (!c & XXXXb)) & G((b & m) -> (c & XXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXb))) & G(c -> X((!b -> (!c & XXXXb)) & (b -> (c & XXXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & X(!m & Xm)))) & X(!b & X(!b & X!b)) & G((!b & m) -> (!c & XXXXb)) & G((b & m) -> (c & XXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXb))) & G(c -> X((!b -> (!c & XXXXb)) & (b -> (c & XXXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & X(!m & Xm)))) & X(!b & X(!b & X!b)) & G((!b & m) -> (!c & XXXXb)) & G((b & m) -> (c & XXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXb))) & G(c -> X((!b -> (!c & XXXXb)) & (b -> (c & XXXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & X(!m & Xm)))) & X(!b & X(!b & X!b)) & G((!b & m) -> (!c & XXXXb)) & G((b & m) -> (c & XXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXb))) & G(c -> X((!b -> (!c & XXXXb)) & (b -> (c & XXXX!b))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & Xm))))) & X(!b & X(!b & X(!b & X!b))) & G((!b & m) -> (!c & XXXXXb)) & G((b & m) -> (c & XXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXb))) & G(c -> X((!b -> (!c & XXXXXb)) & (b -> (c & XXXXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & Xm))))) & X(!b & X(!b & X(!b & X!b))) & G((!b & m) -> (!c & XXXXXb)) & G((b & m) -> (c & XXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXb))) & G(c -> X((!b -> (!c & XXXXXb)) & (b -> (c & XXXXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & Xm))))) & X(!b & X(!b & X(!b & X!b))) & G((!b & m) -> (!c & XXXXXb)) & G((b & m) -> (c & XXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXb))) & G(c -> X((!b -> (!c & XXXXXb)) & (b -> (c & XXXXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & Xm))))) & X(!b & X(!b & X(!b & X!b))) & G((!b & m) -> (!c & XXXXXb)) & G((b & m) -> (c & XXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXb))) & G(c -> X((!b -> (!c & XXXXXb)) & (b -> (c & XXXXX!b))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))) & X(!b & X(!b & X(!b & X(!b & X!b)))) & G((!b & m) -> (!c & XXXXXXb)) & G((b & m) -> (c & XXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXb)) & (b -> (c & XXXXXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))) & X(!b & X(!b & X(!b & X(!b & X!b)))) & G((!b & m) -> (!c & XXXXXXb)) & G((b & m) -> (c & XXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXb)) & (b -> (c & XXXXXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))) & X(!b & X(!b & X(!b & X(!b & X!b)))) & G((!b & m) -> (!c & XXXXXXb)) & G((b & m) -> (c & XXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXb)) & (b -> (c & XXXXXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))) & X(!b & X(!b & X(!b & X(!b & X!b)))) & G((!b & m) -> (!c & XXXXXXb)) & G((b & m) -> (c & XXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXb)) & (b -> (c & XXXXXX!b))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))) & G((!b & m) -> (!c & XXXXXXXb)) & G((b & m) -> (c & XXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXb)) & (b -> (c & XXXXXXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))) & G((!b & m) -> (!c & XXXXXXXb)) & G((b & m) -> (c & XXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXb)) & (b -> (c & XXXXXXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))) & G((!b & m) -> (!c & XXXXXXXb)) & G((b & m) -> (c & XXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXb)) & (b -> (c & XXXXXXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))) & G((!b & m) -> (!c & XXXXXXXb)) & G((b & m) -> (c & XXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXb)) & (b -> (c & XXXXXXX!b))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b)))))) & G((!b & m) -> (!c & XXXXXXXXb)) & G((b & m) -> (c & XXXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXXb)) & (b -> (c & XXXXXXXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b)))))) & G((!b & m) -> (!c & XXXXXXXXb)) & G((b & m) -> (c & XXXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXXb)) & (b -> (c & XXXXXXXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b)))))) & G((!b & m) -> (!c & XXXXXXXXb)) & G((b & m) -> (c & XXXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXXb)) & (b -> (c & XXXXXXXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b)))))) & G((!b & m) -> (!c & XXXXXXXXb)) & G((b & m) -> (c & XXXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXXb)) & (b -> (c & XXXXXXXX!b))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))))) & G((!b & m) -> (!c & XXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXXXb)) & (b -> (c & XXXXXXXXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))))) & G((!b & m) -> (!c & XXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXXXb)) & (b -> (c & XXXXXXXXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))))) & G((!b & m) -> (!c & XXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXXXb)) & (b -> (c & XXXXXXXXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))))) & G((!b & m) -> (!c & XXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXXXb)) & (b -> (c & XXXXXXXXX!b))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b)))))))) & G((!b & m) -> (!c & XXXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXXXXb)) & (b -> (c & XXXXXXXXXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b)))))))) & G((!b & m) -> (!c & XXXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXXXXb)) & (b -> (c & XXXXXXXXXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b)))))))) & G((!b & m) -> (!c & XXXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXXXXb)) & (b -> (c & XXXXXXXXXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm)))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b)))))))) & G((!b & m) -> (!c & XXXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXXXXb)) & (b -> (c & XXXXXXXXXX!b))))
++ read line
++ check_formula !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))))))) & G((!b & m) -> (!c & XXXXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXXXXXb)) & (b -> (c & XXXXXXXXXXX!b))))
++ ../ikwiad -CR -e -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))))))) & G((!b & m) -> (!c & XXXXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXXXXXb)) & (b -> (c & XXXXXXXXXXX!b))))
++ ../ikwiad -CR -e -DT -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))))))) & G((!b & m) -> (!c & XXXXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXXXXXb)) & (b -> (c & XXXXXXXXXXX!b))))
++ ../ikwiad -CR -e -DS -x -f !b & m & G(m -> X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & X(!m & Xm))))))))))) & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X(!b & X!b))))))))) & G((!b & m) -> (!c & XXXXXXXXXXXb)) & G((b & m) -> (c & XXXXXXXXXXX!b)) & G((!c & X!m) -> X(!c & (b <-> XXXXXXXXXXXb))) & G(c -> X((!b -> (!c & XXXXXXXXXXXb)) & (b -> (c & XXXXXXXXXXX!b))))
++ read line
+PASS core/ltlcounter.test (exit status: 0)

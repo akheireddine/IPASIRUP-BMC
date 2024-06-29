@@ -1,0 +1,469 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltl2tgba.test
+== Running test ltl2tgba.test
++ echo ltl2tgba.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltl2tgba
++ testSubDir=ltl2tgba.dir
++ chmod -R a+rwx ltl2tgba.dir
++ rm -rf ltl2tgba.dir
++ mkdir ltl2tgba.dir
++ cd ltl2tgba.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 ../checkpsl check.txt
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../checkpsl
++ cmd=../checkpsl
++ shift
++ test -n ../checkpsl
++ set ../checkpsl check.txt
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../checkpsl check.txt
+1: a
+2: a U b
+3: X a
+4: a & b & c
+5: a | b | (c U (d & (g U (h ^ i))))
+6: Xa & (b U !a) & (b U !a)
+7: Fa & Xb & GFc & Gd
+8: Fa & Xa & GFc & Gc
+9: Fc & X(a | Xb) & GF(a | Xb) & Gc
+10: a R (b R c)
+11: (a U b) U (c U d)
+12: 
+13: ((Xp2)U(X(1)))&(p1 R(p2 R p0))
+14: 
+15: {a*;c}<>->GFb
+16: {((a*;b;c)*)&((b*;a;c)*)}<>->x
+17: {(g;y;r)*}<>->x
+18: G({(g;y;r)*}<>->x)
+19: G({(a;b)*}<>->x)&G({(c;d)*}<>->y)
+20: # try sub-braces
+21: G({{a;b}*}[]->x)&G({{c;d}*}[]->y)
+22: {([*0] + a):c*:([*0] + b)}<>->d
+23: {a;e;f:(g*);h}<>->d
+24: {(a:b)* & (c*:d)}<>->e
+25: {(a:b)*}
+26: G{(a:b)*}
+27: {a;b}
+28: {(a;b)*}
+29: G{(a;b)*}
+30: {a*}[]->{b*}
+31: {a*}[]=>{b*}
+32: {a*&b}
+33: {a*&b*}
+34: {((!c;b*) & d);e}
+35: {(a* & (c;b*) & d);e}
+36: {[*2];a[*2..4]}|->b
+37: {a[*2..5] && b[*..3]}|->c
+38: {{[+];a;[+]} && {[+];b;[+]}}<>->c
+39: {(a[->3]) & {[+];b}}<>->c
+40: # This formula (built by a random formula generator), exhibited an
+41: # infinite recursion in the translation:
+42: {(a|[*0])[*];1}
+43: # Example from "Beyond Hardware Verification" by Glazberg, Moulin, Orni,
+44: # Ruah, Zarpas (2007).
+45: {[*];req;ack}|=>{start;busy[*];done}
+46: # Examples from "Property-by-Example Guide: a Handbook of PSL Examples"
+47: # by Ben David and Orni (2005)/
+48: # - 2.27.A
+49: {end[=3]}(false)
+50: # - 3.5.A
+51: {[*]; {read[=3]} && {write[=2]}} |=> {(!read && !write)[*]; ready}
+52: # - 2.33  (abridged to fit in 80 cols)
+53: {[*];st&&comp_d_en;!comp_d_en&&good_c;{st_v[->]}&&{stop[=0];true}}|->{!d_out}
+54: 
+55: # Some tricky cases that require the rational automaton to be pruned
+56: # before it is used in the translation.
+57: {{b[*];c} | {{a && !a}}[=2]}
+58: {((a&!b);((!a&!b)*))&&(!b*;(!a&b))}
+59: # When translating this formula, we expect the translator to ignore
+60: # `a;(f&!f)[=2];c' on one side because it as already seen it on the
+61: # other side.
+62: {c;a;(f&!f)[=2];c}|{b;a;(!f&f)[=2];c}
+63: 
+64: # these were mis-translated in Spot 0.9
+65: G!{(b;1)*;a}
+66: (G!{(b;1)*;a} && ({1;1[*3]*}[]->{(b&!a)[*2];!b&!a}))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ ltl2tgba -B false --stats %a
++ test 1 -eq 1
++ echo 1,2,a,4
++ ltl2tgba -F-/3 --stats=%<,%f,%>
++ test 1,2,a,4 = 1,2,a,4
++ run 0 ../ikwiad -e -R3 (G!{(b;1)*;a} && ({1;1[*3]*}[]->{(b&!a)[*2];!b&!a}))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -e -R3 (G!{(b;1)*;a} && ({1;1[*3]*}[]->{(b&!a)[*2];!b&!a}))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -e -R3 (G!{(b;1)*;a} && ({1;1[*3]*}[]->{(b&!a)[*2];!b&!a}))
+3 unique states visited
+1 strongly connected components in search stack
+3 transitions explored
+3 items max in DFS search stack
+an accepting run exists (use -C to print it)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ ../ikwiad -ks -f -R3 a U (b U c)
++ grep edges: 6$ stdout
+edges: 6
++ grep states: 3$ stdout
+states: 3
++ ../ikwiad -ks -f -R3 -DT a U (b U c)
++ grep edges: 6$ stdout
+edges: 6
++ grep states: 3$ stdout
+states: 3
++ ../ikwiad -ks -f -R3 -DS a U (b U c)
++ grep edges: 6$ stdout
+edges: 6
++ grep states: 3$ stdout
+states: 3
++ ../ikwiad -kt -f -R3 !(Ga U b)
++ grep transitions: 11$ stdout
+transitions: 11
++ grep edges: 6$ stdout
+edges: 6
++ grep states: 3$ stdout
+states: 3
++ ../ikwiad -kt -f -R3 -DT !(Ga U b)
++ grep transitions: 11$ stdout
+transitions: 11
++ grep edges: 6$ stdout
+edges: 6
++ grep states: 3$ stdout
+states: 3
++ ../ikwiad -kt -f -R3 -DS !(Ga U b)
++ grep transitions: 11$ stdout
+transitions: 11
++ grep edges: 6$ stdout
+edges: 6
++ grep states: 3$ stdout
+states: 3
++ ../ikwiad -kt -f -R3 Ga U b
++ grep transitions: 12$ stdout
+transitions: 12
++ grep edges: 6$ stdout
+edges: 6
++ grep states: 4$ stdout
+states: 4
++ ../ikwiad -kt -f -R3 -DT Ga U b
++ grep transitions: 12$ stdout
+transitions: 12
++ grep edges: 6$ stdout
+edges: 6
++ grep states: 4$ stdout
+states: 4
++ ../ikwiad -kt -f -R3 -DS Ga U b
++ grep transitions: 12$ stdout
+transitions: 12
++ grep edges: 6$ stdout
+edges: 6
++ grep states: 4$ stdout
+states: 4
++ f=(G (p -> F q)) && ((X (p) U q) || ! X (p U (p && q)))
++ ../ikwiad -ks -f -R3 (G (p -> F q)) && ((X (p) U q) || ! X (p U (p && q)))
++ grep edges: 15$ stdout
+edges: 15
++ grep states: 6$ stdout
+states: 6
++ ../ikwiad -ks -f -R3f (G (p -> F q)) && ((X (p) U q) || ! X (p U (p && q)))
++ grep edges: 15$ stdout
+edges: 15
++ grep states: 6$ stdout
+states: 6
++ ../ikwiad -ks -f -R3 -DT (G (p -> F q)) && ((X (p) U q) || ! X (p U (p && q)))
++ grep edges: 15$ stdout
+edges: 15
++ grep states: 6$ stdout
+states: 6
++ ../ikwiad -ks -f -R3f -DT (G (p -> F q)) && ((X (p) U q) || ! X (p U (p && q)))
++ grep edges: 15$ stdout
+edges: 15
++ grep states: 6$ stdout
+states: 6
++ ../ikwiad -ks -f -R3 -DS (G (p -> F q)) && ((X (p) U q) || ! X (p U (p && q)))
++ grep edges: 15$ stdout
+edges: 15
++ grep states: 6$ stdout
+states: 6
++ ../ikwiad -ks -f -R3f -DS (G (p -> F q)) && ((X (p) U q) || ! X (p U (p && q)))
++ grep edges: 15$ stdout
+edges: 15
++ grep states: 6$ stdout
+states: 6
++ f=GFa & GFb & GFc & GFd & GFe & GFg
++ ../ikwiad -ks -DS -x -f GFa & GFb & GFc & GFd & GFe & GFg
++ grep edges: 34$ stdout
+edges: 34
++ grep states: 7$ stdout
+states: 7
++ f=Ga & XXXX!a
++ ../ikwiad -ks -f Ga & XXXX!a
++ grep edges: 4$ stdout
+edges: 4
++ grep states: 5$ stdout
+states: 5
++ ../ikwiad -ks -Rm -f Ga & XXXX!a
++ grep edges: 0$ stdout
+edges: 0
++ grep states: 1$ stdout
+states: 1
++ run 0 ../ikwiad -M -f F(a & F(b))
++ + expected_exitcode=0
++ grepshift  ->
+
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -M -f F(a & F(b))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -M -f F(a & F(b))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ cmp stdout expected
++ run 0 ../ikwiad -Rm -ks -f Gq|Gr|(G(q|FGp)&G(r|FG!p))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -Rm -ks -f Gq|Gr|(G(q|FGp)&G(r|FG!p))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -Rm -ks -f Gq|Gr|(G(q|FGp)&G(r|FG!p))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep edges: 5$ stdout
+edges: 5
++ grep states: 3$ stdout
+states: 3
++ run 0 ../ikwiad -R3 -Rm -ks -f Gq|Gr|(G(q|FGp)&G(r|FG!p))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -R3 -Rm -ks -f Gq|Gr|(G(q|FGp)&G(r|FG!p))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -R3 -Rm -ks -f Gq|Gr|(G(q|FGp)&G(r|FG!p))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep edges: 5$ stdout
+edges: 5
++ grep states: 3$ stdout
+states: 3
++ run 0 ../ikwiad -R1q -R1t -N FGa|FGb
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -R1q -R1t -N FGa|FGb
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -R1q -R1t -N FGa|FGb
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -XN -kt out.never
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -XN -kt out.never
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -XN -kt out.never
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -R1q -R1t -DS -H FGa|FGb
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -R1q -R1t -DS -H FGa|FGb
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -R1q -R1t -DS -H FGa|FGb
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../ikwiad -XH -kt out.hoa
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -XH -kt out.hoa
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -XH -kt out.hoa
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cmp count.never count.hoa
++ run 0 ../ikwiad -R3 -ks -f (p&XF!p)|(!p&XFp)|X(Fp&F!p)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -R3 -ks -f (p&XF!p)|(!p&XFp)|X(Fp&F!p)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -R3 -ks -f (p&XF!p)|(!p&XFp)|X(Fp&F!p)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep edges: 7$ stdout
+edges: 7
++ grep states: 4$ stdout
+states: 4
++ ltlfilt -f !{[*2] && [*0..1]} --equivalent-to false
++ ltlfilt -f !{[*2] && [*0..1]} --equivalent-to true
+!{[*2] && [*0..1]}
++ ltlfilt -f {{a;b}[*]} --equivalent-to a & Xb
+{{a;b}[*]}
++ ltlfilt -r -f {{a;b}[*]} --equivalent-to a & Xb
+a & Xb
++ ltlfilt -f !{{a;b}[*]} --equivalent-to !a | X!b
+!{{a;b}[*]}
++ ltlfilt -r -f !{{a;b}[*]} --equivalent-to !a | X!b
+!a | X!b
++ ltlfilt -f {a[*];b[*]} --equivalent-to a | b
+{a[*];b[*]}
++ ltlfilt -r -f {a[*];b[*]} --equivalent-to a | b
+a | b
++ ltlfilt -q -f {{a;b}[:*1..2];c} --equivalent-to (a&X(b&Xc)) | a&(X(b&a&X(b&Xc)))
++ ltlfilt -q -r -f {{a;b}[:*1..2];c} --equivalent-to (a&X(b&Xc)) | a&(X(b&a&X(b&Xc)))
++ ltlfilt -q -f {{a*}[:+];c} --equivalent-to Xc R a
++ ltlfilt -q -r -f {{a*}[:+];c} --equivalent-to Xc R a
++ ltlfilt -q -f {c && {b | [*0]}[:+]} --equivalent-to c & b
++ ltlfilt -q -r -f {c && {b | [*0]}[:+]} --equivalent-to c & b
++ ltlfilt -q -f {(a1;a2) ##[0:8] (b1;b2)}[]->c --equivalent-to {((a1;a2):(b1;b2))|((a1;a2);[*0:7];(b1;b2))}[]->c
++ ltlfilt -q -f {(a1;a2) ##[0:8] (b1[*];b2[*])}[]->c --equivalent-to {((a1;a2):(b1[*];b2[*]))|((a1;a2);[*0:7];(b1[*];b2[*]))}[]->c
++ ltlfilt -q -f {(a1[*];a2[*]) ##[0:8] (b1;b2)}[]->c --equivalent-to {((a1[*];a2[*]):(b1;b2))|((a1[*];a2[*]);[*0:7];(b1;b2))}[]->c
++ ltlfilt -q -f {(a1[*];a2[*]) ##[0:8] (b1[*];b2[*])}[]->c --equivalent-to {((a1[*];a2[*]):(b1[*];b2[*]))|((a1[*];a2[*]);[*0:7];(b1[*];b2[*]))}[]->c
++ ltl2tgba --dot=~ a
++ grep ltl2tgba: unknown option.*~ stderr
+ltl2tgba: unknown option for print_dot(): ~
++ ltl2tgba -f a -s
++ + autfilt -qautfilt --ap=1 -q
+ --ap=1 --lbtt
++ genltl+  --go-theta=18
+ltl2tgba --low --any -q
++ ltl2tgba Fb
++ ltl2tgba GFa & GFb
++ ltl2tgba Fb GFa & GFb
++ diff out1 out2
++ ltl2tgba --low --any Xp1 xor (Fp1 M (!p1 M (Fp0 W p1))) Fp0 -> XXG(1 U Gp1)
++ ltl2tgba --low --any Xp1 xor (Fp1 M (!p1 M (Fp0 W p1)))
++ ltl2tgba --low --any Fp0 -> XXG(1 U Gp1)
++ diff res1 res2
++ s=--stats=%c,%[,]x
++ ltl2tgba --low --any Xp1 xor (Fp1 M (!p1 M (Fp0 W p1))) Fp0 -> XXG(1 U Gp1) --stats=%c,%[,]x
++ ltl2tgba --low --any Xp1 xor (Fp1 M (!p1 M (Fp0 W p1))) --stats=%c,%[,]x
++ ltl2tgba --low --any Fp0 -> XXG(1 U Gp1) --stats=%c,%[,]x
++ diff res1 res2
++ f1=F(Gp0 <-> Gp1)
++ f2=Gp1 | FGp0
++ ltl2tgba -xsimul=1 --low F(Gp0 <-> Gp1)
++ ltl2tgba -xsimul=1 --low Gp1 | FGp0
++ ltl2tgba -xsimul=1 --low F(Gp0 <-> Gp1) Gp1 | FGp0
++ diff res1 res2
++ ltl2tgba -f G(Fa & Fb) U a --stats=%s
++ test 3 = 3
++ ltl2tgba --low X(((1) U (p1)) | (((p1) | (F(p0))) U ((0) R ((p2) M (p1)))))
++ grep deterministic o
+properties: deterministic
++ f=(Fp0 W p0) & G((Gp0 W Xp0) M !Gp1)
++ ltl2tgba -f (Fp0 W p0) & G((Gp0 W Xp0) M !Gp1) --low -x tls-impl=4 --stats=%s
+ltl2tgba: tls-impl should take a value between 0 and 3
++ ltl2tgba -f (Fp0 W p0) & G((Gp0 W Xp0) M !Gp1) --low -x tls-impl=0 --stats=%s
++ test 4 = 4
++ ltl2tgba -f (Fp0 W p0) & G((Gp0 W Xp0) M !Gp1) --low -x tls-impl=1 --stats=%s
++ test 3 = 3
++ ltl2tgba -f (Fp0 W p0) & G((Gp0 W Xp0) M !Gp1) --low -x tls-impl=2 --stats=%s
++ test 2 = 2
++ ltl2tgba -f (Fp0 W p0) & G((Gp0 W Xp0) M !Gp1) --low -x tls-impl=3 --stats=%s
++ test 2 = 2
++ ltl2tgba -BD -f GF((p0 & GF!p0) | (!p0 & FGp0)) --stats=%s
++ test 3 = 3
++ ltl2tgba -B Xb | G!b --stats=%g
++ test Inf(0) = Inf(0)
+PASS core/ltl2tgba.test (exit status: 0)

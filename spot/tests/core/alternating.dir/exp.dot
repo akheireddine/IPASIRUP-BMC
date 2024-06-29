@@ -1,0 +1,16 @@
+digraph "" {
+  rankdir=LR
+  label="Fin(0)\n[co-Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 1
+  1 [label="1"]
+  1 -> -1 [label="1\n{0}", arrowhead=onormal]
+  -1 [label=<>,shape=point,width=0.05,height=0.05]
+  "T0T-1" [label="", style=invis, width=0]
+  -1 -> "T0T-1"
+  -1 -> 1
+  T0T1 [label="", style=invis, width=0]
+  1 -> T0T1 [label="a"]
+}

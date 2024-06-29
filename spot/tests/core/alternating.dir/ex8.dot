@@ -1,0 +1,57 @@
+digraph "SLAA for c R (c | G(a & b) | (F!b & F!a))" {
+  rankdir=LR
+  label=<Fin(<font color="#FF4DA0">❶</font>) &amp; Fin(<font color="#1F78B4">⓿</font>)<br/>[Streett-like 2]>
+  labelloc="t"
+  node [shape="box",style="rounded",width="0.5"]
+  fontname="Lato"
+  node [fontname="Lato"]
+  edge [fontname="Lato"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  subgraph cluster_0 {
+  color=green
+  label=""
+  4 [label=<t>]
+  }
+  subgraph cluster_1 {
+  color=red
+  label=""
+  2 [label=<F!a>]
+  }
+  subgraph cluster_2 {
+  color=red
+  label=""
+  3 [label=<F!b>]
+  }
+  subgraph cluster_3 {
+  color=green
+  label=""
+  0 [label=<c R (c | G(a &amp; b) | (F!b &amp; F!a))>]
+  -1 [label=<>,shape=point,width=0.05,height=0.05]
+  -4 [label=<>,shape=point,width=0.05,height=0.05]
+  -7 [label=<>,shape=point,width=0.05,height=0.05]
+  1 [label=<G(a &amp; b)>]
+  -10 [label=<>,shape=point,width=0.05,height=0.05]
+  }
+  0 -> 4 [label=<c>]
+  0 -> 0 [label=<!a &amp; !b &amp; !c>]
+  0 -> -1 [label=<a &amp; b &amp; !c>, arrowhead=onormal]
+  -1 -> 0
+  -1 -> 1
+  0 -> -4 [label=<a &amp; !b &amp; !c>, arrowhead=onormal]
+  -4 -> 0
+  -4 -> 2
+  0 -> -7 [label=<!a &amp; b &amp; !c>, arrowhead=onormal]
+  -7 -> 0
+  -7 -> 3
+  1 -> 1 [label=<a &amp; b>]
+  1 -> -10 [label=<a &amp; b &amp; !c>, arrowhead=onormal]
+  -10 -> 0
+  -10 -> 2
+  -10 -> 3
+  2 -> 4 [label=<!a>]
+  2 -> 2 [label=<a<br/><font color="#FF4DA0">❶</font>>]
+  3 -> 4 [label=<!b>]
+  3 -> 3 [label=<b<br/><font color="#1F78B4">⓿</font>>]
+  4 -> 4 [label=<1>]
+}

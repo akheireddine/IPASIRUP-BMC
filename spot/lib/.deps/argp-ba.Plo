@@ -1,0 +1,2 @@
+argp-ba.lo: argp-ba.c /usr/x86_64-linux-gnu/include/stdc-predef.h
+/usr/x86_64-linux-gnu/include/stdc-predef.h:

@@ -1,0 +1,336 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test genltl.test
+== Running test genltl.test
++ echo genltl.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=genltl
++ testSubDir=genltl.dir
++ chmod -R a+rwx genltl.dir
++ rm -rf genltl.dir
++ mkdir genltl.dir
++ cd genltl.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ genltl --help
++ sed -n /=RANGE/{
+s/^ *//
+s/=RANGE\[,RANGE.*/=1,1/p
+s/=RANGE,RANGE.*/=1,1/p
+s/\[=RANGE.*/=1/p
+s/=RANGE.*/=1/p
+}
++ opts=--and-f=1
+--and-fg=1
+--and-gf=1
+--ccj-alpha=1
+--ccj-beta=1
+--ccj-beta-prime=1
+--dac-patterns=1
+--eh-patterns=1
+--eil-gsi=1
+--fxg-or=1
+--gf-equiv=1
+--gf-equiv-xn=1
+--gf-implies=1
+--gf-implies-xn=1
+--gh-q=1
+--gh-r=1
+--go-theta=1
+--gxf-and=1
+--hkrss-patterns=1
+--kr-n=1
+--kr-nlogn=1
+--kv-psi=1
+--ms-example=1,1
+--ms-phi-h=1
+--ms-phi-r=1
+--ms-phi-s=1
+--or-fg=1
+--or-g=1
+--or-gf=1
+--p-patterns=1
+--pps-arbiter-standard=1
+--pps-arbiter-strict=1
+--r-left=1
+--r-right=1
+--rv-counter=1
+--rv-counter-carry=1
+--rv-counter-carry-linear=1
+--rv-counter-linear=1
+--sb-patterns=1
+--sejk-f=1,1
+--sejk-j=1
+--sejk-k=1
+--sejk-patterns=1
+--tv-f1=1
+--tv-f2=1
+--tv-g1=1
+--tv-g2=1
+--tv-uu=1
+--u-left=1
+--u-right=1
++ genltl --and-f=1 --and-fg=1 --and-gf=1 --ccj-alpha=1 --ccj-beta=1 --ccj-beta-prime=1 --dac-patterns=1 --eh-patterns=1 --eil-gsi=1 --fxg-or=1 --gf-equiv=1 --gf-equiv-xn=1 --gf-implies=1 --gf-implies-xn=1 --gh-q=1 --gh-r=1 --go-theta=1 --gxf-and=1 --hkrss-patterns=1 --kr-n=1 --kr-nlogn=1 --kv-psi=1 --ms-example=1,1 --ms-phi-h=1 --ms-phi-r=1 --ms-phi-s=1 --or-fg=1 --or-g=1 --or-gf=1 --p-patterns=1 --pps-arbiter-standard=1 --pps-arbiter-strict=1 --r-left=1 --r-right=1 --rv-counter=1 --rv-counter-carry=1 --rv-counter-carry-linear=1 --rv-counter-linear=1 --sb-patterns=1 --sejk-f=1,1 --sejk-j=1 --sejk-k=1 --sejk-patterns=1 --tv-f1=1 --tv-f2=1 --tv-g1=1 --tv-g2=1 --tv-uu=1 --u-left=1 --u-right=1 --format=--%F=%L
++ res=--and-f=1
+--and-fg=1
+--and-gf=1
+--ccj-alpha=1
+--ccj-beta=1
+--ccj-beta-prime=1
+--dac-patterns=1
+--eh-patterns=1
+--eil-gsi=1
+--fxg-or=1
+--gf-equiv=1
+--gf-equiv-xn=1
+--gf-implies=1
+--gf-implies-xn=1
+--gh-q=1
+--gh-r=1
+--go-theta=1
+--gxf-and=1
+--hkrss-patterns=1
+--kr-n=1
+--kr-nlogn=1
+--kv-psi=1
+--ms-example=1,1
+--ms-phi-h=1
+--ms-phi-r=1
+--ms-phi-s=1
+--or-fg=1
+--or-g=1
+--or-gf=1
+--p-patterns=1
+--pps-arbiter-standard=1
+--pps-arbiter-strict=1
+--r-left=1
+--r-right=1
+--rv-counter=1
+--rv-counter-carry=1
+--rv-counter-carry-linear=1
+--rv-counter-linear=1
+--sb-patterns=1
+--sejk-f=1,1
+--sejk-j=1
+--sejk-k=1
+--sejk-patterns=1
+--tv-f1=1
+--tv-f2=1
+--tv-g1=1
+--tv-g2=1
+--tv-uu=1
+--u-left=1
+--u-right=1
++ test --and-f=1
+--and-fg=1
+--and-gf=1
+--ccj-alpha=1
+--ccj-beta=1
+--ccj-beta-prime=1
+--dac-patterns=1
+--eh-patterns=1
+--eil-gsi=1
+--fxg-or=1
+--gf-equiv=1
+--gf-equiv-xn=1
+--gf-implies=1
+--gf-implies-xn=1
+--gh-q=1
+--gh-r=1
+--go-theta=1
+--gxf-and=1
+--hkrss-patterns=1
+--kr-n=1
+--kr-nlogn=1
+--kv-psi=1
+--ms-example=1,1
+--ms-phi-h=1
+--ms-phi-r=1
+--ms-phi-s=1
+--or-fg=1
+--or-g=1
+--or-gf=1
+--p-patterns=1
+--pps-arbiter-standard=1
+--pps-arbiter-strict=1
+--r-left=1
+--r-right=1
+--rv-counter=1
+--rv-counter-carry=1
+--rv-counter-carry-linear=1
+--rv-counter-linear=1
+--sb-patterns=1
+--sejk-f=1,1
+--sejk-j=1
+--sejk-k=1
+--sejk-patterns=1
+--tv-f1=1
+--tv-f2=1
+--tv-g1=1
+--tv-g2=1
+--tv-uu=1
+--u-left=1
+--u-right=1 = --and-f=1
+--and-fg=1
+--and-gf=1
+--ccj-alpha=1
+--ccj-beta=1
+--ccj-beta-prime=1
+--dac-patterns=1
+--eh-patterns=1
+--eil-gsi=1
+--fxg-or=1
+--gf-equiv=1
+--gf-equiv-xn=1
+--gf-implies=1
+--gf-implies-xn=1
+--gh-q=1
+--gh-r=1
+--go-theta=1
+--gxf-and=1
+--hkrss-patterns=1
+--kr-n=1
+--kr-nlogn=1
+--kv-psi=1
+--ms-example=1,1
+--ms-phi-h=1
+--ms-phi-r=1
+--ms-phi-s=1
+--or-fg=1
+--or-g=1
+--or-gf=1
+--p-patterns=1
+--pps-arbiter-standard=1
+--pps-arbiter-strict=1
+--r-left=1
+--r-right=1
+--rv-counter=1
+--rv-counter-carry=1
+--rv-counter-carry-linear=1
+--rv-counter-linear=1
+--sb-patterns=1
+--sejk-f=1,1
+--sejk-j=1
+--sejk-k=1
+--sejk-patterns=1
+--tv-f1=1
+--tv-f2=1
+--tv-g1=1
+--tv-g2=1
+--tv-uu=1
+--u-left=1
+--u-right=1
++ run 0 genltl --dac=1..5 --eh=1..5 --sejk-p --pos --neg --format=%F:%L %f
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v genltl
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/genltl
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/genltl
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/genltl --dac=1..5 --eh=1..5 --sejk-p --pos --neg --format=%F:%L %f
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/genltl --dac=1..5 --eh=1..5 --sejk-p --pos --neg --format=%F:%L %f
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff expected output
++ genltl --dac=1..5 --eh=1..5 --neg --format=%L %f
++ cat
++ diff expected output
++ genltl --dac=1..5 --eh=1..5 --pos --format=%f
++ cat
++ diff expected output
++ genltl --dac=1..5 --eh=1..5
++ diff output output2
++ genltl --tv-f1=1:3 --tv-f2=1:3 --tv-g1=1:3 --tv-g2=1:3 --tv-uu=1:3 --sejk-f=0:2,0:3 --format=%F,"%L",%f
++ cat
++ diff output expected
++ genltl --kr-n2=1..2 --kr-nlogn=1..2 --kr-n=1..2 --gxf-and=0..3 --fxg-or=0..3 --pps-arbiter-standard=2..3 --pps-arbiter-strict=2..3 --format=%F=%L,%f
++ ltl2tgba --low --det -F-/2 --stats=%<,%s
++ cat
++ diff out exp
++ + genltl --kr-n2=4
+ltl2tgba --low --stats=%s
++ test 79 -ge 16
++ genltl --kr-nlogn=4
++ ltl2tgba --low --stats=%s
++ test 357 -ge 16
++ genltl --kr-n=4
++ ltl2tgba --low --stats=%s
++ test 131 -ge 16
++ genltl --ms-example=0..4+  --ms-phi-r=0..2 --ms-phi-s=0..2 --ms-phi-h=0..4 --gf-equiv=0..5ltl2tgba --gf-implies=0..5 -G --gf-equiv-xn=1..3 -D --gf-implies-xn=3 -F-/2 --format="%F=%L",%f --stats=%f,%<,%s
+
++ ltl2tgba -P -D -F-/1 --stats=%>,%s
++ cat
++ diff out exp
++ genltl --ms-example=0..4 --ms-phi-r=0..2 --ms-phi-s=0..2 --ms-phi-h=0..4 --gf-equiv=0..5 --gf-implies=0..5 --gf-equiv-xn=1..3 --gf-implies-xn=3 --format="%F=%L",%f+ 
+ltldo ltl2tgba -DG -F-/2 --stats=%f,%<,%s
++ ltldo ltl2tgba -DP -F-/1 --stats=%>,%s
++ diff out exp
++ genltl --dac-patterns=0
++ test 2 = 2
++ cat err
++ test genltl: no pattern dac-patterns=0, supported range is 1..55 = genltl: no pattern dac-patterns=0, supported range is 1..55
++ genltl --eh-patterns=0
++ test 2 = 2
++ cat err
++ test genltl: no pattern eh-patterns=0, supported range is 1..12 = genltl: no pattern eh-patterns=0, supported range is 1..12
++ genltl --hkrss-patterns=0
++ test 2 = 2
++ cat err
++ test genltl: no pattern hkrss-patterns=0, supported range is 1..55 = genltl: no pattern hkrss-patterns=0, supported range is 1..55
++ genltl --kr-n=0
++ test 2 = 2
++ cat err
++ test genltl: no pattern kr-n=0, supported range is 1.. = genltl: no pattern kr-n=0, supported range is 1..
++ genltl --kr-nlogn=0
++ test 2 = 2
++ cat err
++ test genltl: no pattern kr-nlogn=0, supported range is 1.. = genltl: no pattern kr-nlogn=0, supported range is 1..
++ genltl --p-patterns=0
++ test 2 = 2
++ cat err
++ test genltl: no pattern p-patterns=0, supported range is 1..20 = genltl: no pattern p-patterns=0, supported range is 1..20
++ genltl --sb-patterns=0
++ test 2 = 2
++ cat err
++ test genltl: no pattern sb-patterns=0, supported range is 1..27 = genltl: no pattern sb-patterns=0, supported range is 1..27
++ genltl --sejk-patterns=0
++ test 2 = 2
++ cat err
++ test genltl: no pattern sejk-patterns=0, supported range is 1..3 = genltl: no pattern sejk-patterns=0, supported range is 1..3
++ genltl --sb-patterns=1..20
++ ltlfilt -N 5..10
++ genltl --sb-patterns=5..10
++ diff range1.ltl range2.ltl
++ genltl --sb-patterns=1..20
++ ltlfilt -v --nth 10..20
++ genltl --sb-patterns=1..9
++ diff range1.ltl range2.ltl
++ genltl --eil-gsi=1..25
++ ltlfilt --from-ltlf
++ ltl2tgba -F formulas.ltl --stats=%s,%e
++ cat
++ diff expected output
++ ltl2tgba -F formulas.ltl -x branch-post=1 --stats=%s,%e
++ diff expected output
+PASS core/genltl.test (exit status: 0)

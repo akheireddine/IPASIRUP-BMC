@@ -1,0 +1,15 @@
+digraph "a U (b U c)" {
+  rankdir=LR
+  node [shape="box",style="rounded",width="0.5"]
+  I [label="", style=invis, width=0]
+  I -> 2
+  0 [label="0", peripheries=2, style="bold,rounded", color="#1F78B4"]
+  0 -> 0 [label="1", style=bold, color="#1F78B4"]
+  1 [label="1"]
+  1 -> 0 [label="c", style=bold, color="#FF4DA0"]
+  1 -> 1 [label="b & !c", style=bold, color="#FF7F00"]
+  2 [label="new\nline", style="bold,rounded", color="#6A3D9A"]
+  2 -> 0 [label="c", style=bold, color="#6A3D9A"]
+  2 -> 1 [label="!a & b & !c"]
+  2 -> 2 [label="a & !c"]
+}

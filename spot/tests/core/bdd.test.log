@@ -1,0 +1,97 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test bdd.test
+== Running test bdd.test
++ echo bdd.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=bdd
++ testSubDir=bdd.dir
++ chmod -R a+rwx bdd.dir
++ rm -rf bdd.dir
++ mkdir bdd.dir
++ cd bdd.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ genltl --kr-n=3
++ SPOT_BDD_TRACE=1 ltl2tgba -x tls-max-states=0,tls-max-ops=0 -D
++ cat err
+spot: BDD package initialized
+spot: BDD stats: produced=4 nodenum=524288 freenodes=524282 (99%) minfreenodes=20% varnum=2 cachesize=16384 hashsize=524288 gbcnum=0
+spot: BDD stats: produced=524286 nodenum=524288 freenodes=0 (0%) minfreenodes=20% varnum=22 cachesize=16384 hashsize=524288 gbcnum=0
+spot: BDD GC #1 in 0.00359s / 0.00359s total
+spot: BDD stats: produced=524286 nodenum=524288 freenodes=479180 (91%) minfreenodes=20% varnum=22 cachesize=16384 hashsize=524288 gbcnum=1
+spot: BDD stats: produced=1003466 nodenum=524288 freenodes=0 (0%) minfreenodes=20% varnum=23 cachesize=16384 hashsize=524288 gbcnum=1
+spot: BDD GC #2 in 0.003273s / 0.006863s total
+spot: BDD stats: produced=1003466 nodenum=524288 freenodes=479904 (91%) minfreenodes=20% varnum=23 cachesize=16384 hashsize=524288 gbcnum=2
+spot: BDD stats: produced=1483370 nodenum=524288 freenodes=0 (0%) minfreenodes=20% varnum=23 cachesize=16384 hashsize=524288 gbcnum=2
+spot: BDD GC #3 in 0.003597s / 0.01046s total
+spot: BDD stats: produced=1483370 nodenum=524288 freenodes=488632 (93%) minfreenodes=20% varnum=23 cachesize=16384 hashsize=524288 gbcnum=3
+spot: BDD stats: produced=1972002 nodenum=524288 freenodes=0 (0%) minfreenodes=20% varnum=23 cachesize=16384 hashsize=524288 gbcnum=3
+spot: BDD GC #4 in 0.0035s / 0.01396s total
+spot: BDD stats: produced=1972002 nodenum=524288 freenodes=478231 (91%) minfreenodes=20% varnum=23 cachesize=16384 hashsize=524288 gbcnum=4
+spot: BDD stats: produced=2450233 nodenum=524288 freenodes=0 (0%) minfreenodes=20% varnum=24 cachesize=16384 hashsize=524288 gbcnum=4
+spot: BDD GC #5 in 0.003451s / 0.017411s total
+spot: BDD stats: produced=2450233 nodenum=524288 freenodes=478894 (91%) minfreenodes=20% varnum=24 cachesize=16384 hashsize=524288 gbcnum=5
+spot: BDD stats: produced=2929127 nodenum=524288 freenodes=0 (0%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=5
+spot: BDD GC #6 in 0.0023s / 0.019711s total
+spot: BDD stats: produced=2929127 nodenum=524288 freenodes=499452 (95%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=6
+spot: BDD stats: produced=3428579 nodenum=524288 freenodes=0 (0%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=6
+spot: BDD GC #7 in 0.002327s / 0.022038s total
+spot: BDD stats: produced=3428579 nodenum=524288 freenodes=502753 (95%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=7
+spot: BDD stats: produced=3931332 nodenum=524288 freenodes=0 (0%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=7
+spot: BDD GC #8 in 0.002959s / 0.024997s total
+spot: BDD stats: produced=3931332 nodenum=524288 freenodes=431675 (82%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=8
+spot: BDD stats: produced=4363007 nodenum=524288 freenodes=0 (0%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=8
+spot: BDD GC #9 in 0.003282s / 0.028279s total
+spot: BDD stats: produced=4363007 nodenum=524288 freenodes=419784 (80%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=9
+spot: BDD stats: produced=4782791 nodenum=524288 freenodes=0 (0%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=9
+spot: BDD GC #10 in 0.00337s / 0.031649s total
+spot: BDD stats: produced=4782791 nodenum=524288 freenodes=415730 (79%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=10
+spot: BDD stats: produced=5198521 nodenum=524288 freenodes=0 (0%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=10
+spot: BDD GC #11 in 0.003687s / 0.035336s total
+spot: BDD stats: produced=5198521 nodenum=524288 freenodes=411454 (78%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=11
+spot: BDD stats: produced=5609975 nodenum=524288 freenodes=0 (0%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=11
+spot: BDD GC #12 in 0.003693s / 0.039029s total
+spot: BDD stats: produced=5609975 nodenum=524288 freenodes=409499 (78%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=12
+spot: BDD stats: produced=6019474 nodenum=524288 freenodes=0 (0%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=12
+spot: BDD GC #13 in 0.003819s / 0.042848s total
+spot: BDD stats: produced=6019474 nodenum=524288 freenodes=408473 (77%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=13
+spot: BDD stats: produced=6427947 nodenum=524288 freenodes=0 (0%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=13
+spot: BDD GC #14 in 0.00395s / 0.046798s total
+spot: BDD stats: produced=6427947 nodenum=524288 freenodes=408102 (77%) minfreenodes=20% varnum=37 cachesize=16384 hashsize=524288 gbcnum=14
+spot: BDD stats: produced=6836049 nodenum=524288 freenodes=0 (0%) minfreenodes=20% varnum=2331 cachesize=16384 hashsize=524288 gbcnum=14
+spot: BDD GC #15 in 0.001951s / 0.048749s total
+spot: BDD stats: produced=6836049 nodenum=524288 freenodes=517228 (98%) minfreenodes=20% varnum=2331 cachesize=16384 hashsize=524288 gbcnum=15
++ grep spot: out
++ grep spot: BDD package initialized err
+spot: BDD package initialized
++ grep -c spot: BDD GC err
++ test 15 = 15
++ autfilt --stats=%s,%e out
++ test 2240,4214 = 2240,4214
++ genltl --kr-n=3
++ SPOT_BDD_TRACE=1 ltl2tgba -D -x tls-max-ops=0 --stats=%s,%e
++ cat err
+spot: BDD package initialized
+spot: BDD stats: produced=4 nodenum=524288 freenodes=524282 (99%) minfreenodes=20% varnum=2 cachesize=16384 hashsize=524288 gbcnum=0
++ grep spot: BDD package initialized err
+spot: BDD package initialized
++ grep -c spot: BDD GC err
++ test 0 = 0
++ cat out
++ test 2240,4214 = 2240,4214
+PASS core/bdd.test (exit status: 0)

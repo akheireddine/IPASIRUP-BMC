@@ -1,0 +1,13 @@
+HOA: v1
+Start: 6
+Acceptance: 0 t
+--BODY--
+--END--
+HOA: v1
+Start: 1
+Start: 0
+Acceptance: 0 t
+--BODY--
+State: 0
+[t] 0
+--END--

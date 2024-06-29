@@ -1,0 +1,53 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test sim3.test
+== Running test sim3.test
++ echo sim3.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=sim3
++ testSubDir=sim3.dir
++ chmod -R a+rwx sim3.dir
++ rm -rf sim3.dir
++ mkdir sim3.dir
++ cd sim3.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ autfilt --small input --stats=%S,%s
++ test 7,1 = 7,1
++ autfilt -S --high --small input -H
++ cat
++ diff out expected
++ cat
++ cat
++ autfilt --small --low input
++ diff expect output
++ cat
++ cmd=autfilt --small input --stats=%s,%t
++ autfilt --small input --stats=%s,%t -x simul=0
++ test 2,5 = 2,5
++ autfilt --small input --stats=%s,%t -x wdba-minimize=0
++ test 2,5 = 2,5
++ autfilt --small input --stats=%s,%t -x simul=0,wdba-minimize=0
++ test 4,20 = 4,20
++ autfilt --small input --stats=%s,%t -x simul-trans-pruning=0,wdba-minimize=0
++ test 3,14 = 3,14
++ autfilt --small input --stats=%s,%t -x simul-trans-pruning=2,wdba-minimize=0
++ test 3,14 = 3,14
++ autfilt --small input --stats=%s,%t -x simul-trans-pruning=3,wdba-minimize=0
++ test 2,5 = 2,5
+PASS core/sim3.test (exit status: 0)

@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{spotltl}
+\begin{document}
+\begin{tabular}{ll}
+\texttt{input:1} & $\X \G \F a \liff ((a \lxor b) \lor \F \G \X (\lnot b \land \lnot c))$ \\
+\texttt{input:2} & $a \U (b \W (c \R ((d \land e) \M f)))$ \\
+\texttt{input:3} & $\{a \SereConcat b\SereEqual{2} \SereConcat \{f\SereStar{} \SereAnd \{c \SereFusion d\SereStar{}\}\} \SereConcat e\SereStar{2..}\}\seq (\{c_{1}\SereGoto{2} \SereAndNLM \{\{a \SereOr \eword\}\SereStar{} \SereConcat b\SerePlus{}\}\}\triggers h)$ \\
+\texttt{input:4} & $\{a \SereConcat b \SereConcat c\}\triggersX (\{d\SereStar{} \SereConcat e\}\seqX \lnot f)$ \\
+\texttt{input:5} & $\lnot (\{a \SereConcat b\SereStar{} \SereConcat c\}!) \limplies d$ \\
+\texttt{input:6} & $\{a\SereStar{} \SereConcat \{b \SereConcat c\}\SereFStar{3..4} \SereConcat \{c \SereConcat d\}\SereFPlus{} \SereConcat d\}!$ \\
+\texttt{input:7} & $\G (\mathit{uglyname} \limplies \F \mathit{uglierlongname}_{42})$ \\
+\texttt{input:8} & $``\mathit{\#foo/\$bar\$}\textrm{''} \U ``\mathit{baz\text{\textasciitilde}yes\text{\textasciicircum}no}\textrm{''}$ \\
+\texttt{--go-theta:1} & $\lnot (\G \F p_{1} \limplies \G (q \limplies \F r))$ \\
+\texttt{--go-theta:2} & $\lnot ((\G \F p_{1} \land \G \F p_{2}) \limplies \G (q \limplies \F r))$ \\
+\texttt{--go-theta:3} & $\lnot ((\G \F p_{1} \land \G \F p_{2} \land \G \F p_{3}) \limplies \G (q \limplies \F r))$ \\
+\texttt{random 0} & $\ffalse$ \\
+\texttt{random 1} & $p_{1}$ \\
+\texttt{random 2} & $\ttrue$ \\
+\texttt{random 3} & $\{p_{1}\SereStar{} \SereConcat \SereStar{2..3}\}\SereStar{}$ \\
+\texttt{random 4} & $\eword$ \\
+\texttt{random 5} & $\lnot p_{1}$ \\
+\texttt{random 6} & $\lnot p_{0} \liff \{p_{0} \lxor p_{1}\}$ \\
+\texttt{random 7} & $\{p_{1} \lor \{p_{1} \lxor \lnot p_{1}\}\}\SereStar{}$ \\
+\texttt{random 8} & $\ttrue \SereConcat p_{1}$ \\
+\texttt{random 9} & $\eword \SereOr \{\lnot \{\lnot p_{0} \limplies p_{1}\}\}\SereStar{2..3}$ \\
+\end{tabular}
+\end{document}

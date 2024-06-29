@@ -1,0 +1,83 @@
+HOA: v1
+States: 2
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc deterministic
+properties: terminal
+--BODY--
+State: 0
+[1] 1
+[0&!1] 0
+State: 1 {0}
+[t] 1
+--END--
+HOA: v1
+States: 2
+Start: 0
+AP: 1 "a"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic terminal
+--BODY--
+State: 0 {0}
+[0] 1
+[!0] 0
+State: 1 {0}
+[t] 0
+--END--
+HOA: v1
+States: 2
+Start: 0
+AP: 1 "a"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic terminal
+--BODY--
+State: 0 {0}
+[0] 1
+[!0] 0
+State: 1 {0}
+[t] 0
+--END--
+HOA: v1
+States: 2
+Start: 0
+AP: 0
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic terminal
+--BODY--
+State: 0 {0}
+[t] 1
+State: 1 {0}
+[t] 0
+--END--
+HOA: v1
+States: 4
+Start: 0
+AP: 3 "b" "a" "c"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc complete
+properties: deterministic terminal
+--BODY--
+State: 0
+[!1&!2] 0
+[1&!2] 1
+[2] 2
+State: 1
+[!1&!2] 0
+[1&!2] 1
+[!1&2] 2
+[1&2] 3
+State: 2 {0}
+[t] 2
+State: 3
+[!1] 2
+[1] 3
+--END--

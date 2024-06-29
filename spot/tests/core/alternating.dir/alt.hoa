@@ -1,0 +1,29 @@
+HOA: v1.1
+States: 7
+Start: 0&2
+acc-name: co-Buchi
+Acceptance: 1 Fin(0)
+AP: 2 "b" "a"
+properties: trans-labels explicit-labels state-acc univ-branch very-weak
+spot.highlight.edges: 2 5 7 2
+--BODY--
+State: 0 "((((a) U (b)) && GF(b)) && FG(a))"
+ [(0)] 3&1
+ [(!0 & 1)] 5&3&1
+State: 1 "FG(a)" {0}
+ [(1)] 2
+ [t] 1
+State: 2 "G(a)"
+ [(1)] 2
+State: 3 "GF(b)"
+ [(0)] 3
+ [(!0)] 4&3
+State: 4 "F(b)" {0}
+ [(0)] 6
+ [(!0)] 4
+State: 5 "((a) U (b))" {0}
+ [(0)] 6
+ [(!0 & 1)] 5
+State: 6 "t"
+ [t] 6
+--END--

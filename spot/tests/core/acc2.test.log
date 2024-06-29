@@ -1,0 +1,181 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test acc2.test
+== Running test acc2.test
++ echo acc2.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=acc2
++ testSubDir=acc2.dir
++ chmod -R a+rwx acc2.dir
++ rm -rf acc2.dir
++ mkdir acc2.dir
++ cd acc2.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltl2tgba -H GFa & GFb
++ grep Acceptance: in
++ grep acc-name: in
++ ltl2tgba -H GFa & GFb --stats=Acceptance: %a %g
++ ltl2tgba -H GFa & GFb --stats=acc-name: %[]g
++ autfilt -H in --format=Acceptance: %A %G
++ autfilt -H in --format=acc-name: %[]G
++ diff out1 expected
++ diff out2 expected
++ diff out1b expected-b
++ diff out2b expected-b
++ autfilt -H in --format=%[d]G, %[0lo]g, %[0abdglmpos]g
++ echo gen. Büchi 2, generalized-Buchi, gen. Büchi
++ diff out3 exp3
++ autfilt -H in --format=%[bug]g
++ grep %\[bug\]g.*: u err
+autfilt: while processing %[bug]g, unknown option for acc_cond::name(): u
++ cat
++ cat
++ res=(Fin(1) & Fin(2) & Inf(0)) | (Inf(0)&Inf(1)&Inf(3))
++ cat
++ IFS=, read a b
++ cat header
++ autfilt -H --dnf-acc --stats %A %G, %a %g
++ echo Acceptance: 2 Inf(0)&Inf(1)
++ cat body
++ IFS=, read a b
++ cat header
++ autfilt -H --dnf-acc --stats %A %G, %a %g
++ echo Acceptance: 2 Fin(0) & Inf(1)
++ cat body
++ IFS=, read a b
++ cat header
++ autfilt -H --dnf-acc --stats %A %G, %a %g
++ echo Acceptance: 2 t
++ cat body
++ IFS=, read a b
++ + cat header
+autfilt -H --dnf-acc --stats %A %G, %a %g
++ echo Acceptance: 2 f
++ cat body
++ IFS=, read a b
++ cat header
++ autfilt -H --dnf-acc --stats %A %G, %a %g
++ echo Acceptance: 3 (Inf(1) | Fin(2)) & Inf(0)
++ cat body
++ IFS=, read a b
++ cat header
++ autfilt -H --dnf-acc --stats %A %G, %a %g
++ echo Acceptance: 4 (Inf(1) | Fin(2)) & (Fin(1) | Inf(3)) & Inf(0)
++ cat body
++ IFS=, read a b
++ cat header
++ autfilt -H --dnf-acc --stats %A %G, %a %g
++ echo Acceptance: 4 (Fin(1) & Fin(2) & Inf(0)) | (Inf(0)&Inf(1)&Inf(3))
++ cat body
++ IFS=, read a b
++ cat header
++ autfilt -H --dnf-acc --stats %A %G, %a %g
++ echo Acceptance: 3 (Fin(0)|Fin(1)) & Fin(2)
++ cat body
++ IFS=, read a b
++ diff acceptances output
++ res=Inf(0) & (Inf(1) | Fin(2)) & (Inf(3) | Fin(1))
++ cat
++ IFS=, read a b
++ cat header
++ autfilt -H --cnf-acc --stats %A %G, %a %g
++ echo Acceptance: 2 Inf(0)&Inf(1)
++ cat body
++ IFS=, read a b
++ cat header
++ autfilt -H --cnf-acc --stats %A %G, %a %g
++ echo Acceptance: 2 Fin(0) & Inf(1)
++ cat body
++ IFS=, read a b
++ + cat header
+autfilt -H --cnf-acc --stats %A %G, %a %g
++ echo Acceptance: 2 t
++ cat body
++ IFS=, read a b
++ + cat header
+autfilt -H --cnf-acc --stats %A %G, %a %g
++ echo Acceptance: 2 f
++ cat body
++ IFS=, read a b
++ + cat headerautfilt
+ -H --cnf-acc --stats %A %G, %a %g
++ echo Acceptance: 3 (Inf(1) | Fin(2)) & Inf(0)
++ cat body
++ IFS=, read a b
++ cat header
++ autfilt -H --cnf-acc --stats %A %G, %a %g
++ echo Acceptance: 4 (Fin(1) & Fin(2) & Inf(0)) | (Inf(0)&Inf(1)&Inf(3))
++ cat body
++ IFS=, read a b
++ + cat header
+autfilt -H --cnf-acc --stats %A %G, %a %g
++ echo Acceptance: 4 Inf(0) & (Inf(1) | Fin(2)) & (Inf(3) | Fin(1))
++ cat body
++ IFS=, read a b
++ cat header
++ autfilt -H --cnf-acc --stats %A %G, %a %g
++ echo Acceptance: 3 (Fin(0) & Fin(2)) | (Fin(1) & Fin(2))
++ cat body
++ IFS=, read a b
++ diff acceptances output
++ a=(Inf(1) | Fin(2)) & (Fin(1) | Inf(3)) & Inf(0)
++ b=(Fin(1) & Inf(2)) | (Inf(1) & Fin(3)) | Fin(0)
++ cat
++ IFS=, read a b
++ cat header
++ autfilt -H --complement-acc --stats %A %G, %a %g
++ echo Acceptance: 2 Inf(0)&Inf(1)
++ cat body
++ IFS=, read a b
++ cat header
++ autfilt -H --complement-acc --stats %A %G, %a %g
++ echo Acceptance: 2 Fin(0) & Inf(1)
++ cat body
++ IFS=, read a b
++ cat header
++ autfilt -H --complement-acc --stats %A %G, %a %g
++ echo Acceptance: 2 t
++ cat body
++ IFS=, read a b
++ cat header
++ autfilt -H --complement-acc --stats %A %G, %a %g
++ echo Acceptance: 2 f
++ cat body
++ IFS=, read a b
++ cat header
++ autfilt -H --complement-acc --stats %A %G, %a %g
++ echo Acceptance: 3 (Inf(1) | Fin(2)) & Inf(0)
++ cat body
++ IFS=, read a b
++ cat header
++ autfilt -H --complement-acc --stats %A %G, %a %g
++ echo Acceptance: 4 (Inf(1) | Fin(2)) & (Fin(1) | Inf(3)) & Inf(0)
++ cat body
++ IFS=, read a b
++ cat header
++ autfilt -H --complement-acc --stats %A %G, %a %g
++ echo Acceptance: 4 (Fin(1) & Inf(2)) | (Inf(1) & Fin(3)) | Fin(0)
++ cat body
++ IFS=, read a b
++ cat header
++ autfilt -H --complement-acc --stats %A %G, %a %g
++ echo Acceptance: 3 (Fin(0)|Fin(1)) & Fin(2)
++ cat body
++ IFS=, read a b
++ diff acceptances output
+PASS core/acc2.test (exit status: 0)

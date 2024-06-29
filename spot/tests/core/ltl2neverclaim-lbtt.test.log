@@ -1,0 +1,32 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltl2neverclaim-lbtt.test
+== Running test ltl2neverclaim-lbtt.test
++ echo ltl2neverclaim-lbtt.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltl2neverclaim-lbtt
++ testSubDir=ltl2neverclaim-lbtt.dir
++ chmod -R a+rwx ltl2neverclaim-lbtt.dir
++ rm -rf ltl2neverclaim-lbtt.dir
++ mkdir ltl2neverclaim-lbtt.dir
++ cd ltl2neverclaim-lbtt.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ need_lbtt
++  --version
+ltl2neverclaim-lbtt.test: 73: : Permission denied
++ exit 77
+SKIP core/ltl2neverclaim-lbtt.test (exit status: 77)

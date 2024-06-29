@@ -1,0 +1,17 @@
+digraph "" {
+  rankdir=LR
+  node [shape="box",style="rounded",width="0.5"]
+  I [label="", style=invis, width=0]
+  I -> 1
+  0 [label="0\nb"]
+  0 -> 2 [label=""]
+  0 -> 1 [label=""]
+  0 -> 1 [label=""]
+  1 [label="1\na"]
+  1 -> 0 [label=""]
+  1 -> 1 [label=""]
+  2 [label="2\na", peripheries=2]
+  2 -> 2 [label=""]
+  2 -> 0 [label=""]
+  2 -> 1 [label=""]
+}

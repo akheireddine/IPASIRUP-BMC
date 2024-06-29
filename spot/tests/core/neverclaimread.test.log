@@ -1,0 +1,789 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test neverclaimread.test
+== Running test neverclaimread.test
++ echo neverclaimread.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=neverclaimread
++ testSubDir=neverclaimread.dir
++ chmod -R a+rwx neverclaimread.dir
++ rm -rf neverclaimread.dir
++ mkdir neverclaimread.dir
++ cd neverclaimread.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 ../ikwiad -XN -H input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -XN -H input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -XN -H input
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ run 0 autfilt -F stdout --isomorph expected
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -F stdout --isomorph expected
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -F stdout --isomorph expected
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc
+--BODY--
+State: 0
+[t] 0
+[0&1] 1
+State: 1
+[!1] 0
+[!1] 1
+[!0&1] 2
+State: 2 {0}
+[t] 2
+--END--
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ rm input stdout expected
++ cat
++ run 0 ../ikwiad -XN -H input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -XN -H input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -XN -H input
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ run 0 autfilt -F stdout --isomorph expected
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -F stdout --isomorph expected
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -F stdout --isomorph expected
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc
+--BODY--
+State: 0
+[t] 0
+[0&1] 1
+State: 1
+[!1] 0
+[!1] 1
+[!0&1] 2
+State: 2 {0}
+[t] 2
+--END--
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ rm input stdout expected
++ cat
++ run 0 ../ikwiad -XN input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -XN input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -XN input
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff stdout expected
++ rm input stdout expected
++ cat
++ run 2 ../ikwiad -XN input
++ cat
++ grep input: stderr
++ diff stderrfilt expected
++ cat
++ cat
++ run 0 ../ikwiad -ks -XN input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -ks -XN input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -ks -XN input
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff output expected
++ cat
++ run 2 ../ikwiad -ks -XN input
++ cat stderr
++ expected_exitcode=2
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -ks -XN input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -ks -XN input
+input:48.1-10: redefinition of accept_S10...
+input:38.1-10: ... accept_S10 previously defined here
++ exitcode=2
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 2 = 2
++ cat
++ grep input: stderr
++ diff stderrfilt expected-err
++ perl -pi -e s/$/\r/ input
++ run 2 ../ikwiad -ks -XN input
++ cat stderr
++ expected_exitcode=2
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -ks -XN input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -ks -XN input
+input:48.1-10: redefinition of accept_S10...
+input:38.1-10: ... accept_S10 previously defined here
++ exitcode=2
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 2 = 2
++ grep input: stderr
++ diff stderrfilt expected-err
++ cat
++ autfilt --name=%F --dot=nsc
++ cat
++ diff stdout expected
++ cat
++ diff stderr expected.err
++ cat
++ read f
++ run 0 ltl2tgba -H !(a)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !(a)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !(a)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ltl2tgba -s -f a
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f a
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f a
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep ![^(].*-> f.spot
++ cp f.spot f.spin
++ cp f.spot f.ltl2ba
++ ltlfilt -sf a
++ sf=a
++ test -n 
++ test -n 
++ run 0 autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
++ test 3 = 3
++ read f
++ run 0 ltl2tgba -H !(FG a)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !(FG a)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !(FG a)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ltl2tgba -s -f FG a
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f FG a
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f FG a
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep ![^(].*-> f.spot
++ cp f.spot f.spin
++ cp f.spot f.ltl2ba
++ ltlfilt -sf FG a
++ sf=<>[]a
++ test -n 
++ test -n 
++ run 0 autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
++ test 3 = 3
++ read f
++ run 0 ltl2tgba -H !(X false)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !(X false)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !(X false)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ltl2tgba -s -f X false
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f X false
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f X false
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep ![^(].*-> f.spot
++ cp f.spot f.spin
++ cp f.spot f.ltl2ba
++ ltlfilt -sf X false
++ sf=X(false)
++ test -n 
++ test -n 
++ run 0 autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
++ test 3 = 3
++ read f
++ run 0 ltl2tgba -H !((G a) U X b)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !((G a) U X b)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !((G a) U X b)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ltl2tgba -s -f (G a) U X b
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f (G a) U X b
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f (G a) U X b
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep ![^(].*-> f.spot
++ cp f.spot f.spin
++ cp f.spot f.ltl2ba
++ ltlfilt -sf (G a) U X b
++ sf=[]a U Xb
++ test -n 
++ test -n 
++ run 0 autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
++ test 3 = 3
++ read f
++ run 0 ltl2tgba -H !((a U b) U (c U d))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !((a U b) U (c U d))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !((a U b) U (c U d))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ltl2tgba -s -f (a U b) U (c U d)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f (a U b) U (c U d)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f (a U b) U (c U d)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep ![^(].*-> f.spot
++ cp f.spot f.spin
++ cp f.spot f.ltl2ba
++ ltlfilt -sf (a U b) U (c U d)
++ sf=(a U b) U (c U d)
++ test -n 
++ test -n 
++ run 0 autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
++ test 3 = 3
++ read f
++ run 0 ltl2tgba -H !(true)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !(true)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !(true)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ltl2tgba -s -f true
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f true
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f true
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep ![^(].*-> f.spot
++ cp f.spot f.spin
++ cp f.spot f.ltl2ba
++ ltlfilt -sf true
++ sf=true
++ test -n 
++ test -n 
++ run 0 autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
++ test 3 = 3
++ read f
++ run 0 ltl2tgba -H !((Ga && XXXX!a))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !((Ga && XXXX!a))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !((Ga && XXXX!a))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ltl2tgba -s -f (Ga && XXXX!a)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f (Ga && XXXX!a)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f (Ga && XXXX!a)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep ![^(].*-> f.spot
++ cp f.spot f.spin
++ cp f.spot f.ltl2ba
++ ltlfilt -sf (Ga && XXXX!a)
++ sf=[]a && XXXX!a
++ test -n 
++ test -n 
++ run 0 autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
++ test 3 = 3
++ read f
++ run 0 ltl2tgba -H !("a > b" U "process@foo")
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !("a > b" U "process@foo")
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !("a > b" U "process@foo")
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ltl2tgba -s -f "a > b" U "process@foo"
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f "a > b" U "process@foo"
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f "a > b" U "process@foo"
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep ![^(].*-> f.spot
++ cp f.spot f.spin
++ cp f.spot f.ltl2ba
++ ltlfilt -sf "a > b" U "process@foo"
++ sf=(a > b) U (process@foo)
++ test -n 
++ run 0 autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
++ test 3 = 3
++ read f
++ run 0 ltl2tgba -H !(GF("(a + b) == 42" U "process@foo"))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !(GF("(a + b) == 42" U "process@foo"))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H !(GF("(a + b) == 42" U "process@foo"))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ltl2tgba -s -f GF("(a + b) == 42" U "process@foo")
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f GF("(a + b) == 42" U "process@foo")
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -s -f GF("(a + b) == 42" U "process@foo")
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep ![^(].*-> f.spot
++ cp f.spot f.spin
++ cp f.spot f.ltl2ba
++ ltlfilt -sf GF("(a + b) == 42" U "process@foo")
++ sf=[]<>(((a + b) == 42) U (process@foo))
++ test -n 
++ run 0 autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --count -v --intersect=f.hoa f.spot f.spin f.ltl2ba
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
++ test 3 = 3
++ read f
+PASS core/neverclaimread.test (exit status: 0)

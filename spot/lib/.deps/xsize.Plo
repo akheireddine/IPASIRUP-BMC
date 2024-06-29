@@ -1,0 +1,61 @@
+xsize.lo: xsize.c /usr/x86_64-linux-gnu/include/stdc-predef.h ../config.h \
+ xsize.h /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+ /usr/x86_64-linux-gnu/include/limits.h \
+ /usr/x86_64-linux-gnu/include/bits/libc-header-start.h \
+ /usr/x86_64-linux-gnu/include/features.h \
+ /usr/x86_64-linux-gnu/include/features-time64.h \
+ /usr/x86_64-linux-gnu/include/bits/wordsize.h \
+ /usr/x86_64-linux-gnu/include/bits/timesize.h \
+ /usr/x86_64-linux-gnu/include/sys/cdefs.h \
+ /usr/x86_64-linux-gnu/include/bits/long-double.h \
+ /usr/x86_64-linux-gnu/include/gnu/stubs.h \
+ /usr/x86_64-linux-gnu/include/gnu/stubs-64.h \
+ /usr/x86_64-linux-gnu/include/bits/posix1_lim.h \
+ /usr/x86_64-linux-gnu/include/bits/local_lim.h \
+ /usr/x86_64-linux-gnu/include/linux/limits.h \
+ /usr/x86_64-linux-gnu/include/bits/pthread_stack_min-dynamic.h \
+ /usr/x86_64-linux-gnu/include/bits/posix2_lim.h \
+ /usr/x86_64-linux-gnu/include/bits/xopen_lim.h \
+ /usr/x86_64-linux-gnu/include/bits/uio_lim.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
+ /usr/x86_64-linux-gnu/include/stdint.h \
+ /usr/x86_64-linux-gnu/include/bits/types.h \
+ /usr/x86_64-linux-gnu/include/bits/typesizes.h \
+ /usr/x86_64-linux-gnu/include/bits/time64.h \
+ /usr/x86_64-linux-gnu/include/bits/wchar.h \
+ /usr/x86_64-linux-gnu/include/bits/stdint-intn.h \
+ /usr/x86_64-linux-gnu/include/bits/stdint-uintn.h
+/usr/x86_64-linux-gnu/include/stdc-predef.h:
+../config.h:
+xsize.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
+limits.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
+/usr/x86_64-linux-gnu/include/limits.h:
+/usr/x86_64-linux-gnu/include/bits/libc-header-start.h:
+/usr/x86_64-linux-gnu/include/features.h:
+/usr/x86_64-linux-gnu/include/features-time64.h:
+/usr/x86_64-linux-gnu/include/bits/wordsize.h:
+/usr/x86_64-linux-gnu/include/bits/timesize.h:
+/usr/x86_64-linux-gnu/include/sys/cdefs.h:
+/usr/x86_64-linux-gnu/include/bits/long-double.h:
+/usr/x86_64-linux-gnu/include/gnu/stubs.h:
+/usr/x86_64-linux-gnu/include/gnu/stubs-64.h:
+/usr/x86_64-linux-gnu/include/bits/posix1_lim.h:
+/usr/x86_64-linux-gnu/include/bits/local_lim.h:
+/usr/x86_64-linux-gnu/include/linux/limits.h:
+/usr/x86_64-linux-gnu/include/bits/pthread_stack_min-dynamic.h:
+/usr/x86_64-linux-gnu/include/bits/posix2_lim.h:
+/usr/x86_64-linux-gnu/include/bits/xopen_lim.h:
+/usr/x86_64-linux-gnu/include/bits/uio_lim.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
+/usr/x86_64-linux-gnu/include/stdint.h:
+/usr/x86_64-linux-gnu/include/bits/types.h:
+/usr/x86_64-linux-gnu/include/bits/typesizes.h:
+/usr/x86_64-linux-gnu/include/bits/time64.h:
+/usr/x86_64-linux-gnu/include/bits/wchar.h:
+/usr/x86_64-linux-gnu/include/bits/stdint-intn.h:
+/usr/x86_64-linux-gnu/include/bits/stdint-uintn.h:

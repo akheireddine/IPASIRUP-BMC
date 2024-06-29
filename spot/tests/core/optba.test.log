@@ -1,0 +1,40 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test optba.test
+== Running test optba.test
++ echo optba.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=optba
++ testSubDir=optba.dir
++ chmod -R a+rwx optba.dir
++ rm -rf optba.dir
++ mkdir optba.dir
++ cd optba.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -x
++ cat
++ autfilt --exclusive-ap=c1,c2 --high --small --stats=%s input
++ test 17 = 18
++ autfilt --exclusive-ap=c1,c2 --high --small -B --stats=%s input
++ test 18 = 19
++ cat
++ autfilt --small in --stats=%s,%e
++ test 3,6 = 3,6
++ cat
++ autfilt --small in.hoa --stats=%s
++ test 86 -ge 86
+PASS core/optba.test (exit status: 0)

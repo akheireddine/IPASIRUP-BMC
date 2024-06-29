@@ -1,0 +1,88 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test exclusive-ltl.test
+== Running test exclusive-ltl.test
++ echo exclusive-ltl.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=exclusive-ltl
++ testSubDir=exclusive-ltl.dir
++ chmod -R a+rwx exclusive-ltl.dir
++ rm -rf exclusive-ltl.dir
++ mkdir exclusive-ltl.dir
++ cd exclusive-ltl.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ cat
++ run 0 ltlfilt --exclusive-ap=a,b,c --exclusive-ap=d,e formulas
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt --exclusive-ap=a,b,c --exclusive-ap=d,e formulas
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt --exclusive-ap=a,b,c --exclusive-ap=d,e formulas
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
+GFa
+(a U b) & G!(a & b)
+(a U (b U c)) & G(!(a & b) & !(a & c) & !(b & c))
+(a U (b U (d U e))) & G(!(a & b) & !(d & e))
+(a U (b U (c U (d U e)))) & G(!(a & b) & !(a & c) & !(b & c) & !(d & e))
++ diff out expected
++ run 0 ltlfilt --exclusive-ap="a" ,b, "c"  --exclusive-ap= d , e formulas
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt --exclusive-ap="a" ,b, "c"  --exclusive-ap= d , e formulas
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt --exclusive-ap="a" ,b, "c"  --exclusive-ap= d , e formulas
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
+GFa
+(a U b) & G!(a & b)
+(a U (b U c)) & G(!(a & b) & !(a & c) & !(b & c))
+(a U (b U (d U e))) & G(!(a & b) & !(d & e))
+(a U (b U (c U (d U e)))) & G(!(a & b) & !(a & c) & !(b & c) & !(d & e))
++ diff out expected
++ ltlfilt --exclusive-ap="a","b
++ grep missing closing ." stderr
+ltlfilt: missing closing '"' in "a","b
++ ltlfilt --exclusive-ap=a,,b
++ grep unexpected ',' in a,,b stderr
+ltlfilt: unexpected ',' in a,,b
++ ltlfilt --exclusive-ap="a"b
++ grep unexpected character 'b' in "a"b stderr
+ltlfilt: unexpected character 'b' in "a"b
+PASS core/exclusive-ltl.test (exit status: 0)

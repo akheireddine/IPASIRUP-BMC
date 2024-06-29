@@ -1,0 +1,200 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltl2tgba2.test
+== Running test ltl2tgba2.test
++ echo ltl2tgba2.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltl2tgba2
++ testSubDir=ltl2tgba2.dir
++ chmod -R a+rwx ltl2tgba2.dir
++ rm -rf ltl2tgba2.dir
++ mkdir ltl2tgba2.dir
++ cd ltl2tgba2.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ genltl --dac --eh --sb --hkrss --p --and-fg=32 --format=%F,%L,%f
++ cat pos
++ ltlfilt -u -F-/3
++ ltlfilt --negate pos/3 --format=!%<,%f
++ ltl2tgba -Fformulas/3+  --stats=%<,%f, %s,%t
+ltl2tgba -D -F-/3 --stats=%<,%f,%>, %s,%t
++ ltl2tgba -b -F-/3 --stats=%<,%f,%>, %s,%t
++ ltl2tgba -BD -F-/3 --stats=%<,%>, %s,%t
++ + ltl2tgba -bD -F-/3ltl2tgba --stats=%<,%f,%>, %s,%t -B
+ -F-/3 --stats=%<,%f,%>, %s,%t
++ fg42=2,4294967298
++ gf42=1,4294967296
++ cat
++ diff output expected
++ cat
++ ltlfilt -Fformulas/1 --stats=%f,%f,%>
++ ltl2tgba -F-/2 --stats=%<,%<, %s,%t
++ ltl2tgba -B -F-/2 --stats=%<,%<,%>, %s,%t
++ ltl2tgba -BD -F-/2 --stats=%<,%<,%>, %s,%t
++ ltl2tgba -GD -F-/2 --stats=%<,%>, %s,%t
++ perl -p -e s/$/\r/
++ ltl2tgba -D -F-/2 --stats=%<,%<,%>, %s,%t
++ diff formulas output
++ ltl2tgba GF(a<->XXa) --stats=%s
++ test 4 = 4
++ ltl2tgba --low GF(a<->XXa) --stats=%s
++ test 9 = 9
++ ltl2tgba -x gf-guarantee=0 GF(a<->XXa) --stats=%s
++ test 9 = 9
++ ltl2tgba --low -x gf-guarantee=1 GF(a<->XXa) --stats=%s
++ test 4 = 4
++ ltl2tgba -D a | Fb GF(d & (!c | XXc)) --stats=%s,%e,%d
++ cat
++ diff out expected
++ f=(a R !b) & (c R !d) & G((!b | !d) & (!a | Fb) & (!c | Fd) 
++ f=(a R !b) & (c R !d) & G((!b | !d) & (!a | Fb) & (!c | Fd) & (!b | X(b | (a R !b))) & (!d | X(d | (c R !d))) & F(a | !b) & F(c | !d))
++ ltl2tgba (a R !b) & (c R !d) & G((!b | !d) & (!a | Fb) & (!c | Fd) & (!b | X(b | (a R !b))) & (!d | X(d | (c R !d))) & F(a | !b) & F(c | !d)) --stats=%s,%d
++ test 8,1 = 8,1
++ ltl2tgba -GD (a R !b) & (c R !d) & G((!b | !d) & (!a | Fb) & (!c | Fd) & (!b | X(b | (a R !b))) & (!d | X(d | (c R !d))) & F(a | !b) & F(c | !d)) --stats=%s,%d
++ test 8,1 = 8,1
++ cat
++ ltl2tgba --lbt-input -GDS -Fin --stats=%s,%g
++ cat
++ ltl2tgba -D -G F(G(a | !a) & ((b <-> c) W d))
++ grep \[f\]
++ ltl2tgba !b & e U (a & b & c)
++ grep \[f\]
++ ltl2tgba !b & e U (a & b & c) --stats=%w
++ grep 0
++ ltl2tgba X!c & X(b & c & d & a U e)+ 
+grep \[f\]
++ ltl2tgba X!c & X(b & c & d & a U e) --stats=%w
++ grep 0
++ ltlcross -f G(F(Gb ^ Fa) & FG!a) ltl2tgba -G -D
+G((F((G(b)) xor (F(a)))) & (F(G(!(a)))))
+Running [P0]: ltl2tgba -G -D -H 'G((F((G(b)) xor (F(a)))) & (F(G(!(a)))))'>'lcr-o0-MBjuGO'
+Running [N0]: ltl2tgba -G -D -H '!(G((F((G(b)) xor (F(a)))) & (F(G(!(a))))))'>'lcr-o0-yQKHVc'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
++ f=(GFp0 | FGp1) & (GF!p1 | FGp2) & (GF!p2 | FG!p0)
++ ltl2tgba -G -D (GFp0 | FGp1) & (GF!p1 | FGp2) & (GF!p2 | FG!p0) --stats=%s,%e,%a
++ test 1,8,3 = 1,8,3
++ ltl2tgba -G -D (GFp0 | FGp1) --stats=%s,%e,%a
++ test 1,3,2 = 1,3,2
++ ltl2tgba -D -G X((Fa & Fb & Fc & Fd) <-> GFe) --stats=%s %g
++ res=17 (Inf(0)&Inf(1)) | (Fin(0) & Fin(1))
++ test 17 (Inf(0)&Inf(1)) | (Fin(0) & Fin(1)) = 17 (Inf(0)&Inf(1)) | (Fin(0) & Fin(1))
++ ltl2tgba -D -G X((Fa & Fb & Fc & Fd) ^ GFe) --stats=%s %g
++ res=17 (Inf(0) & Fin(1)) | (Fin(0) & Inf(1))
++ test 17 (Inf(0) & Fin(1)) | (Fin(0) & Inf(1)) = 17 (Inf(0) & Fin(1)) | (Fin(0) & Inf(1))
++ ltlcross ltl2tgba -D -G ltl2tgba -G -f (Fa & Fb & Fc & Fd) ^ GFe
+(G(F(e))) xor ((F(a)) & (F(b)) & (F(c)) & (F(d)))
+Running [P0]: ltl2tgba -D -G -H '(G(F(e))) xor ((F(a)) & (F(b)) & (F(c)) & (F(d)))'>'lcr-o0-tRh0SY'
+Running [P1]: ltl2tgba -G -H '(G(F(e))) xor ((F(a)) & (F(b)) & (F(c)) & (F(d)))'>'lcr-o1-gIk5XR'
+Running [N0]: ltl2tgba -D -G -H '!((G(F(e))) xor ((F(a)) & (F(b)) & (F(c)) & (F(d))))'>'lcr-o0-oimO1B'
+Running [N1]: ltl2tgba -G -H '!((G(F(e))) xor ((F(a)) & (F(b)) & (F(c)) & (F(d))))'>'lcr-o1-ggsHDH'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
++ f=G(p1 | G!p0) M Xp1
++ ltl2tgba G(p1 | G!p0) M Xp1 --stats=%s,%d
++ test 6,1 = 6,1
++ ltl2tgba -x wdba-minimize=2 G(p1 | G!p0) M Xp1 --stats=%s,%d
++ test 6,0 = 6,0
++ ltl2tgba -x wdba-minimize=0 G(p1 | G!p0) M Xp1 --stats=%s,%d
++ test 6,0 = 6,0
++ ltl2tgba --med G(p1 | G!p0) M Xp1 --stats=%s,%d
++ test 6,0 = 6,0
++ f=X((p1 & Xp1) M Fp1)
++ ltl2tgba -D X((p1 & Xp1) M Fp1) --stats=%s,%d
++ test 4,1 = 4,1
++ ltl2tgba -D -x wdba-minimize=2 X((p1 & Xp1) M Fp1) --stats=%s,%d
++ test 4,1 = 4,1
++ ltl2tgba -D -x wdba-minimize=0 X((p1 & Xp1) M Fp1) --stats=%s,%d
++ test 4,0 = 4,0
++ ltl2tgba -D --med X((p1 & Xp1) M Fp1) --stats=%s,%d
++ test 4,1 = 4,1
++ f=(G!a | G!b | G!c) & (FG!a2 | GFb2 | GFc2) & (GFc2 | FG!b2 | GFa2)
++ ltl2tgba -D -G -S --stats=%s (G!a | G!b | G!c) & (FG!a2 | GFb2 | GFc2) & (GFc2 | FG!b2 | GFa2)
++ test 28 = 28
++ f=(!(G({(a)} |=> {(b)[*32]})))
++ ltl2tgba -B --stats=%s,%d (!(G({(a)} |=> {(b)[*32]})))
++ test 34,0 = 34,0
++ f=(!(G({(a)} |=> {(b)[*12]})))
++ ltl2tgba -B --stats=%s,%d (!(G({(a)} |=> {(b)[*12]})))
++ test 14,1 = 14,1
++ f=(!(G({(a)} |=> {(b)[*13]})))
++ ltl2tgba -B --stats=%s,%d (!(G({(a)} |=> {(b)[*13]})))
++ test 15,0 = 15,0
++ opts=-x scc-filter=0,tls-impl=0,gf-guarantee=0,wdba-minimize=0
++ f=G(p0 -> F(p1 & !p2 & X(!p2 U p3)))
++ ltl2tgba -x scc-filter=0,tls-impl=0,gf-guarantee=0,wdba-minimize=0 --med G(p0 -> F(p1 & !p2 & X(!p2 U p3)))
++ ltl2tgba -x scc-filter=0,tls-impl=0,gf-guarantee=0,wdba-minimize=0,exprop=0 G(p0 -> F(p1 & !p2 & X(!p2 U p3)))
++ diff med.hoa high.hoa
++ ltl2tgba -x scc-filter=0,tls-impl=0,gf-guarantee=0,wdba-minimize=0 G(p0 -> F(p1 & !p2 & X(!p2 U p3)))
++ wc -l
++ wc -l
++ test 28 = 28
++ cmp med.hoa high.hoa
+med.hoa high.hoa sont différents: octet 239, ligne 12
++ autfilt --stats=%F:%s,%e med.hoa high.hoa
++ cat
++ diff exp out
++ f=G((a -> X((!a U b) | G!a)) & (a -> X(G!a | (!a U c))) & (a -> X(G!a
+| (!a U d))) & (a -> X(G!a | (!a U e))) & (a -> X(G!a | (!a U f))) &
+(a -> X(G!a | (!a U g))) & (a -> X(G!a | (!a U h)))) & (GFa <-> (GFb &
+GFc & GFd & GFe & GFf & GFg & GFh))
++ ltl2tgba -G -D G((a -> X((!a U b) | G!a)) & (a -> X(G!a | (!a U c))) & (a -> X(G!a
+| (!a U d))) & (a -> X(G!a | (!a U e))) & (a -> X(G!a | (!a U f))) &
+(a -> X(G!a | (!a U g))) & (a -> X(G!a | (!a U h)))) & (GFa <-> (GFb &
+GFc & GFd & GFe & GFf & GFg & GFh)) --stats=%s
++ test 128 = 128
++ f=(TRUE & (G F ~v21)& (( G  F v39 ->  G  F v23))) -> (TRUE &
+(G F (v1 -> (v41 & v29)))& (G F (v3 -> (v42 & v29)))& (G F (v5
+-> (v43 & v29)))& (G F (v7 -> (v44 & v29)))& (G F (v9 -> (v45 &
+v29)))& (G F (v11 -> (v46 & v29)))& (G F (v13 -> (v47 & v29)))&
+(G F (v15 -> (v48 & v29)))& (G F (v17 -> (v49 & v29)))& (G F (v19
+-> (v50 & v29)))& (G F (v41 | (v1 | (v3 | (v5 | (v7 | (v9 |
+(v11 | (v13 | (v15 | (v17 | v19))))))))))))
++ ltl2tgba -pmin even -D -C (TRUE & (G F ~v21)& (( G  F v39 ->  G  F v23))) -> (TRUE &
+(G F (v1 -> (v41 & v29)))& (G F (v3 -> (v42 & v29)))& (G F (v5
+-> (v43 & v29)))& (G F (v7 -> (v44 & v29)))& (G F (v9 -> (v45 &
+v29)))& (G F (v11 -> (v46 & v29)))& (G F (v13 -> (v47 & v29)))&
+(G F (v15 -> (v48 & v29)))& (G F (v17 -> (v49 & v29)))& (G F (v19
+-> (v50 & v29)))& (G F (v41 | (v1 | (v3 | (v5 | (v7 | (v9 |
+(v11 | (v13 | (v15 | (v17 | v19)))))))))))) --stats=%s %e
++ cat out
++ test 22 288 = 22 288
++ f=(G(!(G(p16) U G(p5))))&&((p5&&!p3&&p4&&!p2)) &&
+((p16&&!p14&&p5&&p15)) && (p5) && (p16) && (X(p5)) &&
+(X(!(p2&&!p3&&p4&&!p5))) && (X(!(p3&&p4&&!p5))) && (X(X(!(p3&&!p5))))
+&& (X(X(!(p2&&!p3&&!p5)))) && (X(X(p5))) && (X((!p14&&p5))) &&
+(X(X((!p14&&p5)))) && (F(G(p5))) && (F(G(!p16))) && (G((!p2||p3||p5))) &&
+(G((!p3||p5))) && (G((!p2||p3||!p4||p5))) && (G((!p3||!p4||p5)))
++ ltl2tgba -x relabel-overlap=8 -f (G(!(G(p16) U G(p5))))&&((p5&&!p3&&p4&&!p2)) &&
+((p16&&!p14&&p5&&p15)) && (p5) && (p16) && (X(p5)) &&
+(X(!(p2&&!p3&&p4&&!p5))) && (X(!(p3&&p4&&!p5))) && (X(X(!(p3&&!p5))))
+&& (X(X(!(p2&&!p3&&!p5)))) && (X(X(p5))) && (X((!p14&&p5))) &&
+(X(X((!p14&&p5)))) && (F(G(p5))) && (F(G(!p16))) && (G((!p2||p3||p5))) &&
+(G((!p3||p5))) && (G((!p2||p3||!p4||p5))) && (G((!p3||!p4||p5))) --stats=%g,%s,%e
++ s8=t,1,0
++ test t,1,0 = t,1,0
++ ltl2tgba -x relabel-overlap=7 -f (G(!(G(p16) U G(p5))))&&((p5&&!p3&&p4&&!p2)) &&
+((p16&&!p14&&p5&&p15)) && (p5) && (p16) && (X(p5)) &&
+(X(!(p2&&!p3&&p4&&!p5))) && (X(!(p3&&p4&&!p5))) && (X(X(!(p3&&!p5))))
+&& (X(X(!(p2&&!p3&&!p5)))) && (X(X(p5))) && (X((!p14&&p5))) &&
+(X(X((!p14&&p5)))) && (F(G(p5))) && (F(G(!p16))) && (G((!p2||p3||p5))) &&
+(G((!p3||p5))) && (G((!p2||p3||!p4||p5))) && (G((!p3||!p4||p5))) --stats=%g,%s,%e
++ s7=t,1,0
++ test t,1,0 = t,1,0
+PASS core/ltl2tgba2.test (exit status: 0)

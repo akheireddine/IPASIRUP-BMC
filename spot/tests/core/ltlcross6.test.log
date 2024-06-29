@@ -1,0 +1,79 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltlcross6.test
+== Running test ltlcross6.test
++ echo ltlcross6.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltlcross6
++ testSubDir=ltlcross6.dir
++ chmod -R a+rwx ltlcross6.dir
++ rm -rf ltlcross6.dir
++ mkdir ltlcross6.dir
++ cd ltlcross6.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ chmod +x fake
++ ltlcross -f 1 ./fake %f >%O --verbose --csv=out.csv
+1
+Running [P0]: ./fake '1' >'lcr-o0-5ZdJdY'
+info: getting statistics
+Running [N0]: ./fake '0' >'lcr-o0-XLHArn'
+info: getting statistics
+info: collected automata:
+info:   P0	(137 st.,1236 ed.,1 sets)
+info:   N0	(137 st.,1236 ed.,1 sets)
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:   P0	not complemented (Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.)
+info:   N0	not complemented (Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.)
+info: check_empty P0*N0
+error: P0*N0 is nonempty; both automata accept the infinite word:
+       !a & !b & !c & !d; cycle{!a & !b & !c & d; !a & !b & c & d; !a & b & !c & d; !a & !b & !c & !d; !a & !b & !c & d}
+info: complements not computed for some automata
+info: continuing with cross_checks and consistency_checks
+info: building state-space #1/1 of 200 states with seed 0
+info: state-space has 4199 edges
+info: building product between state-space and P0 (137 st., 1236 ed.)
+info:   product has 27400 st., 5189964 ed.
+info:               16 SCCs
+info: building product between state-space and N0 (137 st., 1236 ed.)
+info:   product has 27400 st., 5189964 ed.
+info:               16 SCCs
+info: cross_check {P0}, state-space #0/1
+info: cross_check {N0}, state-space #0/1
+info: consistency_check (P0,N0), state-space #0/1
+
+error: some error was detected during the above runs,
+       please search for 'error:' messages in the above trace.
+info: writing CSV to out.csv
++ grep "ok" out.csv
++ wc -l
++ test 2 = 2
+PASS core/ltlcross6.test (exit status: 0)

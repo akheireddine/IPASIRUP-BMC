@@ -1,0 +1,1887 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test parse.test
+== Running test parse.test
++ echo parse.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=parse
++ testSubDir=parse.dir
++ chmod -R a+rwx parse.dir
++ rm -rf parse.dir
++ mkdir parse.dir
++ cd parse.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 ../ltl2text input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ltl2text
++ cmd=../ltl2text
++ shift
++ test -n ../ltl2text
++ set ../ltl2text input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ltl2text input
+ff(@0 #0)
+tt(@1 #0)
+tt(@1 #0)
+ff(@0 #0)
+ap(@3 #0 "a")
+ap(@4 #0 "p11011")
+ap(@5 #0 "p11011")
+And(@8 #0 [ap(@6 #0 "a"), ap(@7 #0 "b")])
+And(@11 #0 [ap(@10 #0 "_b12"), ap(@9 #0 "a")])
+And(@14 #0 [ap(@13 #0 ".b."), ap(@12 #0 "a")])
+Or(@17 #0 [ap(@15 #0 "a"), ap(@16 #0 "b")])
+Or(@20 #0 [ap(@18 #0 "a3214"), ap(@19 #0 "b")])
+And(@23 #0 [ap(@21 #0 "a"), ap(@22 #0 "b")])
+Or(@26 #0 [ap(@24 #0 "a"), ap(@25 #0 "b")])
+Or(@29 #0 [ap(@27 #0 "a"), ap(@28 #0 "b")])
+Or(@32 #0 [ap(@30 #0 "a"), ap(@31 #0 "b")])
+U(@35 #0 [ap(@33 #0 "_a_"), ap(@34 #0 "b")])
+R(@38 #0 [ap(@36 #0 "a"), ap(@37 #0 "b")])
+Equiv(@41 #0 [ap(@39 #0 "a"), ap(@40 #0 "b")])
+Equiv(@44 #0 [ap(@42 #0 "a"), ap(@43 #0 "b")])
+Xor(@47 #0 [ap(@45 #0 "a"), ap(@46 #0 "b")])
+Xor(@50 #0 [ap(@48 #0 "a"), ap(@49 #0 "b")])
+Implies(@53 #0 [ap(@51 #0 "a"), ap(@52 #0 "b")])
+Implies(@56 #0 [ap(@54 #0 "a"), ap(@55 #0 "b")])
+F(@58 #0 [ap(@57 #0 "b")])
+G(@60 #0 [ap(@59 #0 "b")])
+G(@62 #0 [ap(@61 #0 "b")])
+Not(@66 #0 [G(@65 #0 [Not(@64 #0 [ap(@63 #0 "b")])])])
+Not(@68 #0 [ap(@67 #0 "b")])
+G(@70 #0 [ap(@69 #0 "b")])
+F(@72 #0 [ap(@71 #0 "b")])
+X(@74 #0 [ap(@73 #0 "b")])
+X(@76 #0 [ap(@75 #0 "b")])
+X(@78 #0 [ap(@77 #0 "X")])
+X(@80 #0 [ap(@79 #0 "F")])
+X(@82 #0 [ap(@81 #0 "G")])
+X(@84 #0 [ap(@83 #0 "U")])
+X(@86 #0 [ap(@85 #0 "W")])
+X(@88 #0 [ap(@87 #0 "R")])
+X(@90 #0 [ap(@89 #0 "M")])
+U(@93 #0 [ap(@91 #0 "long_atomic_proposition_1"), ap(@92 #0 "long_atomic_proposition_2")])
+Or(@100 #0 [Xor(@98 #0 [ap(@96 #0 "ad"), ap(@97 #0 "af")]), And(@99 #0 [ap(@94 #0 "ab"), ap(@95 #0 "ac")])])
+And(@106 #0 [ap(@104 #0 "d"), Or(@105 #0 [ap(@102 #1 "a"), And(@103 #0 [ap(@102 #1 "a"), ap(@101 #0 "b")])])])
+Equiv(@113 #0 [ap(@111 #0 "af"), Or(@112 #0 [ap(@109 #0 "ad"), And(@110 #0 [ap(@107 #0 "ab"), ap(@108 #0 "ac")])])])
+U(@138 #0 [ap(@114 #0 "a"), U(@137 #0 [ap(@115 #0 "b"), U(@136 #0 [ap(@116 #0 "c"), U(@135 #0 [ap(@117 #0 "d"), U(@134 #0 [ap(@118 #0 "e"), U(@133 #0 [ap(@119 #0 "f"), U(@132 #0 [ap(@120 #0 "g"), U(@131 #0 [ap(@121 #0 "h"), U(@130 #0 [ap(@122 #0 "i"), U(@129 #0 [ap(@123 #0 "j"), U(@128 #0 [ap(@124 #0 "k"), U(@127 #0 [ap(@125 #0 "l"), ap(@126 #0 "m")])])])])])])])])])])])])
+And(@152 #0 [F(@147 #0 [G(@146 #0 [ap(@145 #0 "p12")])]), Or(@148 #0 [U(@143 #0 [ap(@140 #1 "ad"), ap(@139 #1 "ab")]), And(@144 #0 [ap(@139 #1 "ab"), Not(@142 #0 [X(@141 #0 [ap(@140 #1 "ad")])])])]), G(@151 #0 [F(@150 #0 [ap(@149 #0 "p13")])])])
+G(@156 #0 [F(@155 #0 [X(@154 #0 [ap(@153 #0 "p12")])])])
+R(@161 #0 [ap(@157 #0 "a"), R(@160 #0 [ap(@158 #0 "ome"), ap(@159 #0 "anille")])])
+U(@165 #0 [Not(@163 #0 [ap(@162 #0 "p")]), ap(@164 #0 "q")])
+U(@173 #0 [Or(@172 #0 [Not(@169 #0 [ap(@166 #1 "p")]), R(@168 #0 [ap(@166 #1 "p"), ap(@167 #1 "q")])]), X(@171 #0 [Not(@170 #0 [ap(@167 #1 "q")])])])
+U(@181 #0 [And(@180 #0 [Not(@177 #0 [ap(@174 #1 "p")]), R(@176 #0 [ap(@174 #1 "p"), ap(@175 #1 "q")])]), X(@179 #0 [Not(@178 #0 [ap(@175 #1 "q")])])])
+U(@190 #0 [And(@189 #0 [G(@183 #0 [ap(@182 #1 "q")]), F(@186 #0 [Not(@185 #0 [ap(@184 #0 "p")])])]), X(@188 #0 [Not(@187 #0 [ap(@182 #1 "q")])])])
+R(@200 #0 [Or(@199 #0 [Not(@196 #0 [ap(@191 #1 "p")]), W(@195 #0 [M(@193 #0 [ap(@191 #1 "p"), ap(@192 #1 "q")]), ap(@194 #0 "x")])]), X(@198 #0 [Not(@197 #0 [ap(@192 #1 "q")])])])
+W(@210 #0 [Or(@209 #0 [Not(@206 #0 [ap(@201 #1 "p")]), R(@205 #0 [R(@203 #0 [ap(@201 #1 "p"), ap(@202 #1 "q")]), ap(@204 #0 "x")])]), X(@208 #0 [Not(@207 #0 [ap(@202 #1 "q")])])])
+X(@213 #0 [Not(@212 #0 [ap(@211 #0 "p2")])])
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ test -n dot
++ run 0 ../ltl2dot input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ltl2dot
++ cmd=../ltl2dot
++ shift
++ test -n ../ltl2dot
++ set ../ltl2dot input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ltl2dot input
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ dot -o /dev/null parse.dot
+digraph G {
+	graph [bb="0,0,54,36"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		0	[height=0.5,
+			label=tt,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+}
+digraph G {
+	graph [bb="0,0,54,36"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		0	[height=0.5,
+			label=tt,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+}
+digraph G {
+	graph [bb="0,0,54,36"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		0	[height=0.5,
+			label=ff,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+}
+digraph G {
+	graph [bb="0,0,54,36"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		0	[height=0.5,
+			label=a,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+}
+digraph G {
+	graph [bb="0,0,71,36"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		0	[height=0.5,
+			label=p11011,
+			pos="35.5,18",
+			shape=box,
+			width=0.98611];
+	}
+}
+digraph G {
+	graph [bb="0,0,71,36"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		0	[height=0.5,
+			label=p11011,
+			pos="35.5,18",
+			shape=box,
+			width=0.98611];
+	}
+}
+digraph G {
+	graph [bb="0,0,126,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=a,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		2	[height=0.5,
+			label=b,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=And,
+		pos="63,90",
+		width=0.79437];
+	0 -> 1	[pos="e,35.807,36.124 54.65,72.765 50.457,64.611 45.272,54.529 40.529,45.307"];
+	0 -> 2	[pos="e,90.193,36.124 71.35,72.765 75.543,64.611 80.728,54.529 85.471,45.307"];
+}
+digraph G {
+	graph [bb="0,0,126,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=_b12,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		2	[height=0.5,
+			label=a,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=And,
+		pos="63,90",
+		width=0.79437];
+	0 -> 1	[pos="e,35.807,36.124 54.65,72.765 50.457,64.611 45.272,54.529 40.529,45.307"];
+	0 -> 2	[pos="e,90.193,36.124 71.35,72.765 75.543,64.611 80.728,54.529 85.471,45.307"];
+}
+digraph G {
+	graph [bb="0,0,126,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=".b.",
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		2	[height=0.5,
+			label=a,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=And,
+		pos="63,90",
+		width=0.79437];
+	0 -> 1	[pos="e,35.807,36.124 54.65,72.765 50.457,64.611 45.272,54.529 40.529,45.307"];
+	0 -> 2	[pos="e,90.193,36.124 71.35,72.765 75.543,64.611 80.728,54.529 85.471,45.307"];
+}
+digraph G {
+	graph [bb="0,0,126,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=a,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		2	[height=0.5,
+			label=b,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=Or,
+		pos="63,90",
+		width=0.75];
+	0 -> 1	[pos="e,35.807,36.124 54.65,72.765 50.457,64.611 45.272,54.529 40.529,45.307"];
+	0 -> 2	[pos="e,90.193,36.124 71.35,72.765 75.543,64.611 80.728,54.529 85.471,45.307"];
+}
+digraph G {
+	graph [bb="0,0,133.5,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=a3214,
+			pos="30.5,18",
+			shape=box,
+			width=0.84722];
+		2	[height=0.5,
+			label=b,
+			pos="106.5,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=Or,
+		pos="68.5,90",
+		width=0.75];
+	0 -> 1	[pos="e,39.796,36.124 59.687,72.765 55.214,64.525 49.672,54.317 44.623,45.016"];
+	0 -> 2	[pos="e,97.204,36.124 77.313,72.765 81.786,64.525 87.328,54.317 92.377,45.016"];
+}
+digraph G {
+	graph [bb="0,0,126,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=a,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		2	[height=0.5,
+			label=b,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=And,
+		pos="63,90",
+		width=0.79437];
+	0 -> 1	[pos="e,35.807,36.124 54.65,72.765 50.457,64.611 45.272,54.529 40.529,45.307"];
+	0 -> 2	[pos="e,90.193,36.124 71.35,72.765 75.543,64.611 80.728,54.529 85.471,45.307"];
+}
+digraph G {
+	graph [bb="0,0,126,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=a,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		2	[height=0.5,
+			label=b,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=Or,
+		pos="63,90",
+		width=0.75];
+	0 -> 1	[pos="e,35.807,36.124 54.65,72.765 50.457,64.611 45.272,54.529 40.529,45.307"];
+	0 -> 2	[pos="e,90.193,36.124 71.35,72.765 75.543,64.611 80.728,54.529 85.471,45.307"];
+}
+digraph G {
+	graph [bb="0,0,126,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=a,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		2	[height=0.5,
+			label=b,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=Or,
+		pos="63,90",
+		width=0.75];
+	0 -> 1	[pos="e,35.807,36.124 54.65,72.765 50.457,64.611 45.272,54.529 40.529,45.307"];
+	0 -> 2	[pos="e,90.193,36.124 71.35,72.765 75.543,64.611 80.728,54.529 85.471,45.307"];
+}
+digraph G {
+	graph [bb="0,0,126,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=a,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		2	[height=0.5,
+			label=b,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=Or,
+		pos="63,90",
+		width=0.75];
+	0 -> 1	[pos="e,35.807,36.124 54.65,72.765 50.457,64.611 45.272,54.529 40.529,45.307"];
+	0 -> 2	[pos="e,90.193,36.124 71.35,72.765 75.543,64.611 80.728,54.529 85.471,45.307"];
+}
+digraph G {
+	graph [bb="0,0,126,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=_a_,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		2	[height=0.5,
+			label=b,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=U,
+		pos="63,90",
+		width=0.75];
+	0 -> 1	[pos="e,35.807,36.124 54.65,72.765 50.457,64.611 45.272,54.529 40.529,45.307",
+		tail_lp="49.65,65.265",
+		taillabel=L];
+	0 -> 2	[pos="e,90.193,36.124 71.35,72.765 75.543,64.611 80.728,54.529 85.471,45.307",
+		tail_lp="65.85,65.265",
+		taillabel=R];
+}
+digraph G {
+	graph [bb="0,0,126,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=a,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		2	[height=0.5,
+			label=b,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=R,
+		pos="63,90",
+		width=0.75];
+	0 -> 1	[pos="e,35.807,36.124 54.65,72.765 50.457,64.611 45.272,54.529 40.529,45.307",
+		tail_lp="49.65,65.265",
+		taillabel=L];
+	0 -> 2	[pos="e,90.193,36.124 71.35,72.765 75.543,64.611 80.728,54.529 85.471,45.307",
+		tail_lp="65.85,65.265",
+		taillabel=R];
+}
+digraph G {
+	graph [bb="0,0,126,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=a,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		2	[height=0.5,
+			label=b,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=Equiv,
+		pos="63,90",
+		width=1.0471];
+	0 -> 1	[pos="e,35.973,36.447 54.469,72.411 50.333,64.369 45.265,54.515 40.613,45.47",
+		tail_lp="49.469,64.911",
+		taillabel=L];
+	0 -> 2	[pos="e,90.027,36.447 71.531,72.411 75.667,64.369 80.735,54.515 85.387,45.47",
+		tail_lp="66.031,64.911",
+		taillabel=R];
+}
+digraph G {
+	graph [bb="0,0,126,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=a,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		2	[height=0.5,
+			label=b,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=Equiv,
+		pos="63,90",
+		width=1.0471];
+	0 -> 1	[pos="e,35.973,36.447 54.469,72.411 50.333,64.369 45.265,54.515 40.613,45.47",
+		tail_lp="49.469,64.911",
+		taillabel=L];
+	0 -> 2	[pos="e,90.027,36.447 71.531,72.411 75.667,64.369 80.735,54.515 85.387,45.47",
+		tail_lp="66.031,64.911",
+		taillabel=R];
+}
+digraph G {
+	graph [bb="0,0,126,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=a,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		2	[height=0.5,
+			label=b,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=Xor,
+		pos="63,90",
+		width=0.75];
+	0 -> 1	[pos="e,35.807,36.124 54.65,72.765 50.457,64.611 45.272,54.529 40.529,45.307",
+		tail_lp="49.65,65.265",
+		taillabel=L];
+	0 -> 2	[pos="e,90.193,36.124 71.35,72.765 75.543,64.611 80.728,54.529 85.471,45.307",
+		tail_lp="65.85,65.265",
+		taillabel=R];
+}
+digraph G {
+	graph [bb="0,0,126,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=a,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		2	[height=0.5,
+			label=b,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=Xor,
+		pos="63,90",
+		width=0.75];
+	0 -> 1	[pos="e,35.807,36.124 54.65,72.765 50.457,64.611 45.272,54.529 40.529,45.307",
+		tail_lp="49.65,65.265",
+		taillabel=L];
+	0 -> 2	[pos="e,90.193,36.124 71.35,72.765 75.543,64.611 80.728,54.529 85.471,45.307",
+		tail_lp="65.85,65.265",
+		taillabel=R];
+}
+digraph G {
+	graph [bb="0,0,126,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=a,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		2	[height=0.5,
+			label=b,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=Implies,
+		pos="63,90",
+		width=1.2457];
+	0 -> 1	[pos="e,35.884,36.275 54.285,72.055 50.146,64.007 45.105,54.205 40.488,45.226",
+		tail_lp="49.285,64.555",
+		taillabel=L];
+	0 -> 2	[pos="e,90.116,36.275 71.715,72.055 75.854,64.007 80.895,54.205 85.512,45.226",
+		tail_lp="66.215,64.555",
+		taillabel=R];
+}
+digraph G {
+	graph [bb="0,0,126,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=a,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		2	[height=0.5,
+			label=b,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=Implies,
+		pos="63,90",
+		width=1.2457];
+	0 -> 1	[pos="e,35.884,36.275 54.285,72.055 50.146,64.007 45.105,54.205 40.488,45.226",
+		tail_lp="49.285,64.555",
+		taillabel=L];
+	0 -> 2	[pos="e,90.116,36.275 71.715,72.055 75.854,64.007 80.895,54.205 85.512,45.226",
+		tail_lp="66.215,64.555",
+		taillabel=R];
+}
+digraph G {
+	graph [bb="0,0,54,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=b,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=F,
+		pos="27,90",
+		width=0.75];
+	0 -> 1	[pos="e,27,36.104 27,71.697 27,63.983 27,54.712 27,46.112"];
+}
+digraph G {
+	graph [bb="0,0,54,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=b,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=G,
+		pos="27,90",
+		width=0.75];
+	0 -> 1	[pos="e,27,36.104 27,71.697 27,63.983 27,54.712 27,46.112"];
+}
+digraph G {
+	graph [bb="0,0,54,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=b,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=G,
+		pos="27,90",
+		width=0.75];
+	0 -> 1	[pos="e,27,36.104 27,71.697 27,63.983 27,54.712 27,46.112"];
+}
+digraph G {
+	graph [bb="0,0,55.895,252"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		3	[height=0.5,
+			label=b,
+			pos="27.948,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=Not,
+		pos="27.948,234",
+		width=0.77632];
+	1	[height=0.5,
+		label=G,
+		pos="27.948,162",
+		width=0.75];
+	0 -> 1	[pos="e,27.948,180.1 27.948,215.7 27.948,207.98 27.948,198.71 27.948,190.11"];
+	2	[height=0.5,
+		label=Not,
+		pos="27.948,90",
+		width=0.77632];
+	1 -> 2	[pos="e,27.948,108.1 27.948,143.7 27.948,135.98 27.948,126.71 27.948,118.11"];
+	2 -> 3	[pos="e,27.948,36.104 27.948,71.697 27.948,63.983 27.948,54.712 27.948,46.112"];
+}
+digraph G {
+	graph [bb="0,0,55.895,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=b,
+			pos="27.948,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=Not,
+		pos="27.948,90",
+		width=0.77632];
+	0 -> 1	[pos="e,27.948,36.104 27.948,71.697 27.948,63.983 27.948,54.712 27.948,46.112"];
+}
+digraph G {
+	graph [bb="0,0,54,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=b,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=G,
+		pos="27,90",
+		width=0.75];
+	0 -> 1	[pos="e,27,36.104 27,71.697 27,63.983 27,54.712 27,46.112"];
+}
+digraph G {
+	graph [bb="0,0,54,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=b,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=F,
+		pos="27,90",
+		width=0.75];
+	0 -> 1	[pos="e,27,36.104 27,71.697 27,63.983 27,54.712 27,46.112"];
+}
+digraph G {
+	graph [bb="0,0,54,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=b,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=X,
+		pos="27,90",
+		width=0.75];
+	0 -> 1	[pos="e,27,36.104 27,71.697 27,63.983 27,54.712 27,46.112"];
+}
+digraph G {
+	graph [bb="0,0,54,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=b,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=X,
+		pos="27,90",
+		width=0.75];
+	0 -> 1	[pos="e,27,36.104 27,71.697 27,63.983 27,54.712 27,46.112"];
+}
+digraph G {
+	graph [bb="0,0,54,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=X,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=X,
+		pos="27,90",
+		width=0.75];
+	0 -> 1	[pos="e,27,36.104 27,71.697 27,63.983 27,54.712 27,46.112"];
+}
+digraph G {
+	graph [bb="0,0,54,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=F,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=X,
+		pos="27,90",
+		width=0.75];
+	0 -> 1	[pos="e,27,36.104 27,71.697 27,63.983 27,54.712 27,46.112"];
+}
+digraph G {
+	graph [bb="0,0,54,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=G,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=X,
+		pos="27,90",
+		width=0.75];
+	0 -> 1	[pos="e,27,36.104 27,71.697 27,63.983 27,54.712 27,46.112"];
+}
+digraph G {
+	graph [bb="0,0,54,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=U,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=X,
+		pos="27,90",
+		width=0.75];
+	0 -> 1	[pos="e,27,36.104 27,71.697 27,63.983 27,54.712 27,46.112"];
+}
+digraph G {
+	graph [bb="0,0,54,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=W,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=X,
+		pos="27,90",
+		width=0.75];
+	0 -> 1	[pos="e,27,36.104 27,71.697 27,63.983 27,54.712 27,46.112"];
+}
+digraph G {
+	graph [bb="0,0,54,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=R,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=X,
+		pos="27,90",
+		width=0.75];
+	0 -> 1	[pos="e,27,36.104 27,71.697 27,63.983 27,54.712 27,46.112"];
+}
+digraph G {
+	graph [bb="0,0,54,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=M,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=X,
+		pos="27,90",
+		width=0.75];
+	0 -> 1	[pos="e,27,36.104 27,71.697 27,63.983 27,54.712 27,46.112"];
+}
+digraph G {
+	graph [bb="0,0,430,108"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=long_atomic_proposition_1,
+			pos="103,18",
+			shape=box,
+			width=2.8611];
+		2	[height=0.5,
+			label=long_atomic_proposition_2,
+			pos="327,18",
+			shape=box,
+			width=2.8611];
+	}
+	0	[height=0.5,
+		label=U,
+		pos="215,90",
+		width=0.75];
+	0 -> 1	[pos="e,130.51,36.191 196,77.125 180.48,67.427 158.11,53.442 139.19,41.62",
+		tail_lp="191,69.625",
+		taillabel=L];
+	0 -> 2	[pos="e,299.49,36.191 234,77.125 249.52,67.427 271.89,53.442 290.81,41.62",
+		tail_lp="239.5,69.625",
+		taillabel=R];
+}
+digraph G {
+	graph [bb="0,0,271,180"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		2	[height=0.5,
+			label=ad,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		3	[height=0.5,
+			label=af,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+		5	[height=0.5,
+			label=ab,
+			pos="172,18",
+			shape=box,
+			width=0.75];
+		6	[height=0.5,
+			label=ac,
+			pos="244,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=Or,
+		pos="135,162",
+		width=0.75];
+	1	[height=0.5,
+		label=Xor,
+		pos="98,90",
+		width=0.75];
+	0 -> 1	[pos="e,106.54,107.15 126.42,144.76 121.94,136.28 116.35,125.71 111.32,116.2"];
+	4	[height=0.5,
+		label=And,
+		pos="172,90",
+		width=0.79437];
+	0 -> 4	[pos="e,163.21,107.63 143.58,144.76 148,136.4 153.49,126.02 158.47,116.61"];
+	1 -> 2	[pos="e,44.45,36.204 83.289,74.496 74.202,65.538 62.311,53.813 51.799,43.45",
+		tail_lp="78.289,66.996",
+		taillabel=L];
+	1 -> 3	[pos="e,98.756,36.104 98.247,71.697 98.357,63.983 98.49,54.712 98.613,46.112",
+		tail_lp="92.747,64.197",
+		taillabel=R];
+	4 -> 5	[pos="e,172,36.104 172,71.697 172,63.983 172,54.712 172,46.112"];
+	4 -> 6	[pos="e,226.3,36.204 186.92,74.496 196.13,65.538 208.19,53.813 218.85,43.45"];
+}
+digraph G {
+	graph [bb="0,0,198,252"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=d,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		3	[height=0.5,
+			label=a,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+		5	[height=0.5,
+			label=b,
+			pos="171,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=And,
+		pos="54,234",
+		width=0.79437];
+	0 -> 1	[pos="e,29.174,36.232 51.836,215.85 47.166,178.83 36.107,91.181 30.455,46.386"];
+	2	[height=0.5,
+		label=Or,
+		pos="90,162",
+		width=0.75];
+	0 -> 2	[pos="e,81.696,179.15 62.35,216.76 66.712,208.28 72.147,197.71 77.041,188.2"];
+	2 -> 3	[pos="e,97.911,36.189 91.086,143.87 92.619,119.67 95.437,75.211 97.264,46.393"];
+	4	[height=0.5,
+		label=And,
+		pos="147,90",
+		width=0.79437];
+	2 -> 4	[pos="e,134.26,106.64 102.37,145.81 109.81,136.67 119.44,124.85 127.84,114.52"];
+	4 -> 3	[pos="e,110.86,36.292 136.11,73.116 130.35,64.716 123.13,54.196 116.6,44.671"];
+	4 -> 5	[pos="e,165.08,36.275 152.81,72.055 155.51,64.176 158.79,54.617 161.81,45.794"];
+}
+digraph G {
+	graph [bb="0,0,270,252"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=af,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		3	[height=0.5,
+			label=ad,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+		5	[height=0.5,
+			label=ab,
+			pos="171,18",
+			shape=box,
+			width=0.75];
+		6	[height=0.5,
+			label=ac,
+			pos="243,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=Equiv,
+		pos="63,234",
+		width=1.0471];
+	0 -> 1	[pos="e,29.899,36.232 60.115,215.85 53.874,178.75 39.08,90.81 31.559,46.103",
+		tail_lp="55.115,208.35",
+		taillabel=L];
+	2	[height=0.5,
+		label=Or,
+		pos="99,162",
+		width=0.75];
+	0 -> 2	[pos="e,90.53,179.47 71.531,216.41 75.836,208.04 81.149,197.71 85.953,188.37",
+		tail_lp="66.031,208.91",
+		taillabel=R];
+	2 -> 3	[pos="e,99,36.189 99,143.87 99,119.67 99,75.211 99,46.393"];
+	4	[height=0.5,
+		label=And,
+		pos="171,90",
+		width=0.79437];
+	2 -> 4	[pos="e,155.96,105.63 113.57,146.83 123.59,137.1 137.08,123.98 148.47,112.9"];
+	4 -> 5	[pos="e,171,36.104 171,71.697 171,63.983 171,54.712 171,46.112"];
+	4 -> 6	[pos="e,225.3,36.204 185.92,74.496 195.13,65.538 207.19,53.813 217.85,43.45"];
+}
+digraph G {
+	graph [bb="0,0,918,900"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=a,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		3	[height=0.5,
+			label=b,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+		5	[height=0.5,
+			label=c,
+			pos="171,18",
+			shape=box,
+			width=0.75];
+		7	[height=0.5,
+			label=d,
+			pos="243,18",
+			shape=box,
+			width=0.75];
+		9	[height=0.5,
+			label=e,
+			pos="315,18",
+			shape=box,
+			width=0.75];
+		11	[height=0.5,
+			label=f,
+			pos="387,18",
+			shape=box,
+			width=0.75];
+		13	[height=0.5,
+			label=g,
+			pos="459,18",
+			shape=box,
+			width=0.75];
+		15	[height=0.5,
+			label=h,
+			pos="531,18",
+			shape=box,
+			width=0.75];
+		17	[height=0.5,
+			label=i,
+			pos="603,18",
+			shape=box,
+			width=0.75];
+		19	[height=0.5,
+			label=j,
+			pos="675,18",
+			shape=box,
+			width=0.75];
+		21	[height=0.5,
+			label=k,
+			pos="747,18",
+			shape=box,
+			width=0.75];
+		23	[height=0.5,
+			label=l,
+			pos="819,18",
+			shape=box,
+			width=0.75];
+		24	[height=0.5,
+			label=m,
+			pos="891,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=U,
+		pos="63,882",
+		width=0.75];
+	0 -> 1	[pos="e,27,36.049 55.888,864.3 45.396,838.11 27,785.54 27,739 27,739 27,739 27,161 27,121 27,74.653 27,46.08",
+		tail_lp="50.888,856.8",
+		taillabel=L];
+	2	[height=0.5,
+		label=U,
+		pos="99,810",
+		width=0.75];
+	0 -> 2	[pos="e,90.696,827.15 71.35,864.76 75.712,856.28 81.147,845.71 86.041,836.2",
+		tail_lp="65.85,857.26",
+		taillabel=R];
+	2 -> 3	[pos="e,99,36.049 99,791.95 99,765.29 99,712.11 99,667 99,667 99,667 99,161 99,121 99,74.653 99,46.08",
+		tail_lp="94,784.45",
+		taillabel=L];
+	4	[height=0.5,
+		label=U,
+		pos="171,738",
+		width=0.75];
+	2 -> 4	[pos="e,156.2,753.38 113.57,794.83 123.75,784.94 137.52,771.55 149.03,760.36",
+		tail_lp="108.07,787.33",
+		taillabel=R];
+	4 -> 5	[pos="e,171,36.049 171,719.95 171,693.29 171,640.11 171,595 171,595 171,595 171,161 171,121 171,74.653 171,46.08",
+		tail_lp="166,712.45",
+		taillabel=L];
+	6	[height=0.5,
+		label=U,
+		pos="243,666",
+		width=0.75];
+	4 -> 6	[pos="e,228.2,681.38 185.57,722.83 195.75,712.94 209.52,699.55 221.03,688.36",
+		tail_lp="180.07,715.33",
+		taillabel=R];
+	6 -> 7	[pos="e,243,36.049 243,647.95 243,621.29 243,568.11 243,523 243,523 243,523 243,161 243,121 243,74.653 243,46.08",
+		tail_lp="238,640.45",
+		taillabel=L];
+	8	[height=0.5,
+		label=U,
+		pos="315,594",
+		width=0.75];
+	6 -> 8	[pos="e,300.2,609.38 257.57,650.83 267.75,640.94 281.52,627.55 293.03,616.36",
+		tail_lp="252.07,643.33",
+		taillabel=R];
+	8 -> 9	[pos="e,315,36.049 315,575.95 315,549.29 315,496.11 315,451 315,451 315,451 315,161 315,121 315,74.653 315,46.08",
+		tail_lp="310,568.45",
+		taillabel=L];
+	10	[height=0.5,
+		label=U,
+		pos="387,522",
+		width=0.75];
+	8 -> 10	[pos="e,372.2,537.38 329.57,578.83 339.75,568.94 353.52,555.55 365.03,544.36",
+		tail_lp="324.07,571.33",
+		taillabel=R];
+	10 -> 11	[pos="e,387,36.049 387,503.95 387,477.29 387,424.11 387,379 387,379 387,379 387,161 387,121 387,74.653 387,46.08",
+		tail_lp="382,496.45",
+		taillabel=L];
+	12	[height=0.5,
+		label=U,
+		pos="459,450",
+		width=0.75];
+	10 -> 12	[pos="e,444.2,465.38 401.57,506.83 411.75,496.94 425.52,483.55 437.03,472.36",
+		tail_lp="396.07,499.33",
+		taillabel=R];
+	12 -> 13	[pos="e,459,36.049 459,431.95 459,405.29 459,352.11 459,307 459,307 459,307 459,161 459,121 459,74.653 459,46.08",
+		tail_lp="454,424.45",
+		taillabel=L];
+	14	[height=0.5,
+		label=U,
+		pos="531,378",
+		width=0.75];
+	12 -> 14	[pos="e,516.2,393.38 473.57,434.83 483.75,424.94 497.52,411.55 509.03,400.36",
+		tail_lp="468.07,427.33",
+		taillabel=R];
+	14 -> 15	[pos="e,531,36.049 531,359.95 531,333.29 531,280.11 531,235 531,235 531,235 531,161 531,121 531,74.653 531,46.08",
+		tail_lp="526,352.45",
+		taillabel=L];
+	16	[height=0.5,
+		label=U,
+		pos="603,306",
+		width=0.75];
+	14 -> 16	[pos="e,588.2,321.38 545.57,362.83 555.75,352.94 569.52,339.55 581.03,328.36",
+		tail_lp="540.07,355.33",
+		taillabel=R];
+	16 -> 17	[pos="e,603,36.306 603,287.97 603,240.29 603,105.18 603,46.63",
+		tail_lp="598,280.47",
+		taillabel=L];
+	18	[height=0.5,
+		label=U,
+		pos="675,234",
+		width=0.75];
+	16 -> 18	[pos="e,660.2,249.38 617.57,290.83 627.75,280.94 641.52,267.55 653.03,256.36",
+		tail_lp="612.07,283.33",
+		taillabel=R];
+	18 -> 19	[pos="e,675,36.232 675,215.85 675,178.83 675,91.181 675,46.386",
+		tail_lp="670,208.35",
+		taillabel=L];
+	20	[height=0.5,
+		label=U,
+		pos="747,162",
+		width=0.75];
+	18 -> 20	[pos="e,732.2,177.38 689.57,218.83 699.75,208.94 713.52,195.55 725.03,184.36",
+		tail_lp="684.07,211.33",
+		taillabel=R];
+	20 -> 21	[pos="e,747,36.189 747,143.87 747,119.67 747,75.211 747,46.393",
+		tail_lp="742,136.37",
+		taillabel=L];
+	22	[height=0.5,
+		label=U,
+		pos="819,90",
+		width=0.75];
+	20 -> 22	[pos="e,804.2,105.38 761.57,146.83 771.75,136.94 785.52,123.55 797.03,112.36",
+		tail_lp="756.07,139.33",
+		taillabel=R];
+	22 -> 23	[pos="e,819,36.104 819,71.697 819,63.983 819,54.712 819,46.112",
+		tail_lp="814,64.197",
+		taillabel=L];
+	22 -> 24	[pos="e,873.4,36.113 833.57,74.834 842.92,65.746 855.3,53.71 866.17,43.141",
+		tail_lp="828.07,67.334",
+		taillabel=R];
+}
+digraph G {
+	graph [bb="0,0,291,396"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		3	[height=0.5,
+			label=p12,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		6	[height=0.5,
+			label=ad,
+			pos="187,18",
+			shape=box,
+			width=0.75];
+		7	[height=0.5,
+			label=ab,
+			pos="105,18",
+			shape=box,
+			width=0.75];
+		13	[height=0.5,
+			label=p13,
+			pos="264,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=And,
+		pos="160,378",
+		width=0.79437];
+	1	[height=0.5,
+		label=F,
+		pos="78,306",
+		width=0.75];
+	0 -> 1	[pos="e,94.011,320.67 143.41,362.83 131.47,352.64 115.19,338.75 101.86,327.37"];
+	4	[height=0.5,
+		label=Or,
+		pos="160,306",
+		width=0.75];
+	0 -> 4	[pos="e,160,324.1 160,359.7 160,351.98 160,342.71 160,334.11"];
+	11	[height=0.5,
+		label=G,
+		pos="237,306",
+		width=0.75];
+	0 -> 11	[pos="e,221.7,320.91 175.58,362.83 186.61,352.81 201.59,339.19 213.99,327.92"];
+	2	[height=0.5,
+		label=G,
+		pos="27,162",
+		width=0.75];
+	1 -> 2	[pos="e,33.07,179.9 72.05,288.43 63.306,264.09 46.898,218.4 36.482,189.4"];
+	2 -> 3	[pos="e,27,36.189 27,143.87 27,119.67 27,75.211 27,46.393"];
+	5	[height=0.5,
+		label=U,
+		pos="209,90",
+		width=0.75];
+	4 -> 5	[pos="e,206.04,108.04 165.59,287.92 168.86,277.59 172.94,264.11 176,252 187.81,205.28 198.4,150.12 204.24,118"];
+	8	[height=0.5,
+		label=And,
+		pos="138,234",
+		width=0.79437];
+	4 -> 8	[pos="e,143.28,251.79 154.67,288.05 152.16,280.06 149.1,270.33 146.3,261.4"];
+	5 -> 6	[pos="e,192.43,36.275 203.67,72.055 201.22,64.261 198.26,54.822 195.51,46.079",
+		tail_lp="198.67,64.555",
+		taillabel=L];
+	5 -> 7	[pos="e,130.46,36.139 190.41,76.485 176.18,66.908 156.16,53.435 139.08,41.939",
+		tail_lp="184.91,68.985",
+		taillabel=R];
+	8 -> 7	[pos="e,100.96,36.43 123.87,218.14 115.44,208.19 105.51,194.34 101,180 86.83,134.95 93.1,79.26 99.006,46.582"];
+	9	[height=0.5,
+		label=Not,
+		pos="138,162",
+		width=0.77632];
+	8 -> 9	[pos="e,138,180.1 138,215.7 138,207.98 138,198.71 138,190.11"];
+	10	[height=0.5,
+		label=X,
+		pos="137,90",
+		width=0.75];
+	9 -> 10	[pos="e,137.24,108.1 137.75,143.7 137.64,135.98 137.51,126.71 137.39,118.11"];
+	10 -> 6	[pos="e,174.53,36.461 148.1,73.465 154.15,64.991 161.8,54.286 168.7,44.613"];
+	12	[height=0.5,
+		label=F,
+		pos="257,234",
+		width=0.75];
+	11 -> 12	[pos="e,252.2,251.79 241.84,288.05 244.1,280.14 246.85,270.54 249.37,261.69"];
+	12 -> 13	[pos="e,263.44,36.232 257.56,215.85 258.77,178.83 261.64,91.181 263.1,46.386"];
+}
+digraph G {
+	graph [bb="0,0,54,252"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		3	[height=0.5,
+			label=p12,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=G,
+		pos="27,234",
+		width=0.75];
+	1	[height=0.5,
+		label=F,
+		pos="27,162",
+		width=0.75];
+	0 -> 1	[pos="e,27,180.1 27,215.7 27,207.98 27,198.71 27,190.11"];
+	2	[height=0.5,
+		label=X,
+		pos="27,90",
+		width=0.75];
+	1 -> 2	[pos="e,27,108.1 27,143.7 27,135.98 27,126.71 27,118.11"];
+	2 -> 3	[pos="e,27,36.104 27,71.697 27,63.983 27,54.712 27,46.112"];
+}
+digraph G {
+	graph [bb="0,0,200,180"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		1	[height=0.5,
+			label=a,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		3	[height=0.5,
+			label=ome,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+		4	[height=0.5,
+			label=anille,
+			pos="172,18",
+			shape=box,
+			width=0.77778];
+	}
+	0	[height=0.5,
+		label=R,
+		pos="63,162",
+		width=0.75];
+	0 -> 1	[pos="e,31.378,36.268 58.729,144.15 52.591,119.94 41.211,75.054 33.879,46.133",
+		tail_lp="53.729,136.65",
+		taillabel=L];
+	2	[height=0.5,
+		label=R,
+		pos="99,90",
+		width=0.75];
+	0 -> 2	[pos="e,90.696,107.15 71.35,144.76 75.712,136.28 81.147,125.71 86.041,116.2",
+		tail_lp="65.85,137.26",
+		taillabel=R];
+	2 -> 3	[pos="e,99,36.104 99,71.697 99,63.983 99,54.712 99,46.112",
+		tail_lp="94,64.197",
+		taillabel=L];
+	2 -> 4	[pos="e,154.15,36.113 113.77,74.834 123.25,65.746 135.8,53.71 146.82,43.141",
+		tail_lp="108.27,67.334",
+		taillabel=R];
+}
+digraph G {
+	graph [bb="0,0,126,180"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		2	[height=0.5,
+			label=p,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+		3	[height=0.5,
+			label=q,
+			pos="99,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=U,
+		pos="63,162",
+		width=0.75];
+	1	[height=0.5,
+		label=Not,
+		pos="35,90",
+		width=0.77632];
+	0 -> 1	[pos="e,41.782,107.96 56.364,144.41 53.134,136.34 49.172,126.43 45.542,117.35",
+		tail_lp="51.364,136.91",
+		taillabel=L];
+	0 -> 3	[pos="e,94.622,36.268 67.271,144.15 73.409,119.94 84.789,75.054 92.121,46.133",
+		tail_lp="61.771,136.65",
+		taillabel=R];
+	1 -> 2	[pos="e,28.955,36.104 33.022,71.697 32.141,63.983 31.081,54.712 30.099,46.112"];
+}
+digraph G {
+	graph [bb="0,0,201.9,252"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		3	[height=0.5,
+			label=p,
+			pos="64.948,18",
+			shape=box,
+			width=0.75];
+		5	[height=0.5,
+			label=q,
+			pos="136.95,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=U,
+		pos="136.95,234",
+		width=0.75];
+	1	[height=0.5,
+		label=Or,
+		pos="100.95,162",
+		width=0.75];
+	0 -> 1	[pos="e,109.25,179.15 128.6,216.76 124.24,208.28 118.8,197.71 113.91,188.2",
+		tail_lp="123.6,209.26",
+		taillabel=L];
+	6	[height=0.5,
+		label=X,
+		pos="172.95,162",
+		width=0.75];
+	0 -> 6	[pos="e,164.64,179.15 145.3,216.76 149.66,208.28 155.09,197.71 159.99,188.2",
+		tail_lp="139.8,209.26",
+		taillabel=R];
+	2	[height=0.5,
+		label=Not,
+		pos="27.948,90",
+		width=0.77632];
+	1 -> 2	[pos="e,42.949,105.38 86.175,146.83 75.854,136.94 61.889,123.55 50.222,112.36"];
+	4	[height=0.5,
+		label=R,
+		pos="100.95,90",
+		width=0.75];
+	1 -> 4	[pos="e,100.95,108.1 100.95,143.7 100.95,135.98 100.95,126.71 100.95,118.11"];
+	2 -> 3	[pos="e,55.896,36.124 36.529,72.765 40.884,64.525 46.28,54.317 51.196,45.016"];
+	4 -> 3	[pos="e,73.754,36.124 92.598,72.765 88.405,64.611 83.22,54.529 78.477,45.307",
+		tail_lp="87.598,65.265",
+		taillabel=L];
+	4 -> 5	[pos="e,128.14,36.124 109.3,72.765 113.49,64.611 118.68,54.529 123.42,45.307",
+		tail_lp="103.8,65.265",
+		taillabel=R];
+	7	[height=0.5,
+		label=Not,
+		pos="173.95,90",
+		width=0.77632];
+	6 -> 7	[pos="e,173.7,108.1 173.19,143.7 173.3,135.98 173.44,126.71 173.56,118.11"];
+	7 -> 5	[pos="e,146,36.124 165.37,72.765 161.01,64.525 155.61,54.317 150.7,45.016"];
+}
+digraph G {
+	graph [bb="0,0,201.9,252"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		3	[height=0.5,
+			label=p,
+			pos="64.948,18",
+			shape=box,
+			width=0.75];
+		5	[height=0.5,
+			label=q,
+			pos="136.95,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=U,
+		pos="136.95,234",
+		width=0.75];
+	1	[height=0.5,
+		label=And,
+		pos="99.948,162",
+		width=0.79437];
+	0 -> 1	[pos="e,108.74,179.63 128.37,216.76 123.95,208.4 118.46,198.02 113.48,188.61",
+		tail_lp="123.37,209.26",
+		taillabel=L];
+	6	[height=0.5,
+		label=X,
+		pos="173.95,162",
+		width=0.75];
+	0 -> 6	[pos="e,165.41,179.15 145.53,216.76 150.01,208.28 155.6,197.71 160.63,188.2",
+		tail_lp="140.03,209.26",
+		taillabel=R];
+	2	[height=0.5,
+		label=Not,
+		pos="27.948,90",
+		width=0.77632];
+	1 -> 2	[pos="e,42.847,105.49 85.029,146.5 74.989,136.73 61.571,123.69 50.267,112.7"];
+	4	[height=0.5,
+		label=R,
+		pos="100.95,90",
+		width=0.75];
+	1 -> 4	[pos="e,100.7,108.1 100.19,143.7 100.3,135.98 100.44,126.71 100.56,118.11"];
+	2 -> 3	[pos="e,55.896,36.124 36.529,72.765 40.884,64.525 46.28,54.317 51.196,45.016"];
+	4 -> 3	[pos="e,73.754,36.124 92.598,72.765 88.405,64.611 83.22,54.529 78.477,45.307",
+		tail_lp="87.598,65.265",
+		taillabel=L];
+	4 -> 5	[pos="e,128.14,36.124 109.3,72.765 113.49,64.611 118.68,54.529 123.42,45.307",
+		tail_lp="103.8,65.265",
+		taillabel=R];
+	7	[height=0.5,
+		label=Not,
+		pos="173.95,90",
+		width=0.77632];
+	6 -> 7	[pos="e,173.95,108.1 173.95,143.7 173.95,135.98 173.95,126.71 173.95,118.11"];
+	7 -> 5	[pos="e,146,36.124 165.37,72.765 161.01,64.525 155.61,54.317 150.7,45.016"];
+}
+digraph G {
+	graph [bb="0,0,183.9,324"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		3	[height=0.5,
+			label=q,
+			pos="127.95,18",
+			shape=box,
+			width=0.75];
+		6	[height=0.5,
+			label=p,
+			pos="27.948,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=U,
+		pos="118.95,306",
+		width=0.75];
+	1	[height=0.5,
+		label=And,
+		pos="81.948,234",
+		width=0.79437];
+	0 -> 1	[pos="e,90.739,251.63 110.37,288.76 105.95,280.4 100.46,270.02 95.482,260.61",
+		tail_lp="105.37,281.26",
+		taillabel=L];
+	7	[height=0.5,
+		label=X,
+		pos="155.95,234",
+		width=0.75];
+	0 -> 7	[pos="e,147.41,251.15 127.53,288.76 132.01,280.28 137.6,269.71 142.63,260.2",
+		tail_lp="122.03,281.26",
+		taillabel=R];
+	2	[height=0.5,
+		label=G,
+		pos="100.95,90",
+		width=0.75];
+	1 -> 2	[pos="e,98.648,108.19 84.239,215.87 87.478,191.67 93.426,147.21 97.282,118.39"];
+	4	[height=0.5,
+		label=F,
+		pos="32.948,162",
+		width=0.75];
+	1 -> 4	[pos="e,44.022,178.82 70.829,217.12 64.626,208.26 56.774,197.04 49.828,187.12"];
+	2 -> 3	[pos="e,121.22,36.447 107.35,72.411 110.38,64.539 114.09,54.929 117.52,46.042"];
+	5	[height=0.5,
+		label=Not,
+		pos="27.948,90",
+		width=0.77632];
+	4 -> 5	[pos="e,29.169,108.1 31.712,143.7 31.161,135.98 30.498,126.71 29.884,118.11"];
+	5 -> 6	[pos="e,27.948,36.104 27.948,71.697 27.948,63.983 27.948,54.712 27.948,46.112"];
+	8	[height=0.5,
+		label=Not,
+		pos="155.95,162",
+		width=0.77632];
+	7 -> 8	[pos="e,155.95,180.1 155.95,215.7 155.95,207.98 155.95,198.71 155.95,190.11"];
+	8 -> 3	[pos="e,131.34,36.189 152.57,143.87 147.78,119.56 138.95,74.819 133.27,46.013"];
+}
+digraph G {
+	graph [bb="0,0,238.95,324"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		3	[height=0.5,
+			label=p,
+			pos="119,18",
+			shape=box,
+			width=0.75];
+		6	[height=0.5,
+			label=q,
+			pos="201,18",
+			shape=box,
+			width=0.75];
+		7	[height=0.5,
+			label=x,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=R,
+		pos="175,306",
+		width=0.75];
+	1	[height=0.5,
+		label=Or,
+		pos="139,234",
+		width=0.75];
+	0 -> 1	[pos="e,147.3,251.15 166.65,288.76 162.29,280.28 156.85,269.71 151.96,260.2",
+		tail_lp="161.65,281.26",
+		taillabel=L];
+	8	[height=0.5,
+		label=X,
+		pos="211,234",
+		width=0.75];
+	0 -> 8	[pos="e,202.7,251.15 183.35,288.76 187.71,280.28 193.15,269.71 198.04,260.2",
+		tail_lp="177.85,281.26",
+		taillabel=R];
+	2	[height=0.5,
+		label=Not,
+		pos="155,90",
+		width=0.77632];
+	1 -> 2	[pos="e,153.06,108.19 140.93,215.87 143.66,191.67 148.67,147.21 151.91,118.39"];
+	4	[height=0.5,
+		label=W,
+		pos="82,162",
+		width=0.75];
+	1 -> 4	[pos="e,94.344,178.16 126.63,217.81 119.09,208.55 109.3,196.52 100.81,186.09"];
+	2 -> 3	[pos="e,127.81,36.124 146.65,72.765 142.46,64.611 137.27,54.529 132.53,45.307"];
+	5	[height=0.5,
+		label=M,
+		pos="82,90",
+		width=0.75];
+	4 -> 5	[pos="e,82,108.1 82,143.7 82,135.98 82,126.71 82,118.11",
+		tail_lp="77,136.2",
+		taillabel=L];
+	4 -> 7	[pos="e,28.697,36.326 69.252,145.7 61.441,135.59 51.852,121.71 46,108 37.587,88.293 32.755,64.488 30.072,46.458",
+		tail_lp="63.752,138.2",
+		taillabel=R];
+	5 -> 3	[pos="e,109.95,36.124 90.582,72.765 94.937,64.525 100.33,54.317 105.25,45.016",
+		tail_lp="85.582,65.265",
+		taillabel=L];
+	5 -> 6	[pos="e,173.75,35.029 101.65,77.441 118.79,67.361 144.08,52.479 164.86,40.257",
+		tail_lp="107.15,69.941",
+		taillabel=R];
+	9	[height=0.5,
+		label=Not,
+		pos="211,162",
+		width=0.77632];
+	8 -> 9	[pos="e,211,180.1 211,215.7 211,207.98 211,198.71 211,190.11"];
+	9 -> 6	[pos="e,202.21,36.189 209.79,143.87 208.09,119.67 204.96,75.211 202.93,46.393"];
+}
+digraph G {
+	graph [bb="0,0,238.95,324"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		3	[height=0.5,
+			label=p,
+			pos="119,18",
+			shape=box,
+			width=0.75];
+		6	[height=0.5,
+			label=q,
+			pos="201,18",
+			shape=box,
+			width=0.75];
+		7	[height=0.5,
+			label=x,
+			pos="27,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=W,
+		pos="175,306",
+		width=0.75];
+	1	[height=0.5,
+		label=Or,
+		pos="139,234",
+		width=0.75];
+	0 -> 1	[pos="e,147.3,251.15 166.65,288.76 162.29,280.28 156.85,269.71 151.96,260.2",
+		tail_lp="161.65,281.26",
+		taillabel=L];
+	8	[height=0.5,
+		label=X,
+		pos="211,234",
+		width=0.75];
+	0 -> 8	[pos="e,202.7,251.15 183.35,288.76 187.71,280.28 193.15,269.71 198.04,260.2",
+		tail_lp="177.85,281.26",
+		taillabel=R];
+	2	[height=0.5,
+		label=Not,
+		pos="155,90",
+		width=0.77632];
+	1 -> 2	[pos="e,153.06,108.19 140.93,215.87 143.66,191.67 148.67,147.21 151.91,118.39"];
+	4	[height=0.5,
+		label=R,
+		pos="82,162",
+		width=0.75];
+	1 -> 4	[pos="e,94.344,178.16 126.63,217.81 119.09,208.55 109.3,196.52 100.81,186.09"];
+	2 -> 3	[pos="e,127.81,36.124 146.65,72.765 142.46,64.611 137.27,54.529 132.53,45.307"];
+	5	[height=0.5,
+		label=R,
+		pos="82,90",
+		width=0.75];
+	4 -> 5	[pos="e,82,108.1 82,143.7 82,135.98 82,126.71 82,118.11",
+		tail_lp="77,136.2",
+		taillabel=L];
+	4 -> 7	[pos="e,28.697,36.326 69.252,145.7 61.441,135.59 51.852,121.71 46,108 37.587,88.293 32.755,64.488 30.072,46.458",
+		tail_lp="63.752,138.2",
+		taillabel=R];
+	5 -> 3	[pos="e,109.95,36.124 90.582,72.765 94.937,64.525 100.33,54.317 105.25,45.016",
+		tail_lp="85.582,65.265",
+		taillabel=L];
+	5 -> 6	[pos="e,173.75,35.029 101.65,77.441 118.79,67.361 144.08,52.479 164.86,40.257",
+		tail_lp="107.15,69.941",
+		taillabel=R];
+	9	[height=0.5,
+		label=Not,
+		pos="211,162",
+		width=0.77632];
+	8 -> 9	[pos="e,211,180.1 211,215.7 211,207.98 211,198.71 211,190.11"];
+	9 -> 6	[pos="e,202.21,36.189 209.79,143.87 208.09,119.67 204.96,75.211 202.93,46.393"];
+}
+digraph G {
+	graph [bb="0,0,55.895,180"];
+	node [label="\N"];
+	subgraph atoms {
+		graph [rank=sink];
+		2	[height=0.5,
+			label=p2,
+			pos="27.948,18",
+			shape=box,
+			width=0.75];
+	}
+	0	[height=0.5,
+		label=X,
+		pos="27.948,162",
+		width=0.75];
+	1	[height=0.5,
+		label=Not,
+		pos="27.948,90",
+		width=0.77632];
+	0 -> 1	[pos="e,27.948,108.1 27.948,143.7 27.948,135.98 27.948,126.71 27.948,118.11"];
+	1 -> 2	[pos="e,27.948,36.104 27.948,71.697 27.948,63.983 27.948,54.712 27.948,46.112"];
+}
++ run 0 ../ikwiad -d a U b
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -d a U b
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -d a U b
+Starting parse
+Entering state 0
+Stack now 0
+Reading a token
+Next token is token LTL start marker (1.1: )
+Shifting token LTL start marker (1.1: )
+Entering state 1
+Stack now 0 1
+Reading a token
+Next token is token atomic proposition (1.1: a)
+Shifting token atomic proposition (1.1: a)
+Entering state 20
+Stack now 0 1 20
+Reducing stack by rule 59 (line 611):
+   $1 = token atomic proposition (1.1: a)
+-> $$ = nterm atomprop (1.1: a)
+Entering state 26
+Stack now 0 1 26
+Reading a token
+Next token is token until operator (1.3: )
+Reducing stack by rule 60 (line 619):
+   $1 = nterm atomprop (1.1: a)
+-> $$ = nterm booleanatom (1.1: a)
+Entering state 27
+Stack now 0 1 27
+Reducing stack by rule 141 (line 987):
+   $1 = nterm booleanatom (1.1: a)
+-> $$ = nterm subformula (1.1: a)
+Entering state 30
+Stack now 0 1 30
+Next token is token until operator (1.3: )
+Shifting token until operator (1.3: )
+Entering state 119
+Stack now 0 1 30 119
+Reading a token
+Next token is token atomic proposition (1.5: b)
+Shifting token atomic proposition (1.5: b)
+Entering state 20
+Stack now 0 1 30 119 20
+Reducing stack by rule 59 (line 611):
+   $1 = token atomic proposition (1.5: b)
+-> $$ = nterm atomprop (1.5: b)
+Entering state 26
+Stack now 0 1 30 119 26
+Reading a token
+Next token is token end of formula (1.6-5: )
+Reducing stack by rule 60 (line 619):
+   $1 = nterm atomprop (1.5: b)
+-> $$ = nterm booleanatom (1.5: b)
+Entering state 27
+Stack now 0 1 30 119 27
+Reducing stack by rule 141 (line 987):
+   $1 = nterm booleanatom (1.5: b)
+-> $$ = nterm subformula (1.5: b)
+Entering state 247
+Stack now 0 1 30 119 247
+Next token is token end of formula (1.6-5: )
+Reducing stack by rule 157 (line 1017):
+   $1 = nterm subformula (1.1: a)
+   $2 = token until operator (1.3: )
+   $3 = nterm subformula (1.5: b)
+-> $$ = nterm subformula (1.1-5: a U b)
+Entering state 30
+Stack now 0 1 30
+Next token is token end of formula (1.6-5: )
+Shifting token end of formula (1.6-5: )
+Entering state 124
+Stack now 0 1 30 124
+Reducing stack by rule 1 (line 419):
+   $1 = token LTL start marker (1.1: )
+   $2 = nterm subformula (1.1-5: a U b)
+   $3 = token end of formula (1.6-5: )
+Stack now 0
+digraph "a U b" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="b\n{0}"]
+  0 -> 0 [label="a & !b"]
+  1 [label="1"]
+  1 -> 1 [label="1\n{0}"]
+}
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
+PASS core/parse.test (exit status: 0)

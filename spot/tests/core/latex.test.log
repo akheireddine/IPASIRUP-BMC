@@ -1,0 +1,63 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test latex.test
+== Running test latex.test
++ echo latex.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=latex
++ testSubDir=latex.dir
++ chmod -R a+rwx latex.dir
++ rm -rf latex.dir
++ mkdir latex.dir
++ cd latex.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ latexmk --version
+
+Latexmk, John Collins, 20 November 2021. Version 4.76
++ pdflatex --version
+pdfTeX 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian)
+kpathsea version 6.3.4/dev
+Copyright 2021 Han The Thanh (pdfTeX) et al.
+There is NO warranty.  Redistribution of this software is
+covered by the terms of both the pdfTeX copyright and
+the Lesser GNU General Public License.
+For more information about these matters, see the file
+named COPYING and the pdfTeX source.
+Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.
+Compiled with libpng 1.6.37; using libpng 1.6.37
+Compiled with zlib 1.2.11; using zlib 1.2.11
+Compiled with xpdf version 4.03
++ kpsewhich txfonts.sty
+/usr/share/texlive/texmf-dist/tex/latex/txfonts/txfonts.sty
++ kpsewhich amsmath.sty
+/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
++ cat
++ cat
++ ltlfilt --latex input --format=\texttt{%F:%L} & $%f$ \\
++ genltl --go-theta=1..3 --latex --format=\texttt{--%F:%L} & $%f$ \\
++ randltl -S -n10 --latex 2 --format=\texttt{random %l} & $%f$ \\
++ cat
++ TEXINPUTS=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/doc/tl: latexmk -f -silent -pdf -ps- -dvi- -pvc- output.tex
+Rc files read:
+  /etc/LatexMk
+  /home/nissa/.latexmkrc
+Latexmk: Run number 1 of rule 'pdflatex'
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+PASS core/latex.test (exit status: 0)

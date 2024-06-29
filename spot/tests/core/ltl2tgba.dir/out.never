@@ -1,0 +1,27 @@
+never {
+T0_init:
+  if
+  :: (a) -> goto accept_S1
+  :: (true) -> goto T0_S2
+  :: (b) -> goto accept_S3
+  :: (true) -> goto T0_S4
+  fi;
+accept_S1:
+  if
+  :: (a) -> goto accept_S1
+  fi;
+T0_S2:
+  if
+  :: (a) -> goto accept_S1
+  :: (true) -> goto T0_S2
+  fi;
+accept_S3:
+  if
+  :: (b) -> goto accept_S3
+  fi;
+T0_S4:
+  if
+  :: (b) -> goto accept_S3
+  :: (true) -> goto T0_S4
+  fi;
+}

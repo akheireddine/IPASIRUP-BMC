@@ -1,0 +1,50 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltlf.test
+== Running test ltlf.test
++ echo ltlf.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltlf
++ testSubDir=ltlf.dir
++ chmod -R a+rwx ltlf.dir
++ rm -rf ltlf.dir
++ mkdir ltlf.dir
++ cd ltlf.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltlfilt --from-ltlf=A -f a & Xa -f a & X[!]a -f (a U b) & (F(c) | F(d & X(0)))
++ cat
++ diff expected out
++ ltl2tgba -B -F out
++ cat
++ diff expected2 out2
++ autfilt --to-finite=A out2
++ cat
++ diff expected3 out3
++ autfilt out3
++ diff out3 out4
++ grep -v \[f\] out4
++ cmp out3 out4
+out3 out4 sont différents: octet 708, ligne 55
++ autfilt out3
++ diff out4 expected3
++ ltlfilt -f (i->XXo)|G(i<->Xo2) --from-ltlf
++ + autfilt -C --to-finite
+ltl2tgba -D
++ cat
++ diff out exp
+PASS core/ltlf.test (exit status: 0)

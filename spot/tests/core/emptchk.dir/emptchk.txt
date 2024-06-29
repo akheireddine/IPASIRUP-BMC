@@ -1,0 +1,12 @@
+1, a
+1, a U b
+1, X a
+1, a & b & c
+1, a | b | (c U (d & (g U (h ^ i))))
+1, Xa & (b U !a) & (b U !a)
+1, Fa & Xb & GFc & Gd
+2, Fa & Xa & GFc & Gc
+1, Fc & X(a | Xb) & GF(a | Xb) & Gc
+2, !((FF a) <=> (F x))
+0, Xa && (!a U b) && !b && X!b
+0, (a U !b) && Gb

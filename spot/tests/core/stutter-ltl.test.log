@@ -1,0 +1,152 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test stutter-ltl.test
+== Running test stutter-ltl.test
++ echo stutter-ltl.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=stutter-ltl
++ testSubDir=stutter-ltl.dir
++ chmod -R a+rwx stutter-ltl.dir
++ rm -rf stutter-ltl.dir
++ mkdir stutter-ltl.dir
++ cd stutter-ltl.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ time=time
++ :
++ FILE=formulae
++ rm -f formulae
++ randltl --seed 0 --tree-size 10 a b c -n 100
++ randltl --seed 100 --tree-size 10 a b c d e f -n 100
++ randltl --seed 0 --tree-size 12 a b c -n 100
++ randltl --seed 100 --tree-size 12 a b c d e f -n 100
++ randltl --seed 0 --tree-size 14 a b c -n 100
++ randltl --seed 100 --tree-size 14 a b c d e f -n 100
++ randltl --seed 0 --tree-size 16 a b c -n 100
++ randltl --seed 100 --tree-size 16 a b c d e f -n 100
++ randltl --seed 0 --tree-size 18 a b c -n 100
++ randltl --seed 100 --tree-size 18 a b c d e f -n 100
++ randltl --seed 0 --tree-size 20 a b c -n 100
++ randltl --seed 100 --tree-size 20 a b c d e f -n 100
++ SPOT_STUTTER_CHECK=1
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+5.50user 0.06system 0:05.65elapsed 98%CPU (0avgtext+0avgdata 24220maxresident)k
+0inputs+40outputs (0major+10060minor)pagefaults 0swaps
++ SPOT_STUTTER_CHECK=2
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+5.01user 0.04system 0:05.18elapsed 97%CPU (0avgtext+0avgdata 23780maxresident)k
+0inputs+32outputs (0major+11551minor)pagefaults 0swaps
++ SPOT_STUTTER_CHECK=3
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+4.29user 0.04system 0:04.37elapsed 99%CPU (0avgtext+0avgdata 23716maxresident)k
+0inputs+40outputs (0major+11446minor)pagefaults 0swaps
++ SPOT_STUTTER_CHECK=4
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+2.45user 0.02system 0:02.47elapsed 100%CPU (0avgtext+0avgdata 21300maxresident)k
+0inputs+32outputs (0major+6724minor)pagefaults 0swaps
++ SPOT_STUTTER_CHECK=5
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+2.29user 0.02system 0:02.32elapsed 100%CPU (0avgtext+0avgdata 21172maxresident)k
+0inputs+32outputs (0major+6455minor)pagefaults 0swaps
++ SPOT_STUTTER_CHECK=6
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+2.22user 0.02system 0:02.24elapsed 100%CPU (0avgtext+0avgdata 21200maxresident)k
+0inputs+32outputs (0major+6472minor)pagefaults 0swaps
++ SPOT_STUTTER_CHECK=7
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+8.25user 0.04system 0:08.32elapsed 99%CPU (0avgtext+0avgdata 23800maxresident)k
+0inputs+32outputs (0major+9545minor)pagefaults 0swaps
++ SPOT_STUTTER_CHECK=8
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+2.47user 0.01system 0:02.51elapsed 99%CPU (0avgtext+0avgdata 21140maxresident)k
+0inputs+32outputs (0major+6411minor)pagefaults 0swaps
++ diff res.1 res.2
++ diff res.1 res.3
++ diff res.1 res.4
++ diff res.1 res.5
++ diff res.1 res.6
++ diff res.1 res.7
++ diff res.1 res.8
++ cat
++ SPOT_STUTTER_CHECK=0
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+0.01user 0.02system 0:00.03elapsed 105%CPU (0avgtext+0avgdata 18976maxresident)k
+0inputs+8outputs (1major+5642minor)pagefaults 0swaps
++ SPOT_STUTTER_CHECK=1
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+0.03user 0.00system 0:00.03elapsed 105%CPU (0avgtext+0avgdata 18408maxresident)k
+0inputs+8outputs (0major+5000minor)pagefaults 0swaps
++ SPOT_STUTTER_CHECK=2
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+0.02user 0.02system 0:00.03elapsed 107%CPU (0avgtext+0avgdata 18344maxresident)k
+0inputs+8outputs (0major+4946minor)pagefaults 0swaps
++ SPOT_STUTTER_CHECK=3
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+0.00user 0.02system 0:00.02elapsed 106%CPU (0avgtext+0avgdata 18376maxresident)k
+0inputs+8outputs (0major+4978minor)pagefaults 0swaps
++ SPOT_STUTTER_CHECK=4
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+0.01user 0.02system 0:00.02elapsed 110%CPU (0avgtext+0avgdata 18364maxresident)k
+0inputs+8outputs (0major+4965minor)pagefaults 0swaps
++ SPOT_STUTTER_CHECK=5
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+0.01user 0.02system 0:00.03elapsed 113%CPU (0avgtext+0avgdata 18476maxresident)k
+0inputs+8outputs (2major+4955minor)pagefaults 0swaps
++ SPOT_STUTTER_CHECK=6
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+0.02user 0.01system 0:00.03elapsed 102%CPU (0avgtext+0avgdata 18480maxresident)k
+0inputs+8outputs (0major+5011minor)pagefaults 0swaps
++ SPOT_STUTTER_CHECK=7
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+0.02user 0.02system 0:00.04elapsed 102%CPU (0avgtext+0avgdata 18392maxresident)k
+0inputs+8outputs (0major+4957minor)pagefaults 0swaps
++ SPOT_STUTTER_CHECK=8
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+0.02user 0.02system 0:00.04elapsed 104%CPU (0avgtext+0avgdata 18368maxresident)k
+0inputs+8outputs (0major+4921minor)pagefaults 0swaps
++ SPOT_STUTTER_CHECK=9
++ export SPOT_STUTTER_CHECK
++ time ltlfilt --stutter-invariant -F formulae
+0.07user 0.03system 0:00.13elapsed 77%CPU (0avgtext+0avgdata 18776maxresident)k
+0inputs+8outputs (0major+5648minor)pagefaults 0swaps
++ diff res.0 res.1
++ diff res.0 res.2
++ diff res.0 res.3
++ diff res.0 res.4
++ diff res.0 res.5
++ diff res.0 res.6
++ diff res.0 res.7
++ diff res.0 res.8
++ diff res.0 res.9
+PASS core/stutter-ltl.test (exit status: 0)

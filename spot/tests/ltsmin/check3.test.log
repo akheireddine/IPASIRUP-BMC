@@ -1,0 +1,33 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test check3.test
+== Running test check3.test
++ echo check3.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=check3
++ testSubDir=check3.dir
++ chmod -R a+rwx check3.dir
++ rm -rf check3.dir
++ mkdir check3.dir
++ cd check3.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ command -v gal2c
++ test -x 
++ echo gal2c not installed.
+gal2c not installed.
++ exit 77
+SKIP ltsmin/check3.test (exit status: 77)

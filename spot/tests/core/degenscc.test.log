@@ -1,0 +1,233 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test degenscc.test
+== Running test degenscc.test
++ echo degenscc.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=degenscc
++ testSubDir=degenscc.dir
++ chmod -R a+rwx degenscc.dir
++ rm -rf degenscc.dir
++ mkdir degenscc.dir
++ cd degenscc.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ ltl2tgba
++ autfilt -B --stats=: '%M'; test %C -ge %c
++ sh -x -e test.sh
++ : GF((Fp2 & X((p0 & Gp1) | (!p0 & F!p1))) | (G!p2 & X((p0 & F!p1) | (!p0 & Gp1))))
++ test 4 -ge 4
++ : ((F!p2 & GF((Gp1 & X!p0) | (Xp0 & F!p1))) | (Gp2 & FG((Gp1 | X!p0) & (Xp0 | F!p1)))) W !p0
++ test 11 -ge 11
++ : p2 & GF(G(p0 & !p1) | (F!p0 & Fp1))
++ test 3 -ge 3
++ : G(((Fp1 & (p1 W Fp0)) | (G!p1 & (!p1 M G!p0))) M FG!p2)
++ test 3 -ge 3
++ : Xp0 R F((p0 & FG(Gp2 U p1)) | (!p0 & GF(F!p2 R !p1)))
++ test 21 -ge 21
++ : GF(p0 & (((p1 & Fp2) | (!p1 & G!p2)) M Gp1))
++ test 2 -ge 2
++ : F(G!p0 | GF((Gp0 & (!p2 R !p1)) | ((p2 U p1) & F!p0)))
++ test 4 -ge 4
++ : p1 | X(p1 R F((FGp0 & ((p2 & G!p0) | (!p2 & Fp0))) | (GF!p0 & ((p2 & Fp0) | (!p2 & G!p0)))))
++ test 17 -ge 17
++ : G(!p1 | (!p2 & F!p1) | (GFp2 U p0))
++ test 2 -ge 2
++ : GF((Fp2 & (p0 U ((p1 & GFp0) | (!p1 & FG!p0)))) | (G!p2 & (!p0 R ((p1 & FG!p0) | (!p1 & GFp0)))))
++ test 9 -ge 9
++ : GF((!p0 & XFp1 & Fp2) | (!p0 & G!p2 & XG!p1) | (p0 & XFp1 & G!p2) | (p0 & Fp2 & XG!p1))
++ test 4 -ge 4
++ : F(!p2 | GF((p0 & Gp1) | (!p0 & Fp0 & F!p1) | G(!p0 & p1)))
++ test 5 -ge 5
++ : G(XF((p2 & F!p1) | (!p2 & Gp1)) | (p1 & Fp0))
++ test 3 -ge 3
++ : !p0 | GF((p1 & (Xp2 W Gp2)) | (!p1 & (X!p2 M F!p2)))
++ test 4 -ge 4
++ : G!p0 | G((Fp1 U p2) & F!p2)
++ test 3 -ge 3
++ ltl2tgba
++ autfilt -Bx!degen-remscc --stats=: '%M'; test %C -lt %c
++ sh -x -e test.sh
++ : GF((Fp2 & X((p0 & Gp1) | (!p0 & F!p1))) | (G!p2 & X((p0 & F!p1) | (!p0 & Gp1))))
++ test 4 -lt 5
++ : ((F!p2 & GF((Gp1 & X!p0) | (Xp0 & F!p1))) | (Gp2 & FG((Gp1 | X!p0) & (Xp0 | F!p1)))) W !p0
++ test 11 -lt 12
++ : p2 & GF(G(p0 & !p1) | (F!p0 & Fp1))
++ test 3 -lt 4
++ : G(((Fp1 & (p1 W Fp0)) | (G!p1 & (!p1 M G!p0))) M FG!p2)
++ test 3 -lt 4
++ : Xp0 R F((p0 & FG(Gp2 U p1)) | (!p0 & GF(F!p2 R !p1)))
++ test 21 -lt 22
++ : GF(p0 & (((p1 & Fp2) | (!p1 & G!p2)) M Gp1))
++ test 2 -lt 4
++ : F(G!p0 | GF((Gp0 & (!p2 R !p1)) | ((p2 U p1) & F!p0)))
++ test 4 -lt 5
++ : p1 | X(p1 R F((FGp0 & ((p2 & G!p0) | (!p2 & Fp0))) | (GF!p0 & ((p2 & Fp0) | (!p2 & G!p0)))))
++ test 17 -lt 18
++ : G(!p1 | (!p2 & F!p1) | (GFp2 U p0))
++ test 2 -lt 3
++ : GF((Fp2 & (p0 U ((p1 & GFp0) | (!p1 & FG!p0)))) | (G!p2 & (!p0 R ((p1 & FG!p0) | (!p1 & GFp0)))))
++ test 9 -lt 11
++ : GF((!p0 & XFp1 & Fp2) | (!p0 & G!p2 & XG!p1) | (p0 & XFp1 & G!p2) | (p0 & Fp2 & XG!p1))
++ test 4 -lt 5
++ : F(!p2 | GF((p0 & Gp1) | (!p0 & Fp0 & F!p1) | G(!p0 & p1)))
++ test 5 -lt 6
++ : G(XF((p2 & F!p1) | (!p2 & Gp1)) | (p1 & Fp0))
++ test 3 -lt 4
++ : !p0 | GF((p1 & (Xp2 W Gp2)) | (!p1 & (X!p2 M F!p2)))
++ test 4 -lt 6
++ : G!p0 | G((Fp1 U p2) & F!p2)
++ test 3 -lt 4
++ ltlcross -F input ltl2tgba ltl2tgba -B ltl2tgba %f | autfilt -B > %O
+input:1: G(F(((F(p2)) & (X(((p0) & (G(p1))) | ((!(p0)) & (F(!(p1))))))) | ((G(!(p2))) & (X(((p0) & (F(!(p1)))) | ((!(p0)) & (G(p1))))))))
+Running [P0]: ltl2tgba -H 'G(F(((F(p2)) & (X(((p0) & (G(p1))) | ((!(p0)) & (F(!(p1))))))) | ((G(!(p2))) & (X(((p0) & (F(!(p1)))) | ((!(p0)) & (G(p1))))))))'>'lcr-o0-xnK8Gg'
+Running [P1]: ltl2tgba -B -H 'G(F(((F(p2)) & (X(((p0) & (G(p1))) | ((!(p0)) & (F(!(p1))))))) | ((G(!(p2))) & (X(((p0) & (F(!(p1)))) | ((!(p0)) & (G(p1))))))))'>'lcr-o1-GeGuMX'
+Running [P2]: ltl2tgba 'G(F(((F(p2)) & (X(((p0) & (G(p1))) | ((!(p0)) & (F(!(p1))))))) | ((G(!(p2))) & (X(((p0) & (F(!(p1)))) | ((!(p0)) & (G(p1))))))))' | autfilt -B > 'lcr-o2-qxowXn'
+Running [N0]: ltl2tgba -H '!(G(F(((F(p2)) & (X(((p0) & (G(p1))) | ((!(p0)) & (F(!(p1))))))) | ((G(!(p2))) & (X(((p0) & (F(!(p1)))) | ((!(p0)) & (G(p1)))))))))'>'lcr-o0-m6OIr0'
+Running [N1]: ltl2tgba -B -H '!(G(F(((F(p2)) & (X(((p0) & (G(p1))) | ((!(p0)) & (F(!(p1))))))) | ((G(!(p2))) & (X(((p0) & (F(!(p1)))) | ((!(p0)) & (G(p1)))))))))'>'lcr-o1-nPyhMk'
+Running [N2]: ltl2tgba '!(G(F(((F(p2)) & (X(((p0) & (G(p1))) | ((!(p0)) & (F(!(p1))))))) | ((G(!(p2))) & (X(((p0) & (F(!(p1)))) | ((!(p0)) & (G(p1)))))))))' | autfilt -B > 'lcr-o2-PYMazM'
+Performing sanity checks and gathering statistics...
+
+input:2: (((G(p2)) & (F(G(((G(p1)) & (X(p0))) | ((F(!(p1))) & (X(!(p0)))))))) | ((F(!(p2))) & (G(F(((G(p1)) & (X(!(p0)))) | ((F(!(p1))) & (X(p0)))))))) W (!(p0))
+Running [P0]: ltl2tgba -H '(((G(p2)) & (F(G(((G(p1)) & (X(p0))) | ((F(!(p1))) & (X(!(p0)))))))) | ((F(!(p2))) & (G(F(((G(p1)) & (X(!(p0)))) | ((F(!(p1))) & (X(p0)))))))) W (!(p0))'>'lcr-o0-WAJT8l'
+Running [P1]: ltl2tgba -B -H '(((G(p2)) & (F(G(((G(p1)) & (X(p0))) | ((F(!(p1))) & (X(!(p0)))))))) | ((F(!(p2))) & (G(F(((G(p1)) & (X(!(p0)))) | ((F(!(p1))) & (X(p0)))))))) W (!(p0))'>'lcr-o1-yUYiR2'
+Running [P2]: ltl2tgba '(((G(p2)) & (F(G(((G(p1)) & (X(p0))) | ((F(!(p1))) & (X(!(p0)))))))) | ((F(!(p2))) & (G(F(((G(p1)) & (X(!(p0)))) | ((F(!(p1))) & (X(p0)))))))) W (!(p0))' | autfilt -B > 'lcr-o2-gLzeXO'
+Running [N0]: ltl2tgba -H '!((((G(p2)) & (F(G(((G(p1)) & (X(p0))) | ((F(!(p1))) & (X(!(p0)))))))) | ((F(!(p2))) & (G(F(((G(p1)) & (X(!(p0)))) | ((F(!(p1))) & (X(p0)))))))) W (!(p0)))'>'lcr-o0-h2esKo'
+Running [N1]: ltl2tgba -B -H '!((((G(p2)) & (F(G(((G(p1)) & (X(p0))) | ((F(!(p1))) & (X(!(p0)))))))) | ((F(!(p2))) & (G(F(((G(p1)) & (X(!(p0)))) | ((F(!(p1))) & (X(p0)))))))) W (!(p0)))'>'lcr-o1-1o0nfy'
+Running [N2]: ltl2tgba '!((((G(p2)) & (F(G(((G(p1)) & (X(p0))) | ((F(!(p1))) & (X(!(p0)))))))) | ((F(!(p2))) & (G(F(((G(p1)) & (X(!(p0)))) | ((F(!(p1))) & (X(p0)))))))) W (!(p0)))' | autfilt -B > 'lcr-o2-st7YPK'
+Performing sanity checks and gathering statistics...
+
+input:3: (p2) & (G(F((G((p0) & (!(p1)))) | ((F(!(p0))) & (F(p1))))))
+Running [P0]: ltl2tgba -H '(p2) & (G(F((G((p0) & (!(p1)))) | ((F(!(p0))) & (F(p1))))))'>'lcr-o0-VvjDW9'
+Running [P1]: ltl2tgba -B -H '(p2) & (G(F((G((p0) & (!(p1)))) | ((F(!(p0))) & (F(p1))))))'>'lcr-o1-g5SMZI'
+Running [P2]: ltl2tgba '(p2) & (G(F((G((p0) & (!(p1)))) | ((F(!(p0))) & (F(p1))))))' | autfilt -B > 'lcr-o2-rAwGYE'
+Running [N0]: ltl2tgba -H '!((p2) & (G(F((G((p0) & (!(p1)))) | ((F(!(p0))) & (F(p1)))))))'>'lcr-o0-sOk5Sx'
+Running [N1]: ltl2tgba -B -H '!((p2) & (G(F((G((p0) & (!(p1)))) | ((F(!(p0))) & (F(p1)))))))'>'lcr-o1-zXDQj9'
+Running [N2]: ltl2tgba '!((p2) & (G(F((G((p0) & (!(p1)))) | ((F(!(p0))) & (F(p1)))))))' | autfilt -B > 'lcr-o2-m3qTLT'
+Performing sanity checks and gathering statistics...
+
+input:4: G((((F(p1)) & ((p1) W (F(p0)))) | ((G(!(p1))) & ((!(p1)) M (G(!(p0)))))) M (F(G(!(p2)))))
+Running [P0]: ltl2tgba -H 'G((((F(p1)) & ((p1) W (F(p0)))) | ((G(!(p1))) & ((!(p1)) M (G(!(p0)))))) M (F(G(!(p2)))))'>'lcr-o0-UNDbZo'
+Running [P1]: ltl2tgba -B -H 'G((((F(p1)) & ((p1) W (F(p0)))) | ((G(!(p1))) & ((!(p1)) M (G(!(p0)))))) M (F(G(!(p2)))))'>'lcr-o1-gVLtx0'
+Running [P2]: ltl2tgba 'G((((F(p1)) & ((p1) W (F(p0)))) | ((G(!(p1))) & ((!(p1)) M (G(!(p0)))))) M (F(G(!(p2)))))' | autfilt -B > 'lcr-o2-hTMNfZ'
+Running [N0]: ltl2tgba -H '!(G((((F(p1)) & ((p1) W (F(p0)))) | ((G(!(p1))) & ((!(p1)) M (G(!(p0)))))) M (F(G(!(p2))))))'>'lcr-o0-lItfQy'
+Running [N1]: ltl2tgba -B -H '!(G((((F(p1)) & ((p1) W (F(p0)))) | ((G(!(p1))) & ((!(p1)) M (G(!(p0)))))) M (F(G(!(p2))))))'>'lcr-o1-zHbKWc'
+Running [N2]: ltl2tgba '!(G((((F(p1)) & ((p1) W (F(p0)))) | ((G(!(p1))) & ((!(p1)) M (G(!(p0)))))) M (F(G(!(p2))))))' | autfilt -B > 'lcr-o2-IWcTID'
+Performing sanity checks and gathering statistics...
+
+input:5: (X(p0)) R (F(((p0) & (F(G((G(p2)) U (p1))))) | ((!(p0)) & (G(F((F(!(p2))) R (!(p1))))))))
+Running [P0]: ltl2tgba -H '(X(p0)) R (F(((p0) & (F(G((G(p2)) U (p1))))) | ((!(p0)) & (G(F((F(!(p2))) R (!(p1))))))))'>'lcr-o0-yeISpv'
+Running [P1]: ltl2tgba -B -H '(X(p0)) R (F(((p0) & (F(G((G(p2)) U (p1))))) | ((!(p0)) & (G(F((F(!(p2))) R (!(p1))))))))'>'lcr-o1-VsAwcB'
+Running [P2]: ltl2tgba '(X(p0)) R (F(((p0) & (F(G((G(p2)) U (p1))))) | ((!(p0)) & (G(F((F(!(p2))) R (!(p1))))))))' | autfilt -B > 'lcr-o2-ywbOnr'
+Running [N0]: ltl2tgba -H '!((X(p0)) R (F(((p0) & (F(G((G(p2)) U (p1))))) | ((!(p0)) & (G(F((F(!(p2))) R (!(p1)))))))))'>'lcr-o0-BfpAxW'
+Running [N1]: ltl2tgba -B -H '!((X(p0)) R (F(((p0) & (F(G((G(p2)) U (p1))))) | ((!(p0)) & (G(F((F(!(p2))) R (!(p1)))))))))'>'lcr-o1-xNrdKy'
+Running [N2]: ltl2tgba '!((X(p0)) R (F(((p0) & (F(G((G(p2)) U (p1))))) | ((!(p0)) & (G(F((F(!(p2))) R (!(p1)))))))))' | autfilt -B > 'lcr-o2-wi18rD'
+Performing sanity checks and gathering statistics...
+
+input:6: G(F((p0) & ((((p1) & (F(p2))) | ((!(p1)) & (G(!(p2))))) M (G(p1)))))
+Running [P0]: ltl2tgba -H 'G(F((p0) & ((((p1) & (F(p2))) | ((!(p1)) & (G(!(p2))))) M (G(p1)))))'>'lcr-o0-vXUkRw'
+Running [P1]: ltl2tgba -B -H 'G(F((p0) & ((((p1) & (F(p2))) | ((!(p1)) & (G(!(p2))))) M (G(p1)))))'>'lcr-o1-Rr57ES'
+Running [P2]: ltl2tgba 'G(F((p0) & ((((p1) & (F(p2))) | ((!(p1)) & (G(!(p2))))) M (G(p1)))))' | autfilt -B > 'lcr-o2-LjrnYF'
+Running [N0]: ltl2tgba -H '!(G(F((p0) & ((((p1) & (F(p2))) | ((!(p1)) & (G(!(p2))))) M (G(p1))))))'>'lcr-o0-BLLHpk'
+Running [N1]: ltl2tgba -B -H '!(G(F((p0) & ((((p1) & (F(p2))) | ((!(p1)) & (G(!(p2))))) M (G(p1))))))'>'lcr-o1-EsLUAH'
+Running [N2]: ltl2tgba '!(G(F((p0) & ((((p1) & (F(p2))) | ((!(p1)) & (G(!(p2))))) M (G(p1))))))' | autfilt -B > 'lcr-o2-2uDkmW'
+Performing sanity checks and gathering statistics...
+
+input:7: F((G(!(p0))) | (G(F(((G(p0)) & ((!(p2)) R (!(p1)))) | ((F(!(p0))) & ((p2) U (p1)))))))
+Running [P0]: ltl2tgba -H 'F((G(!(p0))) | (G(F(((G(p0)) & ((!(p2)) R (!(p1)))) | ((F(!(p0))) & ((p2) U (p1)))))))'>'lcr-o0-N1IPNl'
+Running [P1]: ltl2tgba -B -H 'F((G(!(p0))) | (G(F(((G(p0)) & ((!(p2)) R (!(p1)))) | ((F(!(p0))) & ((p2) U (p1)))))))'>'lcr-o1-qgySuA'
+Running [P2]: ltl2tgba 'F((G(!(p0))) | (G(F(((G(p0)) & ((!(p2)) R (!(p1)))) | ((F(!(p0))) & ((p2) U (p1)))))))' | autfilt -B > 'lcr-o2-cedeFv'
+Running [N0]: ltl2tgba -H '!(F((G(!(p0))) | (G(F(((G(p0)) & ((!(p2)) R (!(p1)))) | ((F(!(p0))) & ((p2) U (p1))))))))'>'lcr-o0-HDcTl2'
+Running [N1]: ltl2tgba -B -H '!(F((G(!(p0))) | (G(F(((G(p0)) & ((!(p2)) R (!(p1)))) | ((F(!(p0))) & ((p2) U (p1))))))))'>'lcr-o1-WdbAKg'
+Running [N2]: ltl2tgba '!(F((G(!(p0))) | (G(F(((G(p0)) & ((!(p2)) R (!(p1)))) | ((F(!(p0))) & ((p2) U (p1))))))))' | autfilt -B > 'lcr-o2-lcJ83C'
+Performing sanity checks and gathering statistics...
+
+input:8: (p1) | (X((p1) R (F(((F(G(p0))) & (((p2) & (G(!(p0)))) | ((!(p2)) & (F(p0))))) | ((G(F(!(p0)))) & (((p2) & (F(p0))) | ((!(p2)) & (G(!(p0))))))))))
+Running [P0]: ltl2tgba -H '(p1) | (X((p1) R (F(((F(G(p0))) & (((p2) & (G(!(p0)))) | ((!(p2)) & (F(p0))))) | ((G(F(!(p0)))) & (((p2) & (F(p0))) | ((!(p2)) & (G(!(p0))))))))))'>'lcr-o0-pUbuhs'
+Running [P1]: ltl2tgba -B -H '(p1) | (X((p1) R (F(((F(G(p0))) & (((p2) & (G(!(p0)))) | ((!(p2)) & (F(p0))))) | ((G(F(!(p0)))) & (((p2) & (F(p0))) | ((!(p2)) & (G(!(p0))))))))))'>'lcr-o1-uynHOc'
+Running [P2]: ltl2tgba '(p1) | (X((p1) R (F(((F(G(p0))) & (((p2) & (G(!(p0)))) | ((!(p2)) & (F(p0))))) | ((G(F(!(p0)))) & (((p2) & (F(p0))) | ((!(p2)) & (G(!(p0))))))))))' | autfilt -B > 'lcr-o2-n6080B'
+Running [N0]: ltl2tgba -H '!((p1) | (X((p1) R (F(((F(G(p0))) & (((p2) & (G(!(p0)))) | ((!(p2)) & (F(p0))))) | ((G(F(!(p0)))) & (((p2) & (F(p0))) | ((!(p2)) & (G(!(p0)))))))))))'>'lcr-o0-S9hmYq'
+Running [N1]: ltl2tgba -B -H '!((p1) | (X((p1) R (F(((F(G(p0))) & (((p2) & (G(!(p0)))) | ((!(p2)) & (F(p0))))) | ((G(F(!(p0)))) & (((p2) & (F(p0))) | ((!(p2)) & (G(!(p0)))))))))))'>'lcr-o1-r58eEs'
+Running [N2]: ltl2tgba '!((p1) | (X((p1) R (F(((F(G(p0))) & (((p2) & (G(!(p0)))) | ((!(p2)) & (F(p0))))) | ((G(F(!(p0)))) & (((p2) & (F(p0))) | ((!(p2)) & (G(!(p0)))))))))))' | autfilt -B > 'lcr-o2-LglHmu'
+Performing sanity checks and gathering statistics...
+
+input:9: G((!(p1)) | ((!(p2)) & (F(!(p1)))) | ((G(F(p2))) U (p0)))
+Running [P0]: ltl2tgba -H 'G((!(p1)) | ((!(p2)) & (F(!(p1)))) | ((G(F(p2))) U (p0)))'>'lcr-o0-dQkUxI'
+Running [P1]: ltl2tgba -B -H 'G((!(p1)) | ((!(p2)) & (F(!(p1)))) | ((G(F(p2))) U (p0)))'>'lcr-o1-i8Dm04'
+Running [P2]: ltl2tgba 'G((!(p1)) | ((!(p2)) & (F(!(p1)))) | ((G(F(p2))) U (p0)))' | autfilt -B > 'lcr-o2-VTrAOp'
+Running [N0]: ltl2tgba -H '!(G((!(p1)) | ((!(p2)) & (F(!(p1)))) | ((G(F(p2))) U (p0))))'>'lcr-o0-ndHIKO'
+Running [N1]: ltl2tgba -B -H '!(G((!(p1)) | ((!(p2)) & (F(!(p1)))) | ((G(F(p2))) U (p0))))'>'lcr-o1-Fhl9dC'
+Running [N2]: ltl2tgba '!(G((!(p1)) | ((!(p2)) & (F(!(p1)))) | ((G(F(p2))) U (p0))))' | autfilt -B > 'lcr-o2-mdh95n'
+Performing sanity checks and gathering statistics...
+
+input:10: G(F(((F(p2)) & ((p0) U (((p1) & (G(F(p0)))) | ((!(p1)) & (F(G(!(p0)))))))) | ((G(!(p2))) & ((!(p0)) R (((p1) & (F(G(!(p0))))) | ((!(p1)) & (G(F(p0)))))))))
+Running [P0]: ltl2tgba -H 'G(F(((F(p2)) & ((p0) U (((p1) & (G(F(p0)))) | ((!(p1)) & (F(G(!(p0)))))))) | ((G(!(p2))) & ((!(p0)) R (((p1) & (F(G(!(p0))))) | ((!(p1)) & (G(F(p0)))))))))'>'lcr-o0-rrjZWs'
+Running [P1]: ltl2tgba -B -H 'G(F(((F(p2)) & ((p0) U (((p1) & (G(F(p0)))) | ((!(p1)) & (F(G(!(p0)))))))) | ((G(!(p2))) & ((!(p0)) R (((p1) & (F(G(!(p0))))) | ((!(p1)) & (G(F(p0)))))))))'>'lcr-o1-7Xrun0'
+Running [P2]: ltl2tgba 'G(F(((F(p2)) & ((p0) U (((p1) & (G(F(p0)))) | ((!(p1)) & (F(G(!(p0)))))))) | ((G(!(p2))) & ((!(p0)) R (((p1) & (F(G(!(p0))))) | ((!(p1)) & (G(F(p0)))))))))' | autfilt -B > 'lcr-o2-yNd4xv'
+Running [N0]: ltl2tgba -H '!(G(F(((F(p2)) & ((p0) U (((p1) & (G(F(p0)))) | ((!(p1)) & (F(G(!(p0)))))))) | ((G(!(p2))) & ((!(p0)) R (((p1) & (F(G(!(p0))))) | ((!(p1)) & (G(F(p0))))))))))'>'lcr-o0-zHI1q5'
+Running [N1]: ltl2tgba -B -H '!(G(F(((F(p2)) & ((p0) U (((p1) & (G(F(p0)))) | ((!(p1)) & (F(G(!(p0)))))))) | ((G(!(p2))) & ((!(p0)) R (((p1) & (F(G(!(p0))))) | ((!(p1)) & (G(F(p0))))))))))'>'lcr-o1-wdLICO'
+Running [N2]: ltl2tgba '!(G(F(((F(p2)) & ((p0) U (((p1) & (G(F(p0)))) | ((!(p1)) & (F(G(!(p0)))))))) | ((G(!(p2))) & ((!(p0)) R (((p1) & (F(G(!(p0))))) | ((!(p1)) & (G(F(p0))))))))))' | autfilt -B > 'lcr-o2-x59tqm'
+Performing sanity checks and gathering statistics...
+
+input:11: G(F(((X(F(p1))) & (((p0) & (G(!(p2)))) | ((!(p0)) & (F(p2))))) | ((X(G(!(p1)))) & (((p0) & (F(p2))) | ((!(p0)) & (G(!(p2))))))))
+Running [P0]: ltl2tgba -H 'G(F(((X(F(p1))) & (((p0) & (G(!(p2)))) | ((!(p0)) & (F(p2))))) | ((X(G(!(p1)))) & (((p0) & (F(p2))) | ((!(p0)) & (G(!(p2))))))))'>'lcr-o0-vMCJu9'
+Running [P1]: ltl2tgba -B -H 'G(F(((X(F(p1))) & (((p0) & (G(!(p2)))) | ((!(p0)) & (F(p2))))) | ((X(G(!(p1)))) & (((p0) & (F(p2))) | ((!(p0)) & (G(!(p2))))))))'>'lcr-o1-k5NwoJ'
+Running [P2]: ltl2tgba 'G(F(((X(F(p1))) & (((p0) & (G(!(p2)))) | ((!(p0)) & (F(p2))))) | ((X(G(!(p1)))) & (((p0) & (F(p2))) | ((!(p0)) & (G(!(p2))))))))' | autfilt -B > 'lcr-o2-nS4oY0'
+Running [N0]: ltl2tgba -H '!(G(F(((X(F(p1))) & (((p0) & (G(!(p2)))) | ((!(p0)) & (F(p2))))) | ((X(G(!(p1)))) & (((p0) & (F(p2))) | ((!(p0)) & (G(!(p2)))))))))'>'lcr-o0-hKEcMl'
+Running [N1]: ltl2tgba -B -H '!(G(F(((X(F(p1))) & (((p0) & (G(!(p2)))) | ((!(p0)) & (F(p2))))) | ((X(G(!(p1)))) & (((p0) & (F(p2))) | ((!(p0)) & (G(!(p2)))))))))'>'lcr-o1-8JBD7g'
+Running [N2]: ltl2tgba '!(G(F(((X(F(p1))) & (((p0) & (G(!(p2)))) | ((!(p0)) & (F(p2))))) | ((X(G(!(p1)))) & (((p0) & (F(p2))) | ((!(p0)) & (G(!(p2)))))))))' | autfilt -B > 'lcr-o2-KZ4rl8'
+Performing sanity checks and gathering statistics...
+
+input:12: F((!(p2)) | (G(F(((((p0) & (G(p1))) | ((!(p0)) & (F(!(p1))))) & (F(p0))) | ((((p0) & (F(!(p1)))) | ((!(p0)) & (G(p1)))) & (G(!(p0))))))))
+Running [P0]: ltl2tgba -H 'F((!(p2)) | (G(F(((((p0) & (G(p1))) | ((!(p0)) & (F(!(p1))))) & (F(p0))) | ((((p0) & (F(!(p1)))) | ((!(p0)) & (G(p1)))) & (G(!(p0))))))))'>'lcr-o0-5pwFY4'
+Running [P1]: ltl2tgba -B -H 'F((!(p2)) | (G(F(((((p0) & (G(p1))) | ((!(p0)) & (F(!(p1))))) & (F(p0))) | ((((p0) & (F(!(p1)))) | ((!(p0)) & (G(p1)))) & (G(!(p0))))))))'>'lcr-o1-oqKBMj'
+Running [P2]: ltl2tgba 'F((!(p2)) | (G(F(((((p0) & (G(p1))) | ((!(p0)) & (F(!(p1))))) & (F(p0))) | ((((p0) & (F(!(p1)))) | ((!(p0)) & (G(p1)))) & (G(!(p0))))))))' | autfilt -B > 'lcr-o2-YEyvlr'
+Running [N0]: ltl2tgba -H '!(F((!(p2)) | (G(F(((((p0) & (G(p1))) | ((!(p0)) & (F(!(p1))))) & (F(p0))) | ((((p0) & (F(!(p1)))) | ((!(p0)) & (G(p1)))) & (G(!(p0)))))))))'>'lcr-o0-x92OMk'
+Running [N1]: ltl2tgba -B -H '!(F((!(p2)) | (G(F(((((p0) & (G(p1))) | ((!(p0)) & (F(!(p1))))) & (F(p0))) | ((((p0) & (F(!(p1)))) | ((!(p0)) & (G(p1)))) & (G(!(p0)))))))))'>'lcr-o1-zfpeJq'
+Running [N2]: ltl2tgba '!(F((!(p2)) | (G(F(((((p0) & (G(p1))) | ((!(p0)) & (F(!(p1))))) & (F(p0))) | ((((p0) & (F(!(p1)))) | ((!(p0)) & (G(p1)))) & (G(!(p0)))))))))' | autfilt -B > 'lcr-o2-VMZmWS'
+Performing sanity checks and gathering statistics...
+
+input:13: G((X(F(((p2) & (F(!(p1)))) | ((!(p2)) & (G(p1)))))) | ((p1) & (F(p0))))
+Running [P0]: ltl2tgba -H 'G((X(F(((p2) & (F(!(p1)))) | ((!(p2)) & (G(p1)))))) | ((p1) & (F(p0))))'>'lcr-o0-EpGpN6'
+Running [P1]: ltl2tgba -B -H 'G((X(F(((p2) & (F(!(p1)))) | ((!(p2)) & (G(p1)))))) | ((p1) & (F(p0))))'>'lcr-o1-LsQGqE'
+Running [P2]: ltl2tgba 'G((X(F(((p2) & (F(!(p1)))) | ((!(p2)) & (G(p1)))))) | ((p1) & (F(p0))))' | autfilt -B > 'lcr-o2-XHGY29'
+Running [N0]: ltl2tgba -H '!(G((X(F(((p2) & (F(!(p1)))) | ((!(p2)) & (G(p1)))))) | ((p1) & (F(p0)))))'>'lcr-o0-R67vp5'
+Running [N1]: ltl2tgba -B -H '!(G((X(F(((p2) & (F(!(p1)))) | ((!(p2)) & (G(p1)))))) | ((p1) & (F(p0)))))'>'lcr-o1-jy3lVK'
+Running [N2]: ltl2tgba '!(G((X(F(((p2) & (F(!(p1)))) | ((!(p2)) & (G(p1)))))) | ((p1) & (F(p0)))))' | autfilt -B > 'lcr-o2-mK8WN7'
+Performing sanity checks and gathering statistics...
+
+input:14: (!(p0)) | (G(F(((p1) & ((X(p2)) W (G(p2)))) | ((!(p1)) & ((X(!(p2))) M (F(!(p2))))))))
+Running [P0]: ltl2tgba -H '(!(p0)) | (G(F(((p1) & ((X(p2)) W (G(p2)))) | ((!(p1)) & ((X(!(p2))) M (F(!(p2))))))))'>'lcr-o0-S6AnkP'
+Running [P1]: ltl2tgba -B -H '(!(p0)) | (G(F(((p1) & ((X(p2)) W (G(p2)))) | ((!(p1)) & ((X(!(p2))) M (F(!(p2))))))))'>'lcr-o1-easwJ9'
+Running [P2]: ltl2tgba '(!(p0)) | (G(F(((p1) & ((X(p2)) W (G(p2)))) | ((!(p1)) & ((X(!(p2))) M (F(!(p2))))))))' | autfilt -B > 'lcr-o2-EM4KOI'
+Running [N0]: ltl2tgba -H '!((!(p0)) | (G(F(((p1) & ((X(p2)) W (G(p2)))) | ((!(p1)) & ((X(!(p2))) M (F(!(p2)))))))))'>'lcr-o0-cQWd73'
+Running [N1]: ltl2tgba -B -H '!((!(p0)) | (G(F(((p1) & ((X(p2)) W (G(p2)))) | ((!(p1)) & ((X(!(p2))) M (F(!(p2)))))))))'>'lcr-o1-lyw31R'
+Running [N2]: ltl2tgba '!((!(p0)) | (G(F(((p1) & ((X(p2)) W (G(p2)))) | ((!(p1)) & ((X(!(p2))) M (F(!(p2)))))))))' | autfilt -B > 'lcr-o2-1c1CqX'
+Performing sanity checks and gathering statistics...
+
+input:15: (G(!(p0))) | (G((F(!(p2))) & ((F(p1)) U (p2))))
+Running [P0]: ltl2tgba -H '(G(!(p0))) | (G((F(!(p2))) & ((F(p1)) U (p2))))'>'lcr-o0-pSLaqC'
+Running [P1]: ltl2tgba -B -H '(G(!(p0))) | (G((F(!(p2))) & ((F(p1)) U (p2))))'>'lcr-o1-KQ1mPk'
+Running [P2]: ltl2tgba '(G(!(p0))) | (G((F(!(p2))) & ((F(p1)) U (p2))))' | autfilt -B > 'lcr-o2-D67qWs'
+Running [N0]: ltl2tgba -H '!((G(!(p0))) | (G((F(!(p2))) & ((F(p1)) U (p2)))))'>'lcr-o0-5cgjOB'
+Running [N1]: ltl2tgba -B -H '!((G(!(p0))) | (G((F(!(p2))) & ((F(p1)) U (p2)))))'>'lcr-o1-UK4Qtc'
+Running [N2]: ltl2tgba '!((G(!(p0))) | (G((F(!(p2))) & ((F(p1)) U (p2)))))' | autfilt -B > 'lcr-o2-ZVYGZg'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
+PASS core/degenscc.test (exit status: 0)

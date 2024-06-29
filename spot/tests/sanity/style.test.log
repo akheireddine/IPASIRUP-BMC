@@ -1,0 +1,3 @@
++ set -e
++ set +x
+PASS sanity/style.test (exit status: 0)

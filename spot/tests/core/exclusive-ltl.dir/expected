@@ -1,0 +1,5 @@
+GFa
+(a U b) & G!(a & b)
+(a U (b U c)) & G(!(a & b) & !(a & c) & !(b & c))
+(a U (b U (d U e))) & G(!(a & b) & !(d & e))
+(a U (b U (c U (d U e)))) & G(!(a & b) & !(a & c) & !(b & c) & !(d & e))

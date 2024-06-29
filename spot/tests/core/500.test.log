@@ -1,0 +1,45 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test 500.test
+== Running test 500.test
++ echo 500.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=500
++ testSubDir=500.dir
++ chmod -R a+rwx 500.dir
++ rm -rf 500.dir
++ mkdir 500.dir
++ cd 500.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ awk BEGIN{x="s0"; for(i = 1; i < 40000; ++i) x=x " | s" i;  print x;}
++ ltlfilt --stats=%x
++ cat out
++ test 40000 = 40000
++ awk BEGIN{x="s0"; for(i = 1; i < 40000; ++i) x=x " & s" i;  print x;}
++ ltlfilt --stats=%x
++ cat out
++ test 40000 = 40000
++ awk BEGIN{x="s0"; for(i = 1; i < 40000; ++i) x=x ";s" i;  print "{" x "}";}
++ ltlfilt --stats=%x
++ cat out
++ test 40000 = 40000
++ awk BEGIN{x="s0"; for(i = 1; i < 40000; ++i) x=x ":s" i;  print "{" x "}";}
++ ltlfilt --stats=%x
++ cat out
++ test 40000 = 40000
+PASS core/500.test (exit status: 0)

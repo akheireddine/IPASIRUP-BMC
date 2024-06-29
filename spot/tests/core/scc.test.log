@@ -1,0 +1,165 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test scc.test
+== Running test scc.test
++ echo scc.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=scc
++ testSubDir=scc.dir
++ chmod -R a+rwx scc.dir
++ rm -rf scc.dir
++ mkdir scc.dir
++ cd scc.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 ltl2tgba --low --any --stats=%f,%e,%s,%c -F formulas/1
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba --low --any --stats=%f,%e,%s,%c -F formulas/1
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba --low --any --stats=%f,%e,%s,%c -F formulas/1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
+((a U c) U b) & (b U c),15,6,5
+b U a,3,2,2
+0,0,1,1
+(Gb | F!a) W GFc,22,6,5
+(!a & G(Ga | F(!a & b))) | (a & F(F!a & G(a | !b))),16,7,6
++ diff out formulas
++ ltl2tgba a W b
++ cat
++ run 0 autfilt --decompose-scc=a0 aut
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --decompose-scc=a0 aut
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --decompose-scc=a0 aut
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
+HOA: v1
+States: 2
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc deterministic
+properties: terminal
+--BODY--
+State: 0
+[1] 1
+[0&!1] 0
+State: 1 {0}
+[t] 1
+--END--
++ diff out ref
++ cat
++ run 0 autfilt --decompose-scc=a1 aut
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --decompose-scc=a1 aut
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --decompose-scc=a1 aut
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ diff out ref
++ autfilt --decompose-scc=a2 aut
++ [ 2 -eq 2 ]
++ grep no SCC 'a2' stderr
+autfilt: decompose_scc(): there is no SCC 'a2' in this automaton
++ autfilt --decompose-scc=2 aut
++ [ 2 -eq 2 ]
++ grep no SCC 2 stderr
+autfilt: decompose_scc(): there is no SCC 2 in this automaton
++ ltl2tgba Ga R b | Gc R b
++ cat
++ run 0 autfilt --decompose-scc=a1 -F aut
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --decompose-scc=a1 -F aut
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --decompose-scc=a1 -F aut
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
+HOA: v1
+States: 2
+Start: 0
+AP: 3 "b" "a" "c"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc weak
+--BODY--
+State: 0
+[0] 0
+[0&2] 1
+State: 1 {0}
+[2] 1
+--END--
++ diff out ref
++ cat
++ autfilt --stats=%[a]c %[A]c %[v]c %[V]c in.hoa
++ test 2 1 1 2 = 2 1 1 2
++ cat
++ autfilt --stats=%[a]c %[iw]c %[IW]c in.hoa
++ cat
++ diff out exp
++ autfilt --stats=%[I]c in.hoa
++ grep unknown option 'I err
+autfilt: unknown option 'I]' in '%[I]c'
++ autfilt --stats=%[i]c in.hoa
++ grep unknown option 'i err
+autfilt: unknown option 'i]' in '%[i]c'
+PASS core/scc.test (exit status: 0)

@@ -1,0 +1,70 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test consterm.test
+== Running test consterm.test
++ echo consterm.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=consterm
++ testSubDir=consterm.dir
++ chmod -R a+rwx consterm.dir
++ rm -rf consterm.dir
++ mkdir consterm.dir
++ cd consterm.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 ../consterm input2
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../consterm
++ cmd=../consterm
++ shift
++ test -n ../consterm
++ set ../consterm input2
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../consterm input2
+1,0
+0,0
+[*0],1
+a*,1
+0*,1
+a[*0],1
+a[*0..],1
+a[*0..3],1
+a[*1..3],0
+a[*3],0
+a[*..4][*3],1
+a[*1..4][*3],0
+a[*1..4][*0..3],1
+((a ; b) + c),0
+((a ; b) + [*0]),1
+((a ; b) + [*0]) & e,0
+((a ; b) + [*0]) & [*0],1
+((a ; b) + [*0]) & (a* + b),1
+# test braces
+{{a ; b} + {[*0]}} & {a* + b},1
+(a + [*0]);(b + [*0]);(c + [*0]),1
+(a + [*0]);(b + e);(c + [*0]),0
+(a + [*0]);(b + e)*;(c + [*0]),1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
+PASS core/consterm.test (exit status: 0)

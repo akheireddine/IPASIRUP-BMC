@@ -1,0 +1,43 @@
+Fp
+Fp -> (!p U (!p & s & X(!p U t)))
+Fq -> (!q U (q & (G!p | (!p U (Gp | (p U (G!p | (!p U ((p U G!p) | Gp)))))))))
+Fr -> ((!p & !r) U (r | ((p & !r) U (r | ((!p & !r) U (r | ((p & !r) U (r | (!p U r)))))))))
+Fr -> ((p -> (!r U (!r & s))) U r)
+Fr -> ((p -> (!r U (!r & s & X(!r U t)))) U r)
+Fr -> ((p -> (!r U (!r & s & !z & X((!r & !z) U t)))) U r)
+Fr -> (!p U r)
+Fr -> (p U r)
+Fr -> (!p U (r | (!p & s & X(!p U t))))
+Fr -> (!p U (r | s))
+Fr -> (!(!r & s & X(!r U (!r & t))) U (p | r))
+Fr -> (((s & X(!r U t)) -> X(!r U (t & Fp))) U r)
+F(s & XFt) -> (!s U p)
+G(Ga & F!a)
+G!p
+Gp
+G!p | (!p U (Gp | (p U (G!p | (!p U ((p U G!p) | Gp))))))
+G((p & !r & Fr) -> (p U r))
+G(q -> (Fp -> (!p U (r | (!p & s & X(!p U t))))))
+G!q | F(q & Fp)
+G((q & Fr) -> ((!p & !r) U (r | ((p & !r) U (r | ((!p & !r) U (r | ((p & !r) U (r | (!p U r))))))))))
+G((q & Fr) -> ((p -> (!r U (!r & s & X(!r U t)))) U r))
+G((q & Fr) -> ((p -> (!r U (!r & s & !z & X((!r & !z) U t)))) U r))
+G((q & Fr) -> (!p U (r | (!p & s & X(!p U t)))))
+G((q & Fr) -> (!(!r & s & X(!r U (!r & t))) U (p | r)))
+G(q -> G!p)
+G(q -> Gp)
+G(q -> ((!p & !r) U (r | ((p & !r) U (r | ((!p & !r) U (r | ((p & !r) U (r | (!p U r) | G!p | Gp)))))))))
+G!q | (!q U ((q & Fp) -> (!p U (!p & s & X(!p U t)))))
+G!q | (!q U (q & (F(s & XFt) -> (!s U p))))
+G((q & !r & Fr) -> ((p -> (!r U (!r & s))) U r))
+G((q & !r & Fr) -> (!p U r))
+G((q & !r & Fr) -> (!p U (r | s)))
+G((q & !r) -> ((!p U r) | G!p))
+G((q & !r) -> ((p U r) | Gp))
+G((q & !r) -> ((!p U (r | s)) | G!p))
+G((q & !r) -> ((!r U (p & !r)) | G!r))
+G(q -> ((!(!r & s & X(!r U (!r & t))) U (p | r)) | G!(s & XFt)))
+p
+(!p U s) | Gp
+q & Xp
+(!r U (p & !r)) | G!r

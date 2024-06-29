@@ -1,0 +1,9 @@
+GF(b | GF!c)
+!b & G(G!c | XFc)
+GF(b | c | (!c & XFb))
+GFc | G(!b | !c)
+G(Gb | Fc)
+G(c | (c R Xc) | XF(b & !c))
+Gc R XFb
+G(c | (!b M (GFc | G!c)))
+F(((c W Xb) & F(b R !c)) | ((!c M X!b) & G(!b U c)))

@@ -1,0 +1,35 @@
+getopt1.lo: getopt1.c /usr/x86_64-linux-gnu/include/stdc-predef.h \
+ ../config.h getopt.h getopt.h /usr/x86_64-linux-gnu/include/getopt.h \
+ /usr/x86_64-linux-gnu/include/features.h \
+ /usr/x86_64-linux-gnu/include/features-time64.h \
+ /usr/x86_64-linux-gnu/include/bits/wordsize.h \
+ /usr/x86_64-linux-gnu/include/bits/timesize.h \
+ /usr/x86_64-linux-gnu/include/sys/cdefs.h \
+ /usr/x86_64-linux-gnu/include/bits/long-double.h \
+ /usr/x86_64-linux-gnu/include/gnu/stubs.h \
+ /usr/x86_64-linux-gnu/include/gnu/stubs-64.h \
+ /usr/x86_64-linux-gnu/include/bits/getopt_core.h \
+ /usr/x86_64-linux-gnu/include/bits/getopt_ext.h getopt-cdefs.h \
+ getopt-pfx-core.h getopt-core.h getopt-pfx-ext.h getopt-ext.h \
+ getopt_int.h
+/usr/x86_64-linux-gnu/include/stdc-predef.h:
+../config.h:
+getopt.h:
+getopt.h:
+/usr/x86_64-linux-gnu/include/getopt.h:
+/usr/x86_64-linux-gnu/include/features.h:
+/usr/x86_64-linux-gnu/include/features-time64.h:
+/usr/x86_64-linux-gnu/include/bits/wordsize.h:
+/usr/x86_64-linux-gnu/include/bits/timesize.h:
+/usr/x86_64-linux-gnu/include/sys/cdefs.h:
+/usr/x86_64-linux-gnu/include/bits/long-double.h:
+/usr/x86_64-linux-gnu/include/gnu/stubs.h:
+/usr/x86_64-linux-gnu/include/gnu/stubs-64.h:
+/usr/x86_64-linux-gnu/include/bits/getopt_core.h:
+/usr/x86_64-linux-gnu/include/bits/getopt_ext.h:
+getopt-cdefs.h:
+getopt-pfx-core.h:
+getopt-core.h:
+getopt-pfx-ext.h:
+getopt-ext.h:
+getopt_int.h:

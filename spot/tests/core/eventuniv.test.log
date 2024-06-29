@@ -1,0 +1,121 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test eventuniv.test
+== Running test eventuniv.test
++ echo eventuniv.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=eventuniv
++ testSubDir=eventuniv.dir
++ chmod -R a+rwx eventuniv.dir
++ rm -rf eventuniv.dir
++ mkdir eventuniv.dir
++ cd eventuniv.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 ../reduceu reduceu.txt
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../reduceu
++ cmd=../reduceu
++ shift
++ test -n ../reduceu
++ set ../reduceu reduceu.txt
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../reduceu reduceu.txt
+1: Xa | GFb, Xa | GFb
+Or(@8 #5 [X(@4 #7 [ap(@3 #7 "a")]), G(@7 #9 [F(@6 #5 [ap(@5 #3 "b")])])])
+2: X(a | GXFb), Xa | GFb
+Or(@37 #7 [X(@33 #7 [ap(@32 #15 "a")]), G(@36 #13 [F(@35 #6 [ap(@34 #9 "b")])])])
+3: Xa & GFb, Xa & GFb
+And(@114 #5 [X(@110 #8 [ap(@109 #8 "a")]), G(@113 #9 [F(@112 #7 [ap(@111 #3 "b")])])])
+4: X(a & GXFb), Xa & GFb
+And(@142 #7 [X(@138 #8 [ap(@137 #16 "a")]), G(@141 #13 [F(@140 #8 [ap(@139 #9 "b")])])])
+5: 
+6: F(a & b & GFc & FGd), F(a & b) & G(Fc & FGd)
+And(@222 #7 [F(@214 #15 [And(@213 #20 [ap(@211 #30 "a"), ap(@212 #30 "b")])]), G(@221 #16 [And(@220 #11 [F(@216 #22 [ap(@215 #18 "c")]), F(@219 #27 [G(@218 #16 [ap(@217 #18 "d")])])])])])
+7: Fa | Fb | GFc | GFd, F(a|b) | GF(c | d)
+Or(@431 #7 [F(@425 #10 [Or(@424 #11 [ap(@422 #26 "a"), ap(@423 #26 "b")])]), G(@430 #9 [F(@429 #7 [Or(@428 #8 [ap(@426 #23 "c"), ap(@427 #23 "d")])])])])
+8: Fa | Fb | GFc | GFd | FGe, F(a|b) | F(G(e) | GF(c | d))
+Or(@602 #7 [F(@592 #18 [Or(@591 #19 [ap(@589 #32 "a"), ap(@590 #32 "b")])]), F(@601 #9 [Or(@600 #9 [G(@594 #48 [ap(@593 #38 "e")]), G(@599 #13 [F(@598 #9 [Or(@597 #8 [ap(@595 #29 "c"), ap(@596 #29 "d")])])])])])])
+9: Ga | Gb | GFd | FGe | FGf, Ga | Gb | F(GFd | Ge | Gf)
+Or(@837 #7 [G(@825 #42 [ap(@824 #33 "a")]), G(@827 #42 [ap(@826 #33 "b")]), F(@836 #19 [Or(@835 #12 [G(@830 #45 [F(@829 #31 [ap(@828 #23 "d")])]), G(@832 #36 [ap(@831 #24 "e")]), G(@834 #36 [ap(@833 #24 "f")])])])])
+10: 
+11: G(Ga & Fb & c & GFd), G(a&c) & G(Fb & Fd)
+And(@1242 #7 [G(@1235 #29 [And(@1234 #28 [ap(@1232 #22 "a"), ap(@1233 #29 "c")])]), G(@1241 #9 [And(@1240 #9 [F(@1237 #35 [ap(@1236 #23 "b")]), F(@1239 #33 [ap(@1238 #22 "d")])])])])
+12: G(Ga & GFb & c & GFd), G(a&c) & G(Fb & Fd)
+And(@1421 #7 [G(@1414 #17 [And(@1413 #20 [ap(@1411 #35 "a"), ap(@1412 #43 "c")])]), G(@1420 #23 [And(@1419 #18 [F(@1416 #35 [ap(@1415 #21 "b")]), F(@1418 #34 [ap(@1417 #20 "d")])])])])
+13: G(a & GFb & c & GFd), G(a&c) & G(Fb & Fd)
+And(@1613 #7 [G(@1606 #17 [And(@1605 #24 [ap(@1603 #36 "a"), ap(@1604 #36 "c")])]), G(@1612 #16 [And(@1611 #13 [F(@1608 #30 [ap(@1607 #19 "b")]), F(@1610 #29 [ap(@1609 #18 "d")])])])])
+14: G(Ga & Fb & c & GFd & FGe), G(a & c) & G(Fb & Fd & FGe)
+And(@1809 #8 [G(@1799 #36 [And(@1798 #37 [ap(@1796 #38 "a"), ap(@1797 #49 "c")])]), G(@1808 #9 [And(@1807 #9 [F(@1801 #58 [ap(@1800 #38 "b")]), F(@1803 #50 [ap(@1802 #32 "d")]), F(@1806 #53 [G(@1805 #32 [ap(@1804 #25 "e")])])])])])
+15: G(Ga & XFGb & c & FGd & FGe), FG(b & d & e) & G(a & c)
+And(@2170 #6 [F(@2165 #25 [G(@2164 #13 [And(@2163 #12 [ap(@2160 #29 "b"), ap(@2161 #29 "d"), ap(@2162 #29 "e")])])]), G(@2169 #11 [And(@2168 #11 [ap(@2166 #35 "a"), ap(@2167 #41 "c")])])])
+16: G(Ga & GXFb & c & FGd & FGe & Fc), G(Fb & FG(d & e)) & G(a & c)
+And(@2439 #8 [G(@2434 #23 [And(@2433 #18 [F(@2427 #53 [ap(@2426 #35 "b")]), F(@2432 #27 [G(@2431 #13 [And(@2430 #10 [ap(@2428 #25 "d"), ap(@2429 #25 "e")])])])])]), G(@2438 #18 [And(@2437 #21 [ap(@2435 #47 "a"), ap(@2436 #62 "c")])])])
+17: Ga & Gb & GFd & FGe & FGf, G(Fd & FG(e & f)) & G(a & b)
+And(@2826 #7 [G(@2821 #9 [And(@2820 #9 [F(@2814 #48 [ap(@2813 #38 "d")]), F(@2819 #13 [G(@2818 #9 [And(@2817 #8 [ap(@2815 #29 "e"), ap(@2816 #29 "f")])])])])]), G(@2825 #18 [And(@2824 #19 [ap(@2822 #32 "a"), ap(@2823 #32 "b")])])])
+18: G(Ga & Gb & GFd & FGe) & FGf, G(Fd & FG(e & f)) & G(a & b)
+And(@3058 #6 [G(@3053 #8 [And(@3052 #10 [F(@3046 #55 [ap(@3045 #42 "d")]), F(@3051 #13 [G(@3050 #9 [And(@3049 #8 [ap(@3047 #32 "e"), ap(@3048 #32 "f")])])])])]), G(@3057 #40 [And(@3056 #38 [ap(@3054 #27 "a"), ap(@3055 #27 "b")])])])
+19: 
+20: G(a & XFb), Ga & GFb
+And(@3353 #8 [G(@3349 #11 [ap(@3348 #20 "a")]), G(@3352 #9 [F(@3351 #11 [ap(@3350 #11 "b")])])])
+21: G(a & XF(b & XFc & Fd)), Ga & G(Fb & Fc & Fd)
+And(@3436 #8 [G(@3427 #20 [ap(@3426 #31 "a")]), G(@3435 #9 [And(@3434 #9 [F(@3429 #23 [ap(@3428 #25 "b")]), F(@3431 #22 [ap(@3430 #15 "c")]), F(@3433 #30 [ap(@3432 #18 "d")])])])])
+22: F(a | XGb), Fa | FGb
+Or(@3640 #8 [F(@3636 #11 [ap(@3635 #20 "a")]), F(@3639 #9 [G(@3638 #11 [ap(@3637 #11 "b")])])])
+23: F(a | XG(b | XGc | Gd)), Fa | F(Gb | Gc | Gd)
+Or(@3725 #8 [F(@3716 #20 [ap(@3715 #31 "a")]), F(@3724 #9 [Or(@3723 #9 [G(@3718 #23 [ap(@3717 #25 "b")]), G(@3720 #22 [ap(@3719 #15 "c")]), G(@3722 #30 [ap(@3721 #18 "d")])])])])
+24: 
+25: a U (b | Fc), (a U b) | Fc
+Or(@3933 #7 [U(@3930 #8 [ap(@3928 #11 "a"), ap(@3929 #13 "b")]), F(@3932 #11 [ap(@3931 #11 "c")])])
+26: a W (b | Fc), (a W b) | Fc
+Or(@3991 #7 [W(@3988 #8 [ap(@3986 #11 "a"), ap(@3987 #13 "b")]), F(@3990 #11 [ap(@3989 #11 "c")])])
+27: a U (b & GFc), (a U b) & GFc
+And(@4050 #7 [U(@4046 #8 [ap(@4044 #13 "a"), ap(@4045 #15 "b")]), G(@4049 #12 [F(@4048 #8 [ap(@4047 #9 "c")])])])
+28: # Unchanged
+29: a W (b & GFc), a W (b & GFc)
+W(@4120 #5 [ap(@4114 #4 "a"), And(@4119 #4 [ap(@4115 #8 "b"), G(@4118 #6 [F(@4117 #5 [ap(@4116 #3 "c")])])])])
+30: # Unchanged
+31: (a | Gc) W g, (a | Gc) W g
+W(@4145 #5 [Or(@4144 #4 [ap(@4140 #6 "a"), G(@4142 #7 [ap(@4141 #3 "c")])]), ap(@4143 #6 "g")])
+32: # Unchanged
+33: (a | Gc) U g, (a | Gc) U g
+U(@4169 #5 [Or(@4168 #4 [ap(@4164 #6 "a"), G(@4166 #7 [ap(@4165 #3 "c")])]), ap(@4167 #6 "g")])
+34: (a & GFc) M b, (a M b) & GFc
+And(@4194 #7 [M(@4190 #8 [ap(@4188 #15 "a"), ap(@4189 #13 "b")]), G(@4193 #12 [F(@4192 #8 [ap(@4191 #9 "c")])])])
+35: # Unchanged
+36: (a | GFc) M b, (a | GFc) M b
+M(@4266 #5 [Or(@4265 #4 [ap(@4260 #7 "a"), G(@4263 #7 [F(@4262 #4 [ap(@4261 #3 "c")])])]), ap(@4264 #5 "b")])
+37: # Unchanged
+38: (a & GFc) R b, (a & GFc) R b
+R(@4297 #5 [And(@4296 #4 [ap(@4291 #8 "a"), G(@4294 #7 [F(@4293 #5 [ap(@4292 #3 "c")])])]), ap(@4295 #7 "b")])
+39: # Unchanged
+40: (a | GFc) R b, (a | GFc) R b
+R(@4326 #5 [Or(@4325 #4 [ap(@4320 #7 "a"), G(@4323 #7 [F(@4322 #4 [ap(@4321 #3 "c")])])]), ap(@4324 #5 "b")])
+41: a R (b & Gc), (a R b) & Gc
+And(@4356 #6 [R(@4353 #8 [ap(@4351 #9 "a"), ap(@4352 #11 "b")]), G(@4355 #11 [ap(@4354 #9 "c")])])
+42: a M (b & Gc), (a M b) & Gc
+And(@4392 #6 [M(@4389 #8 [ap(@4387 #9 "a"), ap(@4388 #11 "b")]), G(@4391 #11 [ap(@4390 #9 "c")])])
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
+PASS core/eventuniv.test (exit status: 0)

@@ -1,0 +1,9 @@
+a
+FG a
+X false
+(G a) U X b
+(a U b) U (c U d)
+true
+(Ga && XXXX!a)
+"a > b" U "process@foo"
+GF("(a + b) == 42" U "process@foo")

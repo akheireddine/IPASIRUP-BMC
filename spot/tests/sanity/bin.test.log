@@ -1,0 +1,4 @@
++ set +x
+bin/ltlsynt --help has options after blank line; missing section header?
+      --bypass=yes|no        whether to try to avoid to construct a parity game (enabled by default)
+PASS sanity/bin.test (exit status: 0)

@@ -1,0 +1,24 @@
+G(@5 #0 [X(@4 #0 [ap(@3 #0 "a")])])
+G(@8 #0 [X(@7 #0 [ap(@6 #0 "αβγ")])])
+>>> □)◯a
+     ^
+syntax error, unexpected closing parenthesis
+
+>>> □)◯a
+    ^
+missing right operand for "always operator"
+
+>>> □)◯a
+     ^^^
+ignoring trailing garbage
+
+ff(@0 #0)
+>>> "αβγ"X
+         ^
+syntax error, unexpected next operator
+
+>>> "αβγ"X
+         ^
+ignoring trailing garbage
+
+ap(@9 #0 "αβγ")

@@ -1,0 +1,108 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltlcrossce2.test
+== Running test ltlcrossce2.test
++ echo ltlcrossce2.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltlcrossce2
++ testSubDir=ltlcrossce2.dir
++ chmod -R a+rwx ltlcrossce2.dir
++ rm -rf ltlcrossce2.dir
++ mkdir ltlcrossce2.dir
++ cd ltlcrossce2.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ chmod +x fake
++ run 1 ltlcross -f G(a <-> Fb) U c ltl2tgba --lbtt %f >%T ./fake %l >%T
++ cat errors
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlcross
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross -f G(a <-> Fb) U c ltl2tgba --lbtt %f >%T ./fake %l >%T
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlcross -f G(a <-> Fb) U c ltl2tgba --lbtt %f >%T ./fake %l >%T
+(G((p0) <-> (F(p1)))) U (p2)
+Running [P0]: ltl2tgba --lbtt '(G((p0) <-> (F(p1)))) U (p2)' >'lcr-o0-og6dOd'
+Running [P1]: ./fake 'U G e p0 F p1 p2' >'lcr-o1-Jysigk'
+Running [N0]: ltl2tgba --lbtt '!((G((p0) <-> (F(p1)))) U (p2))' >'lcr-o0-xdjJvp'
+Running [N1]: ./fake '! U G e p0 F p1 p2' >'lcr-o1-CWYXWa'
+Performing sanity checks and gathering statistics...
+error: P0*N1 is nonempty; both automata accept the infinite word:
+       p0 & !p1 & !p2; p0 & p1 & p2; p0 & p1 & !p2; cycle{!p0 & !p1 & !p2}
+error: P1*N1 is nonempty; both automata accept the infinite word:
+       p0 & !p1 & !p2; p0 & p1 & p2; p0 & p1 & !p2; cycle{!p0 & !p1 & !p2}
+error: Comp(N1)*Comp(P1) is nonempty; both automata accept the infinite word:
+       p0 & !p1 & !p2; p0 & p1 & p2; !p0 & p1 & !p2; cycle{!p0 & !p1 & !p2}
+
+error: some error was detected during the above runs,
+       please search for 'error:' messages in the above trace.
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ grep error: P0\*N1 is nonempty errors
+error: P0*N1 is nonempty; both automata accept the infinite word:
++ grep error: P1\*N1 is nonempty errors
+error: P1*N1 is nonempty; both automata accept the infinite word:
++ grep error: Comp..1.\*Comp..1. is nonempty errors
+error: Comp(N1)*Comp(P1) is nonempty; both automata accept the infinite word:
++ grep cycle errors
++ wc -l
++ test 3 = 3
++ grep ^error: errors
++ wc -l
++ test 4 = 4
++ cat
++ chmod +x fake
++ genltl --eh=9
++ ltlcross --determinize-max-states=5 ltl2tgba ./fake %f >%O
++ cat errors
+-:1: G((p0) & (X(F((p1) & (X(F((p2) & (X(F(p3))))))))))
+Running [P0]: ltl2tgba -H 'G((p0) & (X(F((p1) & (X(F((p2) & (X(F(p3))))))))))'>'lcr-o0-Wx5IU6'
+Running [P1]: ./fake 'G((p0) & (X(F((p1) & (X(F((p2) & (X(F(p3))))))))))' >'lcr-o1-k4AvXe'
+Running [N0]: ltl2tgba -H '!(G((p0) & (X(F((p1) & (X(F((p2) & (X(F(p3)))))))))))'>'lcr-o0-ASpivd'
+Running [N1]: ./fake '!(G((p0) & (X(F((p1) & (X(F((p2) & (X(F(p3)))))))))))' >'lcr-o1-tOA5ys'
+Performing sanity checks and gathering statistics...
+error: P0*Comp(P1) is nonempty; both automata accept the infinite word:
+       cycle{p0 & !p1 & !p2 & p3; p0 & p1 & !p2 & !p3; p0 & !p1 & p2 & !p3}
+error: {P0} disagree with {P1} when evaluating the state-space
+       the following word(s) are not accepted by {P1}:
+  P0 accepts: p0 & !p1 & !p2 & !p3; p0 & p1 & p2 & p3; cycle{p0 & !p1 & !p2 & p3; p0 & p1 & !p2 & !p3; p0 & !p1 & p2 & p3; p0 & !p1 & !p2 & !p3; p0 & p1 & p2 & !p3; p0 & !p1 & !p2 & !p3}
+
+error: some error was detected during the above runs,
+       please search for 'error:' messages in the above trace.
++ grep error: P0\*Comp(P1) is nonempty errors
+error: P0*Comp(P1) is nonempty; both automata accept the infinite word:
++ grep error: {P0} disagree with {P1} errors
+error: {P0} disagree with {P1} when evaluating the state-space
++ grep P0 accepts errors
+  P0 accepts: p0 & !p1 & !p2 & !p3; p0 & p1 & p2 & p3; cycle{p0 & !p1 & !p2 & p3; p0 & p1 & !p2 & !p3; p0 & !p1 & p2 & p3; p0 & !p1 & !p2 & !p3; p0 & p1 & p2 & !p3; p0 & !p1 & !p2 & !p3}
++ grep cycle errors
++ wc -l
++ test 2 = 2
++ grep ^error: errors
++ wc -l
++ test 3 = 3
+PASS core/ltlcrossce2.test (exit status: 0)

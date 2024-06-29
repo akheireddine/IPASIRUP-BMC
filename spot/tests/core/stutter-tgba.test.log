@@ -1,0 +1,402 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test stutter-tgba.test
+== Running test stutter-tgba.test
++ echo stutter-tgba.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=stutter-tgba
++ testSubDir=stutter-tgba.dir
++ chmod -R a+rwx stutter-tgba.dir
++ rm -rf stutter-tgba.dir
++ mkdir stutter-tgba.dir
++ cd stutter-tgba.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltl2tgba !FG(a | Xa | G!a) -H
++ autfilt -H --destut
++ ltl2tgba FG(a | Xa | G!a) -H
++ autfilt -H --destut
++ autfilt pos.hoa --product neg.hoa -H
++ autfilt --is-empty prod.hoa -q
++ autfilt --states=5 prod.hoa -q
++ ltl2tgba !FG(a | Xa | G!a) -H
++ autfilt -H --instut
++ ltl2tgba FG(a | Xa | G!a) -H
++ autfilt -H --instut
++ autfilt pos.hoa --product neg.hoa -H
++ autfilt --is-empty prod.hoa -q
++ autfilt --states=6 prod.hoa -q
++ ltl2tgba -H X(a U b)
++ run 0 autfilt --destut det.hoa -H
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --destut det.hoa -H
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --destut det.hoa -H
+HOA: v1
+name: "X(a U b)"
+States: 3
+Start: 1
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels trans-acc
+--BODY--
+State: 0
+[t] 0 {0}
+State: 1
+[t] 2
+[1] 0 {0}
+State: 2
+[1] 0 {0}
+[0&!1] 2
+--END--
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 autfilt --instut=1 det.hoa -H
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --instut=1 det.hoa -H
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --instut=1 det.hoa -H
+HOA: v1
+States: 9
+Start: 0
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc
+--BODY--
+State: 0
+[!0&!1] 1
+[!0&1] 2
+[0&!1] 3
+[0&1] 4
+State: 1
+[!0&!1] 1
+[0&!1] 3
+[!0&1] 5
+[0&1] 6
+State: 2
+[!0&1] 2
+[0&!1] 3
+[!0&1] 5
+[0&1] 6
+State: 3
+[0&!1] 3
+[!0&1] 5
+[0&1] 6
+State: 4
+[0&!1] 3
+[0&1] 4
+[!0&1] 5
+[0&1] 6
+State: 5 {0}
+[!0&1] 5
+[0&1] 6
+[!0&!1] 7
+[0&!1] 8
+State: 6 {0}
+[!0&1] 5
+[0&1] 6
+[!0&!1] 7
+[0&!1] 8
+State: 7 {0}
+[!0&1] 5
+[0&1] 6
+[!0&!1] 7
+[0&!1] 8
+State: 8 {0}
+[!0&1] 5
+[0&1] 6
+[!0&!1] 7
+[0&!1] 8
+--END--
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 autfilt --instut=2 det.hoa -H
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --instut=2 det.hoa -H
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --instut=2 det.hoa -H
+HOA: v1
+name: "X(a U b)"
+States: 6
+Start: 1
+AP: 2 "a" "b"
+acc-name: Buchi
+Acceptance: 1 Inf(0)
+properties: trans-labels explicit-labels state-acc
+--BODY--
+State: 0 {0}
+[t] 0
+State: 1
+[t] 2
+[!0&!1] 3
+[!0&1] 4
+[0&1] 5
+State: 2
+[1] 0
+[0&!1] 2
+State: 3
+[!0&!1] 2
+[!0&!1] 3
+State: 4
+[!0&1] 2
+[!0&1] 4
+State: 5
+[0&1] 2
+[0&1] 5
+--END--
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ ltl2tgba -H a & Fb
++ autfilt --destut -H
++ cat
++ diff output expected
++ ltl2tgba -H F(a & X(!a & b))
++ grep  stutter-invariant input
++ run 0 ltl2tgba --check=stutter F(a & X(!a & b))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba --check=stutter F(a & X(!a & b))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba --check=stutter F(a & X(!a & b))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep  stutter-invariant input.2
+properties: deterministic stutter-invariant terminal
++ run 0 autfilt --check=stutter input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --check=stutter input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --check=stutter input
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep  stutter-invariant input.2
+properties: deterministic stutter-invariant terminal
++ ltl2tgba F(a & X(a & b))
++ grep stutter-invariant input
++ run 0 ltl2tgba -H1.1 --check=stutter F(a & X(a & b))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H1.1 --check=stutter F(a & X(a & b))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -H1.1 --check=stutter F(a & X(a & b))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ grep !stutter-invariant input.2
+properties: deterministic !stutter-invariant terminal
++ run 0 autfilt --check=stutter input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --check=stutter input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --check=stutter input
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ autfilt -c -v --is-stutter-invariant input
++ test 1 = 1
++ grep stutter-sensitive input.2
+properties: deterministic stutter-sensitive terminal
++ ltl2tgba F(a & X(!a & Gb))
++ grep stutter-invariant input
++ grep deterministic input
++ run 0 autfilt --check=stutter input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --check=stutter input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt --check=stutter input
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ autfilt -c --is-stutter-invariant input
++ test 1 = 1
++ grep  stutter-invariant input.2
+properties: trans-labels explicit-labels state-acc stutter-invariant
++ ltl2tgba F(a & X(a & Gb))
++ grep stutter input
++ grep deterministic input
++ run 0 autfilt -H1.1 --check=stutter input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H1.1 --check=stutter input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H1.1 --check=stutter input
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ autfilt -c --is-stutter-invariant input
++ test 0 = 0
++ grep !deterministic input.2
+properties: !deterministic exist-branch !stutter-invariant very-weak
++ grep !stutter-invariant input.2
+properties: !deterministic exist-branch !stutter-invariant very-weak
++ ltl2tgba X(a & GF(a | Gb))
++ grep stutter input
++ grep deterministic input
++ run 0 autfilt -H1.1 --check=stutter input
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v autfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H1.1 --check=stutter input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/autfilt -H1.1 --check=stutter input
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ autfilt -c --is-stutter-invariant input
++ test 0 = 0
++ grep !deterministic input.2
+properties: !deterministic exist-branch !stutter-invariant !weak
++ grep !stutter-invariant input.2
+properties: !deterministic exist-branch !stutter-invariant !weak
++ cat
++ SPOT_STUTTER_CHECK=1 autfilt pirogov --is-stutter-invariant -c
++ test 0 = 0
++ SPOT_STUTTER_CHECK=2 autfilt pirogov --is-stutter-invariant -c
++ test 0 = 0
++ SPOT_STUTTER_CHECK=3 autfilt pirogov --is-stutter-invariant -c
++ test 0 = 0
++ SPOT_STUTTER_CHECK=4 autfilt pirogov --is-stutter-invariant -c
++ test 0 = 0
++ SPOT_STUTTER_CHECK=5 autfilt pirogov --is-stutter-invariant -c
++ test 0 = 0
++ SPOT_STUTTER_CHECK=6 autfilt pirogov --is-stutter-invariant -c
++ test 0 = 0
++ SPOT_STUTTER_CHECK=7 autfilt pirogov --is-stutter-invariant -c
++ test 0 = 0
++ SPOT_STUTTER_CHECK=8 autfilt pirogov --is-stutter-invariant -c
++ test 0 = 0
++ ltl2tgba Xa --check=stutter-sensitive-example
++ grep  stutter-sensitive out
+properties: stutter-sensitive terminal very-weak
++ grep ^spot-accepted-word: " out
+spot-accepted-word: "!a; cycle{a}"
++ grep ^spot-rejected-word: " out
+spot-rejected-word: "!a; !a; cycle{a}"
++ ltl2tgba X"a b" --check=stutter-sensitive-example -H1.1
++ grep  !stutter-invariant out
+properties: deterministic !stutter-invariant terminal very-weak
++ grep ^spot\.accepted-word: ".*\\\" out
+spot.accepted-word: "!\"a b\"; cycle{\"a b\"}"
++ grep ^spot\.rejected-word: ".*\\\" out
+spot.rejected-word: "!\"a b\"; !\"a b\"; cycle{\"a b\"}"
++ autfilt -q out
++ ltl2tgba Ga --check=stutter-sensitive-example
++ grep  stutter-invariant out
+properties: stutter-invariant very-weak
++ grep -q ^spot.accepted-word: " out
++ grep -q ^spot.rejected-word: " out
++ ltl2tgba G({x} |-> ({x[+]} <>-> ({Y1[+]} <>=> Y2))) --check=stutter-sensitive-example
++ grep  stutter-sensitive out
+properties: trans-labels explicit-labels trans-acc stutter-sensitive
++ grep -F spot-accepted-word: "cycle{!Y1 & !Y2 & x; Y1 & Y2 & x; out
+spot-accepted-word: "cycle{!Y1 & !Y2 & x; Y1 & Y2 & x; Y1 & Y2 & x}"
++ grep -F spot-rejected-word: "cycle{!Y1 & !Y2 & x; Y1 & Y2 & x} out
+spot-rejected-word: "cycle{!Y1 & !Y2 & x; Y1 & Y2 & x}"
++ :
+PASS core/stutter-tgba.test (exit status: 0)

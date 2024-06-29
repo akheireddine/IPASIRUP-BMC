@@ -1,0 +1,66 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test minusx.test
+== Running test minusx.test
++ echo minusx.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=minusx
++ testSubDir=minusx.dir
++ chmod -R a+rwx minusx.dir
++ rm -rf minusx.dir
++ mkdir minusx.dir
++ cd minusx.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltl2tgba - -x foo
++ grep ltl2tgba: option 'foo' was not used error
+ltl2tgba: option 'foo' was not used (possible typo?)
++ ltl2tgba -F- -x ba-simul,foo,bar
++ grep -v ba-simul error
+ltl2tgba: the following options where not used (possible typos?):
+	- 'bar'
+	- 'foo'
++ grep -- - 'foo' error
+	- 'foo'
++ grep -- - 'bar' error
+	- 'bar'
++ ltl2tgba -f FGa
++ autfilt -D
++ autfilt --sat-minimize=acc="co-Buchi",other
++ grep autfilt: option 'other' was not used error
+autfilt: option 'other' was not used (possible typo?)
++ f=G(!p0 | (!p2 U (p1 | (!p2 & p3 & X(!p2 U p4)))) | G!p1)
++ ltl2tgba --stats=%s,%d G(!p0 | (!p2 U (p1 | (!p2 & p3 & X(!p2 U p4)))) | G!p1)
++ test 4,1 = 4,1
++ ltl2tgba -x wdba-det-max=4 --stats=%s,%d G(!p0 | (!p2 U (p1 | (!p2 & p3 & X(!p2 U p4)))) | G!p1)
++ test 6,0 = 6,0
++ genltl --ms-phi-h=8
++ f=FG(a | b) | FG(!a | Xb) | FG(a | XXb) | FG(!a | XXXb) | FG(a | XXXXb) | FG(!a | XXXXXb) | FG(a | XXXXXXb) | FG(!a | XXXXXXXb) | FG(a | XXXXXXXXb)
++ ltl2tgba -P -D --stats=%s FG(a | b) | FG(!a | Xb) | FG(a | XXb) | FG(!a | XXXb) | FG(a | XXXXb) | FG(!a | XXXXXb) | FG(a | XXXXXXb) | FG(!a | XXXXXXXb) | FG(a | XXXXXXXXb)
++ test 511 -eq 511
++ ltl2tgba -P -D -x simul-max=512 --stats=%s FG(a | b) | FG(!a | Xb) | FG(a | XXb) | FG(!a | XXXb) | FG(a | XXXXb) | FG(!a | XXXXXb) | FG(a | XXXXXXb) | FG(!a | XXXXXXXb) | FG(a | XXXXXXXXb)
++ test 511 -lt 1280
++ L=ltl2tgba
++ ltl2tgba -xtba-det,simul=0 -D F(!p0 | GFp1) --stats=%s,%e
++ test 4,7 = 4,7
++ ltl2tgba -xtba-det,simul=1,dba-simul=0 -D F(!p0 | GFp1) --stats=%s,%e
++ test 4,8 = 4,8
++ ltl2tgba -xtba-det,simul=1 -D F(!p0 | GFp1) --stats=%s,%e
++ test 3,7 = 3,7
++ ltl2tgba -xtba-det,simul=0,dba-simul=1 -D F(!p0 | GFp1) --stats=%s,%e
++ test 2,4 = 2,4
+PASS core/minusx.test (exit status: 0)

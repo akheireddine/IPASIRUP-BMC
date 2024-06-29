@@ -1,0 +1,35 @@
+HOA: v1
+States: 4
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc weak
+--BODY--
+State: 0
+[!0&!1] 1
+State: 1
+[0&1] 2
+State: 2
+[!0&!1] 0
+[t] 3
+State: 3
+--END--
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: all
+Acceptance: 0 t
+properties: trans-labels explicit-labels state-acc deterministic weak
+Alias: @0 !0&1 | 0&!1
+Alias: @1 !0&!1
+Alias: @2 !@1&!@0
+--BODY--
+State: 0
+[@1] 1
+State: 1
+[@2] 2
+State: 2
+[@1] 0
+--END--

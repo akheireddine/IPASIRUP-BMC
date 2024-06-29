@@ -1,0 +1,2 @@
+input:6.1-7.8: ignoring unsupported header "Important:"
+	(but the capital indicates information that should not be ignored)

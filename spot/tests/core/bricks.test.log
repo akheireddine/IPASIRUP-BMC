@@ -1,0 +1,41 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test bricks.test
+== Running test bricks.test
++ echo bricks.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=bricks
++ testSubDir=bricks.dir
++ chmod -R a+rwx bricks.dir
++ rm -rf bricks.dir
++ mkdir bricks.dir
++ cd bricks.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ gawk BEGIN{for(x=0;x<2000;++x) print x;}
++ ../bricks
++ cat stdout
++ head -n 2000
++ gawk {print $2}
++ sed s/{//g
++ sort -n
++ gawk -F, {print $1}
++ diff expected map
++ cat stdout
++ wc -l
++ test 2067 = 2067
+PASS core/bricks.test (exit status: 0)

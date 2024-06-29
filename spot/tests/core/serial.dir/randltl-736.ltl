@@ -1,0 +1,1 @@
+p1 xor ((X(0) xor !XGp1) U (FXp0 M 1))

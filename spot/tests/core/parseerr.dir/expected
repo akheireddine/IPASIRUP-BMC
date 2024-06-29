@@ -1,0 +1,44 @@
+>>> 
+    ^
+empty input
+
+>>> +
+    ^
+syntax error, unexpected or operator
+
+>>> +
+    ^
+ignoring trailing garbage
+
+>>> /2/3/4/5 a + b /6/7/8/
+    ^
+syntax error, unexpected invalid token
+
+>>> /2/3/4/5 a + b /6/7/8/
+    ^^^^^^^^^^^^^^^^^^^^^^
+ignoring trailing garbage
+
+>>> a - b
+      ^
+syntax error, unexpected invalid token
+
+>>> a - b
+      ^^^
+ignoring trailing garbage
+
+"a"
+>>> {a[*9999999999]}
+        ^^^^^^^^^^
+value too large ignored
+
+Closure(@6 #0 [Star(@5 #0 0.. ["a"])])
+>>> {a ##[1:255] b}
+            ^^^
+255 exceeds maximum supported repetition (254)
+
+Closure(@12 #0 [Concat(@11 #0 ["a", Star(@9 #0 0..253 [tt(@1 #0)]), "b"])])
+>>> {a ##255 b}
+       ^^^^^
+255 exceeds maximum supported repetition (254)
+
+Closure(@17 #0 [Concat(@16 #0 ["a", Star(@15 #0 253..253 [tt(@1 #0)]), "b"])])

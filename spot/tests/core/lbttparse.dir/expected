@@ -1,0 +1,3 @@
+input:3.5-20: failed to parse guard:  & ! "a" ! "b" !
+input:3.20: syntax error, unexpected '!', expecting end of formula
+input:3.20: ignoring trailing garbage

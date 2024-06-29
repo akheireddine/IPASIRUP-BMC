@@ -1,0 +1,709 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test satmin2.test
+== Running test satmin2.test
++ echo satmin2.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=satmin2
++ testSubDir=satmin2.dir
++ chmod -R a+rwx satmin2.dir
++ rm -rf satmin2.dir
++ mkdir satmin2.dir
++ cd satmin2.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ cat
++ ../ikwiad -RS1 -kt -XH input.hoa
++ diff output expected
++ ltl2tgba -BD -x sat-minimize GF(a <-> XXb) -H
++ grep properties:.*state-acc out
+properties: trans-labels explicit-labels state-acc complete
++ grep properties:.*deterministic out
+properties: deterministic
++ ltl2tgba -BD -x sat-minimize,sat-langmap GF(a <-> XXb) -H
++ grep properties:.*state-acc out
+properties: trans-labels explicit-labels state-acc complete
++ grep properties:.*deterministic out
+properties: deterministic
++ ltl2tgba -BD -x sat-minimize=2, sat-incr-steps=0 GF(a <-> XXb) -H
++ grep properties:.*state-acc out
+properties: trans-labels explicit-labels state-acc complete
++ grep properties:.*deterministic out
+properties: deterministic
++ ltl2tgba -BD -x sat-minimize=2, sat-incr-steps=1 GF(a <-> XXb) -H
++ grep properties:.*state-acc out
+properties: trans-labels explicit-labels state-acc complete
++ grep properties:.*deterministic out
+properties: deterministic
++ ltl2tgba -BD -x sat-minimize=2, sat-incr-steps=2 GF(a <-> XXb) -H
++ grep properties:.*state-acc out
+properties: trans-labels explicit-labels state-acc complete
++ grep properties:.*deterministic out
+properties: deterministic
++ ltl2tgba -BD -x sat-minimize=2, sat-incr-steps=50 GF(a <-> XXb) -H
++ grep properties:.*state-acc out
+properties: trans-labels explicit-labels state-acc complete
++ grep properties:.*deterministic out
+properties: deterministic
++ ltl2tgba -BD -x sat-minimize=3, sat-incr-steps=-1 GF(a <-> XXb) -H
++ grep properties:.*state-acc out
+properties: trans-labels explicit-labels state-acc complete
++ grep properties:.*deterministic out
+properties: deterministic
++ ltl2tgba -BD -x sat-minimize=3, sat-incr-steps=0 GF(a <-> XXb) -H
++ grep properties:.*state-acc out
+properties: trans-labels explicit-labels state-acc complete
++ grep properties:.*deterministic out
+properties: deterministic
++ ltl2tgba -BD -x sat-minimize=3, sat-incr-steps=1 GF(a <-> XXb) -H
++ grep properties:.*state-acc out
+properties: trans-labels explicit-labels state-acc complete
++ grep properties:.*deterministic out
+properties: deterministic
++ ltl2tgba -BD -x sat-minimize=3, sat-incr-steps=2 GF(a <-> XXb) -H
++ grep properties:.*state-acc out
+properties: trans-labels explicit-labels state-acc complete
++ grep properties:.*deterministic out
+properties: deterministic
++ ltl2tgba -BD -x sat-minimize=3, sat-incr-steps=50 GF(a <-> XXb) -H
++ grep properties:.*state-acc out
+properties: trans-labels explicit-labels state-acc complete
++ grep properties:.*deterministic out
+properties: deterministic
++ ltl2tgba -BD -x sat-minimize=4 GF(a <-> XXb) -H
++ grep properties:.*state-acc out
+properties: trans-labels explicit-labels state-acc complete
++ grep properties:.*deterministic out
+properties: deterministic
++ cat
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)" test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=sat-langmap,acc="Fin(0)|Inf(1)" test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)",sat-incr=1,sat-incr-steps=0 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)",sat-incr=1,sat-incr-steps=1 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)",sat-incr=1,sat-incr-steps=2 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)",sat-incr=1,sat-incr-steps=50 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)"sat-incr=2,sat-incr-steps=-1 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)"sat-incr=2,sat-incr-steps=0 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)"sat-incr=2,sat-incr-steps=1 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)"sat-incr=2,sat-incr-steps=2 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)"sat-incr=2,sat-incr-steps=50 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=sat-naive,acc="Fin(0)|Inf(1)" test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt -S --sat-minimize=acc="Fin(0)|Inf(1)" test.hoa --stats=%s
++ cat output
++ test 3 = 3
++ autfilt -S --sat-minimize=sat-langmap,acc="Fin(0)|Inf(1)" test.hoa --stats=%s
++ cat output
++ test 3 = 3
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)",sat-incr=1,sat-incr-steps=0 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)",sat-incr=1,sat-incr-steps=1 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)",sat-incr=1,sat-incr-steps=2 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)",sat-incr=1,sat-incr-steps=50 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)"sat-incr=2,sat-incr-steps=-1 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)"sat-incr=2,sat-incr-steps=0 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)"sat-incr=2,sat-incr-steps=1 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)"sat-incr=2,sat-incr-steps=2 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)"sat-incr=2,sat-incr-steps=50 test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt --sat-minimize=acc="Fin(0)|Inf(1)",sat-naive test.hoa --stats=%s
++ cat output
++ test 1 = 1
++ autfilt -S --sat-minimize=acc="parity max even 3",colored -H test.hoa
++ autfilt --is-colored
++ cat output
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic
+--BODY--
+State: 0 {2}
+[!0&!1] 1
+[0 | 1] 2
+State: 1 {1}
+[1] 0
+[0&!1] 1
+[!0&!1] 2
+State: 2 {0}
+[1] 0
+[0&!1] 1
+[!0&!1] 2
+--END--
++ grep properties:.*colored output
+properties: trans-labels explicit-labels state-acc colored complete
++ grep States: 3 output
+States: 3
++ grep acc-name: parity max even 3 output
+acc-name: parity max even 3
++ grep Acceptance: 3 Inf(2) | (Fin(1) & Inf(0)) output
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
++ grep -c State: [012] {[012]} output
++ test 3 = 3
++ autfilt -S --sat-minimize=acc="parity max even 3",colored,sat-langmap -H test.hoa
++ cat output
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic
+--BODY--
+State: 0 {2}
+[!0&!1] 1
+[0 | 1] 2
+State: 1 {1}
+[1] 0
+[0&!1] 1
+[!0&!1] 2
+State: 2 {0}
+[1] 0
+[0&!1] 1
+[!0&!1] 2
+--END--
++ grep properties:.*colored output
+properties: trans-labels explicit-labels state-acc colored complete
++ grep States: 3 output
+States: 3
++ grep acc-name: parity max even 3 output
+acc-name: parity max even 3
++ grep Acceptance: 3 Inf(2) | (Fin(1) & Inf(0)) output
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
++ grep -c State: [012] {[012]} output
++ test 3 = 3
++ autfilt -S --sat-minimize=acc="parity max even 3",colored,sat-incr=1,sat-incr-steps=0 -H test.hoa
++ cat output
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic
+--BODY--
+State: 0 {1}
+[!1] 1
+[1] 2
+State: 1 {0}
+[0&!1] 0
+[!0&!1] 1
+[1] 2
+State: 2 {2}
+[0&!1] 1
+[!0 | 1] 2
+--END--
++ grep properties:.*colored output
+properties: trans-labels explicit-labels state-acc colored complete
++ grep States: 3 output
+States: 3
++ grep acc-name: parity max even 3 output
+acc-name: parity max even 3
++ grep Acceptance: 3 Inf(2) | (Fin(1) & Inf(0)) output
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
++ grep -c State: [012] {[012]} output
++ test 3 = 3
++ autfilt -S --sat-minimize=acc="parity max even 3",colored,sat-incr=1,sat-incr-steps=1 -H test.hoa
++ cat output
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic
+--BODY--
+State: 0 {1}
+[!1] 1
+[1] 2
+State: 1 {0}
+[0&!1] 0
+[!0&!1] 1
+[1] 2
+State: 2 {2}
+[0&!1] 1
+[!0 | 1] 2
+--END--
++ grep properties:.*colored output
+properties: trans-labels explicit-labels state-acc colored complete
++ grep States: 3 output
+States: 3
++ grep acc-name: parity max even 3 output
+acc-name: parity max even 3
++ grep Acceptance: 3 Inf(2) | (Fin(1) & Inf(0)) output
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
++ grep -c State: [012] {[012]} output
++ test 3 = 3
++ autfilt -S --sat-minimize=acc="parity max even 3",colored,sat-incr=1,sat-incr-steps=2 -H test.hoa
++ cat output
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic
+--BODY--
+State: 0 {1}
+[!1] 1
+[1] 2
+State: 1 {0}
+[0&!1] 0
+[!0&!1] 1
+[1] 2
+State: 2 {2}
+[0&!1] 1
+[!0 | 1] 2
+--END--
++ grep properties:.*colored output
+properties: trans-labels explicit-labels state-acc colored complete
++ grep States: 3 output
+States: 3
++ grep acc-name: parity max even 3 output
+acc-name: parity max even 3
++ grep Acceptance: 3 Inf(2) | (Fin(1) & Inf(0)) output
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
++ grep -c State: [012] {[012]} output
++ test 3 = 3
++ autfilt -S --sat-minimize=acc="parity max even 3",colored,sat-incr=1,sat-incr-steps=50 -H test.hoa
++ cat output
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic
+--BODY--
+State: 0 {1}
+[!1] 1
+[1] 2
+State: 1 {0}
+[0&!1] 0
+[!0&!1] 1
+[1] 2
+State: 2 {2}
+[0&!1] 1
+[!0 | 1] 2
+--END--
++ grep properties:.*colored output
+properties: trans-labels explicit-labels state-acc colored complete
++ grep States: 3 output
+States: 3
++ grep acc-name: parity max even 3 output
+acc-name: parity max even 3
++ grep Acceptance: 3 Inf(2) | (Fin(1) & Inf(0)) output
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
++ grep -c State: [012] {[012]} output
++ test 3 = 3
++ autfilt -S --sat-minimize=acc="parity max even 3",colored,sat-incr=2,sat-incr-steps=-1 -H test.hoa
++ cat output
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic
+--BODY--
+State: 0 {2}
+[!0&!1] 1
+[0 | 1] 2
+State: 1 {1}
+[1] 0
+[0&!1] 1
+[!0&!1] 2
+State: 2 {0}
+[1] 0
+[0&!1] 1
+[!0&!1] 2
+--END--
++ grep properties:.*colored output
+properties: trans-labels explicit-labels state-acc colored complete
++ grep States: 3 output
+States: 3
++ grep acc-name: parity max even 3 output
+acc-name: parity max even 3
++ grep Acceptance: 3 Inf(2) | (Fin(1) & Inf(0)) output
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
++ grep -c State: [012] {[012]} output
++ test 3 = 3
++ autfilt -S --sat-minimize=acc="parity max even 3",colored,sat-incr=2,sat-incr-steps=0 -H test.hoa
++ cat output
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic
+--BODY--
+State: 0 {2}
+[!0&!1] 1
+[0 | 1] 2
+State: 1 {1}
+[1] 0
+[0&!1] 1
+[!0&!1] 2
+State: 2 {0}
+[1] 0
+[0&!1] 1
+[!0&!1] 2
+--END--
++ grep properties:.*colored output
+properties: trans-labels explicit-labels state-acc colored complete
++ grep States: 3 output
+States: 3
++ grep acc-name: parity max even 3 output
+acc-name: parity max even 3
++ grep Acceptance: 3 Inf(2) | (Fin(1) & Inf(0)) output
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
++ grep -c State: [012] {[012]} output
++ test 3 = 3
++ autfilt -S --sat-minimize=acc="parity max even 3",colored,sat-incr=2,sat-incr-steps=1 -H test.hoa
++ cat output
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic
+--BODY--
+State: 0 {2}
+[!0&!1] 1
+[0 | 1] 2
+State: 1 {1}
+[1] 0
+[0&!1] 1
+[!0&!1] 2
+State: 2 {0}
+[1] 0
+[0&!1] 1
+[!0&!1] 2
+--END--
++ grep properties:.*colored output
+properties: trans-labels explicit-labels state-acc colored complete
++ grep States: 3 output
+States: 3
++ grep acc-name: parity max even 3 output
+acc-name: parity max even 3
++ grep Acceptance: 3 Inf(2) | (Fin(1) & Inf(0)) output
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
++ grep -c State: [012] {[012]} output
++ test 3 = 3
++ autfilt -S --sat-minimize=acc="parity max even 3",colored,sat-incr=2,sat-incr-steps=2 -H test.hoa
++ cat output
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic
+--BODY--
+State: 0 {2}
+[!0&!1] 1
+[0 | 1] 2
+State: 1 {1}
+[1] 0
+[0&!1] 1
+[!0&!1] 2
+State: 2 {0}
+[1] 0
+[0&!1] 1
+[!0&!1] 2
+--END--
++ grep properties:.*colored output
+properties: trans-labels explicit-labels state-acc colored complete
++ grep States: 3 output
+States: 3
++ grep acc-name: parity max even 3 output
+acc-name: parity max even 3
++ grep Acceptance: 3 Inf(2) | (Fin(1) & Inf(0)) output
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
++ grep -c State: [012] {[012]} output
++ test 3 = 3
++ autfilt -S --sat-minimize=acc="parity max even 3",colored,sat-incr=2,sat-incr-steps=50 -H test.hoa
++ cat output
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic
+--BODY--
+State: 0 {2}
+[!0&!1] 1
+[0 | 1] 2
+State: 1 {1}
+[1] 0
+[0&!1] 1
+[!0&!1] 2
+State: 2 {0}
+[1] 0
+[0&!1] 1
+[!0&!1] 2
+--END--
++ grep properties:.*colored output
+properties: trans-labels explicit-labels state-acc colored complete
++ grep States: 3 output
+States: 3
++ grep acc-name: parity max even 3 output
+acc-name: parity max even 3
++ grep Acceptance: 3 Inf(2) | (Fin(1) & Inf(0)) output
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
++ grep -c State: [012] {[012]} output
++ test 3 = 3
++ autfilt -S --sat-minimize=acc="parity max even 3",colored,sat-naive -H test.hoa
++ cat output
+HOA: v1
+States: 3
+Start: 0
+AP: 2 "p0" "p1"
+acc-name: parity max even 3
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
+properties: trans-labels explicit-labels state-acc colored complete
+properties: deterministic
+--BODY--
+State: 0 {2}
+[!0&!1] 1
+[0 | 1] 2
+State: 1 {1}
+[1] 0
+[0&!1] 1
+[!0&!1] 2
+State: 2 {0}
+[1] 0
+[0&!1] 1
+[!0&!1] 2
+--END--
++ grep properties:.*colored output
+properties: trans-labels explicit-labels state-acc colored complete
++ grep States: 3 output
+States: 3
++ grep acc-name: parity max even 3 output
+acc-name: parity max even 3
++ grep Acceptance: 3 Inf(2) | (Fin(1) & Inf(0)) output
+Acceptance: 3 Inf(2) | (Fin(1) & Inf(0))
++ grep -c State: [012] {[012]} output
++ test 3 = 3
++ cat
++ cat
++ autfilt -H --sat-minimize special.hoa
++ diff output expected
++ autfilt -H --sat-minimize=sat-langmap special.hoa
++ diff output expected
++ autfilt -H --sat-minimize=sat-incr=1,sat-incr-steps=0 special.hoa
++ diff output expected
++ autfilt -H --sat-minimize=sat-incr=1,sat-incr-steps=1 special.hoa
++ diff output expected
++ autfilt -H --sat-minimize=sat-incr=1,sat-incr-steps=2 special.hoa
++ diff output expected
++ autfilt -H --sat-minimize=sat-incr=1,sat-incr-steps=50 special.hoa
++ diff output expected
++ autfilt -H --sat-minimize=sat-incr=2,sat-incr-steps=-1 special.hoa
++ diff output expected
++ autfilt -H --sat-minimize=sat-incr=2,sat-incr-steps=0 special.hoa
++ diff output expected
++ autfilt -H --sat-minimize=sat-incr=2,sat-incr-steps=1 special.hoa
++ diff output expected
++ autfilt -H --sat-minimize=sat-incr=2,sat-incr-steps=2 special.hoa
++ diff output expected
++ autfilt -H --sat-minimize=sat-incr=2,sat-incr-steps=50 special.hoa
++ diff output expected
++ autfilt -H --sat-minimize=sat-naive special.hoa
++ diff output expected
++ cat
++ autfilt -q --is-colored foo.hoa
++ autfilt --sat-minimize=acc="Streett 1",max-states=2 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Streett 1",max-states=2,sat-langmap foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Streett 1",max-states=2,sat-incr=1,sat-incr-steps=0 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Streett 1",max-states=2,sat-incr=1,sat-incr-steps=1 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Streett 1",max-states=2,sat-incr=1,sat-incr-steps=2 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Streett 1",max-states=2,sat-incr=1,sat-incr-steps=50 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Streett 1",max-states=2,sat-incr=2,sat-incr-steps=-1 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Streett 1",max-states=2,sat-incr=2,sat-incr-steps=0 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Streett 1",max-states=2,sat-incr=2,sat-incr-steps=1 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Streett 1",max-states=2,sat-incr=2,sat-incr-steps=2 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Streett 1",max-states=2,sat-incr=2,sat-incr-steps=50 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Streett 1",max-states=2,sat-naive foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Rabin 1",max-states=4 foo.hoa --stats=%s
++ cat out
++ test -z 
++ autfilt --sat-minimize=acc="Rabin 1",max-states=4,sat-langmap foo.hoa --stats=%s
++ cat out
++ test -z 
++ autfilt --sat-minimize=acc="Rabin 1",max-states=4,sat-incr=1,sat-incr-steps=0 foo.hoa --stats=%s
++ cat out
++ test -z 
++ autfilt --sat-minimize=acc="Rabin 1",max-states=4,sat-incr=1,sat-incr-steps=1 foo.hoa --stats=%s
++ cat out
++ test -z 
++ autfilt --sat-minimize=acc="Rabin 1",max-states=4,sat-incr=1,sat-incr-steps=2 foo.hoa --stats=%s
++ cat out
++ test -z 
++ autfilt --sat-minimize=acc="Rabin 1",max-states=4,sat-incr=1,sat-incr-steps=50 foo.hoa --stats=%s
++ cat out
++ test -z 
++ autfilt --sat-minimize=acc="Rabin 1",max-states=4sat-incr=2,sat-incr-steps=-1 foo.hoa --stats=%s
+autfilt: failed to parse option near 4sat-incr=2,sat-incr-steps=-1
++ cat out
++ test -z 
++ autfilt --sat-minimize=acc="Rabin 1",max-states=4sat-incr=2,sat-incr-steps=0 foo.hoa --stats=%s
+autfilt: failed to parse option near 4sat-incr=2,sat-incr-steps=0
++ cat out
++ test -z 
++ autfilt --sat-minimize=acc="Rabin 1",max-states=4sat-incr=2,sat-incr-steps=1 foo.hoa --stats=%s
+autfilt: failed to parse option near 4sat-incr=2,sat-incr-steps=1
++ cat out
++ test -z 
++ autfilt --sat-minimize=acc="Rabin 1",max-states=4sat-incr=2,sat-incr-steps=2 foo.hoa --stats=%s
+autfilt: failed to parse option near 4sat-incr=2,sat-incr-steps=2
++ cat out
++ test -z 
++ autfilt --sat-minimize=acc="Rabin 1",max-states=4sat-incr=2,sat-incr-steps=50 foo.hoa --stats=%s
+autfilt: failed to parse option near 4sat-incr=2,sat-incr-steps=50
++ cat out
++ test -z 
++ autfilt --sat-minimize=acc="Rabin 1",max-states=4,sat-naive foo.hoa --stats=%s
++ cat out
++ test -z 
++ autfilt --sat-minimize=acc="Inf(0)&Fin(1)|Inf(2)",states=1 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ options=acc="Inf(0)&Fin(1)|Inf(2)",states=1
++ autfilt --sat-minimize=acc="Inf(0)&Fin(1)|Inf(2)",states=1,sat-langmap foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Inf(0)&Fin(1)|Inf(2)",states=1,sat-incr=1,sat-incr-steps=0 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Inf(0)&Fin(1)|Inf(2)",states=1,sat-incr=1,sat-incr-steps=1 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Inf(0)&Fin(1)|Inf(2)",states=1,sat-incr=1,sat-incr-steps=2 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Inf(0)&Fin(1)|Inf(2)",states=1,sat-incr=1,sat-incr-steps=50 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Inf(0)&Fin(1)|Inf(2)",states=1,sat-incr=2,sat-incr-steps=-1 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Inf(0)&Fin(1)|Inf(2)",states=1,sat-incr=2,sat-incr-steps=0 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Inf(0)&Fin(1)|Inf(2)",states=1,sat-incr=2,sat-incr-steps=1 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Inf(0)&Fin(1)|Inf(2)",states=1,sat-incr=2,sat-incr-steps=2 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Inf(0)&Fin(1)|Inf(2)",states=1,sat-incr=2,sat-incr-steps=50 foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ autfilt --sat-minimize=acc="Inf(0)&Fin(1)|Inf(2)",states=1,sat-naive foo.hoa --stats=%s
++ cat out
++ test 1 = 1
++ ltl2tgba+  a
+autfilt --sat-minimize --stats=%s
++ test 2 = 2
++ ltl2tgba -G -D -f GF(a <-> XXb)
++ autfilt -B --sat-minimize --stats=%s aut
++ test 6 = 6
++ autfilt -B -S --sat-minimize --stats=%s aut
++ test 6 = 6
+PASS core/satmin2.test (exit status: 0)

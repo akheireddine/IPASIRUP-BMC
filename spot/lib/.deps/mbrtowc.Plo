@@ -1,0 +1,61 @@
+mbrtowc.lo: mbrtowc.c /usr/x86_64-linux-gnu/include/stdc-predef.h \
+ ../config.h wchar.h /usr/x86_64-linux-gnu/include/features.h \
+ /usr/x86_64-linux-gnu/include/features-time64.h \
+ /usr/x86_64-linux-gnu/include/bits/wordsize.h \
+ /usr/x86_64-linux-gnu/include/bits/timesize.h \
+ /usr/x86_64-linux-gnu/include/sys/cdefs.h \
+ /usr/x86_64-linux-gnu/include/bits/long-double.h \
+ /usr/x86_64-linux-gnu/include/gnu/stubs.h \
+ /usr/x86_64-linux-gnu/include/gnu/stubs-64.h \
+ /usr/x86_64-linux-gnu/include/wchar.h \
+ /usr/x86_64-linux-gnu/include/bits/libc-header-start.h \
+ /usr/x86_64-linux-gnu/include/bits/floatn.h \
+ /usr/x86_64-linux-gnu/include/bits/floatn-common.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
+ /usr/x86_64-linux-gnu/include/bits/wchar.h \
+ /usr/x86_64-linux-gnu/include/bits/types/wint_t.h \
+ /usr/x86_64-linux-gnu/include/bits/types/mbstate_t.h \
+ /usr/x86_64-linux-gnu/include/bits/types/__mbstate_t.h \
+ /usr/x86_64-linux-gnu/include/bits/types/__FILE.h \
+ /usr/x86_64-linux-gnu/include/bits/types/FILE.h \
+ /usr/x86_64-linux-gnu/include/bits/types/locale_t.h \
+ /usr/x86_64-linux-gnu/include/bits/types/__locale_t.h \
+ /usr/x86_64-linux-gnu/include/bits/wchar2.h hard-locale.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h locale.h \
+ /usr/x86_64-linux-gnu/include/locale.h \
+ /usr/x86_64-linux-gnu/include/bits/locale.h setlocale_null.h \
+ arg-nonnull.h
+/usr/x86_64-linux-gnu/include/stdc-predef.h:
+../config.h:
+wchar.h:
+/usr/x86_64-linux-gnu/include/features.h:
+/usr/x86_64-linux-gnu/include/features-time64.h:
+/usr/x86_64-linux-gnu/include/bits/wordsize.h:
+/usr/x86_64-linux-gnu/include/bits/timesize.h:
+/usr/x86_64-linux-gnu/include/sys/cdefs.h:
+/usr/x86_64-linux-gnu/include/bits/long-double.h:
+/usr/x86_64-linux-gnu/include/gnu/stubs.h:
+/usr/x86_64-linux-gnu/include/gnu/stubs-64.h:
+/usr/x86_64-linux-gnu/include/wchar.h:
+/usr/x86_64-linux-gnu/include/bits/libc-header-start.h:
+/usr/x86_64-linux-gnu/include/bits/floatn.h:
+/usr/x86_64-linux-gnu/include/bits/floatn-common.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
+/usr/x86_64-linux-gnu/include/bits/wchar.h:
+/usr/x86_64-linux-gnu/include/bits/types/wint_t.h:
+/usr/x86_64-linux-gnu/include/bits/types/mbstate_t.h:
+/usr/x86_64-linux-gnu/include/bits/types/__mbstate_t.h:
+/usr/x86_64-linux-gnu/include/bits/types/__FILE.h:
+/usr/x86_64-linux-gnu/include/bits/types/FILE.h:
+/usr/x86_64-linux-gnu/include/bits/types/locale_t.h:
+/usr/x86_64-linux-gnu/include/bits/types/__locale_t.h:
+/usr/x86_64-linux-gnu/include/bits/wchar2.h:
+hard-locale.h:
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdbool.h:
+locale.h:
+/usr/x86_64-linux-gnu/include/locale.h:
+/usr/x86_64-linux-gnu/include/bits/locale.h:
+setlocale_null.h:
+arg-nonnull.h:

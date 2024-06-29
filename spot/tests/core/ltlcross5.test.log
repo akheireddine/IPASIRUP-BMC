@@ -1,0 +1,81 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltlcross5.test
+== Running test ltlcross5.test
++ echo ltlcross5.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltlcross5
++ testSubDir=ltlcross5.dir
++ chmod -R a+rwx ltlcross5.dir
++ rm -rf ltlcross5.dir
++ mkdir ltlcross5.dir
++ cd ltlcross5.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ unset TMPDIR
++ unset SPOT_TMPDIR
++ err=0
++ SPOT_TMPDIR=bar ltlcross ltl2tgba -f GFa
++ cat err
+G(F(a))
+ltlcross: failed to create temporary file bar/lcr-o0-S4JLoF: No such file or directory
+Note that the directory comes from the SPOT_TMPDIR environment variable.
++ grep failed to create temporary file err
+ltlcross: failed to create temporary file bar/lcr-o0-S4JLoF: No such file or directory
++ grep Note that the directory.*SPOT_TMPDIR  err
+Note that the directory comes from the SPOT_TMPDIR environment variable.
++ TMPDIR=bar ltlcross ltl2tgba -f GFa
++ cat err
+G(F(a))
+ltlcross: failed to create temporary file bar/lcr-o0-cxHBEl: No such file or directory
+Note that the directory comes from the TMPDIR environment variable.
++ grep failed to create temporary file err
+ltlcross: failed to create temporary file bar/lcr-o0-cxHBEl: No such file or directory
++ grep Note that the directory.* TMPDIR  err
+Note that the directory comes from the TMPDIR environment variable.
++ mkdir foo
++ chmod a-w foo
++ cd foo
++ touch bar
+touch: impossible de faire un touch 'bar': Permission non accordée
++ ltlcross ltl2tgba -f GFa
++ cd ..
++ cat err
+G(F(a))
+ltlcross: failed to create temporary file lcr-o0-2fupNk: Permission denied
+Consider executing this from a writable directory, or setting
+the SPOT_TMPDIR environment variable to such a directory.
++ grep failed to create temporary file err
+ltlcross: failed to create temporary file lcr-o0-2fupNk: Permission denied
++ grep executing this from a writable err
+Consider executing this from a writable directory, or setting
++ grep SPOT_TMPDIR err
+the SPOT_TMPDIR environment variable to such a directory.
++ SPOT_TMPDIR=foo ltlcross ltl2tgba -f GFa
++ cat err
+G(F(a))
+ltlcross: failed to create temporary file foo/lcr-o0-eSMHvO: Permission denied
+Consider setting the SPOT_TMPDIR environment variable to a writable directory.
++ grep failed to create temporary file err
+ltlcross: failed to create temporary file foo/lcr-o0-eSMHvO: Permission denied
++ grep executing this from a writable err
++ grep SPOT_TMPDIR err
+Consider setting the SPOT_TMPDIR environment variable to a writable directory.
++ chmod a+w foo
++ rmdir foo
++ exit 0
+PASS core/ltlcross5.test (exit status: 0)

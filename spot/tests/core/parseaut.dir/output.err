@@ -1,0 +1,544 @@
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -d -XH input
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -d -XH input
+Starting parse
+Entering state 0
+Stack now 0
+Reading a token
+Next token is token HOA: (1.1-4: )
+Shifting token HOA: (1.1-4: )
+Entering state 3
+Stack now 0 3
+Reading a token
+Next token is token identifier (1.6-7: v1)
+Reducing stack by rule 20 (line 752):
+-> $$ = nterm $@2 (1.5-4: )
+Entering state 26
+Stack now 0 3 26
+Next token is token identifier (1.6-7: v1)
+Shifting token identifier (1.6-7: v1)
+Entering state 44
+Stack now 0 3 26 44
+Reducing stack by rule 19 (line 745):
+   $1 = token identifier (1.6-7: v1)
+-> $$ = nterm version (1.6-7: )
+Entering state 45
+Stack now 0 3 26 45
+Reducing stack by rule 21 (line 752):
+   $1 = token HOA: (1.1-4: )
+   $2 = nterm $@2 (1.5-4: )
+   $3 = nterm version (1.6-7: )
+-> $$ = nterm format-version (1.1-7: )
+Entering state 14
+Stack now 0 14
+Reducing stack by rule 26 (line 814):
+-> $$ = nterm header-items (1.8-7: )
+Entering state 31
+Stack now 0 14 31
+Reading a token
+Next token is token States: (2.1-7: )
+Shifting token States: (2.1-7: )
+Entering state 51
+Stack now 0 14 31 51
+Reading a token
+Next token is token integer (2.9: 2)
+Shifting token integer (2.9: 2)
+Entering state 87
+Stack now 0 14 31 51 87
+Reducing stack by rule 28 (line 816):
+   $1 = token States: (2.1-7: )
+   $2 = token integer (2.9: 2)
+-> $$ = nterm header-item (2.1-9: )
+Entering state 66
+Stack now 0 14 31 66
+Reducing stack by rule 27 (line 815):
+   $1 = nterm header-items (1.8-7: )
+   $2 = nterm header-item (2.1-9: )
+-> $$ = nterm header-items (1.8-2.9: )
+Entering state 31
+Stack now 0 14 31
+Reading a token
+Next token is token Start: (3.1-6: )
+Shifting token Start: (3.1-6: )
+Entering state 52
+Stack now 0 14 31 52
+Reading a token
+Next token is token integer (3.8: 0)
+Shifting token integer (3.8: 0)
+Entering state 88
+Stack now 0 14 31 52 88
+Reducing stack by rule 91 (line 1348):
+   $1 = token integer (3.8: 0)
+-> $$ = nterm state-num (3.8: 0)
+Entering state 90
+Stack now 0 14 31 52 90
+Reading a token
+Next token is token AP: (4.1-3: )
+Reducing stack by rule 30 (line 839):
+   $1 = token Start: (3.1-6: )
+   $2 = nterm state-num (3.8: 0)
+-> $$ = nterm header-item (3.1-8: )
+Entering state 66
+Stack now 0 14 31 66
+Reducing stack by rule 27 (line 815):
+   $1 = nterm header-items (1.8-2.9: )
+   $2 = nterm header-item (3.1-8: )
+-> $$ = nterm header-items (1.8-3.8: )
+Entering state 31
+Stack now 0 14 31
+Next token is token AP: (4.1-3: )
+Shifting token AP: (4.1-3: )
+Entering state 53
+Stack now 0 14 31 53
+Reading a token
+Next token is token integer (4.5: 0)
+Shifting token integer (4.5: 0)
+Entering state 91
+Stack now 0 14 31 53 91
+Reducing stack by rule 24 (line 762):
+-> $$ = nterm $@3 (4.6-5: )
+Entering state 135
+Stack now 0 14 31 53 91 135
+Reducing stack by rule 49 (line 939):
+-> $$ = nterm ap-names (4.6-5: )
+Entering state 191
+Stack now 0 14 31 53 91 135 191
+Reading a token
+Next token is token acc-name: (5.1-9: )
+Reducing stack by rule 25 (line 761):
+   $1 = token AP: (4.1-3: )
+   $2 = token integer (4.5: 0)
+   $3 = nterm $@3 (4.6-5: )
+   $4 = nterm ap-names (4.6-5: )
+-> $$ = nterm aps (4.1-5: )
+Entering state 65
+Stack now 0 14 31 65
+Reducing stack by rule 31 (line 843):
+   $1 = nterm aps (4.1-5: )
+-> $$ = nterm header-item (4.1-5: )
+Entering state 66
+Stack now 0 14 31 66
+Reducing stack by rule 27 (line 815):
+   $1 = nterm header-items (1.8-3.8: )
+   $2 = nterm header-item (4.1-5: )
+-> $$ = nterm header-items (1.8-4.5: )
+Entering state 31
+Stack now 0 14 31
+Next token is token acc-name: (5.1-9: )
+Shifting token acc-name: (5.1-9: )
+Entering state 56
+Stack now 0 14 31 56
+Reading a token
+Next token is token identifier (5.11-15: Buchi)
+Shifting token identifier (5.11-15: Buchi)
+Entering state 94
+Stack now 0 14 31 56 94
+Reducing stack by rule 52 (line 969):
+-> $$ = nterm acc-spec (5.16-15: )
+Entering state 138
+Stack now 0 14 31 56 94 138
+Reading a token
+Next token is token Acceptance: (6.1-11: )
+Reducing stack by rule 37 (line 899):
+   $1 = token acc-name: (5.1-9: )
+   $2 = token identifier (5.11-15: Buchi)
+   $3 = nterm acc-spec (5.16-15: )
+-> $$ = nterm header-item (5.1-15: )
+Entering state 66
+Stack now 0 14 31 66
+Reducing stack by rule 27 (line 815):
+   $1 = nterm header-items (1.8-4.5: )
+   $2 = nterm header-item (5.1-15: )
+-> $$ = nterm header-items (1.8-5.15: )
+Entering state 31
+Stack now 0 14 31
+Next token is token Acceptance: (6.1-11: )
+Shifting token Acceptance: (6.1-11: )
+Entering state 55
+Stack now 0 14 31 55
+Reading a token
+Next token is token integer (6.13: 1)
+Shifting token integer (6.13: 1)
+Entering state 93
+Stack now 0 14 31 55 93
+Reducing stack by rule 35 (line 866):
+-> $$ = nterm $@5 (6.14-13: )
+Entering state 137
+Stack now 0 14 31 55 93 137
+Reading a token
+Next token is token identifier (6.15-17: Inf)
+Shifting token identifier (6.15-17: Inf)
+Entering state 193
+Stack now 0 14 31 55 93 137 193
+Reading a token
+Next token is token '(' (6.18: )
+Shifting token '(' (6.18: )
+Entering state 234
+Stack now 0 14 31 55 93 137 193 234
+Reading a token
+Next token is token integer (6.19: 0)
+Shifting token integer (6.19: 0)
+Entering state 254
+Stack now 0 14 31 55 93 137 193 234 254
+Reducing stack by rule 82 (line 1144):
+   $1 = token integer (6.19: 0)
+-> $$ = nterm acc-set (6.19: 0)
+Entering state 258
+Stack now 0 14 31 55 93 137 193 234 258
+Reading a token
+Next token is token ')' (6.20: )
+Shifting token ')' (6.20: )
+Entering state 273
+Stack now 0 14 31 55 93 137 193 234 258 273
+Reducing stack by rule 83 (line 1162):
+   $1 = token identifier (6.15-17: Inf)
+   $2 = token '(' (6.18: )
+   $3 = nterm acc-set (6.19: 0)
+   $4 = token ')' (6.20: )
+-> $$ = nterm acceptance-cond (6.15-20: )
+Entering state 197
+Stack now 0 14 31 55 93 137 197
+Reading a token
+Next token is token --BODY-- (7.1-8: )
+Reducing stack by rule 36 (line 865):
+   $1 = token Acceptance: (6.1-11: )
+   $2 = token integer (6.13: 1)
+   $3 = nterm $@5 (6.14-13: )
+   $4 = nterm acceptance-cond (6.15-20: )
+-> $$ = nterm header-item (6.1-20: )
+Entering state 66
+Stack now 0 14 31 66
+Reducing stack by rule 27 (line 815):
+   $1 = nterm header-items (1.8-5.15: )
+   $2 = nterm header-item (6.1-20: )
+-> $$ = nterm header-items (1.8-6.20: )
+Entering state 31
+Stack now 0 14 31
+Next token is token --BODY-- (7.1-8: )
+Reducing stack by rule 18 (line 398):
+   $1 = nterm format-version (1.1-7: )
+   $2 = nterm header-items (1.8-6.20: )
+-> $$ = nterm header (1.1-6.20: )
+Entering state 13
+Stack now 0 13
+Next token is token --BODY-- (7.1-8: )
+Shifting token --BODY-- (7.1-8: )
+Entering state 30
+Stack now 0 13 30
+Reducing stack by rule 93 (line 1401):
+-> $$ = nterm states (7.9-8: )
+Entering state 49
+Stack now 0 13 30 49
+Reading a token
+Next token is token State: (8.1-6: )
+Shifting token State: (8.1-6: )
+Entering state 84
+Stack now 0 13 30 49 84
+Reading a token
+Next token is token integer (8.8: 0)
+Reducing stack by rule 102 (line 1527):
+-> $$ = nterm state-label_opt (8.7-6: )
+Entering state 121
+Stack now 0 13 30 49 84 121
+Next token is token integer (8.8: 0)
+Shifting token integer (8.8: 0)
+Entering state 88
+Stack now 0 13 30 49 84 121 88
+Reducing stack by rule 91 (line 1348):
+   $1 = token integer (8.8: 0)
+-> $$ = nterm state-num (8.8: 0)
+Entering state 123
+Stack now 0 13 30 49 84 121 123
+Reducing stack by rule 92 (line 1358):
+   $1 = nterm state-num (8.8: 0)
+-> $$ = nterm checked-state-num (8.8: 0)
+Entering state 174
+Stack now 0 13 30 49 84 121 174
+Reading a token
+Next token is token '{' (8.10: )
+Reducing stack by rule 14 (line 394):
+-> $$ = nterm string_opt (8.9-8: "")
+Entering state 223
+Stack now 0 13 30 49 84 121 174 223
+Next token is token '{' (8.10: )
+Shifting token '{' (8.10: )
+Entering state 177
+Stack now 0 13 30 49 84 121 174 223 177
+Reading a token
+Next token is token integer (8.11: 0)
+Reducing stack by rule 107 (line 1592):
+-> $$ = nterm acc-sets (8.11-10: )
+Entering state 227
+Stack now 0 13 30 49 84 121 174 223 177 227
+Next token is token integer (8.11: 0)
+Shifting token integer (8.11: 0)
+Entering state 254
+Stack now 0 13 30 49 84 121 174 223 177 227 254
+Reducing stack by rule 82 (line 1144):
+   $1 = token integer (8.11: 0)
+-> $$ = nterm acc-set (8.11: 0)
+Entering state 256
+Stack now 0 13 30 49 84 121 174 223 177 227 256
+Reducing stack by rule 108 (line 1596):
+   $1 = nterm acc-sets (8.11-10: )
+   $2 = nterm acc-set (8.11: 0)
+-> $$ = nterm acc-sets (8.11: )
+Entering state 227
+Stack now 0 13 30 49 84 121 174 223 177 227
+Reading a token
+Next token is token '}' (8.12: )
+Shifting token '}' (8.12: )
+Entering state 255
+Stack now 0 13 30 49 84 121 174 223 177 227 255
+Reducing stack by rule 105 (line 1577):
+   $1 = token '{' (8.10: )
+   $2 = nterm acc-sets (8.11: )
+   $3 = token '}' (8.12: )
+-> $$ = nterm acc-sig (8.10-12: )
+Entering state 251
+Stack now 0 13 30 49 84 121 174 223 251
+Reducing stack by rule 110 (line 1608):
+   $1 = nterm acc-sig (8.10-12: )
+-> $$ = nterm state-acc_opt (8.10-12: )
+Entering state 252
+Stack now 0 13 30 49 84 121 174 223 252
+Reducing stack by rule 98 (line 1482):
+   $1 = token State: (8.1-6: )
+   $2 = nterm state-label_opt (8.7-6: )
+   $3 = nterm checked-state-num (8.8: 0)
+   $4 = nterm string_opt (8.9-8: "")
+   $5 = nterm state-acc_opt (8.10-12: )
+-> $$ = nterm state-name (8.1-12: )
+Entering state 86
+Stack now 0 13 30 49 86
+Reading a token
+Next token is token '[' (9.1: t)
+Shifting token '[' (9.1: t)
+Entering state 118
+Stack now 0 13 30 49 86 118
+Reading a token
+Next token is token 't' (9.2: )
+Shifting token 't' (9.2: )
+Entering state 170
+Stack now 0 13 30 49 86 118 170
+Reducing stack by rule 74 (line 1066):
+   $1 = token 't' (9.2: )
+-> $$ = nterm label-expr (9.2: )
+Entering state 173
+Stack now 0 13 30 49 86 118 173
+Reading a token
+Next token is token ']' (9.3: )
+Shifting token ']' (9.3: )
+Entering state 222
+Stack now 0 13 30 49 86 118 173 222
+Reducing stack by rule 99 (line 1512):
+   $1 = token '[' (9.1: t)
+   $2 = nterm label-expr (9.2: )
+   $3 = token ']' (9.3: )
+-> $$ = nterm label (9.1-3: )
+Entering state 125
+Stack now 0 13 30 49 86 125
+Reducing stack by rule 104 (line 1550):
+   $1 = nterm label (9.1-3: )
+-> $$ = nterm trans-label (9.1-3: )
+Entering state 126
+Stack now 0 13 30 49 86 126
+Reading a token
+Next token is token integer (9.5: 1)
+Shifting token integer (9.5: 1)
+Entering state 88
+Stack now 0 13 30 49 86 126 88
+Reducing stack by rule 91 (line 1348):
+   $1 = token integer (9.5: 1)
+-> $$ = nterm state-num (9.5: 1)
+Entering state 123
+Stack now 0 13 30 49 86 126 123
+Reducing stack by rule 92 (line 1358):
+   $1 = nterm state-num (9.5: 1)
+-> $$ = nterm checked-state-num (9.5: 1)
+Entering state 180
+Stack now 0 13 30 49 86 126 180
+Reading a token
+Next token is token State: (10.1-6: )
+Reducing stack by rule 111 (line 1619):
+-> $$ = nterm trans-acc_opt (9.6-5: )
+Entering state 228
+Stack now 0 13 30 49 86 126 180 228
+Reducing stack by rule 119 (line 1663):
+   $1 = nterm trans-label (9.1-3: )
+   $2 = nterm checked-state-num (9.5: 1)
+   $3 = nterm trans-acc_opt (9.6-5: )
+-> $$ = nterm labeled-edge (9.1-5: )
+Entering state 129
+Stack now 0 13 30 49 86 129
+Reducing stack by rule 115 (line 1639):
+   $1 = nterm labeled-edge (9.1-5: )
+-> $$ = nterm some-labeled-edges (9.1-5: )
+Entering state 128
+Stack now 0 13 30 49 86 128
+Next token is token State: (10.1-6: )
+Reducing stack by rule 114 (line 1638):
+   $1 = nterm some-labeled-edges (9.1-5: )
+-> $$ = nterm labeled-edges (9.1-5: )
+Entering state 127
+Stack now 0 13 30 49 86 127
+Reducing stack by rule 95 (line 1446):
+   $1 = nterm state-name (8.1-12: )
+   $2 = nterm labeled-edges (9.1-5: )
+-> $$ = nterm state (8.1-9.5: )
+Entering state 85
+Stack now 0 13 30 49 85
+Reducing stack by rule 94 (line 1402):
+   $1 = nterm states (7.9-8: )
+   $2 = nterm state (8.1-9.5: )
+-> $$ = nterm states (7.9-9.5: )
+Entering state 49
+Stack now 0 13 30 49
+Next token is token State: (10.1-6: )
+Shifting token State: (10.1-6: )
+Entering state 84
+Stack now 0 13 30 49 84
+Reading a token
+Next token is token integer (10.8: 1)
+Reducing stack by rule 102 (line 1527):
+-> $$ = nterm state-label_opt (10.7-6: )
+Entering state 121
+Stack now 0 13 30 49 84 121
+Next token is token integer (10.8: 1)
+Shifting token integer (10.8: 1)
+Entering state 88
+Stack now 0 13 30 49 84 121 88
+Reducing stack by rule 91 (line 1348):
+   $1 = token integer (10.8: 1)
+-> $$ = nterm state-num (10.8: 1)
+Entering state 123
+Stack now 0 13 30 49 84 121 123
+Reducing stack by rule 92 (line 1358):
+   $1 = nterm state-num (10.8: 1)
+-> $$ = nterm checked-state-num (10.8: 1)
+Entering state 174
+Stack now 0 13 30 49 84 121 174
+Reading a token
+Next token is token BDD (11.1-3: )
+Reducing stack by rule 14 (line 394):
+-> $$ = nterm string_opt (10.9-8: "")
+Entering state 223
+Stack now 0 13 30 49 84 121 174 223
+Next token is token BDD (11.1-3: )
+Reducing stack by rule 109 (line 1604):
+-> $$ = nterm state-acc_opt (10.9-8: )
+Entering state 252
+Stack now 0 13 30 49 84 121 174 223 252
+Reducing stack by rule 98 (line 1482):
+   $1 = token State: (10.1-6: )
+   $2 = nterm state-label_opt (10.7-6: )
+   $3 = nterm checked-state-num (10.8: 1)
+   $4 = nterm string_opt (10.9-8: "")
+   $5 = nterm state-acc_opt (10.9-8: )
+-> $$ = nterm state-name (10.1-8: )
+Entering state 86
+Stack now 0 13 30 49 86
+Next token is token BDD (11.1-3: )
+Shifting token BDD (11.1-3: )
+Entering state 119
+Stack now 0 13 30 49 86 119
+Reducing stack by rule 100 (line 1520):
+   $1 = token BDD (11.1-3: )
+-> $$ = nterm label (11.1-3: )
+Entering state 125
+Stack now 0 13 30 49 86 125
+Reducing stack by rule 104 (line 1550):
+   $1 = nterm label (11.1-3: )
+-> $$ = nterm trans-label (11.1-3: )
+Entering state 126
+Stack now 0 13 30 49 86 126
+Reading a token
+Next token is token integer (11.5: 0)
+Shifting token integer (11.5: 0)
+Entering state 88
+Stack now 0 13 30 49 86 126 88
+Reducing stack by rule 91 (line 1348):
+   $1 = token integer (11.5: 0)
+-> $$ = nterm state-num (11.5: 0)
+Entering state 123
+Stack now 0 13 30 49 86 126 123
+Reducing stack by rule 92 (line 1358):
+   $1 = nterm state-num (11.5: 0)
+-> $$ = nterm checked-state-num (11.5: 0)
+Entering state 180
+Stack now 0 13 30 49 86 126 180
+Reading a token
+Next token is token --END-- (12.1-7: )
+Reducing stack by rule 111 (line 1619):
+-> $$ = nterm trans-acc_opt (11.6-5: )
+Entering state 228
+Stack now 0 13 30 49 86 126 180 228
+Reducing stack by rule 119 (line 1663):
+   $1 = nterm trans-label (11.1-3: )
+   $2 = nterm checked-state-num (11.5: 0)
+   $3 = nterm trans-acc_opt (11.6-5: )
+-> $$ = nterm labeled-edge (11.1-5: )
+Entering state 129
+Stack now 0 13 30 49 86 129
+Reducing stack by rule 115 (line 1639):
+   $1 = nterm labeled-edge (11.1-5: )
+-> $$ = nterm some-labeled-edges (11.1-5: )
+Entering state 128
+Stack now 0 13 30 49 86 128
+Next token is token --END-- (12.1-7: )
+Reducing stack by rule 114 (line 1638):
+   $1 = nterm some-labeled-edges (11.1-5: )
+-> $$ = nterm labeled-edges (11.1-5: )
+Entering state 127
+Stack now 0 13 30 49 86 127
+Reducing stack by rule 95 (line 1446):
+   $1 = nterm state-name (10.1-8: )
+   $2 = nterm labeled-edges (11.1-5: )
+-> $$ = nterm state (10.1-11.5: )
+Entering state 85
+Stack now 0 13 30 49 85
+Reducing stack by rule 94 (line 1402):
+   $1 = nterm states (7.9-9.5: )
+   $2 = nterm state (10.1-11.5: )
+-> $$ = nterm states (7.9-11.5: )
+Entering state 49
+Stack now 0 13 30 49
+Next token is token --END-- (12.1-7: )
+Reducing stack by rule 90 (line 1237):
+   $1 = nterm states (7.9-11.5: )
+-> $$ = nterm body (7.9-11.5: )
+Entering state 48
+Stack now 0 13 30 48
+Next token is token --END-- (12.1-7: )
+Shifting token --END-- (12.1-7: )
+Entering state 82
+Stack now 0 13 30 48 82
+Reducing stack by rule 12 (line 391):
+   $1 = nterm header (1.1-6.20: )
+   $2 = token --BODY-- (7.1-8: )
+   $3 = nterm body (7.9-11.5: )
+   $4 = token --END-- (12.1-7: )
+-> $$ = nterm hoa (1.1-12.7: )
+Entering state 12
+Stack now 0 12
+Reducing stack by rule 7 (line 381):
+   $1 = nterm hoa (1.1-12.7: )
+-> $$ = nterm aut-1 (1.1-12.7: )
+Entering state 11
+Stack now 0 11
+Reducing stack by rule 1 (line 367):
+   $1 = nterm aut-1 (1.1-12.7: )
+Stack now 0
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0

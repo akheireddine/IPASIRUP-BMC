@@ -1,0 +1,4 @@
+HOA: v1 Start: 0 States: 4 Acceptance: 1 Inf(0)
+AP: 2 "v0" "v1" --BODY-- State: 0 "T3_init" [t] 0 [!0 & !1] 1
+State: 1 "T2" [0&1] 1 [0&1] 2 [!0&!1] 2 [0&1] 3 [!0&!1] 1
+State: 2 "T1" {0} [0&1] 2 State: 3 "all" {0} [t] 3 --END--

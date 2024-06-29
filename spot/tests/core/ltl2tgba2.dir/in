@@ -1,0 +1,2 @@
+& | G F p0 F G p1 | G F ! p1 F G p2
+& & | G F p0 F G p1 | G F ! p1 F G p2 | G F ! p2 F G ! p0

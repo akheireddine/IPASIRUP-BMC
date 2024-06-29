@@ -1,0 +1,22 @@
+a
+a U b
+F a
+a & b & c
+a | b | (c U (d & (g U (h ^ i))))
+a & (b U !a) & (b U !a)
+Fa & b & GFc & Gd
+Fa & a & GFc & Gc
+Fc & (a | b) & GF(a | b) & Gc
+a R (b R c)
+(a U b) U (c U d)
+((Gp2)U(F(1)))&(p1 R(p2 R p0))
+a U (b U c)
+!(Ga U b)
+# Make sure '(G (p -> F q)) && ((X (p) U q) || ! X (p U (p && q)))'
+# has 21 states and 96 transitions before minimization, and
+# has 20 states and 89 transitions, after minimization.
+(G (p -> F q)) && ((X (p) U q) || ! X (p U (p && q)))
+GFa & GFb & GFc & GFd & GFe & GFg
+Gq|Gr|(G(q|FGp)&G(r|FG!p))
+FG((WaitRight4 M (HasRight1 W GWaitLeft0)) M HasLeft4)
+G(F(GWaitLeft7 U Idle4) U (WaitLeft2 M IsEating2))

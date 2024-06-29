@@ -1,0 +1,92 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test degendet.test
+== Running test degendet.test
++ echo degendet.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=degendet
++ testSubDir=degendet.dir
++ chmod -R a+rwx degendet.dir
++ rm -rf degendet.dir
++ mkdir degendet.dir
++ cd degendet.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ run 0 ../ikwiad -r7 -x -R3 -N XF(Gp2 | F(p0 U (p1 & (! p4 | p3))))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ikwiad
++ cmd=../ikwiad
++ shift
++ test -n ../ikwiad
++ set ../ikwiad -r7 -x -R3 -N XF(Gp2 | F(p0 U (p1 & (! p4 | p3))))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ikwiad -r7 -x -R3 -N XF(Gp2 | F(p0 U (p1 & (! p4 | p3))))
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ ../ikwiad -r7 -x -R3 -N XF(Gp2 | F(p0 U (p1 & (! p4 | p3))))
++ cmp out out1
++ ../ikwiad -r7 -x -R3 -N XF(Gp2 | F(p0 U (p1 & (! p4 | p3))))
++ cmp out out1
++ ../ikwiad -r7 -x -R3 -N XF(Gp2 | F(p0 U (p1 & (! p4 | p3))))
++ cmp out out1
++ ../ikwiad -r7 -x -R3 -N XF(Gp2 | F(p0 U (p1 & (! p4 | p3))))
++ cmp out out1
++ run 0 ltl2tgba -B -f (b & Fa) U XXG(a M Gb) --stats=%s,%t
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -B -f (b & Fa) U XXG(a M Gb) --stats=%s,%t
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -B -f (b & Fa) U XXG(a M Gb) --stats=%s,%t
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat out
++ test 4,14 = 4,14
++ run 0 ltl2tgba -B -f G(Fp1 & (F!p1 W X!p1)) -f F(!p0 & Fp0) W Gp0 --stats=%s
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltl2tgba
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -B -f G(Fp1 & (F!p1 W X!p1)) -f F(!p0 & Fp0) W Gp0 --stats=%s
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltl2tgba -B -f G(Fp1 & (F!p1 W X!p1)) -f F(!p0 & Fp0) W Gp0 --stats=%s
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ diff out exp
+PASS core/degendet.test (exit status: 0)

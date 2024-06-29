@@ -1,0 +1,10 @@
+digraph "(a U !b) & Gb" {
+  rankdir=LR
+  label="Inf(0)\n[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 0 [label="a & b"]
+}

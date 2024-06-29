@@ -1,0 +1,8 @@
+-:1.1-21.7
+Running [A0]: autfilt 'lcr-i0-Ft5Rk8'>'lcr-o0-LNqEMb'
+Running [A1]: sleep 5; autfilt 'lcr-i0-HLnQxW' > 'lcr-o1-ULFuzV'
+error: timeout during execution of command
+Performing sanity checks and gathering statistics...
+
+error: some error was detected during the above runs,
+       please search for 'error:' messages in the above trace.

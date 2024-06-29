@@ -1,0 +1,371 @@
++ set -e
++ rm -f failures.private
++ INCDIR=./../../spot
++ find ./../../spot ( -name *.hh -o -name *.hxx ) -a+  -type f -a -print
+sed s,./../../spot/,,g
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/graph/ngraph.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/graph/graph.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/gen/automata.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/gen/formulas.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twa/twagraph.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twa/bdddict.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twa/bddprint.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twa/fwd.hh
++ test -f ./../../spot/twa/fwd.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twa/formula2bdd.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twa/twaproduct.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twa/acc.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twa/taatgba.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twa/twa.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twacube_algos/convert.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twacube/fwd.hh
++ test -f ./../../spot/twacube/fwd.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twacube/twacube.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twacube/cube.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/ta/taexplicit.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/ta/tgtaproduct.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/ta/tgtaexplicit.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/ta/taproduct.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/ta/ta.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/ta/tgta.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/parseaut/stack.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/parseaut/public.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/parseaut/parsedecl.hh
++ test -f ./../../spot/parseaut/parsedecl.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/parseaut/parseaut.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/taalgos/emptinessta.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/taalgos/reachiter.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/taalgos/tgba2ta.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/taalgos/dot.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/taalgos/minimize.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/taalgos/statessetbuilder.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/taalgos/stats.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/remove_x.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/simplify.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/declenv.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/ltlf.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/hierarchy.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/dot.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/randomltl.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/relabel.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/exclusive.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/defaultenv.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/mutation.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/contain.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/apcollect.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/length.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/formula.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/print.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/environment.hh
++ test -f ./../../spot/tl/environment.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/unabbrev.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/sonf.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/nenoform.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/snf.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/parse.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/tl/mark.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/trival.hh
++ test -f ./../../spot/misc/trival.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/hashfunc.hh
++ test -f ./../../spot/misc/hashfunc.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/location.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/ltstr.hh
++ test -f ./../../spot/misc/ltstr.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/intvcomp.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/bitset.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/timer.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/version.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/clz.hh
++ test -f ./../../spot/misc/clz.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/position.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/bareword.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/casts.hh
++ test -f ./../../spot/misc/casts.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/optionmap.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/escape.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/memusage.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/bitvect.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/fixpool.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/tmpfile.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/intvcmp2.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/formater.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/bddlt.hh
++ test -f ./../../spot/misc/bddlt.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/satsolver.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/random.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/minato.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/common.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/hash.hh
++ test -f ./../../spot/misc/hash.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/misc/mspool.hh
++ test -f ./../../spot/misc/mspool.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/kripke/kripkegraph.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/kripke/kripke.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/kripke/fwd.hh
++ test -f ./../../spot/kripke/fwd.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/kripke/fairkripke.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/mc/unionfind.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/mc/utils.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/mc/bloemen_ec.hh
++ test -f ./../../spot/mc/bloemen_ec.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/mc/deadlock.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/mc/bloemen.hh
++ test -f ./../../spot/mc/bloemen.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/mc/cndfs.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/mc/mc_instanciator.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/mc/mc.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/mc/lpar13.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/mc/intersect.hh
++ test -f ./../../spot/mc/intersect.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/simulation.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/cobuchi.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/remfin.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/gv04.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/hoa.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/totgba.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/genem.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/canonicalize.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/synthesis.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/stripacc.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/isunamb.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/emptiness.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/isweakscc.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/reachiter.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/degen.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/product.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/ltl2tgba_fm.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/remprop.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/toparity.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/determinize.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/toweak.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/bfssteps.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/sepsets.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/dot.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/dtwasat.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/magic.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/gtec/sccstack.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/gtec/gtec.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/gtec/status.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/gtec/ce.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/alternation.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/dualize.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/relabel.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/complete.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/copy.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/cleanacc.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/stutter.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/minimize.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/sccfilter.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/dbranch.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/mask.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/isdet.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/game.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/postproc.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/randomgraph.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/are_isomorphic.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/forq_contains.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/cycles.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/parity.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/lbtt.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/se05.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/complement.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/mealy_machine.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/neverclaim.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/powerset.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/word.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/split.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/dtbasat.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/gfguarantee.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/tau03opt.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/randomize.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/tau03.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/ltl2taa.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/translate.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/strength.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/ndfs_result.hxx
++ test -f ./../../spot/twaalgos/ndfs_result.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/stats.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/couvreurnew.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/sccinfo.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/compsusp.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/aiger.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/langmap.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/zlktree.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/emptiness_stats.hh
++ test -f ./../../spot/twaalgos/emptiness_stats.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/iscolored.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/contains.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/sbacc.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/twaalgos/sum.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/ltsmin/ltsmin.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/ltsmin/spins_interface.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/ltsmin/spins_kripke.hxx
++ test -f ./../../spot/ltsmin/spins_kripke.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/ltsmin/spins_kripke.hh
++ test -f ./../../spot/ltsmin/spins_kripke.cc
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/parsetl/parsetl.hh
++ :
++ grep -E -q (SPOT_API|GNU Bison) ./../../spot/parsetl/parsedecl.hh
++ test -f ./../../spot/parsetl/parsedecl.cc
++ test -f failures.private
+PASS sanity/private.test (exit status: 0)

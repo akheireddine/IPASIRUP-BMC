@@ -1,0 +1,1077 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test syntimpl.test
+== Running test syntimpl.test
++ sed -e s,.*[\/],,;s/\.test$//
++ echo syntimpl.test
++ me=syntimpl
++ testSubDir=syntimpl.dir
++ chmod -R a+rwx syntimpl.dir
++ rm -rf syntimpl.dir
++ mkdir syntimpl.dir
++ cd syntimpl.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ run 1 ../syntimpl 0 a a | b
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a a | b
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a a | b
+Test f1 < f2
+a < a | b
+ap(@3 #6 "a")
+Or(@5 #3 [ap(@3 #6 "a"), ap(@4 #3 "b")])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 F(a) F(a | b)
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 F(a) F(a | b)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 F(a) F(a | b)
+Test f1 < f2
+Fa < F(a | b)
+F(@4 #2 [ap(@3 #6 "a")])
+F(@7 #3 [Or(@6 #2 [ap(@3 #6 "a"), ap(@5 #3 "b")])])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 G(a) G(a | b)
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 G(a) G(a | b)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 G(a) G(a | b)
+Test f1 < f2
+Ga < G(a | b)
+G(@4 #3 [ap(@3 #6 "a")])
+G(@7 #3 [Or(@6 #3 [ap(@3 #6 "a"), ap(@5 #3 "b")])])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 GF(a) GF(a | b)
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 GF(a) GF(a | b)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 GF(a) GF(a | b)
+Test f1 < f2
+GFa < GF(a | b)
+G(@5 #3 [F(@4 #2 [ap(@3 #7 "a")])])
+G(@9 #4 [F(@8 #3 [Or(@7 #2 [ap(@3 #7 "a"), ap(@6 #3 "b")])])])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 GF(a) !FG(!a && !b)
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 GF(a) !FG(!a && !b)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 GF(a) !FG(!a && !b)
+Test f1 < f2
+GFa < GF(a | b)
+G(@5 #3 [F(@4 #2 [ap(@3 #8 "a")])])
+G(@18 #3 [F(@17 #3 [Or(@16 #2 [ap(@3 #8 "a"), ap(@7 #4 "b")])])])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 Xa X(b U a)
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 Xa X(b U a)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 Xa X(b U a)
+Test f1 < f2
+Xa < X(b U a)
+X(@4 #2 [ap(@3 #2 "a")])
+X(@7 #2 [U(@6 #1 [ap(@5 #0 "b"), ap(@3 #2 "a")])])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 XXa XX(b U a)
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 XXa XX(b U a)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 XXa XX(b U a)
+Test f1 < f2
+XXa < XX(b U a)
+X(@5 #2 [X(@4 #1 [ap(@3 #2 "a")])])
+X(@9 #2 [X(@8 #1 [U(@7 #1 [ap(@6 #0 "b"), ap(@3 #2 "a")])])])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 (e R f) (g U f)
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 (e R f) (g U f)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 (e R f) (g U f)
+Test f1 < f2
+e R f < g U f
+R(@5 #2 [ap(@3 #0 "e"), ap(@4 #2 "f")])
+U(@7 #3 [ap(@6 #0 "g"), ap(@4 #2 "f")])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 ( X(a + b)) ( X((a + b)+(c)+(d)))
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 ( X(a + b)) ( X((a + b)+(c)+(d)))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 ( X(a + b)) ( X((a + b)+(c)+(d)))
+Test f1 < f2
+X(a | b) < X(a | b | c | d)
+X(@6 #2 [Or(@5 #2 [ap(@3 #4 "a"), ap(@4 #4 "b")])])
+X(@10 #2 [Or(@9 #2 [ap(@3 #4 "a"), ap(@4 #4 "b"), ap(@7 #3 "c"), ap(@8 #3 "d")])])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 ( X(a + b)) U (e R f) ( X((a + b)+(c)+(d))) U (g U f)
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 ( X(a + b)) U (e R f) ( X((a + b)+(c)+(d))) U (g U f)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 ( X(a + b)) U (e R f) ( X((a + b)+(c)+(d))) U (g U f)
+Test f1 < f2
+X(a | b) U (e R f) < X(a | b | c | d) U (g U f)
+U(@10 #2 [X(@6 #1 [Or(@5 #2 [ap(@3 #4 "a"), ap(@4 #4 "b")])]), R(@9 #1 [ap(@7 #0 "e"), ap(@8 #2 "f")])])
+U(@17 #2 [X(@14 #1 [Or(@13 #2 [ap(@3 #4 "a"), ap(@4 #4 "b"), ap(@11 #3 "c"), ap(@12 #3 "d")])]), U(@16 #2 [ap(@15 #0 "g"), ap(@8 #2 "f")])])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 1 1
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 1 1
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 1 1
+Test f1 < f2
+1 < 1
+tt(@1 #2)
+tt(@1 #2)
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 0 0
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 0 0
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 0 0
+Test f1 < f2
+0 < 0
+ff(@0 #2)
+ff(@0 #2)
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 a 1
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a 1
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a 1
+Test f1 < f2
+a < 1
+ap(@3 #1 "a")
+tt(@1 #1)
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 a a
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a a
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a a
+Test f1 < f2
+a < a
+ap(@3 #3 "a")
+ap(@3 #3 "a")
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 a a & 1
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a a & 1
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a a & 1
+Test f1 < f2
+a < a
+ap(@3 #3 "a")
+ap(@3 #3 "a")
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 a & b b
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a & b b
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a & b b
+Test f1 < f2
+a & b < b
+And(@5 #3 [ap(@3 #3 "a"), ap(@4 #6 "b")])
+ap(@4 #6 "b")
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 a & b a
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a & b a
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a & b a
+Test f1 < f2
+a & b < a
+And(@5 #3 [ap(@3 #6 "a"), ap(@4 #3 "b")])
+ap(@3 #6 "a")
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 a a + b
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a a + b
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a a + b
+Test f1 < f2
+a < a | b
+ap(@3 #6 "a")
+Or(@5 #3 [ap(@3 #6 "a"), ap(@4 #3 "b")])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 b a + b
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 b a + b
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 b a + b
+Test f1 < f2
+b < a | b
+ap(@3 #6 "b")
+Or(@5 #3 [ap(@4 #3 "a"), ap(@3 #6 "b")])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 a + b 1
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a + b 1
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a + b 1
+Test f1 < f2
+a | b < 1
+Or(@5 #1 [ap(@3 #0 "a"), ap(@4 #0 "b")])
+tt(@1 #1)
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 a b U a
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a b U a
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a b U a
+Test f1 < f2
+a < b U a
+ap(@3 #3 "a")
+U(@5 #2 [ap(@4 #0 "b"), ap(@3 #3 "a")])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 a b U 1
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a b U 1
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a b U 1
+Test f1 < f2
+a < 1
+ap(@3 #1 "a")
+tt(@1 #1)
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 a U b 1
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a U b 1
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a U b 1
+Test f1 < f2
+a U b < 1
+U(@5 #1 [ap(@3 #0 "a"), ap(@4 #0 "b")])
+tt(@1 #1)
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 a 1 R a
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a 1 R a
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a 1 R a
+Test f1 < f2
+a < a
+ap(@3 #3 "a")
+ap(@3 #3 "a")
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 a a R 1
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a a R 1
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a a R 1
+Test f1 < f2
+a < 1
+ap(@3 #1 "a")
+tt(@1 #1)
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 a R b b
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a R b b
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a R b b
+Test f1 < f2
+a R b < b
+R(@5 #2 [ap(@3 #0 "a"), ap(@4 #3 "b")])
+ap(@4 #3 "b")
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 a R b 1
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a R b 1
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a R b 1
+Test f1 < f2
+a R b < 1
+R(@5 #1 [ap(@3 #0 "a"), ap(@4 #0 "b")])
+tt(@1 #1)
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 Xa X(b U a)
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 Xa X(b U a)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 Xa X(b U a)
+Test f1 < f2
+Xa < X(b U a)
+X(@4 #2 [ap(@3 #2 "a")])
+X(@7 #2 [U(@6 #1 [ap(@5 #0 "b"), ap(@3 #2 "a")])])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 X(a R b) Xb
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 X(a R b) Xb
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 X(a R b) Xb
+Test f1 < f2
+X(a R b) < Xb
+X(@6 #2 [R(@5 #1 [ap(@3 #0 "a"), ap(@4 #2 "b")])])
+X(@7 #2 [ap(@4 #2 "b")])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 a U b 1 U b
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a U b 1 U b
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a U b 1 U b
+Test f1 < f2
+a U b < 1 U b
+U(@5 #2 [ap(@3 #0 "a"), ap(@4 #1 "b")])
+U(@6 #2 [tt(@1 #0), ap(@4 #1 "b")])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 a R b 1 R b
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a R b 1 R b
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a R b 1 R b
+Test f1 < f2
+a R b < b
+R(@5 #2 [ap(@3 #0 "a"), ap(@4 #3 "b")])
+ap(@4 #3 "b")
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 b & (a U b) a U b
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 b & (a U b) a U b
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 b & (a U b) a U b
+Test f1 < f2
+b & (a U b) < a U b
+And(@6 #2 [ap(@3 #2 "b"), U(@5 #4 [ap(@4 #0 "a"), ap(@3 #2 "b")])])
+U(@5 #4 [ap(@4 #0 "a"), ap(@3 #2 "b")])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 1 ../syntimpl 0 a U b c + (a U b)
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a U b c + (a U b)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a U b c + (a U b)
+Test f1 < f2
+a U b < c | (a U b)
+U(@5 #5 [ap(@3 #2 "a"), ap(@4 #0 "b")])
+Or(@8 #3 [ap(@6 #1 "c"), U(@5 #5 [ap(@3 #2 "a"), ap(@4 #0 "b")])])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ run 0 ../syntimpl 0 Xa XX(b U a)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 Xa XX(b U a)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 Xa XX(b U a)
+Test f1 < f2
+X(@4 #2 [ap(@3 #2 "a")])
+X(@8 #2 [X(@7 #1 [U(@6 #0 [ap(@5 #0 "b"), ap(@3 #2 "a")])])])
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../syntimpl 0 XXa X(b U a)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 XXa X(b U a)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 XXa X(b U a)
+Test f1 < f2
+X(@5 #2 [X(@4 #2 [ap(@3 #2 "a")])])
+X(@8 #2 [U(@7 #1 [ap(@6 #0 "b"), ap(@3 #2 "a")])])
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../syntimpl 0 ( X(a + b)) ( X(X(a + b)+(c)+(d)))
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 ( X(a + b)) ( X(X(a + b)+(c)+(d)))
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 ( X(a + b)) ( X(X(a + b)+(c)+(d)))
+Test f1 < f2
+X(@6 #4 [Or(@5 #4 [ap(@3 #3 "a"), ap(@4 #3 "b")])])
+X(@12 #2 [Or(@11 #1 [ap(@9 #4 "c"), ap(@10 #4 "d"), X(@6 #4 [Or(@5 #4 [ap(@3 #3 "a"), ap(@4 #3 "b")])])])])
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../syntimpl 0 ( X(a + b)) U (e R f) ( X(X(a + b)+(c)+(d))) U (g U f)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 ( X(a + b)) U (e R f) ( X(X(a + b)+(c)+(d))) U (g U f)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 ( X(a + b)) U (e R f) ( X(X(a + b)+(c)+(d))) U (g U f)
+Test f1 < f2
+U(@10 #4 [X(@6 #7 [Or(@5 #4 [ap(@3 #3 "a"), ap(@4 #3 "b")])]), R(@9 #0 [ap(@7 #0 "e"), ap(@8 #3 "f")])])
+U(@19 #3 [X(@16 #1 [Or(@15 #1 [ap(@13 #4 "c"), ap(@14 #4 "d"), X(@6 #7 [Or(@5 #4 [ap(@3 #3 "a"), ap(@4 #3 "b")])])])]), U(@18 #2 [ap(@17 #1 "g"), ap(@8 #3 "f")])])
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../syntimpl 0 a b
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a b
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a b
+Test f1 < f2
+ap(@3 #1 "a")
+ap(@4 #1 "b")
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../syntimpl 0 a b + c
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a b + c
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a b + c
+Test f1 < f2
+ap(@3 #5 "a")
+Or(@6 #3 [ap(@4 #3 "b"), ap(@5 #3 "c")])
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../syntimpl 0 a + b a
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a + b a
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a + b a
+Test f1 < f2
+Or(@5 #3 [ap(@3 #6 "a"), ap(@4 #3 "b")])
+ap(@3 #6 "a")
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../syntimpl 0 a a & c
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a a & c
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a a & c
+Test f1 < f2
+ap(@3 #6 "a")
+And(@5 #3 [ap(@3 #6 "a"), ap(@4 #3 "c")])
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../syntimpl 0 a & b c
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a & b c
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a & b c
+Test f1 < f2
+And(@5 #3 [ap(@3 #3 "a"), ap(@4 #3 "b")])
+ap(@6 #5 "c")
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../syntimpl 0 a a U b
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a a U b
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a a U b
+Test f1 < f2
+ap(@3 #3 "a")
+U(@5 #2 [ap(@3 #3 "a"), ap(@4 #0 "b")])
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../syntimpl 0 a a R b
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a a R b
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a a R b
+Test f1 < f2
+ap(@3 #3 "a")
+R(@5 #2 [ap(@3 #3 "a"), ap(@4 #0 "b")])
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../syntimpl 0 a R b a
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 a R b a
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 a R b a
+Test f1 < f2
+R(@5 #2 [ap(@3 #3 "a"), ap(@4 #0 "b")])
+ap(@3 #3 "a")
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../syntimpl 0 p2 p3 || G(p2 && p5)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 p2 p3 || G(p2 && p5)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 p2 p3 || G(p2 && p5)
+Test f1 < f2
+ap(@3 #4 "p2")
+Or(@8 #2 [ap(@4 #0 "p3"), G(@7 #1 [And(@6 #0 [ap(@3 #4 "p2"), ap(@5 #0 "p5")])])])
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../syntimpl 0 !(p3 || G(p2 && p5)) !p2
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 !(p3 || G(p2 && p5)) !p2
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 !(p3 || G(p2 && p5)) !p2
+Test f1 < f2
+And(@19 #1 [Not(@12 #0 [ap(@3 #1 "p3")]), F(@18 #1 [Or(@17 #0 [Not(@10 #4 [ap(@4 #1 "p2")]), Not(@16 #0 [ap(@5 #1 "p5")])])])])
+Not(@10 #4 [ap(@4 #1 "p2")])
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../syntimpl 0 Xc W 0 Xc R b
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 Xc W 0 Xc R b
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 Xc W 0 Xc R b
+Test f1 < f2
+W(@5 #4 [X(@4 #4 [ap(@3 #0 "c")]), ff(@0 #0)])
+R(@8 #3 [X(@4 #4 [ap(@3 #0 "c")]), ap(@7 #2 "b")])
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 1 ../syntimpl 0 (c&b) W (b&a) a R b
++ expected_exitcode=1
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../syntimpl
++ cmd=../syntimpl
++ shift
++ test -n ../syntimpl
++ set ../syntimpl 0 (c&b) W (b&a) a R b
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../syntimpl 0 (c&b) W (b&a) a R b
+Test f1 < f2
+(b & c) W (a & b) < a R b
+W(@8 #2 [And(@7 #2 [ap(@4 #7 "b"), ap(@3 #3 "c")]), And(@6 #3 [ap(@5 #5 "a"), ap(@4 #7 "b")])])
+R(@9 #2 [ap(@5 #5 "a"), ap(@4 #7 "b")])
++ exitcode=1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 1 = 1
++ exit 0
+PASS core/syntimpl.test (exit status: 0)

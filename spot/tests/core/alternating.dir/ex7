@@ -1,0 +1,26 @@
+HOA: v1
+tool: "LTL3HOA"
+name: "SLAA for c R (c | G(a & b) | (F!b & F!a))"
+States: 5
+AP: 3 "c" "a" "b"
+Start: 0
+Acceptance: 2 Fin(1) & Fin(0)
+--BODY--
+State: 0 "c R (c | G(a & b) | (F!b & F!a))"
+  [(0)] 4
+  [(!0 & !1 & !2)] 0
+  [(!0 & 1 & 2)] 0&1
+  [(!0 & 1 & !2)] 0&2
+  [(!0 & !1 & 2)] 0&3
+  [(!0 & 1 & 2)] 0&2&3
+State: 1 "G(a & b)"
+  [(1 & 2)] 1
+State: 2 "F!a"
+  [(!1)] 4
+  [(1)] 2 {1}
+State: 3 "F!b"
+  [(!2)] 4
+  [(2)] 3 {0}
+State: 4 "t"
+  [t] 4
+--END--

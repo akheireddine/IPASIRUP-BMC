@@ -1,0 +1,27 @@
+# leading and trailing garbage are skipped
+a U b c, a U b
+# (check multop merging while we are at it)
+a & b & c & d e, a & b & c & d
+a & (b | c) & d should work, a & (b | c) & d
+# Binop recovery
+a U, a
+a U b V c R, a U b V c
+a &&& b, a & b
+a &&| b, a | b
+
+# Recovery inside parentheses
+a U (b c) U e R (f g <=> h), a U b U e R f
+a U ((c) U e) R (<=> f g), a U ((c) U e) R (0)
+
+# Missing parentheses
+a & (a + b, a & (a + b)
+a & (a + b c, a & (a + b)
+a & (+, a & 0
+a & (, a & 0
+
+# Invalid ranges
+{a[*8..1];b}, {a[*1..8];b}
+{a[=8..1];b}, {a[=1..8];b}
+{a[->8..1];b}, {a[->1..8];b}
+{a[->..0];b}, {a[->0..1];b}
+{a[->2..300];b}, {a[->2..254];b}

@@ -1,0 +1,18 @@
+never { /* XF((p1 & (p3 | !p4)) | Gp2) */
+T0_init:
+  if
+  :: (true) -> goto T0_S1
+  fi;
+T0_S1:
+  if
+  :: ((!(p1)) || ((!(p3)) && (p4))) -> goto T0_S1
+  :: (((p1) && (p3)) || ((p1) && (!(p4)))) -> goto accept_all
+  :: (((p2) && (!(p3)) && (p4)) || ((!(p1)) && (p2))) -> goto accept_S3
+  fi;
+accept_S3:
+  if
+  :: (p2) -> goto accept_S3
+  fi;
+accept_all:
+  skip
+}

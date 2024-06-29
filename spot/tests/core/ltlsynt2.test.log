@@ -1,0 +1,39 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltlsynt2.test
+== Running test ltlsynt2.test
++ echo ltlsynt2.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltlsynt2
++ testSubDir=ltlsynt2.dir
++ chmod -R a+rwx ltlsynt2.dir
++ rm -rf ltlsynt2.dir
++ mkdir ltlsynt2.dir
++ cd ltlsynt2.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ ltlsynt --ins=i1,i2 -F formulas.ltl -f o1 & F(i1 <-> o2) -q --csv=out.csv
+REALIZABLE
+REALIZABLE
+REALIZABLE
+UNREALIZABLE
+REALIZABLE
++ test 1 -eq 1
++ test -z 
++ exit 77
+SKIP core/ltlsynt2.test (exit status: 77)

@@ -1,0 +1,76 @@
+digraph "" {
+  rankdir=LR
+  label="Fin(⓿)\n[co-Büchi]"
+  labelloc="t"
+  node [shape="box",style="rounded",width="0.5"]
+  node [id="S\N"]
+  I [label="", style=invis, width=0]
+  I -> -11 [arrowhead=onormal]
+  subgraph cluster_0 {
+  color=green
+  id="SCC0"
+  label=""
+  2 [label="G(a)"]
+  }
+  subgraph cluster_1 {
+  color=red
+  id="SCC1"
+  label=""
+  1 [label="FG(a)\n⓿"]
+  }
+  subgraph cluster_2 {
+  color=green
+  id="SCC2"
+  label=""
+  6 [label="t"]
+  }
+  subgraph cluster_3 {
+  color=red
+  id="SCC3"
+  label=""
+  4 [label="F(b)\n⓿"]
+  }
+  subgraph cluster_4 {
+  color=green
+  id="SCC4"
+  label=""
+  3 [label="GF(b)"]
+  -8 [label=<>,shape=point,width=0.05,height=0.05]
+  }
+  subgraph cluster_5 {
+  color=red
+  id="SCC5"
+  label=""
+  5 [label="((a) U (b))\n⓿"]
+  }
+  subgraph cluster_6 {
+  color=black
+  id="SCC6"
+  label=""
+  0 [label="((((a) U (b)) && GF(b)) && FG(a))"]
+  }
+  -11 [label=<>,shape=point,width=0.05,height=0.05]
+  -11 -> 0 [id="E-11E0"]
+  -11 -> 2 [id="E-11E2"]
+  0 -> -1 [label="b", id="E1", tooltip="\\E\n#1", arrowhead=onormal]
+  -1 [label=<>,shape=point,width=0.05,height=0.05]
+  -1 -> 1 [id="E-1E1"]
+  -1 -> 3 [id="E-1E3"]
+  0 -> -4 [label="a & !b", id="E2", tooltip="\\E\n#2", style=bold, color="#E31A1C", arrowhead=onormal]
+  -4 [label=<>,shape=point,width=0.05,height=0.05]
+  -4 -> 1 [style=bold, color="#E31A1C",id="E-4E1"]
+  -4 -> 3 [style=bold, color="#E31A1C",id="E-4E3"]
+  -4 -> 5 [style=bold, color="#E31A1C",id="E-4E5"]
+  1 -> 2 [label="a", id="E3", tooltip="\\E\n#3"]
+  1 -> 1 [label="1", id="E4", tooltip="\\E\n#4"]
+  2 -> 2 [label="a", id="E5", tooltip="\\E\n#5"]
+  3 -> 3 [label="b", id="E6", tooltip="\\E\n#6"]
+  3 -> -8 [label="!b", id="E7", tooltip="\\E\n#7", style=bold, color="#FF7F00", arrowhead=onormal]
+  -8 -> 3 [style=bold, color="#FF7F00",id="E-8E3"]
+  -8 -> 4 [style=bold, color="#FF7F00",id="E-8E4"]
+  4 -> 6 [label="b", id="E8", tooltip="\\E\n#8"]
+  4 -> 4 [label="!b", id="E9", tooltip="\\E\n#9"]
+  5 -> 6 [label="b", id="E10", tooltip="\\E\n#10"]
+  5 -> 5 [label="a & !b", id="E11", tooltip="\\E\n#11"]
+  6 -> 6 [label="1", id="E12", tooltip="\\E\n#12"]
+}

@@ -1,0 +1,33 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test testconvert.test
+== Running test testconvert.test
++ + echo testconvert.test
+sed -e s,.*[\/],,;s/\.test$//
++ me=testconvert
++ testSubDir=testconvert.dir
++ chmod -R a+rwx testconvert.dir
++ rm -rf testconvert.dir
++ mkdir testconvert.dir
++ cd testconvert.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ divine compile
++ grep -i ltsmin  output
++ echo divine not installed, or no ltsmin interface
+divine not installed, or no ltsmin interface
++ exit 77
+SKIP ltsmin/testconvert.test (exit status: 77)

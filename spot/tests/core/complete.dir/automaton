@@ -1,0 +1,87 @@
+HOA: v1
+States: 1
+Start: 0
+AP: 1 "a"
+Acceptance: 1 Fin(0)
+--BODY--
+State: 0
+--END--
+HOA: v1
+States: 2
+Start: 0
+AP: 1 "a"
+Acceptance: 1 Fin(0)
+--BODY--
+State: 0
+[0] 1
+State: 1
+[0] 1
+--END--
+HOA: v1
+States: 2
+Start: 0
+AP: 1 "a"
+Acceptance: 2 t
+--BODY--
+State: 0
+[0] 1
+State: 1
+[0] 1
+--END--
+HOA: v1
+States: 2
+Start: 0
+AP: 1 "a"
+Acceptance: 0 f
+--BODY--
+State: 0
+[0] 1
+State: 1
+[0] 1
+--END--
+/* This example comes from Alexandre Lewkowicz */
+HOA: v1
+States: 2
+Start: 0
+AP: 1 "a"
+Acceptance: 2 Fin(0)&Inf(1)
+--BODY--
+State: 0
+[0] 1
+State: 1
+[0] 1 {0}
+[!0] 1 {1}
+--END--
+HOA: v1
+States: 2
+Start: 0
+AP: 1 "a"
+Acceptance: 2 Fin(0)&Inf(1)
+--BODY--
+State: 0
+[0] 1
+State: 1
+[0] 1 {0}
+[!0] 1 {0}
+--END--
+HOA: v1
+States: 2
+Start: 0
+AP: 2 "a" "b"
+Acceptance: 1 Fin(0)
+properties: very-weak
+--BODY--
+State: 0
+[!0 | 1] 0
+[0&!1] 1&0
+State: 1 {0}
+[0&!1] 1
+--END--
+HOA: v1
+States: 2
+Start: 0&1
+Acceptance: 1 Fin(0)
+--BODY--
+State: 0
+State: 1 {0}
+--END--

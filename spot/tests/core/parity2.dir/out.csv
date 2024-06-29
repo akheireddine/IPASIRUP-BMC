@@ -1,0 +1,5 @@
+"input.source","input.name","input.ap","input.states","input.edges","input.transitions","input.acc_sets","input.scc","input.nondetstates","input.nondeterministic","input.alternating","tool","exit_status","exit_code","time","output.ap","output.states","output.edges","output.transitions","output.acc_sets","output.scc","output.nondetstates","output.nondeterministic","output.alternating"
+"-:1.1-14.7",,1,2,3,4,1,1,1,1,0,"autfilt -D","ok",0,0.0230868,1,3,5,5,1,2,0,0,0
+"-:15.1-32.7",,2,3,6,10,1,1,2,1,0,"autfilt -D","ok",0,0.0250951,2,15,41,44,1,4,0,0,0
+"-:33.1-54.7",,2,4,9,18,1,1,3,1,0,"autfilt -D","ok",0,0.029102,2,120,447,479,1,8,0,0,0
+"-:55.1-80.7",,3,5,12,28,1,1,4,1,0,"autfilt -D","ok",0,0.254255,3,1801,8585,9004,1,16,0,0,0

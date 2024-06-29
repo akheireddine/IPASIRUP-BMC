@@ -1,0 +1,38 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test bdddict.test
+== Running test bdddict.test
++ echo bdddict.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=bdddict
++ testSubDir=bdddict.dir
++ chmod -R a+rwx bdddict.dir
++ rm -rf bdddict.dir
++ mkdir bdddict.dir
++ cd bdddict.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ../bdddict
++ grep some maps are not empty stderr
+some maps are not empty
++ grep Var\[p0\] x2 stderr
+ 0 Var[p0] x2 { 0x55d7af357a20 0x55d7af35cef0 }
++ grep Var\[p1\] x2 stderr
+ 1 Var[p1] x2 { 0x55d7af357a20 0x55d7af35cef0 }
++ grep Var\[p2\] x2 stderr
+ 2 Var[p2] x2 { 0x55d7af357a20 0x55d7af35cef0 }
+PASS core/bdddict.test (exit status: 0)

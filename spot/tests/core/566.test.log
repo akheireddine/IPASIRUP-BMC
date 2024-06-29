@@ -1,0 +1,53 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test 566.test
+== Running test 566.test
++ echo 566.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=566
++ testSubDir=566.dir
++ chmod -R a+rwx 566.dir
++ rm -rf 566.dir
++ mkdir 566.dir
++ cd 566.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ autfilt --dualize 21.hoa --stats=%S %E %T %s %e %t
++ res=5 13 85 6 13 12582912
++ test 5 13 85 6 13 12582912 = 5 13 85 6 13 12582912
++ autfilt --complement 21.hoa --stats=%S %E %T %s %e %t
++ res=5 13 85 5 11 10485760
++ test 5 13 85 5 11 10485760 = 5 13 85 5 11 10485760
++ autfilt --small 21.hoa --stats=%S %E %T %s %e %t
++ res=5 13 85 2 2 22
++ test 5 13 85 2 2 22 = 5 13 85 2 2 22
++ autcross --language-preserved autfilt --small -F 21.hoa --verbose
+21.hoa:1.1-107.9
+info: input	(5 st.,13 ed.,1 sets)
+Running [A0]: autfilt --small 'lcr-i0-7nRlk8'>'lcr-o0-ySSyMD'
+info: collected automata:
+info:   A0	(2 st.,2 ed.,0 sets) deterministic
+Performing sanity checks and gathering statistics...
+info: complementing automata...
+info:         A0	(2 st.,2 ed.,0 sets) -> (3 st.,5 ed.,1 sets)	Comp(A0)
+info:      input	(5 st.,13 ed.,1 sets) -> (5 st.,11 ed.,1 sets)	Comp(input)
+info: check_empty A0*Comp(input)
+info: check_empty input*Comp(A0)
+
+No problem detected.
+PASS core/566.test (exit status: 0)

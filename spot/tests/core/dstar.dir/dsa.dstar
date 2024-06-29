@@ -1,0 +1,19 @@
+DSA v2 explicit
+Comment: "Streett{Safra[NBA=2]}"
+States: 3
+Acceptance-Pairs: 1
+Start: 1
+AP: 1 "a"
+---
+State: 0
+Acc-Sig: +0
+0
+2
+State: 1
+Acc-Sig:
+0
+0
+State: 2
+Acc-Sig:
+0
+2

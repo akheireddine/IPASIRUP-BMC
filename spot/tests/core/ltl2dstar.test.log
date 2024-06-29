@@ -1,0 +1,32 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltl2dstar.test
+== Running test ltl2dstar.test
++ echo ltl2dstar.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltl2dstar
++ testSubDir=ltl2dstar.dir
++ chmod -R a+rwx ltl2dstar.dir
++ rm -rf ltl2dstar.dir
++ mkdir ltl2dstar.dir
++ cd ltl2dstar.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltl2dstar --version
+ltl2dstar.test: 28: ltl2dstar: not found
++ exit 77
+SKIP core/ltl2dstar.test (exit status: 77)

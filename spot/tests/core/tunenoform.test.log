@@ -1,0 +1,68 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test tunenoform.test
+== Running test tunenoform.test
++ echo tunenoform.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=tunenoform
++ testSubDir=tunenoform.dir
++ chmod -R a+rwx tunenoform.dir
++ rm -rf tunenoform.dir
++ mkdir tunenoform.dir
++ cd tunenoform.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 ../tunenoform tunenoform.txt
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../tunenoform
++ cmd=../tunenoform
++ shift
++ test -n ../tunenoform
++ set ../tunenoform tunenoform.txt
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../tunenoform tunenoform.txt
+1: !(a ^ b), (a|!b) & (!a|b)
+Not(@18 #0 [Or(@17 #0 [And(@14 #0 [ap(@3 #3 "a"), Not(@5 #1 [ap(@4 #3 "b")])]), And(@16 #0 [Not(@6 #1 [ap(@3 #3 "a")]), ap(@4 #3 "b")])])])
+And(@9 #2 [Or(@7 #0 [ap(@3 #3 "a"), Not(@5 #1 [ap(@4 #3 "b")])]), Or(@8 #0 [Not(@6 #1 [ap(@3 #3 "a")]), ap(@4 #3 "b")])])
+2: !(a <=> b), (a|b) & (!a|!b)
+Not(@42 #0 [Or(@41 #0 [And(@39 #0 [ap(@27 #3 "a"), ap(@28 #3 "b")]), And(@40 #0 [Not(@29 #1 [ap(@27 #3 "a")]), Not(@30 #1 [ap(@28 #3 "b")])])])])
+And(@33 #2 [Or(@31 #0 [ap(@27 #3 "a"), ap(@28 #3 "b")]), Or(@32 #0 [Not(@29 #1 [ap(@27 #3 "a")]), Not(@30 #1 [ap(@28 #3 "b")])])])
+3: !(a => b), a&!b
+Not(@60 #0 [Or(@59 #0 [Not(@58 #0 [ap(@51 #2 "a")]), ap(@52 #2 "b")])])
+And(@54 #2 [ap(@51 #2 "a"), Not(@53 #0 [ap(@52 #2 "b")])])
+4: !(!a => !b), !a&b
+Not(@74 #0 [Or(@73 #0 [ap(@64 #1 "a"), Not(@69 #1 [ap(@66 #1 "b")])])])
+And(@67 #2 [Not(@65 #1 [ap(@64 #1 "a")]), ap(@66 #1 "b")])
+5: !Fa, false R !a
+Not(@85 #0 [U(@84 #0 [tt(@1 #0), ap(@78 #2 "a")])])
+R(@80 #2 [ff(@0 #0), Not(@79 #0 [ap(@78 #2 "a")])])
+6: !G!a, true U a
+Not(@96 #0 [R(@95 #0 [ff(@0 #0), Not(@91 #1 [ap(@89 #1 "a")])])])
+U(@90 #2 [tt(@1 #0), ap(@89 #1 "a")])
+7: !(GF a => FG b), (0 R (1 U a)) & (0 R (1 U !b))
+Not(@124 #0 [Or(@123 #0 [U(@120 #0 [tt(@1 #0), R(@118 #0 [ff(@0 #0), ap(@102 #2 "b")])]), Not(@122 #0 [R(@101 #1 [ff(@0 #0), U(@100 #0 [tt(@1 #0), ap(@99 #1 "a")])])])])])
+And(@106 #2 [R(@101 #1 [ff(@0 #0), U(@100 #0 [tt(@1 #0), ap(@99 #1 "a")])]), R(@105 #0 [ff(@0 #0), U(@104 #0 [tt(@1 #0), Not(@103 #0 [ap(@102 #2 "b")])])])])
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
+PASS core/tunenoform.test (exit status: 0)

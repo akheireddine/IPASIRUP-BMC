@@ -1,0 +1,249 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test ltlrel.test
+== Running test ltlrel.test
++ echo ltlrel.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=ltlrel
++ testSubDir=ltlrel.dir
++ chmod -R a+rwx ltlrel.dir
++ rm -rf ltlrel.dir
++ mkdir ltlrel.dir
++ cd ltlrel.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ t
++ cat
++ head -n 1 tmp.152508
++ run 0 ../ltlrel a & Xb & c
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ltlrel
++ cmd=../ltlrel
++ shift
++ test -n ../ltlrel
++ set ../ltlrel a & Xb & c
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ltlrel a & Xb & c
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ sed 1d tmp.152508
++ diff out.152508 exp.152508
++ t
++ cat
++ head -n 1 tmp.152508
++ run 0 ../ltlrel a & b & GF(a | c) & FG(a | c)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ltlrel
++ cmd=../ltlrel
++ shift
++ test -n ../ltlrel
++ set ../ltlrel a & b & GF(a | c) & FG(a | c)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ltlrel a & b & GF(a | c) & FG(a | c)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ sed 1d tmp.152508
++ diff out.152508 exp.152508
++ t
++ cat
++ head -n 1 tmp.152508
++ run 0 ../ltlrel b & GF(a | c) & FG(a | c)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ltlrel
++ cmd=../ltlrel
++ shift
++ test -n ../ltlrel
++ set ../ltlrel b & GF(a | c) & FG(a | c)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ltlrel b & GF(a | c) & FG(a | c)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ sed 1d tmp.152508
++ diff out.152508 exp.152508
++ t
++ cat
++ head -n 1 tmp.152508
++ run 0 ../ltlrel G(d & e) | FG(Xf| !c) | h | i
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ltlrel
++ cmd=../ltlrel
++ shift
++ test -n ../ltlrel
++ set ../ltlrel G(d & e) | FG(Xf| !c) | h | i
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ltlrel G(d & e) | FG(Xf| !c) | h | i
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ sed 1d tmp.152508
++ diff out.152508 exp.152508
++ t
++ cat
++ head -n 1 tmp.152508
++ run 0 ../ltlrel a <-> b
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ltlrel
++ cmd=../ltlrel
++ shift
++ test -n ../ltlrel
++ set ../ltlrel a <-> b
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ltlrel a <-> b
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ sed 1d tmp.152508
++ diff out.152508 exp.152508
++ t
++ cat
++ head -n 1 tmp.152508
++ run 0 ../ltlrel (a <-> b) & X(b -> c)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ltlrel
++ cmd=../ltlrel
++ shift
++ test -n ../ltlrel
++ set ../ltlrel (a <-> b) & X(b -> c)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ltlrel (a <-> b) & X(b -> c)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ sed 1d tmp.152508
++ diff out.152508 exp.152508
++ t
++ cat
++ head -n 1 tmp.152508
++ run 0 ../ltlrel <>p1 -> ((p0 -> (!p1 U (!p1 && p3 && !p5 && X((!p1 && !p5) U p4)))) U p1)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ltlrel
++ cmd=../ltlrel
++ shift
++ test -n ../ltlrel
++ set ../ltlrel <>p1 -> ((p0 -> (!p1 U (!p1 && p3 && !p5 && X((!p1 && !p5) U p4)))) U p1)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ltlrel <>p1 -> ((p0 -> (!p1 U (!p1 && p3 && !p5 && X((!p1 && !p5) U p4)))) U p1)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ sed 1d tmp.152508
++ diff out.152508 exp.152508
++ t
++ cat
++ head -n 1 tmp.152508
++ run 0 ../ltlrel <>p1 -> ((p0 -> (!p1 U (!p1 && p3 && !p5 && X((!p1 && !p5) U p4) & p6))) U p1)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ltlrel
++ cmd=../ltlrel
++ shift
++ test -n ../ltlrel
++ set ../ltlrel <>p1 -> ((p0 -> (!p1 U (!p1 && p3 && !p5 && X((!p1 && !p5) U p4) & p6))) U p1)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ltlrel <>p1 -> ((p0 -> (!p1 U (!p1 && p3 && !p5 && X((!p1 && !p5) U p4) & p6))) U p1)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ sed 1d tmp.152508
++ diff out.152508 exp.152508
++ t
++ cat
++ head -n 1 tmp.152508
++ run 0 ../ltlrel !b & e U (a & b & c)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ltlrel
++ cmd=../ltlrel
++ shift
++ test -n ../ltlrel
++ set ../ltlrel !b & e U (a & b & c)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ltlrel !b & e U (a & b & c)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ sed 1d tmp.152508
++ diff out.152508 exp.152508
++ t
++ cat
++ head -n 1 tmp.152508
++ run 0 ../ltlrel X!c & X(b & c & d & a U e)
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../ltlrel
++ cmd=../ltlrel
++ shift
++ test -n ../ltlrel
++ set ../ltlrel X!c & X(b & c & d & a U e)
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../ltlrel X!c & X(b & c & d & a U e)
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ sed 1d tmp.152508
++ diff out.152508 exp.152508
+PASS core/ltlrel.test (exit status: 0)

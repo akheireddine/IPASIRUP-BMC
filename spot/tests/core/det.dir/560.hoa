@@ -1,0 +1,15 @@
+HOA: v1.1
+States: 3
+Start: 1
+Start: 2
+AP: 1 "a"
+Acceptance: 0 t
+properties: !deterministic
+--BODY--
+State: 0
+[t] 0
+State: 1
+[0] 0
+State: 2
+[!0] 0
+--END--

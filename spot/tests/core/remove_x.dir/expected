@@ -1,0 +1,1 @@
+F(a & ((a & (a U (!a & b)) & ((!b U !a) | (b U !a))) | (!a & (!a U (a & !a & b)) & ((!b U a) | (b U a))) | (b & (b U (!a & b & !b)) & ((!a U !b) | (a U !b))) | (!b & (!b U (!a & b)) & ((!a U b) | (a U b))) | (!a & b & (G!a | Ga) & (G!b | Gb))))

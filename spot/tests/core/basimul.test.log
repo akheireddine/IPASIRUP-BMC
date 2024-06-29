@@ -1,0 +1,166 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test basimul.test
+== Running test basimul.test
++ echo basimul.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=basimul
++ testSubDir=basimul.dir
++ chmod -R a+rwx basimul.dir
++ rm -rf basimul.dir
++ mkdir basimul.dir
++ cd basimul.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ ltlcross --seed=0 --products=5 --json=out.json -f X((F(Xa | b) W c) U (Xc W (a & d))) -f ((<> p5 V ((p0 U p1) <-> (p5 \/ p1))) -> ((<> p4 V p2) M p2)) -f !p2 & (Fp5 R (((p0 U p1) & (p5 | p1)) | (!p5 & (!p0 R !p1)))) -f ! ((p0 /\ p4) <-> ! ((! p0 U (p0 W p4)) /\ (X p5 -> ([] p3 /\ p5)))) -f (X <> (<> X p0 /\ X (p5 <-> p0)) W (p3 W p0)) ltl2tgba --ba --high --lbtt=t -x ba-simul=0 %f >%T ltl2tgba --ba --high --lbtt=t -x ba-simul=1 %f >%T ltl2tgba --ba --high --lbtt=t -x ba-simul=2 %f >%T ltl2tgba --ba --high --lbtt=t -x ba-simul=3 %f >%T ltl2tgba --ba --high --lbtt -x ba-simul=0 %f >%T ltl2tgba --ba --high --lbtt -x ba-simul=1 %f >%T ltl2tgba --ba --high --lbtt -x ba-simul=2 %f >%T ltl2tgba --ba --high --lbtt -x ba-simul=3 %f >%T ltl2tgba --ba --high --spin -x ba-simul=0 %f >%N ltl2tgba --ba --high --spin -x ba-simul=1 %f >%N ltl2tgba --ba --high --spin -x ba-simul=2 %f >%N ltl2tgba --ba --high --spin -x ba-simul=3 %f >%N
+X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3))))
+Running [P0]: ltl2tgba --ba --high --lbtt=t -x ba-simul=0 'X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3))))' >'lcr-o0-3h7TgF'
+Running [P1]: ltl2tgba --ba --high --lbtt=t -x ba-simul=1 'X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3))))' >'lcr-o1-BiujG3'
+Running [P2]: ltl2tgba --ba --high --lbtt=t -x ba-simul=2 'X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3))))' >'lcr-o2-CxKJK2'
+Running [P3]: ltl2tgba --ba --high --lbtt=t -x ba-simul=3 'X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3))))' >'lcr-o3-IoaNzt'
+Running [P4]: ltl2tgba --ba --high --lbtt -x ba-simul=0 'X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3))))' >'lcr-o4-y6xSXV'
+Running [P5]: ltl2tgba --ba --high --lbtt -x ba-simul=1 'X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3))))' >'lcr-o5-Vnvc2r'
+Running [P6]: ltl2tgba --ba --high --lbtt -x ba-simul=2 'X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3))))' >'lcr-o6-sT91eM'
+Running [P7]: ltl2tgba --ba --high --lbtt -x ba-simul=3 'X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3))))' >'lcr-o7-aC9A3q'
+Running [P8]: ltl2tgba --ba --high --spin -x ba-simul=0 'X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3))))' >'lcr-o8-NfWUlg'
+Running [P9]: ltl2tgba --ba --high --spin -x ba-simul=1 'X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3))))' >'lcr-o9-tX3geK'
+Running [P10]: ltl2tgba --ba --high --spin -x ba-simul=2 'X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3))))' >'lcr-o10-jh9MDq'
+Running [P11]: ltl2tgba --ba --high --spin -x ba-simul=3 'X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3))))' >'lcr-o11-wxi8G5'
+Running [N0]: ltl2tgba --ba --high --lbtt=t -x ba-simul=0 '!(X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3)))))' >'lcr-o0-N1o8TB'
+Running [N1]: ltl2tgba --ba --high --lbtt=t -x ba-simul=1 '!(X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3)))))' >'lcr-o1-lbCFI5'
+Running [N2]: ltl2tgba --ba --high --lbtt=t -x ba-simul=2 '!(X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3)))))' >'lcr-o2-cKk8Fn'
+Running [N3]: ltl2tgba --ba --high --lbtt=t -x ba-simul=3 '!(X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3)))))' >'lcr-o3-inZ4M3'
+Running [N4]: ltl2tgba --ba --high --lbtt -x ba-simul=0 '!(X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3)))))' >'lcr-o4-7cCqEV'
+Running [N5]: ltl2tgba --ba --high --lbtt -x ba-simul=1 '!(X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3)))))' >'lcr-o5-7tlXrf'
+Running [N6]: ltl2tgba --ba --high --lbtt -x ba-simul=2 '!(X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3)))))' >'lcr-o6-Bsi4c5'
+Running [N7]: ltl2tgba --ba --high --lbtt -x ba-simul=3 '!(X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3)))))' >'lcr-o7-iKy6S7'
+Running [N8]: ltl2tgba --ba --high --spin -x ba-simul=0 '!(X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3)))))' >'lcr-o8-2zG7Mc'
+Running [N9]: ltl2tgba --ba --high --spin -x ba-simul=1 '!(X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3)))))' >'lcr-o9-N7Lg1l'
+Running [N10]: ltl2tgba --ba --high --spin -x ba-simul=2 '!(X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3)))))' >'lcr-o10-ApOzxE'
+Running [N11]: ltl2tgba --ba --high --spin -x ba-simul=3 '!(X(((F((p0) | (X(p1)))) W (p2)) U ((X(p2)) W ((p1) & (p3)))))' >'lcr-o11-VKk9PH'
+Performing sanity checks and gathering statistics...
+
+((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2))
+Running [P0]: ltl2tgba --ba --high --lbtt=t -x ba-simul=0 '((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2))' >'lcr-o0-K8PUVm'
+Running [P1]: ltl2tgba --ba --high --lbtt=t -x ba-simul=1 '((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2))' >'lcr-o1-yoYpwb'
+Running [P2]: ltl2tgba --ba --high --lbtt=t -x ba-simul=2 '((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2))' >'lcr-o2-0JoLj3'
+Running [P3]: ltl2tgba --ba --high --lbtt=t -x ba-simul=3 '((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2))' >'lcr-o3-kC0MnL'
+Running [P4]: ltl2tgba --ba --high --lbtt -x ba-simul=0 '((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2))' >'lcr-o4-kvCoUC'
+Running [P5]: ltl2tgba --ba --high --lbtt -x ba-simul=1 '((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2))' >'lcr-o5-6bhqTo'
+Running [P6]: ltl2tgba --ba --high --lbtt -x ba-simul=2 '((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2))' >'lcr-o6-7qokeU'
+Running [P7]: ltl2tgba --ba --high --lbtt -x ba-simul=3 '((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2))' >'lcr-o7-tKiv45'
+Running [P8]: ltl2tgba --ba --high --spin -x ba-simul=0 '((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2))' >'lcr-o8-xOG1BP'
+Running [P9]: ltl2tgba --ba --high --spin -x ba-simul=1 '((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2))' >'lcr-o9-K4GoEQ'
+Running [P10]: ltl2tgba --ba --high --spin -x ba-simul=2 '((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2))' >'lcr-o10-6zHZWa'
+Running [P11]: ltl2tgba --ba --high --spin -x ba-simul=3 '((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2))' >'lcr-o11-ME0U3Y'
+Running [N0]: ltl2tgba --ba --high --lbtt=t -x ba-simul=0 '!(((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2)))' >'lcr-o0-9yRVXs'
+Running [N1]: ltl2tgba --ba --high --lbtt=t -x ba-simul=1 '!(((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2)))' >'lcr-o1-09W3vV'
+Running [N2]: ltl2tgba --ba --high --lbtt=t -x ba-simul=2 '!(((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2)))' >'lcr-o2-rz1DQB'
+Running [N3]: ltl2tgba --ba --high --lbtt=t -x ba-simul=3 '!(((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2)))' >'lcr-o3-Ta8BrE'
+Running [N4]: ltl2tgba --ba --high --lbtt -x ba-simul=0 '!(((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2)))' >'lcr-o4-w5Wbd8'
+Running [N5]: ltl2tgba --ba --high --lbtt -x ba-simul=1 '!(((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2)))' >'lcr-o5-WwGZNR'
+Running [N6]: ltl2tgba --ba --high --lbtt -x ba-simul=2 '!(((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2)))' >'lcr-o6-kG30SB'
+Running [N7]: ltl2tgba --ba --high --lbtt -x ba-simul=3 '!(((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2)))' >'lcr-o7-7bnoiI'
+Running [N8]: ltl2tgba --ba --high --spin -x ba-simul=0 '!(((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2)))' >'lcr-o8-k1XGib'
+Running [N9]: ltl2tgba --ba --high --spin -x ba-simul=1 '!(((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2)))' >'lcr-o9-3UEXQ6'
+Running [N10]: ltl2tgba --ba --high --spin -x ba-simul=2 '!(((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2)))' >'lcr-o10-jptfcz'
+Running [N11]: ltl2tgba --ba --high --spin -x ba-simul=3 '!(((F(p5)) R (((p1) | (p5)) <-> ((p0) U (p1)))) -> (((F(p4)) R (p2)) M (p2)))' >'lcr-o11-JmJCjy'
+Performing sanity checks and gathering statistics...
+
+(!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1))))))
+Running [P0]: ltl2tgba --ba --high --lbtt=t -x ba-simul=0 '(!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1))))))' >'lcr-o0-9rqBYU'
+Running [P1]: ltl2tgba --ba --high --lbtt=t -x ba-simul=1 '(!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1))))))' >'lcr-o1-6sb0m2'
+Running [P2]: ltl2tgba --ba --high --lbtt=t -x ba-simul=2 '(!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1))))))' >'lcr-o2-c0pLpp'
+Running [P3]: ltl2tgba --ba --high --lbtt=t -x ba-simul=3 '(!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1))))))' >'lcr-o3-sr5Zld'
+Running [P4]: ltl2tgba --ba --high --lbtt -x ba-simul=0 '(!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1))))))' >'lcr-o4-Uy0qgI'
+Running [P5]: ltl2tgba --ba --high --lbtt -x ba-simul=1 '(!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1))))))' >'lcr-o5-tJOLPV'
+Running [P6]: ltl2tgba --ba --high --lbtt -x ba-simul=2 '(!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1))))))' >'lcr-o6-PWgF9c'
+Running [P7]: ltl2tgba --ba --high --lbtt -x ba-simul=3 '(!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1))))))' >'lcr-o7-9Ik0N5'
+Running [P8]: ltl2tgba --ba --high --spin -x ba-simul=0 '(!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1))))))' >'lcr-o8-mcz6pz'
+Running [P9]: ltl2tgba --ba --high --spin -x ba-simul=1 '(!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1))))))' >'lcr-o9-BAhTAr'
+Running [P10]: ltl2tgba --ba --high --spin -x ba-simul=2 '(!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1))))))' >'lcr-o10-FylV3y'
+Running [P11]: ltl2tgba --ba --high --spin -x ba-simul=3 '(!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1))))))' >'lcr-o11-82X6gO'
+Running [N0]: ltl2tgba --ba --high --lbtt=t -x ba-simul=0 '!((!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1)))))))' >'lcr-o0-WfIuwG'
+Running [N1]: ltl2tgba --ba --high --lbtt=t -x ba-simul=1 '!((!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1)))))))' >'lcr-o1-85pwKC'
+Running [N2]: ltl2tgba --ba --high --lbtt=t -x ba-simul=2 '!((!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1)))))))' >'lcr-o2-LzneKk'
+Running [N3]: ltl2tgba --ba --high --lbtt=t -x ba-simul=3 '!((!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1)))))))' >'lcr-o3-BiRINJ'
+Running [N4]: ltl2tgba --ba --high --lbtt -x ba-simul=0 '!((!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1)))))))' >'lcr-o4-BrbdbG'
+Running [N5]: ltl2tgba --ba --high --lbtt -x ba-simul=1 '!((!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1)))))))' >'lcr-o5-WQxbuc'
+Running [N6]: ltl2tgba --ba --high --lbtt -x ba-simul=2 '!((!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1)))))))' >'lcr-o6-nTVzxO'
+Running [N7]: ltl2tgba --ba --high --lbtt -x ba-simul=3 '!((!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1)))))))' >'lcr-o7-8gCIjG'
+Running [N8]: ltl2tgba --ba --high --spin -x ba-simul=0 '!((!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1)))))))' >'lcr-o8-L9Q6u1'
+Running [N9]: ltl2tgba --ba --high --spin -x ba-simul=1 '!((!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1)))))))' >'lcr-o9-7VObBH'
+Running [N10]: ltl2tgba --ba --high --spin -x ba-simul=2 '!((!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1)))))))' >'lcr-o10-I7uKrN'
+Running [N11]: ltl2tgba --ba --high --spin -x ba-simul=3 '!((!(p2)) & ((F(p5)) R ((((p1) | (p5)) & ((p0) U (p1))) | ((!(p5)) & ((!(p0)) R (!(p1)))))))' >'lcr-o11-lqPDo1'
+Performing sanity checks and gathering statistics...
+
+!(((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3)))))))
+Running [P0]: ltl2tgba --ba --high --lbtt=t -x ba-simul=0 '!(((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3)))))))' >'lcr-o0-ZgDSKd'
+Running [P1]: ltl2tgba --ba --high --lbtt=t -x ba-simul=1 '!(((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3)))))))' >'lcr-o1-KXGS36'
+Running [P2]: ltl2tgba --ba --high --lbtt=t -x ba-simul=2 '!(((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3)))))))' >'lcr-o2-LfIBdD'
+Running [P3]: ltl2tgba --ba --high --lbtt=t -x ba-simul=3 '!(((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3)))))))' >'lcr-o3-L4gjqL'
+Running [P4]: ltl2tgba --ba --high --lbtt -x ba-simul=0 '!(((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3)))))))' >'lcr-o4-F1pmxY'
+Running [P5]: ltl2tgba --ba --high --lbtt -x ba-simul=1 '!(((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3)))))))' >'lcr-o5-U56kPo'
+Running [P6]: ltl2tgba --ba --high --lbtt -x ba-simul=2 '!(((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3)))))))' >'lcr-o6-gLseNH'
+Running [P7]: ltl2tgba --ba --high --lbtt -x ba-simul=3 '!(((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3)))))))' >'lcr-o7-CxRrH1'
+Running [P8]: ltl2tgba --ba --high --spin -x ba-simul=0 '!(((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3)))))))' >'lcr-o8-OHd7VO'
+Running [P9]: ltl2tgba --ba --high --spin -x ba-simul=1 '!(((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3)))))))' >'lcr-o9-6aDTbM'
+Running [P10]: ltl2tgba --ba --high --spin -x ba-simul=2 '!(((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3)))))))' >'lcr-o10-dVHH0n'
+Running [P11]: ltl2tgba --ba --high --spin -x ba-simul=3 '!(((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3)))))))' >'lcr-o11-0YQlwZ'
+Running [N0]: ltl2tgba --ba --high --lbtt=t -x ba-simul=0 '((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3))))))' >'lcr-o0-478WzC'
+Running [N1]: ltl2tgba --ba --high --lbtt=t -x ba-simul=1 '((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3))))))' >'lcr-o1-Zm1Ojj'
+Running [N2]: ltl2tgba --ba --high --lbtt=t -x ba-simul=2 '((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3))))))' >'lcr-o2-TgRRPI'
+Running [N3]: ltl2tgba --ba --high --lbtt=t -x ba-simul=3 '((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3))))))' >'lcr-o3-9idAYP'
+Running [N4]: ltl2tgba --ba --high --lbtt -x ba-simul=0 '((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3))))))' >'lcr-o4-lmjVs7'
+Running [N5]: ltl2tgba --ba --high --lbtt -x ba-simul=1 '((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3))))))' >'lcr-o5-D3SLrU'
+Running [N6]: ltl2tgba --ba --high --lbtt -x ba-simul=2 '((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3))))))' >'lcr-o6-r5a49N'
+Running [N7]: ltl2tgba --ba --high --lbtt -x ba-simul=3 '((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3))))))' >'lcr-o7-2uDw7p'
+Running [N8]: ltl2tgba --ba --high --spin -x ba-simul=0 '((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3))))))' >'lcr-o8-MLkeoy'
+Running [N9]: ltl2tgba --ba --high --spin -x ba-simul=1 '((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3))))))' >'lcr-o9-ZvEVcO'
+Running [N10]: ltl2tgba --ba --high --spin -x ba-simul=2 '((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3))))))' >'lcr-o10-BknzTM'
+Running [N11]: ltl2tgba --ba --high --spin -x ba-simul=3 '((p0) & (p4)) <-> (!(((!(p0)) U ((p0) W (p4))) & ((X(p5)) -> ((p5) & (G(p3))))))' >'lcr-o11-eR4Ams'
+Performing sanity checks and gathering statistics...
+
+(X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0))
+Running [P0]: ltl2tgba --ba --high --lbtt=t -x ba-simul=0 '(X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0))' >'lcr-o0-dlNLGV'
+Running [P1]: ltl2tgba --ba --high --lbtt=t -x ba-simul=1 '(X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0))' >'lcr-o1-7Imc3E'
+Running [P2]: ltl2tgba --ba --high --lbtt=t -x ba-simul=2 '(X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0))' >'lcr-o2-O1q970'
+Running [P3]: ltl2tgba --ba --high --lbtt=t -x ba-simul=3 '(X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0))' >'lcr-o3-77FJa3'
+Running [P4]: ltl2tgba --ba --high --lbtt -x ba-simul=0 '(X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0))' >'lcr-o4-7Ykd7J'
+Running [P5]: ltl2tgba --ba --high --lbtt -x ba-simul=1 '(X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0))' >'lcr-o5-M65DLg'
+Running [P6]: ltl2tgba --ba --high --lbtt -x ba-simul=2 '(X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0))' >'lcr-o6-SIYObm'
+Running [P7]: ltl2tgba --ba --high --lbtt -x ba-simul=3 '(X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0))' >'lcr-o7-9IkOr2'
+Running [P8]: ltl2tgba --ba --high --spin -x ba-simul=0 '(X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0))' >'lcr-o8-afWZgS'
+Running [P9]: ltl2tgba --ba --high --spin -x ba-simul=1 '(X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0))' >'lcr-o9-7anaR4'
+Running [P10]: ltl2tgba --ba --high --spin -x ba-simul=2 '(X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0))' >'lcr-o10-vL56mB'
+Running [P11]: ltl2tgba --ba --high --spin -x ba-simul=3 '(X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0))' >'lcr-o11-w6SnM4'
+Running [N0]: ltl2tgba --ba --high --lbtt=t -x ba-simul=0 '!((X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0)))' >'lcr-o0-1xPVLr'
+Running [N1]: ltl2tgba --ba --high --lbtt=t -x ba-simul=1 '!((X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0)))' >'lcr-o1-7Sft2x'
+Running [N2]: ltl2tgba --ba --high --lbtt=t -x ba-simul=2 '!((X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0)))' >'lcr-o2-XCihdo'
+Running [N3]: ltl2tgba --ba --high --lbtt=t -x ba-simul=3 '!((X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0)))' >'lcr-o3-DivTlB'
+Running [N4]: ltl2tgba --ba --high --lbtt -x ba-simul=0 '!((X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0)))' >'lcr-o4-7t1n7w'
+Running [N5]: ltl2tgba --ba --high --lbtt -x ba-simul=1 '!((X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0)))' >'lcr-o5-OwZyuz'
+Running [N6]: ltl2tgba --ba --high --lbtt -x ba-simul=2 '!((X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0)))' >'lcr-o6-M3agvo'
+Running [N7]: ltl2tgba --ba --high --lbtt -x ba-simul=3 '!((X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0)))' >'lcr-o7-o2yZ7W'
+Running [N8]: ltl2tgba --ba --high --spin -x ba-simul=0 '!((X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0)))' >'lcr-o8-tMUdPP'
+Running [N9]: ltl2tgba --ba --high --spin -x ba-simul=1 '!((X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0)))' >'lcr-o9-BoaRX5'
+Running [N10]: ltl2tgba --ba --high --spin -x ba-simul=2 '!((X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0)))' >'lcr-o10-K7nYdm'
+Running [N11]: ltl2tgba --ba --high --spin -x ba-simul=3 '!((X(F((F(X(p0))) & (X((p0) <-> (p5)))))) W ((p3) W (p0)))' >'lcr-o11-TEZIyB'
+Performing sanity checks and gathering statistics...
+
+No problem detected.
+PASS core/basimul.test (exit status: 0)

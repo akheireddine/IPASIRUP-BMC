@@ -1,0 +1,1200 @@
+0
+1
+Fc
+b xor (c U b)
+XXc
+F(Xc W a) W {b[*][:*1..2]}
+!a
+a <-> ((G(c -> a) M a) W b)
+Ga
+X(0)
+a xor !(X(0) M Fb)
+{{b && [*0..2]}[*]}
+a & c
+c & (!b M c)
+1 U !c
+{[*2..3]}[]-> X!Fa
+{[*][:*2..3][:*]} W !b
+!X(Xa M a)
+c M G!(a xor c)
+GFa R Gb
+!c
+c
+{[*]}[]-> X(0)
+a
+!({a | [*0]}<>-> (b & Fa))
+Gb
+F(a U {1;c[*]})
+(b xor c) xor (b & Gb)
+(1 U b) W (c R !a)
+b & (G!b W 0)
+{1:a[*]}[]-> Ga
+a W (b -> c)
+F(b xor (b <-> XXb))
+b <-> (!a | !b)
+b | Gc
+X(Gc & (Fc R {[*]}))
+FGb
+X(0) M 1
+0 R b
+a <-> (c R G!Gc)
+1 U ((a | !b) M X(0))
+!((b <-> (b & c)) W b)
+a | b | !(a & c)
+!c <-> (b W c)
+((1 U Xa) M (b R c)) -> c
+{c[*]}[]-> (Fb W 0)
+(c <-> Xb) R (a <-> b)
+!F(a xor Ga)
+b W !Fa
+F(c | Xa) W Fa
+!(0 R Fb)
+!X!a
+X!F!{a[*]}
+{!c | a[*1..2]}!
+F(GFb R b)
+FG(a & X!b)
+a xor c
+FX!Ga
+G!a
+X(0) <-> (Gc W 0)
+F!(b R (b & !c))
+F(Fc U a)
+{c | [*0]}<>-> b
+(c U a) | (a W b)
+G(a | c)
+Ga M !X!c
+(!a | G!b) U !b
+XF(b R Fc)
+F!Fa U b
+X(!b U Fa)
+X(c & XXa)
+{[*]}<>-> Xc
+G!(c & !c)
+{c | [*0]}[]-> Fa
+F(c U (a xor Gc))
+GFa xor ((!a | Xb) -> a)
+X(!b R X(0))
+F!F(Xc U c)
+Fb M 1
+Xa W a
+a U {[*1..2]}
+!F(Gb W a)
+{[*2..3][:*2][*0..1]}[]-> b
+F{[*]}
+F(Fc W (b xor (!c W 0)))
+{a[*2..3]}[]-> b
+!(G{[*2..6]} M 1)
+b
+Xb W (!a | (1 U b))
+{a[*]}[]-> (a | c)
+!a | ((0 R a) -> a)
+a R (b M 1)
+c W 0
+F((b | !c) M Xc)
+(X(0) xor Gb) | (b R Gc)
+G!(0 R Fc)
+{[*0..1]}<>-> (b & c)
+{c[*]}!
+X(!a | FXG(!a W a))
+{!b:{a | [*0]}}
+GFG(a W 0) R {a[*1..2]}
+!Ff
+X(0)
+0
+!(d | !d) U F!Gc
+1
+!Gc | F(c | !f)
+{{e | [*0]}[:*][*]}!
+(0 R f) | Ga
+!({a[*]}<>-> e)
+f W (a & f & Fe)
+!e
+((a <-> f) R Ga) -> (e xor f)
+c xor X(0)
+G!b
+F(Gb U c)
+(c | !c) M (e | Ff)
+G!f M c
+XXGc
+G(!a | !(c | f))
+!F(c U !d)
+b | X(0)
+FX!(b & (a M 1))
+b -> Xc
+e | (!e -> b)
+e & GX(e | !f)
+!f | {{d | [*0]}[*]}
+FG(b M {[*1..2]})
+!a & c & Fe
+FX(d R a) xor Xb
+!(Fe W (a W Fd))
+((d | !e) & Xb) xor Xf
+!a M (Gc | Gd)
+{{1 | [*0]}[:*]}<>-> c
+GXGc
+(b R f) M Fb
+!d
+e -> F(Fb U FXGd)
+Ga
+{[*]}[]-> G(e W f)
+e & Fd
+(e W d) R (f & (d xor Gf))
+f & G!(0 R a)
+Gb U (Fd xor (d -> Gd))
+!b R d
+!X(0)
+f | XGf
+(f W (c | d)) & (Gb W c)
+!a
+f <-> GXd
+e U G(b W !d)
+F(e M {[*][:*2..3]})
+!a R F(e M (c & e))
+Xa W e
+!((!a & !f) xor GFb)
+f M (Xf -> X(Xc -> c))
+!b
+XGd
+f U X(0 R X!c)
+(d U (d R Ge)) R c
+X(e U (!a | XGXf))
+f <-> Xf
+Gc
+!(a | e) | Xe
+{b | [*0]}[]-> !Ff
+0 R a
+X(d & (c <-> Xb))
+c
+!(F(0 R a) U (b <-> Fe))
+X(0) -> d
+(b & Xc) xor XFXGd
+((f | (d U b)) -> !b) -> f
+f & Xa
+Fa xor !Xc
+c | e
+d <-> (c <-> XGXf)
+(a xor (a -> b)) W d
+!b | (c & d & (b U f))
+b | (!f xor FX(f M b))
+Fa M (0 R Gc)
+!{1 && d[*]}
+!Xc
+(Fa M b) U GFXa
+c xor (Fe xor Gb)
+a & Gc
+Fe W d
+F((f R c) M !e) U e
+(f -> (e M f)) W (a & f)
+(!d & f) U Xb
+GX!a
+a W Fa
+e
+F!f -> !F(b W Gb)
+Gd U {{!e | [*0]}[:*]}
+(a & f) | (a M (c <-> d))
+{{b | {c | e}[*]}[*]}
+X(c | (Gd W (f R Ga)))
+(e | f) <-> ((d xor e) U c)
+XGb
+Gf
+0
+Gb
+G(Gc & (c M a))
+1
+{[*]}<>-> Xc
+(b | !b) <-> !Gb
+{[*]}<>-> ((a xor Gc) R b)
+a
+G((Fc & (1 U c)) W a)
+!F(b U a)
+X({[*2]}!)
+!(c M 1)
+{{!b}[*2][:*1..3]}[]-> (0 R XXFa)
+b W 0
+(a | c) M GFb
+G(a -> c)
+!((a M 1) & ({a[*]} M (a M c)))
+!(!b R c)
+(c R Xc) -> Fb
+{{b;{!a && c}[*0..2]}[*]}
+{first_match([*1..2])}
+X(X(0) & {[*]})
+FGb & (!b | (b W c))
+X(c & !(Gb & Ga))
+Ga
+Xa
+F(b xor (b <-> XXb)) U c
+(!a <-> b) <-> (a -> b)
+a | !FXX(0)
+c -> (a W 0)
+a <-> (Fa M (Fc xor ({[*2..3]}<>-> c)))
+F!X!Fc
+(b W 0) <-> {b[*]}
+G((!a | !b) xor (b M (c -> b)))
+{{b | !c}[*]}!
+({c[*]}!) U G((Ga U c) -> c)
+F!FG(c U b)
+Gb U G(X(0) W !b)
+c
+b
+!a <-> b
+X(0)
+!c
+(a | b) xor (1 U Fa)
+{[*][:*0..2]}[]-> F(a | FGb)
+!Ga
+F(0 R c) -> (b -> c)
+F(!((XFc R c) R c) W 0)
+0 R (a | b)
+Fc
+c -> a
+X(a W Fb) R (b -> Fa)
+!Fc
+XXGc
+Gc & F(c | GXa)
+0 R b
+G!Xc
+!(0 R (a & b)) R !a
+0 R !a
+Fa U c
+!b | F!(1 U !c)
+c <-> FGc
+X!X(0)
+c & Xa
+{[*][:*]}<>-> XF(1 U b)
+F!c xor (b & Fc)
+a W Gb
+{c[*]}[]-> (XXa & (Xc M 1))
+GX({b[*]}[]-> 0)
+{[*2]}
+!Fa
+{{!c}[*]:!b}
+b & X!a
+{{1 && {1 | [*0]}}[*]}[]-> 0
+1 U (!a xor Fa)
+G!(!a | c)
+(b <-> GFa) M (c <-> Fc)
+1 U !c
+(a & b) W a
+(!b | c) & !Gb
+X{first_match({!a <-> !{a -> b}}[*2..3][:*2])}
+!b U a
+(a | b) <-> (c | Gc)
+(c & (!c R a)) -> G{1;c}
+!((b & c) | ({a[*]}[]-> !a))
+(c & Ga) R X!b
+c & ((c M 1) U !a)
+c & (Xa M !(a R c))
+b -> ((c W b) R Gc)
+F!Fa
+G(a | F{1:{b | [*0]}})
+!({[*2..3]}<>-> c)
+{first_match(1;{a && c})[*][:*]}
+!((a xor (c R !c)) <-> (1 U Gc))
+!(a & c)
+c | !(!b & c)
+X!FGc
+G!F(c xor {b[*2..3]})
+a & (X(0) | !X(0))
+G!(b -> c) U Gc
+0
+F({a[*]}<>-> d) | X(b & !b)
+G!(a R e) W 0
+(d xor f) U (Fc xor Fa)
+1
+!a
+X(0) U G(Xa -> a)
+XXe <-> X(f | ((b & e) R f))
+d xor FGf
+f & Xb
+Xd
+((Xc M c) -> Gc) W e
+(1 U (e xor (e <-> Gc))) M b
+Fd xor X(d R ((Gb U c) -> e))
+d | ((e -> d) W 0)
+X(0)
+F!FX!(c & Xb)
+X({f[*]}<>-> ((Xe | Xd) W X(0)))
+!(!Fd M 1)
+0 R (a -> Ga)
+!((e | GXa) W (a W X!d))
+1 U a
+!f
+{b:c[*]}
+(XGd W FGa) -> (a -> d)
+a <-> (a M 1)
+F(0 R ({b[*]}<>-> e))
+G((Gc R a) <-> (b W d))
+(a <-> (d -> e)) R a
+!(c & !e) | (0 R (a xor b))
+F(Xe M (X(0) -> f))
+F(f | X!{f[*][:*1]})
+(0 R a) U !c
+!(F(0 R Fb) R (a & !a))
+Ga & (e M {[*][:*2..3]})
+!f M F(Xd | Xf)
+F(c R a)
+FG((!b xor Fb) -> c)
+GF(b | FXc)
+{{c & [*]}[*1..9]}
+{f | [*0]}<>-> ((b xor Xf) -> c)
+Xc | F(Fc U c)
+!G(c <-> (c & Ga))
+!X(d | f)
+{{c xor {e && !f}}[*2][:*]}
+G!f M c
+F(d R f)
+X!(X(0) U e)
+!c <-> f
+!(a | Xd) U (d <-> Fc)
+a <-> (!f | (a R c))
+{{1 | [*0]}[*2]} -> d
+X!((f | Gb) -> !b)
+XX(((1 U f) R Gc) R e)
+{[*2..3]} R Fe
+G(!c -> !(e <-> Fb))
+X(!(X!d R Fc) U !f)
+FX(Fa M (0 R Gc))
+0 R f
+{first_match(1;{b && f})}
+!c
+F((a M d) W c)
+Fc
+a | !(!c & d & f)
+{a[*][:*0..2]}<>-> a
+X(f | !f) R a
+X(b M d)
+!GXb
+d W 0
+!(b & (1 U b)) U Fc
+f R (d | (a xor b))
+c M (Xc <-> (b R !a))
+b | ((!f M (e W a)) M e)
+f & (!b xor e)
+!({[*0] | {!b && !c}[*1..3][:*0..2]}[]-> f)
+X!(c | !e) W ((a xor f) R f)
+b
+b | f
+F(Fc W e)
+Fa
+GX!F((b R (e <-> Gf)) M c)
+c <-> !(XGa W 0)
+{e[*0..1][:*0..2]} U G!(c -> b)
+(!d <-> Xd) -> (b <-> !b)
+((f <-> (1 U f)) R a) W Ff
+G(!f U XG(f R a))
+F(a U (e xor X!(e xor f)))
+f M (c | (c R F!a))
+F({1 | {d | [*0]}[*]}<>-> Xc)
+!(f U d)
+(b & d) -> !e
+c & G(!c & (f <-> (d xor e)))
+(!c <-> !d) & !Fe
+!d U (f <-> !Xd)
+0 R F(c & f)
+F(d & f)
+G(b -> (F(!b xor Fb) U e))
+!(!a & e) | G!XXGe
+(X(0) U a) xor !(b M e)
+FXe R (b U f)
+0
+Gb W 0
+1
+(1 U b) <-> F(Gb W (b W a))
+G(!c <-> Xc)
+!(b & c) | Gc
+{{c && {c;1}[*]}[*1..2]} | (c -> Xb)
+X(0)
+(b -> Gb) U c
+!((b <-> c) W 0) M (b & F{[*]})
+c M (!b | !Xc | (a R !a))
+1 U (a M b)
+!{[*];b}
+(!a xor (b <-> (a U c))) M a
+!Xa
+GXG!c
+a
+c W (X(0) <-> G(Ga -> a))
+a U (c xor !c)
+{[*]} W X(0)
+a & Ga & F(b xor c)
+!Gb
+{b[*2][*]:{a && c}}[]-> Ga
+F(c xor (b <-> XX(!(a R Xb) U b)))
+!a M 1
+Gc W ((!a | !b) xor (b M (c -> b)))
+{first_match([*]:{!a <-> c})[:*]}
+b M c
+!a W (b R c)
+!X((b <-> (b & c)) W ((!b | c) U c))
+FGc
+F({b[*]}!)
+a & b & (b -> !c)
+G(b & ({b[*]} W b))
+(a & !c) | FXb
+F((a | b) xor (1 U Fa))
+{[*]}[]-> Fc
+c
+G!((!b -> c) M b)
+a M 1
+F!a
+G(a | !b)
+!(a xor c)
+FX!((b -> a) U !a)
+b & !(c R !b)
+a xor !(c U a)
+b & XXb
+G(c | !c) | {first_match([*1..3])}
+Fc
+(XX(0) M !(a U b)) U !c
+X((c xor Xa) U Fa)
+G(GFa W 0) U Xc
+(!b -> b) | XX(0)
+!(F({a[*]}[]-> 0) -> b)
+a W (!b & (F(Xc U c) U a))
+!(X(0) -> {1 | [*0]})
+{first_match(1 && {1 | [*0]})[:*]}
+G(Xb & {[*]})
+G(GX(0) W 0)
+XG(b & !b & !c)
+{a}[]=> a
+!(!c R b)
+a | (!b & c) | ({a[*]}[]-> !a)
+!(a W Gb) R (c xor (c & Ga))
+{{1 | [*0]} & first_match(c;1)}
+!a M (Fa R Gc)
+F!G(!b | c) W a
+GF(b | !c)
+X(0) <-> ((b M 1) R c)
+!(!a xor c)
+X!c
+!GX(F(c W X(0)) M a)
+X(b U c) U b
+(1 U c) | GX(b | c)
+c R ((a M (a & b)) U Fa)
+Xa U !((c -> (c -> Fb)) W 0)
+GF(c M Xb)
+!(a & !(!a <-> b))
+!(0 R b)
+!(Gb U a)
+c xor X(0)
+Fc & F(b W (Ga R (c -> GXb)))
+a xor (!(a W Fc) M (a R c))
+c U b
+{[*1..2]}
+!(c R b)
+c <-> (b R (a & (a <-> b)))
+X((b | Gc) xor X(b <-> Gb))
+!(a & b)
+(b U !c) -> a
+FG!X!((Gb W 0) | X(0))
+G((c W !G(b M Gb)) W !c)
+{[*]} <-> (c W 0)
+b U c
+(b M c) W a
+G({c[*4..]}[]-> {b[*0..2][:*]})
+{first_match([*2..3])} -> G(!a <-> X(0))
+(!b M b) <-> {c[*2]}
+a & (!a | b | !c)
+b W (FXa W 0)
+0
+{e[*]} U (b R !X(0))
+b | !(!c xor (a xor (a xor d))) | Gb
+!(a & d)
+a
+G(d & (f W (FXa U GFd)))
+Ff -> (XXe <-> X(c | (e R f)))
+0 R b
+a U {1 | [*0]}
+!(c R !d)
+X(0) R (a xor !b)
+1
+Fd xor X(0 R (((b xor f) U c) -> e))
+1 U {f | b[*]}
+c & ({first_match(b[*2])}[]-> d)
+F(!c xor (a xor (b | c)))
+X(0) | (!f U Gf)
+{{1;first_match(1;d)}[*1..3][:*1..3][*2]}
+e & GX({b:{f | [*0]}}[]-> 0)
+G!Xf
+(e -> (e -> a)) W e
+!(b xor !c) -> GFX(a R X(0))
+({{a | [*0]}[:*][*]}<>-> c) & (!d W Xb)
+Fe
+X(0)
+G({[*2..3]}[]-> (e <-> f))
+F(Gb U Fc)
+c & f & ((a | !c) -> !e) & Xb
+{[*]}<>-> ((e W d) R f)
+!((b & d) xor (Gd <-> (Gc U XGd)))
+X(d & (e M 1))
+!e R (!f M 1)
+FGf W !b
+{e[*][:*2]}<>-> !F!F!b
+f -> F(c | d)
+c xor ((f R (c | f)) R X(d | !e))
+(b U G(Gc W a)) -> f
+Fe & (d M {c[*][:*2..3]})
+Ga W (1 U !c)
+G((b xor (b | e)) <-> {c[*]})
+X{{1 | [*0]};!e;1}
+{f[*1..9]} M Xc
+!c | f
+F((b | e) W 0)
+{f[*1..2]}<>-> f
+{c[*]}[]-> ((!b | f) W Xf)
+F((d R f) <-> ((c xor FGa) W !c))
+((b & d) R !d) W 0
+!c <-> (XFd <-> (b W (!d R Xe)))
+!(a <-> ({f[*][:*2..3]}[]-> (a R c)))
+!((f | (!f U b)) -> !b)
+{!e | [*0] | e[*]}
+c | !(a <-> d)
+F(a -> b) M 1
+d | (FXb xor XXd)
+(b <-> FXf) -> G((e M d) R (a | c))
+G(b | ((!f | Xc) R Xe))
+b & !c & (Xa M Xd)
+d R !c
+d
+(c W {[*0] | [*0..2]}) <-> GFb
+d -> (b & (Ga | (e U (d | Xf))))
+X!G!(Fe | Ga)
+(c | !c) W (F!b -> (0 R a))
+X(Xe | X(!Gd U !f))
+(Fb U c) W FXf
+d & (a | !c)
+{f | a[*]}[]-> 0
+(c U Xc) W {{!a xor e} & [*1..3]}
+X((XFXb W a) -> a)
+X!F((c R (b <-> Ff)) M c)
+(!c | !f) -> {[*1..2]}
+X((e R d) <-> (f & (c -> Xf)))
+FXF(((f <-> Xc) R a) W Ff)
+XG((!f M e) R a)
+Gf & ((Fd W Xc) -> Ff)
+F!X!(b xor (Fe -> f))
+X(e | (a & b)) M ({1;d}!)
+a <-> F(a | !c)
+(X!c U (d U a)) & (b U c)
+F(!c xor XX(c U {a;d}))
+(d & X!((a & b) U a)) W 0
+X!((!c W a) W 0)
+!GF(d M (d & Ff))
+!G(c M (a M c))
+!(a xor (0 R F!a))
+(d <-> Gc) & ({{b | [*0]}[:*]}[]-> d)
+X((b <-> (b -> (c xor e))) M Xc)
+F!Fb
+!XFX(0)
+G{1 | first_match(a;!a)}
+F(c M GF(d -> e))
+F(d & XFX!b)
+{b && first_match({e & [*]}[:*])}<>-> !a
+G(!a R c)
+({a[*2..9]}<>-> Xb) U Fb
+{{!a && f}[*0..2][:*]}
+F(Gd U (1 U a))
+X(f | (d xor (F(d <-> e) -> ({b[*2..3]}<>-> b))))
+((Gb & Xd) U b) xor (a & (f M !a))
+0
+Fb
+Gb W 0
+1
+a U !(b W a)
+Fa
+{[*][:*2][:*1..3]}
+G((1 U (0 R c)) R !c)
+b M (a xor c)
+(!X(b & c) W a) W 0
+X(0) U (c | (b W 0))
+{b[*][:*2]}[]-> (a | (a xor Xb))
+c
+X(0) xor (c xor G(X(0) R a))
+{[*]}
+c xor (((b W a) R Gc) & G!a)
+{b[*]}<>-> !a
+({b[*2] && [*2..3]}[]-> !a) R ({c[*]}[]-> b)
+!F(b xor Fa)
+a | (b R (b W (c R !b)))
+FX((Gb W c) W Fb)
+b | Gc
+Xc
+!(!c M 1)
+!a
+0 R GXa
+FGc
+b & !b & !((a xor c) <-> (b | c))
+!(b -> (b R (c xor (a -> c)))) M 1
+!b
+(a <-> !b) | F(c M a)
+{{a && {!a -> b}}[*0..3][:*2]}<>-> c
+(b <-> Xa) <-> F(0 R c)
+F(!c W 0)
+X(a xor !a) <-> {a[*]}
+(b | (Gc & X!b)) R !a
+X(0)
+!a U (Xc <-> (a xor !Ga))
+G(b M 1)
+1 U {{{[*0] | [*2..3]} & {a | [*0]}}[*0..3]}
+Xc xor (b & Fc)
+a xor !(a U Fb)
+0 R b
+F((b <-> !b) U FGc)
+!XFc
+X(c -> Ga) | (Gb M FGc)
+c | (b & X(a & c))
+{b[*]:[*]}!
+1 U (a M !b)
+Fc
+a
+!(!c & ((!a | c) -> a)) | (c U b)
+Fc -> X(0)
+(c xor G!b) -> a
+{[*0] | [*]}
+c -> F(b W Ga)
+b
+(0 R X!Xa) U GFc
+b -> c
+!((G!a R (0 R Xb)) -> Gb)
+!XF!G(a | F{1:{b | [*0]}})
+!X(0)
+GX!a W a
+F(!b | GX(F(c W X(0)) M a))
+X(!b M !a) -> a
+{{b && !b}[*1..2]}[]-> (Xc | Ga)
+c -> {[*2]}
+((c -> Xc) U XGa) | !X(a <-> c)
+GF(!Xc W a)
+0 R !G(Gb W !c)
+F((({[*]} & (X(0) W b)) W b) U c)
+!(Gc -> a)
+F!G(b -> a) U Xc
+1 U G!X!((Gb W 0) | X(0))
+G({[*0] | c[*2]}<>-> ({b[*]}[]-> b))
+!c | {c | [*0]}
+G!a
+G(Xb <-> (1 U (Fa | F!(b W 0))))
+Xb & F(!c | Fb)
+F(G(a -> (Xb U Xc)) <-> G(a | b))
+b & X(0)
+{a[*]}[]-> ((b & (c U X(0))) M b)
+{first_match(b[*] & a[*2..3])[*2]}[]-> (b W a)
+X(a & b)
+X(c xor FXb) | (1 U b)
+!c R b
+F(Gc <-> ({[*2][:*][*]}!))
+F(Xc M 1)
+(Fb W 0) W (Ga & ((b W a) R c))
+Gc -> b
+a M 1
+!Gc
+FX!X(0)
+a & b & XFX(a M (!a & b))
+!(!a & (1 U !Xb))
+{b & c[*1..3]}[]-> XX(0)
+a & (Xc | (!c R b))
+{[*][:*2]}
+0 R Ga
+Fc W F!c
+0
+G(!c R !X(b & !b & (e <-> !e)))
+G!(!(d | !d) R ((!f U c) W !d))
+XF(c R X(0)) R d
+!(1 U (e <-> G(!f & (b W (Ga U c)))))
+((e R f) | Ff) -> GFb
+d
+{{1:a[*]}[:*]}
+1
+!(Fd R Ga) M ((c & Xe) R Xd)
+!(!b | c)
+Xd R X(c R (f -> e))
+GF((c -> f) U (!b R (b <-> e)))
+(a <-> f) xor F(Gb W !f)
+F!FX!(c & Xb) -> (!a | f)
+X(0)
+X(0) xor (f -> Fc)
+GX!(d & (b | f))
+G!(GFe & ((a & b) M (d xor !d)))
+!e U Xc
+!X!Xa xor F(e | G(Gd M GXf))
+F((!Gf M (Gd | Gc)) U (f W e))
+a
+(Ga W !d) W !b
+!(a & d) U FX(0)
+!(G(d U Gc) W (G!(e R a) M 1))
+X!f | (a U f)
+!X(0)
+F!(e | (d xor e))
+G(!(b | Xe) W GFGc)
+G(d U (Xf W a))
+!a | F(Xa W e)
+!FG((!a xor !b) -> !c)
+!e M !{e;1}
+d M (FGa -> X(e -> c))
+(c -> (!d | (d -> b))) M 1
+{[*0] | {c <-> f}[*1..3]}<>-> ((Xd W c) -> f)
+X(1 U (!a | XGXf)) R ((b | e) xor Gd)
+!(a & f) | F(1 U c)
+{[*2..3]}
+F((Xd R f) <-> (b M (Gc | GF(b R d))))
+{{1 && b[*2]}[:*]}[]-> (X(c | f) M (d R e))
+XFX!((f | (d U b)) -> !b)
+c <-> !(d <-> X(0))
+!c | e
+FX(Fa M ((e M (!a <-> d)) R (e U Fd)))
+G(Xe | GXGf)
+(F(b xor c) U F(!c M b)) U (Xa -> d)
+1 U d
+((!a <-> b) M f) R G(Xb U d)
+Ga xor (!(b & (e | Gf)) U Fc)
+Gc
+!F(c M 1) R f
+(a xor f) <-> Xe
+c
+X(((!a xor f) W a) -> a) R (c U Xc)
+X!f W Xa
+(b & c) | X!F((c R (!b <-> Gf)) M c)
+!G!(F(a xor c) -> b)
+X!(FGf xor GXX(b <-> Xd))
+F(Fb U f)
+G!(!b xor (a <-> !f))
+(f U c) | (Fe R ((Gb W 0) -> Ff))
+!(d & f) R FXa
+b & (!a | e)
+XX(c U f) U (a xor Xa)
+(Fe U a) xor (b M c)
+0 R !((Fe W X(0)) W Gf)
+(Ge xor ((d U e) M (d W a))) M Gb
+Ga <-> G(a | !c)
+c R e
+G!Xa W Fd
+b W XX((a & (c <-> !e)) M Xc)
+F!((f M d) U Fb)
+a xor !XX(0)
+f M ((!f & Fa) -> !(!d M e))
+X(d | e) xor ({[*2..3]}[]-> Fc)
+G(!b & d & f & (!f U Xc))
+(Ga | Gc) M G!F(Gf -> e)
+!a & F(a & d & XFX!b)
+({1 && {a | [*0]}[:*][*1..3]}<>-> e) xor (!e R d)
+(!(d | !e) U ((a | Gd) R (a | b))) -> Gf
+b | !d | Ge | (Fc W c)
+Fd <-> (f | (c xor !(b W 0)))
+((Xf R !e) U !e) xor F(a M 1)
+b W (c xor !Xa)
+F(c W XXFf) <-> (Xd U Gb)
+c U (c U (Xd M 1))
+F(c & d)
+(!c & ((!c | f) <-> (!b xor e))) <-> Xa
+1 U (!d & (!c -> a))
+X(0 R (!b <-> Xb))
+b M G!d
+f xor ({a[*0..2]}[]-> 0)
+a & d & f
+c xor G(e | f)
+X!f W a
+!((d -> (a | d)) R b) <-> (e & Xf)
+(b <-> d) M 1
+!(G({c[*]}<>-> c) U (!b | (f R e))) U X(0)
+0
+!Gb
+c R Ga
+a W X!b
+1
+!(((Fb M 1) -> a) U (c M 1))
+(1 U X(0)) M {1:b[*]}
+{a | [*0]}<>-> F{{b && [*0..1]}[*]}
+!b xor (!b | (Gc W F!b))
+X(0)
+X(X(0) & {[*]}) R F!X(0)
+F(!b | Xa) & (a R (c R (!b W b)))
+X!c
+FXX((c -> Fa) U !Gb)
+b <-> {[*]}
+(!a xor ({[*2..3]}<>-> c)) -> (0 R b)
+XF!X{{1 | [*0]}[:*][*]}
+a xor X(0)
+X(F(0 R c) W ((!a | c) U c)) M a
+!({c[*]}!)
+F!FG(X!a <-> G(b W 0))
+!(a -> (0 R (c xor (Ga -> c)))) M 1
+b
+a | c
+XGXc
+(a | Ga) -> GFGa
+!b -> b
+Xc W (!((c -> b) | (!c & Fc)) W 0)
+!(b W !c)
+1 U F(({{!a}[*2..3]}[]-> (0 R c)) W 0)
+{first_match({1;c[*]}[*2..3][:*0..1])}
+!(FX!b W (a xor c)) U X(0)
+F{{!{!a | !b}}[*1..3]}
+X(!(c <-> Xb) | (Gb <-> Fb))
+b -> X(0)
+(b M Ga) M 1
+((b <-> !b) U FGc) U Ga
+!XF{c;{1 | [*0]}}
+(!Xa R (c M !b)) -> (c -> !a)
+!XX(0) U !a
+X(c & XX(0)) & G(GFa W 0)
+a <-> c
+c
+!((1 U b) | (!c & (c R !c)))
+!a
+{{b | [*0]}[:*0..1]}<>-> c
+b W (!b & Fa)
+(!a & c) M 1
+(a xor !c) | Fb
+!(GX(c & Gb) U !b)
+Xb
+!(!(a W b) W c)
+(!c | (b xor !b)) xor (0 R b)
+c <-> (b | (({1;a[*]}[]-> a) W c))
+!{{c && !c}[*0..2]:{{a | b} | [*0]}[:*]}
+(a M b) M X(0)
+0 R !a
+!G!b
+FXGa
+!(b R G(!b xor c))
+!F(0 R c)
+G(b & (b | (XXc W c)))
+F{[*2]} <-> (0 R !X(0))
+c & (!b | !c) & X(0)
+!X(0)
+(!b U (c R a)) W (a | !a)
+X(!a & !X(0))
+{1 | {c;b}}
+!(1 U !b)
+a & (!X(0) R (!b | !c))
+(c -> b) xor (!b | (!b -> a))
+Gc
+{{!c}[*][:*2]} & ((a & Xb) W b)
+{[*]}
+!(a | b) W b
+c & (c R (0 R c))
+{[*2] | {1 | {a;b}}[:*]}
+XG((a M 1) M (b & Xa)) W !(a -> b)
+!(!(b -> !b) | G(a & b))
+F!GFa
+XXc M c
+(!GFc <-> (c U a)) -> (c & !c)
+{first_match({!a && b}[*2])[*0..3]}<>-> ((b <-> F!a) W a)
+0 R !c
+{{1 && a[*1..3]}:{b <-> {a xor !b}}}
+G(!c <-> (1 U (Fa | F!(b W 0))))
+b xor (a M X(0))
+(a | !a) -> (a W (a | b))
+a xor (((b | Xb) M (a M 1)) M 1)
+c W 0
+(a | (a xor b)) -> G(b W Gb)
+F(!b & (a W Gb))
+X(Ga R a) U (Gc U b)
+G(c & !Gb)
+G!X(0)
+a xor b
+FG!(c & Fa)
+b <-> ({{!c}[*2]}[]-> Xb)
+a U !(!a <-> b)
+!b
+(b xor (Fd | G(f R b))) R {{e;!b}[:*1..2]}
+F(c & !Gc)
+F!(a -> (f xor (b & (Gf R d))))
+F(a | !c | d | e) | !(Ga U c)
+1
+!G(a & d) U (!d M !a)
+{a | [*0]} R {a:first_match(!d && e[*][:*])[:*0..1]}
+!((a <-> f) R Ga) xor X{1 | [*0]}
+(!a xor !f) R ({e[*2..6]}[]-> Fe)
+X(0) xor ((b W 0) -> {d[*0..2]})
+!d R X(c M (!a | !b | Gd))
+FX(0)
+e | X(0)
+Gc | (X({f:{a | [*0]}}[]-> e) W {{e | [*0]}[*]})
+0
+G!(!e & (F!b M Ga))
+e R Fa
+f W X!((e xor (d & Xd)) W Fe)
+({{a xor b}[*0..3]}[]-> !d) M (d xor !e)
+d xor e
+!(!e xor (e R a)) W FXb
+Ga R (G(a & e) R e)
+(c & Gc) xor G(!f U X(e -> (d W Gc)))
+!G(!e | (0 R Xc))
+Ff & Gb
+(a <-> (!d R a)) -> f
+0 R ((a & c) <-> X(0))
+(Fa W f) | !((!c W (f U b)) W e)
+a U !FG(!b -> c)
+{[*]}
+{{!d;c}[*1..3]}[]-> (f M Gb)
+((d -> a) & (a xor c)) U ({{!f:c[*2..3]}[*]}!)
+0 R d
+(((!b | f) U f) M ({d | [*0]}[]-> c)) U Gd
+(Xd xor F!(d U Fb)) R Fd
+({[*]} & ({1 | [*0]}[]-> 0)) M (b & Xf)
+d <-> (!c <-> (XFd <-> (b W (!d R Xe))))
+!a
+(e & f & (b <-> Fb)) xor X(!b | !f)
+XX(0)
+!G((!f W !e) -> X(1 U !b))
+G((c M Gd) W (b | !FXb))
+G((XGd W (b | f)) R (!b | G(a M 1)))
+{b && !c}[]=> G!a
+!e R !c
+e
+F({{b & {e && first_match([*2])}}[*1..2]}!)
+!FG{{1 | [*0]}:{b;c}}
+!b | X(a U d)
+G!(c <-> (a U {{e | [*0]}[:*]}))
+((Ga <-> Fe) & FG(e M 1)) M Xc
+!X(c | (Ff W (d R a)))
+!f xor XXe
+!(e U b)
+(a U b) W (a xor f)
+1 U ((b R ((!a xor f) W a)) W b)
+((!e W 0) -> Fc) R (c R (b <-> Ff))
+!(X(e <-> (a -> c)) U G!(F(a xor c) -> b))
+!(d & f) xor Xa
+b & (e | (!c & (f xor (f -> c))))
+X(0) U (Gb xor Xa)
+(!e & FX!X(0)) | !G(!c & (b <-> d))
+d R c
+d xor (G(c M Xd) W a)
+Ga <-> XXGa
+!e U FGc
+FX({[*2..3]}!)
+G(d & f & (b <-> !e) & ((b & d) U (f M a)))
+F(a xor F(e M a)) xor (f -> Fa)
+(c M a) xor (Xa -> (b & F(a & c)))
+f W (({1 && {a | [*0]}[:*][*1..3]}<>-> e) xor (!e R d))
+!((a <-> f) xor (1 U f))
+b | !d | Ge | ((f | (Gb U d)) W c)
+b xor !(e <-> (!Gc U d))
+Fd & (Fa -> !a)
+(!d W !b) W !(d | Gc | F!(a & b))
+!e & ((d U (f M c)) -> (Xd xor GXa))
+((a | !f) & Xd) <-> (a W Fe)
+!(!c | ((Ge U b) R G(d W !Gf)))
+{1 | [*0]}<>-> !X(a <-> X(0))
+d | X(0)
+a xor (((e R Fe) W G!d) R (c W (a U e)))
+X(a & d & f)
+!(Ge M G(Fa R c))
+F({first_match(1:e[*0..3])[*]}[]-> FXc)
+XGa <-> (Ga -> (b | d | (e M (Xe R Fe))))
+0 R !(Fd | {e[*]})
+!(f | G!((a xor (d | e)) R {[*]}))
+(XFX(0) W d) -> e
+d U X(0)
+(FGf <-> (X(d W c) -> d)) U !(!b | (Gb W 0))
+!(e U f) <-> (!b | (d M Xc))
+Xa & (e xor F!a)
+((e | (c xor !c)) -> c) xor (b <-> !d)
+!F(!b & !f)
+d | {[*]}
+(d & e) U {1 | {{b && !b} | [*0..1]}[:*2..3][*1..3]}
+(b & Xf) | (e & Ge) | X(Xa M Xe)
+{1 && first_match(b[*0..2][:*])[:*]}
+X!d
+0
+F!({{a | b}[*]}[]-> X(0))
+1
+X((0 R c) U b)
+G((!c U X(0)) W {a[*] & {1 | [*0]}})
+!Xc -> Fa
+c <-> X!(a & Xb)
+!c & X(0)
+!(c & G!c) xor G(a W c)
+{{!{c xor {a && !a}}}[*2][:*]}
+{1;c}[]-> ({[*2]}[]-> 0)
+F!X(0)
+F((c xor !c) & (X(0) M Xa))
+(Fa -> b) R FXXb
+(a & XX(0)) U Fa
+X(0) -> ((!a | Xb) W 0)
+!b U b
+!(a & c)
+G(X!a <-> G(b W 0)) W 0
+!(b -> (c xor (((1 U Xa) M (b R c)) -> c))) M 1
+F!Ga
+(a <-> Fa) | !{{!a xor c}[*]}
+(b & Xc) -> (!b & Xc)
+{first_match([*2..3])[*][:*1]}
+a R c
+X(!b W c)
+F(a | FX!a)
+X!a & ((b | Gb) M c)
+(a & c & (a <-> b)) xor G(c U Xa)
+{a | {1 && c[*2..3][:*]}}<>-> a
+{{1 && {1 | [*0]}}[*]}[]-> (c M Xb)
+c R !Xa
+!b
+b
+!({{!b}[*]}<>-> (b R c))
+G(a <-> c) U Xc
+!{[*2]} W c
+!(a | !a | (a -> !c)) | (b W a)
+{{c | {{!b && {a xor !{c xor !c}}};1}}[:*]}
+Xb W 0
+!(({{b;c}[*0..2]:c[*]}[]-> !c) W c)
+!(b M Xc) -> (Fb W (b -> (b & c)))
+!{[*0] | {1 | [*0]}[*]}
+{c | [*0]}
+!a <-> Fb
+X(!({[*]}<>-> (c xor !c)) M (c U b))
+G(!(1 U (c xor ((a & c) M c))) | {a[*2]})
+{first_match([*2])} xor (Xc | Ga)
+X((a & !c) W (F{[*2]} M b))
+GX(b R Fa)
+b M !b
+0 R b
+({{a | [*0]}[:*2..3]}[]-> Xc) R !(Gb U a)
+b M 1
+!G(GF(!b -> (a xor Fb)) | !(c | (c W a)))
+{[*]}
+!({1;{a | !b}}!)
+Fc | (c W b)
+0 R (FX(b <-> c) U GXXc)
+F!XGc
+{c[*][:*1..2]:{a && [*]}[*0..2]}
+!Fb
+!({[*]}[]-> !c)
+(b | F(!a | b)) -> (c W a)
+{first_match(a | [*1..2][:*0..1])}
+(b <-> !c) -> G{1 | {c & [*]}}
+!b -> c
+F(FG((Gc W Fb) M X(0)) M 1)
+c W (b W c)
+X(0)
+b & c
+X(a -> {c[*1..3][:*]})
+!X(a R c) U c
+((a M b) R G{[*]}) xor ({[*]}[]-> !XXc)
+b & F!Xc
+!Xb
+G!X!c U (a | !a)
+c
+F({c:{c;a}}<>-> {[*]}) -> (b | Gb)
+(b M 1) xor ({{a -> !c}[*][:*0..2]}[]-> (Ga R Xa))
+{{!a xor b}[*0..1]}!
+X!(!a | b)
+c -> a
+!(!c xor (c -> b))
+(X(0) W Fb) xor (b -> (1 U {!c && b[*0..3]}))
+(b W !((Ga U F(a W c)) -> a)) -> a
+GFGFb W c
+G(a & (0 R (a | Gb))) | (({c[*1..2]}[]-> (a xor c)) W Fc)
+{[*][:*]}
+{{a | [*][:*0..4]}[*]}
+{1;{!a}[*1..3][:*]}
+!(b & !(!c M Gb))
+!({{!a & a[*]}[:*]}<>-> (Fc xor (b M a)))
+F(Gc xor !(b xor X(0)))
+(F(!c U {c | [*0]}) -> Xc) M a
+{[*0] | {b & a[*]}}[]-> 0
+!X!(1 U a) W X(0)
+a & Gb
+(c -> a) | !(b & (!a <-> (b xor !(!a <-> (a -> b)))))
+c xor (c W a)
+!Ff R {{e;!b}[:*1..2]}
+GF(!c U Gc)
+a -> (a & (b R Fd))
+1
+Ff M (Gd M (f | ((b & e) R f)))
+0
+!(Gc M Xc) W Ge
+!f & G(b xor X({c[*0..3]}[]-> (d U a)))
+(!f | (f -> Gb)) R ({{e;c}[*2..6]}[]-> Fe)
+!d -> (c <-> (a R f))
+e <-> X(0)
+!(a | X!(b & (a M 1)))
+((b & c) <-> GX(e | !f)) M Ff
+G!(GFe & ((b R !e) M FXGd))
+!c
+F((X(0) M G(d & Xd)) & (a U e))
+{1 | [*0]}<>-> b
+!({{!f}[*0..2]}[]-> ((G(d & e) M a) M Gc))
+!(!(!b <-> !c) xor (a & d)) | !(Xa W a)
+((c & Gc) xor G(!f U X(e -> (d W Gc)))) R a
+(b & (!c | f)) | X!d
+X(c & f & (c W (f | X!c))) -> (f -> a)
+{{f | [*0]}[*]}[]-> (e M f)
+(a U (a -> d)) R (!Ff <-> Xe)
+F(c R a) W ((!a | f) <-> Xf)
+FG(((b xor !b) xor (c | e)) -> !c)
+Xc <-> (f -> (e & X(0)))
+F((!d xor ((f W 0) -> b)) U (c | !c)) M 1
+XGF!f -> (Xc | F(Fc U c))
+((c | f) <-> (d -> a)) -> f
+!e xor ((Xf -> b) | GXG(d M 1))
+!{{c xor f}[*2][:*]}
+!(d | !f)
+!(F((Xd R f) <-> (b M (Gc | GF(b R d)))) M 1)
+!((d W 0) U (b <-> (d -> a))) M X(f | (Gf M Fd))
+({e;d} -> d) U !(a <-> (!f | (a R c)))
+X(b <-> XFX!((f | (!f U b)) -> !b))
+!f | (a & e)
+{[*]} <-> ((a <-> d) | (c & FXe))
+XG(!(e W 0) M 1)
+!(d | Gf)
+FX(FXf M ((b M (Ge <-> GXb)) R Fd))
+Ge M 1
+(!Fa R (!f | Gc)) xor (Ga W 0)
+a M d
+!(G({[*][:*0..2]}<>-> (d | (a & f))) U Fe)
+X(0)
+GX!a -> (f M d)
+Ge W (d xor X(0))
+!GX!(c M 1)
+(b <-> d) & Gb
+{e}[]=> c
+F(b M ((d <-> e) & ({f[*]}[]-> (e <-> Xd))))
+X(f -> !e) xor ((f M 1) M Fa)
+F(!a M (a | !e))
+b | f
+GFa
+0 R (0 R !a)
+{1 | {f | {1 && {e:b[*2][*0..1]}}}[:*0..1]}
+XG!(!b xor !(f -> (a xor (e & !f))))
+(X!a <-> (c W Xe)) | (e xor X!f)
+!b -> (!a W G(X(!d | e) M ({1;d}<>-> e)))
+({{1 | [*0]}[*][:*]}[]-> a) xor G(0 R c)
+{{!d}[*]} U Gd
+!e xor (((d | FXb) W 0) xor (c & G!a))
+((Gb & (f <-> Ge)) W (1 U Fe)) R Gf
+((e <-> !(b <-> !b)) -> X(0)) M (G((a M c) W Xe) W a)
+f U F(c -> Ga)
+(b M FG(a -> (F(a xor b) U e))) xor Fb
+F((b U f) -> ((!Fe U Xc) xor XX(0)))
+FX({{a <-> !a}[*2..3]}!)
+X!F(Ga xor (f M (Xa | (a M c))))
+(!c xor Ge) | GF(a & d & XFX!b)
+!(c -> (b | e)) | (b & !e & (FXe <-> (b U e)))
+(a | Fb) <-> !(0 R !e)
+(e <-> (d -> f)) xor (!b | X(!d | Ge))
+!GFd
+(c & d) M ((FGFa R e) U ((c | e) xor GFe))
+((!c xor e) & Ff) <-> (b W !(FXb & Fb))
+Ff <-> (e & ((f U (c M 1)) -> (Xd xor GXa)))
+((d R c) M ((e W a) -> e)) M !Fe
+(b -> (!b -> c)) W (e U X(0))
+!G(e W !d)
+e R Xc
+c <-> F(a <-> (!c U G((e W 0) W !d)))
+(Ga M 1) U ({c[*]}!)
+Xc & ((a -> f) U e)
+X{{{!b && d}:[*]}[*]}
+F((Fb M ((c | Fd) R e)) | (Gd R !e))
+X((GXb U !b) -> ({a[*]}[]-> 0))
+G!(!c R Gb)
+F(GXd | (Fa U {d;1}))
+GXFa U d
+e xor (1 U (Gf <-> F(!(c & d) U c)))
+G!a
+{[*0..1]}<>-> (Fb | (Ff R a))
+(f <-> (Xb U {1 | a[*2..9]})) & {[*0..1]}
+d & (e xor (a | GX(0)))
+!Fa
+!(Xa -> (FGe xor (X(a W b) R c))) & X!e

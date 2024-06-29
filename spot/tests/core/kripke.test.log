@@ -1,0 +1,77 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test kripke.test
+== Running test kripke.test
++ echo kripke.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=kripke
++ testSubDir=kripke.dir
++ chmod -R a+rwx kripke.dir
++ rm -rf kripke.dir
++ mkdir kripke.dir
++ cd kripke.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ cat
++ run 0 ../kripkecat input1
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../kripkecat
++ cmd=../kripkecat
++ shift
++ test -n ../kripkecat
++ set ../kripkecat input1
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../kripkecat input1
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ run 0 ../kripkecat input1.out
++ expected_exitcode=0
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ../kripkecat
++ cmd=../kripkecat
++ shift
++ test -n ../kripkecat
++ set ../kripkecat input1.out
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q ../kripkecat input1.out
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 0 = 0
++ cat
++ ../kripkecat input2
++ cat output2.err
+input2:9.1: state 1 has no definition
+input2:9.3: state 2 has no definition
+input2:9.5: state 3 has no definition
+input2:15.13-20: the acceptance for Kripke structure must be '0 t'
+input2:20.1-8: Kripke structures should have labeled states
+input2:21.1-3: transition label used although the automaton was...
+input2:16.13-24: ... declared with 'properties: state-labels' here
+input2:23.1-3: cannot read a Kripke structure out of a DSTAR automaton
++ cat
++ diff output2.err expected2
+PASS core/kripke.test (exit status: 0)

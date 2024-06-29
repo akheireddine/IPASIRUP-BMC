@@ -1,0 +1,18 @@
+digraph "GFa & XGFb" {
+  rankdir=LR
+  label="[Büchi]"
+  labelloc="t"
+  node [shape="circle"]
+  I [label="", style=invis, width=0]
+  I -> 0
+  0 [label="0"]
+  0 -> 1 [label="1"]
+  1 [label="1"]
+  1 -> 1 [label="1"]
+  1 -> 2 [label="!a"]
+  1 -> 3 [label="!b"]
+  2 [label="2", peripheries=2]
+  2 -> 2 [label="!a"]
+  3 [label="3", peripheries=2]
+  3 -> 3 [label="!b"]
+}

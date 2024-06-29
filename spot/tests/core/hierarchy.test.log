@@ -1,0 +1,122 @@
++ . ./defs
++ test -f ./defs
++ test -z .
++ test -f ./../core/defs.in
++ echo == Running test hierarchy.test
+== Running test hierarchy.test
++ echo hierarchy.test
++ sed -e s,.*[\/],,;s/\.test$//
++ me=hierarchy
++ testSubDir=hierarchy.dir
++ chmod -R a+rwx hierarchy.dir
++ rm -rf hierarchy.dir
++ mkdir hierarchy.dir
++ cd hierarchy.dir
++ srcdir=../.
++ AWK=gawk
++ DOT=dot
++ LBTT=
++ LBTT_TRANSLATE=
++ VALGRIND=valgrind
++ SPIN=
++ LTL2BA=
++ PYTHON=
++ top_srcdir=/home/nissa/Documents/WORKS/cadical-user-propagation/spot
++ unset SPOT_DOTEXTRA
++ unset SPOT_DOTDEFAULT
++ set -x
++ set -e
++ genltl --dac
++ ltlfilt --syntactic-safety -c
++ test 11 -eq 11
++ genltl --dac
++ ltlfilt --safety -c
++ test 37 -eq 37
++ genltl --dac+ 
+ltlfilt --syntactic-guarantee
++ test Fp0 = Fp0
++ genltl --dac
++ ltlfilt --guarantee
++ test Fp0 = Fp0
++ genltl --dac
++ ltlfilt --syntactic-obligation -c
++ test 25 -eq 25
++ genltl --dac
++ ltlfilt --obligation -c
++ test 40 -eq 40
++ genltl --dac
++ ltlfilt --syntactic-recurrence -c
++ test 47 -eq 47
++ genltl --dac
++ ltlfilt --recurrence -c
++ test 52 -eq 52
++ genltl --dac
++ ltlfilt --syntactic-persistence -c
++ test 29 -eq 29
++ genltl+  --dac
+ltlfilt --persistence -c
++ test 41 -eq 41
++ genltl --dac
++ ltlfilt -v --obligation
++ ltlfilt --persistence
++ test G!p0 | F(p0 & (!p1 W p2)) = G!p0 | F(p0 & (!p1 W p2))
++ genltl --dac
++ ltlfilt -v --obligation
++ ltlfilt --recurrence -c
++ test 12 -eq 12
++ genltl --dac
++ ltlfilt --recurrence -v -c
++ test 3 -eq 3
++ genltl --dac
++ ltl2tgba -G -D -S
++ autfilt --generalized-rabin
++ autfilt --is-deterministic -v -c
++ dstar2tgba
++ test 3 -eq 3
++ sed s/ //g
++ genltl --dac --format=%h
++ echo S S S S S G S O S R S S S S S S S S S S S S P S S R S R S R S S S S S S S S S S R O R R R R S R S T R S R S T
++ test SSSSSGSOSRSSSSSSSSSSSSPSSRSRSRSSSSSSSSSSRORRRRSRSTRSRST = SSSSSGSOSRSSSSSSSSSSSSPSSRSRSRSSSSSSSSSSRORRRRSRSTRSRST
++ sort
++ uniq -c
++ sed s/^ *\([0-9][0-9]*\)  */\1 /g
++ genltl --dac --format=%[vw]h
++ cat
++ diff out expected
++ ltlfilt --format=%h -f (Gb R (b xor Gb)) W (a W Xa)
++ test B = B
++ ltlfilt -q --safety --guarantee -f (Gb R (b xor Gb)) W (a W Xa)
++ randltl -n -1 a b c
++ ltlfilt -v --syntactic-safety --syntactic-guarantee --syntactic-obligation --syntactic-recurrence --syntactic-persistence -n 500
++ SPOT_PR_CHECK=x ltlfilt res --recurrence
+0 R b
++ SPOT_PR_CHECK=9 ltlfilt res --recurrence
+0 R b
++ grep SPOT_PR_CHECK err
+ltlfilt:res:2: invalid value for SPOT_PR_CHECK (should be 1, 2, or 3)
++ ltlfilt res --recurrence
++ SPOT_PR_CHECK=1 ltlfilt res --recurrence
++ SPOT_PR_CHECK=2 ltlfilt res --recurrence
++ SPOT_PR_CHECK=3 ltlfilt res --recurrence
++ diff r0 r2
++ diff r1 r2
++ diff r2 r3
++ ltlfilt res -o %h.ltl
++ cat R.ltl O.ltl G.ltl S.ltl B.ltl
++ sort
++ sort r2
++ diff r3 rogsb.ltl
++ ltlfilt res --persistence
++ SPOT_PR_CHECK=1 ltlfilt res --persistence
++ SPOT_PR_CHECK=2 ltlfilt res --persistence
++ SPOT_PR_CHECK=3 ltlfilt res --persistence
++ diff p0 p2
++ diff p1 p2
++ diff p2 p3
++ ltlfilt res -o %h.ltl
++ cat P.ltl O.ltl G.ltl S.ltl B.ltl
++ sort
++ sort p2
++ diff p3 pogsb.ltl
++ exit 0
+PASS core/hierarchy.test (exit status: 0)

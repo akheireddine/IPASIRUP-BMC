@@ -1,0 +1,14 @@
+some maps are not empty
+Variable Map:
+ 0 Var[p0] x2 { 0x55d7af357a20 0x55d7af35cef0 }
+ 1 Var[p1] x2 { 0x55d7af357a20 0x55d7af35cef0 }
+ 2 Var[p2] x2 { 0x55d7af357a20 0x55d7af35cef0 }
+ 3 Free
+ 4 Free
+ 5 Free
+ 6 Free
+ 7 Free
+Anonymous lists:
+  [0] 
+Free list:
+  (3, 5)

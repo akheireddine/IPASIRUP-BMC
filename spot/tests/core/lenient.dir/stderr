@@ -1,0 +1,21 @@
++ expected_exitcode=2
++ shift
++ exitcode=0
++ test -n valgrind
++ command -v ltlfilt
++ cmd=/home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt
++ shift
++ test -n /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt
++ set /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt --lenient -f F( )
++ exec
++ GLIBCXX_FORCE_NEW=1 /home/nissa/Documents/WORKS/cadical-user-propagation/spot/libtool --mode=execute valgrind --tool=memcheck --leak-check=yes --log-fd=6 -q /home/nissa/Documents/WORKS/cadical-user-propagation/spot/bin/ltlfilt --lenient -f F( )
+>>> F( )
+     ^^^
+unexpected empty block
+
++ exitcode=2
++ cat valgrind.err
++ sed 1q valgrind.err
++ test -z 
++ rm -f valgrind.err
++ test 2 = 2

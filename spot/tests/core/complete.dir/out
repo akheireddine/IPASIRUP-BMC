@@ -1,0 +1,28 @@
+HOA: v1
+States: 2
+Start: 0
+AP: 2 "a" "b"
+acc-name: co-Buchi
+Acceptance: 1 Fin(0)
+properties: trans-labels explicit-labels state-acc deterministic
+properties: univ-branch very-weak
+--BODY--
+State: 0
+[!0 | 1] 0
+[0&!1] 0&1
+State: 1 {0}
+[0&!1] 1
+--END--
+HOA: v1
+States: 2
+Start: 0&1
+AP: 0
+acc-name: co-Buchi
+Acceptance: 1 Fin(0)
+properties: trans-labels explicit-labels state-acc deterministic
+properties: univ-branch
+--BODY--
+State: 0
+State: 1 {0}
+[f] 1
+--END--
