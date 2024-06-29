@@ -475,7 +475,6 @@ spot/tools/x-to-1
 spot/tools/test-driver
 spot/Makefile
 spot/Makefile.in
-spot/configure
 spot/config.log
 spot/config.status
 spot/aclocal.m4
@@ -498,7 +497,6 @@ spot/*.orig
 spot/*.rej
 spot/*.old
 spot/TAGS
-spot/INSTALL
 spot/*.log
 spot/callgrind.*
 spot/ms_print.*
