@@ -881,7 +881,7 @@ void App::init () {
   // library usage it should remain 'false'.  See the explanation in
   // 'options.hpp' related to 'reportdefault' for details.
 
-  CaDiCaL::Options::reportdefault = 1;
+  CaDiCaL::Options::reportdefault = 0;
   solver = new Solver ();
 
   Signal::set (this);
