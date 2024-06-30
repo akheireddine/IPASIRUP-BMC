@@ -58,7 +58,7 @@ solve() {
 	
 	code=`grep \^"s " $printOUTPUT | head -1 | cut -c 3-`
 	#time=`grep "c \[" $printOUTPUT | head -1 | cut -d "[" -f2 | cut -d "]" -f1`
-  time=`grep "total real time since initialization" $printOUTPUT | head -1 | cut -d" " -f18`
+  time=`grep "total real time since initialization" $printOUTPUT | head -1 | cut -d" " -f7`
 	
 	if [[ $code = "UNKNOWN"  ||  $code = "" ]]; then
 		time=-1
