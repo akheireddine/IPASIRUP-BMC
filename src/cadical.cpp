@@ -795,8 +795,8 @@ int App::main (int argc, char ** argv) {
     res = solver->solve ();
     if(oracle_on){
       oracleBMC->printStats((double)clock() / CLOCKS_PER_SEC - total_time);
-      fprintf(stderr, "c Unit cls REALLY added to solver : %-12" PRIu64 "\n", solver->internal->unit_cls_added);
-      fprintf(stderr, "c Cls REALLY added to solver      : %-12" PRIu64 "\n", solver->internal->cls_added);
+      fprintf(stdout, "c Unit cls REALLY added to solver : %-12" PRIu64 "\n", solver->internal->unit_cls_added);
+      fprintf(stdout, "c Cls REALLY added to solver      : %-12" PRIu64 "\n", solver->internal->cls_added);
     }
   }
 

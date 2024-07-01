@@ -99,10 +99,10 @@ void BMCOracle::init_spot()
 
     enable_edge_loop_cond = enable_intersection = true;
 
-    std::cerr << "c Number of formula states: " << ltl_aut->num_states() << "\n";
-    std::cerr << "c Number synchr states: " << ltl_aut->num_states() * K << "\n";
-    std::cerr << "c Number of property variables: " << nb_property_variable << "\n";
-    std::cerr << "c Number of model variables: " << nb_model_variable << "\n";
+    std::cout << "c Number of formula states: " << ltl_aut->num_states() << "\n";
+    std::cout << "c Number synchr states: " << ltl_aut->num_states() * K << "\n";
+    std::cout << "c Number of property variables: " << nb_property_variable << "\n";
+    std::cout << "c Number of model variables: " << nb_model_variable << "\n";
 }
 
 // Create automata of the new assignement
@@ -434,34 +434,34 @@ void BMCOracle::printStats(double total_time)
 
     uint64_t totalGeneratedCls = accumulate(numb_clauses.begin(), numb_clauses.end(), 0);
 
-    fprintf(stderr, "c calls                 : %-12" PRIu64 "\n", numb_call);
-    fprintf(stderr, "c total clauses         : %-12" PRIu64 "\n", totalGeneratedCls);
-    // fprintf(stderr, "c total unit clauses    : %-12" PRIu64 "\n", unit_clauses);
-    fprintf(stderr, "c numb cls EMPTY_INTERS : %-12" PRIu64 "\n", numb_clauses[EMPTY_INTERSECT]);
-    fprintf(stderr, "c numb cls LOOP_REMOVED : %-12" PRIu64 "\n", numb_clauses[LOOP_EXCLUDED]);
-    fprintf(stderr, "c numb cls EDGE_CONST   : %-12" PRIu64 "\n", numb_clauses[EDGE_CONST]);
-    fprintf(stderr, "c numb cls LOOP_CONST   : %-12" PRIu64 "\n", numb_clauses[LOOP_CONST]);
+    fprintf(stdout, "c calls                 : %-12" PRIu64 "\n", numb_call);
+    fprintf(stdout, "c total clauses         : %-12" PRIu64 "\n", totalGeneratedCls);
+    // fprintf(stdout, "c total unit clauses    : %-12" PRIu64 "\n", unit_clauses);
+    fprintf(stdout, "c numb cls EMPTY_INTERS : %-12" PRIu64 "\n", numb_clauses[EMPTY_INTERSECT]);
+    fprintf(stdout, "c numb cls LOOP_REMOVED : %-12" PRIu64 "\n", numb_clauses[LOOP_EXCLUDED]);
+    fprintf(stdout, "c numb cls EDGE_CONST   : %-12" PRIu64 "\n", numb_clauses[EDGE_CONST]);
+    fprintf(stdout, "c numb cls LOOP_CONST   : %-12" PRIu64 "\n", numb_clauses[LOOP_CONST]);
 
     if (totalGeneratedCls > 0)
     {
-        // fprintf(stderr, "c avg lbd               : %g\n", lbd_clauses * 1.0 / totalGeneratedCls);
-        // fprintf(stderr, "c falsified cls         : %-12" PRIu64 "   (%4.2f %%)\n", numb_clauses_falsified, numb_clauses_falsified * 100.0 / totalGeneratedCls);
-        // fprintf(stderr, "c asserting cls         : %-12" PRIu64 "   (%4.2f %%)\n", numb_asserting_clauses, numb_asserting_clauses * 100.0 / totalGeneratedCls);
-        fprintf(stderr, "c numb produced clauses    : %-12" PRIu64 "   (%4.2f %%)\n", added_clauses, added_clauses * 100.0 / totalGeneratedCls);
+        // fprintf(stdout, "c avg lbd               : %g\n", lbd_clauses * 1.0 / totalGeneratedCls);
+        // fprintf(stdout, "c falsified cls         : %-12" PRIu64 "   (%4.2f %%)\n", numb_clauses_falsified, numb_clauses_falsified * 100.0 / totalGeneratedCls);
+        // fprintf(stdout, "c asserting cls         : %-12" PRIu64 "   (%4.2f %%)\n", numb_asserting_clauses, numb_asserting_clauses * 100.0 / totalGeneratedCls);
+        fprintf(stdout, "c numb produced clauses    : %-12" PRIu64 "   (%4.2f %%)\n", added_clauses, added_clauses * 100.0 / totalGeneratedCls);
     }
-    fprintf(stderr, "c avg size EMPTY_INTERS : %g\n", (numb_clauses[EMPTY_INTERSECT] > 0) ? size_clauses[EMPTY_INTERSECT] * 1.0 / numb_clauses[EMPTY_INTERSECT] : -1);
-    fprintf(stderr, "c avg size LOOP_REMOVED : %g\n", (numb_clauses[LOOP_EXCLUDED] > 0) ? size_clauses[LOOP_EXCLUDED] * 1.0 / numb_clauses[LOOP_EXCLUDED] : -1);
-    fprintf(stderr, "c avg size EDGE_CONST   : %g\n", (numb_clauses[EDGE_CONST] > 0) ? size_clauses[EDGE_CONST] * 1.0 / numb_clauses[EDGE_CONST] : -1);
-    fprintf(stderr, "c avg size LOOP_CONST   : %g\n", (numb_clauses[LOOP_CONST] > 0) ? size_clauses[LOOP_CONST] * 1.0 / numb_clauses[LOOP_CONST] : -1);
-    fprintf(stderr, "c time blackbox         : %g s\n", time_blackbox);
-    fprintf(stderr, "c time init             : %g s\n", init_time);
-    // fprintf(stderr, "c time synch product    : %g s\n", time_sync_product);
-    fprintf(stderr, "c ----------------------------------------\n");
-    // fprintf(stderr, "c Real assertives                        : %d\n", real_assertive);
-    // fprintf(stderr, "c Used clauses from bbox (first time)    : %d  (%4.2f %%)\n", first_used_bbox_clauses, first_used_bbox_clauses * 100.0 / getTotalClauses());
-    // fprintf(stderr, "c Max used clause from bbox              : %d \n", max_used_bbox_clause - 1);
+    fprintf(stdout, "c avg size EMPTY_INTERS : %g\n", (numb_clauses[EMPTY_INTERSECT] > 0) ? size_clauses[EMPTY_INTERSECT] * 1.0 / numb_clauses[EMPTY_INTERSECT] : -1);
+    fprintf(stdout, "c avg size LOOP_REMOVED : %g\n", (numb_clauses[LOOP_EXCLUDED] > 0) ? size_clauses[LOOP_EXCLUDED] * 1.0 / numb_clauses[LOOP_EXCLUDED] : -1);
+    fprintf(stdout, "c avg size EDGE_CONST   : %g\n", (numb_clauses[EDGE_CONST] > 0) ? size_clauses[EDGE_CONST] * 1.0 / numb_clauses[EDGE_CONST] : -1);
+    fprintf(stdout, "c avg size LOOP_CONST   : %g\n", (numb_clauses[LOOP_CONST] > 0) ? size_clauses[LOOP_CONST] * 1.0 / numb_clauses[LOOP_CONST] : -1);
+    fprintf(stdout, "c time blackbox         : %g s\n", time_blackbox);
+    fprintf(stdout, "c time init             : %g s\n", init_time);
+    // fprintf(stdout, "c time synch product    : %g s\n", time_sync_product);
+    fprintf(stdout, "c ----------------------------------------\n");
+    // fprintf(stdout, "c Real assertives                        : %d\n", real_assertive);
+    // fprintf(stdout, "c Used clauses from bbox (first time)    : %d  (%4.2f %%)\n", first_used_bbox_clauses, first_used_bbox_clauses * 100.0 / getTotalClauses());
+    // fprintf(stdout, "c Max used clause from bbox              : %d \n", max_used_bbox_clause - 1);
 
     // if (mem_used != 0)
-    // fprintf(stderr, "c Memory used           : %.2f MB\n", mem_used);
-    fprintf(stderr, "c Real time             : %g s\n", total_time - time_blackbox);
+    // fprintf(stdout, "c Memory used           : %.2f MB\n", mem_used);
+    fprintf(stdout, "c Real time             : %g s\n", total_time - time_blackbox);
 }

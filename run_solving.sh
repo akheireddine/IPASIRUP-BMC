@@ -60,6 +60,17 @@ solve() {
 	#time=`grep "c \[" $printOUTPUT | head -1 | cut -d "[" -f2 | cut -d "]" -f1`
   time=`grep "total real time since initialization" $printOUTPUT | head -1 | cut -d" " -f7`
 	
+  if [[ $ENABLE_BMC == 1 && $code == "SATISFIABLE" ]]; then
+    checking=`./verifier/SAT $DIMACS $printOUTPUT | tail -n 1 `
+    if [ $checking == 0 ]; then
+      _log2 $RED"*********** WRONG SOLUTION of $fname INSTANCE !! ***********"$NC
+      sh PoolThreads.sh run_solving.sh stop
+      exit 1;
+    else
+      _log2 $BLUE"*** "$fname" VERIFIED ! ***"$NC
+    fi
+  fi
+
 	if [[ $code = "UNKNOWN"  ||  $code = "" ]]; then
 		time=-1
 		code="UNKNOWN"
