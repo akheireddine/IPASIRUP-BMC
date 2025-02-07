@@ -6,6 +6,7 @@
 #include <deque>
 #include <algorithm>
 #include <map>
+#include <unordered_set>
 
 #include <spot/twa/twagraph.hh>
 
@@ -29,10 +30,11 @@ class BMCOracle : public CaDiCaL::ExternalPropagator
 public:
     CaDiCaL::Solver *solver;
 
-    bool changeInTrail = true; // checks whether the trail has changed since the last propagation step
-
     std::vector<std::vector<int>> new_clauses;
-    std::deque<std::vector<int>> current_trail; // for each decision lvl store the assigned literals (only positive version)
+    std::deque<std::vector<int>> current_trail;    // for each decision lvl store the assigned literals (only positive version)
+    std::map<std::string, int> assignment_counter; // for each variable name, set the number of assigned variable in the different K steps
+    std::unordered_set<std::string> ap_to_rm;
+    std::map<std::string, std::unordered_set<int>> unassigned_vars;
     ///////////////////////////////////////
 
     //////////////////////// INPUT-PARAMETERS ////////////////////////
@@ -57,7 +59,6 @@ public:
     int nb_property_variable = 0, nb_model_variable = 0;
     std::vector<varInfo> info_variables;
     std::vector<int> rename_lit_loop;
-    std::vector<int> rename_lit_loop_assignment;
     std::vector<std::map<std::string, int>> variable_by_step;
     int K = 0;
     std::string ltlspec;
@@ -68,7 +69,6 @@ public:
     ~BMCOracle()
     {
         solver->disconnect_external_propagator();
-        printf(" problem ici ?\n");
     }
 
     ////////////////////  BMC-SPOT  ////////////////////
@@ -99,12 +99,28 @@ public:
     // paramter lit is an elit
     void notify_assignment(int lit, bool is_fixed)
     {
-        int abs_lit = std::abs(lit);
+        unsigned abs_var = std::abs(lit);
+        std::string var_name = info_variables[abs_var].name;
         curr_trail_sz++;
-        changeInTrail = true;
-        // for (size_t i = 0; i < rename_lit_loop.size(); i++)
-        //     if (abs_lit == rename_lit_loop[i])
-        //         rename_lit_loop_assignment[i] = lit < 0 ? -1 : 1;
+
+        unassigned_vars[var_name].erase(abs_var);
+
+        if (is_fixed && current_trail.size() == 1) // only on root level
+        {
+            assignment_counter[var_name] += 1;
+            if (assignment_counter[var_name] == K)
+            {
+                std::cout << "c " << var_name << " is already assigned in root level." << std::endl;
+                ap_to_rm.insert(var_name);
+                info_variables[abs_var].property = false;
+                nb_property_variable -= K;
+                nb_model_variable += K;
+                return;
+            }
+        }
+
+        // if (is_fixed && lit < 0) // literal at root level that is false and will be true in oracle's clauses
+        //     return;
 
         if (is_fixed)
         {
@@ -114,12 +130,27 @@ public:
         {
             current_trail.back().push_back(lit);
         }
-        assert(info_variables[abs_lit].property);
+        assert(info_variables[abs_var].property);
 
         // Test if it is interesting to run BMC Oracle
 
         if (!init_box_done)
             return;
+
+        if (ap_to_rm.size() > 0)
+        {
+            std::cout << "** Before AP size : " << ltl_aut->ap().size() << std::endl;
+            for (auto ap : ap_to_rm)
+            {
+                spot::bdd_dict_ptr bdd_dict = ltl_aut->get_dict();
+                int num_bdd = bdd_dict->has_registered_proposition(spot::formula::ap(ap), ltl_aut);
+                ltl_aut->unregister_ap(num_bdd);
+            }
+            ap_to_rm.clear();
+            ltl_aut->purge_dead_states();
+            ltl_aut->remove_unused_ap();
+            std::cout << "** Update AP size : " << ltl_aut->ap().size() << std::endl;
+        }
 
         int result = curr_trail_sz - prev_trail_sz;
         if (result < 0)
@@ -130,7 +161,7 @@ public:
 
         if (filter1 && (prev_trail_sz == 0 || (filter2 && filter3)))
         {
-            printf("c assigned property rate : %.2f  (with prev trail %.2f)\n", curr_trail_sz * 100. / nb_property_variable, result * 100. / nb_property_variable);
+            // printf("c assigned property rate : %.2f  (with prev trail %.2f)\n", curr_trail_sz * 100. / nb_property_variable, result * 100. / nb_property_variable);
             evaluate_assignment();
             prev_trail_sz = curr_trail_sz;
         }
@@ -147,11 +178,13 @@ public:
         {
             auto last_lvl = current_trail.back();
             curr_trail_sz -= last_lvl.size();
-            // for (size_t i = 0; i < rename_lit_loop.size(); i++)
-            // {
-            //     if (std::find(last_lvl.begin(), last_lvl.end(), rename_lit_loop[i]) != last_lvl.end())
-            //         rename_lit_loop_assignment[i] = 0;
-            // }
+
+            for (auto v : last_lvl)
+            {
+                std::string var_name = info_variables[std::abs(v)].name;
+                unassigned_vars[var_name].insert(std::abs(v));
+            }
+
             current_trail.pop_back();
         }
     }
@@ -170,8 +203,6 @@ public:
 
     int cb_add_external_clause_lit()
     {
-        // PRINT_CURRENT_LINE
-        // printf("Call: Add external clauses %d\n", (int)new_clauses.size());
         if (new_clauses.empty())
             return 0;
 
@@ -190,7 +221,20 @@ public:
         }
     }
 
-    int cb_decide() { return 0; }
+    // Decide on the next AP that has few assignments left
+    int cb_decide()
+    {
+        if (unassigned_vars.empty())
+            return 0;
+
+        std::string min_unassigned_varname = unassigned_vars.begin()->first;
+
+        for (auto const &[name, val] : unassigned_vars)
+            if (unassigned_vars[name].size() < unassigned_vars[min_unassigned_varname].size())
+                min_unassigned_varname = name;
+
+        return *(unassigned_vars[min_unassigned_varname].begin());
+    }
     int cb_propagate() { return 0; }
     int cb_add_reason_clause_lit(int plit)
     {

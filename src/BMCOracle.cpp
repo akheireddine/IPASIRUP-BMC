@@ -45,14 +45,13 @@ BMCOracle::BMCOracle(CaDiCaL::Solver *s, const char *cnf_filename) : solver(s),
     readHeadFile(this, cnf_filename);
 
     init_spot();
-    
+
     init_time = (double)clock() / CLOCKS_PER_SEC - t;
 }
 
 void BMCOracle::init_spot()
 {
     /// init some attributes
-    rename_lit_loop_assignment.resize(rename_lit_loop.size(), 0);
     nb_property_variable = rename_lit_loop.size();
     nb_model_variable -= nb_property_variable;
     numb_clauses.resize(4, 0);
@@ -75,6 +74,9 @@ void BMCOracle::init_spot()
         varInfo vf = info_variables[var];
         if (info_variables[var].name == "")
             continue;
+
+        assignment_counter.insert(std::make_pair(vf.name, 0));
+        unassigned_vars[vf.name] = {};
 
         variable_by_step[vf.num_step].insert(std::make_pair(vf.name, var));
 
@@ -137,8 +139,6 @@ void BMCOracle::create_alpha_language_automaton(int loop, bool same_cond_aut)
             if (var_name.find("loop") != std::string::npos)
                 continue;
 
-            // std::cout << " name var " << var_name << "(" << var_time << ") \n";
-
             int var = bdd_dict->has_registered_proposition(spot::formula::ap(var_name), ltl_aut);
             // std::cout << "\t -> " << var << "\n";
             if (var < 0)
@@ -196,8 +196,7 @@ void BMCOracle::add_trail_lits_to_clause(std::vector<int> &cls)
 void BMCOracle::add_alpha_loop_clause(int loop)
 {
     std::vector<int> cls_result;
-    if (rename_lit_loop_assignment[loop] == 1)
-        return;
+
     cls_result.push_back(-rename_lit_loop[loop]);
     add_trail_lits_to_clause(cls_result);
     new_clauses.push_back(cls_result);
@@ -258,7 +257,7 @@ void BMCOracle::add_edge_loop_clauses(bdd formula, int curr_step, int loop)
 
     while ((cube = isop.next()) != bddfalse)
     {
-        bool already_sat = false;
+        // bool already_sat = false;
         b = cube;
         std::vector<int> cls_result;
 
@@ -293,8 +292,8 @@ void BMCOracle::add_edge_loop_clauses(bdd formula, int curr_step, int loop)
             cls_result.push_back(res_int);
         }
         // Skip unuseful clause
-        if (already_sat)
-            continue;
+        // if (already_sat)
+        //     continue;
 
         add_trail_lits_to_clause(cls_result);
 
@@ -341,9 +340,6 @@ void BMCOracle::evaluate_assignment()
         if (rename_lit_loop[i] == 0)
             continue;
 
-        if (rename_lit_loop_assignment[i] == -1)
-            continue;
-
         create_alpha_language_automaton(i, (i != 0));
 
         std::vector<bdd> constraints = get_edges_constraints_of_loop(i);
@@ -368,7 +364,6 @@ void BMCOracle::evaluate_assignment()
     {
         if (nb_empty_inter == K && enable_intersection)
         {
-            // std::cout << "c ALL INTERSECTION VIDE " << solver->curr_trail.size() << "\n";
             cls_result.clear();
             add_trail_lits_to_clause(cls_result);
             new_clauses.push_back(cls_result);
@@ -395,8 +390,6 @@ void BMCOracle::evaluate_assignment()
     {
         if (rename_lit_loop[i] == 0)
             continue;
-        if (rename_lit_loop_assignment[i] == -1)
-            continue;
 
         cls_result.clear();
         if (nb_empty_inter < K && is_empty_inter[i] && enable_intersection)
@@ -416,8 +409,6 @@ void BMCOracle::evaluate_assignment()
         }
     }
     time_blackbox += ((double)clock() / CLOCKS_PER_SEC) - parsed_time;
-
-    // printf("c Generated new clauses: %d (%ld calls)\n", (int)new_clauses.size(), numb_call);
 }
 
 void BMCOracle::printStats(double total_time)
@@ -464,4 +455,9 @@ void BMCOracle::printStats(double total_time)
     // if (mem_used != 0)
     // fprintf(stdout, "c Memory used           : %.2f MB\n", mem_used);
     fprintf(stdout, "c Real time             : %g s\n", total_time - time_blackbox);
+
+    std::cout << "c Number of formula states: " << ltl_aut->num_states() << "\n";
+    std::cout << "c Number synchr states: " << ltl_aut->num_states() * K << "\n";
+    std::cout << "c Number of property variables: " << nb_property_variable << "\n";
+    std::cout << "c Number of model variables: " << nb_model_variable << "\n";
 }

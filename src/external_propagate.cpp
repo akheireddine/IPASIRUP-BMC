@@ -221,7 +221,7 @@ Clause * Internal::add_external_clause(bool as_redundant, int propagated_elit) {
   
   if (propagated_elit) {
 #ifndef NDEBUG
-    LOG ("add external reason of propagated lit: %d",propagated_elit);
+    LOG (" ** add external reason of propagated lit: %d",propagated_elit);
 #endif   
     elit = external->propagator->cb_add_reason_clause_lit (propagated_elit);
   } else elit = external->propagator->cb_add_external_clause_lit();
@@ -243,28 +243,37 @@ Clause * Internal::add_external_clause(bool as_redundant, int propagated_elit) {
     original.push_back(ilit);
 #ifndef NDEBUG
     assert (fixed(ilit) || observed(ilit));
-    LOG("elit: %d -> ilit: %d",elit,ilit);
+    LOG(" ** elit: %d -> ilit: %d",elit,ilit);
 #endif
     int tmp = marked (ilit);
     if (tmp > 0) {
-      LOG ("removing duplicated literal %d", ilit);
+      LOG (" ** removing duplicated literal %d", ilit);
+      printf (" ** removing duplicated literal %d\n", ilit);
     } else if (tmp < 0) {
-      LOG ("tautological since both %d and %d occur", -ilit, ilit);
-      if (propagated_elit) LOG ("tautological clause was given as reason of external propagation.");
+      LOG (" ** tautological since both %d and %d occur", -ilit, ilit);
+      // printf (" ** tautological since both %d and %d occur\n", -ilit, ilit);
+      if (propagated_elit) {
+        LOG (" ** tautological clause was given as reason of external propagation.");
+        printf (" ** tautological clause was given as reason of external propagation.\n");
+      }
       skip = true;
     } else {
       tmp = fixed (ilit);
       if (tmp > 0) {
-        LOG ("root level satisfied literal %d", ilit);
-        if (propagated_elit) LOG ("satisfied clause was given as reason of external propagation.");
+        LOG (" ** root level satisfied literal %d", ilit);
+        // printf (" ** root level satisfied literal %d\n", ilit);
+        if (propagated_elit){ 
+          LOG ("satisfied clause was given as reason of external propagation.");
+          printf ("satisfied clause was given as reason of external propagation.\n");
+        }
         skip = true;
-
         if (propagated_elit) elit = external->propagator->cb_add_reason_clause_lit (propagated_elit);
         else elit = external->propagator->cb_add_external_clause_lit();
         continue;
 
       } else if (tmp < 0) {
-        LOG ("root level falsified literal %d is ignored", ilit);
+        LOG (" ** root level falsified literal %d is ignored", ilit);
+        // printf (" ** root level falsified literal %d is ignored\n", ilit);
        
         if (propagated_elit) elit = external->propagator->cb_add_reason_clause_lit (propagated_elit); 
         else elit = external->propagator->cb_add_external_clause_lit();
@@ -280,9 +289,9 @@ Clause * Internal::add_external_clause(bool as_redundant, int propagated_elit) {
 
 #ifndef NDEBUG
       if (tmp) {
-        LOG("elit: %d -> ilit: %d val: %d level: %d",elit,ilit,tmp,var (ilit).level);  
+        LOG(" ** elit: %d -> ilit: %d val: %d level: %d",elit,ilit,tmp,var (ilit).level);  
       } else {
-        LOG("elit: %d -> ilit: %d val: %d level: %d - unassigned",elit,ilit,tmp,var (ilit).level);
+        LOG(" ** elit: %d -> ilit: %d val: %d level: %d - unassigned",elit,ilit,tmp,var (ilit).level);
       }
 #endif
 
@@ -339,22 +348,22 @@ Clause * Internal::add_external_clause(bool as_redundant, int propagated_elit) {
 
     // printf("size %d , glue %d\n",(int)clause.size(),glue);
 
+    // printf (" ** New external clause is constructed: %ld\n",clause.size());
     clause.clear();  
-    LOG (res, "New external clause is constructed: ");
-
+    LOG (res, " ** New external clause is constructed: ");
     cls_added++;
     return res;
   } else { 
     assert(clause.size() < 2);
     if (clause.empty()) {
-      if (!original_size) VERBOSE (1, "empty clause is learnt from external propagator");
-      else MSG ("falsified clause is learnt from external propagator");
+      if (!original_size) VERBOSE (1, " ** empty clause is learnt from external propagator");
+      else MSG (" ** falsified clause is learnt from external propagator");
       unsat = true;
-      printf("c UNSAT external clause !\n");
+      printf(" ** c UNSAT external clause !\n");
     } else {
       assert (clause.size() == 1);
       unit_cls_added++;
-      LOG(clause,"unit clause is learnt from external propagator");
+      LOG(clause," ** unit clause is learnt from external propagator");
     }
     return 0;
   }
